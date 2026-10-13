@@ -29,6 +29,16 @@ demos/examples and additional QtExamples entries.
 6. Review every port, verify all inventory mappings and original-source recovery,
    and rebuild ecosystem documentation with categorized examples and exact status.
 
+Source acquisition and the complete static catalog are now verified: both pinned
+trees retain all 1,569 original file mappings and 465 Python files. The categorized
+index and receipt-driven tool are available under `catalog/` and `tools/`.
+Observed source requirements and per-file license evidence are recorded; all
+license review, port implementation and native acceptance remain pending.
+The 298 Python entrypoint candidates, 14 ambiguous Python candidates and 3 QML
+launcher candidates require review before establishing an executable denominator.
+The remaining 153 Python files are auxiliary; 69 shared/repository files retain
+explicit unresolved ownership and their individual planned mappings.
+
 Completion requires all source examples accounted for and ported with actual
 FontLab acceptance. Static compilation and a selected sample do not prove the
 complete collection. A missing host API remains a tracked implementation gap.

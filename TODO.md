@@ -2,11 +2,13 @@
 this_file: TODO.md
 ---
 
-- [ ] Acquire and pin the full pyqt/examples source collection.
-- [ ] Acquire and pin the full eyllanesc/QtExamples source collection.
-- [ ] Inventory all examples/resources and preserve original bytes and hashes.
+- [x] Acquire, pin and Git-blob-verify all 805 pyqt/examples source files.
+- [x] Acquire, pin and Git-blob-verify all 764 eyllanesc/QtExamples source files.
+- [x] Catalog all 1,569 original files/resources with exact hashes and portable planned paths.
+- [x] Extract source imports, entrypoint evidence, resource associations and license evidence.
+- [ ] Resolve 14 ambiguous Python candidates, 3 uncertain QML launcher candidates and shared ownership.
 - [ ] Record and resolve per-file licenses and attribution.
-- [ ] Organize every example in categories with an upstream-to-port index.
+- [x] Publish a categorized candidate index and retain every original mapping.
 - [ ] Port every numbered example to PythonQt in FontLab.
 - [ ] Port every official demo to PythonQt in FontLab.
 - [ ] Port every official and additional eyllanesc/QtExamples entry to PythonQt in FontLab.
