@@ -322,6 +322,11 @@ def test_official_build_inspect_controls_disconnect_and_close(row, official_qt):
     assert not any(getattr(obj, "deleted", False) for obj in handle.controls.values())
     json.dumps(state)
     connections = list(handle.connections)
+    temporary_roots = [
+        Path(f.__self__.temporary.name)
+        for f in handle.release
+        if getattr(getattr(f, "__self__", None), "temporary", None) is not None
+    ]
     original_close = handle.owner.close
 
     def checked_close():
@@ -335,7 +340,20 @@ def test_official_build_inspect_controls_disconnect_and_close(row, official_qt):
     handle.owner.close = checked_close
     handle.close()
     assert handle.snapshot()["closed"]
+    assert all(not path.exists() for path in temporary_roots), (
+        "Close removes each port's exact owned directory"
+    )
     handle.close()
+
+
+def owned_directory(handle):
+    """Use the same Demo ownership record as the native interaction driver."""
+    demo = next(
+        f.__self__
+        for f in handle.release
+        if hasattr(getattr(f, "__self__", None), "temp_dir")
+    )
+    return Path(demo.temp_dir()).resolve()
 
 
 def built(name, qt):
@@ -442,10 +460,16 @@ def test_standard_file_and_message_dialogs_are_inert_until_accept(
         handle.controls[button].click()
         box = handle.controls["active_dialog"]
         assert handle.controls[label].text == ""
-        box._extra["selectedFiles"] = [str(tmp_path / "sample.txt")]
+        box._extra["selectedFiles"] = [
+            str(
+                (owned_directory(handle) if mode == "save" else tmp_path) / "sample.txt"
+            )
+        ]
         box.accept()
         assert "sample.txt" in handle.controls[label].text
-        assert not (tmp_path / "sample.txt").exists(), "Selection must not write a file"
+        assert not Path(box._extra["selectedFiles"][0]).exists(), (
+            "Selection must not write a file"
+        )
     for button, label, choice in [
         ("criticalButton", "criticalLabel", "Retry"),
         ("informationButton", "informationLabel", "Ok"),
@@ -465,6 +489,7 @@ def test_editor_file_roundtrip_errors_and_unsaved_cancel(name, official_qt, tmp_
 
     qt, _ = official_qt
     handle = built(name, qt)
+    tmp_path = owned_directory(handle)
     window = handle.widget
     path = tmp_path / "sample.txt"
     path.write_text("Ą–字体", encoding="utf-8")
@@ -609,6 +634,7 @@ def test_movie_controls_and_timer_cleanup(official_qt):
 def test_stylesheet_apply_save_and_isolated_style(official_qt, tmp_path):
     qt, _ = official_qt
     handle = built("stylesheet", qt)
+    tmp_path = owned_directory(handle)
     assert "QWidget" in handle.snapshot()["sheet"]
     handle.controls["styleTextEdit"].setPlainText("QWidget { color: red; }")
     handle.controls["applyButton"].click()
@@ -685,6 +711,7 @@ def test_icons_images_and_size_controls(official_qt):
 def test_codecs_preview_accept_and_cancel(official_qt, tmp_path):
     qt, _ = official_qt
     handle = built("codecs", qt)
+    tmp_path = owned_directory(handle)
     path = tmp_path / "unicode.txt"
     path.write_text("Ą–字体", encoding="utf-8")
     handle.controls["openAct"].trigger()
@@ -765,6 +792,7 @@ def test_classwizard_generates_source_only_on_finish(
 ):
     qt, _ = official_qt
     handle = built("classwizard", qt)
+    tmp_path = owned_directory(handle)
     values = {
         "className": "Sample",
         "baseClass": "",
@@ -2349,6 +2377,7 @@ def test_batch_six_docks_and_recentfiles_preserve_documents_and_isolate_settings
 ):
     qt, _ = official_qt
     h = built("dockwidgets", qt)
+    tmp_path = owned_directory(h)
     h.controls["customerList"].emit(
         "currentTextChanged", "Test Customer, 123 Test Street"
     )
@@ -2362,6 +2391,7 @@ def test_batch_six_docks_and_recentfiles_preserve_documents_and_isolate_settings
     assert "Test Customer" in target.read_text()
     h.close()
     h = built("recentfiles", qt)
+    tmp_path = owned_directory(h)
     path = tmp_path / "recent.txt"
     h.controls["textEdit"].setPlainText("Owned recent file")
     assert h.controls["saveFile"](str(path))
@@ -2425,6 +2455,7 @@ def test_batch_six_textedit_format_save_cancel_preview_and_clipboard_disconnect(
 ):
     qt, _ = official_qt
     h = built("textedit", qt)
+    tmp_path = owned_directory(h)
     assert h.snapshot()["file"] == "", "Default resource must never be saved over"
     assert (
         ":/images/logo32.png" in h.controls["textEdit"].document._extra["resources"]
@@ -2469,7 +2500,7 @@ def test_batch_six_svg_native_image_renderers_and_imageviewer_zoom(
     assert h.widget.view.renderer == h.widget.view.Image
     h.close()
     h = built("imageviewer", qt)
-    path = tmp_path / "image.png"
+    path = owned_directory(h) / "image.png"
     path.write_bytes(b"boundary image fixture")
     assert h.controls["loadImage"](str(path))
     h.controls["zoomInAct"].trigger()

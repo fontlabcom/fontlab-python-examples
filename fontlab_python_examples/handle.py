@@ -18,6 +18,7 @@ class ExampleHandle:
         self.cleanup: list[Callable] = []
         self.connections: list[tuple[Any, str | None, Callable]] = []
         self.release: list[Callable] = []
+        self.after_close: list[Callable] = []
         self.model: Any = None
         self.controls: dict[str, Any] = {}
 
@@ -76,3 +77,6 @@ class ExampleHandle:
             alert.close()
         self.alerts.clear()
         self.owner.close()
+        while self.after_close:
+            self.after_close[0]()
+            self.after_close.pop(0)

@@ -102,6 +102,7 @@ class Demo:
         self.objects = []
         self.links = []
         self.temporary = None
+        self._owned_temporary = None
         self.error = ""
         self.closing = False
         self.dragging = False
@@ -111,6 +112,7 @@ class Demo:
             self.handle = ExampleHandle(window, dict)
             self.handle.release.append(self.release)
             self.handle.cleanup.append(self.prepare_close)
+            self.handle.after_close.append(self.cleanup_temp)
         elif window is not self.handle.widget:
             from fontlabapp.widgets import OwnedWidget
 
@@ -159,7 +161,7 @@ class Demo:
             drag.deleteLater()
 
     def owned_path(self, path: str) -> Path:
-        """Address-book persistence accepts only paths in this build's directory."""
+        """Restrict write destinations; read sources need no ownership check."""
         root = Path(self.temp_dir()).resolve()
         result = Path(path).resolve()
         if not result.is_relative_to(root) or result == root:
@@ -325,10 +327,40 @@ class Demo:
             source.deleteLater()
             loader.deleteLater()
 
-    def temp_dir(self) -> str:
+    def temp_dir(
+        self, *, prefix: str = "fontlab-official-", directory: str | None = None
+    ) -> str:
         if self.temporary is None:
-            self.temporary = TemporaryDirectory(prefix="fontlab-official-")
+            if self.closing:
+                raise RuntimeError("This example is closing")
+            self.temporary = TemporaryDirectory(prefix=prefix, dir=directory)
+            info = Path(self.temporary.name).stat()
+            self._owned_temporary = (
+                self.temporary,
+                self.temporary.name,
+                (info.st_dev, info.st_ino),
+            )
         return self.temporary.name
+
+    def cleanup_temp(self) -> None:
+        """Remove only our exact mkdtemp directory, after owned windows close."""
+        if self._owned_temporary is None:
+            return
+        temporary, name, identity = self._owned_temporary
+        if (
+            temporary is not self.temporary
+            or temporary.name != name
+            or Path(name).is_symlink()
+        ):
+            raise RuntimeError("The example's temporary directory ownership changed")
+        if Path(name).exists():
+            info = Path(name).stat()
+            if (info.st_dev, info.st_ino) != identity:
+                raise RuntimeError(
+                    "The example's temporary directory ownership changed"
+                )
+        temporary.cleanup()
+        self.temporary = self._owned_temporary = None
 
     def settings(self, *args: Any) -> Any:
         """All settings scopes, including location previews, stay in owned INIs."""
@@ -336,7 +368,7 @@ class Demo:
         import shutil
 
         key = hashlib.sha256(repr(args).encode()).hexdigest()[:16]
-        target = Path(self.temp_dir()) / (key + ".ini")
+        target = self.owned_path(str(Path(self.temp_dir()) / (key + ".ini")))
         if (
             args
             and isinstance(args[0], str)
@@ -352,7 +384,7 @@ class Demo:
         self.handle.cleanup.append(result.sync)
         return result
 
-    def dialog(self, box: Any, callback: Any = None) -> Any:
+    def dialog(self, box: Any, callback: Any = None, *, modal: bool = True) -> Any:
         """Retain every asynchronous dialog until disconnect-before-delete cleanup."""
         from fontlabapp.widgets import OwnedWidget
 
@@ -362,10 +394,15 @@ class Demo:
         self.handle.controls["active_dialog"] = box
         box.setAttribute(self.qt.QtCore.Qt.WA_DeleteOnClose, False)
         box.setAttribute(self.qt.QtCore.Qt.WA_QuitOnClose, False)
-        box.setWindowModality(self.qt.QtCore.Qt.WindowModal)
+        box.setWindowModality(
+            self.qt.QtCore.Qt.WindowModal if modal else self.qt.QtCore.Qt.NonModal
+        )
         if callback is not None:
             self.connect(box, "accepted()", callback)
-        box.open()
+        if modal:
+            box.open()
+        else:
+            box.show()
         return box
 
     def choose(
@@ -377,7 +414,12 @@ class Demo:
         directory: str = "",
         filters: str = "",
         native: bool = False,
+        owned: bool = False,
     ) -> Any:
+        """Choose readable inputs freely; confine saves to the owned directory.
+
+        The owned flag selects the initial directory for open dialogs only.
+        """
         gui = self.qt.QtGui
         box = gui.QFileDialog(parent)
         box.setWindowTitle(title or ("Save As" if mode == "save" else "Open"))
@@ -392,17 +434,24 @@ class Demo:
         )
         if mode == "save":
             box.setAcceptMode(gui.QFileDialog.AcceptSave)
-        if directory:
-            box.setDirectory(directory)
+        if directory or owned or mode == "save":
+            box.setDirectory(directory or self.temp_dir())
         if filters:
             box.setNameFilter(filters)
 
         def selected() -> None:
             paths = list(box.selectedFiles())
             if paths:
+                if mode == "save":
+                    try:
+                        paths = [str(self.owned_path(str(path))) for path in paths]
+                    except ValueError as error:
+                        self.error = str(error)
+                        self.message(parent, "File path refused", self.error)
+                        return
                 callback(paths if mode == "many" else str(paths[0]))
 
-        return self.dialog(box, selected)
+        return self.dialog(box, selected, modal=False)
 
     def message(
         self,
@@ -436,7 +485,9 @@ class Demo:
         gui = self.qt.QtGui
         printer = gui.QPrinter(gui.QPrinter.HighResolution)
         printer.setOutputFormat(gui.QPrinter.PdfFormat)
-        printer.setOutputFileName(path or str(Path(self.temp_dir()) / "output.pdf"))
+        printer.setOutputFileName(
+            str(self.owned_path(path or str(Path(self.temp_dir()) / "output.pdf")))
+        )
         return printer
 
     def print_dialog(self, parent: Any, render: Any) -> Any:
@@ -446,7 +497,21 @@ class Demo:
         printer = box.printer()
         printer.setOutputFormat(self.qt.QtGui.QPrinter.PdfFormat)
         printer.setOutputFileName(str(Path(self.temp_dir()) / "output.pdf"))
-        return self.dialog(box, lambda: render(printer))
+        return self.dialog(box, lambda: self.render_pdf(parent, printer, render))
+
+    def render_pdf(self, parent: Any, printer: Any, render: Any) -> None:
+        """Recheck the output selected in print/preview UI before writing."""
+        try:
+            self.owned_path(str(read(printer, "outputFileName")))
+            if read(printer, "outputFormat") != self.qt.QtGui.QPrinter.PdfFormat:
+                raise ValueError(
+                    "Choose PDF output inside this example's temporary directory"
+                )
+        except ValueError as error:
+            self.error = str(error)
+            self.message(parent, "Print path refused", self.error)
+            return
+        render(printer)
 
     def print_document(self, parent: Any, document: Any) -> Any:
         """Preserve document printing through an asynchronous owned print dialog."""
@@ -485,15 +550,12 @@ class Demo:
                 elif not isinstance(value, (str, int, float, bool, bytes, type(None))):
                     setattr(obj, key, None)
         self.objects.clear()
-        if self.temporary is not None:
-            self.temporary.cleanup()
-            self.temporary = None
 
     def abort(self) -> None:
         if self.handle is not None:
             self.handle.close()
         elif self.temporary is not None:
-            self.temporary.cleanup()
+            self.cleanup_temp()
 
 
 class WorkerDelivery:
@@ -715,7 +777,7 @@ class LocalFortune:
         self, demo: Demo, fortunes: tuple[str, ...], *, frame_bytes: int = 2
     ) -> None:
         # Keep the Unix socket path below macOS's sockaddr_un length limit.
-        demo.temporary = TemporaryDirectory(prefix="fl-ipc-", dir="/tmp")
+        demo.temp_dir(prefix="fl-ipc-", directory="/tmp")
         self.endpoint = str(Path(demo.temp_dir()) / "fortune")
         self.demo, self.fortunes, self.frame_bytes = demo, fortunes, frame_bytes
         self.clients, self.sent = [], 0

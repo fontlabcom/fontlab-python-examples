@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from .handle import ExampleHandle
+from .official import Demo
 
 
 def apply_style(widget: Any, style: Any) -> None:
@@ -24,6 +25,7 @@ def selected_path(result: Any) -> str:
 
 
 def build_editor(qt: Any, text: Any, icon: Path) -> ExampleHandle:
+    demo = Demo(qt, __file__, "numbered-editor")
     gui = qt.QtGui
     state = {"file_path": None, "error": ""}
     closing = [False]
@@ -72,14 +74,21 @@ def build_editor(qt: Any, text: Any, icon: Path) -> ExampleHandle:
         },
     )
     handle.cleanup.append(lambda: closing.__setitem__(0, True))
+    demo.handle = handle
+    handle.cleanup.append(demo.prepare_close)
+    handle.release.append(demo.release)
+    handle.after_close.append(demo.cleanup_temp)
 
     def open_file() -> None:
-        path = selected_path(gui.QFileDialog.getOpenFileName(window, "Open"))
+        path = selected_path(
+            gui.QFileDialog.getOpenFileName(window, "Open", demo.temp_dir())
+        )
         if path:
             try:
                 content = Path(path).read_text(encoding="utf-8")
-            except (OSError, UnicodeError) as error:
+            except (OSError, UnicodeError, ValueError) as error:
                 state["error"] = str(error)
+                demo.message(window, "Open", state["error"])
                 return
             text.setPlainText(content)
             state.update(file_path=path, error="")
@@ -89,19 +98,27 @@ def build_editor(qt: Any, text: Any, icon: Path) -> ExampleHandle:
             save_as()
             return
         try:
-            Path(state["file_path"]).write_text(
+            demo.owned_path(state["file_path"]).write_text(
                 str(text.toPlainText()), encoding="utf-8"
             )
-        except (OSError, UnicodeError) as error:
+        except (OSError, UnicodeError, ValueError) as error:
             state["error"] = str(error)
+            demo.message(window, "Save", state["error"])
             return
         state["error"] = ""
         text.document().setModified(False)
 
     def save_as() -> None:
-        path = selected_path(gui.QFileDialog.getSaveFileName(window, "Save As"))
+        path = selected_path(
+            gui.QFileDialog.getSaveFileName(window, "Save As", demo.temp_dir())
+        )
         if path:
-            state["file_path"] = path
+            try:
+                state["file_path"] = str(demo.owned_path(path))
+            except ValueError as error:
+                state["error"] = str(error)
+                demo.message(window, "Save", state["error"])
+                return
             save()
 
     def about() -> None:

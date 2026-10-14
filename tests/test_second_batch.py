@@ -55,7 +55,7 @@ def batch_qt(native_boundary, monkeypatch):
 
     @native_double
     class Widget(base):
-        Preferred = Ignored = Password = Save = 1
+        Preferred = Ignored = Password = Save = Ok = 1
         Discard, Cancel = 2, 4
 
         def __init__(self, *args):
@@ -333,6 +333,8 @@ def batch_qt(native_boundary, monkeypatch):
     qt.QtCore.QModelIndex = Index
     qt.QtCore.Qt = SimpleNamespace(
         WA_QuitOnClose=2,
+        WA_DeleteOnClose=3,
+        NonModal=0,
         WindowModal=1,
         NoFocus=0,
         Horizontal=1,
@@ -412,7 +414,9 @@ def test_editor_when_actions_triggered_then_utf8_roundtrip_and_cancel(
     handle = load(record("Qt Text Editor")).build(batch_qt)
     window = handle.widget
     text = window.centralWidget
-    source = tmp_path / "source.txt"
+    from tests.test_official_batch import owned_directory
+
+    source = owned_directory(handle) / "source.txt"
     source.write_text("Ą–字体", encoding="utf-8")
     batch_qt.QtGui.QFileDialog.getOpenFileName = lambda *args: str(source)
     actions = window.menus[0].actions
@@ -431,6 +435,24 @@ def test_editor_when_actions_triggered_then_utf8_roundtrip_and_cancel(
     box.buttonClicked.emit(batch_qt.QtGui.QMessageBox.Save)
     assert not text.modified
     handle.close()
+
+
+def test_numbered_editor_reads_user_file_but_refuses_overwriting_it(batch_qt, tmp_path):
+    handle = load(record("Qt Text Editor")).build(batch_qt)
+    source = tmp_path / "user.txt"
+    source.write_text("Read Ą–字体", encoding="utf-8")
+    try:
+        batch_qt.QtGui.QFileDialog.getOpenFileName = lambda *args: str(source)
+        actions = handle.widget.menus[0].actions
+        actions[0].triggered.emit()
+        assert handle.snapshot()["text"] == "Read Ą–字体"
+        text = handle.widget.centralWidget
+        text.text, text.modified = "Changed", True
+        actions[1].triggered.emit()
+        assert source.read_text(encoding="utf-8") == "Read Ą–字体"
+        assert text.modified and "temporary directory" in handle.snapshot()["error"]
+    finally:
+        handle.close()
 
 
 def test_gallery_when_timer_advances_then_original_values_and_progress(batch_qt):

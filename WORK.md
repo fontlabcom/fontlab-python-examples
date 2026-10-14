@@ -2588,3 +2588,134 @@ fixes: **81/81 interaction pass**; launch/inspect/close of all 137 implemented p
 fixes: **137/137 pass, host alive**. 46 ports remain without scripted interactions (file
 dialogs, real drag/drop, clipboard, screen capture, tray, 50 MiB loopback), listed with
 reasons in the evidence README. Offline gate 930 passed.
+
+## 2026-10-15: New interaction file/settings/teardown regressions
+
+Read the controller's `native-interactions-new21-rerun.jsonl` and `.log` in
+the parent evidence/examples-interactions directory. No evidence files edited.
+These changes supersede the earlier source hashes for affected ports; the
+historical native counts above do not establish acceptance of these changes.
+
+- Recentfiles: convert all three recentFileList reads to plain lists at the
+  PythonQt boundary. The settings double now returns tuples for stored lists.
+  Verify reordering, duplicate removal, five-item truncation and menu data.
+  Audit every port's settings reads; geometry/scalar values and the generic
+  settingseditor value delegate require no mutable-list operations.
+- Files: every shared Save selection and PDF output is checked with owned_path.
+  Guard direct open/save methods too, including textedit after suffix handling;
+  rejected paths show an owned asynchronous message and preserve document state.
+  Cover application/SDI/MDI/recentfiles, codecs, stylesheet, dockwidgets,
+  scribble, separations, imageviewer, classwizard and settingseditor. Extend the
+  same boundary to the numbered text-editor helper. Preserve immutable packaged
+  resource loading and existing owned address-book/screenshot checks. Fixed
+  fixture/download/tile writers already construct their paths in Demo.temp_dir.
+  Validate both classwizard output paths before writing either file. Recheck
+  print/preview output immediately before rendering; confine settings INI copies.
+- Teardown: remove the temporary directory after owned window close callbacks,
+  through a retryable after_close callback. Track the TemporaryDirectory object,
+  original mkdtemp path and device/inode; refuse borrowed, retargeted, symlinked
+  or replaced directories. LocalFortune uses the same registered ownership with
+  its shorter /tmp IPC prefix. No sweep or deletion of old directories.
+- Standarddialogs: force owned non-native QFileDialogs even when the native
+  checkbox is changed programmatically; disable that checkbox in the UI.
+  Shared file selection uses NonModal plus show(), with tracked accepted()
+  callbacks. The double exposes fileNameEdit only for DontUseNativeDialog;
+  regression tests check the drivable child and asynchronous visibility.
+
+Regression-first run reproduced 18 failures and one existing passing path check.
+Expanded to 33 new cases, covering outside files, symlink/sibling escapes,
+appended extensions, classwizard partial-write prevention, print paths and exact
+temporary-directory ownership. Existing round-trip fixtures now live inside the
+port's owned folder. Every shared official build/close test also checks removal
+of any temporary directory created during construction.
+
+Consulted official [Qt QFileDialog](https://doc.qt.io/archives/qt-5.15/qfiledialog.html),
+[QSettings](https://doc.qt.io/archives/qt-5.15/qsettings.html) and
+[TemporaryDirectory](https://docs.python.org/3.11/library/tempfile.html#tempfile.TemporaryDirectory)
+contracts and the local OwnedWidget implementation. Tuple-return semantics are
+the controller's observed PythonQt fact. No new dependency.
+
+Verification:
+- Full repository suite: **963 passed** (baseline 930), using
+  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/fontlab-uv-cache
+  UV_OFFLINE=1 uv run --no-project --with pytest python -m pytest -q tests`.
+- Supplied driver static gate: **781 passed**, with PYTHONDONTWRITEBYTECODE=1
+  and pytest `-p no:cacheprovider`. SHA-256 and modification-time snapshots of
+  all 16 evidence files match before/after this gate; the directory is untouched.
+- Scoped Ruff lint and format checks: all 26 changed/new Python files pass.
+  Python 3.11 grammar and this_file checks: 352 repository Python sources pass.
+  git diff --check passes; staging empty; no commit.
+- Full-tree Ruff was rerun. Existing HEAD findings remain: EXE001 for the
+  non-executable tools/collect_pythonqt_reference.py; format differences in that
+  file and ports/insights/metrics-undo.py. Those unrelated files were not edited.
+- Native run_python readiness probe was rejected with
+  "MCP tool call requires approval, but approval policy is never". Live
+  reacceptance remains pending; doubles and static driver tests do not prove
+  PythonQt rendering, interaction or delayed native destruction acceptance.
+
+## 2026-10-15: Read-source policy and test temp-directory regressions
+
+Controller reported native interaction 101/102 and launch/inspect/close 137/137
+after the preceding fixes. Codecs could not open its own bundled UTF-8 sample;
+the owned-path policy had incorrectly restricted reads. Those native results
+describe the preceding source state, not acceptance of the changes below.
+
+Audit every owned_path call in all ports and shared helpers. Remove ownership
+checks from codecs, application/SDI/MDI/recentfiles, rich and numbered editors,
+scribble/imageviewer/separations, address-book parts 6/7 and settings imports.
+Shared open/multiple-file/directory selections accept readable user paths;
+the owned flag is now only an initial-directory hint for reads. Save selections,
+direct saves, PDF/export paths and settings destinations retain owned_path.
+INI imports read the chosen source into an owned copy; plist imports populate
+owned settings. Preserve address-book data-only unpickling.
+
+Add an autouse fixture that monkeypatches tempfile.tempdir to a separate pytest
+tmp_path_factory directory for each test. The late.ini regression asserts that
+its owned root is inside that fixture and restores its patched close hook in
+finally, including assertion failures. Remove its deliberately foreign pytest
+fixture directory only after proving port close leaves it intact. No real-temp
+directory sweep or runtime cleanup-policy change.
+
+Tests first reproduced 15 read-policy failures with 26 passes. The corrected
+suite covers the exact bundled codecs sample through a non-native QFileDialog,
+owned/user read sources, denied writes, external INI/plist copy isolation,
+numbered-editor read-then-save refusal and an AST audit of every open/load method.
+Wait, but local doubles cannot establish native QFileDialog or image rendering
+acceptance; the controller's native rerun remains separate.
+
+Documentation checked: Python 3.11
+[tempfile](https://docs.python.org/3.11/library/tempfile.html#tempfile.tempdir),
+[pytest temporary directories](https://docs.pytest.org/en/stable/how-to/tmp_path.html)
+and [Qt 5 QSettings](https://doc.qt.io/archives/qt-5.15/qsettings.html).
+No dependency changes.
+
+Verification:
+- Full offline repository gate: **973 passed** (baseline 963), using
+  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/fontlab-uv-cache
+  UV_OFFLINE=1 uv run --no-project --with pytest python -m pytest -q tests`.
+- Driver static gate: **781 passed**, with PYTHONDONTWRITEBYTECODE=1 and
+  `-p no:cacheprovider`; all 18 evidence files' SHA-256 and modification times
+  match before/after. No native or evidence-file edits.
+- Scoped Ruff lint and format checks: 29 changed/new Python files pass.
+  Python 3.11 grammar and this_file checks: all 352 checked sources pass.
+  Full-tree Ruff retains the existing EXE001 in tools/collect_pythonqt_reference.py
+  and formatting differences there and in ports/insights/metrics-undo.py.
+- Real tempfile.gettempdir(), resolved $TMPDIR and /tmp contained zero directly
+  nested fontlab-official-* directories before and after the full repository gate.
+  A recursive check of the final pytest run directory also found zero matching
+  directories. No directories were deleted from those locations by a sweep.
+- git diff --check passes; no staging or commit.
+
+## 2026-10-15: Controller native acceptance — extended interactions (102 ports)
+
+Driver coverage extended to 102 of 127 implemented official ports (file dialogs answered
+with owned temp/asset paths through the ports' own non-native dialogs; dropsite handler fed a
+real QMimeData). Native runs found and Codex fixed: QSettings list values are tuples
+(recentfiles); textedit Save As could write outside its owned temp dir (writes now confined,
+reads allowed from assets/user files); temp dirs now removed on close; standarddialogs uses an
+owned non-native dialog; a unit test leaked temp dirs (now tmp_path-isolated). Final native
+run in an agent-owned no-document session: **interactions 102/102, launch/inspect/close
+137/137, 0 leftover temp dirs, host alive** (parent evidence/examples-interactions/
+native-interactions-final.jsonl, native-lic-final2.jsonl). 25 ports remain without scripted
+interaction (real drag/drop, mouse/key-only, user clipboard/screen/tray, visual-only),
+listed with reasons in the evidence README. Offline gate 973 passed.

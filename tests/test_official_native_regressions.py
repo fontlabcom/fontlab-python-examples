@@ -9,7 +9,7 @@ import pytest
 
 from fontlab_python_examples.official import Demo
 from tests.official_doubles import CONTRACT
-from tests.test_official_batch import ROOT, built, records
+from tests.test_official_batch import ROOT, built, owned_directory, records
 from tests.test_official_batch import (
     official_qt as official_qt,  # noqa: PLC0414 - pytest fixture re-export
 )
@@ -310,7 +310,7 @@ def test_qbytearray_movie_codec_export_and_settings_display(official_qt, tmp_pat
     codecs.widget.textEdit.setPlainText("Ą–字体")
     codecs.widget.save("utf-8")
     box = codecs.controls["active_dialog"]
-    path = tmp_path / "output.txt"
+    path = owned_directory(codecs) / "output.txt"
     box._extra["selectedFiles"] = [str(path)]
     box.accept()
     assert path.read_bytes() == "Ą–字体".encode()

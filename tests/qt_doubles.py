@@ -160,7 +160,9 @@ def fake_host(monkeypatch):
         QApplication=SimpleNamespace(instance=lambda: object()),
     )
     qt.QtCore = SimpleNamespace(
-        Qt=SimpleNamespace(WindowModal=1, WA_QuitOnClose=2),
+        Qt=SimpleNamespace(
+            WindowModal=1, WA_QuitOnClose=2, WA_DeleteOnClose=3, NonModal=0
+        ),
         QFile=File,
         QIODevice=SimpleNamespace(ReadOnly=1),
     )

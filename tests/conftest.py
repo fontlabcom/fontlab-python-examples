@@ -2,9 +2,18 @@
 """Owned source/receipt fixtures; no third-party code is imported."""
 
 import hashlib
+import tempfile
 from pathlib import Path
 
 import pytest
+
+
+@pytest.fixture(autouse=True)
+def isolated_tempfiles(tmp_path_factory, monkeypatch):
+    """Keep default tempfile calls in pytest storage, including late callbacks."""
+    directory = tmp_path_factory.mktemp("tempfiles")
+    monkeypatch.setattr(tempfile, "tempdir", str(directory))
+    return directory
 
 
 @pytest.fixture

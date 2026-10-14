@@ -204,7 +204,7 @@ def official_host(qt):
                     try:
                         result._extra["date"] = (
                             datetime.datetime.strptime(args[0], formats[args[1]])
-                            .replace(tzinfo=datetime.timezone.utc)
+                            .replace(tzinfo=datetime.UTC)
                             .date()
                         )
                     except ValueError:
@@ -1806,6 +1806,12 @@ def official_host(qt):
             if key == "setProperty":
                 self._props[a[0]] = a[1]
                 return None
+            if self._qt_name == "QFileDialog" and key == "setOption":
+                self._data["option"] = a
+                if a == (enum("DontUseNativeDialog"), True):
+                    editor = classes["QLineEdit"](self)
+                    editor.setObjectName("fileNameEdit")
+                return None
             if key.startswith("set"):
                 prop = key[3:4].lower() + key[4:]
                 self._data[prop] = a[0] if len(a) == 1 else a
@@ -2178,7 +2184,10 @@ def official_host(qt):
             if key == "standardButton":
                 return a[0]
             if key == "value":
-                return self._props.get(a[0], a[1] if len(a) > 1 else None)
+                value = self._props.get(a[0], a[1] if len(a) > 1 else None)
+                if self._qt_name == "QSettings" and isinstance(value, list):
+                    return tuple(value)
+                return value
             if key in ("childKeys", "childGroups", "allKeys"):
                 return []
             if key == "findChild":

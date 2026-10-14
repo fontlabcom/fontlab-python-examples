@@ -7,7 +7,7 @@ from types import SimpleNamespace
 import pytest
 
 from fontlab_python_examples.official import read
-from tests.test_official_batch import ROOT, built
+from tests.test_official_batch import ROOT, built, owned_directory
 from tests.test_official_batch import official_qt as official_qt  # noqa: PLC0414
 
 
@@ -108,7 +108,7 @@ def test_application_user_edits_and_save_reset_modified(official_qt, tmp_path):
         assert document.isModified() and h.snapshot()["modified"], (
             "User-style insertion marks the window"
         )
-        assert h.widget.saveFile(str(tmp_path / "draft.txt"))
+        assert h.widget.saveFile(str(owned_directory(h) / "draft.txt"))
         assert not h.snapshot()["modified"]
     finally:
         h.close()
@@ -192,7 +192,7 @@ def test_recent_file_actions_bind_each_action_without_sender(official_qt, tmp_pa
     qt, _ = official_qt
     h = built("recentfiles", qt)
     try:
-        paths = [tmp_path / "one.txt", tmp_path / "two.txt"]
+        paths = [owned_directory(h) / "one.txt", owned_directory(h) / "two.txt"]
         for path in paths:
             path.write_text(path.stem)
             h.widget.loadFile(str(path))

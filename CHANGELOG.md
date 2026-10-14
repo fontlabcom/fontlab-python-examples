@@ -6,6 +6,21 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Correct owned-path enforcement to apply only to writes. Allow
+  bundled assets and user files as read sources across codecs, editors, image
+  loaders, address books and settings imports; settings edits still use owned
+  copies. Isolate default test temporary files in pytest directories and restore
+  the late-close test hook in finally. Add read/write regression and source-audit
+  coverage; no commit.
+
+- 2026-10-15: Normalize PythonQt tuple-valued recent-file settings; confine
+  file-writing ports' open/save/export paths to their owned temporary directories
+  with visible refusal messages. Keep standarddialogs file selectors non-native
+  and non-modal. Remove exact owned temporary directories after window close
+  callbacks, with object/path/directory-identity checks and retryable cleanup.
+  Add 33 regression cases and strengthen the shared doubles and teardown checks.
+  Native reacceptance remains pending; no commit or evidence-directory edits.
+
 - 2026-10-14: Fix native screen selection in QPA windows and screenshot; use
   static screen enumeration instead of the null primaryScreen property. Compare
   name/geometry and cover native property semantics and screen aliases in doubles.
