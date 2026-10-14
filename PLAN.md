@@ -35,8 +35,8 @@ index and receipt-driven tool are available under `catalog/` and `tools/`.
 Observed source requirements and per-file license evidence are recorded. The
 separate `catalog/ports.json` now records four implemented numbered ports and the
 required exact Designer resource, with individual MIT review and attribution.
-Their native acceptance remains pending, as do other implementation and license
-reviews. The static catalog is retained unchanged.
+Their native source-load acceptance passed; other implementation, native and
+license reviews remain required. The static catalog is retained unchanged.
 The 298 Python entrypoint candidates, 14 ambiguous Python candidates and 3 QML
 launcher candidates require review before establishing an executable denominator.
 The remaining 153 Python files are auxiliary; 69 shared/repository files retain
@@ -51,7 +51,8 @@ The first implementation batch covers QLabel (`ce3e17a7a2a03a02`), QVBoxLayout
 (`402068f40005cd66`). `fontlab_python_examples` supplies named launch/inspect/close,
 module-retained native handles and `fontlabapp.widgets.OwnedWidget` cleanup;
 `examples/remopy.py` demonstrates ordinary external execution in FontLab.
-Next acceptance must exercise original text/layout, actual alert click/dismiss,
-Designer OK/Cancel, retained state across isolated requests, and destruction of
-only owned objects with the host still running. No batch-level native result or
-complete-collection completion is inferred from boundary tests.
+Actual FontLab source-load checks now verify original text/layout, real alert
+click/dismiss/repeat, Designer OK/Cancel, retained state across isolated requests
+and destruction of38 tracked owned objects with the host still running.
+verification/first-native-batch.json retains that bounded batch evidence;
+complete-collection completion is not inferred from it or boundary tests.

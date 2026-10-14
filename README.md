@@ -11,8 +11,7 @@ running FontLab. Start at the [categorized index](catalog/INDEX.md).
 
 Both pinned collections are fully acquired and verified locally: **1,569 files,
 465 Python files**. The public catalog contains provenance and planned mappings;
-the upstream originals remain local. **Four numbered examples are implemented;
-their native acceptance is pending.** This first batch does not complete either
+the upstream originals remain local. **Four numbered examples are implemented and native-verified in FontLab.** This first batch does not complete either
 requested collection.
 
 | Collection | Pinned revision | Original files | Python files |
@@ -148,8 +147,16 @@ not a blanket license assignment. Preserve the original notices and resolve
 scope before distributing a port or copying upstream resources.
 
 Four targets are implemented and their required UI source is copied unchanged;
-every native acceptance state remains pending. Other targets await ports. Future ports
+their native acceptance passed from clean source loads. Other targets await ports and native acceptance. Future ports
 must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop,
 without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia,
 GStreamer, matplotlib, database, network and platform examples remain in scope.
 See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
+
+The first four ports passed actual FontLab text/layout/click/alert dismissal and
+Designer OK/Cancel checks from clean committed sources. All 38 tracked owned
+objects were destroyed, paths/modules were restored and stored settings/font
+records matched. See [batch evidence](verification/first-native-batch.json).
+This proves source loading; wheel installation and all other examples remain
+required. The source catalog retains its historical inventory states; the port
+manifest records current per-entry acceptance.

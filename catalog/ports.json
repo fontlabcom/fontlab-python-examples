@@ -25,13 +25,13 @@
       },
       "target_path": "ports/widgets/pyqt-examples/main-ce3e17a7a2a03a02.py",
       "implementation": "implemented",
-      "native_acceptance": "pending",
+      "native_acceptance": "passed",
       "license": {
         "selected": "MIT",
         "review_state": "reviewed",
         "notice_path": "ports/pyqt-examples-LICENSE.md",
         "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
         "reviewed_files": [
           "README.md",
           "src/01 PyQt QLabel/README.md",
@@ -39,7 +39,12 @@
         ],
         "original_notices": []
       },
-      "resources": []
+      "resources": [],
+      "native_evidence": {
+        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+        "report": "verification/first-native-batch.json",
+        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+      }
     },
     {
       "name": "QVBoxLayout",
@@ -55,13 +60,13 @@
       },
       "target_path": "ports/widgets/pyqt-examples/main-f5ddfd0eaacbf845.py",
       "implementation": "implemented",
-      "native_acceptance": "pending",
+      "native_acceptance": "passed",
       "license": {
         "selected": "MIT",
         "review_state": "reviewed",
         "notice_path": "ports/pyqt-examples-LICENSE.md",
         "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
         "reviewed_files": [
           "README.md",
           "src/03 QVBoxLayout PyQt6/README.md",
@@ -69,7 +74,12 @@
         ],
         "original_notices": []
       },
-      "resources": []
+      "resources": [],
+      "native_evidence": {
+        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+        "report": "verification/first-native-batch.json",
+        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+      }
     },
     {
       "name": "Signals and Slots",
@@ -85,13 +95,13 @@
       },
       "target_path": "ports/widgets/pyqt-examples/main-79cc15680bc2cebb.py",
       "implementation": "implemented",
-      "native_acceptance": "pending",
+      "native_acceptance": "passed",
       "license": {
         "selected": "MIT",
         "review_state": "reviewed",
         "notice_path": "ports/pyqt-examples-LICENSE.md",
         "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
         "reviewed_files": [
           "README.md",
           "src/04 PyQt Signals and Slots/README.md",
@@ -99,7 +109,12 @@
         ],
         "original_notices": []
       },
-      "resources": []
+      "resources": [],
+      "native_evidence": {
+        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+        "report": "verification/first-native-batch.json",
+        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+      }
     },
     {
       "name": "Qt Designer",
@@ -115,13 +130,13 @@
       },
       "target_path": "ports/designer-ui/pyqt-examples/main-402068f40005cd66.py",
       "implementation": "implemented",
-      "native_acceptance": "pending",
+      "native_acceptance": "passed",
       "license": {
         "selected": "MIT",
         "review_state": "reviewed",
         "notice_path": "ports/pyqt-examples-LICENSE.md",
         "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
         "reviewed_files": [
           "README.md",
           "src/05 Qt Designer Python/README.md",
@@ -157,7 +172,12 @@
           },
           "this_file_note": "Original XML bytes are preserved exactly; this_file is recorded here rather than inserted into upstream bytes."
         }
-      ]
+      ],
+      "native_evidence": {
+        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+        "report": "verification/first-native-batch.json",
+        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+      }
     }
   ]
 }

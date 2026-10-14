@@ -15,6 +15,14 @@ plans now include both complete repositories, with the repeated pyqt URL counted
 once. Checked upstream README/GitHub metadata: QtExamples includes official and
 additional entries and declares GPL-3.0. Native verification remains pending.
 
+Remote tree inventory pins pyqt/examples at
+83eed0514582c8deb60d9e9e6bff31ceffe4eaeb (805 files, 308 Python files) and
+eyllanesc/QtExamples at a01fd7d10d45801b10876f94c07aaefb11bc2e12
+(764 files, 157 Python files). Both recursive API trees were complete, not
+truncated. These are source-file counts, not executable-example counts.
+Receipt: parent verification/issue-101-ecosystem/evidence/examples-upstream-trees.json.
+Original source bytes have not yet been acquired or ported.
+
 2026-10-14: Complete acquisition and inventory supersede the historical acquisition
 status above. Both recovery receipts now verify all 1,569 original bytes against
 their pinned Git blobs and retain immutable archive hashes, per-file SHA-256 and
@@ -90,3 +98,15 @@ Ruff lint/format (24 files) and diff checks passed. Exact bytes of both catalogs
 static index and original Designer UI remain unchanged. Official pathlib
 read_text encoding contract checked. Native acceptance of all four stays pending
 for root's clean reviewed re-load; no native/producer/settings changes performed.
+
+## First four ports: reviewed code and actual native acceptance
+
+Implementation701df4d fixes nativeASCII manifest read and constructor cleanup;
+scopedreview bothfindingsaddressed/no newbreakage. Root clean-source native
+ordinaryRemopy checks pass label/layout/click/window-modal alert/OKdismissal/
+repeat/DesignerOKCancel;38trackedQObject/helper objects destroyed independently,
+registry emptied/modulepath restored/FontLab alive. 627storedsettings andfont
+records exactlymatchbeforeafter; all1569originalfiles rehashedunchanged. Five
+owned-widget PNG renders inspected. Evidenceverification/first-native-batch.json.
+Original94aec38nativefailure and701rootverifiergeometryfailure remainretained;
+no wheel/install/fullcollectioncompletion claim. Wholebatchreview stillpending.

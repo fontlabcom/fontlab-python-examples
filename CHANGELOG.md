@@ -24,3 +24,5 @@ this_file: CHANGELOG.md
   conservative license evidence, planned port mappings and categorized navigation.
 - Verify receipt/source mismatch failures and complete catalog coverage with
   19 tests; retain pending implementation, license review and native acceptance.
+
+- Verified the first four source-loaded ports in actual FontLab, including alert dismissal/repeat, Designer results and observed owned-object teardown; preserved complete remaining collection scope.

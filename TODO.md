@@ -20,4 +20,4 @@ this_file: TODO.md
 - [x] Implement first four exact numbered-source ports and copy verified Designer UI.
 - [x] Record five individual source/resource MIT reviews in a separate port manifest.
 - [x] Provide first-batch named launch/inspect/close, retained handles and Remopy example.
-- [ ] Accept first four ports with native clicks, layout/text, Designer OK/Cancel and teardown.
+- [x] Accept first four source-loaded ports with native clicks, layout/text, alert dismissal/repeat, Designer OK/Cancel and tracked owned teardown.

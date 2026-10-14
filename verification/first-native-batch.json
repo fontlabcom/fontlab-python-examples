@@ -1,0 +1,255 @@
+{
+  "schema_version": "fontlab.examples-first-native-batch.v1",
+  "this_file": "verification/first-native-batch.json",
+  "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+  "source_load": "clean committed source/resource trees; not wheel install",
+  "native": {
+    "bootstrap": {
+      "examples_clean_source": true,
+      "fontlabapp_clean_source": true
+    },
+    "launch": {
+      "QLabel": {
+        "name": "QLabel",
+        "source_id": "ce3e17a7a2a03a02",
+        "launched": true,
+        "closed": false,
+        "visible": true,
+        "text": "Hello World!"
+      },
+      "QVBoxLayout": {
+        "name": "QVBoxLayout",
+        "source_id": "f5ddfd0eaacbf845",
+        "launched": true,
+        "closed": false,
+        "visible": true,
+        "buttons": [
+          "Top",
+          "Bottom"
+        ]
+      },
+      "Signals and Slots": {
+        "name": "Signals and Slots",
+        "source_id": "79cc15680bc2cebb",
+        "launched": true,
+        "closed": false,
+        "visible": true,
+        "text": "Click",
+        "alert_texts": []
+      },
+      "Qt Designer": {
+        "name": "Qt Designer",
+        "source_id": "402068f40005cd66",
+        "launched": true,
+        "closed": false,
+        "visible": true,
+        "result": 0
+      }
+    },
+    "interaction": {
+      "label_text": "Hello World!",
+      "vertical_order": [
+        "Top",
+        "Bottom"
+      ],
+      "top_y": 11,
+      "bottom_y": 41,
+      "alert_text": "You clicked the button!",
+      "window_modal": true,
+      "other_owned_window_clicked": 1,
+      "designer_accepted_result": 1,
+      "designer_rejected_result": 0
+    },
+    "capture": {
+      "snapshots": {
+        "QLabel": {
+          "name": "QLabel",
+          "source_id": "ce3e17a7a2a03a02",
+          "launched": true,
+          "closed": false,
+          "visible": true,
+          "text": "Hello World!"
+        },
+        "QVBoxLayout": {
+          "name": "QVBoxLayout",
+          "source_id": "f5ddfd0eaacbf845",
+          "launched": true,
+          "closed": false,
+          "visible": true,
+          "buttons": [
+            "Top",
+            "Bottom"
+          ]
+        },
+        "Signals and Slots": {
+          "name": "Signals and Slots",
+          "source_id": "79cc15680bc2cebb",
+          "launched": true,
+          "closed": false,
+          "visible": true,
+          "text": "Click",
+          "alert_texts": [
+            "You clicked the button!"
+          ]
+        },
+        "Qt Designer": {
+          "name": "Qt Designer",
+          "source_id": "402068f40005cd66",
+          "launched": true,
+          "closed": false,
+          "visible": true,
+          "result": 0
+        }
+      },
+      "images": {
+        "QLabel": "QLabel.png",
+        "QVBoxLayout": "QVBoxLayout.png",
+        "Signals and Slots": "Signals-and-Slots.png",
+        "Qt Designer": "Qt-Designer.png"
+      },
+      "alert_image": "clicked-alert.png"
+    },
+    "dismiss_and_repeat": {
+      "ok_clicked": true,
+      "dismissed_alert_hidden": true,
+      "parent_still_owned": true,
+      "repeat_alert_owner_count": 1,
+      "repeat_alert_visible": true
+    },
+    "close": {
+      "QLabel": {
+        "name": "QLabel",
+        "source_id": "ce3e17a7a2a03a02",
+        "launched": false,
+        "closed": true
+      },
+      "QVBoxLayout": {
+        "name": "QVBoxLayout",
+        "source_id": "f5ddfd0eaacbf845",
+        "launched": false,
+        "closed": true
+      },
+      "Signals and Slots": {
+        "name": "Signals and Slots",
+        "source_id": "79cc15680bc2cebb",
+        "launched": false,
+        "closed": true
+      },
+      "Qt Designer": {
+        "name": "Qt Designer",
+        "source_id": "402068f40005cd66",
+        "launched": false,
+        "closed": true
+      }
+    },
+    "destruction": {
+      "expected": [
+        "QLabel:0",
+        "QVBoxLayout:1",
+        "QVBoxLayout/child:2",
+        "QVBoxLayout/child:3",
+        "QVBoxLayout/child:4",
+        "Signals and Slots:5",
+        "Designer/QFile:6",
+        "Designer/QUiLoader:7",
+        "Qt Designer:8",
+        "Qt Designer/child:9",
+        "Qt Designer/child:10",
+        "Qt Designer/child/child:11",
+        "Qt Designer/child/child:12",
+        "Qt Designer/child/child:13",
+        "Signals/alert:14",
+        "Signals/alert/child:15",
+        "Signals/alert/child:16",
+        "Signals/alert/child:17",
+        "Signals/alert/child/child:18",
+        "Signals/alert/child/child/child:19",
+        "Signals/alert/child/child/child/child:20",
+        "Signals/alert/child/child/child/child/child:21",
+        "Signals/alert/child/child/child/child:22",
+        "Signals/alert/child:23",
+        "Signals/alert/child/child:24",
+        "Signals/alert/child/child:25",
+        "Signals/alert-repeat:26",
+        "Signals/alert-repeat/child:27",
+        "Signals/alert-repeat/child:28",
+        "Signals/alert-repeat/child:29",
+        "Signals/alert-repeat/child/child:30",
+        "Signals/alert-repeat/child/child/child:31",
+        "Signals/alert-repeat/child/child/child/child:32",
+        "Signals/alert-repeat/child/child/child/child/child:33",
+        "Signals/alert-repeat/child/child/child/child:34",
+        "Signals/alert-repeat/child:35",
+        "Signals/alert-repeat/child/child:36",
+        "Signals/alert-repeat/child/child:37"
+      ],
+      "destroyed": [
+        "Designer/QFile:6",
+        "Designer/QUiLoader:7",
+        "Signals/alert/child:16",
+        "Signals/alert:14",
+        "Signals/alert/child:15",
+        "Signals/alert/child/child:18",
+        "Signals/alert/child/child/child:19",
+        "Signals/alert/child/child/child/child:20",
+        "Signals/alert/child/child/child/child/child:21",
+        "Signals/alert/child/child/child/child:22",
+        "Signals/alert/child:17",
+        "Signals/alert/child/child:24",
+        "Signals/alert/child:23",
+        "Signals/alert/child/child:25",
+        "QLabel:0",
+        "QVBoxLayout/child:2",
+        "QVBoxLayout:1",
+        "QVBoxLayout/child:3",
+        "QVBoxLayout/child:4",
+        "Signals/alert-repeat/child:28",
+        "Signals/alert-repeat:26",
+        "Signals/alert-repeat/child:27",
+        "Signals/alert-repeat/child/child:30",
+        "Signals/alert-repeat/child/child/child:31",
+        "Signals/alert-repeat/child/child/child/child:32",
+        "Signals/alert-repeat/child/child/child/child/child:33",
+        "Signals/alert-repeat/child/child/child/child:34",
+        "Signals/alert-repeat/child:29",
+        "Signals/alert-repeat/child/child:36",
+        "Signals/alert-repeat/child:35",
+        "Signals/alert-repeat/child/child:37",
+        "Signals and Slots:5",
+        "Qt Designer:8",
+        "Qt Designer/child:9",
+        "Qt Designer/child/child:11",
+        "Qt Designer/child:10",
+        "Qt Designer/child/child:12",
+        "Qt Designer/child/child:13"
+      ],
+      "registry_empty": true,
+      "host_application_alive": true
+    },
+    "restore": {
+      "path_restored": true,
+      "prior_modules_restored": true,
+      "review_state_removed": true
+    }
+  },
+  "image_sha256": {
+    "QLabel.png": "bdb9c81e47e407aeb594e1434cc75db82932cce8f9baf15a01771c1810ab8106",
+    "QVBoxLayout.png": "36bb8bb57134c13f490e80add50c5c0511e106dc036523879d93b36059f3cade",
+    "Qt-Designer.png": "ec0aaf86ff6d670f204f47d4f5c5efa94b6340b6a996efed20850739b55b401c",
+    "Signals-and-Slots.png": "b752895f786348c867df1d27b7f18aa07c751b0aa331bc816018520f6ed7a513",
+    "clicked-alert.png": "1bc0a4c8343cbbd201aec12f0d808bfe00c5412df29902694ffa3fc41b0d17fa"
+  },
+  "preservation": {
+    "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+    "stored_preferences_equal": true,
+    "font_records_equal": true,
+    "stored_preference_keys": 627,
+    "before_sha256": "2ae986f66ba0701401ef99c3bcfbe04e3131eae99b610c09c08253536af853c0",
+    "after_sha256": "2ae986f66ba0701401ef99c3bcfbe04e3131eae99b610c09c08253536af853c0",
+    "scope": "Stored QSettings/nativefontrecords before and after four actual ports; no full transient preference or font-data equivalence claim",
+    "all_original_files_rehashed": 1569,
+    "final_dismiss_repeat_gate": true
+  },
+  "complete_collection_status": "four implemented/native-verified entries only; all remaining entries still required",
+  "scope": "Programmatic actual native clicks, owned widget renders and observed38QObject destruction; no full ecosystem/native-font-data equivalence claim"
+}
