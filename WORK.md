@@ -211,3 +211,5 @@ attempt crashed FontLab (double delete closing 02) before the fix. Receipts:
 parent verification/issue-101-ecosystem/evidence/tg4-second-batch/. Interaction
 acceptance (clicks, save prompts, thread messaging, painting holes) is still
 pending, so ports.json native_acceptance remains "unexecuted".
+
+QPainter interaction (native): direct super().paintEvent/mousePressEvent raised AttributeError (text unpainted, base click ignored). Replaced with explicit QPlainTextEdit base calls; native click now moves cursor 0->39, hole recorded, no callback errors.

@@ -24,11 +24,12 @@ def build(qt: Any) -> ExampleHandle:
 
         def mousePressEvent(self, event: Any) -> None:
             self.holes.append(event.pos())
-            super().mousePressEvent(event)
+            # PythonQt hides protected handlers from super(); call the native base.
+            gui.QPlainTextEdit.mousePressEvent(self, event)
             self.viewport().update()
 
         def paintEvent(self, event: Any) -> None:
-            super().paintEvent(event)
+            gui.QPlainTextEdit.paintEvent(self, event)
             painter = gui.QPainter(self.viewport())
             try:
                 for hole in self.holes:
