@@ -176,6 +176,25 @@ class Demo:
             self.handle.controls[name] = obj
         return obj
 
+    def transient(self, name: str, obj: Any) -> Any:
+        """Expose a Qt-owned editor only until its native destroyed notification."""
+        self.remember(name, obj)
+
+        def destroyed(*args: Any) -> None:
+            # The wrapper is already invalid: remove references without reading it.
+            for key, value in list(self.controls.items()):
+                if value is obj:
+                    self.controls.pop(key)
+                    self.handle.controls.pop(key, None)
+            self.links[:] = [entry for entry in self.links if entry[0] is not obj]
+            self.handle.connections[:] = [
+                entry for entry in self.handle.connections if entry[0] is not obj
+            ]
+            self.objects[:] = [entry for entry in self.objects if entry[0] is not obj]
+
+        self.connect(obj, "destroyed(QObject*)", destroyed)
+        return obj
+
     def track(self, obj: Any, *references: str) -> None:
         """Retain a subclass and only its explicitly declared Python reference fields.
 

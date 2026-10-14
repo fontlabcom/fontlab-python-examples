@@ -2968,9 +2968,9 @@ def test_batch_seven_spreadsheet_formula_recursion_cycle_division_and_async_dial
         c["putFormula"]("C2", "200")
         assert h.snapshot()["total"] == 21933
         c["putFormula"]("F2", "= F2")
-        assert c["table"].item(1, 5).display() is None
+        assert c["displayCell"](1, 5) is None
         c["putFormula"]("F2", "/ C2 C1")
-        assert c["table"].item(1, 5).display() == "nan"
+        assert c["displayCell"](1, 5) == "nan"
         c["cell_addAction"].trigger()
         dialog = h.controls["active_dialog"]
         dialog.accept()

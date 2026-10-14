@@ -174,3 +174,11 @@ this_file: CHANGELOG.md
 - Verified the first four source-loaded ports in actual FontLab, including alert dismissal/repeat, Designer results and observed owned-object teardown; preserved complete remaining collection scope.
 
 - Removed the three PyQt Thread chat ports and their network helper (owner decision); they contacted a third-party chat server.
+
+- 2026-10-15: Repair native official-port interaction boundaries: explicit sender
+  bindings across every port, coordinate-owned spreadsheet formulas, exact native
+  state-transition signals, checked localhost UDP addresses/writes, document
+  modification notifications and destruction-aware delegate editor inspection.
+  Retain/resolve Python graphics objects after native item retrieval and expose
+  Elastic Nodes' center control. Preserve original CounterLabel offset semantics.
+  Add 22 regression cases with stricter native doubles; native reacceptance pending.

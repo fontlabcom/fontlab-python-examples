@@ -2483,3 +2483,108 @@ the class, None on the instance); Codex fix uses `QApplication.screens()` (scree
 offline gate 908 passed. Native re-run: **10/10 pass, host alive** (parent
 evidence/examples-batch9/native-fix1.jsonl). Catalog: 299 records (148 implemented, 151 blocked);
 no catalogued entrypoint is unaccounted for.
+
+
+## 2026-10-15: Native official-port interaction regressions
+
+Read all nine failing records in the controller's `examples-interactions` results
+and their per-step actions. Worked only in this checkout; no evidence-directory
+writes, catalog acceptance changes, staging or commit. Baseline: 908 tests pass.
+
+1. Calculator: explicitly bind buttons to digit/unary/additive/multiplicative
+   slots. Audit every port across all batches: remove all eleven sender() calls
+   in calculator, spreadsheet, recentfiles, scribble and diagramscene. Capture
+   each QAction/editor separately. Also repair the calculator's independently
+   recorded sizeHint error: copy the native minimumSizeHint property rather than
+   call the class's QSize-valued sizeHint property.
+2. Spreadsheet: remove the Python QTableWidgetItem subclass. Keep formulas and
+   cycle state in Python dictionaries/sets keyed by (row, column); recompute real
+   native DisplayRole/colour/alignment/status roles while blocking recursive
+   itemChanged. Native wrapper edits, formula-input edits and delegate commits
+   share the same formula state; cycle and division-by-zero results preserved.
+   Delegate editor setup reads the retained sheet/formulas, never a subclass
+   retrieved through a parent wrapper. Plain-item formula()/display() calls gone.
+   Full subclass audit: no other QTableWidgetItem, QListWidgetItem, QTreeWidgetItem
+   or QStandardItem Python subclasses remain. Graphics retrieval audit repairs
+   elasticnodes (retained nodes/edges), dragdroprobot (palette), collidingmice
+   (mice), embeddeddialogs (proxies), and diagramscene (data-role ID lookup).
+   Native wrappers are resolved before isinstance or Python-method access;
+   native item identity uses data-role IDs where required. Non-QObject centerNode
+   is explicitly exposed in controls, fixing the ninth failing native record.
+3. Application: retain document.contentsChanged -> documentWasModified and add
+   document.modificationChanged -> setWindowModified for edits and flag resets.
+   Test Unicode insertPlainText editing and save/reset. setPlainText deliberately
+   clears modified; the native table's expectation of True after replacement is
+   inconsistent with Qt/original semantics. Correct reacceptance uses an editing
+   operation, e.g. insertPlainText('Zoë draft'), and verifies save clears the flag.
+4. Animatedtiles: QState transitions subscribe to the native clicked(bool)
+   signature, not its argument-omitting convenience form. Apply the same audit
+   fix to appchooser, states, stickman and moveblocks. An explicit tile click
+   stops the initial ellipse timer, preventing startup from overriding selection.
+   Doubles require an exact emitted transition signature and assert the 8x8 grid
+   and centered positions. Native asynchronous timing remains unverified here.
+5. Broadcast ports: preserve each owned Python receiver bound to 127.0.0.1:0
+   with the bounded GUI polling drain; no native readDatagram/BoolResult output
+   overload or ShareAddress/readyRead is used in this implementation. Replace
+   string QHostAddress construction with explicit LocalHost, verify toString()
+   equals the owned IPv4 host before sending, and reject incomplete UDP writes.
+   Strict doubles perform real localhost datagram transport, require explicit
+   LocalHost, and exercise failure without advancing message_no. String address
+   dispatch is a diagnosis hypothesis, not a newly observed native fact: live
+   probing was blocked. Native reacceptance must verify both timer and sample
+   sends; these local results do not establish the native UDP defect is resolved.
+6. CounterLabel: inspect the pinned original getValue/setValue/paintEvent.
+   Raw value and paint stay 123; offset affects the two valueChanged notifications
+   (128 and '128'). Preserve that original behaviour and document it in getValue;
+   test incrementing, notifications and rejected out-of-range input. The existing
+   native expectation value == 128 must instead check raw value plus notifications.
+7. Spinboxdelegate: Demo.transient removes editors from controls, connections and
+   subclass ownership records on destroyed without reading invalid wrappers.
+   Apply to all retained item-view delegate editors (spreadsheet, stardelegate,
+   coloreditorfactory too). Test native destruction, committed value 42,
+   inspection/close after destruction, and older-editor destruction while a newer
+   editor occupies the same control name.
+
+Regression-first run: seven failures and three passes exposed the original bugs
+under stricter doubles. Add 22 regression cases; all-port sender AST audit covers
+all ports. Doubles now return None from sender(), return base native item wrappers
+sharing only native data, expose destroyed-property failures, model document
+editing/modification/reset, and enforce the full clicked(bool) transition signature.
+
+Documentation consulted: Qt 5 [QTextEdit](https://doc.qt.io/archives/qt-5.15/qtextedit.html),
+[QSignalTransition](https://doc.qt.io/archives/qt-5.15/qsignaltransition.html),
+[QUdpSocket](https://doc.qt.io/archives/qt-5.15/qudpsocket.html),
+[QTableWidgetItem](https://doc.qt.io/archives/qt-5.15/qtablewidgetitem.html),
+and QAbstractButton's declared clicked(bool) signal; inspected captured PythonQt
+stubs and the pinned original CounterLabel locally. No new dependency.
+
+Verification:
+- Full offline pytest: 930 passed (baseline 908); 22 new cases. Command:
+  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/fontlab-uv-cache UV_OFFLINE=1 uv run --no-project --with pytest python -m pytest -q tests`.
+- Scoped Ruff check and format --check: all 25 changed/new Python files pass.
+- Python 3.11 grammar and this_file records: all 322 checked sources pass.
+- git diff --check passes. Staging empty; no commit.
+- Full-tree Ruff also run: two unchanged HEAD findings remain: I001 in
+  tests/test_official_slot_shadowing.py and EXE001 in
+  tools/collect_pythonqt_reference.py (HEAD file mode 100644). Scoped work is clean.
+- Evidence results/log/runner/test-table hashes match their SHA256SUMS entries.
+  interactions.py and README.md already have 00:04:26 modification timestamps and
+  do not match that older manifest; no evidence file was modified by this work.
+- A native run_python probe was rejected with 'MCP tool call requires approval,
+  but approval policy is never'. No native reacceptance occurred. Do not replace
+  the controller's 72/81 count or mark native acceptance passed from doubles.
+
+## 2026-10-15: Controller native interaction acceptance (controls exercised)
+
+New driver (parent evidence/examples-interactions/: interactions.py, run_interactions.py,
+458 static tests) exercises 81 official ports in 150+ steps (clicks, values, keys, actions)
+in an agent-owned no-document FontLab session. First run 72/81. Native facts found:
+`QObject.sender()` is None in PythonQt slots (calculator); `QTableWidget.item()` returns native
+wrappers losing Python subclass attributes (spreadsheet); retained delegate editors outlive
+Qt (spinboxdelegate); loopback UDP broadcast pair. Four failures were driver expectations
+(elasticnodes key, application cursor/modified semantics, counterlabel offset semantics,
+animatedtiles float noise) and were corrected in the driver. Codex fixes (this commit) + driver
+fixes: **81/81 interaction pass**; launch/inspect/close of all 137 implemented ports after the
+fixes: **137/137 pass, host alive**. 46 ports remain without scripted interactions (file
+dialogs, real drag/drop, clipboard, screen capture, tray, 50 MiB loopback), listed with
+reasons in the evidence README. Offline gate 930 passed.

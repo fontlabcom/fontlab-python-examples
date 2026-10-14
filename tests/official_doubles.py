@@ -36,6 +36,7 @@ SIGNALS = {
     "editTextChanged",
     "editingFinished",
     "contentsChanged",
+    "destroyed",
     "copyAvailable",
     "timeout",
     "frameChanged",
@@ -68,7 +69,6 @@ def official_host(qt):
     gui_thread = threading.get_ident()
     classes = {}
     enums = {}
-    sender = []
     streams = {}
     network_objects = []
 
@@ -76,6 +76,32 @@ def official_host(qt):
         if name not in enums:
             enums[name] = 1 << len(enums)
         return enums[name]
+
+    def native_wrapper(item):
+        if item is None:
+            return None
+        wrapper = object.__new__(classes[item._qt_name])
+        for key in (
+            "_data",
+            "_args",
+            "_items",
+            "_children",
+            "_signals",
+            "_cells",
+            "_parent",
+            "_layout",
+            "_central",
+            "_extra",
+            "_props",
+            "visible",
+            "deleted",
+            "_active",
+            "_match",
+            "_position",
+            "_blocked",
+        ):
+            object.__setattr__(wrapper, key, getattr(item, key))
+        return wrapper
 
     class Meta(type):
         def __getattr__(cls, key):
@@ -168,6 +194,22 @@ def official_host(qt):
                     return classes["QPixmap"](
                         args[0]._data["width"], args[0]._data["height"]
                     )
+                if key == "fromString" and cls._qt_name == "QDate":
+                    result = classes["QDate"]()
+                    formats = {
+                        "dd/M/yyyy": "%d/%m/%Y",
+                        "yyyy/M/dd": "%Y/%m/%d",
+                        "dd.MM.yyyy": "%d.%m.%Y",
+                    }
+                    try:
+                        result._extra["date"] = (
+                            datetime.datetime.strptime(args[0], formats[args[1]])
+                            .replace(tzinfo=datetime.timezone.utc)
+                            .date()
+                        )
+                    except ValueError:
+                        result._extra["invalid"] = True
+                    return result
                 if key == "currentPath":
                     return "/tmp"
                 if key == "tempPath":
@@ -353,6 +395,8 @@ def official_host(qt):
                 object.__setattr__(self, "geometry", classes["QRect"](0, 0, 400, 300))
 
         def __getattr__(self, key):
+            if self.deleted:
+                raise ValueError(f"Reading {key} from a destroyed {self._qt_name}")
             if key == "primaryScreen" and self._qt_name == "QApplication":
                 return None
             if key in self._fields:
@@ -425,57 +469,54 @@ def official_host(qt):
         def emit(self, key, *args):
             if self._blocked:
                 return
-            sender.append(self)
-            try:
-                for name, signal in list(self._signals.items()):
-                    if name.split("(")[0] != key:
-                        continue
-                    count = 0 if name.endswith("()") else len(args)
-                    for cb in list(signal.callbacks):
-                        parameters = inspect.signature(cb).parameters.values()
-                        if any(p.kind == p.VAR_POSITIONAL for p in parameters):
-                            cb(*args[:count])
-                        else:
-                            n = len(
-                                [
-                                    p
-                                    for p in parameters
-                                    if p.kind
-                                    in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD)
-                                ]
-                            )
-                            cb(*args[: min(count, n)])
-                active_before = {
-                    id(t._extra["source"]._invoke("machine")): set(
-                        t._extra["source"]
-                        ._invoke("machine")
-                        ._extra.get("active_states", set())
-                    )
-                    for t in self._extra.get("transitions", [])
-                    if t._extra["source"]._invoke("machine") is not None
-                }
-                for transition in self._extra.get("transitions", []):
-                    if transition._extra["signal"].split("(")[0] != key:
-                        continue
-                    source = transition._extra["source"]
-                    machine = source._invoke("machine")
-                    if (
-                        machine is None
-                        or not machine._active
-                        or source not in active_before.get(id(machine), set())
-                    ):
-                        continue
-                    target = transition._extra["target"]
-                    # Keep ancestors active for group-level transitions.
-                    active = set()
-                    parent = target._parent
-                    while parent is not None and parent is not machine:
-                        active.add(parent)
-                        parent = parent._parent
-                    machine._extra["active_states"] = active
-                    machine._enter_state(target)
-            finally:
-                sender.pop()
+            for name, signal in list(self._signals.items()):
+                if name.split("(")[0] != key:
+                    continue
+                count = 0 if name.endswith("()") else len(args)
+                for cb in list(signal.callbacks):
+                    parameters = inspect.signature(cb).parameters.values()
+                    if any(p.kind == p.VAR_POSITIONAL for p in parameters):
+                        cb(*args[:count])
+                    else:
+                        n = len(
+                            [
+                                p
+                                for p in parameters
+                                if p.kind
+                                in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD)
+                            ]
+                        )
+                        cb(*args[: min(count, n)])
+            active_before = {
+                id(t._extra["source"]._invoke("machine")): set(
+                    t._extra["source"]
+                    ._invoke("machine")
+                    ._extra.get("active_states", set())
+                )
+                for t in self._extra.get("transitions", [])
+                if t._extra["source"]._invoke("machine") is not None
+            }
+            for transition in self._extra.get("transitions", []):
+                emitted = key + ("(bool)" if key == "clicked" else "()")
+                if transition._extra["signal"] != emitted:
+                    continue
+                source = transition._extra["source"]
+                machine = source._invoke("machine")
+                if (
+                    machine is None
+                    or not machine._active
+                    or source not in active_before.get(id(machine), set())
+                ):
+                    continue
+                target = transition._extra["target"]
+                # Keep ancestors active for group-level transitions.
+                active = set()
+                parent = target._parent
+                while parent is not None and parent is not machine:
+                    active.add(parent)
+                    parent = parent._parent
+                machine._extra["active_states"] = active
+                machine._enter_state(target)
 
         def _enter_state(self, state):
             self._extra["active_states"].add(state)
@@ -648,7 +689,9 @@ def official_host(qt):
                     self._extra["written"] = self._extra.get("written", 0) + count
                     return count
                 if key == "writeDatagram":
-                    assert a[1]._args == ("127.0.0.1",)
+                    assert a[1]._args == (enum("LocalHost"),), (
+                        "Use the unambiguous SpecialAddress overload"
+                    )
                     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as connection:
                         return connection.sendto(a[0].data(), ("127.0.0.1", a[2]))
                 if key == "readAll":
@@ -727,6 +770,8 @@ def official_host(qt):
                 assert type(a[0]) is int and type(a[1]) is int, (
                     "drawText(x, y, text) requires integer coordinates"
                 )
+            if self._qt_name == "QHostAddress" and key == "toString":
+                return "127.0.0.1" if self._args == (enum("LocalHost"),) else "0.0.0.0"
             if self._qt_name == "QSettings" and key == "setValue":
                 self._props[a[0]] = a[1]
                 return None
@@ -734,7 +779,11 @@ def official_host(qt):
                 self._data["text"] = a[0]
                 return None
             if self._qt_name == "QTableWidget" and key == "item":
-                return self._cells.get(a[:2])
+                return native_wrapper(self._cells.get(a[:2]))
+            if self._qt_name == "QTableWidget" and key in ("row", "column"):
+                return a[0]._extra[key]
+            if self._qt_name == "QTableWidget" and key == "itemAt":
+                return native_wrapper(next(iter(self._cells.values()), None))
             if self._qt_name == "QTableWidget" and key == "setItem":
                 self._cells[a[:2]] = a[2]
                 a[2]._extra.update(table=self, row=a[0], column=a[1])
@@ -747,6 +796,9 @@ def official_host(qt):
                 self._props[(role,)] = a[1]
                 if role == enum("DisplayRole"):
                     self._data["text"] = a[1]
+                table = self._extra.get("table")
+                if table is not None:
+                    table.emit("itemChanged", native_wrapper(self))
                 return None
             if self._qt_name == "QTableWidgetItem" and key == "tableWidget":
                 return self._extra.get("table")
@@ -794,6 +846,15 @@ def official_host(qt):
                         return False
                     return True
                 if key == "toString":
+                    if self._extra.get("invalid"):
+                        return ""
+                    format = a[0] if a else ""
+                    if format == "dd/M/yyyy":
+                        return f"{date.day:02}/{date.month}/{date.year}"
+                    if format == "yyyy/M/dd":
+                        return f"{date.year}/{date.month}/{date.day:02}"
+                    if format == "dd.MM.yyyy":
+                        return f"{date.day:02}.{date.month:02}.{date.year}"
                     return date.isoformat()
             if self._qt_name == "QTime":
                 if key == "addSecs":
@@ -1169,12 +1230,16 @@ def official_host(qt):
                 a[0]._extra["scene"] = self
                 return None
             if key == "items" and self._qt_name == "QGraphicsScene":
-                return self._items[:]
+                return [native_wrapper(item) for item in self._items]
             if key == "removeItem":
                 self._items.remove(a[0])
                 return None
             if key == "selectedItems":
-                return [item for item in self._items if item._data.get("selected")]
+                return [
+                    native_wrapper(item)
+                    for item in self._items
+                    if item._data.get("selected")
+                ]
             if key == "clearSelection":
                 for item in self._items:
                     item._data["selected"] = False
@@ -1352,7 +1417,9 @@ def official_host(qt):
             if key == "viewOptions":
                 return classes["QStyleOptionViewItem"]()
             if key == "itemDelegate":
-                return classes["QAbstractItemDelegate"]()
+                return (
+                    self._data.get("itemDelegate") or classes["QAbstractItemDelegate"]()
+                )
             if key in ("base",) and self._qt_name == "QPalette":
                 return classes["QBrush"]()
             if self._qt_name in ("QRect", "QRectF"):
@@ -1545,6 +1612,10 @@ def official_host(qt):
                     ("columnWidth" if key == "setColumnWidth" else "rowHeight", a[0])
                 ] = a[1]
                 return None
+            if key == "moveBy":
+                self._position[0] += a[0]
+                self._position[1] += a[1]
+                return None
             if key == "setPos":
                 self._position[:2] = a[0]._position[:2] if len(a) == 1 else a
                 return None
@@ -1557,7 +1628,7 @@ def official_host(qt):
             if key == "offset":
                 return self._data.get("offset", classes["QPointF"](8, 8))
             if key == "sender":
-                return sender[-1] if sender else None
+                return None
             if key == "blockSignals":
                 old = self._blocked
                 self._blocked = a[0]
@@ -1645,8 +1716,21 @@ def official_host(qt):
                 self._data["text"] += ("\n" if self._data["text"] else "") + a[0]
                 self.emit("textChanged")
                 return None
+            if key == "insertPlainText":
+                self._data["text"] += a[0]
+                document = self._invoke("document")
+                document.setModified(True)
+                document.emit("contentsChanged")
+                self.emit("textChanged")
+                return None
             if key in ("setText", "setPlainText"):
+                if self._qt_name == "QTableWidgetItem":
+                    return self._invoke("setData", enum("EditRole"), a[-1])
                 self._data["text"] = a[-1]
+                if key == "setPlainText":
+                    document = self._invoke("document")
+                    document.setModified(False)
+                    document.emit("contentsChanged")
                 if len(a) == 2:
                     self._cells[a[0]] = a[1]
                 self.emit(
@@ -1830,7 +1914,8 @@ def official_host(qt):
                     self._items[a[0]], tuple
                 ):
                     return classes["QListWidgetItem"](self._items[a[0]][0])
-                return self._cells.get(a) if len(a) == 2 else self._items[a[0]]
+                item = self._cells.get(a) if len(a) == 2 else self._items[a[0]]
+                return native_wrapper(item) if isinstance(item, Native) else item
             if key == "insertRow":
                 self._data["rowCount"] += 1
                 return None
@@ -1839,7 +1924,8 @@ def official_host(qt):
             if key == "count":
                 return len(self._items)
             if key == "itemAt":
-                return self._items[a[0]]
+                item = self._items[a[0]]
+                return native_wrapper(item) if isinstance(item, Native) else item
             if key == "pageIds":
                 return list(range(len(self._items)))
             if key == "page":
@@ -1920,11 +2006,18 @@ def official_host(qt):
                 return not self._data["text"]
             if key == "destroyEditor":
                 editor = a[0]
-                assert all(not signal.callbacks for signal in editor._signals.values())
-                editor.deleted = True
+                assert all(
+                    not signal.callbacks
+                    for name, signal in editor._signals.items()
+                    if not name.startswith("destroyed")
+                )
+                editor.deleteLater()
                 return None
             if key == "deleteLater":
+                if self._parent is not None and self in self._parent._children:
+                    self._parent._children.remove(self)
                 self.deleted = True
+                self.emit("destroyed", self)
                 return None
             if key in ("x", "y", "width", "height", "left", "top", "right", "bottom"):
                 idx = {
