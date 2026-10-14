@@ -1,5 +1,5 @@
 # this_file: tests/undo_doubles.py
-"""QUndoStack owns commands and invokes overrides; index is a Qt property."""
+"""QUndoStack owns commands and invokes overrides; in PythonQt index()/count() are methods, canUndo/canRedo properties."""
 
 from qt_doubles import Signal, native_double
 
@@ -26,7 +26,6 @@ def undo_types(qt, widget):
             self.commands, self._index = [], 0
             self.clear_count = 0
 
-        @property
         def index(self):
             return self._index
 

@@ -75,7 +75,7 @@ def build(qt: Any) -> ExampleHandle:
         handle.inspect_ui = lambda: {
             **state,
             "count": int(stack.count()),
-            "index": int(stack.index),
+            "index": int(stack.index()),  # a method in PythonQt; canUndo/canRedo are properties
             "can_undo": bool(stack.canUndo),
             "can_redo": bool(stack.canRedo),
             "text": str(label.text),

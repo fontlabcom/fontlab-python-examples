@@ -196,10 +196,11 @@
    ],
    "target_path": "ports/insights/glyph-properties.py",
    "license": "Apache-2.0",
-   "native_acceptance": "pending",
+   "native_acceptance": "passed",
    "native_checks": "Toggle default/alternate; label text attribute and dynamic glyphRole match inspect().",
    "native_evidence": [
-    "verification/issue-101-ecosystem/evidence/i103-insights/native-glyph-properties.json"
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-glyph-properties.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions-batch2.json"
    ]
   },
   {
@@ -323,7 +324,7 @@
    ],
    "target_path": "ports/insights/loaded-glyph-form.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "glyph_name",
     "advance",
@@ -338,6 +339,9 @@
      "license": "Apache-2.0",
      "sha256": "668c85ff0f4c60b69b8db8b1e7f76dcf2743040f073bc5997cf00742d954fe93"
     }
+   ],
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-loaded-glyph-form.json"
    ]
   },
   {
@@ -359,14 +363,17 @@
    ],
    "target_path": "ports/insights/worker-glyph-queue.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "start",
     "stop",
     "timer",
     "log"
    ],
-   "native_checks": "Click start twice: one worker; wait for four GUI-delivered results; restart then stop or close immediately; worker joined, no Qt calls from worker."
+   "native_checks": "Click start twice: one worker; wait for four GUI-delivered results; restart then stop or close immediately; worker joined, no Qt calls from worker.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-worker-glyph-queue.json"
+   ]
   },
   {
    "rank": 15,
@@ -387,14 +394,18 @@
    ],
    "target_path": "ports/insights/owned-repl.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "input",
     "run",
     "reset",
     "output"
    ],
-   "native_checks": "Run advance, assignment advance = 720, print(advance), and invalid syntax; all output stays in the owned console; reset restores the namespace."
+   "native_checks": "Run advance, assignment advance = 720, print(advance), and invalid syntax; all output stays in the owned console; reset restores the namespace.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-owned-repl.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions-batch2.json"
+   ]
   },
   {
    "rank": 16,
@@ -413,14 +424,18 @@
    ],
    "target_path": "ports/insights/plugin-tokens.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "install",
     "unload",
     "plugin_action",
     "status"
    ],
-   "native_checks": "Install twice: one menu/action token pair; trigger plugin_action; unload twice: zero tokens and detached menu; reinstall works; FontLab menus unchanged."
+   "native_checks": "Install twice: one menu/action token pair; trigger plugin_action; unload twice: zero tokens and detached menu; reinstall works; FontLab menus unchanged.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-plugin-tokens.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions-batch2.json"
+   ]
   },
   {
    "rank": 17,
@@ -441,7 +456,7 @@
    ],
    "target_path": "ports/insights/metrics-undo.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "advance",
     "apply",
@@ -450,7 +465,11 @@
     "stack",
     "status"
    ],
-   "native_checks": "Apply two advances, undo/redo; undo then apply a new value clears redo branch; native command overrides and label update work; close safely."
+   "native_checks": "Apply two advances, undo/redo; undo then apply a new value clears redo branch; native command overrides and label update work; close safely.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-metrics-undo.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions-batch2.json"
+   ]
   },
   {
    "rank": 18,
@@ -471,7 +490,7 @@
    ],
    "target_path": "ports/insights/compiled-slot-exposure.py",
    "license": "Apache-2.0",
-   "native_acceptance": "unexecuted",
+   "native_acceptance": "passed",
    "controls": [
     "move",
     "clear",
@@ -479,7 +498,10 @@
     "preview",
     "status"
    ],
-   "native_checks": "Click move: compiled non-slot move(QPoint) repositions preview; clear invokes native clear() slot; inspect its metaobject slot index; no custom C++ compilation."
+   "native_checks": "Click move: compiled non-slot move(QPoint) repositions preview; clear invokes native clear() slot; inspect its metaobject slot index; no custom C++ compilation.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-compiled-slot-exposure.json"
+   ]
   }
  ]
 }

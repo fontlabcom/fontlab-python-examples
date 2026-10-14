@@ -366,3 +366,5 @@ worker GUI delivery/cancel/error/join, console namespace/reset/output, token
 idempotency/disconnect failures, undo/redo/branch deletion and compiled slot calls.
 Scoped Ruff check/format and git diff --check pass; runtime sources parse with
 Python 3.11 grammar. First-batch manifest objects remain equal to committed HEAD.
+
+Native (controller): batch 2 all six launch/inspect/close pass after fixing QUndoStack.index (a method in PythonQt; double corrected). Interactions: undo/redo index 1/0/1, REPL executes in owned namespace, plugin tokens idempotent install/unload, glyph-properties toggles both ways. All 18 insights now native-passed.
