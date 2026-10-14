@@ -16,3 +16,8 @@ this_file: TODO.md
 - [ ] Provide simple in-host/external launch and owned cleanup.
 - [ ] Verify native interaction and teardown for every indexed example.
 - [ ] Review complete coverage and integrate examples into rebuilt documentation.
+
+- [x] Implement first four exact numbered-source ports and copy verified Designer UI.
+- [x] Record five individual source/resource MIT reviews in a separate port manifest.
+- [x] Provide first-batch named launch/inspect/close, retained handles and Remopy example.
+- [ ] Accept first four ports with native clicks, layout/text, Designer OK/Cancel and teardown.

@@ -11,8 +11,9 @@ running FontLab. Start at the [categorized index](catalog/INDEX.md).
 
 Both pinned collections are fully acquired and verified locally: **1,569 files,
 465 Python files**. The public catalog contains provenance and planned mappings;
-the upstream originals remain local. **No examples are ported or native-tested
-yet.** Source inventory does not complete the requested collections.
+the upstream originals remain local. **Four numbered examples are implemented;
+their native acceptance is pending.** This first batch does not complete either
+requested collection.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -70,16 +71,84 @@ uvx ruff check tools tests
 uvx ruff format --check tools tests
 ```
 
+## Launch the first four ports
+
+Put this checkout on FontLab's Python module path and install
+`fontlab-fontlabapp` in FontLab's interpreter. The launcher uses its `OwnedWidget`
+and the existing PythonQt/QApplication; no additional Qt binding is installed.
+
+```python
+import fontlab_python_examples as examples
+
+examples.available()                 # names, IDs and provenance; host-free
+handle = examples.launch("QLabel")    # run inside FontLab
+handle.widget                        # direct native QLabel
+examples.inspect("QLabel")           # JSON-friendly live state
+examples.close("QLabel")             # idempotent, only owned UI
+```
+
+| Name | Original source ID | Preserved behavior |
+| --- | --- | --- |
+| `QLabel` | `ce3e17a7a2a03a02` | `Hello World!` label |
+| `QVBoxLayout` | `f5ddfd0eaacbf845` | `Top`, then `Bottom` vertically |
+| `Signals and Slots` | `79cc15680bc2cebb` | `Click` opens `You clicked the button!` |
+| `Qt Designer` | `402068f40005cd66` | Exact original UI, OK/Cancel wiring |
+
+Source IDs also work as names. `get(name)` retrieves a launched handle, including
+its native widget, retained callbacks and alert owners. Repeated launch reshows
+the same owned window. Module state keeps handles alive across isolated external
+calls. A native window's close button hides it; `close(name)` removes ownership
+and schedules native destruction. External parent destruction makes inspection
+safe. Existing FontLab UI and preferences are not changed.
+
+The click alert uses asynchronous `open()` with example-window modality, keeping
+FontLab's event loop responsive. Dismissed alerts remain owned until the next
+click or named cleanup. Designer uses `QUiLoader`, loading its exact copied XML
+relative to the port file. Launch fails clearly outside FontLab, without an
+existing QApplication, for unknown names, or for known but unported source IDs
+and source paths.
+
+Ordinary external Python with [fontlab-remopy](../fontlab-remopy) can execute the
+same code inside an already running FontLab with its MCP bridge configured:
+
+```python
+from fontlab_remopy import FontLab
+
+with FontLab() as fl:
+    fl.run("import fontlab_python_examples as examples; examples.launch('QLabel')")
+    state = fl.run("import fontlab_python_examples as examples; result = examples.inspect('QLabel')")
+    print(state.value)
+    fl.run("import fontlab_python_examples as examples; examples.close('QLabel')")
+```
+
+The [runnable Remopy example](examples/remopy.py) adds this local checkout to the
+host module path and supports separate calls:
+
+```sh
+uv run examples/remopy.py launch "Signals and Slots"
+uv run examples/remopy.py inspect "Signals and Slots"
+uv run examples/remopy.py close "Signals and Slots"
+```
+
+The static [source catalog](catalog/sources.json) stays unchanged. The separate
+[port manifest](catalog/ports.json) records individual licenses, exact original
+identities, resource hashes and implementation/native states. Tests use boundary
+doubles; they do not count as native acceptance.
+
 ## Licensing and remaining ports
 
 The repository's Apache license does not relicense upstream inputs. Pinned
 READMEs, actual notices and source headers supply per-file evidence. All 1,569
-files retain **license review pending**; 43 have no recognized declaration.
+files retain **license review pending in the static catalog**; 43 have no
+recognized declaration. The five source files used in this batch have separate
+MIT reviews and attribution in [the manifest](catalog/ports.json) and
+[the source notice](ports/pyqt-examples-LICENSE.md).
 Nearby notices may apply only to specific assets: their association is evidence,
 not a blanket license assignment. Preserve the original notices and resolve
 scope before distributing a port or copying upstream resources.
 
-Every planned target is pending; every native state is unexecuted. Future ports
+Four targets are implemented and their required UI source is copied unchanged;
+every native acceptance state remains pending. Other targets await ports. Future ports
 must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop,
 without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia,
 GStreamer, matplotlib, database, network and platform examples remain in scope.

@@ -41,3 +41,34 @@ private absolute paths. No Qt, corpus example, fonts or settings were loaded.
 
 All example implementations remain pending and all native states unexecuted.
 Inventory coverage does not complete either collection's PythonQt ports.
+
+2026-10-14: First real port batch implements four exact numbered-source IDs:
+ce3e17a7a2a03a02 (QLabel), f5ddfd0eaacbf845 (QVBoxLayout),
+79cc15680bc2cebb (Signals and Slots), 402068f40005cd66 (Qt Designer).
+Read complete original sources, example/root READMEs and Designer XML. Selected
+MIT under the pinned numbered-source grant, recording individual review and
+Michael Herrmann attribution; copied only required Designer UI source with
+unchanged 1,448 bytes, SHA-256 and Git blob identity. No screenshots/prose copied.
+`catalog/ports.json` records implementation and license decisions separately;
+`catalog/sources.json` and `catalog/INDEX.md` remain byte-identical.
+
+Added import-safe named launcher and source-ID mapping, module-retained direct
+native handles/JSON inspection, existing QApplication reuse, and delegated
+owned-object cleanup through `fontlabapp.widgets.OwnedWidget`. Real Qt callback
+opens a parented, asynchronous window-modal alert; the exact Designer UI retains
+its original OK/Cancel connections. The external Remopy example uses ordinary
+`FontLab.run()` with JSON variables and no setup/preferences calls. Reviewed
+current local producer source and official Qt/PythonQt documentation first.
+
+TDD: initial targeted run failed collection with missing
+`fontlab_python_examples` (RED); focused runs then passed as implementation and
+failure contracts were added (GREEN). Existing baseline: 19 tests passed.
+Final verification: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with
+pytest --with pytest-cov python -m pytest -p pytest_cov -q tests
+--cov=fontlab_python_examples --cov=ports --cov-report=term-missing` passed all
+44 tests, with 96% statement coverage for new launcher/ports. `uvx ruff check
+tools tests fontlab_python_examples ports examples`, scoped Ruff format check,
+`git diff --check`, exact resource/recovered-source hash checks and a real
+host-free import/host-absence smoke passed. Test doubles establish contracts,
+not actual native interactions. Native acceptance of all four remains pending
+for independent root verification; both complete collections remain required.

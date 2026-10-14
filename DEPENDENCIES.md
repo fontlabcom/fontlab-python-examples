@@ -18,3 +18,20 @@ documentation were checked before implementation.
 Use `uv run --no-project --with pytest` and `uvx ruff` to run them without adding
 dependencies to FontLab's embedded interpreter. Upstream dependency imports and
 requirements declarations are inventory evidence, not packages installed here.
+
+The first four ports require FontLab's own PythonQt and existing QApplication.
+`fontlab-fontlabapp` supplies `fontlabapp.widgets.OwnedWidget`; the launcher
+imports that dependency only for launch, so catalog/help work outside the host.
+No PyQt/PySide, Qt.py or second Qt runtime is required. Standard-library importlib
+loads the four catalog-mapped port paths; pathlib resolves the exact UI resource.
+`fontlab-remopy` is optional on the external controller only, used by
+`examples/remopy.py` to execute ordinary Python in an already configured FontLab.
+
+Consumer calls were checked against the current local `fontlabapp/widgets.py`
+and Remopy `control.py`/`execution.py`, and official
+[PythonQt documentation](https://mevislab.github.io/pythonqt/),
+[QUiLoader](https://doc.qt.io/qt-6/quiloader.html),
+[QDialog open/modality](https://doc.qt.io/qt-6/qdialog.html) and
+[QApplication](https://doc.qt.io/qt-6/qapplication.html) documentation.
+Native prerequisite receipts confirm FontLab's actual clicked callback and
+original Designer load/connections. Port interaction acceptance remains separate.

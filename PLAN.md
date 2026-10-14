@@ -32,8 +32,11 @@ demos/examples and additional QtExamples entries.
 Source acquisition and the complete static catalog are now verified: both pinned
 trees retain all 1,569 original file mappings and 465 Python files. The categorized
 index and receipt-driven tool are available under `catalog/` and `tools/`.
-Observed source requirements and per-file license evidence are recorded; all
-license review, port implementation and native acceptance remain pending.
+Observed source requirements and per-file license evidence are recorded. The
+separate `catalog/ports.json` now records four implemented numbered ports and the
+required exact Designer resource, with individual MIT review and attribution.
+Their native acceptance remains pending, as do other implementation and license
+reviews. The static catalog is retained unchanged.
 The 298 Python entrypoint candidates, 14 ambiguous Python candidates and 3 QML
 launcher candidates require review before establishing an executable denominator.
 The remaining 153 Python files are auxiliary; 69 shared/repository files retain
@@ -42,3 +45,13 @@ explicit unresolved ownership and their individual planned mappings.
 Completion requires all source examples accounted for and ported with actual
 FontLab acceptance. Static compilation and a selected sample do not prove the
 complete collection. A missing host API remains a tracked implementation gap.
+
+The first implementation batch covers QLabel (`ce3e17a7a2a03a02`), QVBoxLayout
+(`f5ddfd0eaacbf845`), Signals and Slots (`79cc15680bc2cebb`) and Qt Designer
+(`402068f40005cd66`). `fontlab_python_examples` supplies named launch/inspect/close,
+module-retained native handles and `fontlabapp.widgets.OwnedWidget` cleanup;
+`examples/remopy.py` demonstrates ordinary external execution in FontLab.
+Next acceptance must exercise original text/layout, actual alert click/dismiss,
+Designer OK/Cancel, retained state across isolated requests, and destruction of
+only owned objects with the host still running. No batch-level native result or
+complete-collection completion is inferred from boundary tests.

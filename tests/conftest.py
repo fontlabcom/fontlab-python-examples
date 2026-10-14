@@ -2,8 +2,23 @@
 """Owned source/receipt fixtures; no third-party code is imported."""
 
 import hashlib
+from pathlib import Path
 
 import pytest
+
+
+@pytest.fixture
+def native_boundary(monkeypatch):
+    """Launcher contract doubles only; no real FontLab or Qt is loaded."""
+    from qt_doubles import fake_host
+
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1]))
+    import fontlab_python_examples as examples
+
+    qt, owned = fake_host(monkeypatch)
+    yield qt, owned
+    for name in ("QLabel", "QVBoxLayout", "Signals and Slots", "Qt Designer"):
+        examples.close(name)
 
 
 @pytest.fixture
