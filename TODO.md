@@ -6,6 +6,7 @@ this_file: TODO.md
 - [x] Acquire, pin and Git-blob-verify all 764 eyllanesc/QtExamples source files.
 - [x] Catalog all 1,569 original files/resources with exact hashes and portable planned paths.
 - [x] Extract source imports, entrypoint evidence, resource associations and license evidence.
+- [x] Correct deferred-body launch/main-guard evidence and portable output filesystem errors; reproduce all mappings.
 - [ ] Resolve 14 ambiguous Python candidates, 3 uncertain QML launcher candidates and shared ownership.
 - [ ] Record and resolve per-file licenses and attribution.
 - [x] Publish a categorized candidate index and retain every original mapping.

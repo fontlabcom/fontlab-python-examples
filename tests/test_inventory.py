@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from inventory import build_catalog, write_catalog
+from inventory import build_catalog, main, write_catalog
 from provenance import declared_terms, relative_path
 from resource_analysis import capabilities, resource_analysis
 from source_analysis import python_analysis
@@ -148,6 +148,10 @@ def test_cli_writes_catalog_and_reports_portable_errors(sources, tmp_path):
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     assert result.returncode == 0, result.stderr
     assert json.loads(result.stdout)["source_files"] == 9
+    assert json.loads((tmp_path / "catalog/sources.json").read_text()) == build_catalog(
+        *sources
+    ), "Successful CLI writes the complete catalog"
+    assert (tmp_path / "catalog/INDEX.md").is_file(), "Successful CLI writes navigation"
     recovery_path.unlink()
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     assert result.returncode == 1
@@ -180,3 +184,110 @@ def test_existing_ds_store_is_preserved_without_changing_original_denominator(so
     ds_store.write_bytes(b"owned metadata fixture")
     assert build_catalog(*sources)["counts"]["source_files"] == 9
     assert ds_store.read_bytes() == b"owned metadata fixture"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "if enabled:\n    def unused():\n        widget.show()\n",
+        "if enabled:\n    async def unused():\n        widget.show()\n",
+        "if enabled:\n    class Helper:\n        def unused(self):\n            widget.show()\n",
+        "class Helper:\n    async def unused(self):\n        widget.show()\n",
+        "if enabled:\n    launch = lambda: widget.show()\n",
+        "class Helper:\n    launch = lambda: widget.show()\n",
+        "def unused():\n    if __name__ == '__main__':\n        widget.show()\n",
+        "if enabled:\n    async def unused():\n        if __name__ == '__main__':\n            widget.show()\n",
+        "class Helper:\n    def unused(self):\n        if __name__ == '__main__':\n            widget.show()\n",
+        "def unused():\n    class Nested:\n        widget.show()\n",
+    ],
+)
+def test_deferred_bodies_when_nested_then_no_entrypoint_evidence(text):
+    analysis = python_analysis(text, "helper.py")
+    assert analysis["role"] == "ambiguous", "Deferred bodies prove no module launch"
+    assert analysis["entrypoint_evidence"] == [], "Deferred guards also stay excluded"
+    assert "widget.show" in analysis["api_calls"], "Broad API extraction is preserved"
+
+
+@pytest.mark.parametrize(
+    "text, kinds",
+    [
+        ("if enabled:\n    widget.show()\n", ["module-launch-call"]),
+        ("class Launcher:\n    widget.show()\n", ["module-launch-call"]),
+        (
+            "if enabled:\n    class Launcher:\n        widget.show()\n",
+            ["module-launch-call"],
+        ),
+        ("class Launcher(widget.show()):\n    pass\n", ["module-launch-call"]),
+        ("@widget.show()\nclass Launcher:\n    pass\n", ["module-launch-call"]),
+        ("def unused(value=widget.show()):\n    pass\n", ["module-launch-call"]),
+        ("async def unused(value=widget.show()):\n    pass\n", ["module-launch-call"]),
+        ("launch = lambda value=widget.show(): None\n", ["module-launch-call"]),
+        (
+            "if __name__ == '__main__':\n    widget.show()\n",
+            ["main-guard", "module-launch-call"],
+        ),
+        (
+            "class Launcher:\n    if __name__ == '__main__':\n        widget.show()\n",
+            ["main-guard", "module-launch-call"],
+        ),
+    ],
+)
+def test_definition_time_and_module_calls_when_present_then_candidate(text, kinds):
+    analysis = python_analysis(text, "helper.py")
+    assert analysis["role"] == "entrypoint", (
+        "Definition-time expressions remain evidence"
+    )
+    assert [e["kind"] for e in analysis["entrypoint_evidence"]] == kinds
+
+
+def test_deferred_imports_when_present_then_broad_capabilities_preserved():
+    text = "if enabled:\n    def unused():\n        from PyQt5 import QtNetwork\n        QtNetwork.QNetworkAccessManager()\n"
+    analysis = python_analysis(text, "helper.py")
+    assert analysis["role"] == "ambiguous"
+    assert analysis["imports"] == ["PyQt5"]
+    assert analysis["qt_symbols"] == ["PyQt5.QtNetwork"]
+    assert analysis["qt_bindings"] == ["PyQt5"]
+    assert analysis["api_calls"] == ["PyQt5.QtNetwork.QNetworkAccessManager"]
+    assert "network" in capabilities("helper.py", text, analysis)
+
+
+@pytest.mark.parametrize("operation", ["mkdir", "sources.json", "INDEX.md"])
+def test_cli_output_permission_failure_when_injected_then_portable_error(
+    sources, tmp_path, monkeypatch, capsys, operation
+):
+    trees, recovery, roots = sources
+    tree_path, recovery_path = tmp_path / "trees.json", tmp_path / "recovery.json"
+    tree_path.write_text(json.dumps(trees))
+    recovery_path.write_text(json.dumps(recovery))
+    output = tmp_path / "private-output"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "inventory.py",
+            "--tree-receipt",
+            str(tree_path),
+            "--recovery-receipt",
+            str(recovery_path),
+            "--source-root",
+            f"owned/examples={roots['owned/examples']}",
+            "--output",
+            str(output),
+        ],
+    )
+    method = "mkdir" if operation == "mkdir" else "write_text"
+    original = getattr(Path, method)
+
+    def fail_output(path, *args, **kwargs):
+        if path == output or path == output / operation:
+            raise PermissionError(13, "Permission denied", str(path))
+        return original(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, method, fail_output)
+    with pytest.raises(SystemExit) as error:
+        main()
+    assert error.value.code == 1, "Output failure must return the CLI failure code"
+    captured = capsys.readouterr()
+    assert captured.err == "Inventory failed: PermissionError\n"
+    assert captured.out == "", "Failure must not print success counts"
+    assert str(tmp_path) not in captured.err and "Traceback" not in captured.err

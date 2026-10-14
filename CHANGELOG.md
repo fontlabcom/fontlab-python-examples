@@ -6,6 +6,12 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Exclude deferred function, async-function, method and lambda bodies from
+  entrypoint evidence; retain definition-time expressions and class execution,
+  with complete imports/API/capability extraction unchanged.
+- Return portable inventory errors for output directory/file failures. The
+  complete pinned catalog, classifications, hash and four-port state are unchanged.
+
 - Read both launcher catalogs explicitly as UTF-8 in FontLab's ASCII-default
   embedded Python; preserve all Unicode metadata and source/resource bytes.
 - Close/delete the Designer QFile when QUiLoader construction fails, with

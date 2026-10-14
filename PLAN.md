@@ -41,6 +41,10 @@ The 298 Python entrypoint candidates, 14 ambiguous Python candidates and 3 QML
 launcher candidates require review before establishing an executable denominator.
 The remaining 153 Python files are auxiliary; 69 shared/repository files retain
 explicit unresolved ownership and their individual planned mappings.
+Execution evidence now excludes deferred function/async/method/lambda bodies
+and retains executing class bodies/headers and definition-time expressions.
+Conditions and function calls require source review; broad import/API/capability
+evidence stays complete. The pinned catalog reproduces unchanged after this fix.
 
 Completion requires all source examples accounted for and ported with actual
 FontLab acceptance. Static compilation and a selected sample do not prove the

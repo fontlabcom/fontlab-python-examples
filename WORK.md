@@ -110,3 +110,26 @@ records exactlymatchbeforeafter; all1569originalfiles rehashedunchanged. Five
 owned-widget PNG renders inspected. Evidenceverification/first-native-batch.json.
 Original94aec38nativefailure and701rootverifiergeometryfailure remainretained;
 no wheel/install/fullcollectioncompletion claim. Wholebatchreview stillpending.
+
+2026-10-14: Inventory execution-scope task addresses deferred findings M1/M2.
+Module/class definition-time traversal now prunes only function/async/method/
+lambda bodies for launch calls and main guards. Class bodies/headers, decorators
+and defaults stay visible; unrestricted import/API/capability extraction remains
+separate. No condition evaluation, function call graph or runtime claim added.
+Output creation and both file writes now share the portable CLI error boundary.
+
+Baseline: 46 tests passed. TDD focused RED: 16 failed, 8 passed, 15 deselected;
+expected nested-deferred false positives, missed definition-time calls and three
+uncaught PermissionErrors. GREEN: all 24 new scope/error cases passed. Complete
+pinned Python 3.12 regenerations into two separate temporary outputs were byte
+identical to each other and the checked-in JSON/index. No classification or
+source-evidence changes in this corpus: 298 entrypoints, 14 ambiguous Python,
+153 auxiliary Python, 3 ambiguous QML, all 465 Python parsed; 69 shared/repository
+files remain unresolved. All 1,569 exact IDs/hashes/storage/category/target
+mappings and four port IDs/targets plus Designer resource remain binding.
+Manifest catalog hash and accepted native receipts/code/resources remain unchanged.
+Both original archive hashes rechecked. Full suite: 70 passed; tools statement
+coverage 92%; scoped lint/format and diff checks passed. No upstream/Qt/native
+execution or sibling/source/archive changes. Every remaining collection port,
+license/ambiguity/ownership review and native acceptance stays required.
+Details: .superpowers/sdd/inventory-execution-scope/task-1-report.md.

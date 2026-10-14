@@ -5,6 +5,8 @@ import ast
 import io
 import re
 import tokenize
+from collections import deque
+from collections.abc import Iterator
 from pathlib import PurePosixPath
 
 BINDINGS = {"PyQt4", "PyQt5", "PyQt6", "PySide", "PySide2", "PySide6", "Qt"}
@@ -49,6 +51,26 @@ def dotted(node: ast.AST) -> str:
         base = dotted(node.value)
         return f"{base}.{node.attr}" if base else node.attr
     return ""
+
+
+def module_scope_nodes(tree: ast.AST) -> Iterator[ast.AST]:
+    """Walk possible definition-time execution, excluding deferred bodies.
+
+    Class bodies, bases, decorators and function/lambda defaults remain visible.
+    Branch conditions, callbacks and calls into function bodies are not evaluated.
+    Imports/API requirements use the separate unrestricted AST walks below.
+    """
+    pending = deque([tree])
+    while pending:
+        node = pending.popleft()
+        yield node
+        for field, value in ast.iter_fields(node):
+            if field == "body" and isinstance(
+                node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)
+            ):
+                continue
+            children = value if isinstance(value, list) else [value]
+            pending.extend(child for child in children if isinstance(child, ast.AST))
 
 
 def python_analysis(text: str, path: str) -> dict:
@@ -96,6 +118,7 @@ def python_analysis(text: str, path: str) -> dict:
             name = dotted(node.func)
             first, _, rest = name.partition(".")
             calls.add(aliases.get(first, first) + ("." + rest if rest else ""))
+    for node in module_scope_nodes(tree):
         if isinstance(node, ast.If) and isinstance(node.test, ast.Compare):
             comparison = node.test
             if (
@@ -110,25 +133,22 @@ def python_analysis(text: str, path: str) -> dict:
                 result["entrypoint_evidence"].append(
                     {"kind": "main-guard", "line": node.lineno}
                 )
-    # Only calls outside function/class definitions establish module execution.
-    for statement in tree.body:
-        if isinstance(statement, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+    # Preserve source-statement order for launch evidence.
+    for node in (n for statement in tree.body for n in module_scope_nodes(statement)):
+        if not isinstance(node, ast.Call):
             continue
-        for node in ast.walk(statement):
-            if not isinstance(node, ast.Call):
-                continue
-            name = dotted(node.func)
-            if name.split(".")[-1] in {
-                "QApplication",
-                "QGuiApplication",
-                "QCoreApplication",
-                "exec",
-                "exec_",
-                "show",
-            }:
-                result["entrypoint_evidence"].append(
-                    {"kind": "module-launch-call", "name": name, "line": node.lineno}
-                )
+        name = dotted(node.func)
+        if name.split(".")[-1] in {
+            "QApplication",
+            "QGuiApplication",
+            "QCoreApplication",
+            "exec",
+            "exec_",
+            "show",
+        }:
+            result["entrypoint_evidence"].append(
+                {"kind": "module-launch-call", "name": name, "line": node.lineno}
+            )
     result.update(
         imports=sorted(imports),
         api_calls=sorted(calls),

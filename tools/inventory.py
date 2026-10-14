@@ -99,13 +99,13 @@ def main() -> None:
             json.loads(args.recovery_receipt.read_text()),
             roots,
         )
+        write_catalog(catalog, args.output)
     except (ValueError, KeyError, OSError) as error:
         # OSError text may expose private absolute paths; keep CLI diagnostics portable.
         parser.exit(
             1,
             f"Inventory failed: {str(error) if isinstance(error, ValueError) else type(error).__name__}\n",
         )
-    write_catalog(catalog, args.output)
     print(json.dumps(catalog["counts"], sort_keys=True))
 
 

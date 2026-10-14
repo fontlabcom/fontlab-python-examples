@@ -30,6 +30,11 @@ Static analysis identifies 298 Python entrypoint candidates, 14 ambiguous Python
 candidates, 153 auxiliary Python files, and 3 uncertain QML launcher candidates.
 These counts are **not a confirmed executable-example denominator**. Main guards
 and module launch calls provide evidence; uncertain files remain in scope.
+Execution-scope evidence includes class bodies/headers and definition-time
+expressions, while function, async-function, method and lambda bodies are
+deferred. Conditions and calls into those bodies are not evaluated: these are
+possible launch sites, not proof of execution. Imports, APIs and capability
+requirements still include all source bodies.
 Directory associations conservatively include shared/sibling resources. There
 are 69 shared or repository files with unresolved example ownership; every one
 has an individual catalog record. Native capability needs describe observed
@@ -57,6 +62,8 @@ python tools/inventory.py \
 directories described by that receipt, including its case-collision mapping.
 Repeated runs with unchanged receipts, bytes and interpreter produce identical
 JSON and Markdown bytes. Output contains no private source-root paths.
+Input and output filesystem failures return a portable error name and failure
+exit code, without a private path or traceback.
 
 ## Verify the catalog tools
 
