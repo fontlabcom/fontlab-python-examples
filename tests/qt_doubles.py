@@ -12,9 +12,15 @@ class Signal:
     def connect(self, callback):
         self.callbacks.append(callback)
 
-    def emit(self):
+    def disconnect(self, callback):
+        self.callbacks.remove(callback)
+
+    def __getitem__(self, signature):
+        return self
+
+    def emit(self, *args):
         for callback in self.callbacks:
-            callback()
+            callback(*args)
 
 
 def fake_host(monkeypatch):

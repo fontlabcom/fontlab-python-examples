@@ -6,6 +6,23 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Track and disconnect every port-owned PythonQt signal before native teardown,
+  including gallery string-signature connections, editor prompts/actions, chat
+  timers/input/destruction, and the existing Signals and Slots port.
+- Stop timers/workers first; release callbacks, inspection/model references,
+  gallery child attributes and editor/chat subclass closure cells before closing
+  alerts and the native owner. Add connection inventories and teardown-order tests
+  following the controller-reported gallery SIGSEGV; native reacceptance pending.
+
+- Port numbered examples 02, 07, 09, 10, all three 11 entrypoints, 12, 13 and
+  14 to injected PythonQt QtCore/QtGui; native acceptance remains unexecuted.
+- Add explicit blocked QML (06), fbs/PyQt6 executable (08) and QtSql/database
+  (15 plus initializer) records, with exact catalog identities and host reasons.
+- Preserve five required assets byte-for-byte; retain gallery BSD notice with
+  unresolved license review. Record painter sound capability limitation.
+- Scope styles to owned UI; add asynchronous editor prompts, UTF-8 file actions,
+  GUI-thread chat delivery and worker join cleanup. Extend boundary/hash tests.
+
 - Exclude deferred function, async-function, method and lambda bodies from
   entrypoint evidence; retain definition-time expressions and class execution,
   with complete imports/API/capability extraction unchanged.

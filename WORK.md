@@ -133,3 +133,69 @@ coverage 92%; scoped lint/format and diff checks passed. No upstream/Qt/native
 execution or sibling/source/archive changes. Every remaining collection port,
 license/ambiguity/ownership review and native acceptance stays required.
 Details: .superpowers/sdd/inventory-execution-scope/task-1-report.md.
+
+
+2026-10-14: Second numbered batch adds ten entrypoint modules for examples
+02, 07, 09, 10, all three 11 chat variants, 12, 13 and 14, at exact catalog
+planned paths. Read pinned source/README/header evidence and first-batch pattern;
+new modules import/build with injected QtCore/QtGui boundary doubles. No upstream
+sources, source inventories, TODO checkboxes, first-batch ports/resources or
+verification receipts changed; no commit made. The pre-existing untracked .omc
+folder remains untouched.
+
+Added explicit blocked records for 06 (missing QtQml/QtQuick), 08 (fbs PyQt6
+standalone QApplication/freezer incompatible with the embedded host), and 15
+(missing QtSql, including its initializer). All new native states are unexecuted.
+Gallery 02 preserves its complete Riverbank/Nokia BSD source header and keeps
+license review unresolved; other numbered entrypoints select the existing MIT
+grant. Five copied editor/painter assets match catalog SHA-256 and recovered
+bytes. Painter audio cannot use QSoundEffect through permitted QtCore/QtGui;
+shot.wav is preserved and sound_supported=False explicitly reports the gap.
+
+Shared editor code retains original menus/content/shortcuts with UTF-8 file I/O,
+asynchronous unsaved-change/About dialogs, and named cleanup suppressing prompts.
+Gallery and Fusion styles/palettes affect only owned widgets. Chat input() is
+replaced by a name field; urllib uses socket timeouts, Python queues carry
+results/payloads, GUI QTimers deliver UI changes, and close joins workers.
+Original single-threaded polling remains distinct; the threadutil variant uses
+50ms GUI delivery rather than a PyQt-only signal helper. Models retain parents
+and wrappers; the custom table model checks invalid indexes, roles and parents.
+Native checks and exact launch names are in docs/second-numbered-batch.md/README.
+
+Verification: baseline required pytest gate passed 70 tests. The extended gate
+`UV_CACHE_DIR=/tmp/fontlab-examples-uv PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run
+--no-project --with pytest python -m pytest -q tests` passed 89 tests (19 new
+cases), including every new build/import, exact identities/resource hashes,
+model contracts, UTF-8 file success/failure, gallery defaults/progression,
+painter positions/end(), worker error delivery and native-close/handle join.
+The temporary UV_CACHE_DIR override is needed because the sandbox denies the
+normal user cache. Ruff check and format --check passed for 29 Python files;
+git diff --check passed. Tooling runs via uv run --no-project --with ruff because
+uvx tools installation also targets a sandbox-denied user directory. Tests are
+boundary evidence only; the controller owns native acceptance.
+
+
+2026-10-14: Controller reported SIGSEGV during deferred deletion of PyQt Widgets:
+PythonQt child signal receivers retained bound native-widget/subclass methods,
+whose wrapper release could double-delete an already-dying QWidget. Added exact
+signal/slot and string-signature connection records to ExampleHandle. close now
+stops cleanup timers/workers, disconnects all pairs, clears callbacks/inspection
+and retained models, releases port-owned native references, then closes alerts
+and owner. Disconnection errors prevent progression to native teardown.
+
+Converted gallery (7 connections), all three shared editors (5 action signals
+plus each dynamic prompt), all three chats (3 signals each), and existing Signals
+and Slots (1 signal). Models 12/13/14 have no explicit connections; retained model
+references are cleared centrally. Gallery creates ownership before wiring,
+clears child attributes, and releases its window cell. Editor/chat release native
+closure cells held by subclass methods; named editor close still suppresses
+prompts and chat close avoids touching a released timer. No native success claim,
+manifest/resource/inventory/TODO/receipt changes, or commit.
+
+Gate: UV_CACHE_DIR=/tmp/fontlab-examples-uv PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run
+--no-project --with pytest python -m pytest -q tests — 103 passed. Added 14 cases
+covering exact connection counts for all ten batch entrypoints and Signals and
+Slots, stopped timers/workers before disconnection, callback/model/reference
+release before alert/owner deletion, dynamic prompt disconnection, and subclass
+closure-cell release. Ruff lint/format and git diff --check passed. Native
+verification remains for the controller.

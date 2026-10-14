@@ -11,7 +11,7 @@ _handles: dict[str, Any] = {}
 
 
 def available() -> list[dict]:
-    """Return implemented names/provenance; native acceptance remains separate."""
+    """Return recorded names/provenance, including explicit blocked states."""
     return json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))[
         "ports"
     ]
@@ -62,6 +62,10 @@ def _builder(record: dict) -> Any:
 def launch(name: str) -> Any:
     """Build or reshow one owned example; return its direct native handle."""
     record = describe(name)
+    if record["implementation"] == "blocked":
+        raise NotImplementedError(
+            f"Example {name!r} is not ported: {record['blocked_reason']}"
+        )
     qt = _host()
     handle = _handles.get(record["source_id"])
     if handle is not None and not handle.owner.closed:

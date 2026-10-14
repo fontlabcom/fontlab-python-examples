@@ -18,7 +18,7 @@ def build(qt: Any) -> ExampleHandle:
 
     handle.callbacks.append(on_button_clicked)
     try:
-        button.clicked.connect(on_button_clicked)
+        handle.connect(button.clicked, on_button_clicked)
     except BaseException:
         handle.close()
         raise

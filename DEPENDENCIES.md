@@ -35,3 +35,11 @@ and Remopy `control.py`/`execution.py`, and official
 [QApplication](https://doc.qt.io/qt-6/qapplication.html) documentation.
 Native prerequisite receipts confirm FontLab's actual clicked callback and
 original Designer load/connections. Port interaction acceptance remains separate.
+
+
+Second-batch chat ports use Python 3.11 standard-library urllib.request/parse,
+queue and threading in place of requests and the PyQt-only threadutil helper.
+Workers carry Python data only; GUI-owned QTimer handles delivery. No additional
+FontLab dependency is installed. All implemented ports retain PythonQt and
+fontlab-fontlabapp ownership requirements. QSoundEffect, QtQml, QtQuick, QtSql
+and the standalone fbs/PyQt6 freezer are recorded host capability gaps.

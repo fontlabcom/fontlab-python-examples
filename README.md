@@ -11,7 +11,7 @@ running FontLab. Start at the [categorized index](catalog/INDEX.md).
 
 Both pinned collections are fully acquired and verified locally: **1,569 files,
 465 Python files**. The public catalog contains provenance and planned mappings;
-the upstream originals remain local. **Four numbered examples are implemented and native-verified in FontLab.** This first batch does not complete either
+the upstream originals remain local. **Four entrypoints are native-verified; ten more are implemented and await native acceptance.** This first batch does not complete either
 requested collection.
 
 | Collection | Pinned revision | Original files | Python files |
@@ -77,7 +77,7 @@ uvx ruff check tools tests
 uvx ruff format --check tools tests
 ```
 
-## Launch the first four ports
+## Launch implemented ports
 
 Put this checkout on FontLab's Python module path and install
 `fontlab-fontlabapp` in FontLab's interpreter. The launcher uses its `OwnedWidget`
@@ -86,7 +86,7 @@ and the existing PythonQt/QApplication; no additional Qt binding is installed.
 ```python
 import fontlab_python_examples as examples
 
-examples.available()                 # names, IDs and provenance; host-free
+examples.available()                 # names, IDs, states and provenance; host-free
 handle = examples.launch("QLabel")    # run inside FontLab
 handle.widget                        # direct native QLabel
 examples.inspect("QLabel")           # JSON-friendly live state
@@ -99,6 +99,16 @@ examples.close("QLabel")             # idempotent, only owned UI
 | `QVBoxLayout` | `f5ddfd0eaacbf845` | `Top`, then `Bottom` vertically |
 | `Signals and Slots` | `79cc15680bc2cebb` | `Click` opens `You clicked the button!` |
 | `Qt Designer` | `402068f40005cd66` | Exact original UI, OK/Cancel wiring |
+| `PyQt Widgets` | `2d8e8e07a6469499` | Implemented; native acceptance unexecuted |
+| `Qt Text Editor` | `a601a41dc5a3c23a` | Implemented; native acceptance unexecuted |
+| `Qt dark theme` | `a33bb8c2dce4e115` | Implemented; native acceptance unexecuted |
+| `QPainter` | `1151b1cb878f192a` | Implemented; native acceptance unexecuted |
+| `PyQt Thread 01_single_threaded` | `1e79bddb6d52574d` | Implemented; native acceptance unexecuted |
+| `PyQt Thread 02_multithreaded` | `88fa78cafb505cfa` | Implemented; native acceptance unexecuted |
+| `PyQt Thread 03_with_threadutil` | `83bc55d45ae367d0` | Implemented; native acceptance unexecuted |
+| `QTreeView` | `f5bf995791f1e87b` | Implemented; native acceptance unexecuted |
+| `QListView` | `1bf0ade33cd6bf12` | Implemented; native acceptance unexecuted |
+| `QAbstractTableModel` | `31fc7691c18d55f2` | Implemented; native acceptance unexecuted |
 
 Source IDs also work as names. `get(name)` retrieves a launched handle, including
 its native widget, retained callbacks and alert owners. Repeated launch reshows
@@ -146,15 +156,20 @@ doubles; they do not count as native acceptance.
 The repository's Apache license does not relicense upstream inputs. Pinned
 READMEs, actual notices and source headers supply per-file evidence. All 1,569
 files retain **license review pending in the static catalog**; 43 have no
-recognized declaration. The five source files used in this batch have separate
-MIT reviews and attribution in [the manifest](catalog/ports.json) and
+recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and
 [the source notice](ports/pyqt-examples-LICENSE.md).
 Nearby notices may apply only to specific assets: their association is evidence,
 not a blanket license assignment. Preserve the original notices and resolve
 scope before distributing a port or copying upstream resources.
 
-Four targets are implemented and their required UI source is copied unchanged;
-their native acceptance passed from clean source loads. Other targets await ports and native acceptance. Future ports
+Four targets retain native acceptance; ten new targets await controller acceptance.
+QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including
+its initializer) have explicit blocked records. The gallery (02) preserves its
+BSD notice with license review unresolved. Editor styles affect only owned UI.
+Chat names are entered in-window; threaded variants use GUI delivery timers and
+joined workers on close. QPainter (10) preserves bullet/audio assets but cannot
+play QSoundEffect through QtCore/QtGui. See
+[second-batch native checks](docs/second-numbered-batch.md). Future ports
 must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop,
 without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia,
 GStreamer, matplotlib, database, network and platform examples remain in scope.

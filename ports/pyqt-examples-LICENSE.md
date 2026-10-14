@@ -4,14 +4,16 @@ this_file: ports/pyqt-examples-LICENSE.md
 
 # Numbered-example source attribution and MIT terms
 
-The four `main-*.py` ports identified in `catalog/ports.json` adapt numbered
+The numbered ports identified in `catalog/ports.json` adapt numbered
 examples by Michael Herrmann in [pyqt/examples](https://github.com/pyqt/examples),
 revision `83eed0514582c8deb60d9e9e6bff31ceffe4eaeb`. The exact copied
 `dialog-0bf07d6f0c55bc7e.ui` is UI source from numbered example 5.
 
 The pinned [README Licensing section](https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/README.md#licensing)
 offers MIT or GPLv3 for numbered-example source 1–15, except where indicated.
-MIT is selected for these five source files. Their complete original files and
+MIT is selected for the reviewed numbered sources/resources, except example 02.
+Example 02 preserves its Riverbank/Nokia BSD-3-Clause source header in full and
+retains unresolved license review in the manifest. The MIT-reviewed files and
 example READMEs have no additional license or copyright notice. The Designer XML
 is reviewed as UI program source described by example 5's README, under that
 numbered-source grant. No upstream screenshots, book images or prose are copied.

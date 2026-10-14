@@ -15,6 +15,30 @@ class ExampleHandle:
         self.inspect_ui = inspect_ui
         self.callbacks: list[Callable] = []
         self.alerts: list[Any] = []
+        self.cleanup: list[Callable] = []
+        self.connections: list[tuple[Any, str | None, Callable]] = []
+        self.release: list[Callable] = []
+        self.model: Any = None
+
+    def connect(self, signal: Any, slot: Callable) -> None:
+        """Retain the exact signal/slot pair until explicit disconnection."""
+        signal.connect(slot)
+        self.connections.append((signal, None, slot))
+
+    def connect_old(self, obj: Any, signature: str, slot: Callable) -> None:
+        """Record PythonQt's string-signature connection without a bound disconnector."""
+        obj.connect(signature, slot)
+        self.connections.append((obj, signature, slot))
+
+    def _disconnect(self) -> None:
+        while self.connections:
+            obj, signature, slot = self.connections[-1]
+            if not self.owner.closed:
+                if signature is None:
+                    obj.disconnect(slot)
+                else:
+                    obj.disconnect(signature, slot)
+            self.connections.pop()
 
     @property
     def widget(self) -> Any:
@@ -28,9 +52,15 @@ class ExampleHandle:
         return state
 
     def close(self) -> None:
+        while self.cleanup:
+            self.cleanup.pop(0)()
+        self._disconnect()
+        self.callbacks.clear()
+        self.inspect_ui = dict
+        self.model = None
+        while self.release:
+            self.release.pop(0)()
         for alert in self.alerts:
             alert.close()
         self.alerts.clear()
         self.owner.close()
-        self.callbacks.clear()
-        self.inspect_ui = dict
