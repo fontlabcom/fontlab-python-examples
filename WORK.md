@@ -368,3 +368,7 @@ Scoped Ruff check/format and git diff --check pass; runtime sources parse with
 Python 3.11 grammar. First-batch manifest objects remain equal to committed HEAD.
 
 Native (controller): batch 2 all six launch/inspect/close pass after fixing QUndoStack.index (a method in PythonQt; double corrected). Interactions: undo/redo index 1/0/1, REPL executes in owned namespace, plugin tokens idempotent install/unload, glyph-properties toggles both ways. All 18 insights now native-passed.
+
+## 2026-10-14: Removed PyQt Thread chat examples (owner decision D4)
+
+The three pyqt/examples #11 chat ports and fontlab_python_examples/chat.py are removed: they messaged a third-party server (build-system.fman.io). Their source rows stay in the static catalog as unported upstream entries.

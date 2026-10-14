@@ -4,7 +4,6 @@
 import hashlib
 import json
 import threading
-import time
 from importlib import util
 from pathlib import Path
 from types import SimpleNamespace
@@ -339,11 +338,6 @@ def batch_qt(native_boundary, monkeypatch):
         red=2,
         black=3,
     )
-    from fontlab_python_examples import chat
-
-    monkeypatch.setattr(
-        chat, "request_message", lambda fields=None: "Hello" if fields is None else ""
-    )
     return qt
 
 
@@ -365,7 +359,8 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
         == hashlib.sha256((ROOT / "catalog/sources.json").read_bytes()).hexdigest()
     ), "The immutable source inventory must retain its exact hash"
     by_id = {e["id"]: e for e in catalog["files"]}
-    numbers = {"02", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"}
+    # Example 11 (chat over a third-party server) was removed by owner decision D4.
+    numbers = {"02", "06", "07", "08", "09", "10", "12", "13", "14", "15"}
     expected = {
         e["id"]
         for e in by_id.values()
@@ -377,7 +372,7 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
     actual = {r["source_id"] for r in MANIFEST["ports"]}
     assert len(actual) == len(MANIFEST["ports"]), "Source IDs must be unique"
     assert expected <= actual, "Every requested upstream entrypoint must have a record"
-    assert len(NEW) == 10, "Example 11 has three entrypoints"
+    assert len(NEW) == 7, "02, 07, 09, 10, 12, 13 and 14 are implemented"
     for record in MANIFEST["ports"]:
         for resource in record["resources"]:
             original = by_id[resource["source_id"]]
@@ -434,29 +429,6 @@ def test_editor_when_actions_triggered_then_utf8_roundtrip_and_cancel(
     handle.close()
 
 
-def test_worker_when_network_fails_then_gui_reports_error_and_close_joins(
-    batch_qt, monkeypatch
-):
-    from fontlab_python_examples import chat
-
-    called = threading.Event()
-
-    def fail(fields=None):
-        called.set()
-        raise OSError("offline")
-
-    monkeypatch.setattr(chat, "request_message", fail)
-    handle = load(record("PyQt Thread 02_multithreaded")).build(batch_qt)
-    assert called.wait(1), "Worker must perform the request"
-    deadline = time.monotonic() + 1
-    while not handle.snapshot()["error"] and time.monotonic() < deadline:
-        handle.callbacks[0]()
-        time.sleep(0.001)
-    assert handle.snapshot()["error"] == "offline"
-    shutdown = handle.cleanup[0]
-    handle.close()
-    shutdown()
-    assert not any(t.name == "fontlab-example-chat" for t in threading.enumerate())
 
 
 def test_gallery_when_timer_advances_then_original_values_and_progress(batch_qt):
@@ -518,12 +490,6 @@ def test_editor_when_open_or_save_fails_then_unsaved_text_is_preserved(
     handle.close()
 
 
-def test_chat_when_native_closed_then_worker_stops_before_widget_cleanup(batch_qt):
-    handle = load(record("PyQt Thread 03_with_threadutil")).build(batch_qt)
-    assert handle.snapshot()["thread_alive"]
-    handle.widget.close()
-    assert not handle.snapshot()["thread_alive"]
-    handle.close()
 
 
 def test_blocked_when_launched_then_reason_before_host_import():
@@ -544,9 +510,6 @@ def test_port_when_closed_then_disconnects_before_releasing_and_deleting(
         "Qt Text Editor": 5,
         "Qt dark theme": 5,
         "QPainter": 5,
-        "PyQt Thread 01_single_threaded": 3,
-        "PyQt Thread 02_multithreaded": 3,
-        "PyQt Thread 03_with_threadutil": 3,
         "QTreeView": 0,
         "QListView": 0,
         "QAbstractTableModel": 0,
@@ -649,7 +612,7 @@ def test_editor_prompt_when_closed_then_disconnects_before_alert_and_owner(batch
 
 @pytest.mark.parametrize(
     "name, native_cell",
-    [("Qt Text Editor", "text"), ("PyQt Thread 02_multithreaded", "timer")],
+    [("Qt Text Editor", "text")],
 )
 def test_subclass_when_closed_then_native_references_in_class_closures_are_cleared(
     name, native_cell, batch_qt

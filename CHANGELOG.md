@@ -73,3 +73,5 @@ this_file: CHANGELOG.md
   19 tests; retain pending implementation, license review and native acceptance.
 
 - Verified the first four source-loaded ports in actual FontLab, including alert dismissal/repeat, Designer results and observed owned-object teardown; preserved complete remaining collection scope.
+
+- Removed the three PyQt Thread chat ports and their network helper (owner decision); they contacted a third-party chat server.

@@ -103,9 +103,6 @@ examples.close("QLabel")             # idempotent, only owned UI
 | `Qt Text Editor` | `a601a41dc5a3c23a` | Implemented; native acceptance unexecuted |
 | `Qt dark theme` | `a33bb8c2dce4e115` | Implemented; native acceptance unexecuted |
 | `QPainter` | `1151b1cb878f192a` | Implemented; native acceptance unexecuted |
-| `PyQt Thread 01_single_threaded` | `1e79bddb6d52574d` | Implemented; native acceptance unexecuted |
-| `PyQt Thread 02_multithreaded` | `88fa78cafb505cfa` | Implemented; native acceptance unexecuted |
-| `PyQt Thread 03_with_threadutil` | `83bc55d45ae367d0` | Implemented; native acceptance unexecuted |
 | `QTreeView` | `f5bf995791f1e87b` | Implemented; native acceptance unexecuted |
 | `QListView` | `1bf0ade33cd6bf12` | Implemented; native acceptance unexecuted |
 | `QAbstractTableModel` | `31fc7691c18d55f2` | Implemented; native acceptance unexecuted |

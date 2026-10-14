@@ -1,750 +1,660 @@
 {
-  "this_file": "catalog/ports.json",
-  "schema_version": "fontlab.examples-ports.v1",
-  "scope": "Four native-accepted entrypoints, ten additional implemented entrypoints and explicit blocked QML/fbs/database records. Both full collections remain binding; implementation does not imply native acceptance.",
-  "source_catalog_sha256": "c1de368df40f7766a06b689ed6fae6e04796c87cb753a95449fe984db56b41ed",
-  "license_evidence": {
-    "path": "README.md",
+ "this_file": "catalog/ports.json",
+ "schema_version": "fontlab.examples-ports.v1",
+ "scope": "Four native-accepted entrypoints, ten additional implemented entrypoints and explicit blocked QML/fbs/database records. Both full collections remain binding; implementation does not imply native acceptance.",
+ "source_catalog_sha256": "c1de368df40f7766a06b689ed6fae6e04796c87cb753a95449fe984db56b41ed",
+ "license_evidence": {
+  "path": "README.md",
+  "repository": "pyqt/examples",
+  "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+  "sha256": "7bbcf99259961c3b5141c7948922c26b9f389a114d312063b5c6c5ca434b9ef1",
+  "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/README.md#licensing"
+ },
+ "ports": [
+  {
+   "name": "QLabel",
+   "source_id": "ce3e17a7a2a03a02",
+   "source": {
     "repository": "pyqt/examples",
     "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-    "sha256": "7bbcf99259961c3b5141c7948922c26b9f389a114d312063b5c6c5ca434b9ef1",
-    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/README.md#licensing"
+    "path": "src/01 PyQt QLabel/main.py",
+    "bytes": 107,
+    "git_blob_sha": "55df3c98ced991429242afb7d3782630e4941a37",
+    "sha256": "d987c9b788c4972ab51299cfa8885031eb664991c7f44644676d38d85fbac58f",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/01%20PyQt%20QLabel/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-ce3e17a7a2a03a02.py",
+   "implementation": "implemented",
+   "native_acceptance": "passed",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/01 PyQt QLabel/README.md",
+     "src/01 PyQt QLabel/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "native_evidence": {
+    "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+    "report": "verification/first-native-batch.json",
+    "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+   }
   },
-  "ports": [
+  {
+   "name": "QVBoxLayout",
+   "source_id": "f5ddfd0eaacbf845",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/03 QVBoxLayout PyQt6/main.py",
+    "bytes": 221,
+    "git_blob_sha": "9f9adc23804d9d44d1f0e0e7f4590d800dacb475",
+    "sha256": "4b682448e4a7fa48051e3df1156167462cceb9947bf591a72b8a261dcd32b9a0",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/03%20QVBoxLayout%20PyQt6/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-f5ddfd0eaacbf845.py",
+   "implementation": "implemented",
+   "native_acceptance": "passed",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/03 QVBoxLayout PyQt6/README.md",
+     "src/03 QVBoxLayout PyQt6/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "native_evidence": {
+    "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+    "report": "verification/first-native-batch.json",
+    "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+   }
+  },
+  {
+   "name": "Signals and Slots",
+   "source_id": "79cc15680bc2cebb",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/04 PyQt Signals and Slots/main.py",
+    "bytes": 265,
+    "git_blob_sha": "95ddebb3bd65835ba053a29092ad3e15ea037836",
+    "sha256": "a3466969bcbcb0400fb65f7d2f87f2022716cfd1e8ab6d68146afb6e7789661a",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/04%20PyQt%20Signals%20and%20Slots/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-79cc15680bc2cebb.py",
+   "implementation": "implemented",
+   "native_acceptance": "passed",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/04 PyQt Signals and Slots/README.md",
+     "src/04 PyQt Signals and Slots/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "native_evidence": {
+    "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+    "report": "verification/first-native-batch.json",
+    "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+   }
+  },
+  {
+   "name": "Qt Designer",
+   "source_id": "402068f40005cd66",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/05 Qt Designer Python/main.py",
+    "bytes": 208,
+    "git_blob_sha": "2a5b215c4be291964a013fc6e27c3f8465213941",
+    "sha256": "2ae9f1e1ff0b361e9c4656b7c7b5250f22f65df37e25cdf97f0962eb0bb116a6",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/05%20Qt%20Designer%20Python/main.py"
+   },
+   "target_path": "ports/designer-ui/pyqt-examples/main-402068f40005cd66.py",
+   "implementation": "implemented",
+   "native_acceptance": "passed",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/05 Qt Designer Python/README.md",
+     "src/05 Qt Designer Python/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [
     {
-      "name": "QLabel",
-      "source_id": "ce3e17a7a2a03a02",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/01 PyQt QLabel/main.py",
-        "bytes": 107,
-        "git_blob_sha": "55df3c98ced991429242afb7d3782630e4941a37",
-        "sha256": "d987c9b788c4972ab51299cfa8885031eb664991c7f44644676d38d85fbac58f",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/01%20PyQt%20QLabel/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-ce3e17a7a2a03a02.py",
-      "implementation": "implemented",
-      "native_acceptance": "passed",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/01 PyQt QLabel/README.md",
-          "src/01 PyQt QLabel/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "native_evidence": {
-        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
-        "report": "verification/first-native-batch.json",
-        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
-      }
-    },
-    {
-      "name": "QVBoxLayout",
-      "source_id": "f5ddfd0eaacbf845",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/03 QVBoxLayout PyQt6/main.py",
-        "bytes": 221,
-        "git_blob_sha": "9f9adc23804d9d44d1f0e0e7f4590d800dacb475",
-        "sha256": "4b682448e4a7fa48051e3df1156167462cceb9947bf591a72b8a261dcd32b9a0",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/03%20QVBoxLayout%20PyQt6/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-f5ddfd0eaacbf845.py",
-      "implementation": "implemented",
-      "native_acceptance": "passed",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/03 QVBoxLayout PyQt6/README.md",
-          "src/03 QVBoxLayout PyQt6/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "native_evidence": {
-        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
-        "report": "verification/first-native-batch.json",
-        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
-      }
-    },
-    {
-      "name": "Signals and Slots",
-      "source_id": "79cc15680bc2cebb",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/04 PyQt Signals and Slots/main.py",
-        "bytes": 265,
-        "git_blob_sha": "95ddebb3bd65835ba053a29092ad3e15ea037836",
-        "sha256": "a3466969bcbcb0400fb65f7d2f87f2022716cfd1e8ab6d68146afb6e7789661a",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/04%20PyQt%20Signals%20and%20Slots/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-79cc15680bc2cebb.py",
-      "implementation": "implemented",
-      "native_acceptance": "passed",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/04 PyQt Signals and Slots/README.md",
-          "src/04 PyQt Signals and Slots/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "native_evidence": {
-        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
-        "report": "verification/first-native-batch.json",
-        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
-      }
-    },
-    {
-      "name": "Qt Designer",
-      "source_id": "402068f40005cd66",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/05 Qt Designer Python/main.py",
-        "bytes": 208,
-        "git_blob_sha": "2a5b215c4be291964a013fc6e27c3f8465213941",
-        "sha256": "2ae9f1e1ff0b361e9c4656b7c7b5250f22f65df37e25cdf97f0962eb0bb116a6",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/05%20Qt%20Designer%20Python/main.py"
-      },
-      "target_path": "ports/designer-ui/pyqt-examples/main-402068f40005cd66.py",
-      "implementation": "implemented",
-      "native_acceptance": "passed",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/05 Qt Designer Python/README.md",
-          "src/05 Qt Designer Python/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [
-        {
-          "source_id": "0bf07d6f0c55bc7e",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/05 Qt Designer Python/dialog.ui",
-            "bytes": 1448,
-            "git_blob_sha": "a79c9ff1109ca48a7405c70117dab4ae99ad64c3",
-            "sha256": "0bebde0a733f0feff7b81e7fbc768b6c4c001460750704544b0a2f66cd4ae313",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/05%20Qt%20Designer%20Python/dialog.ui"
-          },
-          "target_path": "ports/designer-ui/pyqt-examples/dialog-0bf07d6f0c55bc7e.ui",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Designer XML is UI source of numbered example 5, explicitly used as program source in its README; no individual exception or notice. Pinned root Licensing source permission applies; MIT selected. No screenshots copied.",
-            "reviewed_files": [
-              "README.md",
-              "src/05 Qt Designer Python/README.md",
-              "src/05 Qt Designer Python/dialog.ui"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original XML bytes are preserved exactly; this_file is recorded here rather than inserted into upstream bytes."
-        }
+     "source_id": "0bf07d6f0c55bc7e",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/05 Qt Designer Python/dialog.ui",
+      "bytes": 1448,
+      "git_blob_sha": "a79c9ff1109ca48a7405c70117dab4ae99ad64c3",
+      "sha256": "0bebde0a733f0feff7b81e7fbc768b6c4c001460750704544b0a2f66cd4ae313",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/05%20Qt%20Designer%20Python/dialog.ui"
+     },
+     "target_path": "ports/designer-ui/pyqt-examples/dialog-0bf07d6f0c55bc7e.ui",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Designer XML is UI source of numbered example 5, explicitly used as program source in its README; no individual exception or notice. Pinned root Licensing source permission applies; MIT selected. No screenshots copied.",
+      "reviewed_files": [
+       "README.md",
+       "src/05 Qt Designer Python/README.md",
+       "src/05 Qt Designer Python/dialog.ui"
       ],
-      "native_evidence": {
-        "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
-        "report": "verification/first-native-batch.json",
-        "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
-      }
-    },
-    {
-      "name": "PyQt Widgets",
-      "source_id": "2d8e8e07a6469499",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/02 PyQt Widgets/main.py",
-        "bytes": 9297,
-        "git_blob_sha": "8256a74542ef5546c40ee40ed941e6e2affa9d95",
-        "sha256": "16cfb124b76df253fa9b1bbd66582863599956d56b1b297b7c82032df125e461",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/02%20PyQt%20Widgets/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-2d8e8e07a6469499.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "BSD-3-Clause",
-        "review_state": "unresolved",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Riverbank Computing Limited (2013); Nokia Corporation and/or subsidiaries (2010); Michael Herrmann, pyqt/examples",
-        "basis": "Original BSD header overrides the numbered MIT default. Full original notice preserved in port; reconciliation of upstream MIT grant remains unresolved.",
-        "reviewed_files": [
-          "README.md",
-          "src/02 PyQt Widgets/README.md",
-          "src/02 PyQt Widgets/main.py"
-        ],
-        "original_notices": [
-          "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################"
-        ]
-      },
-      "resources": []
-    },
-    {
-      "name": "QML Python",
-      "source_id": "f951474f74775c14",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/06 QML Python example/main.py",
-        "bytes": 178,
-        "git_blob_sha": "6e47e82289b00eca1053f7c501caed1895eaa07a",
-        "sha256": "8b6c2da8df6b76f372a030e94e86c267d56ee3df0ab1b6d27cbf392d947652f1",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/06%20QML%20Python%20example/main.py"
-      },
-      "target_path": "ports/qml/pyqt-examples/main-f951474f74775c14.py",
-      "implementation": "blocked",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/06 QML Python example/README.md",
-          "src/06 QML Python example/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "blocked_reason": "PythonQt does not expose QtQml/QQmlApplicationEngine or QtQuick; cannot load the QML window."
-    },
-    {
-      "name": "Qt Text Editor",
-      "source_id": "a601a41dc5a3c23a",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/07 Qt Text Editor/main.py",
-        "bytes": 2632,
-        "git_blob_sha": "13623697436d19cb5fe484c2de4d5641bd31175a",
-        "sha256": "673a12ecae5d4133948190896521fce1bfb22ae1b076500ce7272c818fc33221",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/07%20Qt%20Text%20Editor/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/07 Qt Text Editor/README.md",
-          "src/07 Qt Text Editor/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [
-        {
-          "source_id": "adeb6eaa0049d0d3",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/07 Qt Text Editor/icon.svg",
-            "bytes": 7187,
-            "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
-            "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/07%20Qt%20Text%20Editor/icon.svg"
-          },
-          "target_path": "ports/widgets/pyqt-examples/icon-adeb6eaa0049d0d3.svg",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
-            "reviewed_files": [
-              "README.md",
-              "src/07 Qt Text Editor/README.md",
-              "src/07 Qt Text Editor/icon.svg"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original bytes unchanged; path tracked in this manifest."
-        }
-      ]
-    },
-    {
-      "name": "PyQt6 exe",
-      "source_id": "d69bb62e126a51e9",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/08 PyQt6 exe/src/main/python/main.py",
-        "bytes": 2605,
-        "git_blob_sha": "ca1b489634e866d154ec602aa25f8f2d9a4a3cf6",
-        "sha256": "1e72d050bc034f02519d9dd48c35f92d4841c5ffed97e51ac1047462dc7af804",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/08%20PyQt6%20exe/src/main/python/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-d69bb62e126a51e9.py",
-      "implementation": "blocked",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/08 PyQt6 exe/src/main/python/README.md",
-          "src/08 PyQt6 exe/src/main/python/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "blocked_reason": "fbs ApplicationContext requires a standalone PyQt6 QApplication and freezer runtime; FontLab exposes only its existing embedded PythonQt application."
-    },
-    {
-      "name": "Qt dark theme",
-      "source_id": "a33bb8c2dce4e115",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/09 Qt dark theme/main.py",
-        "bytes": 3517,
-        "git_blob_sha": "b54d21067b4adccd1f7559ff9773e98258ade7f7",
-        "sha256": "e7f0b547dfef9778d0f6fee45ca712d00766e52b40ef9f676cb8ec5e4bc881b9",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/09%20Qt%20dark%20theme/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/09 Qt dark theme/README.md",
-          "src/09 Qt dark theme/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [
-        {
-          "source_id": "3f05f5f2d0cc6df2",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/09 Qt dark theme/icon.svg",
-            "bytes": 7187,
-            "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
-            "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/09%20Qt%20dark%20theme/icon.svg"
-          },
-          "target_path": "ports/widgets/pyqt-examples/icon-3f05f5f2d0cc6df2.svg",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
-            "reviewed_files": [
-              "README.md",
-              "src/09 Qt dark theme/README.md",
-              "src/09 Qt dark theme/icon.svg"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original bytes unchanged; path tracked in this manifest."
-        }
-      ]
-    },
-    {
-      "name": "QPainter",
-      "source_id": "1151b1cb878f192a",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/10 QPainter Python example/main.py",
-        "bytes": 3305,
-        "git_blob_sha": "6d9f13f456a0edaad016548826e13ab37b47178e",
-        "sha256": "d7f278de8d6e1c6d27208b1b61e8e338ab3178093b4e441c9ffee12d28084cf2",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/main.py"
-      },
-      "target_path": "ports/multimedia/pyqt-examples/main-1151b1cb878f192a.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/10 QPainter Python example/README.md",
-          "src/10 QPainter Python example/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [
-        {
-          "source_id": "accab87abcc10bea",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/10 QPainter Python example/bullet.png",
-            "bytes": 5017,
-            "git_blob_sha": "80e9387c8757aab98316d42b6ac957fcda1c1af7",
-            "sha256": "432fb4995d6949ba0f21d8d896bf9519c7d62dac18116a8ce07b7b1feeb8b1e2",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/bullet.png"
-          },
-          "target_path": "ports/multimedia/pyqt-examples/bullet-accab87abcc10bea.png",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
-            "reviewed_files": [
-              "README.md",
-              "src/10 QPainter Python example/README.md",
-              "src/10 QPainter Python example/bullet.png"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original bytes unchanged; path tracked in this manifest."
-        },
-        {
-          "source_id": "6988c3833303e9d8",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/10 QPainter Python example/icon.svg",
-            "bytes": 7187,
-            "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
-            "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/icon.svg"
-          },
-          "target_path": "ports/multimedia/pyqt-examples/icon-6988c3833303e9d8.svg",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
-            "reviewed_files": [
-              "README.md",
-              "src/10 QPainter Python example/README.md",
-              "src/10 QPainter Python example/icon.svg"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original bytes unchanged; path tracked in this manifest."
-        },
-        {
-          "source_id": "3d215869bc0bba5c",
-          "source": {
-            "repository": "pyqt/examples",
-            "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-            "path": "src/10 QPainter Python example/shot.wav",
-            "bytes": 235456,
-            "git_blob_sha": "0228460d19e6107e7649199b87a278724d33dfd8",
-            "sha256": "0a2eea1cdfc6524472ef7fa04a4c489e7a3ff7658e0511cad8491746a630139b",
-            "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/shot.wav"
-          },
-          "target_path": "ports/multimedia/pyqt-examples/shot-3d215869bc0bba5c.wav",
-          "license": {
-            "selected": "MIT",
-            "review_state": "reviewed",
-            "notice_path": "ports/pyqt-examples-LICENSE.md",
-            "attribution": "Michael Herrmann, pyqt/examples",
-            "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
-            "reviewed_files": [
-              "README.md",
-              "src/10 QPainter Python example/README.md",
-              "src/10 QPainter Python example/shot.wav"
-            ],
-            "original_notices": []
-          },
-          "this_file_note": "Original bytes unchanged; path tracked in this manifest."
-        }
-      ],
-      "translation_notes": [
-        "Painting is ported; QSoundEffect audio is unavailable in the permitted QtCore/QtGui namespaces. shot.wav preserved, playback requires a host capability extension."
-      ]
-    },
-    {
-      "name": "PyQt Thread 01_single_threaded",
-      "source_id": "1e79bddb6d52574d",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/11 PyQt Thread example/01_single_threaded.py",
-        "bytes": 874,
-        "git_blob_sha": "e7333afd1bad02802a64b77666c4008dd873f805",
-        "sha256": "1a7a56001bfc66407a967867022d3301861eb492746d3beac246ccc3a4e896a2",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/11%20PyQt%20Thread%20example/01_single_threaded.py"
-      },
-      "target_path": "ports/network/pyqt-examples/01-single-threaded-1e79bddb6d52574d.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/11 PyQt Thread example/README.md",
-          "src/11 PyQt Thread example/01_single_threaded.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "PyQt Thread 02_multithreaded",
-      "source_id": "88fa78cafb505cfa",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/11 PyQt Thread example/02_multithreaded.py",
-        "bytes": 1153,
-        "git_blob_sha": "2d408f1077e24cf79ecc488b1e4afc60e976ab56",
-        "sha256": "ebb205b968860abd8b7ff2d18d0bd9524a24850ec7c08ad837ec550b02d901b8",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/11%20PyQt%20Thread%20example/02_multithreaded.py"
-      },
-      "target_path": "ports/network/pyqt-examples/02-multithreaded-88fa78cafb505cfa.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/11 PyQt Thread example/README.md",
-          "src/11 PyQt Thread example/02_multithreaded.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "PyQt Thread 03_with_threadutil",
-      "source_id": "83bc55d45ae367d0",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/11 PyQt Thread example/03_with_threadutil.py",
-        "bytes": 1031,
-        "git_blob_sha": "81daa95f7dbb6fbd28ec30e75e94cde4a32f8898",
-        "sha256": "687b8df5382c94826938c7487c886066e0b94991d0a7e2beb57b6fcd85114226",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/11%20PyQt%20Thread%20example/03_with_threadutil.py"
-      },
-      "target_path": "ports/network/pyqt-examples/03-with-threadutil-83bc55d45ae367d0.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/11 PyQt Thread example/README.md",
-          "src/11 PyQt Thread example/03_with_threadutil.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "QTreeView",
-      "source_id": "f5bf995791f1e87b",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/12 QTreeView example in Python/main.py",
-        "bytes": 248,
-        "git_blob_sha": "0fc268a2e25978bbe11b59053671bf16b34bcc1b",
-        "sha256": "5d273109d71f101cbccfc57711752daaedad65a008fc4114f0973ce57c069ace",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/12%20QTreeView%20example%20in%20Python/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-f5bf995791f1e87b.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/12 QTreeView example in Python/README.md",
-          "src/12 QTreeView example in Python/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "QListView",
-      "source_id": "1bf0ade33cd6bf12",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/13 PyQt6 QListView/main.py",
-        "bytes": 245,
-        "git_blob_sha": "cdc1bb0ddc638123ae3c4d7e502d2ccc542a1bfc",
-        "sha256": "d9d2c43d1f94312f909ba3192a9bb91b236a254ed53c582a524111914df23eb3",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/13%20PyQt6%20QListView/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-1bf0ade33cd6bf12.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/13 PyQt6 QListView/README.md",
-          "src/13 PyQt6 QListView/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "QAbstractTableModel",
-      "source_id": "31fc7691c18d55f2",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/14 QAbstractTableModel example/main.py",
-        "bytes": 906,
-        "git_blob_sha": "57d610279227522d7234795a0e7f349c6f09a649",
-        "sha256": "a3d7e4d0aa6fd749651c6ba0b275ff140eb0c76c995528bf3aa9422de89aa9fd",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/14%20QAbstractTableModel%20example/main.py"
-      },
-      "target_path": "ports/widgets/pyqt-examples/main-31fc7691c18d55f2.py",
-      "implementation": "implemented",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/14 QAbstractTableModel example/README.md",
-          "src/14 QAbstractTableModel example/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": []
-    },
-    {
-      "name": "PyQt database",
-      "source_id": "5ab035c6e1d41d02",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/15 PyQt database example/main.py",
-        "bytes": 456,
-        "git_blob_sha": "603a9f71fc6e73480e15cc2d24fb9064212f5886",
-        "sha256": "563ba795160908ab5c3f2c43677408c85b38d9eae58ab6bab0b32f7ec3d513c3",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/15%20PyQt%20database%20example/main.py"
-      },
-      "target_path": "ports/database/pyqt-examples/main-5ab035c6e1d41d02.py",
-      "implementation": "blocked",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/15 PyQt database example/README.md",
-          "src/15 PyQt database example/main.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "blocked_reason": "PythonQt does not expose QtSql/QSqlDatabase/QSqlTableModel; the initializer alone cannot supply the database view."
-    },
-    {
-      "name": "PyQt database initializer",
-      "source_id": "dc807e132a004218",
-      "source": {
-        "repository": "pyqt/examples",
-        "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
-        "path": "src/15 PyQt database example/initdb.py",
-        "bytes": 422,
-        "git_blob_sha": "ceff98e82480bbf61bf207e8c87fcc83063928dc",
-        "sha256": "860c45fe63e51236957e3b2fa38e3da007200a25c38b948514f9d5e6b2260098",
-        "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/15%20PyQt%20database%20example/initdb.py"
-      },
-      "target_path": "ports/database/pyqt-examples/initdb-dc807e132a004218.py",
-      "implementation": "blocked",
-      "native_acceptance": "unexecuted",
-      "license": {
-        "selected": "MIT",
-        "review_state": "reviewed",
-        "notice_path": "ports/pyqt-examples-LICENSE.md",
-        "attribution": "Michael Herrmann, pyqt/examples",
-        "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1\u201315; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
-        "reviewed_files": [
-          "README.md",
-          "src/15 PyQt database example/README.md",
-          "src/15 PyQt database example/initdb.py"
-        ],
-        "original_notices": []
-      },
-      "resources": [],
-      "blocked_reason": "PythonQt does not expose QtSql/QSqlDatabase/QSqlTableModel; the initializer alone cannot supply the database view."
+      "original_notices": []
+     },
+     "this_file_note": "Original XML bytes are preserved exactly; this_file is recorded here rather than inserted into upstream bytes."
     }
-  ]
+   ],
+   "native_evidence": {
+    "implementation_commit": "701df4d26d84d31204bfb305d08c119a18f3d28b",
+    "report": "verification/first-native-batch.json",
+    "verification": "real FontLab source load, interaction, owned teardown; no wheel install"
+   }
+  },
+  {
+   "name": "PyQt Widgets",
+   "source_id": "2d8e8e07a6469499",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/02 PyQt Widgets/main.py",
+    "bytes": 9297,
+    "git_blob_sha": "8256a74542ef5546c40ee40ed941e6e2affa9d95",
+    "sha256": "16cfb124b76df253fa9b1bbd66582863599956d56b1b297b7c82032df125e461",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/02%20PyQt%20Widgets/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-2d8e8e07a6469499.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Riverbank Computing Limited (2013); Nokia Corporation and/or subsidiaries (2010); Michael Herrmann, pyqt/examples",
+    "basis": "Original BSD header overrides the numbered MIT default. Full original notice preserved in port; reconciliation of upstream MIT grant remains unresolved.",
+    "reviewed_files": [
+     "README.md",
+     "src/02 PyQt Widgets/README.md",
+     "src/02 PyQt Widgets/main.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################"
+    ]
+   },
+   "resources": []
+  },
+  {
+   "name": "QML Python",
+   "source_id": "f951474f74775c14",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/06 QML Python example/main.py",
+    "bytes": 178,
+    "git_blob_sha": "6e47e82289b00eca1053f7c501caed1895eaa07a",
+    "sha256": "8b6c2da8df6b76f372a030e94e86c267d56ee3df0ab1b6d27cbf392d947652f1",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/06%20QML%20Python%20example/main.py"
+   },
+   "target_path": "ports/qml/pyqt-examples/main-f951474f74775c14.py",
+   "implementation": "blocked",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/06 QML Python example/README.md",
+     "src/06 QML Python example/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "blocked_reason": "PythonQt does not expose QtQml/QQmlApplicationEngine or QtQuick; cannot load the QML window."
+  },
+  {
+   "name": "Qt Text Editor",
+   "source_id": "a601a41dc5a3c23a",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/07 Qt Text Editor/main.py",
+    "bytes": 2632,
+    "git_blob_sha": "13623697436d19cb5fe484c2de4d5641bd31175a",
+    "sha256": "673a12ecae5d4133948190896521fce1bfb22ae1b076500ce7272c818fc33221",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/07%20Qt%20Text%20Editor/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/07 Qt Text Editor/README.md",
+     "src/07 Qt Text Editor/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [
+    {
+     "source_id": "adeb6eaa0049d0d3",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/07 Qt Text Editor/icon.svg",
+      "bytes": 7187,
+      "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
+      "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/07%20Qt%20Text%20Editor/icon.svg"
+     },
+     "target_path": "ports/widgets/pyqt-examples/icon-adeb6eaa0049d0d3.svg",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
+      "reviewed_files": [
+       "README.md",
+       "src/07 Qt Text Editor/README.md",
+       "src/07 Qt Text Editor/icon.svg"
+      ],
+      "original_notices": []
+     },
+     "this_file_note": "Original bytes unchanged; path tracked in this manifest."
+    }
+   ]
+  },
+  {
+   "name": "PyQt6 exe",
+   "source_id": "d69bb62e126a51e9",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/08 PyQt6 exe/src/main/python/main.py",
+    "bytes": 2605,
+    "git_blob_sha": "ca1b489634e866d154ec602aa25f8f2d9a4a3cf6",
+    "sha256": "1e72d050bc034f02519d9dd48c35f92d4841c5ffed97e51ac1047462dc7af804",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/08%20PyQt6%20exe/src/main/python/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-d69bb62e126a51e9.py",
+   "implementation": "blocked",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/08 PyQt6 exe/src/main/python/README.md",
+     "src/08 PyQt6 exe/src/main/python/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "blocked_reason": "fbs ApplicationContext requires a standalone PyQt6 QApplication and freezer runtime; FontLab exposes only its existing embedded PythonQt application."
+  },
+  {
+   "name": "Qt dark theme",
+   "source_id": "a33bb8c2dce4e115",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/09 Qt dark theme/main.py",
+    "bytes": 3517,
+    "git_blob_sha": "b54d21067b4adccd1f7559ff9773e98258ade7f7",
+    "sha256": "e7f0b547dfef9778d0f6fee45ca712d00766e52b40ef9f676cb8ec5e4bc881b9",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/09%20Qt%20dark%20theme/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/09 Qt dark theme/README.md",
+     "src/09 Qt dark theme/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [
+    {
+     "source_id": "3f05f5f2d0cc6df2",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/09 Qt dark theme/icon.svg",
+      "bytes": 7187,
+      "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
+      "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/09%20Qt%20dark%20theme/icon.svg"
+     },
+     "target_path": "ports/widgets/pyqt-examples/icon-3f05f5f2d0cc6df2.svg",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
+      "reviewed_files": [
+       "README.md",
+       "src/09 Qt dark theme/README.md",
+       "src/09 Qt dark theme/icon.svg"
+      ],
+      "original_notices": []
+     },
+     "this_file_note": "Original bytes unchanged; path tracked in this manifest."
+    }
+   ]
+  },
+  {
+   "name": "QPainter",
+   "source_id": "1151b1cb878f192a",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/10 QPainter Python example/main.py",
+    "bytes": 3305,
+    "git_blob_sha": "6d9f13f456a0edaad016548826e13ab37b47178e",
+    "sha256": "d7f278de8d6e1c6d27208b1b61e8e338ab3178093b4e441c9ffee12d28084cf2",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/main.py"
+   },
+   "target_path": "ports/multimedia/pyqt-examples/main-1151b1cb878f192a.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/10 QPainter Python example/README.md",
+     "src/10 QPainter Python example/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [
+    {
+     "source_id": "accab87abcc10bea",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/10 QPainter Python example/bullet.png",
+      "bytes": 5017,
+      "git_blob_sha": "80e9387c8757aab98316d42b6ac957fcda1c1af7",
+      "sha256": "432fb4995d6949ba0f21d8d896bf9519c7d62dac18116a8ce07b7b1feeb8b1e2",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/bullet.png"
+     },
+     "target_path": "ports/multimedia/pyqt-examples/bullet-accab87abcc10bea.png",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
+      "reviewed_files": [
+       "README.md",
+       "src/10 QPainter Python example/README.md",
+       "src/10 QPainter Python example/bullet.png"
+      ],
+      "original_notices": []
+     },
+     "this_file_note": "Original bytes unchanged; path tracked in this manifest."
+    },
+    {
+     "source_id": "6988c3833303e9d8",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/10 QPainter Python example/icon.svg",
+      "bytes": 7187,
+      "git_blob_sha": "21e838a8456fadd6facfdf9be913f13239d87ab8",
+      "sha256": "b093adc694d5d6dd71f675063de19f16e9bd10867710d5a4eb3f7712fab1c2e1",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/icon.svg"
+     },
+     "target_path": "ports/multimedia/pyqt-examples/icon-6988c3833303e9d8.svg",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
+      "reviewed_files": [
+       "README.md",
+       "src/10 QPainter Python example/README.md",
+       "src/10 QPainter Python example/icon.svg"
+      ],
+      "original_notices": []
+     },
+     "this_file_note": "Original bytes unchanged; path tracked in this manifest."
+    },
+    {
+     "source_id": "3d215869bc0bba5c",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/10 QPainter Python example/shot.wav",
+      "bytes": 235456,
+      "git_blob_sha": "0228460d19e6107e7649199b87a278724d33dfd8",
+      "sha256": "0a2eea1cdfc6524472ef7fa04a4c489e7a3ff7658e0511cad8491746a630139b",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/shot.wav"
+     },
+     "target_path": "ports/multimedia/pyqt-examples/shot-3d215869bc0bba5c.wav",
+     "license": {
+      "selected": "MIT",
+      "review_state": "reviewed",
+      "notice_path": "ports/pyqt-examples-LICENSE.md",
+      "attribution": "Michael Herrmann, pyqt/examples",
+      "basis": "Referenced numbered-example resource with no contrary individual notice; MIT selected under pinned numbered-source grant.",
+      "reviewed_files": [
+       "README.md",
+       "src/10 QPainter Python example/README.md",
+       "src/10 QPainter Python example/shot.wav"
+      ],
+      "original_notices": []
+     },
+     "this_file_note": "Original bytes unchanged; path tracked in this manifest."
+    }
+   ],
+   "translation_notes": [
+    "Painting is ported; QSoundEffect audio is unavailable in the permitted QtCore/QtGui namespaces. shot.wav preserved, playback requires a host capability extension."
+   ]
+  },
+  {
+   "name": "QTreeView",
+   "source_id": "f5bf995791f1e87b",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/12 QTreeView example in Python/main.py",
+    "bytes": 248,
+    "git_blob_sha": "0fc268a2e25978bbe11b59053671bf16b34bcc1b",
+    "sha256": "5d273109d71f101cbccfc57711752daaedad65a008fc4114f0973ce57c069ace",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/12%20QTreeView%20example%20in%20Python/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-f5bf995791f1e87b.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/12 QTreeView example in Python/README.md",
+     "src/12 QTreeView example in Python/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": []
+  },
+  {
+   "name": "QListView",
+   "source_id": "1bf0ade33cd6bf12",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/13 PyQt6 QListView/main.py",
+    "bytes": 245,
+    "git_blob_sha": "cdc1bb0ddc638123ae3c4d7e502d2ccc542a1bfc",
+    "sha256": "d9d2c43d1f94312f909ba3192a9bb91b236a254ed53c582a524111914df23eb3",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/13%20PyQt6%20QListView/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-1bf0ade33cd6bf12.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/13 PyQt6 QListView/README.md",
+     "src/13 PyQt6 QListView/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": []
+  },
+  {
+   "name": "QAbstractTableModel",
+   "source_id": "31fc7691c18d55f2",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/14 QAbstractTableModel example/main.py",
+    "bytes": 906,
+    "git_blob_sha": "57d610279227522d7234795a0e7f349c6f09a649",
+    "sha256": "a3d7e4d0aa6fd749651c6ba0b275ff140eb0c76c995528bf3aa9422de89aa9fd",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/14%20QAbstractTableModel%20example/main.py"
+   },
+   "target_path": "ports/widgets/pyqt-examples/main-31fc7691c18d55f2.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/14 QAbstractTableModel example/README.md",
+     "src/14 QAbstractTableModel example/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": []
+  },
+  {
+   "name": "PyQt database",
+   "source_id": "5ab035c6e1d41d02",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/15 PyQt database example/main.py",
+    "bytes": 456,
+    "git_blob_sha": "603a9f71fc6e73480e15cc2d24fb9064212f5886",
+    "sha256": "563ba795160908ab5c3f2c43677408c85b38d9eae58ab6bab0b32f7ec3d513c3",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/15%20PyQt%20database%20example/main.py"
+   },
+   "target_path": "ports/database/pyqt-examples/main-5ab035c6e1d41d02.py",
+   "implementation": "blocked",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/15 PyQt database example/README.md",
+     "src/15 PyQt database example/main.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "blocked_reason": "PythonQt does not expose QtSql/QSqlDatabase/QSqlTableModel; the initializer alone cannot supply the database view."
+  },
+  {
+   "name": "PyQt database initializer",
+   "source_id": "dc807e132a004218",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/15 PyQt database example/initdb.py",
+    "bytes": 422,
+    "git_blob_sha": "ceff98e82480bbf61bf207e8c87fcc83063928dc",
+    "sha256": "860c45fe63e51236957e3b2fa38e3da007200a25c38b948514f9d5e6b2260098",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/15%20PyQt%20database%20example/initdb.py"
+   },
+   "target_path": "ports/database/pyqt-examples/initdb-dc807e132a004218.py",
+   "implementation": "blocked",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "MIT",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-examples-LICENSE.md",
+    "attribution": "Michael Herrmann, pyqt/examples",
+    "basis": "Pinned README.md Licensing permits MIT OR GPLv3 for numbered-example source 1–15; MIT selected. Complete original headers and example READMEs contain no contrary notice. Screenshots excluded.",
+    "reviewed_files": [
+     "README.md",
+     "src/15 PyQt database example/README.md",
+     "src/15 PyQt database example/initdb.py"
+    ],
+    "original_notices": []
+   },
+   "resources": [],
+   "blocked_reason": "PythonQt does not expose QtSql/QSqlDatabase/QSqlTableModel; the initializer alone cannot supply the database view."
+  }
+ ]
 }

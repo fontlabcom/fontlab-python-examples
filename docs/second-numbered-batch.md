@@ -17,9 +17,6 @@ New acceptance states are `unexecuted`; no first-batch receipts changed.
 | 08 exe | Blocked | fbs PyQt6 ApplicationContext creates standalone QApplication and requires freezer runtime, incompatible with embedded PythonQt ownership. |
 | 09 Dark theme | Ported | Same editor actions; Fusion style and exact original palette colors only on owned subtree; FontLab style/palette unchanged. Qt5 QPalette/Qt enums unscoped. |
 | 10 Painter | Ported with audio gap | Mouse callback, centered bullet PNG, repaint after multiple clicks, persistent hole positions, painter.end(), editor actions and About icon. QSoundEffect absent from permitted QtCore/QtGui: no shot playback; exact shot.wav retained. Confirm sound_supported=False. |
-| 11 single_threaded | Ported | In-window name replaces blocking input(); original 1-second GUI polling, send/clear, timeout/error state, close timer shutdown. Standard-library urllib replaces requests Session. |
-| 11 multithreaded | Ported | 0.5-second Python worker polling, 1-second GUI QTimer delivery; send payload captured on GUI then queued. Observe UI responsiveness, delivered/sent counts, close joins worker, no subsequent Qt writes. |
-| 11 with_threadutil | Ported | Same worker isolation, 50ms GUI delivery timer replaces PyQt-only signal helper; no cross-thread Qt callbacks. Native close and named close must stop worker. |
 | 12 Tree view | Ported | QDirModel retained/parented to QTreeView, home-root path, filesystem navigation, root row/column counts and owned deletion. |
 | 13 List view | Ported | QStringListModel retained/parented; exactly three original strings, row count, native selection/editing and live inspection. |
 | 14 Table model | Ported | Native Python QAbstractTableModel callbacks render all scientist cells and headers; Qt5 DisplayRole/Horizontal, None for invalid variants, zero rows/columns for child parents. Model retained and parented. |
@@ -33,8 +30,7 @@ catalog/sources.json; copied bytes are unchanged.
 Launch names and source IDs are listed in README and the manifest. blocked
 records appear in available(); launch rejects them before host import with the
 concrete reason. Named cleanup joins workers and suppresses editor close prompts;
-user close retains Save/Discard/Cancel interaction. Closing a chat window stops
-its worker; use named close then launch to start a fresh session.
+user close retains Save/Discard/Cancel interaction. 
 
 Official references consulted: [Qt5 model subclassing](https://doc.qt.io/qt-5/qabstracttablemodel.html),
 [QTimer thread affinity](https://doc.qt.io/qt-5/qtimer.html),
