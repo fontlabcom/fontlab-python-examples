@@ -359,7 +359,7 @@ class Demo:
             for key in references:
                 value = getattr(obj, key, None)
                 # A failed constructor may not yet have shadowed a native method.
-                if callable(value):
+                if callable(value) and callable(getattr(type(obj), key, None)):
                     continue
                 if isinstance(value, (list, dict)):
                     value.clear()
@@ -375,3 +375,108 @@ class Demo:
             self.handle.close()
         elif self.temporary is not None:
             self.temporary.cleanup()
+
+
+class WorkerDelivery:
+    """Cancellable Python work with bounded plain-data delivery on the GUI timer.
+
+    Workers receive only an Event and a publishing function. The GUI owns every
+    Qt wrapper; stop/join completes before signal disconnection and native deletion.
+    """
+
+    def __init__(self, demo: Demo, deliver: Any) -> None:
+        from queue import Queue
+        from threading import Event
+
+        self.demo, self.deliver = demo, deliver
+        self.stop_event = Event()
+        self.incoming = Queue(16)
+        self.workers = []
+        self.phase = "idle"
+        self.timer = demo.remember("timer", demo.qt.QtCore.QTimer(demo.handle.widget))
+        demo.connect(self.timer, "timeout()", self.drain)
+        demo.handle.cleanup.append(self.stop)
+        demo.handle.release.append(self.release)
+
+    def publish(self, value: Any) -> bool:
+        """Apply backpressure while retaining cooperative cancellation."""
+        from queue import Full
+
+        while not self.stop_event.is_set():
+            try:
+                self.incoming.put(value, timeout=0.03)
+                return True
+            except Full:
+                continue
+        return False
+
+    def start(self, *jobs: Any) -> None:
+        from queue import Empty
+        from threading import Thread
+
+        self.stop()
+        while True:
+            try:
+                self.incoming.get_nowait()
+            except Empty:
+                break
+        self.stop_event.clear()
+        self.phase = "running"
+
+        def run(job: Any) -> None:
+            try:
+                job(self.stop_event, self.publish)
+            except Exception as error:  # noqa: BLE001 - report any worker failure across the thread boundary
+                self.publish(("error", str(error)))
+
+        self.workers = [
+            Thread(target=run, args=(job,), name="official-worker", daemon=True)
+            for job in jobs
+        ]
+        for worker in self.workers:
+            worker.start()
+        self.timer.start(30)
+
+    def drain(self) -> None:
+        from queue import Empty
+
+        for _ in range(16):
+            try:
+                value = self.incoming.get_nowait()
+            except Empty:
+                break
+            if value[0] == "error":
+                self.demo.error = value[1]
+                self.phase = "error"
+                self.stop()
+                return
+            self.deliver(value)
+        if (
+            self.workers
+            and not any(w.is_alive() for w in self.workers)
+            and self.incoming.empty()
+        ):
+            self.phase = "done"
+            self.timer.stop()
+
+    def stop(self) -> None:
+        self.stop_event.set()
+        self.timer.stop()
+        for worker in self.workers:
+            worker.join(1.0)
+            if worker.is_alive():
+                raise RuntimeError("Worker did not stop; retaining owned UI")
+        if self.phase == "running":
+            self.phase = "stopped"
+
+    def snapshot(self) -> dict:
+        return {
+            "phase": self.phase,
+            "worker_alive": any(w.is_alive() for w in self.workers),
+            "timer_active": bool(self.timer.isActive()),
+        }
+
+    def release(self) -> None:
+        self.workers.clear()
+        self.deliver = None
+        self.demo = None

@@ -54,7 +54,25 @@ BATCH_FOUR_IDS = {
     "700e96dec485e7a8",
     "5781fa4ba55c884f",
 }
-IDS |= BATCH_FOUR_IDS
+BATCH_FIVE_IDS = {
+    "b7283d74afb78218",
+    "243ae486f9528e8c",
+    "de30d23621025fe6",
+    "de35a965dfcfd678",
+    "2cd6ffc2b2ed65bb",
+    "c1b878b63f80e733",
+    "0578c17977b471f1",
+    "0788354954c8e613",
+    "fcfaf9667206bbd6",
+    "b95b687bbc541207",
+    "65d15d1fbc1b15e9",
+    "29f6a7d0a3bb6813",
+    "27709a02d37b9ba9",
+    "bd6c8feb783ba845",
+    "1cf57c0f2ac8880a",
+    "1ca857d797199ecf",
+}
+IDS |= BATCH_FOUR_IDS | BATCH_FIVE_IDS
 
 
 def records():
@@ -67,7 +85,7 @@ def records():
 
 def test_official_manifest_covers_exact_batch_and_retains_provenance():
     rows = records()
-    assert {r["source_id"] for r in rows} == IDS, "All 41 entries require a result"
+    assert {r["source_id"] for r in rows} == IDS, "All 57 entries require a result"
     sources = {
         r["id"]: r
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
@@ -119,7 +137,11 @@ def load_record(row):
     return module
 
 
-@pytest.mark.parametrize("row", records(), ids=lambda r: r["name"])
+@pytest.mark.parametrize(
+    "row",
+    [r for r in records() if r["implementation"] == "implemented"],
+    ids=lambda r: r["name"],
+)
 def test_official_build_inspect_controls_disconnect_and_close(row, official_qt):
     qt, _owners = official_qt
     handle = load_record(row).build(qt)
@@ -1330,3 +1352,567 @@ def test_puzzle_view_native_drag_uses_model_mime_and_removes_only_moved_rows(
     view.startDrag(qt.QtCore.Qt.MoveAction | qt.QtCore.Qt.CopyAction)
     assert model.rowCount() == 24 and handle.snapshot()["in_place"] == 1
     handle.close()
+
+
+BATCH_FIVE_IMPLEMENTED = [
+    row
+    for row in records()
+    if row["source_id"] in BATCH_FIVE_IDS and row["implementation"] == "implemented"
+]
+
+
+@pytest.mark.parametrize("row", BATCH_FIVE_IMPLEMENTED, ids=lambda r: r["name"])
+def test_batch_five_inspect_is_inert_and_finish_failure_rolls_back(
+    row, official_qt, monkeypatch
+):
+    from fontlab_python_examples.official import Demo
+
+    qt, owners = official_qt
+    handle = load_record(row).build(qt)
+    assert handle.snapshot() == handle.snapshot(), "Inspect must not drive UI controls"
+    handle.close()
+    first_owner = len(owners)
+
+    def fail(self, window, extra=dict):
+        raise RuntimeError("injected finish failure")
+
+    monkeypatch.setattr(Demo, "finish", fail)
+    with pytest.raises(RuntimeError, match="injected finish failure"):
+        load_record(row).build(qt)
+    assert owners[first_owner:] and all(owner.closed for owner in owners[first_owner:])
+
+
+def test_batch_five_shared_memory_has_precise_native_blocker(official_qt, monkeypatch):
+    import fontlab_python_examples as examples
+
+    row = next(r for r in records() if r["source_id"] == "de35a965dfcfd678")
+    assert row["implementation"] == "blocked"
+    assert (
+        "detach()" in row["blocked_reason"] and "byte-buffer" in row["blocked_reason"]
+    )
+    qt, owners = official_qt
+    assert not hasattr(qt.QtCore.QSharedMemory, "detach")
+    with pytest.raises(NotImplementedError, match="detach"):
+        load_record(row).build(qt)
+    monkeypatch.setattr(
+        "fontlab_python_examples.launcher._host",
+        lambda: pytest.fail("Blocked launch must not access Qt"),
+    )
+    with pytest.raises(NotImplementedError, match="detach"):
+        examples.launch(row["source_id"])
+    assert not owners
+
+
+@pytest.mark.parametrize("name", ["semaphores", "waitconditions"])
+def test_batch_five_ring_workers_complete_stop_and_restart(name, official_qt):
+    import time
+
+    qt, _ = official_qt
+    handle = built(name, qt)
+    c = handle.controls
+    assert handle.snapshot()["phase"] == "idle"
+    c["start"].click()
+    deadline = time.monotonic() + 8
+    while handle.snapshot()["phase"] == "running" and time.monotonic() < deadline:
+        c["timer"].emit("timeout")
+        time.sleep(0.001)
+    state = handle.snapshot()
+    assert state["phase"] == "done", state
+    assert state["received"] == state["data_size"] == 100000
+    assert state["prefix"] == state["suffix"] == "ACGT" * 20
+    assert not state["worker_alive"] and not state["timer_active"]
+    c["start"].click()
+    c["stop"].click()
+    assert not handle.snapshot()["worker_alive"]
+    c["start"].click()
+    # No GUI drain: the bounded queue fills; close must cancel blocked publishers.
+    time.sleep(0.03)
+    timer = c["timer"]
+    handle.close()
+    assert not timer.isActive() and not handle.connections
+
+
+def test_batch_five_worker_error_and_join_failure_retain_owned_ui(
+    official_qt, monkeypatch
+):
+    import time
+
+    from fontlab_python_examples.official import Demo, WorkerDelivery
+
+    qt, _ = official_qt
+    demo = Demo(qt, __file__, "worker-test")
+    root = qt.QtGui.QWidget()
+    demo.begin(root)
+    received = []
+    worker = WorkerDelivery(demo, received.append)
+
+    def broken(stop, publish):
+        raise ValueError("worker fixture failure")
+
+    worker.start(broken)
+    deadline = time.monotonic() + 2
+    while worker.phase == "running" and time.monotonic() < deadline:
+        worker.drain()
+        time.sleep(0.001)
+    assert worker.phase == "error" and demo.error == "worker fixture failure"
+
+    class Stalled:
+        def join(self, timeout):
+            pass
+
+        def is_alive(self):
+            return True
+
+    worker.workers = [Stalled()]
+    with pytest.raises(RuntimeError, match="retaining owned UI"):
+        demo.handle.close()
+    assert not demo.handle.owner.closed and demo.handle.connections
+    worker.workers.clear()
+    demo.handle.close()
+    assert demo.handle.owner.closed
+
+
+def test_batch_five_mandelbrot_scanlines_are_plain_pixels_and_cancellable(official_qt):
+    from threading import Event
+
+    row = next(r for r in records() if r["source_id"] == "0788354954c8e613")
+    module = load_record(row)
+    stop = Event()
+    values = []
+    module.render_rows(stop, lambda v: values.append(v) or True, 3, 2, 2.0, 2.0, 0.1)
+    assert len(values) == 8 * 2
+    assert [v[1] for v in values[::2]] == list(range(8))
+    assert all(
+        type(pixel) is int and 0xFF000000 <= pixel <= 0xFFFFFFFF
+        for v in values
+        for pixel in v[3]
+    )
+    stop.set()
+    module.render_rows(
+        stop, lambda value: pytest.fail("Cancelled worker published"), 2, 2, 0, 0, 1
+    )
+    for wavelength in (380, 440, 490, 510, 580, 645, 700, 780):
+        assert 0xFF000000 <= module.rgb_from_wave_length(wavelength) <= 0xFFFFFFFF
+
+
+def test_batch_five_mandelbrot_zoom_scroll_restart_and_close(official_qt):
+    import time
+
+    qt, _ = official_qt
+    handle = built("mandelbrot", qt)
+    c = handle.controls
+    handle.widget.resize(8, 6)
+    c["start"]()
+    time.sleep(0.01)
+    c["timer"].emit("timeout")
+    original = handle.snapshot()
+    c["zoom"](0.8)
+    assert handle.snapshot()["scale"] == pytest.approx(original["scale"] * 0.8)
+    c["scroll"](20, -20)
+    assert handle.snapshot()["center"][0] > original["center"][0]
+    for factor in (0, -1, float("nan"), float("inf")):
+        with pytest.raises(ValueError, match="positive and finite"):
+            c["zoom"](factor)
+    c["stop"]()
+    assert not handle.snapshot()["worker_alive"]
+    handle.widget.paintEvent(SimpleNamespace())
+    c["start"]()
+    timer = c["timer"]
+    handle.close()
+    assert not timer.isActive()
+
+
+def test_batch_five_animated_tiles_native_relays_change_layouts(official_qt):
+    qt, _ = official_qt
+    handle = built("animatedtiles", qt)
+    c = handle.controls
+    assert handle.snapshot()["item_count"] == 64
+    original = handle.snapshot()["positions"]
+    for name in ("ellipse", "figure8", "random", "tiled"):
+        button = c[name]
+        button.mousePressEvent(SimpleNamespace())
+        assert handle.snapshot()["positions"] != original
+    c["centered"].mousePressEvent(SimpleNamespace())
+    assert handle.snapshot()["positions"] == [[0, 0]] * 64
+    machine = c["states"]
+    handle.close()
+    assert not machine.isRunning()
+
+
+def test_batch_five_appchooser_selects_original_icon_geometry(official_qt):
+    qt, _ = official_qt
+    handle = built("appchooser", qt)
+    c = handle.controls
+    assert handle.snapshot()["item_count"] == 4
+    c["items"][1].mousePressEvent(SimpleNamespace())
+    assert handle.snapshot()["geometries"][1] == [86, 86, 128, 128]
+    c["items"][2].mousePressEvent(SimpleNamespace())
+    assert handle.snapshot()["geometries"][2] == [86, 86, 128, 128]
+    c["items"][0].paint(qt.QtGui.QPainter(), SimpleNamespace(), None)
+    handle.close()
+
+
+def test_batch_five_states_cycle_button_and_stop_machine(official_qt):
+    qt, _ = official_qt
+    handle = built("states", qt)
+    c = handle.controls
+    assert handle.snapshot()["button_text"] == "Switch to state 2"
+    for text in ("Switch to state 3", "Switch to state 1", "Switch to state 2"):
+        c["button"].click()
+        assert handle.snapshot()["button_text"] == text
+    c["edit"].setPlainText("Owned scene text")
+    assert handle.snapshot()["text"] == "Owned scene text"
+    machine = c["machine"]
+    handle.close()
+    assert not machine.isRunning()
+
+
+def test_batch_five_moveblocks_chooses_different_states(official_qt):
+    qt, _ = official_qt
+    handle = built("moveblocks", qt)
+    previous = handle.snapshot()
+    for _ in range(10):
+        handle.controls["advance"]()
+        state = handle.snapshot()
+        assert state["state_index"] != previous["state_index"]
+        assert state["geometries"] != previous["geometries"]
+        previous = state
+    timer = handle.controls["timer"]
+    handle.close()
+    assert not timer.isActive()
+
+
+def test_batch_five_easing_curves_parameters_path_and_paint(official_qt):
+    qt, _ = official_qt
+    handle = built("easing", qt)
+    c = handle.controls
+    assert handle.snapshot()["curve_count"] == 47
+    c["easingCurvePicker"].setCurrentRow(29)  # InElastic
+    assert handle.snapshot()["curve"] == "InElastic"
+    assert c["periodSpinBox"].isEnabled()
+    c["periodSpinBox"].setValue(0.7)
+    c["amplitudeSpinBox"].setValue(2.5)
+    c["overshootSpinBox"].setValue(3.2)
+    c["circleRadio"].setChecked(True)
+    assert handle.snapshot()["path"] == "circle"
+    c["animation"].updateCurrentTime(1000)
+    assert len(handle.snapshot()["position"]) == 2
+    c["item"].paint(qt.QtGui.QPainter(), SimpleNamespace(), None)
+    c["circleRadio"].setChecked(False)
+    assert handle.snapshot()["path"] == "line"
+    handle.close()
+
+
+def test_batch_five_stickman_real_frames_keys_lightning_and_teardown(official_qt):
+    qt, _ = official_qt
+    handle = built("stickman", qt)
+    c = handle.controls
+    assert handle.snapshot()["node_count"] == 16
+    assert handle.snapshot()["frames"] == {
+        "jumping": 5,
+        "dancing": 9,
+        "chilling": 25,
+        "dead": 1,
+    }
+    original = handle.snapshot()["positions"]
+    c["view"].keyPressEvent(SimpleNamespace(key=lambda: qt.QtCore.Qt.Key_J))
+    assert handle.snapshot()["activity"] == "jumping"
+    frame = next(s for s in c["machine"].configuration() if s._extra.get("assignments"))
+    frame.emit("propertiesAssigned")
+    assert handle.snapshot()["positions"] != original
+    c["dancing"].click()
+    assert handle.snapshot()["activity"] == "dancing"
+    # Coincident nodes must not divide by zero, and paint uses no wrapper arithmetic.
+    from fontlab_python_examples.official import read
+
+    c["nodes"][0].setPos(read(c["nodes"][1], "pos"))
+    c["stickMan"].paint(qt.QtGui.QPainter(), SimpleNamespace(), None)
+    c["strike"].click()
+    assert handle.snapshot()["dead"] and handle.snapshot()["activity"] == "lightning"
+    c["flash"].emit("timeout")
+    assert handle.snapshot()["activity"] == "dead"
+    c["chilling"].click()
+    assert handle.snapshot()["activity"] == "dead", (
+        "Dead state cannot restart activities"
+    )
+    lightning, flash = c["lightning"], c["flash"]
+    handle.close()
+    assert not lightning.isActive() and not flash.isActive()
+
+
+def test_batch_five_embedded_dialog_controls_and_hover_timeline(official_qt):
+    qt, _ = official_qt
+    handle = built("embeddeddialogs", qt)
+    c = handle.controls
+    assert handle.snapshot()["dialog_count"] == 100
+    dialog, proxy = c["dialog"], c["proxies"][-1]
+    dialog.ui.spacing.setValue(12)
+    assert handle.snapshot()["spacing"] == 12
+    dialog.ui.directionPicker.emit("activated", 1)
+    dialog.ui.stylePicker.emit("activated", "Fusion")
+    proxy.hoverEnterEvent(SimpleNamespace())
+    proxy.timeLine.emit("valueChanged", 0.5)
+    proxy.hoverLeaveEvent(SimpleNamespace())
+    timelines = [item.timeLine for item in c["proxies"]]
+    handle.close()
+    assert all(
+        timeline.state() == qt.QtCore.QTimeLine.NotRunning for timeline in timelines
+    )
+
+
+def test_batch_five_colliding_mice_motion_and_paint_use_component_geometry(official_qt):
+    qt, _ = official_qt
+    handle = built("collidingmice", qt)
+    c = handle.controls
+    assert handle.snapshot()["mouse_count"] == 7
+    original = handle.snapshot()["positions"]
+    for mouse in c["mice"]:
+        mouse.timer.emit("timeout")
+        mouse.paint(qt.QtGui.QPainter(), SimpleNamespace(), None)
+    assert handle.snapshot()["positions"] != original
+    timers = [mouse.timer for mouse in c["mice"]]
+    handle.close()
+    assert all(not timer.isActive() for timer in timers)
+
+
+def test_batch_five_robot_color_image_drop_and_animation_cleanup(official_qt):
+    qt, _ = official_qt
+    handle = built("dragdroprobot", qt)
+    robot = handle.controls["robot"]
+    assert handle.snapshot()["palette_count"] == 10
+    mime = qt.QtCore.QMimeData()
+    mime.setColorData(qt.QtGui.QColor(220, 30, 40))
+    event = SimpleNamespace(mimeData=lambda: mime, setAccepted=lambda value: None)
+    robot.headItem.dragEnterEvent(event)
+    robot.headItem.dropEvent(event)
+    assert not robot.headItem.dragOver
+    mime.setImageData(qt.QtGui.QImage(30, 40, qt.QtGui.QImage.Format_RGB32))
+    robot.headItem.dropEvent(event)
+    assert handle.snapshot()["head_image"]
+    for part in (robot.headItem, robot.torsoItem, robot.upperLeftArmItem):
+        part.paint(qt.QtGui.QPainter(), SimpleNamespace(), None)
+    handle.close()
+
+
+def test_batch_five_diagram_insert_select_color_scale_and_delete(official_qt):
+    qt, _ = official_qt
+    handle = built("diagramscene", qt)
+    c, window = handle.controls, handle.widget
+    scene = c["scene"]
+    event = SimpleNamespace(
+        button=lambda: qt.QtCore.Qt.LeftButton,
+        scenePos=lambda: qt.QtCore.QPointF(100, 100),
+    )
+    window.buttonGroupClicked(0)
+    scene.mousePressEvent(event)
+    assert handle.snapshot()["item_count"] == 1
+    item = scene.items()[0]
+    item.setSelected(True)
+    scene.setItemColor(qt.QtGui.QColor(12, 34, 56))
+    window.sceneScaleChanged("150%")
+    window.bringToFront()
+    window.sendToBack()
+    window.deleteItem()
+    assert handle.snapshot()["item_count"] == 0
+    assert len(c["discarded"].items()) == 1, (
+        "Deleted graphics items retain native ownership"
+    )
+    window.buttonGroupClicked(window.InsertTextButton)
+    scene.mousePressEvent(event)
+    text = scene.items()[0]
+    text.setPlainText("Owned diagram text")
+    text.focusOutEvent(SimpleNamespace())
+    assert handle.snapshot()["item_count"] == 1, "Keep nonempty text"
+    text.setPlainText("")
+    text.focusOutEvent(SimpleNamespace())
+    assert handle.snapshot()["item_count"] == 0
+    window.about()
+    assert c["active_dialog"].windowTitle == "About Diagram Scene"
+    handle.close()
+
+
+def test_batch_five_screenshot_capture_save_cancel_and_inert_inspect(
+    official_qt, monkeypatch
+):
+    qt, _ = official_qt
+    captures = []
+
+    class Screen:
+        def grabWindow(self, window_id):
+            captures.append(window_id)
+            return qt.QtGui.QPixmap(320, 200)
+
+    monkeypatch.setattr(
+        qt.QtGui.QApplication, "primaryScreen", lambda: Screen(), raising=False
+    )
+    handle = built("screenshot", qt)
+    c = handle.controls
+    assert not handle.snapshot()["has_capture"] and not captures
+    assert handle.snapshot() == handle.snapshot() and not captures
+    c["delaySpinBox"].setValue(0)
+    assert not c["hideThisWindowCheckBox"].isEnabled()
+    c["newScreenshotButton"].click()
+    assert handle.snapshot()["capture_pending"] and not captures
+    c["captureTimer"].emit("timeout")
+    assert captures == [0] and handle.snapshot()["has_capture"]
+    c["saveScreenshotButton"].click()
+    box = c["active_dialog"]
+    directory = Path(box._data["directory"])
+    output = directory / "capture.png"
+    saves = []
+    invoke = qt.QtGui.QPixmap._invoke
+
+    def save(self, key, *args, **kwargs):
+        if key == "save":
+            saves.append(args)
+            return True
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QPixmap, "_invoke", save)
+    c["saveTo"](str(output))
+    assert saves == [(str(output.resolve()), "PNG")]
+    c["saveTo"]("/outside/owned.png")
+    assert "temporary directory" in handle.snapshot()["error"]
+    assert len(saves) == 1
+    c["newScreenshotButton"].click()
+    timer = c["captureTimer"]
+    handle.close()
+    assert not timer.isActive() and not directory.exists()
+
+
+def test_batch_five_systray_explicit_visibility_messages_and_owned_quit(
+    official_qt, monkeypatch
+):
+    qt, owners = official_qt
+    messages = []
+    invoke = qt.QtGui.QSystemTrayIcon._invoke
+
+    def record(self, key, *args, **kwargs):
+        if key == "showMessage":
+            messages.append(args)
+            return None
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QSystemTrayIcon, "_invoke", record)
+    handle = built("systray", qt)
+    c = handle.controls
+    assert not handle.snapshot()["tray_visible"] and not messages
+    c["showIconCheckBox"].setChecked(True)
+    assert handle.snapshot()["tray_visible"]
+    c["iconComboBox"].setCurrentIndex(2)
+    assert handle.snapshot()["icon_index"] == 2
+    c["showMessageButton"].click()
+    assert len(messages) == 1
+    c["trayIcon"].emit("messageClicked")
+    assert len(handle.alerts) == 1
+    tray = c["trayIcon"]
+    c["quitAction"].trigger()
+    assert handle.owner.closed and not tray.isVisible()
+    assert all(owner.closed for owner in owners)
+
+
+@pytest.mark.parametrize("row", BATCH_FIVE_IMPLEMENTED, ids=lambda r: r["name"])
+def test_batch_five_stops_every_registered_activity_before_native_delete(
+    row, official_qt
+):
+    qt, _ = official_qt
+    handle = load_record(row).build(qt)
+    activities = [getattr(callback, "__self__", None) for callback in handle.cleanup]
+    original_close = handle.owner.close
+
+    def checked_close():
+        for activity in activities:
+            if hasattr(activity, "_active"):
+                assert not activity._active, (
+                    "Stop timers/machines/animations before native deletion"
+                )
+        assert not handle.connections and not handle.controls
+        original_close()
+
+    handle.owner.close = checked_close
+    handle.close()
+
+
+def test_batch_five_python_callbacks_are_released_without_clearing_native_methods(
+    official_qt,
+):
+    from fontlab_python_examples.official import Demo
+
+    qt, _ = official_qt
+    demo = Demo(qt, __file__, "callback-release")
+
+    class Window(qt.QtGui.QWidget):
+        pass
+
+    window = Window()
+    demo.begin(window)
+    window._callback = lambda: window
+    demo.track(window, "_callback")
+    handle = demo.finish(window)
+    original_close = handle.owner.close
+
+    def checked_close():
+        assert window._callback is None
+        assert callable(window.close)
+        original_close()
+
+    handle.owner.close = checked_close
+    handle.close()
+
+
+def test_batch_five_native_members_resources_and_no_modal_shortcuts():
+    from tests.official_doubles import CONTRACT
+
+    sources = {
+        r["id"]: r
+        for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
+    }
+    for row in records():
+        if row["source_id"] not in BATCH_FIVE_IDS:
+            continue
+        path = ROOT / row["target_path"]
+        text = path.read_text()
+        assert (
+            row["license"]["original_notices"][0]
+            .removeprefix("#!/usr/bin/env python\n")
+            .strip()
+            in text
+        )
+        tree = ast.parse(text, feature_version=(3, 11))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Attribute):
+                parts = ast.unparse(node).split(".")
+                if (
+                    len(parts) >= 3
+                    and parts[0] == "qt"
+                    and parts[1] in CONTRACT
+                    and parts[2].isidentifier()
+                ):
+                    assert parts[2] in CONTRACT[parts[1]], (path, parts)
+                    if len(parts) == 4:
+                        assert parts[3] in CONTRACT[parts[1]][parts[2]], (path, parts)
+            if isinstance(node, ast.Call):
+                callee = ast.unparse(node.func)
+                assert not callee.startswith(
+                    (
+                        "QMessageBox.about",
+                        "QMessageBox.information",
+                        "QMessageBox.warning",
+                        "QMessageBox.critical",
+                        "QFileDialog.get",
+                        "QTimer.singleShot",
+                    )
+                ), (path, callee)
+        for resource in row["resources"]:
+            source = sources[resource["source_id"]]
+            assert resource["source"]["sha256"] == source["sha256"]
+            assert resource["source"]["path"] == source["path"]
+            assert (
+                resource["license"]["basis"] and resource["license"]["reviewed_files"]
+            )
+            assert not resource["target_path"].endswith("_rc.py")
+        assert row["source_id"] in (ROOT / "README.md").read_text()
+        assert (
+            f"batch-5-{row['source_id']}"
+            in (ROOT / "docs/pyqt-official-batch.md").read_text()
+        )

@@ -8,6 +8,7 @@ Rendering, overload dispatch and native virtual callbacks need FontLab acceptanc
 import inspect
 import json
 import re
+import threading
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from types import SimpleNamespace
@@ -50,10 +51,19 @@ SIGNALS = {
     "selectionChanged",
     "currentChanged",
     "sectionResized",
+    "entered",
+    "exited",
+    "propertiesAssigned",
+    "xChanged",
+    "yChanged",
+    "messageClicked",
+    "currentRowChanged",
+    "currentFontChanged",
 }
 
 
 def official_host(qt):
+    gui_thread = threading.get_ident()
     classes = {}
     enums = {}
     sender = []
@@ -122,6 +132,9 @@ def official_host(qt):
         _qt_name = "Native"
 
         def __init__(self, *args, **kwargs):
+            assert threading.get_ident() == gui_thread, (
+                "Native Qt construction on a Python worker"
+            )
             if kwargs:
                 raise TypeError("called slot does not support kwargs")
             self._data = {
@@ -170,7 +183,14 @@ def official_host(qt):
             if args and isinstance(args[0], str):
                 self._data.update(text=args[0], title=args[0])
                 self._extra["path"] = args[0]
-            if self._qt_name in ("QSize", "QPoint", "QPointF", "QRect"):
+            if self._qt_name in (
+                "QSize",
+                "QSizeF",
+                "QPoint",
+                "QPointF",
+                "QRect",
+                "QRectF",
+            ):
                 values = list(args)
                 if len(values) == 1 and isinstance(values[0], Native):
                     values = values[0]._position
@@ -189,6 +209,21 @@ def official_host(qt):
                 and isinstance(args[0], int)
             ):
                 self._data.update(rowCount=args[0], columnCount=args[1])
+            if self._qt_name == "QColor":
+                if len(args) >= 3:
+                    self._data.update(red=args[0], green=args[1], blue=args[2])
+                else:
+                    self._data.update(red=0, green=0, blue=0)
+            if self._qt_name == "QPolygonF" and args and isinstance(args[0], list):
+                self._items = list(args[0])
+            if self._qt_name in ("QState", "QStateMachine") and self._parent:
+                self._parent._extra.setdefault("states", []).append(self)
+            if (
+                self._qt_name == "QGraphicsView"
+                and args
+                and getattr(args[0], "_qt_name", None) == "QGraphicsScene"
+            ):
+                self._extra["scene"] = args[0]
             if self._qt_name.endswith("Layout") and self._parent:
                 self._parent._layout = self
             if (self._qt_name == "QStandardItemModel" and len(args) >= 2) and (
@@ -285,10 +320,286 @@ def official_host(qt):
                                 ]
                             )
                             cb(*args[: min(count, n)])
+                active_before = {
+                    id(t._extra["source"]._invoke("machine")): set(
+                        t._extra["source"]
+                        ._invoke("machine")
+                        ._extra.get("active_states", set())
+                    )
+                    for t in self._extra.get("transitions", [])
+                    if t._extra["source"]._invoke("machine") is not None
+                }
+                for transition in self._extra.get("transitions", []):
+                    if transition._extra["signal"].split("(")[0] != key:
+                        continue
+                    source = transition._extra["source"]
+                    machine = source._invoke("machine")
+                    if (
+                        machine is None
+                        or not machine._active
+                        or source not in active_before.get(id(machine), set())
+                    ):
+                        continue
+                    target = transition._extra["target"]
+                    # Keep ancestors active for group-level transitions.
+                    active = set()
+                    parent = target._parent
+                    while parent is not None and parent is not machine:
+                        active.add(parent)
+                        parent = parent._parent
+                    machine._extra["active_states"] = active
+                    machine._enter_state(target)
             finally:
                 sender.pop()
 
+        def _enter_state(self, state):
+            self._extra["active_states"].add(state)
+            for obj, prop, value in state._extra.get("assignments", []):
+                if prop == "geometry":
+                    obj._invoke("setGeometry", value)
+                elif prop == "pos":
+                    obj._invoke("setPos", value)
+                else:
+                    obj._invoke("set" + prop[0].upper() + prop[1:], value)
+            state.emit("entered")
+            initial = state._extra.get("initialState")
+            if initial is not None:
+                self._enter_state(initial)
+
         def _invoke(self, key, *a, **kw):
+            assert threading.get_ident() == gui_thread, (
+                "Native Qt access on a Python worker"
+            )
+            # Value-class setters do not implicitly construct values from enums.
+            value_types = {
+                "setEasingCurve": "QEasingCurve",
+                "setColorAt": "QColor",
+                "setDefaultTextColor": "QColor",
+                "setTextColor": "QColor",
+                "setColor": "QColor",
+                "setCursor": "QCursor",
+            }
+            if key in value_types:
+                expected = value_types[key]
+                if not a or not isinstance(a[-1], classes[expected]):
+                    raise TypeError(
+                        f"{key} requires {expected}; bare enum/int rejected"
+                    )
+            if (
+                key == "fill"
+                and self._qt_name == "QPixmap"
+                and len(a) == 1
+                and not isinstance(a[0], classes["QColor"])
+            ):
+                raise TypeError("fill requires QColor; bare enum/int rejected")
+            if key == "setPen" and self._qt_name == "QPainter":
+                styles = {
+                    enum(name)
+                    for name in (
+                        "NoPen",
+                        "SolidLine",
+                        "DashLine",
+                        "DotLine",
+                        "DashDotLine",
+                        "DashDotDotLine",
+                        "CustomDashLine",
+                    )
+                }
+                if not a or not (
+                    isinstance(a[0], (classes["QPen"], classes["QColor"]))
+                    or isinstance(a[0], int)
+                    and a[0] in styles
+                ):
+                    raise TypeError("setPen requires QPen, QColor or Qt.PenStyle")
+            if self._qt_name == "QLineF":
+                p1 = self._args[0] if self._args else classes["QPointF"]()
+                p2 = self._args[1] if len(self._args) > 1 else classes["QPointF"]()
+                dx = p2._position[0] - p1._position[0]
+                dy = p2._position[1] - p1._position[1]
+                if key in ("dx", "dy", "length"):
+                    return (
+                        dx
+                        if key == "dx"
+                        else dy
+                        if key == "dy"
+                        else (dx * dx + dy * dy) ** 0.5
+                    )
+                if key in ("p1", "p2"):
+                    return p1 if key == "p1" else p2
+            if self._qt_name == "QTransform" and key in (
+                "translate",
+                "scale",
+                "rotate",
+            ):
+                return self
+            if key == "line":
+                return self._data.get("line", classes["QLineF"]())
+            if key == "textCursor":
+                return classes["QTextCursor"]()
+            if key == "buttons":
+                return list(self._items)
+            if key == "button" and self._qt_name == "QButtonGroup":
+                return self._extra["button_ids"][a[0]]
+            if key == "checkedId":
+                return next(
+                    (
+                        key
+                        for key, button in self._extra.get("button_ids", {}).items()
+                        if button.isChecked()
+                    ),
+                    -1,
+                )
+            if key == "matrix":
+                return classes["QTransform"]()
+            if key in ("dx", "dy") and self._qt_name == "QTransform":
+                return 0
+            if key == "assignProperty":
+                self._extra.setdefault("assignments", []).append(a)
+                return None
+            if key == "addState":
+                self._extra.setdefault("states", []).append(a[0])
+                a[0]._parent = self
+                return None
+            if key == "setInitialState":
+                self._extra["initialState"] = a[0]
+                return None
+            if key == "initialState":
+                return self._extra.get("initialState")
+            if key == "machine":
+                item = self
+                while item is not None and item._qt_name != "QStateMachine":
+                    item = item._parent
+                return item
+            if key == "addTransition":
+                transition = classes["QSignalTransition"](self)
+                transition._extra["source"] = self
+                if len(a) == 3:
+                    transition._extra.update(
+                        sender=a[0], signal=a[1].lstrip("2"), target=a[2]
+                    )
+                    a[0]._extra.setdefault("transitions", []).append(transition)
+                elif len(a) == 1:
+                    transition = a[0]
+                    transition._extra["source"] = self
+                return transition
+            if key == "addAnimation":
+                self._items.append(a[0])
+                return None
+            if key == "setTargetState":
+                self._extra["target"] = a[0]
+                return None
+            if key == "configuration":
+                return list(self._extra.get("active_states", set()))
+            if key == "isRunning":
+                return self._active
+            if key == "start" and self._qt_name == "QStateMachine":
+                self._active = True
+                self._extra["active_states"] = set()
+                self._enter_state(self._extra["initialState"])
+                return None
+            if key == "stop" and self._qt_name == "QStateMachine":
+                self._active = False
+                self._extra["active_states"] = set()
+                return None
+            if key == "setScene":
+                self._extra["scene"] = a[0]
+                return None
+            if key == "scene":
+                return self._extra.get("scene")
+            if key == "addItem" and self._qt_name == "QGraphicsScene":
+                self._items.append(a[0])
+                a[0]._extra["scene"] = self
+                return None
+            if key == "items" and self._qt_name == "QGraphicsScene":
+                return self._items[:]
+            if key == "removeItem":
+                self._items.remove(a[0])
+                return None
+            if key == "selectedItems":
+                return [item for item in self._items if item._data.get("selected")]
+            if key == "clearSelection":
+                for item in self._items:
+                    item._data["selected"] = False
+                return None
+            if key == "childItems":
+                return [
+                    child
+                    for child in self._children
+                    if child._qt_name.startswith("QGraphics")
+                ]
+            if key in (
+                "sceneRect",
+                "itemsBoundingRect",
+                "childrenBoundingRect",
+                "boundingRect",
+                "windowFrameRect",
+            ):
+                return classes["QRectF"](-20, -20, 80, 80)
+            if key in ("collidingItems",):
+                return []
+            if key == "pos":
+                return classes["QPointF"](*self._position[:2])
+            if key == "geometry":
+                return classes["QRectF"](*self._position)
+            if key in ("mapToParent", "mapToScene", "mapFromScene", "mapFromItem"):
+                if (
+                    a
+                    and isinstance(a[0], Native)
+                    and a[0]._qt_name in ("QPoint", "QPointF")
+                ):
+                    return classes["QPointF"](*a[0]._position[:2])
+                return classes["QPointF"](*a[-2:])
+            if key in ("setMenu", "setDefaultAction"):
+                self._extra[key[3:4].lower() + key[4:]] = a[0]
+                return None
+            if key in ("menu", "defaultAction"):
+                return self._extra.get(key)
+            if key == "setCurrentTime" and self._qt_name == "QPropertyAnimation":
+                self._data["currentTime"] = a[0]
+                if type(self).__dict__.get("updateCurrentTime"):
+                    self.updateCurrentTime(a[0])
+                return None
+            if key == "pointAtPercent":
+                return classes["QPointF"](a[0] * 100, a[0] * 100)
+            if key == "valueForProgress":
+                return a[0]
+            if key == "easingCurve":
+                value = self._data.get("easingCurve")
+                return (
+                    value
+                    if isinstance(value, Native)
+                    else classes["QEasingCurve"](value)
+                )
+            if key in ("period", "amplitude", "overshoot"):
+                return self._data.get(key, 0.3 if key == "period" else 1.0)
+            if key in ("red", "green", "blue"):
+                return self._data[key]
+            if key == "lighter":
+                return self
+            if key == "name" and self._qt_name == "QColor":
+                return "#{:02x}{:02x}{:02x}".format(
+                    *tuple(self._data[n] for n in ("red", "green", "blue"))
+                )
+            if key in ("rotation", "opacity", "scale", "zValue"):
+                return self._data.get(key, 0)
+            if key == "first":
+                return self._items[0]
+            if key == "polygon":
+                return self._data.get(key, classes["QPolygonF"]())
+            if key == "toFillPolygon":
+                return classes["QPolygonF"]([])
+            if key == "size" and self._qt_name in ("QRect", "QRectF"):
+                return classes["QSizeF"](*self._position[2:])
+            if key == "toSize":
+                return classes["QSize"](*self._position[:2])
+            if key == "toPoint":
+                return classes["QPoint"](*self._position[:2])
+            if (
+                key in ("translate", "rotate", "scale")
+                and self._qt_name == "QTransform"
+            ):
+                return self
+
             if self._qt_name == "QAbstractListModel" and key == "columnCount":
                 return 1
             if self._qt_name == "QBuffer":
@@ -339,6 +650,12 @@ def official_host(qt):
                     return a[0] in self._props
                 if key == "hasText":
                     return bool(self._data["text"])
+                if key in ("hasColor", "hasImage"):
+                    return (
+                        "colorData" if key == "hasColor" else "imageData"
+                    ) in self._data
+                if key in ("colorData", "imageData"):
+                    return self._data.get(key)
             if self._qt_name == "QDrag" and key == "exec":
                 return getattr(qt, "_drag_result", enum("IgnoreAction"))
             if key == "childAt":
@@ -356,7 +673,7 @@ def official_host(qt):
                 return classes["QAbstractItemDelegate"]()
             if key in ("base",) and self._qt_name == "QPalette":
                 return classes["QBrush"]()
-            if self._qt_name == "QRect":
+            if self._qt_name in ("QRect", "QRectF"):
                 if key == "isValid":
                     return self._position[2] > 0 and self._position[3] > 0
                 if key == "topLeft":
@@ -375,6 +692,8 @@ def official_host(qt):
             if self._qt_name in ("QImage", "QPixmap"):
                 if key in ("width", "height"):
                     return self._data[key]
+                if key == "size":
+                    return classes["QSize"](self._data["width"], self._data["height"])
                 if key == "copy":
                     return classes[self._qt_name](
                         *(a[2:] if len(a) == 4 else (400, 400))
@@ -591,12 +910,16 @@ def official_host(qt):
                 return self._cells.get(a[0], "") if a else self._data["text"]
             if key == "toPlainText":
                 return self._data["text"]
+            if key == "setDisabled":
+                self._data["enabled"] = not a[0]
+                return None
             if key == "setVisible":
                 self.visible = bool(a[0])
                 return None
             if key == "setCurrentRow":
                 self._data["currentRow"] = a[0]
                 self.emit("currentItemChanged", self._items[a[0]], None)
+                self.emit("currentRowChanged", a[0])
                 return None
             if key == "setCurrentIndex":
                 self._data["currentIndex"] = a[0]
@@ -663,6 +986,8 @@ def official_host(qt):
                 return None
             if key == "isVisible":
                 return self.visible
+            if key == "isEnabled":
+                return self._data["enabled"]
             if key == "isChecked":
                 return self._data["checked"]
             if key == "isModified":
@@ -715,11 +1040,17 @@ def official_host(qt):
                     typ = {
                         "addAction": "QAction",
                         "addMenu": "QMenu",
-                        "addToolBar": "QWidget",
+                        "addToolBar": "QToolBar",
                         "addButton": "QPushButton",
                     }[key]
                     obj = classes[typ](obj, self)
                 self._items.append(obj)
+                if (
+                    key == "addButton"
+                    and self._qt_name == "QButtonGroup"
+                    and len(a) > 1
+                ):
+                    self._extra.setdefault("button_ids", {})[a[1]] = a[0]
                 return len(self._items) - 1 if key in ("addPage", "addTab") else obj
             if key in ("addItems", "insertItems"):
                 self._items.extend((s, None) for s in a[-1])
@@ -791,7 +1122,7 @@ def official_host(qt):
             if key == "stringList":
                 return self._items
             if key == "isNull":
-                return False
+                return self._qt_name in ("QPixmap", "QImage") and not self._args
             if key == "isEmpty":
                 return not self._data["text"]
             if key == "destroyEditor":
@@ -808,8 +1139,8 @@ def official_host(qt):
                     "y": 1,
                     "left": 0,
                     "top": 1,
-                    "width": 0 if self._qt_name == "QSize" else 2,
-                    "height": 1 if self._qt_name == "QSize" else 3,
+                    "width": 0 if self._qt_name in ("QSize", "QSizeF") else 2,
+                    "height": 1 if self._qt_name in ("QSize", "QSizeF") else 3,
                     "right": 2,
                     "bottom": 3,
                 }[key]
@@ -840,7 +1171,7 @@ def official_host(qt):
             if key == "frameCount":
                 return 0
             if key == "state":
-                return enum("NotRunning")
+                return enum("Running") if self._active else enum("NotRunning")
             if key == "isValid":
                 return True
             if key in ("brush", "dark"):
@@ -961,6 +1292,9 @@ def official_host(qt):
             if key == "findChildren":
                 return self._children
             return None
+
+        def __iter__(self):
+            return iter(self._items)
 
         def unsafe_arithmetic(self, *args):
             raise TypeError("unsafe arithmetic on PythonQt wrapper")

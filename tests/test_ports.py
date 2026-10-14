@@ -64,6 +64,7 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             "MIT",
             "BSD-3-Clause",
             "BSD-3-Clause AND GPL-3.0-only",
+            "GPL-3.0-only",
         }
         assert original["path"] in port["license"]["reviewed_files"]
         assert (ROOT / port["license"]["notice_path"]).is_file()

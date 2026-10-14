@@ -583,3 +583,199 @@ Native acceptance: Use inspect directory as the only save/load location. Save th
 Part 6 plus asynchronous vCard export confined to the same owned directory. UTF-8 pathlib output replaces QTextStream operators; retain vCard 2.1 layout, fix discarded address replace results and escape backslashes/semicolons.
 
 Native acceptance: Repeat part 6 checks. Select Zoë Example with a multiline address containing semicolon/comma/backslash; exportButton opens an owned chooser, acceptance writes the expected BEGIN/END, VERSION:2.1, N/FN and escaped ADR lines. Cancel writes nothing; external path is rejected. Close with chooser open, then confirm all export/pickle artifacts disappear with the owned directory.
+
+
+## Batch 5: animation, graphics view, desktop, threads and IPC
+
+**15 implemented, one blocked; every native acceptance state is unexecuted.**
+Source originals remain pinned/read-only; the preceding batches and TODO items
+are unchanged. This batch adds 45 exact asset copies and no packages. QState,
+QStateMachine, QPropertyAnimation, QGraphicsObject, QTimeLine, QScreen and
+QSystemTrayIcon exist in the checked host stubs. QThread and
+qRegisterResourceData are absent; QSharedMemory has no detach export. The same
+captured contract/doubles now cover the additional classes and reject Qt calls
+from a worker. These checks do not prove PythonQt virtual dispatch or overloads.
+
+Graphics demos embed their original view in a flush QWidget owner; controls
+view retains the graphics view for native interaction. The launcher shows
+only the completed owned root. Native transitions owned by a QStateMachine use native QObject signal relays;
+all Python slot targets go through ExampleHandle’s connection inventory. Close
+stops workers (with bounded join), timers, machines and animations before
+Python callback release and native destruction. A failed join/active drag keeps
+the owner alive and requires a later close retry. Hidden relay buttons must
+remain invisible when the root is shown. Inspect never performs capture, tray
+activation, a notification, file selection, a worker start or an IPC action.
+
+The two commercial/LGPL/GPL headers explicitly offer GPLv3; that alternative is
+selected and the original alternatives remain verbatim. Fourteen entrypoints
+retain BSD-3-Clause source grants alongside the collection GPLv3 evidence,
+with scope unresolved, consistently with earlier batches. Copied asset grants
+remain unresolved where no individual notice exists.
+
+For each implemented row apply **all common acceptance steps above**: launch by
+ID, inspect and native screenshot, drive the specific interactions below,
+native X/reshow, named close twice, process host events externally, retain a
+complete owned-object destruction inventory, relaunch, and verify FontLab and
+unrelated fonts/windows/settings/clipboard are unchanged. Screenshot files and
+tray changes require explicit control actions. Never mark a row passed from
+these doubles. Shared memory has a blocker check instead of a fake UI.
+
+<a id="batch-5-0578c17977b471f1"></a>
+
+### Embedded dialogs — `0578c17977b471f1`
+
+Target: `ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py`. Status: **implemented**, native **unexecuted**. Licence: `GPL-3.0-only`.
+
+Adaptation: 100 proxy dialogs and original form controls/background retained. Generated PyQt UI becomes explicit QFormLayout controls; styles parent to the owned dialog. Native QTimeLine callbacks are tracked/stopped; currentValue uses the actual getter; native protected handlers are dispatched explicitly.
+
+Native acceptance: Expect title Embedded Dialogs Demo, dialog_count 100 and spacing 6. Use controls proxies to hover into/out of several dialogs; verify zoom, rotations, popup focus and cache changes. On controls dialog.ui change spacing (12), directionPicker (RTL/LTR), fontComboBox and stylePicker; verify only that dialog changes. Inspect remains inert. Close while a timeline and a combo popup are active; verify all 100 timelines and embedded dialogs are destroyed.
+
+<a id="batch-5-0788354954c8e613"></a>
+
+### Mandelbrot — `0788354954c8e613`
+
+Target: `ports/threads/pyqt-official/mandelbrot-0788354954c8e613.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: QThread/QMutex/QWaitCondition become a cancellable Python worker and bounded GUI timer drain. All eight refinement passes, original centre/scale and 512-entry spectral colormap are retained. Workers emit integer scanlines; only the GUI constructs/writes QImage. Zoom/scroll cancels and joins stale work; mouse release applies numeric deltas; the original cached drag preview is replaced by progressive row repainting.
+
+Native acceptance: Expect Mandelbrot, initial render_size 550x400 after kickoff, centre [-0.647011,-0.0395159], scale 0.00403897, pass progressing to 7. Exercise controls zoom(0.8), scroll(20,-20), start and stop plus native wheel, +/- and arrow keys, drag/release, resize and repaint. Verify detailed fractal rendering and host responsiveness. Stop/restart repeatedly; close during calculation and with an undrained queue, proving worker join and timer destruction.
+
+<a id="batch-5-1ca857d797199ecf"></a>
+
+### Diagram scene — `1ca857d797199ecf`
+
+Target: `ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original flowchart shapes, arrows, text editor, menus, toolbars and 15 PNGs retained. Custom PyQt signals become explicitly released Python callbacks; Qt signals still use the handle inventory. QPoint arithmetic and undocumented QLineF reference-output conversion become numeric geometry; zero-length arrows are guarded. Qt4 QString operations become Python strings; menus use popup and About uses asynchronous message. Removed items move to a hidden owned scene, avoiding deletion of connected Python targets; nonempty text is retained.
+
+Native acceptance: Expect Diagramscene, item_count 0, mode MoveItem. Use scene, buttonGroup, pointerTypeGroup, sceneScaleCombo and native mouse events to insert Conditional/Process/Input-Output, draw a real arrow between two shapes, move endpoints and verify the arrow follows. Edit text, font/colour/bold/italic/underline; keep nonempty text and remove empty text on focus loss. Test backgrounds, 50–150% scale, Bring/Send/Delete and asynchronous About. Delete shapes with arrows, then close with text focus and an open popup; verify discarded-scene and action destruction.
+
+<a id="batch-5-1cf57c0f2ac8880a"></a>
+
+### Animated tiles — `1cf57c0f2ac8880a`
+
+Target: `ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original 64 tiles, five layouts, staggered durations, background and button images retained. PyQt QObject/pyqtProperty proxy becomes painted QGraphicsObject with native pos. Invisible owned QPushButtons relay item clicks into real QState transitions; no custom Qt signal registration. All timers, state machines and animations stop before disconnect; pixmaps are centred by paint coordinates.
+
+Native acceptance: Expect Animated Tiles and item_count 64. Use controls ellipse/figure8/random/tiled/centered via native clicks; inspect positions and verify every arrangement plus InOutBack interpolation/stagger. Resize view and check fitting and resource rendering. Close during transition and during the initial timer; confirm animations/state machine/timer destruction and a clean relaunch.
+
+<a id="batch-5-243ae486f9528e8c"></a>
+
+### Stickman — `243ae486f9528e8c`
+
+Target: `ports/animation/pyqt-official/stickman-243ae486f9528e8c.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: 16 original nodes/bones, drawing/stabilisation and four byte-identical animation files retained. Native xChanged/yChanged replace positionChanged; native pos properties animate original frames. Original QDataStream binary layout is decoded into checked Python data using struct (including null QString); save uses explicit numeric stream writes. Native button relays implement J/D/C activity transitions; an owned timer implements random lightning and the 100 ms flash. Colour/death changes use entered callbacks rather than unregistered Python properties. Zero-length bones and all wrapper arithmetic are guarded.
+
+Native acceptance: Expect Stickman, node_count 16; frames jumping=5, dancing=9, chilling=25, dead=1. Focus controls view and send J, D, C; verify complete repeating motion and dragging nodes in stick mode via controls stickMan.setDrawSticks(True). Call strike.click(), verify white flash and dead face/pose after flash timer, then confirm activity keys do not resurrect it. Exercise coincident nodes and repaint. Close while moving/flashing; verify node/animation/timer destruction.
+
+<a id="batch-5-27709a02d37b9ba9"></a>
+
+### Wait conditions — `27709a02d37b9ba9`
+
+Target: `ports/threads/pyqt-official/waitconditions-27709a02d37b9ba9.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: QThread/QMutex/QWaitCondition become Python producer/consumer workers using a real threading.Condition, an 8192-character ring and bounded GUI timer delivery. Preserve the 100000-character ACGT transfer; deterministic ACGT order replaces global qrand. An owned read-only log and Start/Stop controls replace process stderr output; timed waits and publish backpressure permit stop/join.
+
+Native acceptance: Expect Waitconditions, phase idle, received 0, data_size 100000 and buffer_size 8192. Click start and drain native events until phase done: received 100000 and prefix/suffix ACGT repeated 20 times. Stop midway, restart to a fresh result, start without draining until backpressure, then named close; verify both workers joined, no Qt calls off the GUI thread and no stderr/global app loop.
+
+<a id="batch-5-29f6a7d0a3bb6813"></a>
+
+### States — `29f6a7d0a3bb6813`
+
+Target: `ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original text editor, radio options, six icons, state property assignments and animations retained. Uses native QGraphicsObject pos/rotation/opacity and real QState/QPropertyAnimation. Each scene, state machine, group and animation is owned; copied PNGs replace compiled resources.
+
+Native acceptance: Expect States with button_text Switch to state 2 and six rendered icons. Click controls button through 2→3→1 repeatedly; verify widget geometry, icons, rotations, opacities and Options appearance. Edit controls edit and select Herring/Blue Parrot/Petunias. Close mid-animation; confirm state machine/animations/proxy widgets are destroyed without callbacks.
+
+<a id="batch-5-2cd6ffc2b2ed65bb"></a>
+
+### Drag/drop robot — `2cd6ffc2b2ed65bb`
+
+Target: `ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original ten-colour palette, articulated robot and looping native rotation/scale animations retained with exact head PNG. Image MIME converts using QPixmap.fromImage. QDrag uses the existing responsive drag boundary/close guard; painters end in finally. Local RNG replaces global qrand/qsrand; all native animations are stopped and owned.
+
+Native acceptance: Expect Drag and Drop Robot, palette_count 10 and an animated articulated robot. Natively drag colours from controls palette to each robot part; test rejected MIME and drag leave highlighting. After repeated drags verify the original occasional head image path, plus explicit image MIME to the head. Escape cancels a drag; attempt named close during drag and confirm safe refusal, finish/cancel and retry. Verify part colours, head_image, animation destruction and unchanged clipboard.
+
+<a id="batch-5-65d15d1fbc1b15e9"></a>
+
+### Screenshot — `65d15d1fbc1b15e9`
+
+Target: `ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original options/preview controls retained. Startup and inspect do not capture or beep. New Screenshot schedules one owned cancellable timer; only its explicit callback calls primaryScreen.grabWindow. Save uses an asynchronous dialog and permits only this build’s temporary directory. No host settings or clipboard changes; timers stop before teardown.
+
+Native acceptance: Expect Screenshot, has_capture false, delay 5 and capture_pending false. Inspect twice and confirm no OS screen capture. Explicitly click newScreenshotButton (macOS may require capture permission); test 0/positive delay, Hide This Window, preview resize and cancellation by closing before timeout. Save using saveScreenshotButton inside the dialog’s owned directory; verify the PNG opens with the captured dimensions. Reject an outside path through saveTo. Close destroys timer/dialog and removes temporary files.
+
+<a id="batch-5-b7283d74afb78218"></a>
+
+### Move blocks — `b7283d74afb78218`
+
+Target: `ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original four blocks, seven geometries, 1250 ms timer, elastic animations and sequential pauses retained. Custom QEvent/QAbstractTransition payload routing becomes a tracked GUI callback choosing a different state and clicking an invisible native button relay into QState transitions. Uses QRectF for native graphics geometry. Broad inventory dependencies are unused upstream imports/resources and are not copied.
+
+Native acceptance: Expect Move Blocks, block_count 4 and seven possible state_index values. Observe automatic changes, then call controls advance ten times: no adjacent repeated index and all four geometries change together. Verify elastic easing and the three original pauses; resize/repaint. Close while timer and animations are active; confirm destruction and no queued callback after close.
+
+<a id="batch-5-b95b687bbc541207"></a>
+
+### Semaphores — `b95b687bbc541207`
+
+Target: `ports/threads/pyqt-official/semaphores-b95b687bbc541207.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: QThread/QSemaphore become two Python workers and actual threading.Semaphore synchronization around the original 8192-character ring; preserve the 100000-character transfer with deterministic ACGT data. Bounded GUI timer delivery replaces stderr; Start/Stop controls and timed semaphore acquisition permit clean cancellation/join even under backpressure.
+
+Native acceptance: Expect Semaphores, phase idle and received 0. Start, wait for done and verify received 100000, buffer_size 8192, matching deterministic prefix/suffix and stopped timer. Stop with producer/consumer blocked; restart, then close with a full delivery queue. Verify both workers joined, native destruction and FontLab responsiveness.
+
+<a id="batch-5-bd6c8feb783ba845"></a>
+
+### Easing — `bd6c8feb783ba845`
+
+Target: `ports/animation/pyqt-official/easing-bd6c8feb783ba845.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original 47 easing choices, tunable period/amplitude/overshoot, line/circle paths and Qt logo retained. Generated UI is reconstructed with original control names; curve names come from the checked Qt enum list rather than PyQt enum reflection. Native QGraphicsObject.pos replaces pyqtProperty; circle updates assign native pos without emitting a fabricated signal. Curve icon painters end in finally.
+
+Native acceptance: Expect Easing curves, curve_count 47, curve OutBounce and path line. Use easingCurvePicker to choose Linear, InElastic, Back, Bounce and both splines; verify icon plots and enabled parameter controls. Change period/amplitude/overshoot, switch lineRadio/circleRadio, and observe actual interpolation and looping movement. Close during animation; confirm timer-free animation and scene/item destruction.
+
+<a id="batch-5-c1b878b63f80e733"></a>
+
+### System tray — `c1b878b63f80e733`
+
+Target: `ports/desktop/pyqt-official/systray-c1b878b63f80e733.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original icons, menu, message fields and notification actions retained. Tray starts hidden and Show icon unchecked; inspect never shows it or sends a notification. Quit closes this handle, with no QApplication quit or global quit-policy change. Native X hides the owned tray; message feedback is asynchronous. Tray hides before callback disconnection/native deletion.
+
+Native acceptance: Expect Systray, tray_visible false, icon_index 1 and original message text. Explicitly toggle showIconCheckBox; verify only this demo’s menu-bar/tray icon appears. Change all icons, minimize/restore with owned menu actions, explicitly send a message and exercise messageClicked feedback where supported. Native X must remove the icon; named close/quitAction must destroy tray/menu/dialog/actions while FontLab remains running. Record platform tray availability/notification restrictions.
+
+<a id="batch-5-de30d23621025fe6"></a>
+
+### Application chooser — `de30d23621025fe6`
+
+Target: `ports/animation/pyqt-official/appchooser-de30d23621025fe6.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original four corner icons, selected centre geometry, restore-properties policy and default geometry animations retained. Invisible owned QPushButtons relay graphics-item clicks into real QState transitions; native QGraphicsWidget geometry replaces custom PyQt signals. Exact images replace compiled resources.
+
+Native acceptance: Expect Application Chooser, item_count 4 and four 64x64 corner geometries. Natively click each controls items entry: selected geometry becomes [86,86,128,128], previously selected icon returns to its original corner and native geometry interpolates. Check up/down image scaling, alignment and no visible relay buttons. Close mid-transition and verify scene/item/state-machine/animation destruction.
+
+<a id="batch-5-de35a965dfcfd678"></a>
+
+### Shared memory (blocked) — `de35a965dfcfd678`
+
+Target: `ports/ipc/pyqt-official/sharedmemory-de35a965dfcfd678.py`. Status: **blocked**, native **unexecuted**. Licence: `GPL-3.0-only`.
+
+Adaptation: QSharedMemory exists, but the host exports no detach() and data/constData have no documented Python byte-buffer signature. The build reports the precise blocker without allocating an IPC key/segment. No in-process substitute is presented as IPC.
+
+Native acceptance: Confirm launcher/build raises the recorded NotImplementedError before any UI or IPC mutation. Recheck the actual host QSharedMemory.detach/data/constData exports; keep blocked unless safe byte access and explicit detach are proved. If exported in a future binding, native acceptance must include an owned unique key, two independent peers, image transfer, failure paths and destruction/unlink of the segment.
+
+<a id="batch-5-fcfaf9667206bbd6"></a>
+
+### Colliding mice — `fcfaf9667206bbd6`
+
+Target: `ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py`. Status: **implemented**, native **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`.
+
+Adaptation: Original seven mice, collision-aware steering/drawing and cheese background retained. Timers have an owned parent, integer 30 ms intervals and tracked slots; each stops before close. Local RNG avoids host-global seeding; coincident mice guard zero-length acos calculations. Positions use components and native mapping methods, never wrapper operators.
+
+Native acceptance: Expect Colliding Mice, mouse_count 7, original cheese background and animated mice. Observe movement, collision ear colours and steering away from the edge; pan/resize the view. Put two controls mice at the same position and confirm no divide-by-zero or paint exception. Close while all seven timers run; verify timer/scene/item destruction and a clean relaunch.

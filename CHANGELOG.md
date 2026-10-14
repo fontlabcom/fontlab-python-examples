@@ -6,6 +6,21 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Fix native easing enum/value-class dispatch in three batch-5
+  ports; audit colour/cursor/fill boundaries across all ports and enforce the
+  exported value types in doubles, with 14 additional regression cases.
+
+- 2026-10-14: Account for all 16 batch-5 official demos: implement 15 animation,
+  graphics-view, desktop and worker ports; block shared memory precisely because
+  the host omits QSharedMemory.detach and a documented Python byte-buffer API.
+  Retain 45 byte-identical assets and original source notices; native acceptance
+  remains unexecuted. Two explicit original GPLv3 alternatives are selected;
+  fourteen BSD/GPL collection scope reviews remain unresolved.
+- Extend existing official ownership/tests/doubles with cancellable Python
+  producer/consumer and Mandelbrot delivery, native animation/state relays,
+  component geometry, inert screenshot/tray startup, owned asynchronous file
+  saving and complete per-port controller checklists. No commit or TODO change.
+
 - 2026-10-14: Implement 18 further official PythonQt ports: drag/drop, lighting,
   item views and address-book parts 1–7, with 15 exact resources. Extend the
   existing manifest, launch table, official tests/doubles and native checklists;

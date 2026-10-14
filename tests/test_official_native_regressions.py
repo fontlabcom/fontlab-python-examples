@@ -10,7 +10,9 @@ import pytest
 from fontlab_python_examples.official import Demo
 from tests.official_doubles import CONTRACT
 from tests.test_official_batch import ROOT, built, records
-from tests.test_official_batch import official_qt as official_qt  # noqa: PLC0414 - pytest fixture re-export
+from tests.test_official_batch import (
+    official_qt as official_qt,  # noqa: PLC0414 - pytest fixture re-export
+)
 
 SOURCES = [ROOT / row["target_path"] for row in records()] + [
     ROOT / "fontlab_python_examples/official.py"
@@ -50,7 +52,13 @@ def test_ports_use_no_keywords_for_native_constructors():
 
 def test_explicit_release_fields_exclude_native_properties_and_cover_subclass_fields():
     for path in SOURCES:
-        for cls in ast.walk(ast.parse(path.read_text())):
+        tree = ast.parse(path.read_text())
+        bases = {
+            c.name: ast.unparse(c.bases[0])
+            for c in ast.walk(tree)
+            if isinstance(c, ast.ClassDef) and c.bases
+        }
+        for cls in ast.walk(tree):
             if not isinstance(cls, ast.ClassDef) or not cls.bases:
                 continue
             calls = [
@@ -61,6 +69,9 @@ def test_explicit_release_fields_exclude_native_properties_and_cover_subclass_fi
             if not calls:
                 continue
             name = ast.unparse(cls.bases[0])
+            while name in bases:
+                name = bases[name]
+            name = name.rsplit(".", 1)[-1]
             fields = next(types[name] for types in CONTRACT.values() if name in types)
             declared = {arg.value for call in calls for arg in call.args[1:]}
             assigned = {
@@ -202,3 +213,175 @@ def test_qbytearray_movie_codec_export_and_settings_display(official_qt, tmp_pat
     delegate = settings.widget.settingsTree._data["itemDelegate"]
     assert delegate.displayText(qt.QtCore.QByteArray(b"\xe9\x00")) == "é\x00"
     settings.close()
+
+
+@pytest.mark.parametrize("curve", ["InOutBack", "SineCurve", "OutElastic"])
+def test_easing_setter_requires_constructed_value_not_enum(curve, official_qt):
+    qt, _ = official_qt
+    animation = qt.QtCore.QPropertyAnimation()
+    enum = getattr(qt.QtCore.QEasingCurve, curve)
+    for bare in (enum, 35, 43, 30):
+        with pytest.raises(TypeError, match="setEasingCurve requires QEasingCurve"):
+            animation.setEasingCurve(bare)
+    value = qt.QtCore.QEasingCurve(enum)
+    animation.setEasingCurve(value)
+    from fontlab_python_examples.official import read
+
+    assert read(animation, "easingCurve") is value
+
+
+@pytest.mark.parametrize("name", ["animatedtiles", "dragdroprobot", "moveblocks"])
+def test_native_reported_easing_ports_construct_curve_values(name, official_qt):
+    qt, _ = official_qt
+    handle = built(name, qt)
+    assert handle.snapshot()["title"] and not handle.snapshot()["error"]
+    if name == "animatedtiles":
+        option = SimpleNamespace(
+            state=qt.QtGui.QStyle.State_Sunken | qt.QtGui.QStyle.State_MouseOver
+        )
+        handle.controls["ellipse"].paint(qt.QtGui.QPainter(), option, None)
+    handle.close()
+    assert handle.owner.closed and not handle.connections
+
+
+def test_value_setter_enums_across_all_ports_and_helper_are_explicit():
+    paths = sorted((ROOT / "ports").rglob("*.py")) + [
+        ROOT / "fontlab_python_examples/official.py"
+    ]
+    single_values = {
+        "setEasingCurve",
+        "setFont",
+        "setCurrentFont",
+        "setShortcut",
+        "setKeySequence",
+        "setCursor",
+        "setPalette",
+        "setIconSize",
+        "setGridSize",
+        "setBackgroundBrush",
+        "setDefaultTextColor",
+        "setTextColor",
+    }
+    pen_styles = {
+        "NoPen",
+        "SolidLine",
+        "DashLine",
+        "DotLine",
+        "DashDotLine",
+        "DashDotDotLine",
+        "CustomDashLine",
+    }
+    violations = []
+    for path in paths:
+        for node in ast.walk(ast.parse(path.read_text())):
+            if (
+                not isinstance(node, ast.Call)
+                or not isinstance(node.func, ast.Attribute)
+                or not node.args
+            ):
+                continue
+            method = node.func.attr
+            value = node.args[-1]
+            if not isinstance(value, (ast.Attribute, ast.Constant)):
+                continue
+            text = ast.unparse(value)
+            enum_owner = text.split(".")[-2] if isinstance(value, ast.Attribute) else ""
+            bare = (
+                isinstance(value, ast.Constant)
+                and type(value.value) in (int, str)
+                or isinstance(value, ast.Attribute)
+                and enum_owner
+                in {"Qt", "QFont", "QEasingCurve", "QKeySequence", "QSizePolicy"}
+            )
+            if not bare:
+                continue
+            if (
+                method in single_values
+                or method in {"setColorAt", "setColor"}
+                or method == "fill"
+                and ast.unparse(node.func.value) == "pixmap"
+                or method == "setSizePolicy"
+                and len(node.args) == 1
+                or method == "setPen"
+                and enum_owner == "Qt"
+                and value.attr not in pen_styles
+            ):
+                violations.append((path.name, node.lineno, ast.unparse(node)))
+    assert not violations, f"Value-class setters cannot take bare enums: {violations}"
+
+
+@pytest.mark.parametrize(
+    "kind", ["gradient", "palette", "cursor", "pen", "text", "pixmap"]
+)
+def test_value_setter_doubles_reject_bare_color_and_cursor_enums(kind, official_qt):
+    qt, _ = official_qt
+    cases = {
+        "pixmap": (
+            qt.QtGui.QPixmap(10, 10),
+            "fill",
+            (),
+            qt.QtCore.Qt.white,
+            qt.QtGui.QColor(qt.QtCore.Qt.white),
+        ),
+        "text": (
+            qt.QtGui.QGraphicsTextItem(),
+            "setDefaultTextColor",
+            (),
+            qt.QtCore.Qt.black,
+            qt.QtGui.QColor(qt.QtCore.Qt.black),
+        ),
+        "gradient": (
+            qt.QtGui.QLinearGradient(),
+            "setColorAt",
+            (0.5,),
+            qt.QtCore.Qt.red,
+            qt.QtGui.QColor(qt.QtCore.Qt.red),
+        ),
+        "palette": (
+            qt.QtGui.QPalette(),
+            "setColor",
+            (qt.QtGui.QPalette.Text,),
+            qt.QtCore.Qt.red,
+            qt.QtGui.QColor(qt.QtCore.Qt.red),
+        ),
+        "cursor": (
+            qt.QtGui.QWidget(),
+            "setCursor",
+            (),
+            qt.QtCore.Qt.OpenHandCursor,
+            qt.QtGui.QCursor(qt.QtCore.Qt.OpenHandCursor),
+        ),
+        "pen": (
+            qt.QtGui.QPainter(),
+            "setPen",
+            (),
+            qt.QtCore.Qt.white,
+            qt.QtGui.QColor(qt.QtCore.Qt.white),
+        ),
+    }
+    obj, setter, prefix, bare, wrapped = cases[kind]
+    with pytest.raises(TypeError, match=setter):
+        getattr(obj, setter)(*prefix, bare)
+    getattr(obj, setter)(*prefix, wrapped)
+
+
+def test_scalar_and_documented_enum_overloads_remain_valid(official_qt):
+    qt, _ = official_qt
+    font = qt.QtGui.QFont()
+    font.setWeight(qt.QtGui.QFont.Bold)
+    widget = qt.QtGui.QWidget()
+    widget.setFont(font)
+    widget.setSizePolicy(qt.QtGui.QSizePolicy.Expanding, qt.QtGui.QSizePolicy.Preferred)
+    widget.setSizePolicy(
+        qt.QtGui.QSizePolicy(qt.QtGui.QSizePolicy.Fixed, qt.QtGui.QSizePolicy.Fixed)
+    )
+    painter = qt.QtGui.QPainter()
+    painter.setPen(qt.QtCore.Qt.NoPen)
+    painter.setBrush(qt.QtCore.Qt.NoBrush)
+    action = qt.QtGui.QAction(widget)
+    action.setShortcut(qt.QtGui.QKeySequence(qt.QtGui.QKeySequence.Open))
+    handle = Demo(qt, __file__, "value-shortcut")
+    handle.begin(widget)
+    owned = handle.action("Open", widget, shortcut=qt.QtGui.QKeySequence.Open)
+    assert owned._data["shortcut"]._qt_name == "QKeySequence"
+    handle.handle.close()
