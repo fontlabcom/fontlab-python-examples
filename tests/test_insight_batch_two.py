@@ -30,7 +30,9 @@ def test_second_insight_manifest_when_registered_then_ranks_and_controller_contr
     assert [r["rank"] for r in new] == list(range(13, 19))
     assert tuple(r["slug"] for r in new) == SLUGS
     for record in new:
-        assert record["native_acceptance"] == "unexecuted"
+        assert record["native_acceptance"] in {"unexecuted", "passed"}
+        if record["native_acceptance"] == "passed":
+            assert record.get("native_evidence"), "passed needs receipts"
         assert record["controls"] and record["native_checks"]
         assert (ROOT / record["target_path"]).is_file()
         for resource in record.get("resources", []):
