@@ -28,7 +28,13 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             "upstream_url",
         ):
             assert port["source"][key] == original[key], key
-        assert port["target_path"] == original["target_path"]
+        expected_target = original["target_path"]
+        if original["path"].startswith("src/pyqt-official/"):
+            category = original["path"].split("/")[2]
+            expected_target = (
+                f"ports/{category}/pyqt-official/" + Path(expected_target).name
+            )
+        assert port["target_path"] == expected_target
         assert port["implementation"] in {"implemented", "blocked"}
         if port["implementation"] == "blocked":
             assert port["blocked_reason"]
@@ -54,7 +60,11 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             assert set(destruction["expected"]) == set(destruction["destroyed"])
             assert destruction["registry_empty"] is True
             assert destruction["host_application_alive"] is True
-        assert port["license"]["selected"] in {"MIT", "BSD-3-Clause"}
+        assert port["license"]["selected"] in {
+            "MIT",
+            "BSD-3-Clause",
+            "BSD-3-Clause AND GPL-3.0-only",
+        }
         assert original["path"] in port["license"]["reviewed_files"]
         assert (ROOT / port["license"]["notice_path"]).is_file()
         assert not Path(port["target_path"]).is_absolute()

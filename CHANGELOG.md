@@ -6,6 +6,29 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Preserve QMainWindow.centralWidget() in icons and i18n by renaming
+  Python fields to _central_widget. Audit all official ports for native slot
+  shadowing; add strict double and AST regressions, including inherited methods.
+
+- 2026-10-14: Fix controller-reported official-port failures: remove unsafe Qt
+  wrapper arithmetic, release only explicitly declared Python fields, replace
+  native constructor keywords with setters, and use QByteArray.data() for bytes.
+  Harden doubles to reject wrapper arithmetic, null native properties, constructor
+  keywords and implicit QByteArray conversion; add AST and interaction regressions.
+  Native reacceptance and licence reconciliation remain pending.
+
+- 2026-10-14: Port 23 official pyqt/examples demos to injected PythonQt, covering
+  dialogs, layouts, main windows, painting, tools and widgets. Preserve original
+  source identities and 107 byte-identical resources; native acceptance remains
+  unexecuted for all 23 and no existing acceptance records are changed.
+- Retain the original BSD headers alongside the GPLv3 collection terms and record
+  their unresolved scope in the manifest and official-source notice.
+- Add tracked asynchronous dialogs, owned temporary settings, scoped styles and
+  translations, cancellable chunked file search, dynamic menu disconnection and
+  explicit painter cleanup; fix inherited negative layout indexing, regexp
+  escaping and false-string boolean conversion. Add per-port native checklists
+  and strict exported-member doubles with interaction/failure tests.
+
 - Add original insight ranks 13–18: owned QUiLoader form, cancellable worker
   queue, scoped sample console, idempotent owned menu/action tokens, sample
   QUndoStack commands, and existing compiled wrapper/native slot exposure.

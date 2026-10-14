@@ -16,7 +16,9 @@ MANIFEST = json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))
 NEW = [
     r
     for r in MANIFEST["ports"]
-    if r["native_acceptance"] == "unexecuted" and r["implementation"] == "implemented"
+    if r["native_acceptance"] == "unexecuted"
+    and r["implementation"] == "implemented"
+    and "/pyqt-examples/" in r["target_path"]
 ]
 CONNECTED_PORTS = NEW + [
     r for r in MANIFEST["ports"] if r["name"] == "Signals and Slots"
@@ -429,8 +431,6 @@ def test_editor_when_actions_triggered_then_utf8_roundtrip_and_cancel(
     handle.close()
 
 
-
-
 def test_gallery_when_timer_advances_then_original_values_and_progress(batch_qt):
     handle = load(record("PyQt Widgets")).build(batch_qt)
     state = handle.snapshot()
@@ -488,8 +488,6 @@ def test_editor_when_open_or_save_fails_then_unsaved_text_is_preserved(
     actions[2].triggered.emit()
     assert handle.snapshot()["modified"] and handle.snapshot()["error"]
     handle.close()
-
-
 
 
 def test_blocked_when_launched_then_reason_before_host_import():

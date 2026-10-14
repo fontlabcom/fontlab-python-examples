@@ -11,8 +11,9 @@ running FontLab. Start at the [categorized index](catalog/INDEX.md).
 
 Both pinned collections are fully acquired and verified locally: **1,569 files,
 465 Python files**. The public catalog contains provenance and planned mappings;
-the upstream originals remain local. **Four entrypoints are native-verified; ten more are implemented and await native acceptance.** This first batch does not complete either
-requested collection.
+the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 23
+official demos are implemented and await native acceptance.** Neither requested
+collection is complete.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -27,18 +28,12 @@ also remain distinct on a case-insensitive filesystem. Duplicate bytes retain
 every original mapping.
 
 Static analysis identifies 298 Python entrypoint candidates, 14 ambiguous Python
-candidates, 153 auxiliary Python files, and 3 uncertain QML launcher candidates.
-These counts are **not a confirmed executable-example denominator**. Main guards
-and module launch calls provide evidence; uncertain files remain in scope.
-Execution-scope evidence includes class bodies/headers and definition-time
-expressions, while function, async-function, method and lambda bodies are
-deferred. Conditions and calls into those bodies are not evaluated: these are
-possible launch sites, not proof of execution. Imports, APIs and capability
-requirements still include all source bodies.
-Directory associations conservatively include shared/sibling resources. There
-are 69 shared or repository files with unresolved example ownership; every one
-has an individual catalog record. Native capability needs describe observed
-source requirements, not host support.
+candidates, 153 auxiliary Python files and 3 uncertain QML launcher candidates.
+These are not a confirmed executable-example denominator. Static execution-scope
+analysis excludes deferred bodies; conditions and invoked functions need review.
+All imports/API requirements remain catalogued. The 69 shared/repository files
+have individual records with unresolved ownership; capability needs are source
+requirements, not proof of host support.
 
 ## Regenerate the inventory
 
@@ -106,6 +101,29 @@ examples.close("QLabel")             # idempotent, only owned UI
 | `QTreeView` | `f5bf995791f1e87b` | Implemented; native acceptance unexecuted |
 | `QListView` | `1bf0ade33cd6bf12` | Implemented; native acceptance unexecuted |
 | `QAbstractTableModel` | `31fc7691c18d55f2` | Implemented; native acceptance unexecuted |
+| `Official classwizard` | `035f3fbd2b81479a` | Implemented; native acceptance unexecuted |
+| `Official configdialog` | `3f5f77c0358d9fef` | Implemented; native acceptance unexecuted |
+| `Official extension` | `a1c26dbf9f995edb` | Implemented; native acceptance unexecuted |
+| `Official findfiles` | `63f2eeefd052f701` | Implemented; native acceptance unexecuted |
+| `Official standarddialogs` | `e1a0a829f8f2e311` | Implemented; native acceptance unexecuted |
+| `Official tabdialog` | `dab5fd4c94ec518d` | Implemented; native acceptance unexecuted |
+| `Official trivialwizard` | `c0d4a173b261a3e5` | Implemented; native acceptance unexecuted |
+| `Official basiclayouts` | `2f94fe07de765888` | Implemented; native acceptance unexecuted |
+| `Official borderlayout` | `f48955d43ed6196c` | Implemented; native acceptance unexecuted |
+| `Official flowlayout` | `675c9f79650d7507` | Implemented; native acceptance unexecuted |
+| `Official application` | `7da7020aa7e2732b` | Implemented; native acceptance unexecuted |
+| `Official mdi` | `1415facde30a25cf` | Implemented; native acceptance unexecuted |
+| `Official sdi` | `eba98690c141a070` | Implemented; native acceptance unexecuted |
+| `Official basicdrawing` | `907f39d8bf387501` | Implemented; native acceptance unexecuted |
+| `Official codecs` | `19571722ed96aa9c` | Implemented; native acceptance unexecuted |
+| `Official customcompleter` | `10ef4dacb4db4080` | Implemented; native acceptance unexecuted |
+| `Official i18n` | `eca1cd9ef1528607` | Implemented; native acceptance unexecuted |
+| `Official regexp` | `626fd0acec74fd91` | Implemented; native acceptance unexecuted |
+| `Official settingseditor` | `9e41e71c41b116a8` | Implemented; native acceptance unexecuted |
+| `Official icons` | `505d60a757bbc177` | Implemented; native acceptance unexecuted |
+| `Official movie` | `a3b3cbe51c1506c6` | Implemented; native acceptance unexecuted |
+| `Official stylesheet` | `876eab33b6a99e31` | Implemented; native acceptance unexecuted |
+| `Official tooltips` | `e62ce3eb648cfb4c` | Implemented; native acceptance unexecuted |
 
 Source IDs also work as names. `get(name)` retrieves a launched handle, including
 its native widget, retained callbacks and alert owners. Repeated launch reshows
@@ -121,27 +139,11 @@ relative to the port file. Launch fails clearly outside FontLab, without an
 existing QApplication, for unknown names, or for known but unported source IDs
 and source paths.
 
-Ordinary external Python with [fontlab-remopy](../fontlab-remopy) can execute the
-same code inside an already running FontLab with its MCP bridge configured:
+Ordinary external Python can use [fontlab-remopy](../fontlab-remopy) to run the
+same calls inside an already running FontLab with its MCP bridge configured.
 
-```python
-from fontlab_remopy import FontLab
-
-with FontLab() as fl:
-    fl.run("import fontlab_python_examples as examples; examples.launch('QLabel')")
-    state = fl.run("import fontlab_python_examples as examples; result = examples.inspect('QLabel')")
-    print(state.value)
-    fl.run("import fontlab_python_examples as examples; examples.close('QLabel')")
-```
-
-The [runnable Remopy example](examples/remopy.py) adds this local checkout to the
-host module path and supports separate calls:
-
-```sh
-uv run examples/remopy.py launch "Signals and Slots"
-uv run examples/remopy.py inspect "Signals and Slots"
-uv run examples/remopy.py close "Signals and Slots"
-```
+The [runnable Remopy example](examples/remopy.py) supports external launch,
+inspect and close calls while adding this checkout to the host module path.
 
 The static [source catalog](catalog/sources.json) stays unchanged. The separate
 [port manifest](catalog/ports.json) records individual licenses, exact original
@@ -169,17 +171,17 @@ The repository's Apache license does not relicense upstream inputs. Pinned
 READMEs, actual notices and source headers supply per-file evidence. All 1,569
 files retain **license review pending in the static catalog**; 43 have no
 recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and
-[the source notice](ports/pyqt-examples-LICENSE.md).
+[the numbered-source notice](ports/pyqt-examples-LICENSE.md) and
+[the official-source notice](ports/pyqt-official-LICENSE.md).
 Nearby notices may apply only to specific assets: their association is evidence,
 not a blanket license assignment. Preserve the original notices and resolve
 scope before distributing a port or copying upstream resources.
 
-Four targets retain native acceptance; ten new targets await controller acceptance.
+Four targets retain native acceptance; 30 implemented targets await acceptance.
 QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including
 its initializer) have explicit blocked records. The gallery (02) preserves its
 BSD notice with license review unresolved. Editor styles affect only owned UI.
-Chat names are entered in-window; threaded variants use GUI delivery timers and
-joined workers on close. QPainter (10) preserves bullet/audio assets but cannot
+QPainter (10) preserves bullet/audio assets but cannot
 play QSoundEffect through QtCore/QtGui. See
 [second-batch native checks](docs/second-numbered-batch.md). Future ports
 must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop,
@@ -187,10 +189,11 @@ without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia,
 GStreamer, matplotlib, database, network and platform examples remain in scope.
 See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
 
-The first four ports passed actual FontLab text/layout/click/alert dismissal and
-Designer OK/Cancel checks from clean committed sources. All 38 tracked owned
-objects were destroyed, paths/modules were restored and stored settings/font
-records matched. See [batch evidence](verification/first-native-batch.json).
-This proves source loading; wheel installation and all other examples remain
-required. The source catalog retains its historical inventory states; the port
-manifest records current per-entry acceptance.
+The [first-batch evidence](verification/first-native-batch.json) records native
+text/layout/click/Designer acceptance, destruction of all 38 owned objects and
+unchanged host state. This proves source loading; wheel installation and other
+native checks remain required. Current states live in the port manifest.
+
+The 23 official ports use tracked callbacks, async dialogs, isolated host state
+and 107 exact resource copies. See [adaptations and native checks](docs/pyqt-official-batch.md).
+Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved.
