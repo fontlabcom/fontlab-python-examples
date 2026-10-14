@@ -6,6 +6,16 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Implement 18 further official PythonQt ports: drag/drop, lighting,
+  item views and address-book parts 1–7, with 15 exact resources. Extend the
+  existing manifest, launch table, official tests/doubles and native checklists;
+  all new native acceptance states remain unexecuted. Retain per-file BSD source
+  notices with the collection GPLv3 terms and unresolved scope.
+- Replace stream/wrapper arithmetic, Python model pointers, custom PyQt signals,
+  modal dialogs and user-file pickle I/O with native QVariant buffers, numeric
+  index IDs, tracked timers/callbacks and owned temporary address-book files.
+  Keep failed cleanup guards queued so active drag sources cannot be deleted.
+
 - 2026-10-14: Preserve QMainWindow.centralWidget() in icons and i18n by renaming
   Python fields to _central_widget. Audit all official ports for native slot
   shadowing; add strict double and AST regressions, including inherited methods.

@@ -63,7 +63,8 @@ class ExampleHandle:
 
     def close(self) -> None:
         while self.cleanup:
-            self.cleanup.pop(0)()
+            self.cleanup[0]()
+            self.cleanup.pop(0)
         self._disconnect()
         self.callbacks.clear()
         self.inspect_ui = dict

@@ -42,6 +42,55 @@ def describe_control(obj: Any) -> dict:
     return state
 
 
+def pack_values(qt: Any, values: list) -> Any:
+    """Encode drag values with native QVariant methods, without stream operators."""
+    core = qt.QtCore
+    buffer = core.QBuffer()
+    try:
+        if not buffer.open(core.QIODevice.WriteOnly):
+            raise OSError("Cannot open the owned drag buffer")
+        stream = core.QDataStream(buffer)
+        stream.setVersion(core.QDataStream.Qt_5_0)
+        for value in values:
+            stream.writeQVariant(value)
+        if stream.status() != core.QDataStream.Ok:
+            raise ValueError("Cannot encode drag data")
+        return core.QByteArray(buffer.data().data())
+    finally:
+        buffer.close()
+        buffer.deleteLater()
+
+
+def unpack_values(qt: Any, data: Any, expected: tuple = ()) -> list:
+    """Decode the ports' versioned native drag format; reject truncated values."""
+    core = qt.QtCore
+    buffer = core.QBuffer()
+    try:
+        buffer.setData(data)
+        if not buffer.open(core.QIODevice.ReadOnly):
+            raise OSError("Cannot open the owned drag buffer")
+        stream = core.QDataStream(buffer)
+        stream.setVersion(core.QDataStream.Qt_5_0)
+        values = []
+        while not stream.atEnd():
+            values.append(stream.readQVariant())
+            if stream.status() != core.QDataStream.Ok:
+                raise ValueError("Invalid drag data")
+        if expected and (
+            not values
+            or len(values) % len(expected)
+            or any(
+                not isinstance(value, expected[index % len(expected)])
+                for index, value in enumerate(values)
+            )
+        ):
+            raise ValueError("Unexpected drag value types")
+        return values
+    finally:
+        buffer.close()
+        buffer.deleteLater()
+
+
 class Demo:
     """One build's owner, resource root and explicit signal connections."""
 
@@ -55,18 +104,46 @@ class Demo:
         self.temporary = None
         self.error = ""
         self.closing = False
+        self.dragging = False
 
     def begin(self, window: Any) -> None:
         if self.handle is None:
             self.handle = ExampleHandle(window, dict)
             self.handle.release.append(self.release)
-            self.handle.cleanup.append(lambda: setattr(self, "closing", True))
+            self.handle.cleanup.append(self.prepare_close)
         elif window is not self.handle.widget:
             from fontlabapp.widgets import OwnedWidget
 
             self.handle.alerts.append(OwnedWidget(window, window))
         window.setAttribute(self.qt.QtCore.Qt.WA_QuitOnClose, False)
         window.setAttribute(self.qt.QtCore.Qt.WA_DeleteOnClose, False)
+
+    def prepare_close(self) -> None:
+        """Keep the drag source alive until the native macOS drag returns."""
+        if self.dragging:
+            raise RuntimeError("Finish or cancel the drag before closing this example")
+        self.closing = True
+
+    def drag(self, drag: Any, actions: Any, default: Any = None) -> Any:
+        """Use QDrag's native operation, never a QApplication or modal dialog loop.
+
+        Qt documents that QDrag.exec keeps the macOS event loop responsive.
+        The parent owns the drag and its MIME object; neither has Python slots.
+        """
+        self.dragging = True
+        try:
+            return drag.exec(actions, actions if default is None else default)
+        finally:
+            self.dragging = False
+            drag.deleteLater()
+
+    def owned_path(self, path: str) -> Path:
+        """Address-book persistence accepts only paths in this build's directory."""
+        root = Path(self.temp_dir()).resolve()
+        result = Path(path).resolve()
+        if not result.is_relative_to(root) or result == root:
+            raise ValueError("Choose a file inside this example's temporary directory")
+        return result
 
     def remember(self, name: str, obj: Any) -> Any:
         import inspect

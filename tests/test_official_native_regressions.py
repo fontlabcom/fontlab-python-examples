@@ -60,7 +60,8 @@ def test_explicit_release_fields_exclude_native_properties_and_cover_subclass_fi
             ]
             if not calls:
                 continue
-            fields = CONTRACT["QtGui"][ast.unparse(cls.bases[0])]
+            name = ast.unparse(cls.bases[0])
+            fields = next(types[name] for types in CONTRACT.values() if name in types)
             declared = {arg.value for call in calls for arg in call.args[1:]}
             assigned = {
                 n.attr

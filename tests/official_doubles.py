@@ -47,6 +47,9 @@ SIGNALS = {
     "returnPressed",
     "canceled",
     "currentIdChanged",
+    "selectionChanged",
+    "currentChanged",
+    "sectionResized",
 }
 
 
@@ -54,6 +57,7 @@ def official_host(qt):
     classes = {}
     enums = {}
     sender = []
+    streams = {}
 
     def enum(name):
         if name not in enums:
@@ -81,6 +85,10 @@ def official_host(qt):
                     return classes[cls._qt_name]()
                 if key == "fromHsv":
                     return classes["QColor"](*args)
+                if key == "fromImage":
+                    return classes["QPixmap"](
+                        args[0]._data["width"], args[0]._data["height"]
+                    )
                 if key == "currentPath":
                     return "/tmp"
                 if key == "tempPath":
@@ -183,6 +191,15 @@ def official_host(qt):
                 self._data.update(rowCount=args[0], columnCount=args[1])
             if self._qt_name.endswith("Layout") and self._parent:
                 self._parent._layout = self
+            if (self._qt_name == "QStandardItemModel" and len(args) >= 2) and (
+                isinstance(args[0], int) and isinstance(args[1], int)
+            ):
+                self._data.update(rowCount=args[0], columnCount=args[1])
+            if (self._qt_name in ("QImage", "QPixmap") and len(args) >= 2) and (
+                isinstance(args[0], int) and isinstance(args[1], int)
+            ):
+                self._data.update(width=args[0], height=args[1])
+                self._position[2:] = args[:2]
             # PythonQt exposes native properties in __dict__, even on subclasses.
             if self._fields.get("geometry") == "value":
                 object.__setattr__(self, "geometry", classes["QRect"](0, 0, 400, 300))
@@ -194,6 +211,16 @@ def official_host(qt):
                 if self._fields[key] == "value":
                     if key[0].isupper():
                         return enum(key)
+                    if key in ("selection", "selectedIndexes", "offset") or (
+                        key == "currentIndex" and self._qt_name == "QItemSelectionModel"
+                    ):
+                        return self._invoke(key)
+                    if key in ("x", "y"):
+                        return self._position[0 if key == "x" else 1]
+                    if key == "color":
+                        return self._data.get(key, classes["QColor"]())
+                    if key == "pixmap":
+                        return self._data.get(key, classes["QPixmap"]())
                     if key == "document":
                         if "document" not in self._extra:
                             self._extra["document"] = classes["QTextDocument"](self)
@@ -262,6 +289,232 @@ def official_host(qt):
                 sender.pop()
 
         def _invoke(self, key, *a, **kw):
+            if self._qt_name == "QAbstractListModel" and key == "columnCount":
+                return 1
+            if self._qt_name == "QBuffer":
+                if key == "open":
+                    return True
+                if key == "setData":
+                    self._extra["bytes"] = a[0].data()
+                    return None
+                if key == "data":
+                    return ByteArray(self._extra.get("bytes", b""))
+            if self._qt_name == "QDataStream":
+                buffer = self._args[0]
+                if key == "writeQVariant":
+                    values = self._extra.setdefault("values", [])
+                    values.append(a[0])
+                    token = b"fixture:" + str(id(values)).encode()
+                    streams[token] = values[:]
+                    buffer._extra["bytes"] = token
+                    return None
+                if key == "readQVariant":
+                    values = streams.get(buffer._extra.get("bytes"))
+                    pos = self._extra.get("read_position", 0)
+                    self._extra["read_position"] = pos + 1
+                    if values is None or pos >= len(values):
+                        self._extra["corrupt"] = True
+                        return None
+                    return values[pos]
+                if key == "atEnd":
+                    token = buffer._extra.get("bytes", b"")
+                    return not token or self._extra.get("read_position", 0) >= len(
+                        streams.get(token, [None])
+                    )
+                if key == "status":
+                    return (
+                        enum("ReadCorruptData")
+                        if self._extra.get("corrupt")
+                        else enum("Ok")
+                    )
+            if self._qt_name == "QMimeData":
+                if key == "setData":
+                    self._props[a[0]] = (
+                        a[1] if isinstance(a[1], ByteArray) else ByteArray(a[1])
+                    )
+                    return None
+                if key == "data":
+                    return self._props.get(a[0], ByteArray())
+                if key == "hasFormat":
+                    return a[0] in self._props
+                if key == "hasText":
+                    return bool(self._data["text"])
+            if self._qt_name == "QDrag" and key == "exec":
+                return getattr(qt, "_drag_result", enum("IgnoreAction"))
+            if key == "childAt":
+                return next(
+                    (
+                        child
+                        for child in self._children
+                        if child.isVisible() and child.inherits("QLabel")
+                    ),
+                    None,
+                )
+            if key == "viewOptions":
+                return classes["QStyleOptionViewItem"]()
+            if key == "itemDelegate":
+                return classes["QAbstractItemDelegate"]()
+            if key in ("base",) and self._qt_name == "QPalette":
+                return classes["QBrush"]()
+            if self._qt_name == "QRect":
+                if key == "isValid":
+                    return self._position[2] > 0 and self._position[3] > 0
+                if key == "topLeft":
+                    return classes["QPoint"](*self._position[:2])
+                if key == "adjusted":
+                    x, y, w, h = self._position
+                    return classes["QRect"](
+                        x + a[0], y + a[1], w + a[2] - a[0], h + a[3] - a[1]
+                    )
+                if key == "normalized":
+                    return self
+                if key == "united":
+                    return a[0]
+            if self._qt_name == "QFontMetrics" and key == "size":
+                return classes["QSize"](len(a[1]) * 8, 20)
+            if self._qt_name in ("QImage", "QPixmap"):
+                if key in ("width", "height"):
+                    return self._data[key]
+                if key == "copy":
+                    return classes[self._qt_name](
+                        *(a[2:] if len(a) == 4 else (400, 400))
+                    )
+                if key == "scaled":
+                    return classes[self._qt_name](*a[:2])
+            if self._qt_name == "QModelIndex":
+                if key in ("row", "column", "internalId", "internalPointer"):
+                    return self._extra.get(key, 0 if key.startswith("internal") else -1)
+                if key == "isValid":
+                    return self._extra.get("row", -1) >= 0
+                if key == "parent":
+                    model = self._extra.get("model")
+                    return model.parent(self) if model else classes["QModelIndex"]()
+                if key == "data":
+                    return self._extra["model"].data(self, *a)
+            if key in ("createIndex", "index") and self._qt_name in (
+                "QAbstractItemModel",
+                "QAbstractListModel",
+                "QStandardItemModel",
+            ):
+                result = classes["QModelIndex"]()
+                if key == "createIndex" or (
+                    0 <= a[0] < self.rowCount() and 0 <= a[1] < self.columnCount()
+                ):
+                    result._extra.update(
+                        row=a[0],
+                        column=a[1],
+                        model=self,
+                        internalId=a[2] if key == "createIndex" else 0,
+                    )
+                return result
+            if key == "hasIndex":
+                return 0 <= a[0] < self.rowCount(a[2]) and 0 <= a[1] < self.columnCount(
+                    a[2]
+                )
+            if (
+                key in ("insertRow", "insertColumn", "removeRow", "removeColumn")
+                and self._qt_name == "QAbstractItemModel"
+            ):
+                return getattr(self, key + "s")(
+                    a[0], 1, *(a[1:] or (classes["QModelIndex"](),))
+                )
+            if self._qt_name == "QStandardItemModel":
+                if key == "setHorizontalHeaderLabels":
+                    self._data["columnCount"] = len(a[0])
+                    self._extra["headers"] = list(a[0])
+                    return None
+                if key == "setItem":
+                    self._data["rowCount"] = max(self._data["rowCount"], a[0] + 1)
+                    self._data["columnCount"] = max(self._data["columnCount"], a[1] + 1)
+                    self._cells[a[:2]] = a[2]
+                    return None
+                if key == "setData":
+                    role = a[2] if len(a) > 2 else enum("DisplayRole")
+                    if role == enum("EditRole"):
+                        role = enum("DisplayRole")
+                    self._props[(a[0].row(), a[0].column(), role)] = a[1]
+                    self.emit("dataChanged", a[0], a[0], [])
+                    return True
+                if key == "data":
+                    role = a[1] if len(a) > 1 else enum("DisplayRole")
+                    cell = self._cells.get((a[0].row(), a[0].column()))
+                    return self._props.get(
+                        (a[0].row(), a[0].column(), role),
+                        cell._data["text"] if cell else None,
+                    )
+                if key in ("insertRows", "removeRows"):
+                    self._data["rowCount"] += a[1] if key == "insertRows" else -a[1]
+                    if key == "removeRows":
+                        self._props.clear()
+                    return True
+                if key == "parent":
+                    return classes["QModelIndex"]()
+            if key in ("dataChanged", "headerDataChanged"):
+                self.emit(key, *a)
+                return None
+            if key == "selectionModel":
+                if "selection" not in self._extra:
+                    self._extra["selection"] = classes["QItemSelectionModel"](
+                        self._extra.get("model"), self
+                    )
+                return self._extra["selection"]
+            if key == "setSelectionModel":
+                self._extra["selection"] = a[0]
+                return None
+            if key == "currentIndex" and self._qt_name in (
+                "QItemSelectionModel",
+                "QTreeView",
+                "QTableView",
+                "QAbstractItemView",
+                "QListView",
+            ):
+                if self._qt_name != "QItemSelectionModel":
+                    return self.selectionModel()._invoke("currentIndex")
+                return self._extra.get("current", classes["QModelIndex"]())
+            if (
+                key in ("select", "setCurrentIndex")
+                and self._qt_name == "QItemSelectionModel"
+            ):
+                self._extra["current"] = a[0]
+                self._extra["selected"] = [a[0]] if a[0].isValid() else []
+                self.emit(
+                    "selectionChanged",
+                    classes["QItemSelection"](),
+                    classes["QItemSelection"](),
+                )
+                return None
+            if key == "selectedIndexes":
+                if self._qt_name in ("QListView", "QTableView", "QTreeView"):
+                    return self.selectionModel()._invoke("selectedIndexes")
+                return self._extra.get("selected", [])
+            if key == "selection":
+                result = classes["QItemSelection"]()
+                result._items = self._extra.get("selected", [])
+                return result
+            if key == "isEmpty" and self._qt_name == "QItemSelection":
+                return not self._items
+            if key in ("rootIndex",):
+                return classes["QModelIndex"]()
+            if key in ("columnWidth", "rowHeight", "frameWidth"):
+                return self._props.get(
+                    (key, a[0] if a else 0), 100 if key == "columnWidth" else 20
+                )
+            if key in ("setColumnWidth", "setRowHeight"):
+                self._props[
+                    ("columnWidth" if key == "setColumnWidth" else "rowHeight", a[0])
+                ] = a[1]
+                return None
+            if key == "setPos":
+                self._position[:2] = a[0]._position[:2] if len(a) == 1 else a
+                return None
+            if key == "addPixmap":
+                item = classes["QGraphicsPixmapItem"](a[0])
+                self._items.append(item)
+                return item
+            if key == "graphicsEffect":
+                return self._data.get("graphicsEffect")
+            if key == "offset":
+                return self._data.get("offset", classes["QPointF"](8, 8))
             if key == "sender":
                 return sender[-1] if sender else None
             if key == "blockSignals":
@@ -303,6 +556,8 @@ def official_host(qt):
                 "header",
                 "document",
                 "verticalScrollBar",
+                "horizontalScrollBar",
+                "viewport",
                 "style",
                 "textCursor",
                 "cursorRect",
@@ -316,6 +571,8 @@ def official_host(qt):
                     "header": "QHeaderView",
                     "document": "QTextDocument",
                     "verticalScrollBar": "QScrollBar",
+                    "horizontalScrollBar": "QScrollBar",
+                    "viewport": "QWidget",
                     "style": "QStyle",
                     "textCursor": "QTextCursor",
                     "cursorRect": "QRect",
@@ -356,8 +613,10 @@ def official_host(qt):
                     self.emit("toggled", a[0])
                 return None
             if key == "setValue":
+                old = self._data["value"]
                 self._data["value"] = a[0]
-                self.emit("valueChanged", a[0])
+                if old != a[0]:
+                    self.emit("valueChanged", a[0])
                 return None
             if key == "setRange":
                 self._data.update(minimum=a[0], maximum=a[1])
@@ -368,12 +627,19 @@ def official_host(qt):
             if key == "data":
                 return self._props.get(tuple(a))
             if key in ("setModel", "setWidget"):
+                if key == "setModel" and a[0] is None:
+                    selection = self._extra.get("selection")
+                    assert selection is None or all(
+                        not signal.callbacks for signal in selection._signals.values()
+                    ), "Disconnect Python selection slots before detaching the model"
                 self._extra[key[3:].lower()] = a[0]
                 return None
             if key in ("model", "widget"):
                 return self._extra.get(key)
             if key == "setGeometry":
                 self._position = a[0]._position[:] if len(a) == 1 else list(a)
+                if self._fields.get("geometry") == "value":
+                    self.geometry = classes["QRect"](*self._position)
                 return None
             if key == "resize":
                 w, h = a[0]._position[:2] if len(a) == 1 else a

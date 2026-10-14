@@ -34,6 +34,29 @@ IDS = {
 }
 
 
+BATCH_FOUR_IDS = {
+    "da76600eaea7a121",
+    "090c76a87351e771",
+    "94ab271d023d1ca3",
+    "306c12d5cc1db46c",
+    "227efef76ed4ac74",
+    "e1f313d96e43adff",
+    "878fe9f714df3b5e",
+    "f4d9e2927469223c",
+    "bb1c114d38fb756a",
+    "c98ae8ac71886586",
+    "b823a76f79197d84",
+    "321f8e535facafde",
+    "4d19e62d93dd761c",
+    "2719ebb336f3a29e",
+    "55bcde890cd77ed7",
+    "c5b4e385cc921da4",
+    "700e96dec485e7a8",
+    "5781fa4ba55c884f",
+}
+IDS |= BATCH_FOUR_IDS
+
+
 def records():
     return [
         r
@@ -44,7 +67,7 @@ def records():
 
 def test_official_manifest_covers_exact_batch_and_retains_provenance():
     rows = records()
-    assert {r["source_id"] for r in rows} == IDS, "All 23 entries require a result"
+    assert {r["source_id"] for r in rows} == IDS, "All 41 entries require a result"
     sources = {
         r["id"]: r
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
@@ -694,4 +717,616 @@ def test_transient_icon_editor_disconnects_before_native_deletion(official_qt):
     assert "comboBox" not in handle.controls
     assert not any(signal.callbacks for signal in editor._signals.values())
     json.dumps(handle.snapshot())
+    handle.close()
+
+
+@pytest.mark.parametrize("part", range(1, 8))
+def test_addressbook_stage_controls_and_contacts(part, official_qt):
+    qt, _ = official_qt
+    handle = built(f"addressbook part{part}", qt)
+    c = handle.controls
+    if part == 1:
+        c["nameLine"].setText("Zoë")
+        c["addressText"].setPlainText("<A>\nŁódź")
+        assert handle.snapshot()["name"] == "Zoë"
+        assert handle.snapshot()["address"] == "<A>\nŁódź"
+        assert "addButton" not in c
+        handle.close()
+        return
+    c["addButton"].click()
+    c["submitButton"].click()
+    assert handle.snapshot()["contact_count"] == 0
+    assert c["active_dialog"].windowTitle == "Empty Field"
+    c["active_dialog"].accept()
+    for name in ("Zoë", "Ada", "Łukasz"):
+        if name != "Zoë":
+            c["addButton"].click()
+        c["nameLine"].setText(name)
+        c["addressText"].setPlainText("<literal>\n" + name)
+        c["submitButton"].click()
+        c["active_dialog"].accept()
+    assert handle.snapshot()["contacts"] == {
+        name: "<literal>\n" + name for name in ("Zoë", "Ada", "Łukasz")
+    }
+    c["addButton"].click()
+    c["nameLine"].setText("Ada")
+    c["addressText"].setPlainText("duplicate")
+    c["submitButton"].click()
+    assert handle.snapshot()["contacts"]["Ada"] == "<literal>\nAda"
+    c["active_dialog"].accept()
+    c["cancelButton"].click()
+    assert handle.snapshot()["name"] == "Łukasz"
+    if part >= 3:
+        c["nextButton"].click()
+        assert handle.snapshot()["name"] == "Ada", "Sorted navigation wraps"
+        c["previousButton"].click()
+        assert handle.snapshot()["name"] == "Łukasz"
+    if part >= 4:
+        c["editButton"].click()
+        c["nameLine"].setText("Ada")
+        c["submitButton"].click()
+        assert handle.snapshot()["contact_count"] == 3
+        c["active_dialog"].accept()
+        c["nameLine"].setText("Renamed")
+        c["addressText"].setPlainText("New address")
+        c["submitButton"].click()
+        c["active_dialog"].accept()
+        assert handle.snapshot()["contacts"]["Renamed"] == "New address"
+        c["removeButton"].click()
+        c["active_dialog"].emit("buttonClicked", qt.QtGui.QMessageBox.No)
+        assert handle.snapshot()["contact_count"] == 3
+        c["removeButton"].click()
+        c["active_dialog"].emit("buttonClicked", qt.QtGui.QMessageBox.Yes)
+        assert "Renamed" not in handle.snapshot()["contacts"]
+    handle.close()
+
+
+@pytest.mark.parametrize("part", [5, 6, 7])
+def test_addressbook_find_is_async_reusable_and_rejects_empty(part, official_qt):
+    qt, _ = official_qt
+    handle = built(f"addressbook part{part}", qt)
+    c, window = handle.controls, handle.widget
+    window.contacts.update(Ada="London", Zoë="Łódź", Charles="Paris")
+    window.updateInterface(window.NavigationMode)
+    c["findButton"].click()
+    assert c["findDialog"].isVisible()
+    c["findSubmit"].click()
+    assert c["findDialog"].isVisible(), "Empty search must not accept stale text"
+    c["active_dialog"].accept()
+    c["findLine"].setText("Zoë")
+    c["findSubmit"].click()
+    assert handle.snapshot()["name"] == "Zoë"
+    assert handle.snapshot()["address"] == "Łódź"
+    for name in ("missing", "Ada"):
+        c["findButton"].click()
+        c["findLine"].setText(name)
+        c["findSubmit"].click()
+    assert handle.snapshot()["name"] == "Ada"
+    accepted = [
+        link
+        for link in handle.connections
+        if link[0] is c["findDialog"] and link[1] == "accepted()"
+    ]
+    assert len(accepted) == 1, "Reopening must not duplicate acceptance callbacks"
+    c["findButton"].click()
+    c["findDialog"].reject()
+    assert handle.snapshot()["name"] == "Ada"
+    handle.close()
+
+
+@pytest.mark.parametrize("part", [6, 7])
+def test_addressbook_owned_pickle_roundtrip_corruption_and_path_boundary(
+    part, official_qt, tmp_path
+):
+    import pickle
+
+    qt, _ = official_qt
+    handle = built(f"addressbook part{part}", qt)
+    c, window = handle.controls, handle.widget
+    directory = Path(handle.snapshot()["directory"])
+    assert directory.is_dir()
+    window.contacts.update({"Zoë": "<literal>\nŁódź"})
+    window.updateInterface(window.NavigationMode)
+    output = directory / "contacts.abk"
+    c["saveButton"].click()
+    assert not output.exists(), "Choosing a file or inspecting must not save"
+    c["active_dialog"]._extra["selectedFiles"] = [str(output)]
+    c["active_dialog"].accept()
+    assert pickle.loads(output.read_bytes()) == dict(window.contacts)
+    window.contacts.clear()
+    c["loadButton"].click()
+    c["active_dialog"]._extra["selectedFiles"] = [str(output)]
+    c["active_dialog"].accept()
+    assert handle.snapshot()["contacts"] == {"Zoë": "<literal>\nŁódź"}
+    before = dict(window.contacts)
+    for content in (b"broken", b"", pickle.dumps([1]), b"cos\nsystem\n."):
+        output.write_bytes(content)
+        c["loadContacts"](str(output))
+        assert handle.snapshot()["error"]
+        assert dict(window.contacts) == before
+    external = tmp_path / "untouched.abk"
+    external.write_bytes(b"untouched")
+    c["saveContacts"](str(external))
+    c["loadContacts"](str(external))
+    assert external.read_bytes() == b"untouched"
+    alias = directory / "escape.abk"
+    alias.symlink_to(external)
+    c["saveContacts"](str(alias))
+    assert external.read_bytes() == b"untouched"
+    output.write_bytes(pickle.dumps({}))
+    c["loadContacts"](str(output))
+    assert handle.snapshot()["contact_count"] == 0
+    handle.close()
+    assert not directory.exists(), "Named close removes only the owned sandbox"
+
+
+def test_addressbook_vcard_export_preserves_unicode_and_escapes_address(official_qt):
+    qt, _ = official_qt
+    handle = built("addressbook part7", qt)
+    handle.controls["nameLine"].setText("Zoë Example")
+    handle.controls["addressText"].setPlainText("A;B\nŁódź, Poland")
+    path = Path(handle.snapshot()["directory"]) / "contact.vcf"
+    handle.controls["exportContact"](str(path))
+    assert path.read_text() == (
+        "BEGIN:VCARD\nVERSION:2.1\nN:Example;Zoë\nFN:Zoë Example\n"
+        "ADR;HOME:;A\\;B;Łódź  Poland\nEND:VCARD\n"
+    )
+    handle.close()
+
+
+@pytest.mark.parametrize("name", ["simpletreemodel", "editabletreemodel"])
+def test_tree_models_have_real_hierarchy_and_numeric_index_identity(name, official_qt):
+    qt, _ = official_qt
+    handle = built(name, qt)
+    model = handle.controls["model"]
+    root = model.index(0, 0)
+    assert root.isValid() and isinstance(root.internalId(), int)
+    assert model.data(root), "Original resource text must populate the model"
+    assert not model.parent(root).isValid()
+    assert model.rowCount(model.index(0, 1)) == 0
+    assert not model.index(-1, 0).isValid()
+    assert not model.index(99999, 0).isValid()
+    assert not model.index(0, 999).isValid()
+    assert model.data(qt.QtCore.QModelIndex()) is None
+    child = model.index(0, 0, root)
+    if child.isValid():
+        assert model.parent(child).internalId() == root.internalId()
+    assert handle.snapshot()["tree"]["children"]
+    handle.close()
+
+
+def test_editable_tree_actions_edits_and_invalid_mutations(official_qt):
+    qt, _ = official_qt
+    handle = built("editabletreemodel", qt)
+    c, model = handle.controls, handle.controls["model"]
+    before = model.rowCount()
+    c["insertChildAction"].trigger()
+    assert model.rowCount() == before + 1
+    selected = c["view"].selectionModel()._invoke("currentIndex")
+    assert model.setData(selected, "New title")
+    assert model.data(selected) == "New title"
+    for name in ("insertRows", "removeRows", "insertColumns", "removeColumns"):
+        for start, count in ((-1, 1), (0, -1), (0, 0), (1000000, 1)):
+            assert not getattr(model, name)(start, count), (name, start, count)
+    assert not model.setData(qt.QtCore.QModelIndex(), "invalid")
+    columns = model.columnCount()
+    c["insertColumnAction"].trigger()
+    assert model.columnCount() == columns + 1
+    c["removeColumnAction"].trigger()
+    assert model.columnCount() == columns
+    c["removeRowAction"].trigger()
+    assert model.rowCount() == before
+    handle.close()
+
+
+def test_interview_views_share_selection_and_lazy_hierarchy(official_qt):
+    qt, _ = official_qt
+    handle = built("interview", qt)
+    c, model = handle.controls, handle.controls["model"]
+    assert handle.snapshot()["row_count"] == 1000
+    assert handle.snapshot()["column_count"] == 10
+    assert handle.snapshot()["shared_selection"]
+    parent = model.index(4, 0)
+    child = model.index(3, 2, parent)
+    assert model.parent(child).internalId() == parent.internalId()
+    assert model.data(child) == "Item 3:2"
+    c["selection"].select(parent, qt.QtGui.QItemSelectionModel.ClearAndSelect)
+    assert handle.snapshot()["selected"] == [[4, 0]]
+    assert not model.index(-1, 0).isValid()
+    assert not model.index(1000, 0).isValid()
+    handle.close()
+
+
+def test_frozen_column_scroll_resize_and_geometry(official_qt):
+    qt, _ = official_qt
+    handle = built("frozencolumn", qt)
+    c, window = handle.controls, handle.widget
+    assert handle.snapshot()["rows"] and handle.snapshot()["column_count"] > 1
+    window.horizontalHeader().emit("sectionResized", 0, 100, 173)
+    assert handle.snapshot()["frozen_width"] == 173
+    window.verticalHeader().emit("sectionResized", 2, 20, 37)
+    assert c["frozenTableView"].rowHeight(2) == 37
+    c["verticalScrollBar"].setValue(50)
+    assert handle.snapshot()["scroll"] == [50, 50]
+    c["frozenTableView"].verticalScrollBar().setValue(23)
+    assert handle.snapshot()["scroll"] == [23, 23]
+    window.resizeEvent(SimpleNamespace())
+    assert len(handle.snapshot()["frozen_geometry"]) == 4
+    handle.close()
+
+
+def test_lighting_animates_numeric_offsets_and_stops_before_close(official_qt):
+    qt, _ = official_qt
+    handle = built("lighting", qt)
+    before = handle.snapshot()
+    assert before["item_count"] == 25 and before["timer_active"]
+    handle.controls["timer"].emit("timeout")
+    after = handle.snapshot()
+    assert after["angle"] > before["angle"] and after["light"] != before["light"]
+    assert after["offsets"] != before["offsets"]
+    timer = handle.controls["timer"]
+    handle.close()
+    assert not timer.isActive() and not handle.connections
+
+
+def drop_event(qt, mime, x, y, source=None):
+    result = {"accepted": False, "ignored": False, "action": None}
+    event = SimpleNamespace(
+        mimeData=lambda: mime,
+        pos=lambda: qt.QtCore.QPoint(x, y),
+        source=lambda: source,
+        rect=lambda: qt.QtCore.QRect(0, 0, 400, 400),
+        accept=lambda: result.update(accepted=True),
+        acceptProposedAction=lambda: result.update(accepted=True),
+        ignore=lambda: result.update(ignored=True),
+        setDropAction=lambda action: result.update(action=action),
+    )
+    return event, result
+
+
+def test_native_variant_drag_buffer_roundtrip_and_corrupt_input(official_qt):
+    from fontlab_python_examples.official import pack_values, unpack_values
+
+    qt, _ = official_qt
+    point = qt.QtCore.QPoint(3, 7)
+    pixmap = qt.QtGui.QPixmap(80, 80)
+    values = unpack_values(qt, pack_values(qt, ["Łódź", point, pixmap]))
+    assert values == ["Łódź", point, pixmap]
+    with pytest.raises(ValueError, match="Invalid drag data"):
+        unpack_values(qt, qt.QtCore.QByteArray(b"truncated"))
+
+
+@pytest.mark.parametrize("name", ["draggabletext", "fridgemagnets"])
+def test_word_drag_external_text_and_internal_move(name, official_qt, monkeypatch):
+    from fontlab_python_examples.official import read
+
+    qt, _ = official_qt
+    handle = built(name, qt)
+    window = handle.widget
+    before = handle.snapshot()["label_count"]
+    mime = qt.QtCore.QMimeData()
+    mime.setText("Zoë Łódź")
+    mime.setData("application/x-hotspot", b"3 4")
+    event, result = drop_event(qt, mime, 53, 64)
+    window.dropEvent(event)
+    labels = handle.snapshot()["labels"]
+    assert result["accepted"] and len(labels) == before + 2
+    assert [label["text"] for label in labels[-2:]] == ["Zoë", "Łódź"]
+    assert labels[-2]["x"] == (50 if name == "draggabletext" else 53)
+    if name == "draggabletext":
+        mime.setData("application/x-hotspot", b"bad offset")
+        window.dropEvent(event)
+        assert handle.snapshot()["labels"][-2]["x"] == 53
+    label = next(child for child in window.children() if child.inherits("QLabel"))
+    invoke = qt.QtGui.QDrag._invoke
+
+    def drag(self, key, *args, **kwargs):
+        if key == "exec":
+            event, accepted = drop_event(qt, self._data["mimeData"], 103, 104, label)
+            window.dropEvent(event)
+            assert accepted["accepted"]
+            return qt.QtCore.Qt.MoveAction
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QDrag, "_invoke", drag)
+    label.mousePressEvent(SimpleNamespace(pos=lambda: qt.QtCore.QPoint(3, 4)))
+    assert not label.isVisible()
+    assert handle.snapshot()["labels"][-1]["text"] == (
+        label.labelText if name == "fridgemagnets" else read(label, "text")
+    )
+    handle.close()
+
+
+def test_draggable_icons_copy_move_and_reject_other_mime(official_qt, monkeypatch):
+    qt, _ = official_qt
+    handle = built("draggableicons", qt)
+    left, right = handle.controls["left"], handle.controls["right"]
+    invoke = qt.QtGui.QDrag._invoke
+    action = [qt.QtCore.Qt.CopyAction]
+
+    def drag(self, key, *args, **kwargs):
+        if key == "exec":
+            event, result = drop_event(qt, self._data["mimeData"], 80, 90, left)
+            right.dropEvent(event)
+            assert result["accepted"]
+            return action[0]
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QDrag, "_invoke", drag)
+    left.mousePressEvent(SimpleNamespace(pos=lambda: qt.QtCore.QPoint(23, 24)))
+    assert handle.snapshot()["panels"][1][-1] == {"x": 77, "y": 86, "visible": True}
+    assert sum(x["visible"] for x in handle.snapshot()["panels"][0]) == 3
+    action[0] = qt.QtCore.Qt.MoveAction
+    left.mousePressEvent(SimpleNamespace(pos=lambda: qt.QtCore.QPoint(23, 24)))
+    assert sum(x["visible"] for x in handle.snapshot()["panels"][0]) == 2
+    event, result = drop_event(qt, qt.QtCore.QMimeData(), 0, 0)
+    right.dropEvent(event)
+    assert result["ignored"]
+    handle.close()
+
+
+@pytest.mark.parametrize("name", ["draganddrop puzzle", "itemviews puzzle"])
+def test_puzzle_drop_cancel_completion_and_restart(name, official_qt):
+    from fontlab_python_examples.official import pack_values
+
+    qt, _ = official_qt
+    handle = built(name, qt)
+    c = handle.controls
+    board = c["puzzleWidget"]
+    assert handle.snapshot()["piece_count"] == 25 and handle.snapshot()["placed"] == 0
+
+    def place(x, y):
+        mime = qt.QtCore.QMimeData()
+        mime.setData(
+            "application/x-fontlab-puzzle-piece",
+            pack_values(qt, [qt.QtGui.QPixmap(80, 80), qt.QtCore.QPoint(x, y)]),
+        )
+        event, result = drop_event(qt, mime, x * 80 + 4, y * 80 + 6)
+        board.dropEvent(event)
+        return result
+
+    assert place(0, 0)["accepted"]
+    assert handle.snapshot()["in_place"] == 1
+    assert place(0, 0)["ignored"], "Occupied cells reject a second piece"
+    qt._drag_result = qt.QtCore.Qt.IgnoreAction
+    board.mousePressEvent(SimpleNamespace(pos=lambda: qt.QtCore.QPoint(5, 5)))
+    assert handle.snapshot()["in_place"] == 1 and handle.snapshot()["placed"] == 1
+    qt._drag_result = qt.QtCore.Qt.MoveAction
+    board.mousePressEvent(SimpleNamespace(pos=lambda: qt.QtCore.QPoint(5, 5)))
+    assert handle.snapshot()["in_place"] == 0 and handle.snapshot()["placed"] == 0
+    for y in range(5):
+        for x in range(5):
+            assert place(x, y)["accepted"]
+    assert handle.snapshot()["in_place"] == 25
+    board.paintEvent(SimpleNamespace(rect=lambda: qt.QtCore.QRect(0, 0, 400, 400)))
+    c["completionTimer"].emit("timeout")
+    assert c["active_dialog"].windowTitle == "Puzzle Completed"
+    assert handle.snapshot()["in_place"] == 25, "Reset follows the dialog response"
+    c["active_dialog"].emit("buttonClicked", qt.QtGui.QMessageBox.Ok)
+    assert handle.snapshot()["in_place"] == 0
+    assert handle.snapshot()["piece_count"] == 25
+    c["openImage"]("/not/a/real/image")
+    assert handle.snapshot()["error"] and handle.snapshot()["piece_count"] == 25
+    timer = c["completionTimer"]
+    handle.close()
+    assert not timer.isActive()
+
+
+def test_puzzle_model_roundtrip_and_row_bounds(official_qt):
+    qt, _ = official_qt
+    handle = built("itemviews puzzle", qt)
+    model = handle.controls["model"]
+    mime = model.mimeData([model.index(0, 0)])
+    root = qt.QtCore.QModelIndex()
+    assert model.dropMimeData(mime, qt.QtCore.Qt.MoveAction, -1, 0, root)
+    assert model.rowCount() == 26
+    assert model.removeRows(0, 1, root) and model.rowCount() == 25
+    for row, count in ((-1, 1), (0, -1), (0, 0), (24, 2), (9999, 1)):
+        assert not model.removeRows(row, count, root)
+    assert model.rowCount(model.index(0, 0)) == 0
+    assert not model.dropMimeData(
+        qt.QtCore.QMimeData(), qt.QtCore.Qt.MoveAction, 0, 0, root
+    )
+    handle.controls["restart"]()
+    assert model.rowCount() == 25
+    handle.close()
+
+
+def test_drag_close_guard_retries_before_releasing_source(official_qt, monkeypatch):
+    from fontlab_python_examples.official import Demo
+
+    qt, _ = official_qt
+    demo = Demo(qt, __file__, "drag-test")
+    window = qt.QtGui.QWidget()
+    handle = demo.finish(window)
+    invoke = qt.QtGui.QDrag._invoke
+
+    def drag(self, key, *args, **kwargs):
+        if key == "exec":
+            for _ in range(2):
+                with pytest.raises(RuntimeError, match="Finish or cancel the drag"):
+                    handle.close()
+                assert not handle.owner.closed and handle.cleanup
+            return qt.QtCore.Qt.IgnoreAction
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QDrag, "_invoke", drag)
+    native_drag = qt.QtGui.QDrag(window)
+    demo.drag(native_drag, qt.QtCore.Qt.MoveAction)
+    assert native_drag.deleted
+    handle.close()
+    assert handle.owner.closed
+
+
+def test_chart_edit_selection_file_roundtrip_and_bad_input(official_qt, tmp_path):
+    qt, _ = official_qt
+    handle = built("chart", qt)
+    c, model = handle.controls, handle.controls["model"]
+    initial = handle.snapshot()
+    assert initial["row_count"] > 0 and initial["total"] > 0
+    model.setData(model.index(0, 1), 123.0)
+    assert handle.snapshot()["quantities"][0] == 123
+    for value in ("not a number", "nan", None, -4):
+        model.setData(model.index(0, 1), value)
+        assert handle.snapshot()["total"] >= 0
+    model.setData(model.index(0, 1), 12.5)
+    label = 'Zoë, "quoted"'
+    model.setData(model.index(0, 0), label)
+    c["selection"].select(
+        model.index(0, 0), qt.QtGui.QItemSelectionModel.ClearAndSelect
+    )
+    assert handle.snapshot()["selected"] == [[0, 0]]
+    c["pieChart"].paintEvent(
+        SimpleNamespace(rect=lambda: qt.QtCore.QRect(0, 0, 600, 400))
+    )
+    path = tmp_path / "chart.cht"
+    c["writeFile"](str(path))
+    assert path.exists() and not handle.snapshot()["error"]
+    c["openFile"](str(path))
+    assert handle.snapshot()["labels"][0] == label
+    assert handle.snapshot()["quantities"][0] == 12.5
+    before = handle.snapshot()["labels"]
+    path.write_text("invalid\n")
+    c["openFile"](str(path))
+    assert handle.snapshot()["error"]
+    assert handle.snapshot()["labels"] == before, (
+        "Parse before replacing a loaded chart"
+    )
+    handle.close()
+
+
+@pytest.mark.parametrize(
+    "name,control,mime_type",
+    [
+        ("draggableicons", "left", "application/x-fontlab-dnditemdata"),
+        ("fridgemagnets", "board", "application/x-fontlab-fridgemagnet"),
+        ("draganddrop puzzle", "puzzleWidget", "application/x-fontlab-puzzle-piece"),
+        ("itemviews puzzle", "puzzleWidget", "application/x-fontlab-puzzle-piece"),
+    ],
+)
+def test_invalid_drag_payload_is_rejected_without_losing_owned_ui(
+    name, control, mime_type, official_qt
+):
+    from fontlab_python_examples.official import pack_values
+
+    qt, _ = official_qt
+    handle = built(name, qt)
+    for payload in (qt.QtCore.QByteArray(b"broken"), pack_values(qt, ["wrong type"])):
+        mime = qt.QtCore.QMimeData()
+        mime.setData(mime_type, payload)
+        event, result = drop_event(qt, mime, 10, 10)
+        handle.controls[control].dropEvent(event)
+        assert result["ignored"] and not result["accepted"]
+        assert handle.snapshot()["error"] and not handle.owner.closed
+    handle.close()
+
+
+@pytest.mark.parametrize(
+    "row",
+    [r for r in records() if r["source_id"] in BATCH_FOUR_IDS],
+    ids=lambda r: r["name"],
+)
+def test_batch_four_inspect_is_inert_and_build_failure_releases_root(
+    row, official_qt, monkeypatch
+):
+    from fontlab_python_examples.official import Demo
+
+    qt, owners = official_qt
+    handle = load_record(row).build(qt)
+    state = handle.snapshot()
+    directory = Path(state["directory"]) if "directory" in state else None
+    before = list(directory.iterdir()) if directory else None
+    assert handle.snapshot() == state
+    assert (list(directory.iterdir()) if directory else None) == before
+    handle.close()
+    before_owners = len(owners)
+
+    def fail(self, window, extra=dict):
+        raise RuntimeError("injected finish failure")
+
+    monkeypatch.setattr(Demo, "finish", fail)
+    with pytest.raises(RuntimeError, match="injected finish failure"):
+        load_record(row).build(qt)
+    assert owners[before_owners:] and all(
+        owner.closed for owner in owners[before_owners:]
+    )
+
+
+def test_batch_four_native_aliases_members_and_resource_literals_match_contract():
+    from tests.official_doubles import CONTRACT
+
+    for row in records():
+        if row["source_id"] not in BATCH_FOUR_IDS:
+            continue
+        path = ROOT / row["target_path"]
+        tree = ast.parse(path.read_text())
+        aliases = {}
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Assign) or len(node.targets) != 1:
+                continue
+            if not isinstance(node.targets[0], ast.Name):
+                continue
+            value = ast.unparse(node.value)
+            if value.startswith("qt.") and len(value.split(".")) == 3:
+                _, module, name = value.split(".")
+                assert name in CONTRACT[module], (path, value)
+                aliases[node.targets[0].id] = CONTRACT[module][name]
+        for cls in (
+            n for n in ast.walk(tree) if isinstance(n, ast.ClassDef) and n.bases
+        ):
+            native = aliases.get(ast.unparse(cls.bases[0]))
+            if native is None:
+                continue
+            own = {n.name for n in cls.body if isinstance(n, ast.FunctionDef)}
+            for call in (
+                n
+                for n in ast.walk(cls)
+                if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+            ):
+                if ast.unparse(call.func.value) == "self":
+                    assert call.func.attr in native or call.func.attr in own, (
+                        path,
+                        cls.name,
+                        call.func.attr,
+                    )
+        for call in (n for n in ast.walk(tree) if isinstance(n, ast.Call)):
+            if ast.unparse(call.func) == "demo.asset" and isinstance(
+                call.args[0], ast.Constant
+            ):
+                assert (
+                    path.parent / "assets" / row["source_id"] / call.args[0].value
+                ).is_file()
+
+
+def test_puzzle_view_native_drag_uses_model_mime_and_removes_only_moved_rows(
+    official_qt, monkeypatch
+):
+    qt, _ = official_qt
+    handle = built("itemviews puzzle", qt)
+    model, view = handle.controls["model"], handle.controls["piecesList"]
+    view.selectionModel().select(
+        model.index(0, 0), qt.QtGui.QItemSelectionModel.ClearAndSelect
+    )
+    invoke = qt.QtGui.QDrag._invoke
+
+    def drag(self, key, *args, **kwargs):
+        if key == "exec":
+            location = model.locations[0]
+            event, result = drop_event(
+                qt,
+                self._data["mimeData"],
+                location.x() * 80 + 1,
+                location.y() * 80 + 1,
+                view,
+            )
+            handle.controls["puzzleWidget"].dropEvent(event)
+            assert result["accepted"]
+            with pytest.raises(RuntimeError, match="Finish or cancel"):
+                handle.close()
+            return qt.QtCore.Qt.MoveAction
+        return invoke(self, key, *args, **kwargs)
+
+    monkeypatch.setattr(qt.QtGui.QDrag, "_invoke", drag)
+    view.startDrag(qt.QtCore.Qt.MoveAction | qt.QtCore.Qt.CopyAction)
+    assert model.rowCount() == 24 and handle.snapshot()["in_place"] == 1
     handle.close()

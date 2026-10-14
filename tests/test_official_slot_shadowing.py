@@ -18,7 +18,15 @@ def test_port_assignments_and_release_fields_do_not_shadow_native_slots(official
         for cls in ast.walk(tree):
             if not isinstance(cls, ast.ClassDef) or not cls.bases:
                 continue
-            base = getattr(qt.QtGui, ast.unparse(cls.bases[0]), None)
+            base_name = ast.unparse(cls.bases[0])
+            base = next(
+                (
+                    getattr(module, base_name)
+                    for module in (qt.QtGui, qt.QtCore, qt.private)
+                    if hasattr(module, base_name)
+                ),
+                None,
+            )
             if base is None:
                 continue
             native_classes[cls.name] = base

@@ -2,9 +2,9 @@
 this_file: docs/pyqt-official-batch.md
 ---
 
-# Official PythonQt batch: controller acceptance
+# Official PythonQt batches: controller acceptance
 
-All 23 entries are implemented; **the current fixes await native reacceptance**.
+The first 23 entries are implemented; **the current fixes await native reacceptance**.
 The controller reported that the prior build passed launch/inspect/close only for
 trivialwizard and stylesheet; other ports failed or crashed. No commit was made. This is a source-checkout delivery, not wheel-installation evidence.
 The immutable source catalog is unchanged. Actual targets use the requested
@@ -399,3 +399,187 @@ Native follow-up: launch/inspect/close icons and exercise its image controls;
 launch i18n, Show All, inspect all 15 language windows, Hide All and close.
 Verify centralWidget() remains callable and all owned UI is destroyed. The
 new changes have local test coverage; native reacceptance is still pending.
+
+
+## Batch 4: 18 further ports (2026-10-14)
+
+All 18 are implemented; **native acceptance is unexecuted**. These additions reuse
+Demo, ExampleHandle, the official doubles/contract and this document. No commits
+or native FontLab calls were made. PLAN.md/TODO.md and the immutable source catalog
+are unchanged. There are 15 new exact resource copies and no compiled rc modules.
+Names are unique: `Official draganddrop puzzle`, `Official itemviews puzzle`, and
+`Official addressbook part1` through `part7`; source IDs remain canonical.
+
+Apply the common five-step acceptance above to every row, then the specific
+checks below. Record actual virtual dispatch, overload acceptance, screenshots,
+input/output files, JSON state, QObject destruction and host survival separately.
+Default states below are derived from original resources and boundary tests,
+not FontLab evidence. In particular, confirm QVariant pixmap/point round-trips,
+integer model index IDs and native model signal calls in the host.
+
+QDrag.exec is the single deliberate non-dialog exec call, centralized in
+Demo.drag: the host stub exports it, and [Qt documents that macOS drag operations
+keep the event loop responsive](https://doc.qt.io/qt-6/qdrag.html#exec).
+No QApplication or modal QDialog exec is used. If named close is requested during
+a drag, it raises before disconnect/delete; finish or Escape the drag and retry.
+The cleanup queue retains its guard on failure. Custom MIME payload names use a
+fontlab prefix because explicit QVariant serialization differs from upstream's
+stream operators. Both puzzle ports use the same payload format. The item-view puzzle overrides startDrag to route its native model MIME through
+the same tracked drag boundary, including removal of moved source rows.
+
+Controls retain original field names plus the named callables listed below.
+Drag boards expose their labels through native children(); hidden moved labels
+remain owned until named teardown and inspection includes their visibility.
+All native connections are tracked. Subclass references are released only by
+explicit declarations; native properties/slots are never nulled or shadowed.
+Views detach after all Python signal disconnections and before subclass reference
+release. Painters end in finally, timers stop before deletion, and no Qt wrapper arithmetic
+is used. Address-book directories are created during build, never by inspection.
+The licence remains BSD-3-Clause AND GPL-3.0-only with unresolved scope; the actual
+Riverbank/Nokia and Jansen/Qt Company notices are retained verbatim.
+
+### Batch 4 5781fa4ba55c884f
+
+**Draggable icons** — `ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py`.
+
+Two original icon panels and three PNGs retained. QDataStream shift operators become explicit QVariant serialization through an owned QBuffer; MIME is application/x-fontlab-dnditemdata. Numeric hotspot subtraction replaces QPoint arithmetic. Moved labels hide until owned teardown; painters end in finally.
+
+Native acceptance: Expect title Draggable Icons and 3 visible icons in each of controls left/right. Natively drag boat/car/house between panels: default Copy keeps the source; Move hides it; Escape restores its original pixmap. Drag within a panel, confirm hotspot and inspect panels coordinates. Reject unrelated MIME; repeatedly copy/move and close after cancelling an active drag.
+
+### Batch 4 700e96dec485e7a8
+
+**Draggable text** — `ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py`.
+
+Exact 41-word file replaces compiled resources/QTextStream. Plain text and ASCII hotspot bytes use QByteArray.data(); invalid hotspots fall back to zero. All positions use components; Python label subclasses and native drag sources remain owned.
+
+Native acceptance: Expect Draggable Text, label_count 41, first word Qt. Use controls board.children() to drag a real label internally (Move) and between two separately owned port instances (Copy); drop external Unicode multiword text. Inspect labels text/positions/visibility. Escape keeps the source; malformed hotspot bytes do not raise. Close/relaunch restores 41 words.
+
+### Batch 4 da76600eaea7a121
+
+**Fridge magnets** — `ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py`.
+
+Exact 48-word file, rounded painted magnet labels and external plain-text drop retained. Native QVariant text/point payload replaces stream shifts under application/x-fontlab-fridgemagnet. Explicit brush/color types, integer transparent image fill, component offsets and guaranteed painter end.
+
+Native acceptance: Expect Fridge Magnets, label_count 48, first word Colorless. Check rounded label rendering and transparency. Drag a magnet internally and copy it externally; cancel a hidden-source drag and confirm it reappears. Drop Unicode plain text and inspect individual words/coordinates. Reject malformed custom payload without losing the window.
+
+### Batch 4 c5b4e385cc921da4
+
+**Drag-and-drop puzzle** — `ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py`.
+
+Original QListWidget pieces and 5x5 board retained with the exact JPEG. Integer crops/grid coordinates, component hotspot arithmetic, local random.Random, corrected highlightedRect typo and native QVariant MIME. pyqtSignal becomes an owned single-shot completion timer; file and completion dialogs are asynchronous.
+
+Native acceptance: Expect Puzzle, piece_count 25, placed/in_place 0. Drive piecesList and puzzleWidget with native drag events: correct cell increments in_place; wrong cell does not; occupied cell rejects; drag back to list and Escape restore counts. Solve all 25: completion appears after drop returns and OK resets. Use restart/openImage, cancel chooser, reject bad image, and close with completion dialog open.
+
+### Batch 4 b823a76f79197d84
+
+**Lighting** — `ports/effects/pyqt-official/lighting-b823a76f79197d84.py`.
+
+Original 25-item light/shadow scene and 30 ms GUI timer retained. Scene is parented; QPoint division becomes floating coordinate division, explicit QColor/QBrush overloads are used, timer stops before disconnect and painter ends in finally.
+
+Native acceptance: Expect Lighting and Shadows, 640x480, item_count 25, timer_active true. Let the native timer run; angle, light coordinates and 25 offsets must change while the halo and shadows render. Resize and pan/inspect scene. Close during animation, process events, and prove the timer and scene/effects are destroyed.
+
+### Batch 4 306c12d5cc1db46c
+
+**Chart** — `ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py`.
+
+Original custom PieView, legend, editable table, shared selection and both .cht files retained. Async file dialogs, UTF-8 CSV parsing before model replacement, numeric quantity validation and quoted CSV export replace Qt streams. Explicit base handlers, component geometry, QRegion.united and guaranteed painter end.
+
+Native acceptance: Expect Chart, 14 rows/2 columns, valid_items 14, total 188, first label Scientific Research. Edit quantities/labels in controls table/model; pie sectors and totals must follow, invalid/NaN quantities must not break painting. Select table cells and sectors/legend both ways; rubber-band, arrows, scrolling and resize must synchronize. openFile/writeFile round-trip Unicode/quoted labels in a controller temporary file; failed/cancelled load preserves data. Close with chooser or selection active.
+
+### Batch 4 227efef76ed4ac74
+
+**Editable tree model** — `ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py`.
+
+Original hierarchy and generated form behavior retained; UI widgets/menus/shortcuts are explicitly reconstructed from the copied exact mainwindow.ui, without generated Python/autoconnect. UTF-8 default text, str.strip, integer QModelIndex IDs mapped to retained nodes, native dataChanged/headerDataChanged calls and bounds checks replace PyQt assumptions. View detaches before model-reference release.
+
+Native acceptance: Expect Editable Tree Model with 6 top-level rows and 2 columns. Compare against copied mainwindow.ui. Expand hierarchy, edit values, and drive insertChildAction/insertRowAction/insertColumnAction/removeRowAction/removeColumnAction at root and nested levels. Check [No data]/[No header], status position, action enablement and actual model notifications. Reject invalid ranges without mutation. Exercise remove-last-column then rebuild, and close during editing.
+
+### Batch 4 c98ae8ac71886586
+
+**Frozen column** — `ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py`.
+
+Exact grades.txt populates QStandardItemModel through pathlib. Original overlay and shared selection/scroll bars retained. Fix upstream self.logicalIndex/self.current typos; explicit native resize/moveCursor/scrollTo dispatch and tracked bidirectional signals.
+
+Native acceptance: Expect Frozen Column Example, 31 rows/10 columns. Scroll horizontally: green first column stays fixed; both vertical bars remain synchronized. Resize column 0 and rows via native headers, resize window and inspect frozen_geometry/frozen_width. Use Left-key navigation across the hidden boundary, select cells in both views, and close after scroll/resize.
+
+### Batch 4 090c76a87351e771
+
+**Interview** — `ports/itemviews/pyqt-official/interview-090c76a87351e771.py`.
+
+Original lazy 1000x10 hierarchical model, three views, shared QItemSelectionModel, movable headers and both PNG icons retained. Numeric QModelIndex ID lookup replaces Python internal pointers; reject children under nonzero columns. Views detach before releasing model references.
+
+Native acceptance: Expect Interview, row_count 1000, column_count 10, first_item Item 0:0 and shared_selection true. Select through controls table/tree/listView and verify synchronized indexes and current item. Expand multiple lazy levels, move table headers, switch list selection and check folder/file/header icons. Close after repeated expansion without stale model callbacks.
+
+### Batch 4 878fe9f714df3b5e
+
+**Item-view puzzle** — `ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py`.
+
+Original QAbstractListModel/QListView variant and exact JPEG retained. Shared QVariant MIME with the drag-and-drop puzzle; integer coordinates, local RNG, timer completion and async dialogs. Correct removal inPlace arithmetic, highlightedRect typo, empty-model reset notifications and row bounds; detach view on cleanup. A QListView
+subclass routes startDrag through the tracked drag boundary and removes source
+rows only after Move.
+
+Native acceptance: Expect 25 model pieces and an empty board. Exercise all puzzle checks above using native QListView/model drag/drop, including moving a correct piece away and cancelled drag rollback. Check model.mimeData/dropMimeData for multiple pieces and transfers to the other puzzle port. Restart repeatedly: exactly 25 rows, no invalid remove-row notifications. Solve/acknowledge and close while completion is pending.
+
+### Batch 4 321f8e535facafde
+
+**Simple tree model** — `ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py`.
+
+Exact default.txt parsed as UTF-8 with str.strip. Original TreeItem/TreeModel hierarchy retained; integer QModelIndex identity map replaces Python-object internalPointer, index bounds are checked and the view detaches before release.
+
+Native acceptance: Expect Simple Tree Model with 6 top-level rows and 2 columns Title/Summary. Expand every branch, verify original resource text and nested parent/index relationships. Resize columns, navigate by keyboard, select child rows and close while a deep branch is expanded. Relaunch must restore the original hierarchy.
+
+### Batch 4 e1f313d96e43adff
+
+**Address book part 1** — `ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py`.
+
+Original editable Name and Address form only; no persistence or later-stage controls added. Native property reads and explicit Python-reference release.
+
+Native acceptance: Expect Simple Address Book; controls nameLine/addressText are editable and there is no Add button. Enter Unicode name and multiline literal <text>; inspect name/address exactly. Resize, hide/reshow and named close/relaunch: the new form is empty.
+
+### Batch 4 55bcde890cd77ed7
+
+**Address book part 2** — `ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py`.
+
+Original add/submit/cancel stages and sorted contacts retained. Messages are owned asynchronous dialogs; addresses always use literal plain text.
+
+Native acceptance: Initially fields are read-only. Add enables editing; empty Submit opens Empty Field, a valid name/address increments contact_count, and a duplicate is rejected. Cancel restores old fields. Inspect contacts, button visibility and read-only state. Close with an information dialog open; relaunch has no contacts.
+
+### Batch 4 f4d9e2927469223c
+
+**Address book part 3** — `ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py`.
+
+Part 2 adaptations plus original sorted Next/Previous navigation and wraparound; no later-stage edit/find/save controls.
+
+Native acceptance: Add Zoë, Ada and Łukasz; Next and Previous follow sorted names and wrap at each end. Check button enablement with 0, 1 and multiple contacts; Cancel retains selection. Confirm duplicate/empty handling and literal multiline addresses, then close/relaunch.
+
+### Batch 4 4d19e62d93dd761c
+
+**Address book part 4** — `ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py`.
+
+Original navigation/add/edit modes retained. Remove confirmation becomes an owned asynchronous Yes/No callback; rename collisions preserve both contacts and literal addresses are retained.
+
+Native acceptance: Add two contacts, Edit a name/address, reject a duplicate rename, and Cancel an edit. Remove/No keeps both; Remove/Yes selects the previous contact and reduces contact_count. Remove the last entry: empty read-only fields and appropriate disabled controls. Close with confirmation open and verify no later callback.
+
+### Batch 4 94ab271d023d1ca3
+
+**Address book part 5** — `ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py`.
+
+Part 4 plus parented reusable FindDialog with one tracked accepted callback. Empty Find stays open instead of accepting stale text; missing-name notice is asynchronous. Preserve upstream Find enablement threshold (>2 contacts).
+
+Native acceptance: Add three contacts to enable findButton. Open Find: empty findSubmit keeps findDialog visible; findLine=Zoë selects its exact address; unknown name reports Contact Not Found. Cancel and repeated searches preserve state and never multiply callbacks. Close while Find or removal confirmation is open.
+
+### Batch 4 2719ebb336f3a29e
+
+**Address book part 6** — `ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py`.
+
+Part 5 plus asynchronous file choosers confined to a build-owned temporary directory. Pickle stores a plain string dictionary; load denies global/class construction and validates shape before replacing contacts. Outside/symlink paths are rejected; the sandbox exists before inspection and is removed on close.
+
+Native acceptance: Use inspect directory as the only save/load location. Save through saveButton, verify .abk bytes, edit contacts, then loadButton restores Unicode/literal addresses. Cancel dialogs, load empty/corrupt/wrong-shape data and try outside/symlink paths: errors preserve existing contacts and external files. Inspection writes nothing. Close removes the directory; relaunch creates an empty book/new directory.
+
+### Batch 4 bb1c114d38fb756a
+
+**Address book part 7** — `ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py`.
+
+Part 6 plus asynchronous vCard export confined to the same owned directory. UTF-8 pathlib output replaces QTextStream operators; retain vCard 2.1 layout, fix discarded address replace results and escape backslashes/semicolons.
+
+Native acceptance: Repeat part 6 checks. Select Zoë Example with a multiline address containing semicolon/comma/backslash; exportButton opens an owned chooser, acceptance writes the expected BEGIN/END, VERSION:2.1, N/FN and escaped ADR lines. Cancel writes nothing; external path is rejected. Close with chooser open, then confirm all export/pickle artifacts disappear with the owned directory.
