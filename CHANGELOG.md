@@ -6,6 +6,14 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Add original insight ranks 13–18: owned QUiLoader form, cancellable worker
+  queue, scoped sample console, idempotent owned menu/action tokens, sample
+  QUndoStack commands, and existing compiled wrapper/native slot exposure.
+- Expose controller controls, fail clearly for absent host classes, and register
+  second-batch native acceptance as unexecuted without changing first-batch states.
+- Add tracked dynamic action disconnection, hardened form/menu/undo doubles and
+  interaction/failure tests; exercise both glyph-properties toggle directions.
+
 - 2026-10-14: Fix controller-reported insight launch failures: native PythonQt
   wrappers reject new Python attributes. Move controls from windows to
   ExampleHandle, clear them before owner deletion, and seal native doubles while

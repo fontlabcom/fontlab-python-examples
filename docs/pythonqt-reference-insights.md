@@ -5,8 +5,9 @@ this_file: docs/pythonqt-reference-insights.md
 # PythonQt reference insights for FontLab 9
 
 2026-10-14. Ranked by usefulness for safe type-design panels, then availability
-in the measured host, then added coverage beyond existing ports. The first 12
-have original Apache-2.0 examples; all native acceptance remains **unexecuted**.
+in the measured host, then added coverage beyond existing ports. All 18
+have original Apache-2.0 examples. First-batch native evidence is recorded in the
+manifest; ranks 13–18 remain **unexecuted** for controller acceptance.
 Launch names are slugs in [insights.json](../catalog/insights.json). Every build
 accepts the injected PythonQt module and returns an ExampleHandle.
 
@@ -219,7 +220,7 @@ Category: Rendering. Example: `contour-scene`.
 
 ### 13. QUiLoader and object-name lookup
 
-Category: Forms and discovery. Survey-only; outside the top 12.
+Category: Forms and discovery. Example: `loaded-glyph-form`; native acceptance unexecuted.
 
 **What and FontLab value.** Load an owned .ui and retrieve controls by objectName; this is valuable for larger FontLab panels designed visually.
 
@@ -232,65 +233,65 @@ Category: Forms and discovery. Survey-only; outside the top 12.
 
 ### 14. Worker-to-GUI queue hand-off
 
-Category: Scheduling. Survey-only; outside the top 12.
+Category: Scheduling. Example: `worker-glyph-queue`; native acceptance unexecuted.
 
 **What and FontLab value.** Send plain data from a Python worker into a queue, then drain bounded amounts in a GUI timer. Useful for future file or network tasks that genuinely block.
 
 **PythonQt gotcha.** Never call Qt on workers, even QSettings here. Timeout/cancel blocking I/O, join the worker before disconnect and deletion. Naali uses Python 2 Queue; use the standard Python 3 queue module. Do not transplant its remote scene operations.
 
-**Existing coverage.** Covered: multithreaded chat and threadutil ports; no new worker required for the local audit.
+**Existing coverage.** Covered: multithreaded chat and threadutil ports; worker-glyph-queue now provides a bounded local demonstration.
 
 - `_reference/Belsepubi_naali/bin/pymodules/localscene/localscene.py:40` — source licence **unresolved**; manifest evidence: `license.txt`.
 - `_reference/Belsepubi_naali/bin/pymodules/localscene/localscene.py:234` — source licence **unresolved**; manifest evidence: `license.txt`.
 
 ### 15. Owned console/REPL widgets
 
-Category: Console integration. Survey-only; outside the top 12.
+Category: Console integration. Example: `owned-repl`; native acceptance unexecuted.
 
 **What and FontLab value.** Expose an interactive scripting surface inside an owned panel for inspecting sample data. Director and Naali retain consoles and reshow them rather than construct duplicates.
 
 **PythonQt gotcha.** Embedded consoles are host extensions, not a portable PythonQt QtGui class. Their globals and side effects belong to their host. A future example should use its own namespace and text buffer; do not redirect stdout or alter FontLab Output. Evaluation can block and should not be introduced casually.
 
-**Existing coverage.** Not covered: Qt Text Editor is an editor, not a REPL.
+**Existing coverage.** The new owned-repl supports sample expressions/statements; Qt Text Editor remains an editor.
 
 - `_reference/RobotLocomotion_director/src/python/director/mainwindowapp.py:37` — source licence **unresolved**; manifest evidence: `LICENSE.txt`.
 - `_reference/Belsepubi_naali/bin/pymodules/usr/command.py:1510` — source licence **unresolved**; manifest evidence: `license.txt`.
 
 ### 16. Registration and explicit unload
 
-Category: Plugin lifecycle. Survey-only; outside the top 12.
+Category: Plugin lifecycle. Example: `plugin-tokens`; native acceptance unexecuted.
 
 **What and FontLab value.** Keep callback/plugin objects in a registry and give them an unload hook that reverses every subscription. This mirrors named launch/get/close and supports reshowing one panel.
 
 **PythonQt gotcha.** Slicer module-manager and pyTSon callback proxies are private host APIs. Persistent Python modules can outlive native windows. Retain exact instances, unregister before native deletion, make close repeatable; do not register plugins into FontLab in these examples.
 
-**Existing coverage.** Covered locally by module-retained launcher handles; actual host plugin registration not covered.
+**Existing coverage.** Covered locally by module-retained launcher handles; plugin-tokens now adds explicit install/unload inside an owned menu, with no FontLab registration.
 
 - `_reference/Slicer_SlicerGitSVNArchive/Base/Python/slicer/ScriptedLoadableModule.py:99` — source licence **unresolved**; manifest evidence: `License.txt`.
 - `_reference/exp111_pyTSon-Scripts/include/pluginhost.py:420` — source licence **unresolved**; manifest evidence: no licence file recorded.
 
 ### 17. Undo integration
 
-Category: Document edits. Survey-only; outside the top 12.
+Category: Document edits. Example: `metrics-undo`; native acceptance unexecuted.
 
 **What and FontLab value.** Pair real document edits with a deliberate undo/history record. Qt QUndoStack/QUndoView demonstrates UI history; TypeRig documents FontLab object updates and undo messages.
 
 **PythonQt gotcha.** A Qt undo stack does not create FontLab undo history. TypeRig has historical workarounds; verify current FontLab APIs before any document mutation. These examples use synthetic data only and deliberately perform no real undoable font edits.
 
-**Existing coverage.** Not covered; future controller-authorized document example needed.
+**Existing coverage.** metrics-undo now uses QUndoStack on owned sample data. FontLab document undo remains outside scope.
 
 - `_reference/RobotLocomotion_director/src/python/director/mainwindowapp.py:444` — source licence **unresolved**; manifest evidence: `LICENSE.txt`.
 - `_reference/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/glyph.py:772` — source licence **unresolved**; manifest evidence: `LICENSE`.
 
 ### 18. C++ decorators, slots and metaobject exposure
 
-Category: Binding extensions. Survey-only; outside the top 12.
+Category: Binding extensions. Example: `compiled-slot-exposure`; native acceptance unexecuted.
 
 **What and FontLab value.** Compiled PythonQt decorators expose additional native methods/constructors; Python callable slots need no PyQt decorator for ordinary signal connections. Wrapper generators show why exported APIs differ between hosts.
 
 **PythonQt gotcha.** PythonQt decorators are not PyQt @pyqtSlot or PySide @Slot. The corpus generator emits C++ adapters; it is not something to run in FontLab. No portable Python Slot decorator was established by the scan. Do not invent one or assume a class available in Slicer/Director is wrapped in FontLab.
 
-**Existing coverage.** Callable slots covered; compiled decorator authoring is outside this repository's runtime examples.
+**Existing coverage.** compiled-slot-exposure now exercises existing constructors, a wrapped QWidget non-slot method and native QLineEdit.clear(). Compiling new decorators remains outside the runtime build.
 
 - `_reference/RobotLocomotion_director/src/app/WrapPythonQt.py:71` — source licence **unresolved**; manifest evidence: `LICENSE.txt`.
 - `_reference/esmaeilinia_VeloView/VelodyneHDL/WrapPythonQt.py:137` — source licence **unresolved**; manifest evidence: `LICENSE`.
@@ -318,6 +319,13 @@ within the 5-second deadline. Record acceptance separately in insights.json.
 | 10. `callback-errors` | Apply bad, negative, huge and valid advances; errors stay in owned label, previous valid value survives; valid input clears error. |
 | 11. `owned-dock` | Toggle, float and redock the panel within its own window; FontLab panels unchanged; named close cleans all. |
 | 12. `contour-scene` | Verify contour plus baseline and advance guides; drag/scroll owned view; scene/view disappear on close. |
+
+| 13. `loaded-glyph-form` | Set glyph_name.text and advance.value, click apply; result and inspection agree; load from another working directory; close/relaunch. |
+| 14. `worker-glyph-queue` | Click start twice: one worker; wait for four GUI-delivered results; restart then stop or close immediately; worker joined, no Qt calls from worker. |
+| 15. `owned-repl` | Run advance, assignment advance = 720, print(advance), and invalid syntax; all output stays in the owned console; reset restores the namespace. |
+| 16. `plugin-tokens` | Install twice: one menu/action token pair; trigger plugin_action; unload twice: zero tokens and detached menu; reinstall works; FontLab menus unchanged. |
+| 17. `metrics-undo` | Apply two advances, undo/redo; undo then apply a new value clears redo branch; native command overrides and label update work; close safely. |
+| 18. `compiled-slot-exposure` | Click move: compiled non-slot move(QPoint) repositions preview; clear invokes native clear() slot; inspect its metaobject slot index; no custom C++ compilation. |
 
 ## Source read ledger and broad sampling
 

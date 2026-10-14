@@ -81,8 +81,8 @@ def test_manifest_when_validated_then_unique_original_targets_and_real_citations
     data = json.loads((ROOT / "catalog/insights.json").read_text())
     assert data["schema_version"] == "fontlab.examples-insights.v1"
     items = records()
-    assert len(items) == len({r["slug"] for r in items}) == 12
-    assert [r["rank"] for r in items] == list(range(1, 13))
+    assert len(items) == len({r["slug"] for r in items}) == 18
+    assert [r["rank"] for r in items] == list(range(1, 19))
     sources = json.loads(
         (ROOT / "catalog/pythonqt-reference-manifest.json").read_text()
     )["sources"]

@@ -303,6 +303,183 @@
    "native_evidence": [
     "verification/issue-101-ecosystem/evidence/i103-insights/native-contour-scene.json"
    ]
+  },
+  {
+   "rank": 13,
+   "slug": "loaded-glyph-form",
+   "title": "Loaded glyph metrics form",
+   "idiom": "QUiLoader and object-name lookup",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/affordancepanel.py:39",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/loaded-glyph-form.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "glyph_name",
+    "advance",
+    "apply",
+    "result",
+    "form"
+   ],
+   "native_checks": "Set glyph_name.text and advance.value, click apply; result and inspection agree; load from another working directory; close/relaunch.",
+   "resources": [
+    {
+     "target_path": "ports/insights/loaded-glyph-form.ui",
+     "license": "Apache-2.0",
+     "sha256": "668c85ff0f4c60b69b8db8b1e7f76dcf2743040f073bc5997cf00742d954fe93"
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "slug": "worker-glyph-queue",
+   "title": "Worker glyph audit queue",
+   "idiom": "Worker-to-GUI queue hand-off",
+   "inspiration": [
+    {
+     "citation": "_reference/Belsepubi_naali/bin/pymodules/localscene/localscene.py:40",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "license.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/worker-glyph-queue.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "start",
+    "stop",
+    "timer",
+    "log"
+   ],
+   "native_checks": "Click start twice: one worker; wait for four GUI-delivered results; restart then stop or close immediately; worker joined, no Qt calls from worker."
+  },
+  {
+   "rank": 15,
+   "slug": "owned-repl",
+   "title": "Owned sample-data console",
+   "idiom": "Owned console/REPL widgets",
+   "inspiration": [
+    {
+     "citation": "_reference/Belsepubi_naali/bin/pymodules/usr/command.py:1510",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "license.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/owned-repl.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "input",
+    "run",
+    "reset",
+    "output"
+   ],
+   "native_checks": "Run advance, assignment advance = 720, print(advance), and invalid syntax; all output stays in the owned console; reset restores the namespace."
+  },
+  {
+   "rank": 16,
+   "slug": "plugin-tokens",
+   "title": "Owned menu plug-in tokens",
+   "idiom": "Registration and explicit unload",
+   "inspiration": [
+    {
+     "citation": "_reference/exp111_pyTSon-Scripts/include/pluginhost.py:420",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/plugin-tokens.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "install",
+    "unload",
+    "plugin_action",
+    "status"
+   ],
+   "native_checks": "Install twice: one menu/action token pair; trigger plugin_action; unload twice: zero tokens and detached menu; reinstall works; FontLab menus unchanged."
+  },
+  {
+   "rank": 17,
+   "slug": "metrics-undo",
+   "title": "Undo sample glyph metrics",
+   "idiom": "Undo integration on owned data",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/mainwindowapp.py:444",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/metrics-undo.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "advance",
+    "apply",
+    "undo",
+    "redo",
+    "stack",
+    "status"
+   ],
+   "native_checks": "Apply two advances, undo/redo; undo then apply a new value clears redo branch; native command overrides and label update work; close safely."
+  },
+  {
+   "rank": 18,
+   "slug": "compiled-slot-exposure",
+   "title": "Compiled wrapper and slot exposure",
+   "idiom": "C++ decorators, slots and metaobject exposure",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/app/WrapPythonQt.py:71",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; source grant not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/compiled-slot-exposure.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "unexecuted",
+   "controls": [
+    "move",
+    "clear",
+    "input",
+    "preview",
+    "status"
+   ],
+   "native_checks": "Click move: compiled non-slot move(QPoint) repositions preview; clear invokes native clear() slot; inspect its metaobject slot index; no custom C++ compilation."
   }
  ]
 }

@@ -19,3 +19,16 @@ def owned(window: Any, title: str) -> Iterator[ExampleHandle]:
     except BaseException:
         handle.close()
         raise
+
+
+def required(qt: Any, path: str) -> Any:
+    """Require an actual exported host class; never replace missing Qt APIs."""
+    value = qt
+    try:
+        for name in path.split("."):
+            value = getattr(value, name)
+    except AttributeError as error:
+        raise RuntimeError(
+            f"This example requires PythonQt.{path}; unavailable in this host"
+        ) from error
+    return value

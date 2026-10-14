@@ -41,6 +41,10 @@ def test_interactions_when_owned_then_observable_changes_and_bounded_work(insigh
     h = launch("glyph-properties")
     h.controls["button"].clicked.emit()
     assert h.snapshot()["glyph_role"] == "alternate"
+    assert h.controls["label"].text == "A: alternate"
+    h.controls["button"].clicked.emit()
+    assert h.snapshot()["glyph_role"] == "default"
+    assert h.controls["label"].text == "A: default"
     h = launch("callback-errors")
     h.controls["input"].text = "bad"
     h.controls["apply"].clicked.emit()

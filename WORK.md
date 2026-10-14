@@ -312,3 +312,57 @@ signal-lifetime counts and relaunch reset, glyph-list filters, owned key filter
 logs without consuming, spin/slider sync without recursion, callback errors keep
 value, sandbox settings persist Unicode and reset. glyph-properties toggle not
 yet exercised (pending). Receipts: parent evidence/i103-insights/.
+
+
+## 2026-10-14: Insight ranks 13–18
+
+Read the committed first batch (b1e2bf7), README/PLAN/work history, ranked guide,
+handle/owned helper, Designer port, manifests and hardened doubles. Baseline gate:
+138 passed. Reviewed official PythonQt decorator/ownership documentation and Qt
+5.15 QUiLoader, QUndoStack, QUndoCommand and QMetaObject contracts before coding.
+No framework/dependency added: stdlib queue/threading and compile/eval/exec plus
+FontLab's existing Qt are sufficient. No reference code/resources copied.
+
+Added six original Apache-2.0 examples, ranks 13–18: loaded-glyph-form,
+worker-glyph-queue, owned-repl, plugin-tokens, metrics-undo,
+compiled-slot-exposure. Each has inspectable state and documented controls on
+ExampleHandle, no attributes on native widgets, no QApplication/exec loop,
+no changes to fonts/preferences/Output, and native acceptance unexecuted.
+Preserved all rank 1–12 manifest records and native evidence unchanged.
+
+The original QUiLoader form has no implicit XML connections, owned parenting,
+named-field discovery and QFile/loader finally cleanup. Worker Start is deferred
+until click; one cancellable Python-only worker emits bounded plain-data results,
+GUI timer drains them, and stop/completion/error join before UI cleanup. The console
+has isolated sample globals and owned print/error output; it touches no global
+stdout/display hooks. It is a short-command example, not a security sandbox.
+
+Plug-in tokens allocate/detach menus/actions only on an owned QMainWindow.
+Repeated install/unload is idempotent; the exact bound signal object is retained
+and ExampleHandle.disconnect removes its tracked pair before menu deletion.
+Disconnection failure leaves tokens live and prevents deletion. Menu owns action.
+The undo stack operates on a Python advance dict; native command overrides change
+only data, indexChanged updates owned UI, and stack.clear follows disconnection.
+Python command receivers remain retained while Qt owns them; no manual command
+delete. Compiled exposure calls existing compiled constructors/non-slot move(QPoint)
+and native clear(), with metaobject slot discovery and clear missing-class errors;
+no new native extension is compiled or registered in the host.
+
+Wait, but doubles cannot prove native QUndoCommand shell dispatch/ownership or
+compiled metaobject exposure. Those checks and complete controls-key contracts
+are recorded in docs/insights-second-batch.md and catalog/insights.json for the
+controller. Native acceptance is not inferred from tests. Existing glyph-properties
+now tests toggle to alternate and back to default, including visible label text.
+README/CHANGELOG/ranked guide updated; PLAN/TODO, reference manifest and corpus
+untouched. No commit or runtime dependency changes.
+
+Tests first failed because ranks 13–18 were missing, then passed after code and
+hardened form/menu/metaobject/undo doubles. Requested gate:
+UV_CACHE_DIR=/tmp/fontlab-examples-uv UV_OFFLINE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+uv run --no-project --with pytest python -m pytest -q tests — 164 passed
+(138 baseline + 26 new). Tests cover all six builds/controls/inspect/close,
+resource SHA-256, load/constructor/controls failures, absent native classes/slots,
+worker GUI delivery/cancel/error/join, console namespace/reset/output, token
+idempotency/disconnect failures, undo/redo/branch deletion and compiled slot calls.
+Scoped Ruff check/format and git diff --check pass; runtime sources parse with
+Python 3.11 grammar. First-batch manifest objects remain equal to committed HEAD.

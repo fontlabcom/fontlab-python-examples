@@ -31,6 +31,15 @@ class ExampleHandle:
         obj.connect(signature, slot)
         self.connections.append((obj, signature, slot))
 
+    def disconnect(self, signal: Any, slot: Callable) -> None:
+        """Disconnect a tracked pair before dynamically unloading owned actions."""
+        pair = (signal, None, slot)
+        if pair not in self.connections:
+            raise ValueError("Signal/slot pair is not tracked by this handle")
+        if not self.owner.closed:
+            signal.disconnect(slot)
+        self.connections.remove(pair)
+
     def _disconnect(self) -> None:
         while self.connections:
             obj, signature, slot = self.connections[-1]

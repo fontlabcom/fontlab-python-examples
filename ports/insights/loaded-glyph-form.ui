@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this_file: ports/insights/loaded-glyph-form.ui -->
+<!-- SPDX-License-Identifier: Apache-2.0; original owned form. -->
+<ui version="4.0">
+ <class>GlyphMetricsForm</class>
+ <widget class="QWidget" name="GlyphMetricsForm">
+  <layout class="QVBoxLayout" name="formLayout">
+   <item><widget class="QLineEdit" name="glyphName"><property name="text"><string>A</string></property></widget></item>
+   <item><widget class="QSpinBox" name="advanceBox"><property name="maximum"><number>2000</number></property><property name="value"><number>600</number></property></widget></item>
+   <item><widget class="QPushButton" name="applyButton"><property name="text"><string>Preview sample metrics</string></property></widget></item>
+   <item><widget class="QLabel" name="resultLabel"><property name="text"><string>A: advance 600</string></property></widget></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
