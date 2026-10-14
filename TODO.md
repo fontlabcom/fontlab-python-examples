@@ -14,7 +14,7 @@ this_file: TODO.md
 - [ ] Port every official demo to PythonQt in FontLab.
 - [ ] Port every official and additional eyllanesc/QtExamples entry to PythonQt in FontLab.
 - [ ] Implement required Qt6/PyQt-to-PythonQt compatibility gaps.
-- [ ] Provide simple in-host/external launch and owned cleanup.
+- [x] Provide simple in-host/external launch and owned cleanup. (2026-10-15 native: launch/inspect/close 137/137 implemented ports; all 151 blocked records refuse launch with NotImplementedError before host access; evidence in parent verification/issue-101-ecosystem/evidence/examples-interactions/ and examples-batch9/native-blocked-all.json.)
 - [ ] Verify native interaction and teardown for every indexed example.
 - [ ] Review complete coverage and integrate examples into rebuilt documentation.
 
