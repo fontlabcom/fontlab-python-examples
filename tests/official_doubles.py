@@ -86,6 +86,11 @@ def official_host(qt):
                 )
             if key in SIGNALS:
                 raise AttributeError(key)
+            if key == "ExtraSelection" and cls._qt_name == "QTextEdit":
+                return lambda: SimpleNamespace(
+                    format=classes["QTextCharFormat"](),
+                    cursor=classes["QTextCursor"](),
+                )
             if fields[key] == "value":
                 return enum(key) if key[0].isupper() else None
 
@@ -364,6 +369,8 @@ def official_host(qt):
                         return self._data.get(key, classes["QFont"]())
                     if key == "locale":
                         return self._data.get(key, classes["QLocale"]())
+                    if key == "dateTime":
+                        return self._data.setdefault(key, classes["QDateTime"]())
                     if key in ("date", "selectedDate", "minimumDate", "maximumDate"):
                         return self._data.get(key, classes["QDate"]())
                     if key in ("time", "minimumTime", "maximumTime"):
@@ -475,6 +482,8 @@ def official_host(qt):
                 self._enter_state(initial)
 
         def _invoke(self, key, *a, **kw):
+            if self._qt_name == "QSourceLocation" and key in ("line", "column"):
+                return self._extra.get(key, 1)
             assert threading.get_ident() == gui_thread, (
                 "Native Qt access on a Python worker"
             )
@@ -575,8 +584,43 @@ def official_host(qt):
                     return 4
                 if key == "index":
                     return classes["QModelIndex"]()
-            if self._qt_name in ("QTcpSocket", "QUdpSocket"):
-                if key in ("abort", "close", "disconnectFromHost"):
+            if self._qt_name == "QLocalServer":
+                if key == "listen":
+                    assert Path(a[0]).parent.is_dir(), "Only an owned socket directory"
+                    listener = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+                    listener.bind(a[0])
+                    listener.listen(8)
+                    listener.setblocking(False)
+                    self._extra.update(listener=listener, endpoint=a[0], pending=[])
+                    network_objects.append(self)
+                    return True
+                if key == "isListening":
+                    return "listener" in self._extra
+                if key == "hasPendingConnections":
+                    return bool(self._extra.get("pending"))
+                if key == "nextPendingConnection":
+                    return self._extra["pending"].pop(0)
+                if key == "close":
+                    listener = self._extra.pop("listener", None)
+                    if listener:
+                        listener.close()
+                        Path(self._extra["endpoint"]).unlink(missing_ok=True)
+                    return None
+            if self._qt_name in ("QTcpSocket", "QUdpSocket", "QLocalSocket"):
+                if key == "connectToServer":
+                    assert Path(a[0]).parent.is_dir()
+                    connection = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+                    connection.connect(a[0])
+                    connection.setblocking(False)
+                    self._extra.update(socket=connection, connected=True)
+                    network_objects.append(self)
+                    return None
+                if key in (
+                    "abort",
+                    "close",
+                    "disconnectFromHost",
+                    "disconnectFromServer",
+                ):
                     connection = self._extra.pop("socket", None)
                     if connection:
                         connection.close()
@@ -740,6 +784,17 @@ def official_host(qt):
                 if key == "toString":
                     return date.isoformat()
             if self._qt_name == "QTime":
+                if key == "addSecs":
+                    total = (
+                        self._data["hour"] * 3600
+                        + self._data["minute"] * 60
+                        + self._data["second"]
+                        + a[0]
+                    )
+                    total %= 86400
+                    return classes["QTime"](
+                        total // 3600, total % 3600 // 60, total % 60
+                    )
                 if key in ("hour", "minute", "second"):
                     return self._data[key]
                 if key == "toString":
@@ -764,7 +819,7 @@ def official_host(qt):
                     return "Regular"
                 if key == "font":
                     return classes["QFont"](a[0], a[2])
-            if self._qt_name == "QFontMetrics":
+            if self._qt_name in ("QFontMetrics", "QFontMetricsF"):
                 if key in ("height", "ascent", "descent", "xHeight"):
                     return {"height": 20, "ascent": 15, "descent": 5, "xHeight": 8}[key]
                 if key == "width":
@@ -781,6 +836,33 @@ def official_host(qt):
                 "QStackedWidget",
             ):
                 return self._items[self._data["currentIndex"]] if self._items else None
+            if key == "calendarWidget":
+                return self._extra.setdefault(
+                    "calendar", classes["QCalendarWidget"](self)
+                )
+            if self._qt_name == "QStackedWidget":
+                if key == "insertWidget":
+                    index = max(0, min(a[0], len(self._items)))
+                    self._items.insert(index, a[1])
+                    return index
+                if key == "removeWidget":
+                    self._items.remove(a[0])
+                    self._data["currentIndex"] = min(
+                        self._data["currentIndex"], len(self._items) - 1
+                    )
+                    return None
+                if key == "widget":
+                    return self._items[a[0]] if 0 <= a[0] < len(self._items) else None
+            if self._qt_name == "QComboBox":
+                if key == "insertItem":
+                    self._items.insert(a[0], (a[1], None))
+                    return None
+                if key == "removeItem":
+                    self._items.pop(a[0])
+                    return None
+                if key == "setItemText":
+                    self._items[a[0]] = (a[1], self._items[a[0]][1])
+                    return None
             if key == "window" and self._qt_name == "QPalette":
                 return classes["QBrush"]()
             if key == "addResource" and self._qt_name == "QTextDocument":
@@ -1174,6 +1256,26 @@ def official_host(qt):
                     return None
                 if key == "data":
                     return ByteArray(self._extra.get("bytes", b""))
+            if self._qt_name in ("QXmlSchema", "QXmlSchemaValidator"):
+                if key in ("load", "validate"):
+                    assert isinstance(a[0], ByteArray) and a[1]._qt_name == "QUrl", (
+                        "XML must use a byte-buffer overload, never a network URL"
+                    )
+                    qt._schema_requests.append((key, a[0].data()))
+                    if key == "load":
+                        return True
+                    valid, message, line, column = qt._validation_result
+                    if not valid:
+                        location = classes["QSourceLocation"]()
+                        location._extra.update(line=line, column=column)
+                        self._data["messageHandler"].handleMessage(
+                            0, message, classes["QUrl"](), location
+                        )
+                    return valid
+                if key == "isValid":
+                    return True
+            if self._qt_name == "QSourceLocation" and key in ("line", "column"):
+                return self._extra.get(key, 1)
             if self._qt_name == "QDataStream":
                 buffer = self._args[0]
                 if key == "writeQVariant":
@@ -1671,6 +1773,10 @@ def official_host(qt):
                 self._cells[a[:2]] = a[2]
                 return None
             if key == "item":
+                if self._qt_name == "QListWidget" and isinstance(
+                    self._items[a[0]], tuple
+                ):
+                    return classes["QListWidgetItem"](self._items[a[0]][0])
                 return self._cells.get(a) if len(a) == 2 else self._items[a[0]]
             if key == "insertRow":
                 self._data["rowCount"] += 1
@@ -2007,7 +2113,11 @@ def official_host(qt):
 
     class Loader:
         def load(self, source, parent=None):
-            doc = ET.parse(source._args[0])
+            doc = (
+                ET.fromstring(source.data().data())
+                if source._qt_name == "QBuffer"
+                else ET.parse(source._args[0]).getroot()
+            )
             root = doc.find("widget")
             widget = classes[root.get("class")]()
             title = root.find("property[@name='windowTitle']/string")
@@ -2016,6 +2126,13 @@ def official_host(qt):
             for node in list(root.iter("widget"))[1:] + list(root.iter("action")):
                 item = classes[node.get("class", "QAction")](widget)
                 item._data["objectName"] = node.get("name")
+                for prop in node.findall("property"):
+                    value = prop.find("string")
+                    if value is not None:
+                        item._data[prop.get("name")] = value.text or ""
+                    value = prop.find("bool")
+                    if value is not None:
+                        item._data[prop.get("name")] = value.text == "true"
                 if item._qt_name == "QComboBox":
                     for value in node.findall("item/property/string"):
                         item._items.append((value.text, None))
@@ -2027,10 +2144,29 @@ def official_host(qt):
     qt.QtUiTools = SimpleNamespace(QUiLoader=Loader)
     qt._classes = classes
     qt._painters = []
+    # Explicit injected native responses: this double does not implement XSD.
+    qt._validation_result = (True, "", 1, 1)
+    qt._schema_requests = []
 
     def pump_network():
         """Unit-test host event delivery; real loopback transport, no Qt event loop."""
         for obj in list(network_objects):
+            if obj._qt_name == "QLocalServer":
+                listener = obj._extra.get("listener")
+                if listener is None:
+                    network_objects.remove(obj)
+                    continue
+                while True:
+                    try:
+                        connection, _ = listener.accept()
+                    except BlockingIOError:
+                        break
+                    peer = classes["QLocalSocket"](obj)
+                    peer._extra["socket"] = connection
+                    obj._extra["pending"].append(peer)
+                if obj._extra["pending"]:
+                    obj.emit("newConnection")
+                continue
             if obj._qt_name == "QNetworkReply":
                 network_objects.remove(obj)
                 if obj.deleted:

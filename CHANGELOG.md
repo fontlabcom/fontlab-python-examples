@@ -6,6 +6,17 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Account for all remaining 74 official entrypoints: 16 PythonQt
+  implementations and 58 precise capability/dependency blockers, native acceptance
+  unexecuted. Preserve 14 exact UI/XML/XSD copies, per-source licences including
+  GPL docstrings and Denviso HPND, and all 128 previous port records. Extend the
+  existing Demo/doubles/tests, README launch table and per-port controller guide;
+  retain owned IPC peers, tracked UI connections, standalone Designer widgets,
+  real painter/OpenGL comparison and native XML schema validation. No new
+  dependencies, commits or TODO changes.
+  Exact offline gate: 685 tests pass; scoped Ruff and Python 3.11 checks pass
+  for all 78 changed Python files, with provenance and whitespace checks passing.
+
 - 2026-10-14: Defer storageview volume enumeration after the controller reported
   the five-second native launch deadline; cache tuple results and expose loading.
   Audit all 142 port Python files; defer fetchmore fixture writes/directory scans

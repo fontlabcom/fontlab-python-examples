@@ -1268,3 +1268,867 @@ Native: Click startButton for full 50 MiB; bytes_written/bytes_received equal to
 Adaptation: Original threaded-server/status/Quit and seven fortunes retained. Unavailable QThread/socket-descriptor Qt worker becomes a cancellable plain Python listener/handler plus GUI timer drain; this bounded worker services accepted requests serially on an owned localhost/free port.
 
 Native: Run probe and several controller-owned localhost clients; each must receive a complete valid Qt_4_0 fortune frame, without Qt access from a worker. Verify sent_count and close while a client is connected/queue is full; worker joins and port releases. Relaunch for fresh endpoint; host stays responsive.
+
+## Batch 8: all 74 remaining official entrypoints
+
+This batch implements **16** and precisely blocks **58** entrypoints. All native
+acceptance states are **unexecuted**. Together with earlier batches, all **187**
+catalogued `pyqt-official` entrypoints now have a disposition: **127 implemented,
+60 blocked**. This accounts for the entrypoint denominator; it does not complete
+native acceptance or either entire collection. Existing 128 port records and the
+static source catalog are preserved. No commits or TODO changes are made here.
+
+The eight supported Designer widgets are standalone only. Their plugin and
+meta-object integration is separately blocked on missing QtDesigner. Launch by
+source ID: the standalone clock is `4d24cd77c74a8801`, while the previous widget
+clock keeps its name `Official analogclock`. The standalone name is
+`Official designer analogclock`.
+
+Blocker evidence comes from the exported modules/member names in the sibling
+Echopy stubs, captured with SHA-256 in `tests/official_contract.json`. QtGui has
+QOpenGLWidget/QOpenGLContext, but QOpenGLContext has no versionFunctions and the
+QOpenGLFunctions_1_1/_2_0 wrappers are absent. No raw GL function or alternate
+binding is invented. QtDBus, QtQml/QtQuick, QtRemoteObjects, QtSql, QtWebKit,
+QtMultimedia, QtDesigner and QAxContainer are absent. SQLite substitution is
+explicitly declined for QtSql model/delegate examples. qtdemo is blocked on its
+full external launcher dependencies (including absent Quick/QML), not QWidget.
+
+Qt API documentation was consulted through the Qt 5.15 reference embedded in
+the stubs, including QUiLoader.load, QOpenGLWidget.setFormat,
+QXmlSchema.load/Validator.validate and QAbstractMessageHandler.handleMessage;
+also [QLocalServer's lifecycle](https://doc.qt.io/archives/qt-5.15/qlocalserver.html).
+The Denviso grant matches [SPDX HPND](https://spdx.org/licenses/HPND.html).
+
+All 14 copied assets are byte-identical originals: four UI copies for the
+calculator/loaders and schema.ui plus three XSDs/six XML instances. No compiled
+resource modules are copied or executed. UI XML stays unchanged on disk; its
+connection section is omitted only from the in-memory load buffer so every
+original connection can be recreated through the owned handle. Schema validation
+uses native Qt classes, never a mock/std-lib validator at runtime. Tests inject
+native response values and do not establish XSD correctness or native dispatch.
+
+For every implemented row, apply the common five-step acceptance procedure above:
+record native launch/inspect/controls/rendering under the 5 s deadline, hide/reshow,
+disconnect-before-delete, deferred QObject destruction, repeated close/relaunch,
+and unchanged FontLab/fonts/preferences/clipboard/global styles. Native virtual
+callbacks, GL rendering and schema diagnostic dispatch remain open until tested.
+For every blocked row, check actual host module/member absence, call launch(id)
+and confirm the exact recorded NotImplementedError before any UI/network/process
+creation; record unchanged handles/host state. Do not mark blockers passed as ports.
+
+| Source ID | Target path | Implementation | Licence | Adaptation / blocker |
+| --- | --- | --- | --- | --- |
+| `a1273c8940d43221` | `ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QAxContainer; required native APIs: QAxWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `38465a8f4b1a229f` | `ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusAbstractAdaptor, QDBusAbstractInterface, QDBusConnection, QDBusMessage. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `ab719a6a5c3afe4a` | `ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `30cfa75ad45b3447` | `ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `57a381bc8260c85d` | `ports/dbus/pyqt-official/pong-57a381bc8260c85d.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `54c7440bdcdc3dfc` | `ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusAbstractAdaptor, QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `3cf5db95a691d200` | `ports/dbus/pyqt-official/controller-3cf5db95a691d200.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusAbstractInterface, QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `27bf65f8b059fd96` | `ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Original calculatorform.ui loaded with QUiLoader; both valueChanged(int) slots explicitly tracked; original spin ranges and sum display retained. |
+| `960c701fa6221ac5` | `ports/designer/pyqt-official/plugins-960c701fa6221ac5.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt has no QtDesigner module or QPyDesignerCustomWidgetPlugin/QDesignerCustomWidgetInterface and no PyQt Designer Python plugin loader. plugins.py launches external Designer with PYQTDESIGNERPATH/PYTHONPATH; that integration cannot run in the host. Eight plain widgets have separate standalone ports; HelloGLWidget is separately blocked. |
+| `4d24cd77c74a8801` | `ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Standalone green clock, hour/minute hands and timezone offsets retained. Owned 1 s timer; native QTime notification converted to JSON text. Designer plugin/meta-properties/signals blocked separately. |
+| `9941e3c752b3a3b7` | `ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py` | implemented | GPL-3.0-only | Standalone bubbles retain mouse creation/expansion, rising motion, random gradients, colour/count/author setters and start/stop. All point arithmetic uses components; QColor channels are integers and ellipse uses QRectF; two timers owned. No host-global RNG reseeding. Designer integration separately blocked. |
+| `1321540b04f33117` | `ports/designer/pyqt-official/counterlabel-1321540b04f33117.py` | implemented | GPL-3.0-only | Standalone counter preserves range/offset/int-and-string notifications and scaled text. Original initial setValue(123) remains out of range so displays 1. QPointF text overload and scalar subtraction replace unsafe overload/negation; zero metrics dimensions guarded. Designer integration separately blocked. |
+| `7ba49e67588b1329` | `ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py` | implemented | HPND AND GPL-3.0-only | Both standalone date/time editor subclasses retain popup/calendar settings and resetters. Explicit native protected mousePressEvent; calendarWidget() replaces PyQt typed findChild. Python layout/calendar references have private names. Original Denviso HPND permission retained; collection GPL scope unresolved. Designer integration separately blocked. |
+| `5941e31267112c98` | `ports/designer/pyqt-official/helloglwidget-5941e31267112c98.py` | blocked | GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `de4979a99c6d0bed` | `ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py` | implemented | GPL-3.0-only | Original two pages, insertion/removal, combo selection, current-index and page-title setters retained. Private layout name avoids native layout slot shadowing. Python notifications replace unavailable PyQt signals; Designer integration blocked separately. |
+| `773db5c24ae98ffb` | `ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py` | implemented | GPL-3.0-only | Original star/polygon path, angle/sides/radii/gradient setters retained. Repair upstream max(3, QColor) typo to copy QColor; minimum three sides and clamped angle retained. Designer integration separately blocked. |
+| `bcfa5de0140286d5` | `ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Original read-only HTML, author inheritance and relative text zoom retained; zoom changes exposed in inspect notifications. Designer integration separately blocked. |
+| `5125860585e98b3a` | `ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py` | implemented | GPL-3.0-only | Original explicit Python expression evaluation, qApp access and successful-command Up/Down history retained. Evaluation starts only on Return/control, never inspect; errors now visible in inspect. No process/global event loop construction. Designer integration separately blocked. |
+| `0ad3432ccdca7ac0` | `ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py` | implemented | GPL-3.0-only | Original seven fortunes, Qt_4_0 UInt16/QString framing and duplicate retry retained. Create an owned QLocalServer peer; lock endpoint to a unique short temporary socket path. Fragmented payload validation and tracked retry/timeout timers; no request in inspect. Abort sockets, close server and remove temporary path on close. |
+| `a14d08fe23965bec` | `ports/ipc/pyqt-official/localfortuneserver-a14d08fe23965bec.py` | implemented | GPL-3.0-only | Original seven-fortune QLocalServer retained at an owned short unique socket path. Add an explicit owned-client test button; retain status/Quit. Reuse original Qt fortune wire framing. Accepted sockets remain owned by server, aborted before deletion; never remove another server endpoint. |
+| `74af8d8d2d7774b8` | `ports/multimedia/pyqt-official/audiodevices-74af8d8d2d7774b8.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `c391afd8516131e1` | `ports/multimedia/pyqt-official/audiooutput-c391afd8516131e1.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat, QAudioOutput. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `f6d352360ae9bdfb` | `ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudioEncoderSettings, QCamera, QCameraImageCapture, QCameraViewfinder, QImageEncoderSettings, QMediaMetaData, QMediaRecorder, QMultimedia, QVideoEncoderSettings. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `5eb4b9eaa2d5c9dc` | `ports/multimediawidgets/pyqt-official/player-5eb4b9eaa2d5c9dc.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAbstractVideoBuffer, QMediaContent, QMediaMetaData, QMediaPlayer, QMediaPlaylist, QVideoFrame, QVideoProbe, QVideoWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `a57a89e523c75b7f` | `ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QGraphicsVideoItem, QMediaContent, QMediaPlayer. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `481c128fba3a714b` | `ports/multimediawidgets/pyqt-official/videowidget-481c128fba3a714b.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QMediaContent, QMediaPlayer, QVideoWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `c82d1af7d1a7b0cf` | `ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Original native QWidget/OpenGL QOpenGLWidget 30-circle QPainter comparison and Qt text retained. Apply four-sample format only to owned GL widget; no global default-format mutation. Tracked 50 ms timer; both painter contexts always end. |
+| `303ea3ee09c4677d` | `ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `1ad60855ca28f3cc` | `ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `b383fecf912548bb` | `ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `fcada4fff6524fcf` | `ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `ed6d42d4faa7e0bb` | `ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted. |
+| `5a8e48d2a1396cea` | `ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Exact demo.ui loaded via QUiLoader instead of PyQt loadUiType code generation. Explicit tracked Add-items auto-slot, original Clear and OK wiring. Runtime UI behavior retained; Python code generation itself is unavailable. |
+| `b7db02f540cc7559` | `ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Exact demo.ui loaded via QUiLoader instead of PyQt loadUi. Track original Clear and OK wiring. Preserve original no-Python-slot behavior: Add items does nothing. |
+| `b9660f4ee653ca01` | `ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Exact demo.ui loaded via QUiLoader, replacing PyQt loadUi(target). Track original Add-items auto-slot, Clear and OK. Root is loader-created owned QDialog; UI behavior retained without generated PyQt classes. |
+| `8847cbce50b72500` | `ports/qml/pyqt-official/adding-8847cbce50b72500.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `dd226ba9fbb7b330` | `ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `eb7a89f07f63cca7` | `ports/qml/pyqt-official/binding-eb7a89f07f63cca7.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, QQmlProperty, QQmlPropertyValueSource, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `ad499afe23726248` | `ports/qml/pyqt-official/coercion-ad499afe23726248.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `6417cdcf1bfd1752` | `ports/qml/pyqt-official/default-6417cdcf1bfd1752.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `81a6f0d16c203608` | `ports/qml/pyqt-official/grouped-81a6f0d16c203608.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `75ca5ac77ecefd6d` | `ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `d0a18273fa604bb6` | `ports/qml/pyqt-official/properties-d0a18273fa604bb6.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `0a13f60f5f0561db` | `ports/qml/pyqt-official/signal-0a13f60f5f0561db.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `738a22ef3062ed51` | `ports/qml/pyqt-official/valuesource-738a22ef3062ed51.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, QQmlProperty, QQmlPropertyValueSource, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `85a56a1f3c25ccca` | `ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py` | blocked | GPL-3.0-only | The full qtdemo launcher delegates to PyQt executables and qmlscene (menumanager.py launchExample/launchQmlExample), including QtQuick/QtQml examples. FontLab exports neither QtQuick nor QtQml and cannot load PyQt as a second Qt runtime. Qt Assistant remote control is an external dependency too. A reduced menu disabling these launch behaviors would not preserve the pinned launcher; blocked on these composite dependencies, not on QWidget. |
+| `835281a1ab864833` | `ports/quick/pyqt-official/animation-835281a1ab864833.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `36246fcbffecdeba` | `ports/quick/pyqt-official/canvas-36246fcbffecdeba.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `e1316fee99c63555` | `ports/quick/pyqt-official/abstractitemmodel-e1316fee99c63555.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `68d664f95f48ce52` | `ports/quick/pyqt-official/objectlistmodel-68d664f95f48ce52.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `b64d66dbce7274fe` | `ports/quick/pyqt-official/stringlistmodel-b64d66dbce7274fe.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `34538a4e2600b918` | `ports/quick/pyqt-official/customgeometry-34538a4e2600b918.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickItem, QQuickView, QSGFlatColorMaterial, QSGGeometry, QSGGeometryNode, QSGNode, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `6b1f4f5590a5518a` | `ports/quick/pyqt-official/chapter1-basics-6b1f4f5590a5518a.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `8d1557cbfed9c7a0` | `ports/quick/pyqt-official/chapter2-methods-8d1557cbfed9c7a0.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `3cd3713a5dc9f6dc` | `ports/quick/pyqt-official/chapter3-bindings-3cd3713a5dc9f6dc.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `831ac8ea61da03f3` | `ports/quick/pyqt-official/chapter4-custompropertytypes-831ac8ea61da03f3.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQuickItem, QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `b88e7eb0fcb53264` | `ports/quick/pyqt-official/chapter5-listproperties-b88e7eb0fcb53264.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtQuick / QtQml; required native APIs: QQmlListProperty, QQuickItem, QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `4dbe92cd1e720dce` | `ports/remoteobjects/pyqt-official/modelviewclient-4dbe92cd1e720dce.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `781a3a959215eb81` | `ports/remoteobjects/pyqt-official/modelviewserver-781a3a959215eb81.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost, QRemoteObjectRegistryHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `54cbd9afababdf71` | `ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `2f1e2f679775d89e` | `ports/remoteobjects/pyqt-official/directconnectdynamicserver-2f1e2f679775d89e.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `333f0272885ca1b7` | `ports/remoteobjects/pyqt-official/registryconnecteddynamicclient-333f0272885ca1b7.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `b83377c9b48aec14` | `ports/remoteobjects/pyqt-official/registryconnecteddynamicserver-b83377c9b48aec14.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost, QRemoteObjectRegistryHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `0b0d8d2fae153e5e` | `ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `2c4c366f259d7d80` | `ports/sql/pyqt-official/querymodel-2c4c366f259d7d80.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlQuery, QSqlQueryModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `9030a87a532b8d8f` | `ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel, QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `0677ebfd7fa2cc60` | `ports/sql/pyqt-official/tablemodel-0677ebfd7fa2cc60.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `8d5ea81a74e30222` | `ports/webkit/pyqt-official/domtraversal-8d5ea81a74e30222.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `f4000cf8ca288375` | `ports/webkit/pyqt-official/fancybrowser-f4000cf8ca288375.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `6ed36280660df7ea` | `ports/webkit/pyqt-official/formextractor-6ed36280660df7ea.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `ca47b83fbf3f31b9` | `ports/webkit/pyqt-official/framecapture-ca47b83fbf3f31b9.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `47298251b3c83ecf` | `ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `ae16288fede27692` | `ports/webkit/pyqt-official/simpleselector-ae16288fede27692.py` | blocked | BSD-3-Clause AND GPL-3.0-only | PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. |
+| `1e5d0f7289e1b36e` | `ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py` | implemented | BSD-3-Clause AND GPL-3.0-only | Exact schema.ui, three XSDs and six XML instances copied. Preserve native QXmlSchema/Validator, native diagnostic callback, highlighter and error cursor/full-width selection. Defer initial validation to owned timer. Reject DTD/entities/schema locations/imports/includes before native evaluation; QByteArray plus explicit empty base QUrl prevents URL-loading overloads. No stdlib XSD substitute. |
+
+### Batch 8 a1273c8940d43221
+
+`Official webbrowser` — `ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QAxContainer; required native APIs: QAxWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 38465a8f4b1a229f
+
+`Official chat` — `ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusAbstractAdaptor, QDBusAbstractInterface, QDBusConnection, QDBusMessage. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 ab719a6a5c3afe4a
+
+`Official listnames` — `ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 30cfa75ad45b3447
+
+`Official ping` — `ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 57a381bc8260c85d
+
+`Official pong` — `ports/dbus/pyqt-official/pong-57a381bc8260c85d.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 54c7440bdcdc3dfc
+
+`Official car` — `ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusAbstractAdaptor, QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 3cf5db95a691d200
+
+`Official controller` — `ports/dbus/pyqt-official/controller-3cf5db95a691d200.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtDBus; required native APIs: QDBusAbstractInterface, QDBusConnection. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 27bf65f8b059fd96
+
+`Official calculatorform` — `ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Original calculatorform.ui loaded with QUiLoader; both valueChanged(int) slots explicitly tracked; original spin ranges and sum display retained.
+
+Native: Verify Calculator Form geometry/labels; set inputSpinBox1=7 and inputSpinBox2=8 then 0; inspect sums 15 then 8. Check spin ranges/keyboard input and both tracked signals.
+
+### Batch 8 960c701fa6221ac5
+
+`Official plugins` — `ports/designer/pyqt-official/plugins-960c701fa6221ac5.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt has no QtDesigner module or QPyDesignerCustomWidgetPlugin/QDesignerCustomWidgetInterface and no PyQt Designer Python plugin loader. plugins.py launches external Designer with PYQTDESIGNERPATH/PYTHONPATH; that integration cannot run in the host. Eight plain widgets have separate standalone ports; HelloGLWidget is separately blocked.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 4d24cd77c74a8801
+
+`Official designer analogclock` — `ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Standalone green clock, hour/minute hands and timezone offsets retained. Owned 1 s timer; native QTime notification converted to JSON text. Designer plugin/meta-properties/signals blocked separately.
+
+Native: Verify green clock hands/ticks and live repaint at 1 s. controls[setTimeZone](-3), then resetTimeZone(); inspect offsets -3/0 and timezone/time notification values; resize and screenshot hands. Close during timer activity.
+
+### Batch 8 9941e3c752b3a3b7
+
+`Official bubbleswidget` — `ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Standalone bubbles retain mouse creation/expansion, rising motion, random gradients, colour/count/author setters and start/stop. All point arithmetic uses components; QColor channels are integers and ellipse uses QRectF; two timers owned. No host-global RNG reseeding. Designer integration separately blocked.
+
+Native: setBubbles(3); inspect three moving positions. Hold left mouse to expand, drag and release a fourth bubble; verify gradients, radii and removal above top. setBubbles(-1) gives zero; stop/start timers and setColor1/setColor2. Close while bubbleTimer and animation_timer are active.
+
+### Batch 8 1321540b04f33117
+
+`Official counterlabel` — `ports/designer/pyqt-official/counterlabel-1321540b04f33117.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Standalone counter preserves range/offset/int-and-string notifications and scaled text. Original initial setValue(123) remains out of range so displays 1. QPointF text overload and scalar subtraction replace unsafe overload/negation; zero metrics dimensions guarded. Designer integration separately blocked.
+
+Native: Initial value/min/max are 1. setMaximum(200), setOffset(5), setValue(123); inspect 128 and "128" notifications while painted numeric value remains 123. stepDown, setMinimum(150), out-of-range setValue(-100), then setMaximum(10); verify clamping/range consistency and scaled text under resize.
+
+### Batch 8 7ba49e67588b1329
+
+`Official datetimeedit` — `ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py`.
+
+State: **implemented / native unexecuted**. Licence: `HPND AND GPL-3.0-only`; review `unresolved`.
+
+Both standalone date/time editor subclasses retain popup/calendar settings and resetters. Explicit native protected mousePressEvent; calendarWidget() replaces PyQt typed findChild. Python layout/calendar references have private names. Original Denviso HPND permission retained; collection GPL scope unresolved. Designer integration separately blocked.
+
+Native: Open both calendar popups via native mouse; exercise date and time edits. On dateEdit/dateTimeEdit drive set/reset FirstDayOfWeek, GridVisible, HorizontalHeaderFormat, VerticalHeaderFormat and NavigationBarVisible. Confirm popup values persist and calendarPopup stays true. Close with a calendar popup open.
+
+### Batch 8 5941e31267112c98
+
+`Official helloglwidget` — `ports/designer/pyqt-official/helloglwidget-5941e31267112c98.py`.
+
+State: **blocked / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 de4979a99c6d0bed
+
+`Official multipagewidget` — `ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Original two pages, insertion/removal, combo selection, current-index and page-title setters retained. Private layout name avoids native layout slot shadowing. Python notifications replace unavailable PyQt signals; Designer integration blocked separately.
+
+Native: Verify two original labels/Page 1/Page 2; select second combo item natively. setPageTitle("Second"), insertPage(0, owned QLabel), removePage(0); inspect counts/titles/current index and notifications. Confirm removed page remains owned until cleanup.
+
+### Batch 8 773db5c24ae98ffb
+
+`Official polygonwidget` — `ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Original star/polygon path, angle/sides/radii/gradient setters retained. Repair upstream max(3, QColor) typo to copy QColor; minimum three sides and clamped angle retained. Designer integration separately blocked.
+
+Native: Verify five-sided gradient star. setNumberOfSides(0) yields 3; setAngle(400) yields 360; setInnerRadius(12), setOuterRadius(80), setInnerColor/setOuterColor(QColor); screenshot changed path/colours and inspect sides/radii/path element count.
+
+### Batch 8 bcfa5de0140286d5
+
+`Official pydemo` — `ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Original read-only HTML, author inheritance and relative text zoom retained; zoom changes exposed in inspect notifications. Designer integration separately blocked.
+
+Native: Verify original read-only HTML and author David Boddie. setZoom(3), setZoom(-2), resetZoom(); inspect notifications and visual font sizes. setAuthor("Example Author"), resetAuthor(); verify author metadata only.
+
+### Batch 8 5125860585e98b3a
+
+`Official pythonconsolewidget` — `ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Original explicit Python expression evaluation, qApp access and successful-command Up/Down history retained. Evaluation starts only on Return/control, never inspect; errors now visible in inspect. No process/global event loop construction. Designer integration separately blocked.
+
+Native: Confirm empty startup/history and no evaluation during inspect. Type 6 * 7 and press Return; inspect output 42/history. Type 1 / 0; retain input, report error, leave history unchanged. Native Up/Down recall/clear; evaluate qApp to confirm existing host application, without changing it.
+
+### Batch 8 0ad3432ccdca7ac0
+
+`Official localfortuneclient` — `ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Original seven fortunes, Qt_4_0 UInt16/QString framing and duplicate retry retained. Create an owned QLocalServer peer; lock endpoint to a unique short temporary socket path. Fragmented payload validation and tracked retry/timeout timers; no request in inspect. Abort sockets, close server and remove temporary path on close.
+
+Native: Verify initially listening/sent=0/received=0 and read-only owned endpoint. Click Get Fortune; await host event delivery, inspect one of seven fortunes and sent/received increment. Repeat to exercise duplicate retry; close while request/retry/timeout is pending. Retain evidence socket and temporary directory disappear.
+
+### Batch 8 a14d08fe23965bec
+
+`Official localfortuneserver` — `ports/ipc/pyqt-official/localfortuneserver-a14d08fe23965bec.py`.
+
+State: **implemented / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Original seven-fortune QLocalServer retained at an owned short unique socket path. Add an explicit owned-client test button; retain status/Quit. Reuse original Qt fortune wire framing. Accepted sockets remain owned by server, aborted before deletion; never remove another server endpoint.
+
+Native: Verify listening status and no startup request. Click Test owned client; await native newConnection/readyRead and original seven-fortune payload; sent/received increment. Repeat, then Quit/hide/reshow; named close aborts accepted/client sockets and removes only this endpoint.
+
+### Batch 8 74af8d8d2d7774b8
+
+`Official audiodevices` — `ports/multimedia/pyqt-official/audiodevices-74af8d8d2d7774b8.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 c391afd8516131e1
+
+`Official audiooutput` — `ports/multimedia/pyqt-official/audiooutput-c391afd8516131e1.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat, QAudioOutput. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 f6d352360ae9bdfb
+
+`Official camera` — `ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudioEncoderSettings, QCamera, QCameraImageCapture, QCameraViewfinder, QImageEncoderSettings, QMediaMetaData, QMediaRecorder, QMultimedia, QVideoEncoderSettings. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 5eb4b9eaa2d5c9dc
+
+`Official player` — `ports/multimediawidgets/pyqt-official/player-5eb4b9eaa2d5c9dc.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAbstractVideoBuffer, QMediaContent, QMediaMetaData, QMediaPlayer, QMediaPlaylist, QVideoFrame, QVideoProbe, QVideoWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 a57a89e523c75b7f
+
+`Official videographicsitem` — `ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QGraphicsVideoItem, QMediaContent, QMediaPlayer. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 481c128fba3a714b
+
+`Official videowidget` — `ports/multimediawidgets/pyqt-official/videowidget-481c128fba3a714b.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QMediaContent, QMediaPlayer, QVideoWidget. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 c82d1af7d1a7b0cf
+
+`Official 2dpainting` — `ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Original native QWidget/OpenGL QOpenGLWidget 30-circle QPainter comparison and Qt text retained. Apply four-sample format only to owned GL widget; no global default-format mutation. Tracked 50 ms timer; both painter contexts always end.
+
+Native: Verify title, Native/OpenGL labels, two 200x200 canvases, 30 animated gradient circles and Qt text. Await timer; inspect equal native_elapsed/opengl_elapsed, wrap at 1000. Retain screenshots of both real paint backends. Check host default surface format unchanged; close with timer active.
+
+### Batch 8 303ea3ee09c4677d
+
+`Official grabber` — `ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 1ad60855ca28f3cc
+
+`Official hellogl` — `ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 b383fecf912548bb
+
+`Official openglwindow` — `ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 fcada4fff6524fcf
+
+`Official overpainting` — `ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 ed6d42d4faa7e0bb
+
+`Official textures` — `ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt.QtGui.QOpenGLContext lacks versionFunctions(); QOpenGLFunctions_1_1/QOpenGLFunctions_2_0 wrappers are not exported. The source uses versionFunctions(profile) for raw GL calls (glBegin/glGenLists/glCallList for fixed-function demos, glDrawArrays for shader demos). QOpenGLWidget exists but does not supply these missing entrypoints; no renderer rewrite or second GL binding is substituted.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 5a8e48d2a1396cea
+
+`Official compile-on-the-fly` — `ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Exact demo.ui loaded via QUiLoader instead of PyQt loadUiType code generation. Explicit tracked Add-items auto-slot, original Clear and OK wiring. Runtime UI behavior retained; Python code generation itself is unavailable.
+
+Native: Click button1 twice: list contains This/is/a/demo twice, count 8. button2 clears. okButton accepts/hides asynchronously; reshow same root then named close. Confirm original demo.ui size/title/control texts and three tracked connections.
+
+### Batch 8 b7db02f540cc7559
+
+`Official load_ui1` — `ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Exact demo.ui loaded via QUiLoader instead of PyQt loadUi. Track original Clear and OK wiring. Preserve original no-Python-slot behavior: Add items does nothing.
+
+Native: Verify original demo.ui geometry/texts. button1 deliberately leaves list empty, matching original source without Python auto-slot. button2 clears, okButton accepts/hides; two tracked XML connections. Reshow and named close.
+
+### Batch 8 b9660f4ee653ca01
+
+`Official load_ui2` — `ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Exact demo.ui loaded via QUiLoader, replacing PyQt loadUi(target). Track original Add-items auto-slot, Clear and OK. Root is loader-created owned QDialog; UI behavior retained without generated PyQt classes.
+
+Native: Click button1 twice: inspect eight items; button2 clears; okButton accepts/hides. Reshow and named close. Verify original geometry/texts and three tracked connections; no generated PyQt class or extra event loop.
+
+### Batch 8 8847cbce50b72500
+
+`Official adding` — `ports/qml/pyqt-official/adding-8847cbce50b72500.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 dd226ba9fbb7b330
+
+`Official attached` — `ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 eb7a89f07f63cca7
+
+`Official binding` — `ports/qml/pyqt-official/binding-eb7a89f07f63cca7.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, QQmlProperty, QQmlPropertyValueSource, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 ad499afe23726248
+
+`Official coercion` — `ports/qml/pyqt-official/coercion-ad499afe23726248.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 6417cdcf1bfd1752
+
+`Official default` — `ports/qml/pyqt-official/default-6417cdcf1bfd1752.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 81a6f0d16c203608
+
+`Official grouped` — `ports/qml/pyqt-official/grouped-81a6f0d16c203608.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 75ca5ac77ecefd6d
+
+`Official methods` — `ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 d0a18273fa604bb6
+
+`Official properties` — `ports/qml/pyqt-official/properties-d0a18273fa604bb6.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 0a13f60f5f0561db
+
+`Official signal` — `ports/qml/pyqt-official/signal-0a13f60f5f0561db.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 738a22ef3062ed51
+
+`Official valuesource` — `ports/qml/pyqt-official/valuesource-738a22ef3062ed51.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQml; required native APIs: QQmlComponent, QQmlEngine, QQmlListProperty, QQmlProperty, QQmlPropertyValueSource, qmlAttachedPropertiesObject, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 85a56a1f3c25ccca
+
+`Official qtdemo` — `ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py`.
+
+State: **blocked / native unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+The full qtdemo launcher delegates to PyQt executables and qmlscene (menumanager.py launchExample/launchQmlExample), including QtQuick/QtQml examples. FontLab exports neither QtQuick nor QtQml and cannot load PyQt as a second Qt runtime. Qt Assistant remote control is an external dependency too. A reduced menu disabling these launch behaviors would not preserve the pinned launcher; blocked on these composite dependencies, not on QWidget.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 835281a1ab864833
+
+`Official animation` — `ports/quick/pyqt-official/animation-835281a1ab864833.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 36246fcbffecdeba
+
+`Official canvas` — `ports/quick/pyqt-official/canvas-36246fcbffecdeba.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 e1316fee99c63555
+
+`Official abstractitemmodel` — `ports/quick/pyqt-official/abstractitemmodel-e1316fee99c63555.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 68d664f95f48ce52
+
+`Official objectlistmodel` — `ports/quick/pyqt-official/objectlistmodel-68d664f95f48ce52.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 b64d66dbce7274fe
+
+`Official stringlistmodel` — `ports/quick/pyqt-official/stringlistmodel-b64d66dbce7274fe.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 34538a4e2600b918
+
+`Official customgeometry` — `ports/quick/pyqt-official/customgeometry-34538a4e2600b918.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickItem, QQuickView, QSGFlatColorMaterial, QSGGeometry, QSGGeometryNode, QSGNode, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 6b1f4f5590a5518a
+
+`Official chapter1-basics` — `ports/quick/pyqt-official/chapter1-basics-6b1f4f5590a5518a.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 8d1557cbfed9c7a0
+
+`Official chapter2-methods` — `ports/quick/pyqt-official/chapter2-methods-8d1557cbfed9c7a0.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 3cd3713a5dc9f6dc
+
+`Official chapter3-bindings` — `ports/quick/pyqt-official/chapter3-bindings-3cd3713a5dc9f6dc.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 831ac8ea61da03f3
+
+`Official chapter4-customPropertyTypes` — `ports/quick/pyqt-official/chapter4-custompropertytypes-831ac8ea61da03f3.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQuickItem, QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 b88e7eb0fcb53264
+
+`Official chapter5-listproperties` — `ports/quick/pyqt-official/chapter5-listproperties-b88e7eb0fcb53264.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtQuick / QtQml; required native APIs: QQmlListProperty, QQuickItem, QQuickPaintedItem, QQuickView, qmlRegisterType. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 4dbe92cd1e720dce
+
+`Official modelviewclient` — `ports/remoteobjects/pyqt-official/modelviewclient-4dbe92cd1e720dce.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 781a3a959215eb81
+
+`Official modelviewserver` — `ports/remoteobjects/pyqt-official/modelviewserver-781a3a959215eb81.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost, QRemoteObjectRegistryHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 54cbd9afababdf71
+
+`Official directconnectdynamicclient` — `ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 2f1e2f679775d89e
+
+`Official directconnectdynamicserver` — `ports/remoteobjects/pyqt-official/directconnectdynamicserver-2f1e2f679775d89e.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 333f0272885ca1b7
+
+`Official registryconnecteddynamicclient` — `ports/remoteobjects/pyqt-official/registryconnecteddynamicclient-333f0272885ca1b7.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectNode. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 b83377c9b48aec14
+
+`Official registryconnecteddynamicserver` — `ports/remoteobjects/pyqt-official/registryconnecteddynamicserver-b83377c9b48aec14.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtRemoteObjects; required native APIs: QRemoteObjectHost, QRemoteObjectRegistryHost. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 0b0d8d2fae153e5e
+
+`Official cachedtable` — `ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtSql; required native APIs: QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 2c4c366f259d7d80
+
+`Official querymodel` — `ports/sql/pyqt-official/querymodel-2c4c366f259d7d80.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtSql; required native APIs: QSqlQuery, QSqlQueryModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 9030a87a532b8d8f
+
+`Official relationaltablemodel` — `ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtSql; required native APIs: QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel, QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 0677ebfd7fa2cc60
+
+`Official tablemodel` — `ports/sql/pyqt-official/tablemodel-0677ebfd7fa2cc60.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtSql; required native APIs: QSqlTableModel. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 8d5ea81a74e30222
+
+`Official domtraversal` — `ports/webkit/pyqt-official/domtraversal-8d5ea81a74e30222.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 f4000cf8ca288375
+
+`Official fancybrowser` — `ports/webkit/pyqt-official/fancybrowser-f4000cf8ca288375.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 6ed36280660df7ea
+
+`Official formextractor` — `ports/webkit/pyqt-official/formextractor-6ed36280660df7ea.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 ca47b83fbf3f31b9
+
+`Official framecapture` — `ports/webkit/pyqt-official/framecapture-ca47b83fbf3f31b9.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 47298251b3c83ecf
+
+`Official previewer` — `ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 ae16288fede27692
+
+`Official simpleselector` — `ports/webkit/pyqt-official/simpleselector-ae16288fede27692.py`.
+
+State: **blocked / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+PythonQt does not export QtWebKit / QtWebKitWidgets; required native APIs: QWebElement, QWebFrame, QWebPage, QWebView. The pinned behavior requires this module; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the exact missing capabilities in the recorded blocker; launch by this ID must raise the recorded NotImplementedError before acquiring the host or creating any native object, resource, network request or external process. Registry and FontLab state remain unchanged.
+
+### Batch 8 1e5d0f7289e1b36e
+
+`Official schema` — `ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py`.
+
+State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Exact schema.ui, three XSDs and six XML instances copied. Preserve native QXmlSchema/Validator, native diagnostic callback, highlighter and error cursor/full-width selection. Defer initial validation to owned timer. Reject DTD/entities/schema locations/imports/includes before native evaluation; QByteArray plus explicit empty base QUrl prevents URL-loading overloads. No stdlib XSD substitute.
+
+Native: Launch under 5 s with loading=true/valid=null. After owned initializeTimer, validate all six original instances across Contact/Recipe/Order: valid=true for three valid, false for three invalid, native diagnostic line/column and full-width red selection. Edit malformed XML then correct it; verify syntax colours and multi-line comments. Test DTD/external schemaLocation input: report rejection without outbound traffic. Close before initialization and after diagnostics; verify handler/highlighter/timer destruction.

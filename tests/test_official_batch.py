@@ -138,6 +138,111 @@ BATCH_SEVEN_IDS = {
 }
 IDS |= BATCH_SEVEN_IDS
 
+BATCH_EIGHT_IDS = {
+    "7ba49e67588b1329",
+    "ad499afe23726248",
+    "1ad60855ca28f3cc",
+    "6417cdcf1bfd1752",
+    "68d664f95f48ce52",
+    "b383fecf912548bb",
+    "b9660f4ee653ca01",
+    "5125860585e98b3a",
+    "ab719a6a5c3afe4a",
+    "9941e3c752b3a3b7",
+    "b7db02f540cc7559",
+    "835281a1ab864833",
+    "831ac8ea61da03f3",
+    "781a3a959215eb81",
+    "3cf5db95a691d200",
+    "8d5ea81a74e30222",
+    "fcada4fff6524fcf",
+    "b83377c9b48aec14",
+    "74af8d8d2d7774b8",
+    "9030a87a532b8d8f",
+    "0ad3432ccdca7ac0",
+    "47298251b3c83ecf",
+    "5a8e48d2a1396cea",
+    "738a22ef3062ed51",
+    "ca47b83fbf3f31b9",
+    "1e5d0f7289e1b36e",
+    "e1316fee99c63555",
+    "f4000cf8ca288375",
+    "b64d66dbce7274fe",
+    "333f0272885ca1b7",
+    "0a13f60f5f0561db",
+    "6ed36280660df7ea",
+    "f6d352360ae9bdfb",
+    "a14d08fe23965bec",
+    "bcfa5de0140286d5",
+    "0677ebfd7fa2cc60",
+    "2c4c366f259d7d80",
+    "ed6d42d4faa7e0bb",
+    "960c701fa6221ac5",
+    "303ea3ee09c4677d",
+    "38465a8f4b1a229f",
+    "8847cbce50b72500",
+    "4d24cd77c74a8801",
+    "8d1557cbfed9c7a0",
+    "5941e31267112c98",
+    "85a56a1f3c25ccca",
+    "75ca5ac77ecefd6d",
+    "773db5c24ae98ffb",
+    "4dbe92cd1e720dce",
+    "de4979a99c6d0bed",
+    "5eb4b9eaa2d5c9dc",
+    "481c128fba3a714b",
+    "27bf65f8b059fd96",
+    "a1273c8940d43221",
+    "c391afd8516131e1",
+    "d0a18273fa604bb6",
+    "1321540b04f33117",
+    "81a6f0d16c203608",
+    "54cbd9afababdf71",
+    "ae16288fede27692",
+    "2f1e2f679775d89e",
+    "6b1f4f5590a5518a",
+    "0b0d8d2fae153e5e",
+    "34538a4e2600b918",
+    "30cfa75ad45b3447",
+    "57a381bc8260c85d",
+    "b88e7eb0fcb53264",
+    "dd226ba9fbb7b330",
+    "c82d1af7d1a7b0cf",
+    "54c7440bdcdc3dfc",
+    "3cd3713a5dc9f6dc",
+    "eb7a89f07f63cca7",
+    "36246fcbffecdeba",
+    "a57a89e523c75b7f",
+}
+IDS |= BATCH_EIGHT_IDS
+
+# Standalone widgets retain their behavior; their Designer plugin integration is
+# separately blocked because the host does not expose QtDesigner.
+BATCH_EIGHT_IMPLEMENTED = {
+    "27bf65f8b059fd96",
+    "4d24cd77c74a8801",
+    "9941e3c752b3a3b7",
+    "1321540b04f33117",
+    "7ba49e67588b1329",
+    "de4979a99c6d0bed",
+    "773db5c24ae98ffb",
+    "bcfa5de0140286d5",
+    "5125860585e98b3a",
+    "0ad3432ccdca7ac0",
+    "a14d08fe23965bec",
+    "c82d1af7d1a7b0cf",
+    "5a8e48d2a1396cea",
+    "b7db02f540cc7559",
+    "b9660f4ee653ca01",
+    "1e5d0f7289e1b36e",
+}
+
+
+def test_batch_eight_supported_entrypoints_have_real_ports():
+    rows = json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
+    implemented = {r["source_id"] for r in rows if r["implementation"] == "implemented"}
+    assert BATCH_EIGHT_IMPLEMENTED <= implemented, "All 16 supported demos need ports"
+
 
 def records():
     return [
@@ -150,7 +255,7 @@ def records():
 def test_official_manifest_covers_exact_batch_and_retains_provenance():
     rows = records()
     assert {r["source_id"] for r in rows} == IDS, (
-        "All 113 official entries require a result"
+        "All 187 official entries require a result"
     )
     sources = {
         r["id"]: r
@@ -2467,7 +2572,7 @@ def test_batch_six_native_exports_and_resource_references_match_captured_stubs()
     from tests.official_doubles import CONTRACT
 
     for row in records():
-        if row["source_id"] not in BATCH_SIX_IDS:
+        if row["source_id"] not in BATCH_SIX_IDS | BATCH_EIGHT_IDS:
             continue
         path = ROOT / row["target_path"]
         tree = ast.parse(path.read_text(), feature_version=(3, 11))
@@ -3299,3 +3404,472 @@ def test_dirview_launch_defers_filesystem_root_and_sample_creation(
         assert not h.snapshot()["loading"]
     finally:
         h.close()
+
+
+def batch_eight(id, qt):
+    return load_record(next(r for r in records() if r["source_id"] == id)).build(qt)
+
+
+def test_batch_eight_accounts_for_every_remaining_official_entrypoint():
+    rows = [r for r in records() if r["source_id"] in BATCH_EIGHT_IDS]
+    assert len(rows) == 74
+    assert sum(r["implementation"] == "implemented" for r in rows) == 16
+    assert sum(r["implementation"] == "blocked" for r in rows) == 58
+    catalog = json.loads((ROOT / "catalog/sources.json").read_text())["files"]
+    candidates = {
+        r["id"]
+        for r in catalog
+        if r["path"].startswith("src/pyqt-official/")
+        and r.get("python", {}).get("role") == "entrypoint"
+    }
+    assert candidates == IDS, (
+        "No official entrypoint may disappear from the denominator"
+    )
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        r
+        for r in records()
+        if r["source_id"] in BATCH_EIGHT_IDS and r["implementation"] == "blocked"
+    ],
+    ids=lambda r: r["source_id"],
+)
+def test_batch_eight_blockers_fail_before_accessing_host(row, monkeypatch):
+    from fontlab_python_examples import launcher
+
+    class UntouchedHost:
+        def __getattr__(self, key):
+            pytest.fail("Blocked build touched host: " + key)
+
+    with pytest.raises(NotImplementedError) as result:
+        load_record(row).build(UntouchedHost())
+    assert str(result.value) == row["blocked_reason"]
+
+    def forbidden():
+        pytest.fail("Blocked launch tried to acquire a FontLab runtime")
+
+    monkeypatch.setattr(launcher, "_host", forbidden)
+    with pytest.raises(NotImplementedError, match="not ported"):
+        launcher.launch(row["source_id"])
+
+
+def test_batch_eight_calculator_and_pyuic_declared_connections_are_tracked(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("27bf65f8b059fd96", qt)
+    try:
+        h.controls["inputSpinBox1"].setValue(7)
+        h.controls["inputSpinBox2"].setValue(8)
+        assert h.snapshot()["sum"] == "15"
+        assert len(h.connections) == 2
+        h.controls["inputSpinBox1"].setValue(0)
+        assert h.snapshot()["sum"] == "8"
+    finally:
+        h.close()
+    for id, adds in (
+        ("5a8e48d2a1396cea", True),
+        ("b7db02f540cc7559", False),
+        ("b9660f4ee653ca01", True),
+    ):
+        h = batch_eight(id, qt)
+        try:
+            h.controls["button1"].click()
+            h.controls["button1"].click()
+            assert h.snapshot()["items"] == (
+                ["This", "is", "a", "demo"] * 2 if adds else []
+            )
+            h.controls["button2"].click()
+            assert h.snapshot()["items"] == []
+            assert len(h.connections) == (3 if adds else 2)
+            h.controls["okButton"].click()
+            assert not h.widget.isVisible()
+        finally:
+            h.close()
+
+
+def test_batch_eight_clock_and_counter_setters_emit_inspected_values(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("4d24cd77c74a8801", qt)
+    try:
+        h.controls["setTimeZone"](-3)
+        assert h.snapshot()["time_zone"] == -3
+        assert h.snapshot()["notifications"]["timeZoneChanged"] == [-3]
+        h.controls["timer"].emit("timeout")
+        assert isinstance(h.snapshot()["notifications"]["timeChanged"][0], str)
+        h.controls["resetTimeZone"]()
+        assert h.snapshot()["time_zone"] == 0
+    finally:
+        h.close()
+    h = batch_eight("1321540b04f33117", qt)
+    try:
+        assert h.snapshot()["value"] == 1, "Original 123 request exceeds default range"
+        h.controls["setMaximum"](200)
+        h.controls["setOffset"](5)
+        h.controls["setValue"](123)
+        assert h.snapshot()["notifications"]["valueChanged(int)"] == [128]
+        assert h.snapshot()["notifications"]["valueChanged(str)"] == ["128"]
+        h.controls["stepDown"]()
+        assert h.snapshot()["value"] == 122
+        h.controls["setMinimum"](150)
+        assert h.snapshot()["value"] == 150
+        h.controls["setValue"](-100)
+        assert h.snapshot()["value"] == 150
+        h.controls["setMaximum"](10)
+        assert h.snapshot()["minimum"] == h.snapshot()["value"] == 10
+    finally:
+        h.close()
+
+
+def test_batch_eight_polygon_and_viewer_properties(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("773db5c24ae98ffb", qt)
+    try:
+        h.controls["setNumberOfSides"](0)
+        h.controls["setAngle"](400)
+        h.controls["setInnerRadius"](12)
+        h.controls["setOuterRadius"](80)
+        h.controls["setInnerColor"](qt.QtGui.QColor(1, 2, 3))
+        h.controls["setOuterColor"](qt.QtGui.QColor(3, 2, 1))
+        s = h.snapshot()
+        assert (s["sides"], s["angle"], s["inner_radius"], s["outer_radius"]) == (
+            3,
+            360,
+            12,
+            80,
+        )
+        assert h.widget.getInnerColor().red() == 1, "Repair original max(3, QColor) bug"
+    finally:
+        h.close()
+    h = batch_eight("bcfa5de0140286d5", qt)
+    try:
+        h.controls["setZoom"](3)
+        h.controls["setZoom"](-2)
+        assert h.snapshot()["zoom"] == -2
+        assert h.snapshot()["notifications"]["zoomChanged"] == [-2]
+        h.controls["resetZoom"]()
+        h.controls["setAuthor"]("Example Author")
+        assert h.snapshot()["author"] == "Example Author"
+        h.controls["resetAuthor"]()
+        assert h.snapshot()["author"] == "David Boddie"
+        assert "PyQt Demonstration Widget" in h.snapshot()["text"]
+    finally:
+        h.close()
+
+
+def test_batch_eight_multipage_select_rename_insert_remove(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("de4979a99c6d0bed", qt)
+    try:
+        assert h.snapshot()["page_titles"] == ["Page 1", "Page 2"]
+        h.controls["comboBox"].emit("activated", 1)
+        h.controls["setPageTitle"]("Second")
+        assert h.snapshot()["current_page"] == 1
+        assert h.snapshot()["page_title"] == "Second"
+        page = qt.QtGui.QLabel("Inserted", h.widget)
+        h.controls["insertPage"](0, page)
+        assert h.snapshot()["page_count"] == 3
+        h.controls["removePage"](0)
+        assert h.snapshot()["page_count"] == 2
+    finally:
+        h.close()
+
+
+def test_batch_eight_date_calendar_options_and_native_protected_handler(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("7ba49e67588b1329", qt)
+    try:
+        for name in ("dateEdit", "dateTimeEdit"):
+            editor = h.controls[name]
+            editor.setGridVisible(True)
+            editor.setFirstDayOfWeek(qt.QtCore.Qt.Sunday)
+            editor.mousePressEvent(SimpleNamespace())
+            assert editor._calendar is editor.calendarWidget()
+            assert editor._calendar.gridVisible
+            editor.resetGridVisible()
+            editor.resetFirstDayOfWeek()
+            assert not editor._calendar.gridVisible
+            editor.setNavigationBarVisible(False)
+            editor.resetNavigationBarVisible()
+            editor.setHorizontalHeaderFormat(qt.QtGui.QCalendarWidget.LongDayNames)
+            editor.resetHorizontalHeaderFormat()
+            editor.setVerticalHeaderFormat(qt.QtGui.QCalendarWidget.NoVerticalHeader)
+            editor.resetVerticalHeaderFormat()
+        assert h.snapshot()["calendar_popup"]
+    finally:
+        h.close()
+
+
+def test_batch_eight_console_explicit_eval_history_and_errors(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("5125860585e98b3a", qt)
+    try:
+        assert h.snapshot()["history"] == []
+        h.widget.setText("6 * 7")
+        h.widget.emit("returnPressed")
+        assert h.snapshot()["output"] == "42"
+        assert h.snapshot()["history"] == ["6 * 7"]
+        h.widget.setText("1 / 0")
+        h.controls["execute"]()
+        assert "division by zero" in h.snapshot()["evaluation_error"]
+        assert h.snapshot()["history"] == ["6 * 7"]
+        for key in (qt.QtCore.Qt.Key_Up, qt.QtCore.Qt.Key_Down):
+            h.widget.keyReleaseEvent(
+                SimpleNamespace(
+                    type=lambda: qt.QtCore.QEvent.KeyRelease,
+                    key=lambda: key,
+                    accept=lambda: None,
+                )
+            )
+        assert h.snapshot()["expression"] == ""
+    finally:
+        h.close()
+
+
+def test_batch_eight_bubbles_input_motion_and_timers(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("9941e3c752b3a3b7", qt)
+    try:
+        h.controls["setBubbles"](3)
+        old = h.snapshot()["positions"]
+        h.controls["animation_timer"].emit("timeout")
+        assert all(
+            new[1] < before[1] for new, before in zip(h.snapshot()["positions"], old)
+        )
+        event = SimpleNamespace(
+            button=lambda: qt.QtCore.Qt.LeftButton,
+            pos=lambda: qt.QtCore.QPoint(80, 90),
+            accept=lambda: None,
+        )
+        h.widget.mousePressEvent(event)
+        assert h.snapshot()["new_bubble"]
+        h.controls["bubbleTimer"].emit("timeout")
+        h.widget.mouseMoveEvent(event)
+        h.widget.mouseReleaseEvent(event)
+        assert h.snapshot()["bubble_count"] == 4
+        h.controls["setBubbles"](-3)
+        assert h.snapshot()["bubble_count"] == 0
+        h.controls["stop"]()
+        assert not h.controls["animation_timer"]._active
+        h.controls["start"]()
+        assert h.controls["animation_timer"]._active
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize(
+    "id",
+    [
+        "4d24cd77c74a8801",
+        "9941e3c752b3a3b7",
+        "1321540b04f33117",
+        "773db5c24ae98ffb",
+        "c82d1af7d1a7b0cf",
+    ],
+)
+def test_batch_eight_painting_ends_contexts_without_wrapper_arithmetic(id, official_qt):
+    qt, _ = official_qt
+    qt._strict_integer_coordinates = True
+    h = batch_eight(id, qt)
+    try:
+        if id == "9941e3c752b3a3b7":
+            h.controls["setBubbles"](2)
+        if id == "c82d1af7d1a7b0cf":
+            h.controls["timer"].emit("timeout")
+            assert (
+                h.snapshot()["native_elapsed"] == h.snapshot()["opengl_elapsed"] == 50
+            )
+            canvases = [h.controls["native"], h.controls["openGL"]]
+        else:
+            canvases = [h.widget]
+        event = SimpleNamespace(rect=qt.QtCore.QRect(0, 0, 200, 200))
+        for canvas in canvases:
+            canvas.paintEvent(event)
+        assert qt._painters and all(not painter.isActive() for painter in qt._painters)
+    finally:
+        timers = [
+            obj
+            for obj in h.controls.values()
+            if getattr(obj, "_qt_name", "") == "QTimer"
+        ]
+        h.close()
+        assert all(not obj._active for obj in timers)
+
+
+@pytest.mark.parametrize("id", ["0ad3432ccdca7ac0", "a14d08fe23965bec"])
+def test_batch_eight_owned_local_ipc_roundtrip_and_cleanup(id, official_qt):
+    import time
+
+    from fontlab_python_examples.official import read
+
+    qt, _ = official_qt
+    h = batch_eight(id, qt)
+    endpoint = Path(read(h.controls["hostLineEdit"], "text"))
+    try:
+        assert endpoint.is_socket() and h.snapshot()["sent"] == 0
+        assert h.controls["hostLineEdit"].readOnly
+        h.controls["requestNewFortune"]()
+        deadline = time.monotonic() + 1
+        while not h.snapshot()["fortune"] and time.monotonic() < deadline:
+            qt._pump_network()
+        state = h.snapshot()
+        assert (
+            state["fortune"]
+            in load_record(next(r for r in records() if r["source_id"] == id)).FORTUNES
+        )
+        assert state["sent"] == state["received"] == 1
+        assert not state["pending"] and not state["error"]
+    finally:
+        h.close()
+    assert not endpoint.exists() and not endpoint.parent.exists()
+
+
+def test_batch_eight_xml_deferred_native_validation_and_diagnostics(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("1e5d0f7289e1b36e", qt)
+    try:
+        assert h.snapshot()["loading"] and h.snapshot()["valid"] is None
+        h.controls["initializeTimer"].emit("timeout")
+        assert h.snapshot()["valid"] is True
+        assert h.snapshot()["status"] == "validation successful"
+        for index in range(3):
+            h.controls["schemaSelection"].setCurrentIndex(index)
+            assert h.snapshot()["schema_index"] == index
+            qt._validation_result = (False, "Owned invalid instance", 3, 2)
+            h.controls["instanceSelection"].setCurrentIndex(1)
+            assert h.snapshot()["valid"] is False
+            assert (h.snapshot()["line"], h.snapshot()["column"]) == (3, 2)
+            qt._validation_result = (True, "", 1, 1)
+            h.controls["instanceSelection"].setCurrentIndex(0)
+            assert h.snapshot()["valid"] is True
+        for name in ("schemaHighlighter", "instanceHighlighter"):
+            h.controls[name].highlightBlock('<recipe key="value"><!-- unfinished')
+        h.controls["instanceEdit"].setPlainText("\n<root>\n <missing>\n</root>")
+        h.controls["validate"]()
+        assert h.snapshot()["line"] == 4 and h.snapshot()["column"] > 1, (
+            "Boundary parse errors must preserve their source location too"
+        )
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "",
+        "<broken",
+        '<!DOCTYPE x SYSTEM "https://example.invalid/x"><x/>',
+        '<x xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://example.invalid/x"/>',
+        '<x xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///tmp/other.xsd"/>',
+    ],
+)
+def test_batch_eight_xml_rejects_invalid_or_external_input_before_native_validation(
+    text, official_qt
+):
+    qt, _ = official_qt
+    h = batch_eight("1e5d0f7289e1b36e", qt)
+    try:
+        h.controls["initializeTimer"].emit("timeout")
+        before = len(qt._schema_requests)
+        h.controls["instanceEdit"].setPlainText(text)
+        h.controls["validate"]()
+        assert h.snapshot()["valid"] is False
+        assert len(qt._schema_requests) == before, (
+            "Rejected input never reaches native XML networking"
+        )
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize("id", ["0ad3432ccdca7ac0", "a14d08fe23965bec"])
+def test_batch_eight_ipc_close_with_pending_request_stops_every_timer(id, official_qt):
+    from fontlab_python_examples.official import read
+
+    qt, _ = official_qt
+    h = batch_eight(id, qt)
+    endpoint = Path(read(h.controls["hostLineEdit"], "text"))
+    h.controls["requestNewFortune"]()
+    assert h.snapshot()["pending"]
+    timers = [h.controls[name] for name in ("requestTimer", "retryTimer")]
+    h.close()
+    assert all(not timer._active for timer in timers)
+    assert not endpoint.parent.exists()
+    qt._pump_network()
+    h.close()
+
+
+@pytest.mark.parametrize(
+    "packet",
+    [b"\x00\x01x", b"\x00\x06\x00\x00\x00\x03ab", b"\x00\x06\x00\x00\x00\x02\xd8\x00"],
+)
+def test_batch_eight_ipc_rejects_malformed_qt_frames(packet, official_qt):
+    qt, _ = official_qt
+    h = batch_eight("0ad3432ccdca7ac0", qt)
+    try:
+        h.controls["requestNewFortune"]()
+        h.controls["socket"]._extra["received"] = packet[:1]
+        h.controls["socket"].emit("readyRead")
+        assert h.snapshot()["pending"] and not h.snapshot()["error"]
+        h.controls["socket"]._extra["received"] = packet[1:]
+        h.controls["socket"].emit("readyRead")
+        assert not h.snapshot()["pending"] and h.snapshot()["error"]
+        assert h.controls["getFortuneButton"].enabled
+    finally:
+        h.close()
+
+
+def test_batch_eight_ipc_timeout_is_owned_and_retry_is_cancellable(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("0ad3432ccdca7ac0", qt)
+    try:
+        h.controls["requestNewFortune"]()
+        h.controls["requestTimer"].emit("timeout")
+        assert "timed out" in h.snapshot()["error"] and not h.snapshot()["pending"]
+    finally:
+        h.close()
+
+
+def test_batch_eight_xml_close_before_deferred_start_and_stale_callback(official_qt):
+    qt, _ = official_qt
+    h = batch_eight("1e5d0f7289e1b36e", qt)
+    timer = h.controls["initializeTimer"]
+    callback = next(slot for obj, _, slot in h.connections if obj is timer)
+    h.close()
+    callback()
+    assert not timer._active and not qt._schema_requests
+
+
+def test_batch_eight_actual_licences_include_docstring_and_denviso_notices():
+    rows = {r["source_id"]: r for r in records() if r["source_id"] in BATCH_EIGHT_IDS}
+    for id in (
+        "9941e3c752b3a3b7",
+        "1321540b04f33117",
+        "5941e31267112c98",
+        "773db5c24ae98ffb",
+        "5125860585e98b3a",
+    ):
+        licence = rows[id]["license"]
+        assert licence["upstream_expression"] == "GPL-2.0-or-later"
+        assert licence["selected"] == "GPL-3.0-only"
+        assert "David Boddie" in licence["original_notices"][0]
+        assert "either version 2" in licence["original_notices"][0]
+    licence = rows["7ba49e67588b1329"]["license"]
+    assert licence["selected"] == "HPND AND GPL-3.0-only"
+    assert "Denviso GmbH" in licence["attribution"]
+    assert "DENVISO DISCLAIMS ALL WARRANTIES" in licence["original_notices"][0]
+    assert rows["de4979a99c6d0bed"]["license"]["selected"] == "GPL-3.0-only"
+
+
+def test_batch_eight_eight_designer_widgets_keep_explicit_plugin_blockers():
+    widgets = [
+        r
+        for r in records()
+        if r["source_id"] in BATCH_EIGHT_IMPLEMENTED
+        and "/designer/plugins/widgets/" in r["source"]["path"]
+    ]
+    assert len(widgets) == 8
+    assert all(
+        r["designer_plugin"]["implementation"] == "blocked"
+        and "QtDesigner" in r["designer_plugin"]["reason"]
+        for r in widgets
+    )

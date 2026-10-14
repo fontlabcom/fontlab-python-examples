@@ -255,6 +255,56 @@ class Demo:
     def asset(self, name: str) -> str:
         return str(self.assets / name.removeprefix(":/"))
 
+    def load_ui(self, name: str) -> Any:
+        """Load exact Designer XML with every declared connection owned by us.
+
+        QUiLoader otherwise installs untracked connections from the XML. Remove
+        only that section in the in-memory copy, then reconnect through the
+        handle. The pinned asset on disk stays byte-identical to the original.
+        """
+        import xml.etree.ElementTree as ET
+
+        core = self.qt.QtCore
+        document = ET.fromstring(Path(self.asset(name)).read_bytes())
+        connections = document.find("connections")
+        if connections is not None:
+            document.remove(connections)
+        source = core.QBuffer()
+        loader = self.qt.QtUiTools.QUiLoader()
+        window = None
+        try:
+            source.setData(core.QByteArray(ET.tostring(document, encoding="utf-8")))
+            if not source.open(core.QIODevice.ReadOnly):
+                raise RuntimeError("Cannot open owned Designer buffer")
+            window = loader.load(source)
+            if window is None:
+                raise RuntimeError("Cannot load Designer UI: " + name)
+            self.begin(window)
+            root_name = document.find("widget").get("name")
+
+            def child(key: str) -> Any:
+                obj = (
+                    window
+                    if key == root_name
+                    else window.findChild(self.qt.private.QObject, key)
+                )
+                if obj is None:
+                    raise RuntimeError("Designer UI is missing control: " + key)
+                return self.remember(key, obj)
+
+            for node in document.iter("widget"):
+                child(node.get("name"))
+            for entry in connections if connections is not None else ():
+                sender = child(entry.findtext("sender"))
+                receiver = child(entry.findtext("receiver"))
+                slot = getattr(receiver, entry.findtext("slot").split("(")[0])
+                self.connect(sender, entry.findtext("signal"), slot)
+            return window
+        finally:
+            source.close()
+            source.deleteLater()
+            loader.deleteLater()
+
     def temp_dir(self) -> str:
         if self.temporary is None:
             self.temporary = TemporaryDirectory(prefix="fontlab-official-")
@@ -629,3 +679,56 @@ def receive_fortune(connection: Any, stop: Any) -> str:
     if size != len(body) - 4 or size % 2:
         raise ValueError("Invalid QString length")
     return body[4:].decode("utf-16-be")
+
+
+class LocalFortune:
+    """One GUI-owned local fortune service; no shared 'fortune' endpoint.
+
+    Accepted sockets remain children of the server until handle cleanup. They
+    have no Python signal targets and are aborted before the server is deleted.
+    Both IPC demos create this peer so acceptance never needs another process.
+    """
+
+    def __init__(self, demo: Demo, fortunes: tuple[str, ...]) -> None:
+        # Keep the Unix socket path below macOS's sockaddr_un length limit.
+        demo.temporary = TemporaryDirectory(prefix="fl-ipc-", dir="/tmp")
+        self.endpoint = str(Path(demo.temp_dir()) / "fortune")
+        self.demo, self.fortunes = demo, fortunes
+        self.clients, self.sent = [], 0
+        self.server = demo.remember(
+            "server", demo.qt.QtNetwork.QLocalServer(demo.handle.widget)
+        )
+        demo.handle.cleanup.append(self.close)
+        if not self.server.listen(self.endpoint):
+            raise OSError(
+                "Cannot listen on owned local socket: " + self.server.errorString()
+            )
+        demo.connect(self.server, "newConnection()", self.send)
+
+    def send(self) -> None:
+        import random
+
+        for _ in range(16):
+            if not self.server.hasPendingConnections():
+                return
+            client = self.server.nextPendingConnection()
+            if client is None:
+                return
+            self.clients.append(client)
+            packet = fortune_packet(random.choice(self.fortunes))
+            if client.write(self.demo.qt.QtCore.QByteArray(packet)) != len(packet):
+                self.demo.error = "Cannot queue complete local fortune frame"
+                client.abort()
+                continue
+            client.flush()
+            client.disconnectFromServer()
+            self.sent += 1
+
+    def close(self) -> None:
+        for client in self.clients:
+            client.abort()
+        self.clients.clear()
+        self.server.close()
+
+    def snapshot(self) -> dict:
+        return {"listening": bool(self.server.isListening()), "sent": self.sent}

@@ -5,7 +5,7 @@ this_file: README.md
 # FontLab Python examples
 
 Complete source catalog for planned PythonQt ports of [pyqt/examples](https://github.com/pyqt/examples) and [eyllanesc/QtExamples](https://github.com/eyllanesc/QtExamples), for use inside running FontLab. Start at the [categorized index](catalog/INDEX.md).
-Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 111 official demos are implemented and await native acceptance.** Neither requested collection is complete.
+Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 127 official demos are implemented and await native acceptance.** Neither requested collection is complete.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -103,7 +103,6 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official addressbook part5` | `94ab271d023d1ca3` | Implemented; native acceptance unexecuted |
 | `Official addressbook part6` | `2719ebb336f3a29e` | Implemented; native acceptance unexecuted |
 | `Official addressbook part7` | `bb1c114d38fb756a` | Implemented; native acceptance unexecuted |
-
 | `Official embeddeddialogs` | `0578c17977b471f1` | Implemented; native acceptance unexecuted |
 | `Official mandelbrot` | `0788354954c8e613` | Implemented; native acceptance unexecuted |
 | `Official diagramscene` | `1ca857d797199ecf` | Implemented; native acceptance unexecuted |
@@ -120,7 +119,6 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official appchooser` | `de30d23621025fe6` | Implemented; native acceptance unexecuted |
 | `Official sharedmemory` | `de35a965dfcfd678` | Blocked: QSharedMemory.detach absent |
 | `Official collidingmice` | `fcfaf9667206bbd6` | Implemented; native acceptance unexecuted |
-
 | `Official dockwidgets` | `4efac54bae01fc62` | Implemented; native acceptance unexecuted |
 | `Official menus` | `60d40ce5671653cf` | Implemented; native acceptance unexecuted |
 | `Official recentfiles` | `09afeea11be83f4f` | Implemented; native acceptance unexecuted |
@@ -150,7 +148,6 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official tetrix` | `e63bffc17abf2fde` | Implemented; native acceptance unexecuted |
 | `Official wiggly` | `509e781f1267967f` | Implemented; native acceptance unexecuted |
 | `Official windowflags` | `136c45cc9f97c218` | Implemented; native acceptance unexecuted |
-
 | `Official delayedencoding` | `43c6c2f6f5f036d3` | Implemented; native acceptance unexecuted |
 | `Official dropsite` | `fa6823667fdb918f` | Implemented; native acceptance unexecuted |
 | `Official anchorlayout` | `a96a7978c0b9f6ee` | Implemented; native acceptance unexecuted |
@@ -178,6 +175,80 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official lightmaps` | `d8803c2afaabf3d5` | Implemented; native acceptance unexecuted |
 | `Official loopback` | `ebf87d5f5390b0fd` | Implemented; native acceptance unexecuted |
 | `Official threadedfortuneserver` | `98f207907001ce47` | Implemented; native acceptance unexecuted |
+| `Official webbrowser` | `a1273c8940d43221` | Blocked: PythonQt does not export QAxContainer |
+| `Official chat` | `38465a8f4b1a229f` | Blocked: PythonQt does not export QtDBus |
+| `Official listnames` | `ab719a6a5c3afe4a` | Blocked: PythonQt does not export QtDBus |
+| `Official ping` | `30cfa75ad45b3447` | Blocked: PythonQt does not export QtDBus |
+| `Official pong` | `57a381bc8260c85d` | Blocked: PythonQt does not export QtDBus |
+| `Official car` | `54c7440bdcdc3dfc` | Blocked: PythonQt does not export QtDBus |
+| `Official controller` | `3cf5db95a691d200` | Blocked: PythonQt does not export QtDBus |
+| `Official calculatorform` | `27bf65f8b059fd96` | Implemented; native acceptance unexecuted |
+| `Official plugins` | `960c701fa6221ac5` | Blocked: PythonQt has no QtDesigner module or QPyDesignerCustomWidgetPlugin/QDesignerCustomWidgetInterface and no PyQt Designer Python plugin loader |
+| `Official designer analogclock` | `4d24cd77c74a8801` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official bubbleswidget` | `9941e3c752b3a3b7` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official counterlabel` | `1321540b04f33117` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official datetimeedit` | `7ba49e67588b1329` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official helloglwidget` | `5941e31267112c98` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official multipagewidget` | `de4979a99c6d0bed` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official polygonwidget` | `773db5c24ae98ffb` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official pydemo` | `bcfa5de0140286d5` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official pythonconsolewidget` | `5125860585e98b3a` | Implemented standalone; Designer integration blocked; native unexecuted |
+| `Official localfortuneclient` | `0ad3432ccdca7ac0` | Implemented; native acceptance unexecuted |
+| `Official localfortuneserver` | `a14d08fe23965bec` | Implemented; native acceptance unexecuted |
+| `Official audiodevices` | `74af8d8d2d7774b8` | Blocked: PythonQt does not export QtMultimedia |
+| `Official audiooutput` | `c391afd8516131e1` | Blocked: PythonQt does not export QtMultimedia |
+| `Official camera` | `f6d352360ae9bdfb` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `Official player` | `5eb4b9eaa2d5c9dc` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `Official videographicsitem` | `a57a89e523c75b7f` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `Official videowidget` | `481c128fba3a714b` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `Official 2dpainting` | `c82d1af7d1a7b0cf` | Implemented; native acceptance unexecuted |
+| `Official grabber` | `303ea3ee09c4677d` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official hellogl` | `1ad60855ca28f3cc` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official openglwindow` | `b383fecf912548bb` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official overpainting` | `fcada4fff6524fcf` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official textures` | `ed6d42d4faa7e0bb` | Blocked: PythonQt.QtGui.QOpenGLContext lacks versionFunctions() |
+| `Official compile-on-the-fly` | `5a8e48d2a1396cea` | Implemented; native acceptance unexecuted |
+| `Official load_ui1` | `b7db02f540cc7559` | Implemented; native acceptance unexecuted |
+| `Official load_ui2` | `b9660f4ee653ca01` | Implemented; native acceptance unexecuted |
+| `Official adding` | `8847cbce50b72500` | Blocked: PythonQt does not export QtQml |
+| `Official attached` | `dd226ba9fbb7b330` | Blocked: PythonQt does not export QtQml |
+| `Official binding` | `eb7a89f07f63cca7` | Blocked: PythonQt does not export QtQml |
+| `Official coercion` | `ad499afe23726248` | Blocked: PythonQt does not export QtQml |
+| `Official default` | `6417cdcf1bfd1752` | Blocked: PythonQt does not export QtQml |
+| `Official grouped` | `81a6f0d16c203608` | Blocked: PythonQt does not export QtQml |
+| `Official methods` | `75ca5ac77ecefd6d` | Blocked: PythonQt does not export QtQml |
+| `Official properties` | `d0a18273fa604bb6` | Blocked: PythonQt does not export QtQml |
+| `Official signal` | `0a13f60f5f0561db` | Blocked: PythonQt does not export QtQml |
+| `Official valuesource` | `738a22ef3062ed51` | Blocked: PythonQt does not export QtQml |
+| `Official qtdemo` | `85a56a1f3c25ccca` | Blocked: The full qtdemo launcher delegates to PyQt executables and qmlscene (menumanager.py launchExample/launchQmlExample), including QtQuick/QtQml examples |
+| `Official animation` | `835281a1ab864833` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official canvas` | `36246fcbffecdeba` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official abstractitemmodel` | `e1316fee99c63555` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official objectlistmodel` | `68d664f95f48ce52` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official stringlistmodel` | `b64d66dbce7274fe` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official customgeometry` | `34538a4e2600b918` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official chapter1-basics` | `6b1f4f5590a5518a` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official chapter2-methods` | `8d1557cbfed9c7a0` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official chapter3-bindings` | `3cd3713a5dc9f6dc` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official chapter4-customPropertyTypes` | `831ac8ea61da03f3` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official chapter5-listproperties` | `b88e7eb0fcb53264` | Blocked: PythonQt does not export QtQuick / QtQml |
+| `Official modelviewclient` | `4dbe92cd1e720dce` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official modelviewserver` | `781a3a959215eb81` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official directconnectdynamicclient` | `54cbd9afababdf71` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official directconnectdynamicserver` | `2f1e2f679775d89e` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official registryconnecteddynamicclient` | `333f0272885ca1b7` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official registryconnecteddynamicserver` | `b83377c9b48aec14` | Blocked: PythonQt does not export QtRemoteObjects |
+| `Official cachedtable` | `0b0d8d2fae153e5e` | Blocked: PythonQt does not export QtSql |
+| `Official querymodel` | `2c4c366f259d7d80` | Blocked: PythonQt does not export QtSql |
+| `Official relationaltablemodel` | `9030a87a532b8d8f` | Blocked: PythonQt does not export QtSql |
+| `Official tablemodel` | `0677ebfd7fa2cc60` | Blocked: PythonQt does not export QtSql |
+| `Official domtraversal` | `8d5ea81a74e30222` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official fancybrowser` | `f4000cf8ca288375` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official formextractor` | `6ed36280660df7ea` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official framecapture` | `ca47b83fbf3f31b9` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official previewer` | `47298251b3c83ecf` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official simpleselector` | `ae16288fede27692` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
+| `Official schema` | `1e5d0f7289e1b36e` | Implemented; native acceptance unexecuted |
 
 Source IDs also work as names. `get(name)` retrieves a launched handle, including its native widget, retained callbacks and alert owners. Repeated launch reshows the same owned window. Module state keeps handles alive across isolated external calls. A native window's close button hides it; `close(name)` removes ownership and schedules native destruction. External parent destruction makes inspection safe. Existing FontLab UI and preferences are not changed.
 The click alert uses asynchronous `open()` with example-window modality, keeping FontLab's event loop responsive. Dismissed alerts remain owned until the next click or named cleanup. Designer uses `QUiLoader`, loading its exact copied XML relative to the port file. Launch fails clearly outside FontLab, without an existing QApplication, for unknown names, or for known but unported source IDs and source paths.
@@ -192,6 +263,6 @@ Eighteen original Apache-2.0 examples provide owned type-design panels. See the 
 ## Licensing and remaining ports
 
 The repository's Apache license does not relicense upstream inputs. Pinned READMEs, actual notices and source headers supply per-file evidence. All 1,569 files retain **license review pending in the static catalog**; 43 have no recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and [the numbered-source notice](ports/pyqt-examples-LICENSE.md) and [the official-source notice](ports/pyqt-official-LICENSE.md). Nearby notices may apply only to specific assets: their association is evidence, not a blanket license assignment. Preserve the original notices and resolve scope before distributing a port or copying upstream resources.
-Four targets retain native acceptance; 118 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
+Four targets retain native acceptance; 134 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
 The [first-batch evidence](verification/first-native-batch.json) records native text/layout/click/Designer acceptance, destruction of all 38 owned objects and unchanged host state. This proves source loading; wheel installation and other native checks remain required. Current states live in the port manifest.
-The 111 official ports use tracked callbacks, async dialogs, isolated host state and 230 exact resource copies. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; five GPL alternatives are explicit.
+The 127 official ports use tracked callbacks, async dialogs, isolated host state and 244 exact resource copies; 60 further official entrypoints are precisely blocked. All 187 official entrypoints are accounted for; native acceptance remains a separate gate. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; five GPL alternatives are explicit.
