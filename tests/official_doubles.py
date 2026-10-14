@@ -5,6 +5,7 @@ The captured contract lists actual exported host names, not speculative Qt APIs.
 Rendering, overload dispatch and native virtual callbacks need FontLab acceptance.
 """
 
+import datetime
 import inspect
 import json
 import re
@@ -91,8 +92,52 @@ def official_host(qt):
                     return ["Fusion", "Windows"]
                 if key == "create":
                     return classes["QStyle"]()
-                if key in ("currentDate", "currentDateTime"):
+                if key in ("currentDate", "currentDateTime", "currentTime"):
                     return classes[cls._qt_name]()
+                if key == "colorNames":
+                    return [
+                        "black",
+                        "blue",
+                        "cornsilk",
+                        "darkslateblue",
+                        "green",
+                        "mediumslateblue",
+                        "red",
+                        "white",
+                        "yellow",
+                    ]
+                if key == "longMonthName":
+                    return datetime.date(2026, args[0], 1).strftime("%B")
+                if key == "longDayName":
+                    return (
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                    )[args[0] - 1]
+                if key == "clipboard":
+                    if "clipboard" not in streams:
+                        streams["clipboard"] = classes["QClipboard"]()
+                    return streams["clipboard"]
+                if key == "supportedImageFormats":
+                    return [ByteArray(b"png"), ByteArray(b"jpg")]
+                if key == "standardSizes":
+                    return [8, 10, 12, 16, 20]
+                if key == "matchingLocales":
+                    return [classes["QLocale"]()]
+                if key == "languageToString":
+                    return "English"
+                if key == "countryToString":
+                    return "United Kingdom"
+                if key == "font":
+                    return classes["QFont"]()
+                if key == "isLeftToRight":
+                    return True
+                if key == "mightBeRichText":
+                    return "<" in args[0]
                 if key == "fromHsv":
                     return classes["QColor"](*args)
                 if key == "fromImage":
@@ -117,6 +162,8 @@ def official_host(qt):
                     return classes["QTextCodec"](
                         args[0].decode() if isinstance(args[0], bytes) else args[0]
                     )
+                if key == "codecForHtml":
+                    return classes["QTextCodec"]("utf-8")
                 if args and isinstance(args[0], Native):
                     return args[0]._invoke(key, *args[1:])
                 if key == "escape":
@@ -173,6 +220,9 @@ def official_host(qt):
             self._extra, self._props = {}, {}
             self.visible, self.deleted = False, False
             self._active = False
+            if self._qt_name == "QPainter":
+                self._active = True
+                qt._painters.append(self)
             self._match = None
             self._position = [0, 0, 0, 0]
             self._blocked = False
@@ -214,6 +264,41 @@ def official_host(qt):
                     self._data.update(red=args[0], green=args[1], blue=args[2])
                 else:
                     self._data.update(red=0, green=0, blue=0)
+                    if args and isinstance(args[0], Native):
+                        self._data.update(
+                            {
+                                key: args[0]._data[key]
+                                for key in ("red", "green", "blue")
+                            }
+                        )
+                    elif args and isinstance(args[0], int):
+                        rgb = {
+                            enum("cyan"): (0, 255, 255),
+                            enum("magenta"): (255, 0, 255),
+                            enum("yellow"): (255, 255, 0),
+                            enum("white"): (255, 255, 255),
+                        }.get(args[0], (0, 0, 0))
+                        self._data.update(
+                            zip(("red", "green", "blue"), rgb, strict=True)
+                        )
+            if self._qt_name in ("QDate", "QDateTime", "QTime"):
+                self._extra["date"] = (
+                    datetime.date(*args[:3])
+                    if self._qt_name == "QDate" and len(args) >= 3
+                    else datetime.date(2026, 10, 14)
+                )
+                self._data.update(
+                    hour=args[0] if self._qt_name == "QTime" and args else 12,
+                    minute=args[1]
+                    if self._qt_name == "QTime" and len(args) > 1
+                    else 34,
+                    second=args[2] if self._qt_name == "QTime" and len(args) > 2 else 0,
+                )
+            if self._qt_name == "QFont":
+                self._data.update(
+                    family=args[0] if args and isinstance(args[0], str) else "Sans",
+                    pointSize=args[1] if len(args) > 1 else 10,
+                )
             if self._qt_name == "QPolygonF" and args and isinstance(args[0], list):
                 self._items = list(args[0])
             if self._qt_name in ("QState", "QStateMachine") and self._parent:
@@ -260,6 +345,14 @@ def official_host(qt):
                         if "document" not in self._extra:
                             self._extra["document"] = classes["QTextDocument"](self)
                         return self._extra["document"]
+                    if key == "currentFont":
+                        return self._data.get(key, classes["QFont"]())
+                    if key == "locale":
+                        return self._data.get(key, classes["QLocale"]())
+                    if key in ("date", "selectedDate", "minimumDate", "maximumDate"):
+                        return self._data.get(key, classes["QDate"]())
+                    if key in ("time", "minimumTime", "maximumTime"):
+                        return self._data.get(key, classes["QTime"]())
                     if key == "currentText":
                         return self._data.get(
                             "editText",
@@ -370,6 +463,250 @@ def official_host(qt):
             assert threading.get_ident() == gui_thread, (
                 "Native Qt access on a Python worker"
             )
+            if (
+                getattr(qt, "_strict_integer_coordinates", False)
+                and self._qt_name == "QPainter"
+                and key == "drawText"
+                and len(a) >= 3
+                and isinstance(a[0], (int, float))
+            ):
+                assert type(a[0]) is int and type(a[1]) is int, (
+                    "drawText(x, y, text) requires integer coordinates"
+                )
+            if self._qt_name == "QSettings" and key == "setValue":
+                self._props[a[0]] = a[1]
+                return None
+            if self._qt_name == "QClipboard" and key == "setText":
+                self._data["text"] = a[0]
+                return None
+            if self._qt_name == "QTableWidget" and key == "item":
+                return self._cells.get(a[:2])
+            if self._qt_name == "QTableWidget" and key == "setItem":
+                self._cells[a[:2]] = a[2]
+                return None
+            if self._qt_name == "QTableWidgetItem" and key == "data":
+                return self._data["text"]
+            if self._qt_name == "QFile" and key == "exists":
+                return Path(self._args[0]).is_file()
+            if self._qt_name in ("QDate", "QDateTime"):
+                date = self._extra["date"]
+                if key in ("year", "month", "day", "dayOfWeek", "daysInMonth"):
+                    return {
+                        "year": date.year,
+                        "month": date.month,
+                        "day": date.day,
+                        "dayOfWeek": date.isoweekday(),
+                        "daysInMonth": (
+                            datetime.date(
+                                date.year + (date.month == 12), date.month % 12 + 1, 1
+                            )
+                            - datetime.timedelta(days=1)
+                        ).day,
+                    }[key]
+                if key == "addDays":
+                    value = date + datetime.timedelta(days=a[0])
+                    return classes["QDate"](value.year, value.month, value.day)
+                if key == "setDate":
+                    try:
+                        self._extra["date"] = datetime.date(*a[:3])
+                    except ValueError:
+                        return False
+                    return True
+                if key == "toString":
+                    return date.isoformat()
+            if self._qt_name == "QTime":
+                if key in ("hour", "minute", "second"):
+                    return self._data[key]
+                if key == "toString":
+                    return f"{self._data['hour']:02}:{self._data['minute']:02}"
+            if self._qt_name == "QFont" and key in (
+                "family",
+                "pointSize",
+                "bold",
+                "italic",
+                "underline",
+                "weight",
+            ):
+                return self._data.get(
+                    key, False if key in ("bold", "italic", "underline") else 50
+                )
+            if self._qt_name == "QFontDatabase":
+                if key in ("styles", "families"):
+                    return ["Regular", "Bold"] if key == "styles" else ["Sans", "Serif"]
+                if key in ("pointSizes", "smoothSizes", "standardSizes"):
+                    return [8, 10, 12, 16]
+                if key == "styleString":
+                    return "Regular"
+                if key == "font":
+                    return classes["QFont"](a[0], a[2])
+            if self._qt_name == "QFontMetrics":
+                if key in ("height", "ascent", "descent", "xHeight"):
+                    return {"height": 20, "ascent": 15, "descent": 5, "xHeight": 8}[key]
+                if key == "width":
+                    return len(a[0]) * 8
+            if key == "printer" and self._qt_name in (
+                "QPrintDialog",
+                "QPrintPreviewDialog",
+            ):
+                if "printer" not in self._extra:
+                    self._extra["printer"] = classes["QPrinter"]()
+                return self._extra["printer"]
+            if key == "currentWidget" and self._qt_name in (
+                "QTabWidget",
+                "QStackedWidget",
+            ):
+                return self._items[self._data["currentIndex"]] if self._items else None
+            if key == "window" and self._qt_name == "QPalette":
+                return classes["QBrush"]()
+            if key == "addResource" and self._qt_name == "QTextDocument":
+                self._extra.setdefault("resources", {})[a[1]._args[0]] = a[2]
+                return None
+            if key in ("setFormat", "mergeCharFormat", "mergeCurrentCharFormat"):
+                self._extra.setdefault("formats", []).append(a)
+                return None
+            if key == "previousBlockState":
+                return self._data.get("currentBlockState", -1)
+            if key == "write" and self._qt_name == "QTextDocumentWriter":
+                Path(self._args[0]).write_text(a[0]._parent._data["text"])
+                return True
+            if key == "setModified" and self._qt_name == "QTextDocument":
+                self._data["modified"] = a[0]
+                self.emit("modificationChanged", a[0])
+                return None
+            if key == "find" and self._qt_name == "QTextDocument":
+                result = classes["QTextCursor"]()
+                result._extra["editor"] = self._parent
+                result._extra["selection_text"] = a[0]
+                result._extra["found"] = a[0] in self._parent._data["text"]
+                return result
+            if self._qt_name == "QLocale":
+                if key in ("nativeLanguageName", "nativeCountryName"):
+                    return (
+                        "English" if key == "nativeLanguageName" else "United Kingdom"
+                    )
+                if key in ("language", "country"):
+                    return enum("English" if key == "language" else "UnitedKingdom")
+            if key == "setDateRange":
+                self._data.update(minimumDate=a[0], maximumDate=a[1])
+                return None
+            if key == "setTimeRange":
+                self._data.update(minimumTime=a[0], maximumTime=a[1])
+                return None
+            if key in ("setDate", "setSelectedDate"):
+                prop = "date" if key == "setDate" else "selectedDate"
+                old = self._data.get(prop)
+                self._data[prop] = a[0]
+                if old == a[0]:
+                    return None
+                self.emit("dateChanged", a[0]) if key == "setDate" else self.emit(
+                    "selectionChanged"
+                )
+                return None
+            if key in ("yearShown", "monthShown"):
+                date = self._data.get("selectedDate", classes["QDate"]())
+                return date.year() if key == "yearShown" else date.month()
+            if key == "setDateTextFormat":
+                self._props[a[0].toString()] = a[1]
+                return None
+            if key in ("dateTextFormat", "weekdayTextFormat", "headerTextFormat"):
+                return classes["QTextCharFormat"]()
+            if key == "display":
+                self._data["value"] = a[0]
+                return None
+            if key == "addSeparator":
+                action = classes["QAction"](self)
+                self._items.append(action)
+                return action
+            if self._qt_name in ("QRect", "QRectF") and key == "center":
+                return classes["QPoint"](
+                    self._position[0] + self._position[2] // 2,
+                    self._position[1] + self._position[3] // 2,
+                )
+            if (
+                key == "layout"
+                and self._qt_name == "QMainWindow"
+                and self._layout is None
+            ):
+                self._layout = classes["QGridLayout"](self)
+                return self._layout
+            if key in (
+                "charFormat",
+                "blockFormat",
+                "frameFormat",
+                "currentFrame",
+                "insertFrame",
+                "insertTable",
+                "cellAt",
+                "firstCursorPosition",
+            ):
+                types = {
+                    "charFormat": "QTextCharFormat",
+                    "blockFormat": "QTextBlockFormat",
+                    "frameFormat": "QTextFrameFormat",
+                    "currentFrame": "QTextFrame",
+                    "insertFrame": "QTextFrame",
+                    "insertTable": "QTextTable",
+                    "cellAt": "QTextTableCell",
+                    "firstCursorPosition": "QTextCursor",
+                }
+                result = classes[types[key]]()
+                result._extra["editor"] = self._extra.get("editor")
+                if key == "insertTable":
+                    result._data.update(rowCount=a[0], columnCount=a[1])
+                return result
+            if self._qt_name == "QTextTable":
+                if key in ("rows", "columns"):
+                    return self._data["rowCount" if key == "rows" else "columnCount"]
+                if key == "insertRows":
+                    self._data["rowCount"] += a[1]
+                    return None
+            if key == "insertText" and self._qt_name == "QTextCursor":
+                editor = self._extra.get("editor")
+                if editor is not None:
+                    selected = self._extra.pop("selection_text", "")
+                    editor._data["text"] = (
+                        editor._data["text"].replace(selected, a[0], 1)
+                        if selected
+                        else editor._data["text"] + a[0]
+                    )
+                return None
+            if key == "insertBlock":
+                editor = self._extra.get("editor")
+                if editor is not None:
+                    editor._data["text"] += "\n"
+                return None
+            if key == "insert" and self._qt_name == "QLineEdit":
+                self._data["text"] += a[0]
+                self.emit("textChanged", self._data["text"])
+                return None
+            if key in ("lighter", "darker") and self._qt_name == "QColor":
+                return classes["QColor"](self)
+            if key == "rgb" and self._qt_name == "QColor":
+                return (
+                    0xFF000000
+                    | self._data["red"] << 16
+                    | self._data["green"] << 8
+                    | self._data["blue"]
+                )
+            if key in ("lastPosition", "position"):
+                return 0
+            if key in ("setHtml",):
+                self._data["text"] = a[0]
+                return None
+            if key == "toHtml":
+                return self._data["text"]
+            if key in ("textColor", "foreground", "color"):
+                return (
+                    classes["QBrush"]() if key == "foreground" else classes["QColor"]()
+                )
+            if key == "alignment":
+                return self._data.get("alignment", enum("AlignLeft"))
+            if key == "isUndoAvailable" or key == "isRedoAvailable":
+                return False
+            if key == "font" and self._qt_name == "QFontInfo":
+                return self._args[0]
+            if key == "family" and self._qt_name == "QFontInfo":
+                return self._args[0].family()
             # Value-class setters do not implicitly construct values from enums.
             value_types = {
                 "setEasingCurve": "QEasingCurve",
@@ -435,7 +772,9 @@ def official_host(qt):
             if key == "line":
                 return self._data.get("line", classes["QLineF"]())
             if key == "textCursor":
-                return classes["QTextCursor"]()
+                cursor = classes["QTextCursor"]()
+                cursor._extra["editor"] = self
+                return cursor
             if key == "buttons":
                 return list(self._items)
             if key == "button" and self._qt_name == "QButtonGroup":
@@ -690,14 +1029,25 @@ def official_host(qt):
             if self._qt_name == "QFontMetrics" and key == "size":
                 return classes["QSize"](len(a[1]) * 8, 20)
             if self._qt_name in ("QImage", "QPixmap"):
+                if key == "pixel":
+                    return self._extra.get("pixels", {}).get(a[:2], 0xFFFFFFFF)
+                if key == "setPixel":
+                    self._extra.setdefault("pixels", {})[a[:2]] = a[2]
+                    return None
                 if key in ("width", "height"):
                     return self._data[key]
                 if key == "size":
                     return classes["QSize"](self._data["width"], self._data["height"])
                 if key == "copy":
-                    return classes[self._qt_name](
-                        *(a[2:] if len(a) == 4 else (400, 400))
+                    result = classes[self._qt_name](
+                        *(
+                            a[2:]
+                            if len(a) == 4
+                            else (self._data["width"], self._data["height"])
+                        )
                     )
+                    result._extra["pixels"] = dict(self._extra.get("pixels", {}))
+                    return result
                 if key == "scaled":
                     return classes[self._qt_name](*a[:2])
             if self._qt_name == "QModelIndex":
@@ -904,7 +1254,9 @@ def official_host(qt):
                 self._data["text"] = a[-1]
                 if len(a) == 2:
                     self._cells[a[0]] = a[1]
-                self.emit("textChanged")
+                self.emit(
+                    "textChanged", a[-1]
+                ) if self._qt_name == "QLineEdit" else self.emit("textChanged")
                 return None
             if key == "text":
                 return self._cells.get(a[0], "") if a else self._data["text"]
@@ -1013,6 +1365,23 @@ def official_host(qt):
             if key == "trigger":
                 self.emit("triggered", self._data["checked"])
                 return None
+            if key == "addAction":
+                if len(a) == 1 and isinstance(a[0], classes["QAction"]):
+                    self._items.append(a[0])
+                    return a[0] if self._qt_name == "QActionGroup" else None
+                callbacks = [arg for arg in a if callable(arg)]
+                receiver_slot = (
+                    len(a) >= 3 and isinstance(a[-2], Native) and isinstance(a[-1], str)
+                ) or (
+                    len(a) >= 4 and isinstance(a[-3], Native) and isinstance(a[-2], str)
+                )
+                if callbacks or receiver_slot:
+                    text = next(arg for arg in a if isinstance(arg, str))
+                    action = classes["QAction"](text, self)
+                    for callback in callbacks:
+                        action.connect("triggered()", callback)
+                    self._items.append(action)
+                    return None
             if key in (
                 "addWidget",
                 "addItem",
@@ -1117,11 +1486,17 @@ def official_host(qt):
             if key == "stop":
                 self._active = False
                 return None
+            if key == "end" and self._qt_name == "QPainter":
+                assert self._active, "QPainter.end called twice"
+                self._active = False
+                return True
             if key == "isActive":
                 return self._active
             if key == "stringList":
                 return self._items
             if key == "isNull":
+                if self._qt_name == "QTextCursor":
+                    return not self._extra.get("found", True)
                 return self._qt_name in ("QPixmap", "QImage") and not self._args
             if key == "isEmpty":
                 return not self._data["text"]
@@ -1147,7 +1522,7 @@ def official_host(qt):
                 return self._position[idx]
             if key in ("sizeHint", "minimumSize", "minimumSizeHint"):
                 return classes["QSize"](80, 30)
-            if key in ("geometry", "rect"):
+            if key in ("geometry", "rect", "contentsRect"):
                 return classes["QRect"](*self._position)
             if key == "expandedTo":
                 return classes["QSize"](
@@ -1248,8 +1623,12 @@ def official_host(qt):
                 return bool(self._match)
             if key == "indexIn":
                 pattern = self._data.get("pattern", self._args[0] if self._args else "")
+                if isinstance(pattern, Native):
+                    pattern = pattern._data.get("pattern", pattern._args[0])
                 try:
-                    self._match = re.search(pattern, a[0])
+                    self._match = re.compile(pattern).search(
+                        a[0], a[1] if len(a) > 1 else 0
+                    )
                 except re.error:
                     self._match = None
                 return self._match.start() if self._match else -1
@@ -1291,10 +1670,23 @@ def official_host(qt):
                 )
             if key == "findChildren":
                 return self._children
+            if key in self._data:
+                return self._data[key]
             return None
 
         def __iter__(self):
             return iter(self._items)
+
+        def __eq__(self, other):
+            if self._qt_name in ("QDate", "QDateTime", "QTime"):
+                return (
+                    isinstance(other, Native)
+                    and self._extra.get("date") == other._extra.get("date")
+                    and self._data.get("hour") == other._data.get("hour")
+                )
+            return self is other
+
+        __hash__ = object.__hash__
 
         def unsafe_arithmetic(self, *args):
             raise TypeError("unsafe arithmetic on PythonQt wrapper")
@@ -1343,6 +1735,7 @@ def official_host(qt):
     qt.QtCore.Qt = SimpleNamespace(
         **{k: enum(k) for k in CONTRACT["QtCore"].get("Qt", {})}
     )
+    qt.QtCore.Qt.mightBeRichText = lambda text: "<" in text
 
     class Loader:
         def load(self, source, parent=None):
@@ -1365,4 +1758,5 @@ def official_host(qt):
 
     qt.QtUiTools = SimpleNamespace(QUiLoader=Loader)
     qt._classes = classes
+    qt._painters = []
     return qt

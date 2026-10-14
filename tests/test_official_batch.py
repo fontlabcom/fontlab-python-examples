@@ -74,6 +74,39 @@ BATCH_FIVE_IDS = {
 }
 IDS |= BATCH_FOUR_IDS | BATCH_FIVE_IDS
 
+BATCH_SIX_IDS = {
+    "4efac54bae01fc62",
+    "60d40ce5671653cf",
+    "09afeea11be83f4f",
+    "2d36e0fe43f5d49a",
+    "912e5c751b20ce97",
+    "13a6bb9a9d2b9037",
+    "b2d717e4d43806d2",
+    "c12a2071adbab88b",
+    "c56cf1699b07b350",
+    "c997677a2bdb4f34",
+    "428c50abcef7adfe",
+    "b34b2f696a977e74",
+    "806fd814a2ea4d46",
+    "d6dc56a5318ffe71",
+    "356e4e807f1e789f",
+    "b91effc45f81fbb0",
+    "499e965d86347920",
+    "3040b9f6b267a196",
+    "f702b62aa47629ad",
+    "16456ba02f4b79cc",
+    "84cb59e07adfae2c",
+    "8e5aa13798c2763c",
+    "248e64416b9b218c",
+    "36805750b888fba6",
+    "468179092748a72e",
+    "9e21c6536fda7a23",
+    "e63bffc17abf2fde",
+    "509e781f1267967f",
+    "136c45cc9f97c218",
+}
+IDS |= BATCH_SIX_IDS
+
 
 def records():
     return [
@@ -85,7 +118,9 @@ def records():
 
 def test_official_manifest_covers_exact_batch_and_retains_provenance():
     rows = records()
-    assert {r["source_id"] for r in rows} == IDS, "All 57 entries require a result"
+    assert {r["source_id"] for r in rows} == IDS, (
+        "All 86 official entries require a result"
+    )
     sources = {
         r["id"]: r
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
@@ -1915,4 +1950,560 @@ def test_batch_five_native_members_resources_and_no_modal_shortcuts():
         assert (
             f"batch-5-{row['source_id']}"
             in (ROOT / "docs/pyqt-official-batch.md").read_text()
+        )
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        r
+        for r in records()
+        if r["source_id"] in BATCH_SIX_IDS and r["implementation"] == "implemented"
+    ],
+    ids=lambda r: r["name"],
+)
+def test_batch_six_inspect_is_inert_and_failure_releases_owned_root(
+    row, official_qt, monkeypatch
+):
+    from fontlab_python_examples.official import Demo
+
+    qt, owners = official_qt
+    handle = load_record(row).build(qt)
+    before = handle.snapshot()
+    assert before["error"] == "", (
+        "Every default batch-6 document/resource must load successfully"
+    )
+    connections = list(handle.connections)
+    controls = dict(handle.controls)
+    cleanup_count = len(handle.cleanup)
+    assert handle.snapshot() == before, "Inspect must only read UI"
+    assert handle.connections == connections and handle.controls == controls
+    assert len(handle.cleanup) == cleanup_count, (
+        "Inspect must not allocate QSettings or callbacks"
+    )
+    handle.close()
+    offset = len(owners)
+
+    def fail(self, window, extra=dict):
+        raise RuntimeError("injected finish failure")
+
+    monkeypatch.setattr(Demo, "finish", fail)
+    with pytest.raises(RuntimeError, match="injected finish failure"):
+        load_record(row).build(qt)
+    assert owners[offset:] and all(owner.closed for owner in owners[offset:]), (
+        "Failed construction must release every window"
+    )
+
+
+def test_batch_six_textobject_blocker_is_native_interface_absence(official_qt):
+    from tests.official_doubles import CONTRACT
+
+    row = next(r for r in records() if r["source_id"] == "806fd814a2ea4d46")
+    assert (
+        row["implementation"] == "blocked"
+        and "QTextObjectInterface" in row["blocked_reason"]
+    )
+    assert "QTextObjectInterface" not in CONTRACT["QtGui"]
+    with pytest.raises(RuntimeError, match="QTextObjectInterface"):
+        load_record(row).build(official_qt[0])
+
+
+@pytest.mark.parametrize(
+    "expression,result",
+    [("2+3*4=", "14.0"), ("9/0=", "####"), ("0", "0"), ("7=", "7.0")],
+)
+def test_batch_six_calculator_buttons_preserve_precedence_and_zero_division(
+    expression, result, official_qt
+):
+    qt, _ = official_qt
+    h = built("calculator", qt)
+    mapping = {
+        "+": "plusButton",
+        "*": "timesButton",
+        "/": "divisionButton",
+        "=": "equalButton",
+    }
+    for key in expression:
+        (
+            h.widget.digitButtons[int(key)]
+            if key.isdigit()
+            else h.controls[mapping[key]]
+        ).click()
+    assert h.snapshot()["display_text"] == result
+    h.controls["clearAllButton"].click()
+    assert h.snapshot()["display_text"] == "0"
+    h.close()
+
+
+def test_batch_six_clocks_and_circles_have_owned_stoppable_timers(official_qt):
+    qt, _ = official_qt
+    for name in (
+        "analogclock",
+        "shapedclock",
+        "digitalclock",
+        "concentriccircles",
+        "styles",
+        "wiggly",
+    ):
+        h = built(name, qt)
+        if name == "concentriccircles":
+            assert h.snapshot()["frames"] == [0, 0, 0, 0]
+            h.controls["timer"].emit("timeout")
+            assert h.snapshot()["frames"] == [1, 1, 1, 1]
+        elif name == "digitalclock":
+            assert h.controls["window"]._data["value"] == "12 34"
+        elif name == "wiggly":
+            h.controls["lineEdit"].setText("Hello FontLab")
+            assert h.snapshot()["text"] == "Hello FontLab"
+        elif name == "styles":
+            before = h.controls["progressBar"].value
+            h.controls["timer"].emit("timeout")
+            assert h.controls["progressBar"].value > before
+            h.controls["disableWidgetsCheckBox"].setChecked(True)
+            assert not h.controls["topLeftGroupBox"].enabled
+        timers = [
+            obj
+            for obj in h.controls.values()
+            if getattr(obj, "_qt_name", "") in ("QTimer", "QBasicTimer")
+        ]
+        if name == "wiggly":
+            timers.append(h.widget._wiggly.timer)
+        h.close()
+        assert timers and all(not t.isActive() for t in timers)
+
+
+def test_batch_six_menu_actions_and_groupbox_controls(official_qt):
+    qt, _ = official_qt
+    h = built("menus", qt)
+    h.controls["newAct"].trigger()
+    assert "File|New" in h.controls["infoLabel"].text
+    h.controls["boldAct"].trigger()
+    assert "Format|Bold" in h.controls["infoLabel"].text
+    h.controls["aboutAct"].trigger()
+    assert h.controls["active_dialog"].isVisible()
+    h.close()
+    h = built("groupbox", qt)
+    h.controls["toggleButton"].click()
+    assert not h.controls["toggleButton"].checked
+    h.controls["tristateBox"].setCheckState(qt.QtCore.Qt.Checked)
+    assert h.controls["tristateBox"].checkState() == qt.QtCore.Qt.Checked
+    h.close()
+
+
+def test_batch_six_lineedit_modes_masks_and_access(official_qt):
+    qt, _ = official_qt
+    h = built("lineedits", qt)
+    for control, index in (
+        ("echoComboBox", 1),
+        ("validatorComboBox", 2),
+        ("inputMaskComboBox", 3),
+        ("accessComboBox", 1),
+    ):
+        h.controls[control].emit("activated", index)
+    assert h.controls["echoLineEdit"].echoMode == qt.QtGui.QLineEdit.Password
+    assert "AAAAA" in h.controls["inputMaskLineEdit"].inputMask
+    assert h.controls["accessLineEdit"].readOnly
+    h.controls["validatorComboBox"].emit("activated", 0)
+    assert h.controls["validatorLineEdit"]._data["validator"] is None
+    h.close()
+
+
+def test_batch_six_slider_and_spinbox_controls(official_qt):
+    qt, _ = official_qt
+    h = built("sliders", qt)
+    h.controls["valueSpinBox"].setValue(12)
+    assert h.snapshot()["horizontal"] == h.snapshot()["vertical"] == 12
+    h.controls["invertedAppearance"].setChecked(True)
+    assert h.widget.horizontalSliders.slider.invertedAppearance
+    h.controls["orientationCombo"].emit("activated", 1)
+    assert h.controls["stackedWidget"].currentIndex == 1
+    h.close()
+    h = built("spinboxes", qt)
+    h.controls["precisionSpinBox"].setValue(4)
+    assert all(
+        h.controls[key].decimals == 4
+        for key in ("doubleSpinBox", "priceSpinBox", "scaleSpinBox")
+    )
+    h.controls["formatComboBox"].emit("activated", "hh:mm:ss")
+    assert h.controls["meetingEdit"].displayFormat == "hh:mm:ss"
+    h.close()
+
+
+def test_batch_six_calendar_month_year_font_and_widget_options(official_qt):
+    qt, _ = official_qt
+    h = built("calendar", qt)
+    h.controls["monthCombo"].emit("activated", 1)
+    h.controls["yearEdit"].setDate(qt.QtCore.QDate(2024, 2, 1))
+    h.controls["fontSizeSpinBox"].setValue(18)
+    assert h.snapshot()["month"] == 2 and h.snapshot()["year"] == 2024
+    assert h.snapshot()["font_size"] == 18 and "February" in h.snapshot()["title"]
+    h.close()
+    h = built("calendarwidget", qt)
+    h.controls["gridCheckBox"].setChecked(True)
+    assert h.controls["calendar"].gridVisible
+    h.controls["currentDateEdit"].setDate(qt.QtCore.QDate(2025, 5, 1))
+    assert h.snapshot()["selected_date"] == "2025-05-01"
+    h.controls["weekdayColorCombo"].emit("currentIndexChanged", 1)
+    h.close()
+
+
+def test_batch_six_painterpaths_and_transformations_controls(official_qt):
+    qt, _ = official_qt
+    h = built("painterpaths", qt)
+    h.controls["penWidthSpinBox"].setValue(7)
+    h.controls["rotationAngleSpinBox"].setValue(45)
+    assert len(h.widget.renderAreas) == 9
+    assert all(
+        area.penWidth == 7 and area.rotationAngle == 45 for area in h.widget.renderAreas
+    )
+    h.close()
+    h = built("transformations", qt)
+    h.controls["shapeComboBox"].emit("activated", 2)
+    h.widget.operationComboBoxes[0].setCurrentIndex(1)
+    h.widget.operationComboBoxes[0].emit("activated", 1)
+    assert h.widget.transformedRenderAreas[0].operations
+    assert h.widget.originalRenderArea.shape is h.widget.shapes[2]
+    h.close()
+
+
+def test_batch_six_tetrix_start_pause_keys_and_piece_rotation(official_qt):
+    qt, _ = official_qt
+    h = built("tetrix", qt)
+    h.controls["startButton"].click()
+    board = h.widget.board
+    assert h.snapshot()["started"] and board.timer.isActive()
+    x = board.curX
+    board.keyPressEvent(SimpleNamespace(key=qt.QtCore.Qt.Key_Left))
+    assert board.curX == x - 1
+    assert board.curPiece.rotatedLeft().shape() == board.curPiece.shape()
+    h.controls["pauseButton"].click()
+    assert h.snapshot()["paused"] and not board.timer.isActive()
+    h.controls["pauseButton"].click()
+    assert board.timer.isActive()
+    timer = board.timer
+    h.close()
+    assert not timer.isActive()
+
+
+def test_batch_six_charactermap_size_selection_and_explicit_clipboard(official_qt):
+    qt, _ = official_qt
+    h = built("charactermap", qt)
+    h.controls["sizeCombo"].emit("currentIndexChanged", "16")
+    assert h.widget.characterWidget.displayFont.pointSize() == 16
+    h.controls["insertCharacter"]("A")
+    assert h.snapshot()["text"] == "A"
+    assert not h.widget.clipboard.text(), (
+        "Inspect and selection must not write the clipboard"
+    )
+    h.controls["clipboardButton"].click()
+    assert h.widget.clipboard.text() == "A"
+    h.close()
+
+
+def test_batch_six_windowflag_preview_is_owned(official_qt):
+    qt, owners = official_qt
+    h = built("windowflags", qt)
+    h.controls["framelessWindowCheckBox"].click()
+    assert h.widget.previewWindow.windowFlags() & qt.QtCore.Qt.FramelessWindowHint
+    assert h.snapshot()["preview_visible"]
+    h.close()
+    assert all(owner.closed for owner in owners)
+
+
+def test_batch_six_docks_and_recentfiles_preserve_documents_and_isolate_settings(
+    official_qt, tmp_path
+):
+    qt, _ = official_qt
+    h = built("dockwidgets", qt)
+    h.controls["customerList"].emit(
+        "currentTextChanged", "Test Customer, 123 Test Street"
+    )
+    assert "Test Customer" in h.controls["textEdit"].toPlainText()
+    target = tmp_path / "letter.html"
+    h.controls["saveAct"].trigger()
+    dialog = h.controls["active_dialog"]
+    dialog._extra["selectedFiles"] = [str(target)]
+    assert not target.exists()
+    dialog.accept()
+    assert "Test Customer" in target.read_text()
+    h.close()
+    h = built("recentfiles", qt)
+    path = tmp_path / "recent.txt"
+    h.controls["textEdit"].setPlainText("Owned recent file")
+    assert h.controls["saveFile"](str(path))
+    assert h.snapshot()["recent_files"] == [str(path)]
+    assert path.read_text() == "Owned recent file"
+    assert str(h.widget._settings._args[0]).startswith("/"), (
+        "QSettings uses an owned INI path"
+    )
+    h.controls["newAct"].trigger()
+    assert len(h.alerts) == 1
+    assert h.alerts[0].widget._settings is h.widget._settings
+    h.controls["loadFile"](str(tmp_path / "missing.txt"))
+    assert h.snapshot()["error"]
+    h.close()
+
+
+def test_batch_six_orderform_accepts_nonblocking_details_and_print_is_inert(
+    official_qt,
+):
+    qt, _ = official_qt
+    h = built("orderform", qt)
+    assert h.snapshot()["letters"] == 1
+    h.controls["openDialog"]()
+    dialog = h.controls["active_dialog"]
+    dialog.nameEdit.setText("Test Customer")
+    dialog.addressEdit.setPlainText("123 Test Street")
+    dialog.itemsTable.item(0, 1).setText("2")
+    dialog.verify()
+    assert h.snapshot()["letters"] == 2
+    h.controls["printFile"]()
+    box = h.controls["active_dialog"]
+    assert box.printer()._data["outputFormat"] == qt.QtGui.QPrinter.PdfFormat
+    assert not Path(box.printer()._data["outputFileName"]).exists(), (
+        "Open/inspect must not print"
+    )
+    h.close()
+
+
+def test_batch_six_syntax_highlighter_rules_and_multiline_comments(
+    official_qt, tmp_path
+):
+    qt, _ = official_qt
+    h = built("syntaxhighlighter", qt)
+    source = tmp_path / "example.cpp"
+    source.write_text("class Example { /* comment */ int number; }; // comment")
+    h.controls["openFile"](str(source))
+    assert "class Example" in h.controls["editor"].toPlainText()
+    h.widget.highlighter.highlightBlock(source.read_text())
+    assert h.widget.highlighter._extra["formats"], (
+        "Highlight callbacks must apply formats"
+    )
+    h.widget.highlighter.highlightBlock("/* unfinished")
+    assert h.widget.highlighter._data["currentBlockState"] == 1
+    h.widget.highlighter.highlightBlock("finished */")
+    assert h.widget.highlighter._data["currentBlockState"] == 0
+    h.close()
+
+
+def test_batch_six_textedit_format_save_cancel_preview_and_clipboard_disconnect(
+    official_qt, tmp_path
+):
+    qt, _ = official_qt
+    h = built("textedit", qt)
+    assert h.snapshot()["file"] == "", "Default resource must never be saved over"
+    assert (
+        ":/images/logo32.png" in h.controls["textEdit"].document._extra["resources"]
+    ), "Original HTML resource URL must resolve without qRegisterResourceData"
+    h.controls["actionTextBold"].setChecked(True)
+    h.controls["actionTextBold"].trigger()
+    assert h.controls["textEdit"]._extra["formats"]
+    path = tmp_path / "edited.html"
+    h.controls["fileSaveAs"]()
+    box = h.controls["active_dialog"]
+    box._extra["selectedFiles"] = [str(path)]
+    assert not path.exists()
+    box.accept()
+    assert path.exists() and h.snapshot()["file"] == str(path)
+    h.controls["textEdit"].document.setModified(True)
+    h.controls["fileNew"]()
+    box = h.controls["active_dialog"]
+    before = h.controls["textEdit"].toPlainText()
+    box.emit("buttonClicked", qt.QtGui.QMessageBox.Cancel)
+    assert h.controls["textEdit"].toPlainText() == before
+    box.emit("buttonClicked", qt.QtGui.QMessageBox.Discard)
+    assert not h.controls["textEdit"].toPlainText()
+    h.controls["filePrintPreview"]()
+    assert (
+        h.controls["active_dialog"].printer()._data["outputFormat"]
+        == qt.QtGui.QPrinter.PdfFormat
+    )
+    clipboard = qt.QtGui.QApplication.clipboard()
+    h.close()
+    assert all(not signal.callbacks for signal in clipboard._signals.values())
+
+
+def test_batch_six_svg_native_image_renderers_and_imageviewer_zoom(
+    official_qt, tmp_path
+):
+    qt, _ = official_qt
+    h = built("svgviewer", qt)
+    assert h.widget.view.svgItem is not None
+    h.controls["backgroundAction"].setChecked(True)
+    assert h.widget.view.backgroundItem.isVisible()
+    h.controls["rendererGroup"].emit("triggered", h.controls["imageAction"])
+    assert h.widget.view.renderer == h.widget.view.Image
+    h.close()
+    h = built("imageviewer", qt)
+    path = tmp_path / "image.png"
+    path.write_bytes(b"boundary image fixture")
+    assert h.controls["loadImage"](str(path))
+    h.controls["zoomInAct"].trigger()
+    assert h.snapshot()["scale"] == 1.25
+    h.controls["fitToWindowAct"].setChecked(True)
+    h.controls["fitToWindowAct"].trigger()
+    assert h.controls["scrollArea"].widgetResizable
+    h.close()
+
+
+def test_batch_six_separations_inversion_colour_dialog_and_brightness(official_qt):
+    qt, _ = official_qt
+    h = built("separations", qt)
+    screen = h.widget.cyanWidget
+    screen.setImage(qt.QtGui.QImage(2, 1, qt.QtGui.QImage.Format_RGB32))
+    h.widget.scaledImage = screen.originalImage
+    screen.invertImage()
+    assert screen.inverted
+    screen.setColor()
+    assert h.controls["active_dialog"].isVisible()
+    h.controls["active_dialog"].accept()
+    h.controls["brightnessMenu"].emit("triggered", h.controls["halfBrightness"])
+    assert h.snapshot()["brightness"] == 128
+    h.close()
+
+
+def test_batch_six_scribble_drawing_pen_dialogs_and_save_cancel(official_qt, tmp_path):
+    qt, _ = official_qt
+    h = built("scribble", qt)
+    area = h.controls["scribbleArea"]
+    area.resizeEvent(SimpleNamespace())
+    area.drawLineTo(qt.QtCore.QPoint(10, 20))
+    assert area.isModified()
+    h.controls["penWidth"]()
+    h.controls["active_dialog"].setIntValue(5)
+    h.controls["active_dialog"].accept()
+    assert area.penWidth() == 5
+    h.controls["penColor"]()
+    h.controls["active_dialog"].reject()
+    h.controls["saveFile"]("png")
+    h.controls["active_dialog"].reject()
+    assert area.isModified(), "Cancelling save must retain dirty state"
+    h.close()
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "analogclock",
+        "shapedclock",
+        "digitalclock",
+        "concentriccircles",
+        "painterpaths",
+        "transformations",
+        "charactermap",
+        "tetrix",
+        "wiggly",
+        "scribble",
+        "svgviewer",
+    ],
+)
+def test_batch_six_virtual_paint_and_resize_paths_do_not_use_wrapper_operators(
+    name, official_qt
+):
+    qt, _ = official_qt
+    qt._strict_integer_coordinates = True
+    h = built(name, qt)
+    event = SimpleNamespace(rect=qt.QtCore.QRect(0, 0, 120, 120))
+    if name == "concentriccircles":
+        widgets = h.widget._circles
+    elif name == "painterpaths":
+        widgets = h.widget.renderAreas
+    elif name == "transformations":
+        widgets = [h.widget.originalRenderArea, *h.widget.transformedRenderAreas]
+    elif name == "charactermap":
+        widgets = [h.widget.characterWidget]
+    elif name == "wiggly":
+        widgets = [h.widget._wiggly]
+    elif name == "tetrix":
+        widgets = [h.widget.board]
+    elif name == "scribble":
+        widgets = [h.widget.scribbleArea]
+    elif name == "svgviewer":
+        widgets = [h.widget.view]
+    else:
+        widgets = [h.widget]
+    for widget in widgets:
+        if name == "scribble":
+            widget.resizeEvent(event)
+        widget.paintEvent(event)
+    assert all(not painter.isActive() for painter in qt._painters), (
+        "Every native painting context ends exactly once"
+    )
+    h.close()
+
+
+def test_batch_six_native_exports_and_resource_references_match_captured_stubs():
+    from tests.official_doubles import CONTRACT
+
+    for row in records():
+        if row["source_id"] not in BATCH_SIX_IDS:
+            continue
+        path = ROOT / row["target_path"]
+        tree = ast.parse(path.read_text(), feature_version=(3, 11))
+        aliases = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Attribute):
+                pieces = ast.unparse(node).split(".")
+                if (
+                    len(pieces) in (3, 4)
+                    and pieces[0] == "qt"
+                    and pieces[1] in CONTRACT
+                ):
+                    assert pieces[2] in CONTRACT[pieces[1]], (path, pieces)
+                    if len(pieces) == 4:
+                        assert pieces[3] in CONTRACT[pieces[1]][pieces[2]], (
+                            path,
+                            pieces,
+                        )
+            if (
+                isinstance(node, ast.Assign)
+                and len(node.targets) == 1
+                and isinstance(node.targets[0], ast.Name)
+            ):
+                value = ast.unparse(node.value).split(".")
+                if len(value) == 3 and value[0] == "qt":
+                    assert value[2] in CONTRACT[value[1]], (path, value)
+                    aliases[node.targets[0].id] = CONTRACT[value[1]][value[2]]
+        for node in ast.walk(tree):
+            if (
+                isinstance(node, ast.Attribute)
+                and isinstance(node.value, ast.Name)
+                and node.value.id in aliases
+            ):
+                assert node.attr in aliases[node.value.id], (path, ast.unparse(node))
+            if (
+                isinstance(node, ast.Call)
+                and ast.unparse(node.func) == "demo.asset"
+                and isinstance(node.args[0], ast.Constant)
+            ):
+                asset = (
+                    path.parent
+                    / "assets"
+                    / row["source_id"]
+                    / node.args[0].value.removeprefix(":/")
+                )
+                assert asset.exists(), (path, asset)
+        assert not any(
+            isinstance(n, ast.Call)
+            and isinstance(n.func, ast.Attribute)
+            and n.func.attr in ("exec", "exec_", "toInt")
+            for n in ast.walk(tree)
+        ), "No blocking dialog loops or QString-only conversions"
+
+
+def test_batch_six_python_callback_references_release_before_native_deletion(
+    official_qt,
+):
+    qt, _ = official_qt
+    for name, child, callbacks in (
+        ("charactermap", "characterWidget", ["characterSelected"]),
+        ("tetrix", "board", ["scoreChanged", "levelChanged", "linesRemovedChanged"]),
+        ("separations", "cyanWidget", ["imageChanged"]),
+    ):
+        h = built(name, qt)
+        obj = getattr(h.widget, child)
+        assert all(callable(getattr(obj, callback)) for callback in callbacks)
+        h.close()
+        assert all(getattr(obj, callback) is None for callback in callbacks), (
+            "Release private Python callbacks before native children"
         )

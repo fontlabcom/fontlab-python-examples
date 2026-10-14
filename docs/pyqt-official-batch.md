@@ -779,3 +779,267 @@ Target: `ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py`. St
 Adaptation: Original seven mice, collision-aware steering/drawing and cheese background retained. Timers have an owned parent, integer 30 ms intervals and tracked slots; each stops before close. Local RNG avoids host-global seeding; coincident mice guard zero-length acos calculations. Positions use components and native mapping methods, never wrapper operators.
 
 Native acceptance: Expect Colliding Mice, mouse_count 7, original cheese background and animated mice. Observe movement, collision ear colours and steering away from the edge; pan/resize the view. Put two controls mice at the same position and confirm no divide-by-zero or paint exception. Close while all seven timers run; verify timer/scene/item destruction and a clean relaunch.
+
+## Batch 6: widgets, main windows, painting and rich text
+
+All **29 requested identities** are accounted for: **28 implemented**, one blocked
+because native `QTextObjectInterface` is absent. The batch adds **48 exact resource
+copies**, never compiled resource modules. Source provenance and licence notices
+are retained; 28 BSD headers retain the existing unresolved collection GPL scope,
+and textedit selects the explicit GPLv3 alternative in its original header.
+No native acceptance or commit is claimed. The controller owns those gates.
+
+For every implemented entry: launch by ID; inspect twice without interacting;
+drive its controls and the checks below; close while timers/dialogs are active;
+process deferred deletes, verify root/children/dialogs/scene items are destroyed,
+all Python signal targets are disconnected, the launcher registry is empty and
+FontLab remains alive. Relaunch and repeat close. Record paint/virtual-dispatch,
+overload errors and output artefacts separately from launch/inspect/close evidence.
+Only explicitly accepted file, print and clipboard actions may touch user state;
+use controller-owned temporary fixtures/destinations and restore clipboard after
+the explicit clipboard check. Print/Preview start with owned PDF output and never
+run during inspect; PDF acceptance must verify the selected native destination.
+Verify host application style/palette/settings before and after the batch.
+
+`controls` keeps source widget names plus useful root methods, and `window` is the
+root. Array views/controls live on the retained Python subclass (for example
+`h.widget.renderAreas`, `h.widget.operationComboBoxes`, `h.widget.digitButtons`).
+Dynamic dialogs are `h.controls['active_dialog']`; selecting/cancelling/accepting
+them runs retained continuations. File dialogs use `selectedFiles()` only on
+accept; no static blocking chooser or dialog `exec` is used.
+
+The exported Qt5 APIs and asynchronous dialog semantics were checked against
+the native Echopy stubs and the [QDialog reference](https://doc.qt.io/archives/qt-5.15/qdialog.html).
+Highlighting follows the exported virtuals and [QSyntaxHighlighter reference](https://doc.qt.io/archives/qt-5.15/qsyntaxhighlighter.html).
+
+### Batch 6 4efac54bae01fc62
+
+`Official dockwidgets` — `ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original letter, customer/paragraph docks, undo and toolbars retained. HTML save uses an owned asynchronous file dialog and UTF-8 stdlib I/O; printing uses a dialog-owned PDF-configured QPrinter. Four exact icon files replace compiled resources.
+
+Native: Verify initial NAME/ADDRESS placeholders and company letter; select a customer and two standard paragraphs, edit and Undo. Float/re-dock each dock and toggle View actions. Save HTML to an owned temporary file, reopen and inspect text. Open/cancel Print, then explicitly accept an owned PDF destination and validate the PDF.
+
+### Batch 6 60d40ce5671653cf
+
+`Official menus` — `ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original menu actions, checkable formatting and alignment action group retained. Context menu uses popup instead of exec; About/Qt information is owned and asynchronous. Print remains the original informational menu action.
+
+Native: Trigger New/Open/Save/Print/Undo/Redo/Cut/Copy/Paste and verify their infoLabel text. Toggle Bold/Italic and all four exclusive alignments. Right-click, dismiss and reopen the context menu; About/Qt remain responsive. Close with the popup visible.
+
+### Batch 6 09afeea11be83f4f
+
+`Official recentfiles` — `ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: One shared owned temporary INI supplies all example windows; no Trolltech/user settings are read or written. UTF-8 stdlib file I/O replaces stream operators. New/Exit operate on owned windows only; the five recent actions share settings and the retained window list is cleared on close.
+
+Native: Save six uniquely named owned files across two New windows; verify the five-entry order and labels synchronize, re-save one to move it to the front, and open a recent item. Cancel Open/Save As. Trigger Exit and confirm FontLab windows remain. Named close destroys both example windows and removes the owned INI; a new launch starts with no recent files.
+
+### Batch 6 2d36e0fe43f5d49a
+
+`Official separations` — `ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original CMY per-pixel extraction, recolouring, inversion, brightness recombination and image drag retained. qRed/qGreen/qBlue use integer channel extraction; custom imageChanged signals become released subclass callbacks. Colour/open/save dialogs are asynchronous; drag geometry uses components and QBuffer data remains QByteArray.
+
+Native: Load an owned small RGB image with red/green/blue/white/black pixels. Verify Cyan/Magenta/Yellow and final composites, invert each plane, choose/cancel an ink colour and exercise all five brightness levels. Save/reopen PNG and verify pixels. Drag the final image to an owned target, cancel a drag and then close; no source is destroyed during drag.
+
+### Batch 6 912e5c751b20ce97
+
+`Official concentriccircles` — `ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: All four float/int and aliased/antialiased views retained. Integer QRect/QColor channels and alpha are explicit; four tracked timer targets stop before deletion, and painters end in finally.
+
+Native: Verify the 2x2 labels/views and growing frames inspect list. Observe differences in float/int placement and antialiasing; resize while animated. Close with the 100 ms timer active, process deferred deletes and relaunch with frames reset.
+
+### Batch 6 13a6bb9a9d2b9037
+
+`Official painterpaths` — `ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Nine original paths, fill-rule/gradient colours, pen width/colour and rotation controls retained. Numeric enum casts become integers, brushes/colours are explicit value objects and painter cleanup is guaranteed.
+
+Native: Verify nine rendered paths including text, cubic curve and star. Drive both fill rules, both gradient colours, pen colour, width 0/7/20 and rotation 0/45/360. Resize; check all nine views change consistently and close during repaint.
+
+### Batch 6 b2d717e4d43806d2
+
+`Official svgviewer` — `ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original bubbles SVG default plus cubic/spheres resources retained byte-for-byte. Native/Image/OpenGL renderers remain; QGL.SampleBuffers is replaced by QGLFormat.setSampleBuffers. The unavailable OpenGL branch is guarded. File dialogs are asynchronous, viewport callbacks are forgotten before replacement, and geometry uses components.
+
+Native: Verify bubbles SVG appears on launch. Open cubic.svg and spheres.svg from copied assets; toggle Background/Outline, wheel zoom and pan. Switch Native/Image and, if hasOpenGL returns true, OpenGL and high-quality antialiasing repeatedly. Try missing/invalid SVG, cancel file selection, close after viewport replacement and confirm all scene/items/viewports are destroyed.
+
+### Batch 6 c12a2071adbab88b
+
+`Official transformations` — `ports/painting/pyqt-official/transformations-c12a2071adbab88b.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original clock/house/Qt/truck paths and cumulative translation/scaling/rotation retained. Text centring subtracts plain coordinates instead of negating QPointF; pen styles and fill brushes use verified native overloads.
+
+Native: Choose each of four shapes. Set each of three operation combos to Translate/Scale/Rotate in different orders and compare cumulative transformed views with original. Resize and render axes/outlines/text. Close and relaunch after all transformations.
+
+### Batch 6 c56cf1699b07b350
+
+`Official calendar` — `ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original seven-column QTextTable calendar, month/year and font-size controls retained, including 640x256 startup size. Background highlighting uses explicit brush/colour values; cursor/table operations remain native.
+
+Native: Select February 2024 and verify all 29 days, Monday-first headings and row boundaries. Select another month/year, font sizes 1/18/64, and the current month with today highlighted. Inspect month/year/font_size and title; close after repeated document replacement.
+
+### Batch 6 c997677a2bdb4f34
+
+`Official orderform` — `ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original sample Mr Smith letter, editable quantities/privacy choice and tabbed documents retained. Details validation and discard confirmation are asynchronous; malformed quantities leave the dialog open with an inspectable error. Printing uses a dialog-owned printer configured for owned PDF output.
+
+Native: Verify the initial sample letter and four products. New details: accept customer/address, quantities 0/2/negative and both offers choices; inspect added tabs/document tables. Enter nonnumeric quantity and verify no accept; leave details blank and test Yes/No discard. Cancel and explicitly accept PDF printing to an owned path; validate text and page layout.
+
+### Batch 6 428c50abcef7adfe
+
+`Official syntaxhighlighter` — `ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original C++ keyword/class/function/string/comment rules and multiline block state retained. File reads use UTF-8 stdlib I/O, dialogs and menus use tracked callbacks; native QSyntaxHighlighter virtuals/setFormat remain.
+
+Native: Open an owned C++ fixture containing keywords, Qt classes, calls, strings, // comments and a multiline /* */ comment. Verify colours/styles and subsequent block recovery after edits; New clears the document. Cancel Open and select a missing file; inspect the error without losing the document. Close after repeated rehighlighting.
+
+### Batch 6 b34b2f696a977e74
+
+`Official textedit` — `ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py` — **implemented**, native acceptance **unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Adaptation: Original rich-text formatting, lists, alignment, undo/redo, clipboard actions, document writer, sample HTML and platform icons retained. Save/New/Open/Close prompts use continuations. The sample resource is never a save target and its owned document image cache resolves original :/ URLs and its base URL resolves relative images. Print/Preview use dialog-owned PDF-configured printers; Export PDF uses an explicit asynchronous destination. All clipboard and preview connections are tracked.
+
+Native: Verify sample HTML/logo and original 700x800 window. Format selected words with bold/italic/underline, family/size/colour, all alignment and list styles; test undo/redo, cut/copy/paste only on owned text. Save/reopen HTML and ODT; never overwrite copied example.html. Test Save/Discard/Cancel for New/Open/Close, including Save As cancellation. Preview and explicitly export an owned PDF, validate pages/text/images, close while clipboard/preview callbacks are live and verify disconnection.
+
+### Batch 6 806fd814a2ea4d46
+
+`Official textobject` — `ports/richtext/pyqt-official/textobject-806fd814a2ea4d46.py` — **blocked**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Blocked: QTextObjectInterface is absent from native QtGui stubs. A replacement image or HTML display would lose the inline custom SVG object-handler behavior; no fake interface, alternate Qt binding or resource module is supplied.
+
+Native: Confirm launch reports the manifest blocker, does not create UI and leaves the host alive. Revisit only after the host exports QTextObjectInterface and supports native QTextDocument object handler registration/virtual callbacks.
+
+### Batch 6 d6dc56a5318ffe71
+
+`Official analogclock` — `ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original hour/minute polygons, colours and minute/hour marks retained; the tracked one-second timer stops before deletion. Brush values and guaranteed painter end replace implicit conversion/destruction.
+
+Native: Observe moving hands and marks over a minute, resize to rectangular and square shapes and verify aspect ratio/centering. Inspect title/geometry, close with the timer active, confirm native timer/widget destruction and relaunch.
+
+### Batch 6 356e4e807f1e789f
+
+`Official calculator` — `ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original precedence, unary operators, memory and error display retained. Integer grid rows fix Python 3 division; all button callbacks are tracked and the native Button.sizeHint handler is called explicitly.
+
+Native: Drive 2+3*4=14, 9/0=####, Sqrt of a negative number, reciprocal of zero, decimal/sign/backspace/Clear/Clear All, and MC/MS/M+/MR. Verify size hints, display_text and memory. Close after an error and relaunch at zero.
+
+### Batch 6 b91effc45f81fbb0
+
+`Official calendarwidget` — `ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original locale, first day, selection mode, navigation/grid, headers, date limits and formatting controls retained. Enum values are passed as integers and text-format colours as explicit brushes; locale iteration uses enumerate.
+
+Native: Switch locale/first weekday/selection mode, grid/navigation and both header styles. Set min/max/selected date within and outside limits. Change weekday/weekend colours, header format, First Friday and May First; navigate months and inspect selected_date. Close after dateChanged/selectionChanged round trips.
+
+### Batch 6 499e965d86347920
+
+`Official charactermap` — `ports/widgets/pyqt-official/charactermap-499e965d86347920.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original BMP grid, fonts/styles/sizes, tooltip, selected text and explicit clipboard action retained. Python int replaces QString.toInt; indexes use integer division. characterSelected becomes a released callback and font-merging toggles are wired. Clipboard writes happen only on explicit To clipboard.
+
+Native: Select A and a non-ASCII BMP character, verify tooltip/codepoint and appended lineEdit text. Change font/style/size and toggle automatic font merging; try invalid size. Verify inspection leaves clipboard unchanged, then explicitly copy owned sample text and restore the controller clipboard fixture. Scroll/repaint the grid and close.
+
+### Batch 6 3040b9f6b267a196
+
+`Official digitalclock` — `ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original one-second timer, LCD filled segments and blinking colon retained. The rendered display string is retained as declared Python state for meaningful inspection; timer callbacks disconnect and stop on close.
+
+Native: Verify hh:mm with a blinking colon and inspect display_text. Wait for at least two ticks and a minute transition, resize, close with the timer active and relaunch without duplicate updates.
+
+### Batch 6 f702b62aa47629ad
+
+`Official groupbox` — `ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original exclusive radios, checkable/flat groups, independent/tristate checkboxes, toggle/flat/default buttons and nested popup menu retained with native widget ownership.
+
+Native: Test both exclusive radio groups, disabled checkable group, all checkboxes/tristate values, flat/normal/toggle buttons, popup menu and submenu. Verify group enabling and exclusivity; close with a popup visible and relaunch.
+
+### Batch 6 16456ba02f4b79cc
+
+`Official imageviewer` — `ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original scroll area, image label, zoom/normal/fit behavior and image printing retained. Opening and printing are asynchronous; zoom multiplies plain width/height integers rather than QSize wrappers. An unused default host printer is excluded from construction.
+
+Native: Open an owned PNG/JPEG and an invalid file, cancel selection, zoom to both limits, Normal Size and Fit to Window, resize and verify scrollbar centering/action enablement. Cancel Print, then explicitly write an owned PDF and verify image scaling; close with a dialog open.
+
+### Batch 6 84cb59e07adfae2c
+
+`Official lineedits` — `ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original echo modes, validators, alignments, input masks and read-only controls retained. Removing a validator uses the native null pointer None via setValidator, without assigning None to a native property.
+
+Native: Drive all four echo modes, integer/double/no validator, each alignment, phone/date/license/no mask and both read-only states. Type valid and invalid values and inspect text/control state. Close after validator replacement.
+
+### Batch 6 8e5aa13798c2763c
+
+`Official scribble` — `ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original drawing, pen width/colour, image open/save/clear and printing retained. resizeImage now returns the resized copy to preserve the intended image rather than rebinding the wrong instance. Coordinates/radii are integers; painters end reliably and save/open/close confirmations are asynchronous. Image format names decode QByteArray.data; printing starts with owned PDF output.
+
+Native: Draw with mouse press/move/release, resize larger/smaller without losing strokes, change/cancel pen colour and width 1/5/50. Save/reopen each available PNG/JPEG format in owned files, Clear, and test Save/Discard/Cancel on Open/Close including cancelled Save As. Explicitly validate owned PDF print output, then close while dirty.
+
+### Batch 6 248e64416b9b218c
+
+`Official shapedclock` — `ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original frameless masked clock, drag behavior and context Exit retained. Global position arithmetic subtracts components, QRegion geometry is integer, Exit closes only owned windows and the timer stops before deletion.
+
+Native: Verify circular mask at several sizes and both hand polygons. Drag by the left button and confirm the offset remains stable; open context menu and Exit without quitting FontLab. Close during a drag/timer tick, verify mask/timer/widget destruction and relaunch.
+
+### Batch 6 36805750b888fba6
+
+`Official sliders` — `ports/widgets/pyqt-official/sliders-36805750b888fba6.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original horizontal/vertical slider-scrollbar-dial synchronization, min/max/value, inversion and orientation controls retained. Custom PyQt group valueChanged relays use each native dial signal; all native connections are tracked.
+
+Native: Change value in each slider/scrollbar/dial and spinbox; verify horizontal=vertical. Change min/max, invert appearance and key bindings, switch orientation and exercise keyboard/page steps. Close during changes and relaunch with range 0..20/value 5.
+
+### Batch 6 468179092748a72e
+
+`Official spinboxes` — `ports/widgets/pyqt-official/spinboxes-468179092748a72e.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original integer, percent/currency, date/time, meeting-format and floating precision controls retained; native overloaded signals use explicit QString/int signatures and date/time properties use read.
+
+Native: Test integer -20/20, zoom Automatic/1000%, currency, date/time limits, every meeting format including time-only. Drive decimals 0/2/4/100 across the three double boxes, test step/wrapping limits and inspect values. Close after repeated format changes.
+
+### Batch 6 9e21c6536fda7a23
+
+`Official styles` — `ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original gallery and progress timer retained. Style and palette changes are scoped to the owned root and the created style is parented; FontLab application style/palette remain unchanged. Integer progress updates advance by at least one until maximum, fixing truncation stall.
+
+Native: Record FontLab application style/palette before launch. Change every available style and standard/original palette, disable/re-enable groups, exercise tabs and widgets, and observe progress reaching maximum. Verify host style/palette unchanged and timer stopped after close/relaunch.
+
+### Batch 6 e63bffc17abf2fde
+
+`Official tetrix` — `ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original board, pieces, key controls, next preview, scoring/levels and timer retained. Custom score/level/line signals become released LCD callbacks; timer intervals/grid dimensions are integer and native base virtuals are explicit. Exit is owned; the demo does not reseed the host RNG.
+
+Native: Start, move/rotate/drop and pause/resume; verify next preview/LCDs/inspect board, score and level. Fill/clear a line, test wall/floor collisions and game-over restart. Verify both rotation directions for nonsquare pieces. Close while QBasicTimer is active and verify released LCD callbacks/timer destruction.
+
+### Batch 6 509e781f1267967f
+
+`Official wiggly` — `ports/widgets/pyqt-official/wiggly-509e781f1267967f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original animated text, sine-table offsets, hues and line-edit control retained. QBasicTimer uses the exported three-argument start(interval, timerType, receiver), integer text coordinates and explicit QWidget.timerEvent fallback.
+
+Native: Change lineEdit text including empty/non-ASCII input and inspect text/step. Observe each character moving/colouring over multiple timer events; resize and close while active. Confirm timer stops and no stale callback on relaunch.
+
+### Batch 6 136c45cc9f97c218
+
+`Official windowflags` — `ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original type/hint radio/checkbox controls and owned preview retained. Zero starts the integer flags mask instead of calling an enum type; setWindowFlags invokes QWidget explicitly and preview geometry uses coordinate components.
+
+Native: Exercise each Window/Dialog/Sheet/Drawer/Popup/Tool/ToolTip/Splash type and every hint, checking preview text and geometry. Drag and close/reopen the preview; verify parent remains responsive even for Popup. Named close destroys root/preview and all button callbacks; host windows remain.

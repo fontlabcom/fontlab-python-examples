@@ -1,7 +1,7 @@
 {
  "this_file": "catalog/ports.json",
  "schema_version": "fontlab.examples-ports.v1",
- "scope": "Four native-accepted numbered entrypoints, seven further numbered entrypoints and 56 official demos implemented with native acceptance unexecuted; explicit QML/fbs/database blockers retained. Both full collections remain binding. Implementation does not imply native acceptance. Batch 5 records 15 implemented demos and one shared-memory blocker.",
+ "scope": "Four native-accepted numbered entrypoints, seven further numbered entrypoints and 84 official demos implemented with native acceptance unexecuted; explicit QML/fbs/database/shared-memory/text-object blockers retained. Both full collections remain binding. Implementation does not imply native acceptance. Batch 6 records 28 implemented demos and one missing QTextObjectInterface blocker.",
  "source_catalog_sha256": "c1de368df40f7766a06b689ed6fae6e04796c87cb753a95449fe984db56b41ed",
  "license_evidence": {
   "path": "README.md",
@@ -7578,6 +7578,2264 @@
    "adaptations": [
     "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
     "Original seven mice, collision-aware steering/drawing and cheese background retained. Timers have an owned parent, integer 30 ms intervals and tracked slots; each stops before close. Local RNG avoids host-global seeding; coincident mice guard zero-length acos calculations. Positions use components and native mapping methods, never wrapper operators."
+   ]
+  },
+  {
+   "name": "Official dockwidgets",
+   "source_id": "4efac54bae01fc62",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py",
+    "bytes": 11960,
+    "git_blob_sha": "d8cf530469d67eaf84cb50a8930ab7cb862778c0",
+    "sha256": "8e682d6c0904f6e9609e999a8f2b6e3542f6844cb6838c786d13d293a5b2cf5d",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py"
+   },
+   "target_path": "ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [
+    {
+     "source_id": "ced74324eb6406cb",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/mainwindows/dockwidgets/images/new.png",
+      "bytes": 977,
+      "git_blob_sha": "dd795cfffc5c1ce273b3afedb5ed01da3fc5668c",
+      "sha256": "cde063e72500d861814f2acefdbdc76e99a0a34daeb28ef21e99f6df644773a0",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/dockwidgets/images/new.png"
+     },
+     "target_path": "ports/mainwindows/pyqt-official/assets/4efac54bae01fc62/images/new.png",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py",
+       "src/pyqt-official/mainwindows/dockwidgets/images/new.png"
+      ]
+     }
+    },
+    {
+     "source_id": "b8ea83f918ad0e27",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/mainwindows/dockwidgets/images/print.png",
+      "bytes": 1732,
+      "git_blob_sha": "2afb769ee23189efd927255c5f01da54588f17a0",
+      "sha256": "30ea2dfa3f5093c9bf5612d872e5f5dc9fdf92b22e978790957f3feebb427022",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/dockwidgets/images/print.png"
+     },
+     "target_path": "ports/mainwindows/pyqt-official/assets/4efac54bae01fc62/images/print.png",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py",
+       "src/pyqt-official/mainwindows/dockwidgets/images/print.png"
+      ]
+     }
+    },
+    {
+     "source_id": "8b5d0968375e60fe",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/mainwindows/dockwidgets/images/save.png",
+      "bytes": 1894,
+      "git_blob_sha": "46eac82ad1d6c497994aae5a21680f0a1949e64b",
+      "sha256": "496d42836417b1ce39cf253a69f8dbd6af08dc1e7d967cbf184057d51942ad95",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/dockwidgets/images/save.png"
+     },
+     "target_path": "ports/mainwindows/pyqt-official/assets/4efac54bae01fc62/images/save.png",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py",
+       "src/pyqt-official/mainwindows/dockwidgets/images/save.png"
+      ]
+     }
+    },
+    {
+     "source_id": "2c9d528499e6bd94",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/mainwindows/dockwidgets/images/undo.png",
+      "bytes": 1768,
+      "git_blob_sha": "eee23d24a3128303b6096d80582ffa3fef7af7fb",
+      "sha256": "030415003f2eb25b2fed0fd024dadf4253ac9ee4acf2d6f80682e2576b5b09d8",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/dockwidgets/images/undo.png"
+     },
+     "target_path": "ports/mainwindows/pyqt-official/assets/4efac54bae01fc62/images/undo.png",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/mainwindows/dockwidgets/dockwidgets.py",
+       "src/pyqt-official/mainwindows/dockwidgets/images/undo.png"
+      ]
+     }
+    }
+   ],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-4efac54bae01fc62",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original letter, customer/paragraph docks, undo and toolbars retained. HTML save uses an owned asynchronous file dialog and UTF-8 stdlib I/O; printing uses a dialog-owned PDF-configured QPrinter. Four exact icon files replace compiled resources."
+   ]
+  },
+  {
+   "name": "Official menus",
+   "source_id": "60d40ce5671653cf",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/mainwindows/menus.py",
+    "bytes": 11140,
+    "git_blob_sha": "72237014d84cbb9d95144bf38af2fec3602629ad",
+    "sha256": "7dc35f8ec8fa8da933d2cc66257e4d517e9a7811067296cafeb2919ff0386e67",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/menus.py"
+   },
+   "target_path": "ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/mainwindows/menus.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-60d40ce5671653cf",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original menu actions, checkable formatting and alignment action group retained. Context menu uses popup instead of exec; About/Qt information is owned and asynchronous. Print remains the original informational menu action."
+   ]
+  },
+  {
+   "name": "Official recentfiles",
+   "source_id": "09afeea11be83f4f",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/mainwindows/recentfiles.py",
+    "bytes": 8516,
+    "git_blob_sha": "9d2651d5e2ec3a35dca94da95448119e4796f243",
+    "sha256": "460f25965ab1b6cab51c83ccab7b6066ac13502f2a433916af2b78161ad1647b",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/recentfiles.py"
+   },
+   "target_path": "ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/mainwindows/recentfiles.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-09afeea11be83f4f",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "One shared owned temporary INI supplies all example windows; no Trolltech/user settings are read or written. UTF-8 stdlib file I/O replaces stream operators. New/Exit operate on owned windows only; the five recent actions share settings and the retained window list is cleared on close."
+   ]
+  },
+  {
+   "name": "Official separations",
+   "source_id": "2d36e0fe43f5d49a",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/mainwindows/separations.py",
+    "bytes": 18969,
+    "git_blob_sha": "b75933b40de3e7252c1476e1f7ca4f8df8bdaa84",
+    "sha256": "bae92f581022e0b1172a5af55d806af98facd4f3fad11f29819d1469f147557d",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/mainwindows/separations.py"
+   },
+   "target_path": "ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited; Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/mainwindows/separations.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited\n## Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-2d36e0fe43f5d49a",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original CMY per-pixel extraction, recolouring, inversion, brightness recombination and image drag retained. qRed/qGreen/qBlue use integer channel extraction; custom imageChanged signals become released subclass callbacks. Colour/open/save dialogs are asynchronous; drag geometry uses components and QBuffer data remains QByteArray."
+   ]
+  },
+  {
+   "name": "Official concentriccircles",
+   "source_id": "912e5c751b20ce97",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/painting/concentriccircles.py",
+    "bytes": 5069,
+    "git_blob_sha": "90ed0727381e4c4e9cb66660673bc87dfe6bd9cc",
+    "sha256": "9a254f9bf0e2cc219b51ddf49ab4c5458740c46c46f338fb1bd1811f88a6830c",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/concentriccircles.py"
+   },
+   "target_path": "ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/painting/concentriccircles.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-912e5c751b20ce97",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "All four float/int and aliased/antialiased views retained. Integer QRect/QColor channels and alpha are explicit; four tracked timer targets stop before deletion, and painters end in finally."
+   ]
+  },
+  {
+   "name": "Official painterpaths",
+   "source_id": "13a6bb9a9d2b9037",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/painting/painterpaths.py",
+    "bytes": 11019,
+    "git_blob_sha": "71c45fc5a6d7b0abe3471e2fbfd81fca085adbb7",
+    "sha256": "086dd2d7c7fc402fb65b5ef7b8d9aa345b1dcba1f133753e0acf98cf94df036c",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/painterpaths.py"
+   },
+   "target_path": "ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/painting/painterpaths.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-13a6bb9a9d2b9037",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Nine original paths, fill-rule/gradient colours, pen width/colour and rotation controls retained. Numeric enum casts become integers, brushes/colours are explicit value objects and painter cleanup is guaranteed."
+   ]
+  },
+  {
+   "name": "Official svgviewer",
+   "source_id": "b2d717e4d43806d2",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/painting/svgviewer/svgviewer.py",
+    "bytes": 10739,
+    "git_blob_sha": "fa1c9971ca6803f276c1a34e27fa2fd57b7be7ca",
+    "sha256": "e2cbf3c8dfdbaecc269a7c7fd0a73ee68ee80515b2f0aec961fbd612b02830e9",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/svgviewer/svgviewer.py"
+   },
+   "target_path": "ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/painting/svgviewer/svgviewer.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [
+    {
+     "source_id": "40fe3822266ed8b6",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/painting/svgviewer/files/bubbles.svg",
+      "bytes": 10099,
+      "git_blob_sha": "51730124a2fd469e33b01da3f012a2a025b62315",
+      "sha256": "000bbb1853678370e5667c9813040a752086c3cdc02a3fb854b42c0089789e6c",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/svgviewer/files/bubbles.svg"
+     },
+     "target_path": "ports/painting/pyqt-official/assets/b2d717e4d43806d2/files/bubbles.svg",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/painting/svgviewer/svgviewer.py",
+       "src/pyqt-official/painting/svgviewer/files/bubbles.svg"
+      ]
+     }
+    },
+    {
+     "source_id": "9e2e2fed767e0c31",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/painting/svgviewer/files/cubic.svg",
+      "bytes": 5280,
+      "git_blob_sha": "492bb72b8b6dd08e1e149f905387fdaea7d076b8",
+      "sha256": "5a9a450c15d18ede6552720ddb1ef531706b363ddd6adbb0db4044e8208a8022",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/svgviewer/files/cubic.svg"
+     },
+     "target_path": "ports/painting/pyqt-official/assets/b2d717e4d43806d2/files/cubic.svg",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/painting/svgviewer/svgviewer.py",
+       "src/pyqt-official/painting/svgviewer/files/cubic.svg"
+      ]
+     }
+    },
+    {
+     "source_id": "2152bbe1877b18a6",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/painting/svgviewer/files/spheres.svg",
+      "bytes": 3126,
+      "git_blob_sha": "b23164bce332297b11d7dae6654b8e56d057ba38",
+      "sha256": "6e5b2646167308833fde364a1e81214c6682faf04fafc16c299719cadf5126e2",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/svgviewer/files/spheres.svg"
+     },
+     "target_path": "ports/painting/pyqt-official/assets/b2d717e4d43806d2/files/spheres.svg",
+     "license": {
+      "selected": "BSD-3-Clause AND GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/painting/svgviewer/svgviewer.py",
+       "src/pyqt-official/painting/svgviewer/files/spheres.svg"
+      ]
+     }
+    }
+   ],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-b2d717e4d43806d2",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original bubbles SVG default plus cubic/spheres resources retained byte-for-byte. Native/Image/OpenGL renderers remain; QGL.SampleBuffers is replaced by QGLFormat.setSampleBuffers. The unavailable OpenGL branch is guarded. File dialogs are asynchronous, viewport callbacks are forgotten before replacement, and geometry uses components."
+   ]
+  },
+  {
+   "name": "Official transformations",
+   "source_id": "c12a2071adbab88b",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/painting/transformations.py",
+    "bytes": 8603,
+    "git_blob_sha": "97cc6aac7dc5bcd09a4c1dbc856b5fc18dd27b6f",
+    "sha256": "77a84ba16f14a9280a249d9f6d01d535b9c8b3fc55e588f0009ec0b49316b6c7",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/painting/transformations.py"
+   },
+   "target_path": "ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/painting/transformations.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-c12a2071adbab88b",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original clock/house/Qt/truck paths and cumulative translation/scaling/rotation retained. Text centring subtracts plain coordinates instead of negating QPointF; pen styles and fill brushes use verified native overloads."
+   ]
+  },
+  {
+   "name": "Official calendar",
+   "source_id": "c56cf1699b07b350",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/richtext/calendar.py",
+    "bytes": 7071,
+    "git_blob_sha": "ad500966228dd42fb4f6ef243bf2dc43c5537244",
+    "sha256": "91dc496b62480afd12a733ca05f9017d8d730cf5cc09ddb91e8a1ad20e2384c2",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/calendar.py"
+   },
+   "target_path": "ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/richtext/calendar.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-c56cf1699b07b350",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original seven-column QTextTable calendar, month/year and font-size controls retained, including 640x256 startup size. Background highlighting uses explicit brush/colour values; cursor/table operations remain native."
+   ]
+  },
+  {
+   "name": "Official orderform",
+   "source_id": "c997677a2bdb4f34",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/richtext/orderform.py",
+    "bytes": 11069,
+    "git_blob_sha": "b6efe28f5161c52a6398acccc573aae69923dfdd",
+    "sha256": "83a48cf8414b67764e4db203624cdf8de81615c0eed8999971cf49aea61739dd",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/orderform.py"
+   },
+   "target_path": "ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/richtext/orderform.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-c997677a2bdb4f34",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original sample Mr Smith letter, editable quantities/privacy choice and tabbed documents retained. Details validation and discard confirmation are asynchronous; malformed quantities leave the dialog open with an inspectable error. Printing uses a dialog-owned printer configured for owned PDF output."
+   ]
+  },
+  {
+   "name": "Official syntaxhighlighter",
+   "source_id": "428c50abcef7adfe",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/richtext/syntaxhighlighter.py",
+    "bytes": 7799,
+    "git_blob_sha": "ba8f4a16f73500c238cdb0df99c8361f2ef01200",
+    "sha256": "ce07ff507e8157721696216f898ba62e53b235f3f961590daefbaead3ce2c2b7",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/syntaxhighlighter.py"
+   },
+   "target_path": "ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/richtext/syntaxhighlighter.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-428c50abcef7adfe",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original C++ keyword/class/function/string/comment rules and multiline block state retained. File reads use UTF-8 stdlib I/O, dialogs and menus use tracked callbacks; native QSyntaxHighlighter virtuals/setFormat remain."
+   ]
+  },
+  {
+   "name": "Official textedit",
+   "source_id": "b34b2f696a977e74",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/richtext/textedit/textedit.py",
+    "bytes": 24514,
+    "git_blob_sha": "4a5727fef48da400ba2cfa464e263fa05f15ae28",
+    "sha256": "69d043227bd375009a347f171613081d153e1939c02d217016833d88aaa5ea3e",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/textedit.py"
+   },
+   "target_path": "ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "GPL-3.0-only",
+    "review_state": "reviewed",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited; Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual LGPL/commercial/GPL alternative header reviewed; select its explicit GPL version 3 alternative, consistent with collection GPLv3 notice.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/richtext/textedit/textedit.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited\n## Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:LGPL$\n## Commercial Usage\n## Licensees holding valid Qt Commercial licenses may use this file in\n## accordance with the Qt Commercial License Agreement provided with the\n## Software or, alternatively, in accordance with the terms contained in\n## a written agreement between you and Nokia.\n##\n## GNU Lesser General Public License Usage\n## Alternatively, this file may be used under the terms of the GNU Lesser\n## General Public License version 2.1 as published by the Free Software\n## Foundation and appearing in the file LICENSE.LGPL included in the\n## packaging of this file.  Please review the following information to\n## ensure the GNU Lesser General Public License version 2.1 requirements\n## will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.\n##\n## In addition, as a special exception, Nokia gives you certain additional\n## rights.  These rights are described in the Nokia Qt LGPL Exception\n## version 1.1, included in the file LGPL_EXCEPTION.txt in this package.\n##\n## GNU General Public License Usage\n## Alternatively, this file may be used under the terms of the GNU\n## General Public License version 3.0 as published by the Free Software\n## Foundation and appearing in the file LICENSE.GPL included in the\n## packaging of this file.  Please review the following information to\n## ensure the GNU General Public License version 3.0 requirements will be\n## met: http://www.gnu.org/copyleft/gpl.html.\n##\n## If you have questions regarding the use of this file, please contact\n## Nokia at qt-info@nokia.com.\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [
+    {
+     "source_id": "e4cb127f36d59fe8",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/logo.png",
+      "bytes": 632,
+      "git_blob_sha": "1a713dc7153613e64661b45392cd5f87e17a47e0",
+      "sha256": "6678df9b2815142384cd0dbcfcfbed4ec48e24d61354ea5e5e9df92e7857209a",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/logo.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/logo.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/logo.png"
+      ]
+     }
+    },
+    {
+     "source_id": "1b83364d9e42eb87",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/logo32.png",
+      "bytes": 1410,
+      "git_blob_sha": "5f91e9873b7852876a84f0853a092868618a3fb1",
+      "sha256": "0c10aa0c71bee2b5c0fa2014d6cdde939702e38d1c35456438d3e96903f2d8d5",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/logo32.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/logo32.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/logo32.png"
+      ]
+     }
+    },
+    {
+     "source_id": "f306b96dddf741f3",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/editcopy.png",
+      "bytes": 1468,
+      "git_blob_sha": "f551364464a7f4500a2660fd3aa450e79010b0cb",
+      "sha256": "fecac22010504c81e7b7256542df28b5aa1ef8e875a0da0533a351a012d03a3b",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/editcopy.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/editcopy.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/editcopy.png"
+      ]
+     }
+    },
+    {
+     "source_id": "77c66cfbfc121667",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/editcut.png",
+      "bytes": 1512,
+      "git_blob_sha": "a784fd5709d5f882f8cc20f7e961bc82e8af5408",
+      "sha256": "0ab78e8f82bcfa03e2a4221c42fccd4a83da0d6540738aef022d2795de837efe",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/editcut.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/editcut.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/editcut.png"
+      ]
+     }
+    },
+    {
+     "source_id": "20c26694fdc7a519",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/editpaste.png",
+      "bytes": 1906,
+      "git_blob_sha": "64c0b2d6ab88a7edf7b4087622fdb3e58c57ce61",
+      "sha256": "35f69fda7053350b596e754e96951ea6f13809fdb38d0295b3ca642c551b025a",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/editpaste.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/editpaste.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/editpaste.png"
+      ]
+     }
+    },
+    {
+     "source_id": "e14755246bfe7415",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/editredo.png",
+      "bytes": 1752,
+      "git_blob_sha": "8875bf246c5ec3fb50ba3e8b809152aa421227fc",
+      "sha256": "2e023eeb68b4883f826634bf076d898ace73d3a322ee2a76216104b836f67ab0",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/editredo.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/editredo.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/editredo.png"
+      ]
+     }
+    },
+    {
+     "source_id": "4694007adf656246",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/editundo.png",
+      "bytes": 1746,
+      "git_blob_sha": "a3bd5e0bf214adf2b0c780fd2f7de652395d555a",
+      "sha256": "03091f4010e073d715f4bd2acb8b026118ec3e7934e39b7662fc1531142d097e",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/editundo.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/editundo.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/editundo.png"
+      ]
+     }
+    },
+    {
+     "source_id": "c9ad4635effc96d7",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/exportpdf.png",
+      "bytes": 1215,
+      "git_blob_sha": "ebb44e6b8829fd968aa7cca386f21577f5635711",
+      "sha256": "7d54d47aea09a3979f9a3d60a4c3381a480075def81fce7a4c0f52e8dc3bacae",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/exportpdf.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/exportpdf.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/exportpdf.png"
+      ]
+     }
+    },
+    {
+     "source_id": "7dd68975067e2a4c",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/filenew.png",
+      "bytes": 1172,
+      "git_blob_sha": "d3882c7b3fe5f85d9d4799013c97d4cab0328b01",
+      "sha256": "b58ea5bd1a4068e0972d28249b4f1e2d99825ca1638236e29bc0b10066b23482",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/filenew.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/filenew.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/filenew.png"
+      ]
+     }
+    },
+    {
+     "source_id": "8ae94bcfa6a05dda",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/fileopen.png",
+      "bytes": 2168,
+      "git_blob_sha": "fc06c5ec63e50ead55295f6a4b812a4f72b4987a",
+      "sha256": "f344f12dbff0c36af940cefc347c44f10f24df9a3f281e3e2dc3089b6cf47a19",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/fileopen.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/fileopen.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/fileopen.png"
+      ]
+     }
+    },
+    {
+     "source_id": "7cc30f966d26669c",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/fileprint.png",
+      "bytes": 2087,
+      "git_blob_sha": "10ca56c82ae0174fff10650b1f26ac72bbaddf89",
+      "sha256": "947508e57d5694772dc8680ee5860e9b820383f2d7caf7ae60c73a7c9102c065",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/fileprint.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/fileprint.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/fileprint.png"
+      ]
+     }
+    },
+    {
+     "source_id": "67b74cb502ca09da",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/filesave.png",
+      "bytes": 1206,
+      "git_blob_sha": "b41ecf5319863b3c5319579e19116f346802563b",
+      "sha256": "833e049c455f87c03aae24117a88f275b991a77b1de6476f356c21e97b76557c",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/filesave.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/filesave.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/filesave.png"
+      ]
+     }
+    },
+    {
+     "source_id": "f6b3e5c0772c01ac",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textbold.png",
+      "bytes": 1611,
+      "git_blob_sha": "38400bd1f69dd4b49ffc29bb2f0eddd14ca39a34",
+      "sha256": "420b1a5fabc95376fa5062186ae88517db55b47f245b5023f108a1bba0a17d18",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textbold.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textbold.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textbold.png"
+      ]
+     }
+    },
+    {
+     "source_id": "7bdc0345c411905d",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textcenter.png",
+      "bytes": 1404,
+      "git_blob_sha": "2ef5b2ee6f3c08ed3aaf385a491b34a98c21f5e4",
+      "sha256": "f8d485b17ca26015d78d2893f2089329b31e5fc57f9a9c2a9fef5166cfc67217",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textcenter.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textcenter.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textcenter.png"
+      ]
+     }
+    },
+    {
+     "source_id": "fb70b23bc5a99669",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textitalic.png",
+      "bytes": 1164,
+      "git_blob_sha": "0170ee26a6fc568e9b6490e4a45e04f4ff55a19e",
+      "sha256": "8e9903fa8c9b4a9492fe82445f2649f35f371f24e9e60f8ad4bd06fd2c539915",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textitalic.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textitalic.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textitalic.png"
+      ]
+     }
+    },
+    {
+     "source_id": "1558d97e9910ecdf",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textjustify.png",
+      "bytes": 1257,
+      "git_blob_sha": "39cd6c1a9d75f1d5e571f70e3287224a4c86aef3",
+      "sha256": "3510f3e79352c799550e8859c9d21ca27454a9c139166581a9a28ebe4fa124a8",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textjustify.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textjustify.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textjustify.png"
+      ]
+     }
+    },
+    {
+     "source_id": "c063e00da820be38",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textleft.png",
+      "bytes": 1235,
+      "git_blob_sha": "83a66d553556318edf017cbb0575eb767401d708",
+      "sha256": "045e82b2425f71079773bde39aaa25733e9c2d89496a92afec43186d3ab54e61",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textleft.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textleft.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textleft.png"
+      ]
+     }
+    },
+    {
+     "source_id": "ab8309c94027b330",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textright.png",
+      "bytes": 1406,
+      "git_blob_sha": "e7c04645cf4db5caf5558a356d6969eeefb5c17c",
+      "sha256": "e42830990301277ff562bf04a9d0f1ccc2b3974cfc6cd81712fbdf0408a41e31",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textright.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textright.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textright.png"
+      ]
+     }
+    },
+    {
+     "source_id": "9e057ca65f6d4aef",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/textunder.png",
+      "bytes": 1183,
+      "git_blob_sha": "968bac5e90e3bc101959e8acc0f06fdaa79bbc73",
+      "sha256": "76e5a75e5f551c7e592d09d7847db3c771578a71ea6946cf2bd7d6b2a1b417ea",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/textunder.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/textunder.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/textunder.png"
+      ]
+     }
+    },
+    {
+     "source_id": "65090e3014a2d91f",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/zoomin.png",
+      "bytes": 1696,
+      "git_blob_sha": "d46f5aff0d9810d21bc98be02776e843b2db7ee9",
+      "sha256": "4b0fb00849800f4cee2499b8fac5e99e680d8e0ed66f51d9df8def7cd5d85e29",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/zoomin.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/zoomin.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/zoomin.png"
+      ]
+     }
+    },
+    {
+     "source_id": "550fea52e240aa55",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/mac/zoomout.png",
+      "bytes": 1662,
+      "git_blob_sha": "46326566d11ebdda9a7b753b45da7a5803a36412",
+      "sha256": "5559abf7532bffff1b28cb116db9f77dd473e2d4648b58ed55e14b5dc9a9716f",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/mac/zoomout.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/mac/zoomout.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/mac/zoomout.png"
+      ]
+     }
+    },
+    {
+     "source_id": "9ea708c8d579a6cd",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/editcopy.png",
+      "bytes": 1325,
+      "git_blob_sha": "1121b47d8b6b48f6cdf525851e7c0f502454ffe1",
+      "sha256": "4f61a8d4e6e5753f5414eac408e6ffc6883802267ead5c2da23f61f5c630dae7",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/editcopy.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/editcopy.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/editcopy.png"
+      ]
+     }
+    },
+    {
+     "source_id": "f8e279621376ff32",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/editcut.png",
+      "bytes": 1896,
+      "git_blob_sha": "38e55f7420e267a891dcbf805d8ce51dc8b27a4b",
+      "sha256": "5e4ce7ad96789f51550f761fa69e90b8b5b6ed0ba11fcb3377cc32ecc6145f36",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/editcut.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/editcut.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/editcut.png"
+      ]
+     }
+    },
+    {
+     "source_id": "08b5eb78b38af38c",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/editpaste.png",
+      "bytes": 1482,
+      "git_blob_sha": "ffab15aaf8d57d13b63c788babec8eece7c2e979",
+      "sha256": "050ea942dcdcca17c4fcdbafac902b8d822c0ead9bc3bfb3392a6e320ce73f3f",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/editpaste.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/editpaste.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/editpaste.png"
+      ]
+     }
+    },
+    {
+     "source_id": "1008940b7f93616a",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/editredo.png",
+      "bytes": 1787,
+      "git_blob_sha": "9d679fe6fcbb334eafcc2dfd8af377bf050f0f76",
+      "sha256": "718eb3c04e0159d9d88b3d6f24a8749c1e9e2c3953d484949efa397934797506",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/editredo.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/editredo.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/editredo.png"
+      ]
+     }
+    },
+    {
+     "source_id": "a97c7d7924db6bf9",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/editundo.png",
+      "bytes": 1768,
+      "git_blob_sha": "eee23d24a3128303b6096d80582ffa3fef7af7fb",
+      "sha256": "030415003f2eb25b2fed0fd024dadf4253ac9ee4acf2d6f80682e2576b5b09d8",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/editundo.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/editundo.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/editundo.png"
+      ]
+     }
+    },
+    {
+     "source_id": "d04683262f315e0c",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/exportpdf.png",
+      "bytes": 1059,
+      "git_blob_sha": "eef5132928be462a4aa01552c3ea09312dc6ee12",
+      "sha256": "4a07f7e5e83a0870617a2cb44cf97415aeb1a0f3afd2c0397fcef686c4eaad62",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/exportpdf.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/exportpdf.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/exportpdf.png"
+      ]
+     }
+    },
+    {
+     "source_id": "811fb4875285a3a3",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/filenew.png",
+      "bytes": 768,
+      "git_blob_sha": "af5d1221412881e8727fe26930e5d0b5b0633aae",
+      "sha256": "d84765ca326c6dee60fdd12ff651dfebc8fef28fd2740628389990f693cc9eea",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/filenew.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/filenew.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/filenew.png"
+      ]
+     }
+    },
+    {
+     "source_id": "e27520e3e3bb401d",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/fileopen.png",
+      "bytes": 1662,
+      "git_blob_sha": "fc6f17e9774b141a9891d95409440f35f0185e38",
+      "sha256": "0304e2b90ae7f6d346f62e6123bbe1c295457caed34fda17532819212061eca1",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/fileopen.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/fileopen.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/fileopen.png"
+      ]
+     }
+    },
+    {
+     "source_id": "b88e1a74f227249e",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/fileprint.png",
+      "bytes": 1456,
+      "git_blob_sha": "ba7c02dc18d3145ffc2565afd7761cf8d3bbea99",
+      "sha256": "452646fd375a446a811644010c9fd75036c9b23e6543467bb7c38542d9f85de4",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/fileprint.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/fileprint.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/fileprint.png"
+      ]
+     }
+    },
+    {
+     "source_id": "8ce6c62b3327b6b6",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/filesave.png",
+      "bytes": 1205,
+      "git_blob_sha": "8feec99bee8685290ec292e7baeb2e23ba4bdf0c",
+      "sha256": "4e814c610e977d68ea174d54e4a28c8579352010af7857008f0cc87122e93706",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/filesave.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/filesave.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/filesave.png"
+      ]
+     }
+    },
+    {
+     "source_id": "41e1d33467d6dfd2",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textbold.png",
+      "bytes": 1134,
+      "git_blob_sha": "9cbc7138b90d84b6d11e56227d4327ca4cef4d76",
+      "sha256": "4deacb8dd093a5b3e7a6fd863819668c4de33faa8c953493006d75e1bbc7344d",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textbold.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textbold.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textbold.png"
+      ]
+     }
+    },
+    {
+     "source_id": "78cf5b2637cf9988",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textcenter.png",
+      "bytes": 627,
+      "git_blob_sha": "11efb4b8524aafa11c291a527f0d8cc8180e188b",
+      "sha256": "083f1ee28364fe3781eb30d66be65c61d5f6120da28b855c85e24aad79df2ad3",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textcenter.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textcenter.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textcenter.png"
+      ]
+     }
+    },
+    {
+     "source_id": "4f49f016a5f472d9",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textitalic.png",
+      "bytes": 829,
+      "git_blob_sha": "b30ce14c14dcfc5d3ef8e57e6dfe633b5a9e4f86",
+      "sha256": "5986554e9828ce06e33c9f9fc6974e28d9fa86996b10484a72d0292fb94643f1",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textitalic.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textitalic.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textitalic.png"
+      ]
+     }
+    },
+    {
+     "source_id": "4ea1364b5324521f",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textjustify.png",
+      "bytes": 695,
+      "git_blob_sha": "9de0c8808502f5c30ed02ff038e0325464ee0fa1",
+      "sha256": "a6f93b5984ee4e42dbcf476401b24f0abad9a49da1c746e2db1c336f32b05464",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textjustify.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textjustify.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textjustify.png"
+      ]
+     }
+    },
+    {
+     "source_id": "62e149b36a7e738f",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textleft.png",
+      "bytes": 673,
+      "git_blob_sha": "16f80bc3258781f348ed79d6e987546abe30db28",
+      "sha256": "74983c99675e790edde35c1cedf7195b97118d1c8242f8951e04de6d9912cc17",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textleft.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textleft.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textleft.png"
+      ]
+     }
+    },
+    {
+     "source_id": "a1d1269a76978867",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textright.png",
+      "bytes": 677,
+      "git_blob_sha": "16872df62a954d1c91712cc5675ae5bbef30e9a4",
+      "sha256": "128c81c1105120f19e23df614641ce3ce46ae6defe0cb2866a2b5bed818a84a4",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textright.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textright.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textright.png"
+      ]
+     }
+    },
+    {
+     "source_id": "f561186de6545eac",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/textunder.png",
+      "bytes": 971,
+      "git_blob_sha": "c72eff53fba9d87851dff87c93bf92a10d89fc65",
+      "sha256": "f2361cac9112c92c822c290185961c3590953c88c92abd54b98e61bfe7e9a4df",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/textunder.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/textunder.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/textunder.png"
+      ]
+     }
+    },
+    {
+     "source_id": "9cea088671672d89",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/zoomin.png",
+      "bytes": 1208,
+      "git_blob_sha": "2e586fc7bfb6216aec1be411603315d1d0e129d7",
+      "sha256": "ce402bef8facb744e23cba19bca1d3ca6d1191541b0a0b8a7c27d38d6c6bc7a0",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/zoomin.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/zoomin.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/zoomin.png"
+      ]
+     }
+    },
+    {
+     "source_id": "9942786e75f8afa4",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/images/win/zoomout.png",
+      "bytes": 1226,
+      "git_blob_sha": "a736d3934354d733ec6406bbe183fcbeae6da4f4",
+      "sha256": "5d9d905349f3057ced5a62bbcad9536cf3c4bdfef35b36927cc8c2c0d6f5a0f5",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/images/win/zoomout.png"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/images/win/zoomout.png",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/images/win/zoomout.png"
+      ]
+     }
+    },
+    {
+     "source_id": "621224bdf0a5d3c0",
+     "source": {
+      "repository": "pyqt/examples",
+      "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "path": "src/pyqt-official/richtext/textedit/example.html",
+      "bytes": 14365,
+      "git_blob_sha": "6327b5f8fc66ad9959765d0c9f50a285aaeb4f9a",
+      "sha256": "c31cabcacde85d9b2682968191f069ffe6a0e14540b39786d5752e6667287721",
+      "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textedit/example.html"
+     },
+     "target_path": "ports/richtext/pyqt-official/assets/b34b2f696a977e74/example.html",
+     "license": {
+      "selected": "GPL-3.0-only",
+      "review_state": "unresolved",
+      "basis": "Retain collection GPLv3 and neighbouring source notice; no independent resource grant inferred.",
+      "reviewed_files": [
+       "README.md",
+       "src/pyqt-official/LICENSE",
+       "src/pyqt-official/richtext/textedit/textedit.py",
+       "src/pyqt-official/richtext/textedit/example.html"
+      ]
+     }
+    }
+   ],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-b34b2f696a977e74",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original rich-text formatting, lists, alignment, undo/redo, clipboard actions, document writer, sample HTML and platform icons retained. Save/New/Open/Close prompts use continuations. The sample resource is never a save target and its owned document image cache resolves original :/ URLs and its base URL resolves relative images. Print/Preview use dialog-owned PDF-configured printers; Export PDF uses an explicit asynchronous destination. All clipboard and preview connections are tracked."
+   ]
+  },
+  {
+   "name": "Official textobject",
+   "source_id": "806fd814a2ea4d46",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/richtext/textobject/textobject.py",
+    "bytes": 4898,
+    "git_blob_sha": "38e688aafc4b1c1e83cc68fb06c59b8efb2f23ee",
+    "sha256": "69841a8cb7c1cb38569000561f922dff2d4dcfda5d94982fcd903ac0540f604e",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/richtext/textobject/textobject.py"
+   },
+   "target_path": "ports/richtext/pyqt-official/textobject-806fd814a2ea4d46.py",
+   "implementation": "blocked",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/richtext/textobject/textobject.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-806fd814a2ea4d46",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Blocked: QTextObjectInterface is absent from native QtGui stubs. A replacement image or HTML display would lose the inline custom SVG object-handler behavior; no fake interface, alternate Qt binding or resource module is supplied."
+   ],
+   "blocked_reason": "PythonQt.QtGui does not export QTextObjectInterface; QTextDocument custom object handler registration cannot preserve the SVG inline-object interface without that native binding."
+  },
+  {
+   "name": "Official analogclock",
+   "source_id": "d6dc56a5318ffe71",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/analogclock.py",
+    "bytes": 4109,
+    "git_blob_sha": "be318cb9d3a81ccb42486ed3a9045b7240230f79",
+    "sha256": "50a9964255b38be6751070e47089068639c082c0c899a735b2c1091857862963",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/analogclock.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/analogclock.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-d6dc56a5318ffe71",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original hour/minute polygons, colours and minute/hour marks retained; the tracked one-second timer stops before deletion. Brush values and guaranteed painter end replace implicit conversion/destruction."
+   ]
+  },
+  {
+   "name": "Official calculator",
+   "source_id": "356e4e807f1e789f",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/calculator.py",
+    "bytes": 12176,
+    "git_blob_sha": "4d63fd23d4da0971b633d8fc20833aca99d67776",
+    "sha256": "ab25c29399b21c739f68e8614e68124c1980c82f7d49a57ba5da80dd72f93af5",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/calculator.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/calculator.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-356e4e807f1e789f",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original precedence, unary operators, memory and error display retained. Integer grid rows fix Python 3 division; all button callbacks are tracked and the native Button.sizeHint handler is called explicitly."
+   ]
+  },
+  {
+   "name": "Official calendarwidget",
+   "source_id": "b91effc45f81fbb0",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/calendarwidget.py",
+    "bytes": 17265,
+    "git_blob_sha": "23b59af218b84550e012f3a6ad61c54dd211e7db",
+    "sha256": "9f1993468865da5709c19ab54d67c94162774c8f9557f2af7615e70963ccc1c6",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/calendarwidget.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2015 Riverbank Computing Limited; Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/calendarwidget.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2015 Riverbank Computing Limited\n## Copyright (C) 2010 Hans-Peter Jansen <hpj@urpla.net>.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n###########################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-b91effc45f81fbb0",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original locale, first day, selection mode, navigation/grid, headers, date limits and formatting controls retained. Enum values are passed as integers and text-format colours as explicit brushes; locale iteration uses enumerate."
+   ]
+  },
+  {
+   "name": "Official charactermap",
+   "source_id": "499e965d86347920",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/charactermap.py",
+    "bytes": 10897,
+    "git_blob_sha": "95da0b0939882a2a028d024f9a46df03fdaeff1e",
+    "sha256": "86af755e8ce6896888465955a583994ad8437530affa443547104f1a10581dc1",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/charactermap.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/charactermap.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-499e965d86347920",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original BMP grid, fonts/styles/sizes, tooltip, selected text and explicit clipboard action retained. Python int replaces QString.toInt; indexes use integer division. characterSelected becomes a released callback and font-merging toggles are wired. Clipboard writes happen only on explicit To clipboard."
+   ]
+  },
+  {
+   "name": "Official digitalclock",
+   "source_id": "3040b9f6b267a196",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/digitalclock.py",
+    "bytes": 2879,
+    "git_blob_sha": "451a2eb5f5f738ab42a6b8ebe59c0b2e5ff0ee8c",
+    "sha256": "f707349540fe1b5bf3a331b6abdfd97e52075fdb83946d1423f3fd70fdba5b25",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/digitalclock.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/digitalclock.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-3040b9f6b267a196",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original one-second timer, LCD filled segments and blinking colon retained. The rendered display string is retained as declared Python state for meaningful inspection; timer callbacks disconnect and stop on close."
+   ]
+  },
+  {
+   "name": "Official groupbox",
+   "source_id": "f702b62aa47629ad",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/groupbox.py",
+    "bytes": 5823,
+    "git_blob_sha": "d6f4d3b254c74008e8beafbbab2774ba64b82404",
+    "sha256": "3460d903ca834b4839d878c02114d55374a4a01e3c1813b723dbb78c5bc4ed6b",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/groupbox.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/groupbox.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-f702b62aa47629ad",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original exclusive radios, checkable/flat groups, independent/tristate checkboxes, toggle/flat/default buttons and nested popup menu retained with native widget ownership."
+   ]
+  },
+  {
+   "name": "Official imageviewer",
+   "source_id": "16456ba02f4b79cc",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/imageviewer.py",
+    "bytes": 8596,
+    "git_blob_sha": "fba7449121724d75d123d29b03a00aaae7309459",
+    "sha256": "9d5f16635d24f80ad114e7d4faa561b349210960ccb2a25a16265343baf02812",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/imageviewer.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/imageviewer.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-16456ba02f4b79cc",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original scroll area, image label, zoom/normal/fit behavior and image printing retained. Opening and printing are asynchronous; zoom multiplies plain width/height integers rather than QSize wrappers. An unused default host printer is excluded from construction."
+   ]
+  },
+  {
+   "name": "Official lineedits",
+   "source_id": "84cb59e07adfae2c",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/lineedits.py",
+    "bytes": 7853,
+    "git_blob_sha": "0507b1856f6dba1977596b485c209c89a0eaa0cb",
+    "sha256": "b0f203e96a120fe75e44c3b02ce404a6e64b5d3de322055d2f1543f36e85e20e",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/lineedits.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/lineedits.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-84cb59e07adfae2c",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original echo modes, validators, alignments, input masks and read-only controls retained. Removing a validator uses the native null pointer None via setValidator, without assigning None to a native property."
+   ]
+  },
+  {
+   "name": "Official scribble",
+   "source_id": "8e5aa13798c2763c",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/scribble.py",
+    "bytes": 11491,
+    "git_blob_sha": "c770e0a6331768ab45232230bfc7e9911215a87d",
+    "sha256": "7beb955524e1c6e28c6b1d967d120e103dc2e4e741cb323e6d41344c1eabffd6",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/scribble.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/scribble.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-8e5aa13798c2763c",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original drawing, pen width/colour, image open/save/clear and printing retained. resizeImage now returns the resized copy to preserve the intended image rather than rebinding the wrong instance. Coordinates/radii are integers; painters end reliably and save/open/close confirmations are asynchronous. Image format names decode QByteArray.data; printing starts with owned PDF output."
+   ]
+  },
+  {
+   "name": "Official shapedclock",
+   "source_id": "248e64416b9b218c",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/shapedclock.py",
+    "bytes": 5194,
+    "git_blob_sha": "0c1c44b50df3de59c7adebb087f4f9d2b396d3f4",
+    "sha256": "28bcb4fc3528ebac75258d7ac3de1fbaff832266d28a09324af62b19d0787e38",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/shapedclock.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/shapedclock.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-248e64416b9b218c",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original frameless masked clock, drag behavior and context Exit retained. Global position arithmetic subtracts components, QRegion geometry is integer, Exit closes only owned windows and the timer stops before deletion."
+   ]
+  },
+  {
+   "name": "Official sliders",
+   "source_id": "36805750b888fba6",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/sliders.py",
+    "bytes": 7737,
+    "git_blob_sha": "4934764a5f2ea2caa9ac0f43b2145b20bf221c56",
+    "sha256": "2af4207cd5925061c015ecee5c7094bdb2a0d38fe0f1f79887bb0574da680e7c",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/sliders.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/sliders.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-36805750b888fba6",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original horizontal/vertical slider-scrollbar-dial synchronization, min/max/value, inversion and orientation controls retained. Custom PyQt group valueChanged relays use each native dial signal; all native connections are tracked."
+   ]
+  },
+  {
+   "name": "Official spinboxes",
+   "source_id": "468179092748a72e",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/spinboxes.py",
+    "bytes": 8760,
+    "git_blob_sha": "86ee497a9ecd4616b03719907fdbcc0269be0ed3",
+    "sha256": "e1a251aaae1954fb695c52ee4385911520dfd56655974eecfa7c34231ae4ec08",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/spinboxes.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/spinboxes.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-468179092748a72e",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original integer, percent/currency, date/time, meeting-format and floating precision controls retained; native overloaded signals use explicit QString/int signatures and date/time properties use read."
+   ]
+  },
+  {
+   "name": "Official styles",
+   "source_id": "9e21c6536fda7a23",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/styles.py",
+    "bytes": 9245,
+    "git_blob_sha": "110680600c73929f171bf110b680bca34f885cd2",
+    "sha256": "6d7e77ab05d30965bf4478824ee55664b3c9e929494e26fb9e65d3ad9bd0b2b2",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/styles.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/styles.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-9e21c6536fda7a23",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original gallery and progress timer retained. Style and palette changes are scoped to the owned root and the created style is parented; FontLab application style/palette remain unchanged. Integer progress updates advance by at least one until maximum, fixing truncation stall."
+   ]
+  },
+  {
+   "name": "Official tetrix",
+   "source_id": "e63bffc17abf2fde",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/tetrix.py",
+    "bytes": 16608,
+    "git_blob_sha": "6ddb52f90db48cf00ca4f0c9beb345487427ddd0",
+    "sha256": "dca46e31c66e489fa041b826fac4fa63c38f30ea6fdcc0900688827b4a4902fa",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/tetrix.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2014 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/tetrix.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2014 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-e63bffc17abf2fde",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original board, pieces, key controls, next preview, scoring/levels and timer retained. Custom score/level/line signals become released LCD callbacks; timer intervals/grid dimensions are integer and native base virtuals are explicit. Exit is owned; the demo does not reseed the host RNG."
+   ]
+  },
+  {
+   "name": "Official wiggly",
+   "source_id": "509e781f1267967f",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/wiggly.py",
+    "bytes": 4260,
+    "git_blob_sha": "06ad8bf7c82abe13bdaf02dca20912a08b3105a5",
+    "sha256": "85db709d0f12238901e16e262f65933c7f1364de631603e98e297ea2bd8ad9ad",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/wiggly.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/wiggly-509e781f1267967f.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/wiggly.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-509e781f1267967f",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original animated text, sine-table offsets, hues and line-edit control retained. QBasicTimer uses the exported three-argument start(interval, timerType, receiver), integer text coordinates and explicit QWidget.timerEvent fallback."
+   ]
+  },
+  {
+   "name": "Official windowflags",
+   "source_id": "136c45cc9f97c218",
+   "source": {
+    "repository": "pyqt/examples",
+    "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+    "path": "src/pyqt-official/widgets/windowflags.py",
+    "bytes": 11637,
+    "git_blob_sha": "3b4bb7feca1462db48e407de3b3ce34eff95b567",
+    "sha256": "6eac97804f1830a17158a3f966cc7aae1ef2bea9cbbf11e37d23877badb34456",
+    "upstream_url": "https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/pyqt-official/widgets/windowflags.py"
+   },
+   "target_path": "ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py",
+   "implementation": "implemented",
+   "native_acceptance": "unexecuted",
+   "license": {
+    "selected": "BSD-3-Clause AND GPL-3.0-only",
+    "review_state": "unresolved",
+    "notice_path": "ports/pyqt-official-LICENSE.md",
+    "attribution": "Copyright (C) 2013 Riverbank Computing Limited.; Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).",
+    "basis": "Actual header grants BSD-3-Clause; collection README labels official demos GPL and supplies GPLv3. Preserve both notices with unresolved scope; no MIT/Apache relicensing.",
+    "reviewed_files": [
+     "README.md",
+     "src/pyqt-official/README",
+     "src/pyqt-official/LICENSE",
+     "src/pyqt-official/widgets/windowflags.py"
+    ],
+    "original_notices": [
+     "#!/usr/bin/env python\n\n\n#############################################################################\n##\n## Copyright (C) 2013 Riverbank Computing Limited.\n## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).\n## All rights reserved.\n##\n## This file is part of the examples of PyQt.\n##\n## $QT_BEGIN_LICENSE:BSD$\n## You may use this file under the terms of the BSD license as follows:\n##\n## \"Redistribution and use in source and binary forms, with or without\n## modification, are permitted provided that the following conditions are\n## met:\n##   * Redistributions of source code must retain the above copyright\n##     notice, this list of conditions and the following disclaimer.\n##   * Redistributions in binary form must reproduce the above copyright\n##     notice, this list of conditions and the following disclaimer in\n##     the documentation and/or other materials provided with the\n##     distribution.\n##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor\n##     the names of its contributors may be used to endorse or promote\n##     products derived from this software without specific prior written\n##     permission.\n##\n## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n## \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\"\n## $QT_END_LICENSE$\n##\n#############################################################################\n\n\n"
+    ]
+   },
+   "resources": [],
+   "native_checklist": "docs/pyqt-official-batch.md#batch-6-136c45cc9f97c218",
+   "adaptations": [
+    "Injected PythonQt namespace, existing QApplication/event loop, tracked callbacks and owned ExampleHandle teardown; no wrapper arithmetic or modal dialog loops.",
+    "Original type/hint radio/checkbox controls and owned preview retained. Zero starts the integer flags mask instead of calling an enum type; setWindowFlags invokes QWidget explicitly and preview geometry uses coordinate components."
    ]
   }
  ]

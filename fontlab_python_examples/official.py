@@ -335,6 +335,33 @@ class Demo:
             )
         return self.dialog(box)
 
+    def color_dialog(self, parent: Any, color: Any, callback: Any) -> Any:
+        """Choose a value colour asynchronously and retain the accepted callback."""
+        box = self.qt.QtGui.QColorDialog(parent)
+        box.setCurrentColor(color)
+        return self.dialog(box, lambda: callback(box.selectedColor()))
+
+    def pdf_printer(self, path: str = "") -> Any:
+        """Start every owned print operation with PDF output, never a host printer."""
+        gui = self.qt.QtGui
+        printer = gui.QPrinter(gui.QPrinter.HighResolution)
+        printer.setOutputFormat(gui.QPrinter.PdfFormat)
+        printer.setOutputFileName(path or str(Path(self.temp_dir()) / "output.pdf"))
+        return printer
+
+    def print_dialog(self, parent: Any, render: Any) -> Any:
+        """Open an owned print dialog only on explicit action; inspection is inert."""
+        box = self.qt.QtGui.QPrintDialog(parent)
+        # The dialog owns its native printer until actual deferred destruction.
+        printer = box.printer()
+        printer.setOutputFormat(self.qt.QtGui.QPrinter.PdfFormat)
+        printer.setOutputFileName(str(Path(self.temp_dir()) / "output.pdf"))
+        return self.dialog(box, lambda: render(printer))
+
+    def print_document(self, parent: Any, document: Any) -> Any:
+        """Preserve document printing through an asynchronous owned print dialog."""
+        return self.print_dialog(parent, lambda printer: document.print(printer))
+
     def finish(self, window: Any, extra: Any = dict) -> ExampleHandle:
         self.begin(window)
         self.handle.controls.update(self.controls)

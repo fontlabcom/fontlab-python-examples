@@ -19,6 +19,112 @@ SOURCES = [ROOT / row["target_path"] for row in records()] + [
 ]
 
 
+@pytest.mark.parametrize("container_name", ["QMenu", "QToolBar", "QWidget"])
+def test_add_existing_action_when_native_void_overload_then_returns_none(
+    container_name, official_qt
+):
+    qt, _ = official_qt
+    container = getattr(qt.QtGui, container_name)()
+    action = qt.QtGui.QAction("Test", container)
+    assert container.addAction(action) is None, (
+        "Adding an existing QAction returns void"
+    )
+    assert action in container._items, "Void result must still add the original action"
+
+
+@pytest.mark.parametrize("container_name", ["QMenu", "QToolBar"])
+@pytest.mark.parametrize("with_shortcut", [False, True])
+def test_add_action_with_callback_when_native_overload_then_returns_none(
+    container_name, with_shortcut, official_qt
+):
+    qt, _ = official_qt
+    container = getattr(qt.QtGui, container_name)()
+    calls = []
+    args = ["Test", lambda: calls.append("triggered")]
+    if with_shortcut:
+        args.append(qt.QtGui.QKeySequence("Ctrl+P"))
+    assert container.addAction(*args) is None, (
+        "Callback convenience overload may return None in PythonQt"
+    )
+    container._items[-1].trigger()
+    assert calls == ["triggered"], (
+        "Discarding the native return must not suppress the callback"
+    )
+
+
+@pytest.mark.parametrize("container_name", ["QMenu", "QToolBar"])
+def test_add_action_with_receiver_slot_when_native_overload_then_returns_none(
+    container_name, official_qt
+):
+    qt, _ = official_qt
+    container = getattr(qt.QtGui, container_name)()
+    receiver = qt.QtGui.QWidget()
+    assert container.addAction("Close", receiver, "close()") is None
+    assert (
+        container.addAction(
+            "Close", receiver, "close()", qt.QtGui.QKeySequence("Ctrl+Q")
+        )
+        is None
+    )
+
+
+def test_orderform_print_action_is_retained_and_connected_before_menu_insertion(
+    official_qt,
+):
+    qt, _ = official_qt
+    handle = built("orderform", qt)
+    action = handle.controls["printAction"]
+    assert action is handle.widget.printAction and action._qt_name == "QAction"
+    assert action in handle.controls["fileMenu"]._items
+    assert any(
+        obj is action and signature == "triggered()"
+        for obj, signature, _ in handle.connections
+    )
+    action.trigger()
+    assert handle.controls["active_dialog"]._qt_name == "QPrintDialog"
+    handle.close()
+    assert all(not signal.callbacks for signal in action._signals.values()), (
+        "Disconnect before deleting owned widgets"
+    )
+
+
+def test_all_ports_and_official_helper_do_not_consume_unsafe_add_action_returns():
+    paths = list((ROOT / "ports").rglob("*.py")) + [
+        ROOT / "fontlab_python_examples/official.py"
+    ]
+    violations = []
+    for path in paths:
+        tree = ast.parse(path.read_text())
+        parents = {
+            child: node
+            for node in ast.walk(tree)
+            for child in ast.iter_child_nodes(node)
+        }
+        for call in ast.walk(tree):
+            if (
+                not isinstance(call, ast.Call)
+                or not isinstance(call.func, ast.Attribute)
+                or call.func.attr != "addAction"
+            ):
+                continue
+            if isinstance(parents[call], ast.Expr):
+                continue
+            # Only the text-only QAction factory has a reliable return in these ports.
+            if (
+                len(call.args) == 1
+                and not call.keywords
+                and isinstance(call.args[0], ast.Constant)
+                and isinstance(call.args[0].value, str)
+            ):
+                continue
+            violations.append(
+                f"{path.relative_to(ROOT)}:{call.lineno}: {ast.unparse(call)}"
+            )
+    assert not violations, "Retain an explicit QAction before adding it: " + "; ".join(
+        violations
+    )
+
+
 def test_ports_reject_unary_arithmetic_except_plain_number_literals():
     violations = []
     for path in SOURCES:

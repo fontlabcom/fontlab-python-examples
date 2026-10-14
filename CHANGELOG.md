@@ -6,6 +6,18 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Fix orderform retaining a void addAction result by keeping its
+  explicit tracked QAction before menu insertion. Audit every port/helper,
+  enforce native overload returns in doubles and add 11 regression cases;
+  offline suite passes 485 tests. Native orderform rerun remains required.
+
+- 2026-10-14: Account for all 29 batch-6 widgets/mainwindows/painting/richtext
+  demos: 28 PythonQt implementations and a precise QTextObjectInterface blocker.
+  Preserve 48 original resource copies, GPL-compatible headers and actual file
+  notices; extend existing tracked ownership, async colour/print helpers, strict
+  Qt doubles and per-port native checklists. Settings/style/quit remain scoped
+  to owned UI; native acceptance is unexecuted. No TODO changes or commit.
+
 - 2026-10-14: Fix native easing enum/value-class dispatch in three batch-5
   ports; audit colour/cursor/fill boundaries across all ports and enforce the
   exported value types in doubles, with 14 additional regression cases.
