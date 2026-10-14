@@ -30,7 +30,26 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             assert port["source"][key] == original[key], key
         assert port["target_path"] == original["target_path"]
         assert port["implementation"] == "implemented"
-        assert port["native_acceptance"] == "pending"
+        assert port["native_acceptance"] in {"pending", "passed"}
+        if port["native_acceptance"] == "passed":
+            evidence = port["native_evidence"]
+            report_path = Path(evidence["report"])
+            assert not report_path.is_absolute() and ".." not in report_path.parts
+            receipt = json.loads((ROOT / report_path).read_text(encoding="utf-8"))
+            assert receipt["this_file"] == report_path.as_posix()
+            assert receipt["implementation_commit"] == evidence["implementation_commit"]
+            launched = receipt["native"]["launch"][port["name"]]
+            assert launched["source_id"] == port["source_id"]
+            assert launched["launched"] is True and launched["visible"] is True
+            assert launched["closed"] is False
+            closed = receipt["native"]["close"][port["name"]]
+            assert closed["source_id"] == port["source_id"]
+            assert closed["closed"] is True and closed["launched"] is False
+            destruction = receipt["native"]["destruction"]
+            assert destruction["expected"], "Passed acceptance must track owned objects"
+            assert set(destruction["expected"]) == set(destruction["destroyed"])
+            assert destruction["registry_empty"] is True
+            assert destruction["host_application_alive"] is True
         assert port["license"]["selected"] == "MIT"
         assert original["path"] in port["license"]["reviewed_files"]
         assert (ROOT / port["license"]["notice_path"]).is_file()
