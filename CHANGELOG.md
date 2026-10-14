@@ -6,6 +6,11 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Read both launcher catalogs explicitly as UTF-8 in FontLab's ASCII-default
+  embedded Python; preserve all Unicode metadata and source/resource bytes.
+- Close/delete the Designer QFile when QUiLoader construction fails, with
+  regression checks for constructor cleanup and ASCII-default Unicode lookup.
+
 - Implement four original numbered examples as direct PythonQt ports: QLabel,
   QVBoxLayout, Signals and Slots and Qt Designer; preserve required UI bytes.
 - Add import-safe named host launcher, retained native handles, JSON snapshots,

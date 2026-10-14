@@ -72,3 +72,21 @@ tools tests fontlab_python_examples ports examples`, scoped Ruff format check,
 host-free import/host-absence smoke passed. Test doubles establish contracts,
 not actual native interactions. Native acceptance of all four remains pending
 for independent root verification; both complete collections remain required.
+
+2026-10-14: Task 1 round 1 fixes actual native load failure at 94aec38:
+FontLab's bundled Python defaults text reads to ASCII; first named launch failed
+before creating any widgets, and close also failed while parsing the manifest.
+Both launcher JSON reads now explicitly select UTF-8, preserving all Unicode
+metadata without changing locale/preferences or manifest/catalog/resource bytes.
+Designer now enters QFile cleanup before attempting QUiLoader construction.
+
+Tests first: default-ASCII text-reader boundary with actual UTF-8 Unicode JSON
+and a failing loader-constructor double both failed before the fix (2 failed,
+6 deselected). Both passed after the fixes. The Unicode test preserves names,
+source-ID lookup, close and Unicode known-unported path handling; constructor
+failure proves existing QFile close/delete with no owned widget creation.
+Full relevant suite: 46 passed (96% launcher/port statement coverage); scoped
+Ruff lint/format (24 files) and diff checks passed. Exact bytes of both catalogs,
+static index and original Designer UI remain unchanged. Official pathlib
+read_text encoding contract checked. Native acceptance of all four stays pending
+for root's clean reviewed re-load; no native/producer/settings changes performed.

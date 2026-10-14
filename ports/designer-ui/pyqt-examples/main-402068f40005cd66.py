@@ -13,8 +13,9 @@ from fontlab_python_examples.handle import ExampleHandle
 def _load(qt: Any) -> Any:
     path = Path(__file__).with_name("dialog-0bf07d6f0c55bc7e.ui")
     source = qt.QtCore.QFile(str(path))
-    loader = qt.QtUiTools.QUiLoader()
+    loader = None
     try:
+        loader = qt.QtUiTools.QUiLoader()
         if not source.open(qt.QtCore.QIODevice.ReadOnly):
             raise OSError(
                 f"Cannot open Designer UI: {path.name}: {source.errorString()}"
@@ -26,7 +27,8 @@ def _load(qt: Any) -> Any:
     finally:
         source.close()
         source.deleteLater()
-        loader.deleteLater()
+        if loader is not None:
+            loader.deleteLater()
 
 
 def build(qt: Any) -> ExampleHandle:

@@ -28,6 +28,28 @@ def test_host_when_native_module_missing_then_host_error(native_boundary, monkey
         examples.launch("QLabel")
 
 
+def test_designer_when_loader_constructor_fails_then_created_file_cleaned(
+    native_boundary, monkeypatch
+):
+    import fontlab_python_examples as examples
+
+    qt, owners = native_boundary
+    closed = []
+
+    def fail_constructor():
+        raise RuntimeError("loader construction failed")
+
+    monkeypatch.setattr(qt.QtUiTools, "QUiLoader", fail_constructor)
+    monkeypatch.setattr(qt.QtCore.QFile, "close", lambda self: closed.append(self))
+    with pytest.raises(RuntimeError, match="loader construction failed"):
+        examples.launch("Qt Designer")
+    assert owners == [], "Loader failure must not create an owned window"
+    assert len(qt.temporary_objects) == 1, "Only the source QFile was constructed"
+    source = qt.temporary_objects[0]
+    assert source.deleted is True, "Existing QFile must be scheduled for deletion"
+    assert closed == [source], "Existing QFile must be closed on constructor failure"
+
+
 @pytest.mark.parametrize(
     "name, target",
     [

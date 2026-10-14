@@ -12,7 +12,9 @@ _handles: dict[str, Any] = {}
 
 def available() -> list[dict]:
     """Return implemented names/provenance; native acceptance remains separate."""
-    return json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
+    return json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))[
+        "ports"
+    ]
 
 
 def describe(name: str) -> dict:
@@ -20,7 +22,7 @@ def describe(name: str) -> dict:
     for record in available():
         if name in (record["name"], record["source_id"], record["source"]["path"]):
             return record
-    catalog = json.loads((ROOT / "catalog/sources.json").read_text())
+    catalog = json.loads((ROOT / "catalog/sources.json").read_text(encoding="utf-8"))
     if any(name in (entry["id"], entry["path"]) for entry in catalog["files"]):
         raise NotImplementedError(f"Example {name!r} is known but not ported yet")
     raise ValueError(f"Unknown example {name!r}; use available() for implemented names")
