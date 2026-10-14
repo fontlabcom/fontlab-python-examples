@@ -213,3 +213,5 @@ acceptance (clicks, save prompts, thread messaging, painting holes) is still
 pending, so ports.json native_acceptance remains "unexecuted".
 
 QPainter interaction (native): direct super().paintEvent/mousePressEvent raised AttributeError (text unpainted, base click ignored). Replaced with explicit QPlainTextEdit base calls; native click now moves cursor 0->39, hole recorded, no callback errors.
+
+Native interactions (controller): 02 disable toggle disables/restores all groups, timer progress 0->199 in 2.5 s; 13 model edit persists; 07 named close with unsaved text closes without prompt; fonts unchanged, host alive. Receipt native-interactions.json. Pending: 11 thread messaging (needs the chat server), editor Open/Save dialogs, 12 navigation.
