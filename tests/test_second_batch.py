@@ -19,6 +19,8 @@ NEW = [
     if r["native_acceptance"] == "unexecuted"
     and r["implementation"] == "implemented"
     and "/pyqt-examples/" in r["target_path"]
+    # Batch 9 chat ports use the strict official doubles and owned localhost peers.
+    and not r["source"]["path"].startswith("src/11 PyQt Thread example/")
 ]
 CONNECTED_PORTS = NEW + [
     r for r in MANIFEST["ports"] if r["name"] == "Signals and Slots"
@@ -361,7 +363,7 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
         == hashlib.sha256((ROOT / "catalog/sources.json").read_bytes()).hexdigest()
     ), "The immutable source inventory must retain its exact hash"
     by_id = {e["id"]: e for e in catalog["files"]}
-    # Example 11 (chat over a third-party server) was removed by owner decision D4.
+    # Example 11 is covered by batch 9 with owned localhost peers under D4.
     numbers = {"02", "06", "07", "08", "09", "10", "12", "13", "14", "15"}
     expected = {
         e["id"]

@@ -67,6 +67,9 @@ def fake_host(monkeypatch):
             self.layout = self.attribute = self.modality = self.loaded_path = None
             self.modal = False
 
+        def inherits(self, name):
+            return name in {"QWidget", "QObject"}
+
         def setAttribute(self, attribute, value):
             self.attribute = (attribute, value)
 

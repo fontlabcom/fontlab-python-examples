@@ -2132,3 +2132,935 @@ State: **implemented / native unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-o
 Exact schema.ui, three XSDs and six XML instances copied. Preserve native QXmlSchema/Validator, native diagnostic callback, highlighter and error cursor/full-width selection. Defer initial validation to owned timer. Reject DTD/entities/schema locations/imports/includes before native evaluation; QByteArray plus explicit empty base QUrl prevents URL-loading overloads. No stdlib XSD substitute.
 
 Native: Launch under 5 s with loading=true/valid=null. After owned initializeTimer, validate all six original instances across Contact/Recipe/Order: valid=true for three valid, false for three invalid, native diagnostic line/column and full-width red selection. Edit malformed XML then correct it; verify syntax colours and multi-line comments. Test DTD/external schemaLocation input: report rejection without outbound traffic. Close before initialization and after diagnostics; verify handler/highlighter/timer destruction.
+
+
+## Batch 9: remaining 97 entrypoints
+
+94 eyllanesc/QtExamples and three numbered chat entrypoints: **10 implemented,
+87 blocked**. All native acceptance remains **unexecuted**. The original trees,
+static source catalog and TODO remain unchanged. These records finish the
+requested Python entrypoint accounting; ambiguous Python/QML/auxiliary candidates
+and complete native acceptance remain separate. No binding/dependency installation
+or native FontLab execution is claimed.
+
+Network ports use owned numerical localhost/Unix peers under D4. Qt backend
+matplotlib canvases remain blocked; none of these sources uses only Agg.
+The rasterwindow NightFade preset and QMatrix4x4 matrix multiplication are absent
+from the wrapper; the QPA windows implementation uses the available native
+QWindow/QBackingStore APIs. Demo and launcher now distinguish QWindow from
+QWidget. Original source GPL-3.0-only/MIT choices and companion/borrowed
+implementation notices are preserved; assets without individual grants remain
+unresolved. See ports/eyllanesc-LICENSE.md.
+
+Qt 5.15 reference consulted for painter/backing-store lifetimes:
+[QBackingStore](https://doc.qt.io/archives/qt-5.15/qbackingstore.html),
+[QRasterWindow](https://doc.qt.io/archives/qt-5.15/qrasterwindow.html),
+[QPainter](https://doc.qt.io/archives/qt-5.15/qpainter.html). Actual exports and
+property/method distinctions are checked against the Echopy stubs, with current
+module hashes retained in tests/official_contract.json.
+
+| ID | Target path | Result | Licence | Notable adaptations / blocker |
+| --- | --- | --- | --- | --- |
+| `93131a29a3b71ea3` | `ports/graphics-painting/eyllanesc/main-93131a29a3b71ea3.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QAreaSeries, QChart, QChartView, QLineSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `e1c73422208670cb` | `ports/multimedia/eyllanesc/main-e1c73422208670cb.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QChart, QChartView, QLineSeries, QValueAxis, QXYSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `9fed8c2f3765272b` | `ports/graphics-painting/eyllanesc/main-9fed8c2f3765272b.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QBarCategoryAxis, QBarSeries, QBarSet, QChart, QChartView, QValueAxis. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `c862c1b57a0a0412` | `ports/charts/eyllanesc/main-c862c1b57a0a0412.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QBarCategoryAxis, QBarSeries, QChart, QChartView, QVBarModelMapper, QValueAxis. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `f9107c0d26ffc4aa` | `ports/graphics-painting/eyllanesc/main-f9107c0d26ffc4aa.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QBoxPlotSeries, QBoxSet, QChart, QChartView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `6bd9cbb60a6ac008` | `ports/charts/eyllanesc/main-6bd9cbb60a6ac008.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QChart, QLineSeries, QSplineSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `032d404c69db6baa` | `ports/graphics-painting/eyllanesc/main-032d404c69db6baa.py` | blocked | GPL-3.0-only | PythonQt does not export QtCharts (QtChart); required native APIs: QCandlestickSeries, QCandlestickSet, QChart, QChartView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `4bc27e706ac146f5` | `ports/corelib/eyllanesc/main-4bc27e706ac146f5.py` | implemented | GPL-3.0-only | Reuse the existing local IPC port with an owned unique endpoint and explicit peer. Preserve Qt 5.10 UInt32 + QString framing; correct upstream len(message) prefix to serialized payload byte length and currentFortune assignment/hostLineEdit.ext typo. Inert inspection, timeout, duplicate retry timer and socket abort before close. |
+| `cb1871959e42607b` | `ports/corelib/eyllanesc/main-cb1871959e42607b.py` | implemented | GPL-3.0-only | Reuse the existing local IPC port with an owned unique endpoint and explicit peer. Preserve Qt 5.10 UInt32 + QString framing; correct upstream len(message) prefix to serialized payload byte length and currentFortune assignment/hostLineEdit.ext typo. Inert inspection, timeout, duplicate retry timer and socket abort before close. |
+| `04e8e49f95de6cf5` | `ports/corelib/eyllanesc/dialog-ui-04e8e49f95de6cf5.py` | blocked | GPL-3.0-only | PythonQt.QtCore.QSharedMemory lacks detach(). The associated Dialog requires native shared-memory image exchange and explicit detach; the generated UI entrypoint launches that same Dialog. An owned segment cannot be implemented and safely released. |
+| `24b0b2aa8998d701` | `ports/corelib/eyllanesc/main-24b0b2aa8998d701.py` | blocked | GPL-3.0-only | PythonQt.QtCore.QSharedMemory lacks detach(). The associated Dialog requires native shared-memory image exchange and explicit detach; the generated UI entrypoint launches that same Dialog. An owned segment cannot be implemented and safely released. |
+| `7bddaa324636868a` | `ports/platform/eyllanesc/ping-7bddaa324636868a.py` | blocked | GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `fa5e7696ac61b89f` | `ports/platform/eyllanesc/pong-fa5e7696ac61b89f.py` | blocked | GPL-3.0-only | PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `9d1a670d70c19b6a` | `ports/qml/eyllanesc/main-9d1a670d70c19b6a.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `3299c18eadf92b5d` | `ports/qml/eyllanesc/main-3299c18eadf92b5d.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `f581c1e4f121df88` | `ports/qml/eyllanesc/main-f581c1e4f121df88.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `2529316479664459` | `ports/qml/eyllanesc/main-2529316479664459.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `6386ec6f1ca4ffd4` | `ports/qml/eyllanesc/main-6386ec6f1ca4ffd4.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine, QQmlContext, QQuickWindow. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `92fc3cf4b5dd009c` | `ports/embedded/eyllanesc/main-92fc3cf4b5dd009c.py` | implemented | GPL-3.0-only | Reuse the previously adapted LightMaps/SlippyMap/MapZoom behavior: owned localhost tile fixture/cache and numeric component geometry instead of wrapper operators; preserve city actions, night inversion, 701 ms hold and magnifier/pan. About opens an owned asynchronous notice, never external OpenStreetMap. Fix upstream fractional dimensions and zoomPixmap variable error. |
+| `631cc1bc310c00b9` | `ports/embedded/eyllanesc/main-631cc1bc310c00b9.py` | implemented | GPL-3.0-only | Exact stylewidget.ui and all eight QSS/image files copied. QUiLoader connections reconnected explicitly through Demo; style button auto-slots wired explicitly. QSS applies only to the owned window, not QApplication; full-screen launch and application/organization metadata writes removed. Preserve value/scrollbar/show/enable wiring. |
+| `3525151ac8d550f5` | `ports/graphics-painting/eyllanesc/main-3525151ac8d550f5.py` | blocked | GPL-3.0-only | PythonQt.QtGui.QGradient lacks the NightFade preset and its preset constructor overload, required by RasterWindow.renderNow for its exact background. QWindow/QBackingStore exist, but a replacement gradient is not supplied. |
+| `a207ef153f0b81b7` | `ports/threads-processes/eyllanesc/main-a207ef153f0b81b7.py` | blocked | GPL-3.0-only | The original launcher spawns sys.executable with a PyQt5/PySide2 binding and launches quickcontrols2/gallery, which requires absent QtQml/QtQuick/QtQuickControls2. PythonQt also has no Python Signal/Slot declaration API. Replacing it with the in-host examples launcher changes its subprocess/binding-selection behavior; it is blocked. |
+| `0d72445fb116793d` | `ports/network/eyllanesc/audiodevicesbase-ui-0d72445fb116793d.py` | blocked | GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `307534c4e8e2211c` | `ports/multimedia/eyllanesc/main-307534c4e8e2211c.py` | blocked | GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `eea833917398267a` | `ports/network/eyllanesc/main-eea833917398267a.py` | blocked | GPL-3.0-only | PythonQt.QtCore has no QXmlStreamReader, required by GSuggestCompletion.handleNetworkData to parse suggestions. A stdlib XML parser plus owned localhost suggestion/search server is a possible behavior-preserving future adaptation; this record does not claim that substitution is implemented. |
+| `ecc2e23449331df1` | `ports/network/eyllanesc/main-ecc2e23449331df1.py` | implemented | GPL-3.0-only | Reuse the existing 50 MiB/64 KiB loopback transfer implementation; owned 127.0.0.1 receiver and native QTcpSocket sender. Replace unparented server, blocking retry dialog, global cursor and premature deleteLater with owned Python receiver/timer delivery and tracked cleanup. |
+| `ccad55f9e06bfa93` | `ports/platform/eyllanesc/main-ccad55f9e06bfa93.py` | blocked | GPL-3.0-only | PythonQt does not export QtPositioning; required native APIs: QGeoCoordinate, QGeoPositionInfo, QGeoPositionInfoSource. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `0b7e380ab45addbd` | `ports/graphics-painting/eyllanesc/main-0b7e380ab45addbd.py` | blocked | GPL-3.0-only | PythonQt.QtGui.QMatrix4x4 exposes neither __mul__ nor a matrix-product method. PaintedWindow.paintEvent requires projection * view * model; wrapper arithmetic is forbidden in FontLab. QRasterWindow exists, but numeric matrix replacement is not implemented. |
+| `b1c25455dbcb6bac` | `ports/graphics-painting/eyllanesc/main-b1c25455dbcb6bac.py` | implemented | GPL-3.0-only | Preserve native QWindow/QBackingStore, two top-level windows, Window B child and extra-screen windows. Owned QTimer replaces startTimer; explicit finally ends image/backing painters before endPaint/flush. Per-build colors, explicit backing-store delete and subclass-reference release. Demo/launcher now distinguish QWindow from QWidget without assigning native widget attributes. Preserve original Backspace rule. |
+| `8284e0348b6f7020` | `ports/qml/eyllanesc/main-8284e0348b6f7020.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `b4d27c5a05969f77` | `ports/qml/eyllanesc/main-b4d27c5a05969f77.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine, QQuickStyle. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `f5ecef06968ffad8` | `ports/qml/eyllanesc/main-f5ecef06968ffad8.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `bd4a25944ae5b2d7` | `ports/qml/eyllanesc/main-bd4a25944ae5b2d7.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `9e402cdc525108dd` | `ports/qml/eyllanesc/main-9e402cdc525108dd.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `3ed66f4363a81cf2` | `ports/platform/eyllanesc/main-3ed66f4363a81cf2.py` | blocked | GPL-3.0-only | PythonQt does not export QtSerialPort; required native APIs: QSerialPortInfo. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `b2127700642ffb25` | `ports/platform/eyllanesc/main-b2127700642ffb25.py` | blocked | GPL-3.0-only | PythonQt does not export QtSerialPort; required native APIs: QSerialPortInfo. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `a3c7c0e56d0452cf` | `ports/database/eyllanesc/main-a3c7c0e56d0452cf.py` | blocked | GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `5b93264cdefad0d7` | `ports/database/eyllanesc/main-5b93264cdefad0d7.py` | blocked | GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `fd7c0bbed85eb2d4` | `ports/database/eyllanesc/main-fd7c0bbed85eb2d4.py` | blocked | GPL-3.0-only | PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel, QSqlTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed. |
+| `b92988bc55b506ee` | `ports/webengine/eyllanesc/main-b92988bc55b506ee.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `ea0deb959e907448` | `ports/webengine/eyllanesc/main-ea0deb959e907448.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `da960851c5ad3baa` | `ports/webengine/eyllanesc/main-da960851c5ad3baa.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `5646535663e933c0` | `ports/webengine/eyllanesc/main-5646535663e933c0.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `a4f928dfc9be8596` | `ports/webengine/eyllanesc/main-a4f928dfc9be8596.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `e6abb656a88ccad4` | `ports/webengine/eyllanesc/cookiedialog-ui-e6abb656a88ccad4.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `1e800054206a98ec` | `ports/webengine/eyllanesc/cookiewidget-ui-1e800054206a98ec.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `0dfe1b3b36d41c8d` | `ports/webengine/eyllanesc/main-0dfe1b3b36d41c8d.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `8460861d4a65f625` | `ports/webengine/eyllanesc/mainwindow-ui-8460861d4a65f625.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `1f671605e1034b71` | `ports/webengine/eyllanesc/main-1f671605e1034b71.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `72838df47d1eddc0` | `ports/webengine/eyllanesc/main-72838df47d1eddc0.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `a7eae99cebfb1806` | `ports/webengine/eyllanesc/main-a7eae99cebfb1806.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `2253cce5a4c3a077` | `ports/webengine/eyllanesc/mainwindow-ui-2253cce5a4c3a077.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `23d091dcf5a72224` | `ports/webengine/eyllanesc/main-23d091dcf5a72224.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `c9510fb6daa7d1bd` | `ports/webengine/eyllanesc/main-c9510fb6daa7d1bd.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `7fece60acaf2b392` | `ports/webengine/eyllanesc/main-7fece60acaf2b392.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `856b2b33c69b4e19` | `ports/webengine/eyllanesc/main-856b2b33c69b4e19.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `11ec97a8c43a5283` | `ports/webengine/eyllanesc/main-11ec97a8c43a5283.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineProfile, QWebEngineUrlRequestJob, QWebEngineUrlScheme, QWebEngineUrlSchemeHandler, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `768c423bdd1fa074` | `ports/network/eyllanesc/main-768c423bdd1fa074.py` | blocked | GPL-3.0-only | PythonQt does not export QtWebSockets; required native APIs: QWebSocketServer. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `edeef5f840c20e15` | `ports/network/eyllanesc/google-search-edeef5f840c20e15.py` | implemented | GPL-3.0-only | Preserve QString completion/model/toolbar XML query and response behavior against owned localhost HTTP suggestions. Replace lib.py custom signals and blocking QEventLoop in splitPath with textEdited debounce and asynchronous replies; abort old reply and disconnect before delete, two-second request timeout, refuse redirects, parse with original stdlib ElementTree. No external Google request. |
+| `08ba2f1b1fe02894` | `ports/qml/eyllanesc/main-08ba2f1b1fe02894.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `a0ac1b252a14609e` | `ports/gstreamer/eyllanesc/main-a0ac1b252a14609e.py` | blocked | GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QMediaContent, QMediaPlayer, QVideoWidget. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. The Qt GStreamer pipeline player/video sink is also unavailable. |
+| `f13380d705146bff` | `ports/matplotlib/eyllanesc/subplot-f13380d705146bff.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `52871219c50cdd21` | `ports/matplotlib/eyllanesc/barchart-demo-52871219c50cdd21.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `7cc9bd76e925db18` | `ports/matplotlib/eyllanesc/date-7cc9bd76e925db18.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `b76dc05cb743e9fc` | `ports/matplotlib/eyllanesc/ellipse-demo-b76dc05cb743e9fc.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `43f4640a040ded3e` | `ports/matplotlib/eyllanesc/fill-43f4640a040ded3e.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `26b75bfff47f567d` | `ports/matplotlib/eyllanesc/histogram-features-26b75bfff47f567d.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `5354655012c2060e` | `ports/matplotlib/eyllanesc/image-demo-5354655012c2060e.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `6cb023a08571bf96` | `ports/matplotlib/eyllanesc/legend-6cb023a08571bf96.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `1ffcdfb872b0e689` | `ports/matplotlib/eyllanesc/log-demo-1ffcdfb872b0e689.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `8fc6773f10b89095` | `ports/matplotlib/eyllanesc/main-8fc6773f10b89095.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas and NavigationToolbar2QT, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `5c181bebc7c9773c` | `ports/matplotlib/eyllanesc/path-patch-5c181bebc7c9773c.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `e2f27c6394aa70c8` | `ports/matplotlib/eyllanesc/pcolormesh-levels-e2f27c6394aa70c8.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `5d8303b0b2237124` | `ports/matplotlib/eyllanesc/pie-features-5d8303b0b2237124.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `19398065f86e2762` | `ports/matplotlib/eyllanesc/plot-streamplot-19398065f86e2762.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `80aa961de86e1704` | `ports/matplotlib/eyllanesc/polar-demo-80aa961de86e1704.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `2588c05ccd043d91` | `ports/matplotlib/eyllanesc/scatter-demo2-2588c05ccd043d91.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `8cb9580232bd8081` | `ports/matplotlib/eyllanesc/simple-plot-8cb9580232bd8081.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `207f7ce534696c20` | `ports/matplotlib/eyllanesc/subplot-207f7ce534696c20.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `96777c686c66d526` | `ports/matplotlib/eyllanesc/surface3d-96777c686c66d526.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `d82b14fd5e1eb010` | `ports/matplotlib/eyllanesc/table-demo-d82b14fd5e1eb010.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `ee1562b25c092ee8` | `ports/matplotlib/eyllanesc/tex-demo-ee1562b25c092ee8.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `60a3d030c4744735` | `ports/matplotlib/eyllanesc/buttons-60a3d030c4744735.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `f5d13b3c5b699ab3` | `ports/matplotlib/eyllanesc/check-buttons-f5d13b3c5b699ab3.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `620da7edd0cd23fc` | `ports/matplotlib/eyllanesc/cursor-620da7edd0cd23fc.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `c6effccd6f31f416` | `ports/matplotlib/eyllanesc/lasso-selector-demo-c6effccd6f31f416.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `f2767c945bece214` | `ports/matplotlib/eyllanesc/menu-f2767c945bece214.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `21a081a01365c096` | `ports/matplotlib/eyllanesc/multicursor-21a081a01365c096.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `22be270b0ff2abf7` | `ports/matplotlib/eyllanesc/radio-buttons-22be270b0ff2abf7.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `01be5e33878e4940` | `ports/matplotlib/eyllanesc/rectangle-selector-01be5e33878e4940.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `9007853b5b845ed9` | `ports/matplotlib/eyllanesc/slider-demo-9007853b5b845ed9.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `1862a5f7d89bd9b6` | `ports/matplotlib/eyllanesc/span-selector-1862a5f7d89bd9b6.py` | blocked | GPL-3.0-only | The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed. |
+| `b3c5b8f7bcf09a1d` | `ports/video-overlay/eyllanesc/main-b3c5b8f7bcf09a1d.py` | blocked | GPL-3.0-only | PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QGraphicsVideoItem, QMediaContent, QMediaPlayer. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `e9392311a500d3dd` | `ports/video-overlay/eyllanesc/main-e9392311a500d3dd.py` | blocked | GPL-3.0-only | PythonQt does not export QtQml / QtMultimedia; required native APIs: QAbstractVideoBuffer, QAbstractVideoFilter, QAbstractVideoSurface, QQmlApplicationEngine, QVideoFilterRunnable, QVideoFrame, QVideoSurfaceFormat, qmlRegisterType. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. |
+| `1e79bddb6d52574d` | `ports/network/pyqt-examples/01-single-threaded-1e79bddb6d52574d.py` | implemented | MIT | Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Preserve single GUI-thread 1000 ms polling pattern with bounded local requests. Stop/join workers before disconnect/delete; no dependency installed. |
+| `88fa78cafb505cfa` | `ports/network/pyqt-examples/02-multithreaded-88fa78cafb505cfa.py` | implemented | MIT | Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Cancellable Python worker, bounded plain-data queue and GUI timer drain replace infinite daemon/threadutil signals; 1000 ms display cadence. Stop/join workers before disconnect/delete; no dependency installed. |
+| `83bc55d45ae367d0` | `ports/network/pyqt-examples/03-with-threadutil-83bc55d45ae367d0.py` | implemented | MIT | Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Cancellable Python worker, bounded plain-data queue and GUI timer drain replace infinite daemon/threadutil signals; 30 ms GUI delivery cadence. Stop/join workers before disconnect/delete; no dependency installed. |
+
+
+### Native acceptance procedure
+
+For each implemented entry: launch(id), inspect(id), drive the named controls
+below, then named close(id). Record launch deadline, state/visual/interaction
+evidence, all owned QObject destruction after deferred delete, empty registry,
+stopped/joined workers, released paths/ports and host still alive. Relaunch.
+Doubles validate boundaries and actual owned socket/HTTP transport; they do not
+prove native virtual callbacks, visual rendering or wrapper overload dispatch.
+
+### Batch 9 93131a29a3b71ea3
+
+`ports/graphics-painting/eyllanesc/main-93131a29a3b71ea3.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QAreaSeries, QChart, QChartView, QLineSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("93131a29a3b71ea3") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 e1c73422208670cb
+
+`ports/multimedia/eyllanesc/main-e1c73422208670cb.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QChart, QChartView, QLineSeries, QValueAxis, QXYSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("e1c73422208670cb") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 9fed8c2f3765272b
+
+`ports/graphics-painting/eyllanesc/main-9fed8c2f3765272b.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QBarCategoryAxis, QBarSeries, QBarSet, QChart, QChartView, QValueAxis. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("9fed8c2f3765272b") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 c862c1b57a0a0412
+
+`ports/charts/eyllanesc/main-c862c1b57a0a0412.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QBarCategoryAxis, QBarSeries, QChart, QChartView, QVBarModelMapper, QValueAxis. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("c862c1b57a0a0412") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f9107c0d26ffc4aa
+
+`ports/graphics-painting/eyllanesc/main-f9107c0d26ffc4aa.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QBoxPlotSeries, QBoxSet, QChart, QChartView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f9107c0d26ffc4aa") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 6bd9cbb60a6ac008
+
+`ports/charts/eyllanesc/main-6bd9cbb60a6ac008.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QChart, QLineSeries, QSplineSeries. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("6bd9cbb60a6ac008") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 032d404c69db6baa
+
+`ports/graphics-painting/eyllanesc/main-032d404c69db6baa.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtCharts (QtChart); required native APIs: QCandlestickSeries, QCandlestickSet, QChart, QChartView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("032d404c69db6baa") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 4bc27e706ac146f5
+
+`ports/corelib/eyllanesc/main-4bc27e706ac146f5.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Reuse the existing local IPC port with an owned unique endpoint and explicit peer. Preserve Qt 5.10 UInt32 + QString framing; correct upstream len(message) prefix to serialized payload byte length and currentFortune assignment/hostLineEdit.ext typo. Inert inspection, timeout, duplicate retry timer and socket abort before close.
+
+Native: Launch under 5 s; endpoint is a unique owned Unix socket, hostLineEdit read-only. Click getFortuneButton twice; inspect fortune/received/pending and verify seven original fortunes and UInt32/Qt QString frames. Request Unicode from an owned peer; fragmented/truncated frames and requestTimer timeout report an error without host changes. Close while pending and while retryTimer is active, relaunch; socket path gone, all timers stopped, slots disconnected and owned objects destroyed.
+
+### Batch 9 cb1871959e42607b
+
+`ports/corelib/eyllanesc/main-cb1871959e42607b.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Reuse the existing local IPC port with an owned unique endpoint and explicit peer. Preserve Qt 5.10 UInt32 + QString framing; correct upstream len(message) prefix to serialized payload byte length and currentFortune assignment/hostLineEdit.ext typo. Inert inspection, timeout, duplicate retry timer and socket abort before close.
+
+Native: Launch under 5 s; listening=true on a unique owned Unix socket. Click getFortuneButton (Test owned client); observe sent and received, fortune text and UInt32/Qt QString payload. Check fragmented frame/error/timeout handling. Close while a peer is connected, verify server/socket/timer destruction and endpoint removal; relaunch creates a new endpoint.
+
+### Batch 9 04e8e49f95de6cf5
+
+`ports/corelib/eyllanesc/dialog-ui-04e8e49f95de6cf5.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt.QtCore.QSharedMemory lacks detach(). The associated Dialog requires native shared-memory image exchange and explicit detach; the generated UI entrypoint launches that same Dialog. An owned segment cannot be implemented and safely released.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("04e8e49f95de6cf5") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 24b0b2aa8998d701
+
+`ports/corelib/eyllanesc/main-24b0b2aa8998d701.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt.QtCore.QSharedMemory lacks detach(). The associated Dialog requires native shared-memory image exchange and explicit detach; the generated UI entrypoint launches that same Dialog. An owned segment cannot be implemented and safely released.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("24b0b2aa8998d701") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 7bddaa324636868a
+
+`ports/platform/eyllanesc/ping-7bddaa324636868a.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("7bddaa324636868a") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 fa5e7696ac61b89f
+
+`ports/platform/eyllanesc/pong-fa5e7696ac61b89f.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtDBus; required native APIs: QDBusConnection, QDBusInterface, QDBusReply. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("fa5e7696ac61b89f") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 9d1a670d70c19b6a
+
+`ports/qml/eyllanesc/main-9d1a670d70c19b6a.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("9d1a670d70c19b6a") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 3299c18eadf92b5d
+
+`ports/qml/eyllanesc/main-3299c18eadf92b5d.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("3299c18eadf92b5d") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f581c1e4f121df88
+
+`ports/qml/eyllanesc/main-f581c1e4f121df88.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f581c1e4f121df88") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 2529316479664459
+
+`ports/qml/eyllanesc/main-2529316479664459.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQuickView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("2529316479664459") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 6386ec6f1ca4ffd4
+
+`ports/qml/eyllanesc/main-6386ec6f1ca4ffd4.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine, QQmlContext, QQuickWindow. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("6386ec6f1ca4ffd4") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 92fc3cf4b5dd009c
+
+`ports/embedded/eyllanesc/main-92fc3cf4b5dd009c.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Reuse the previously adapted LightMaps/SlippyMap/MapZoom behavior: owned localhost tile fixture/cache and numeric component geometry instead of wrapper operators; preserve city actions, night inversion, 701 ms hold and magnifier/pan. About opens an owned asynchronous notice, never external OpenStreetMap. Fix upstream fractional dimensions and zoomPixmap variable error.
+
+Native: Launch Light Maps under 5 s; no external network, localhost tiles/cache only. Drive osloAction/berlinAction/jakartaAction, nightModeAction, arrow keys, Z magnifier, mouse pan/701 ms hold and resize; inspect latitude/longitude/zoom/night_mode/tile_count and magnifier state. About opens only an owned asynchronous notice. Check visual magnifier/city/pan/inversion behavior, close during tile request and drag; timers/workers/sockets/cache stop and disappear, host stays alive.
+
+### Batch 9 631cc1bc310c00b9
+
+`ports/embedded/eyllanesc/main-631cc1bc310c00b9.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Exact stylewidget.ui and all eight QSS/image files copied. QUiLoader connections reconnected explicitly through Demo; style button auto-slots wired explicitly. QSS applies only to the owned window, not QApplication; full-screen launch and application/organization metadata writes removed. Preserve value/scrollbar/show/enable wiring.
+
+Native: Launch original Form UI under 5 s; spinBox and both horizontalScrollBars track values in both directions. Drive pushButton Enable and pushButton_2 Show toggles. Click blueStyle/khakiStyle/transparentStyle/noStyle, verify original images/QSS and owned-window-only styling. Verify no full-screen takeover or QApplication identity/style change; close and relaunch, destroy UI/loader/buffer and disconnect all declared/explicit callbacks.
+
+### Batch 9 3525151ac8d550f5
+
+`ports/graphics-painting/eyllanesc/main-3525151ac8d550f5.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt.QtGui.QGradient lacks the NightFade preset and its preset constructor overload, required by RasterWindow.renderNow for its exact background. QWindow/QBackingStore exist, but a replacement gradient is not supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("3525151ac8d550f5") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 a207ef153f0b81b7
+
+`ports/threads-processes/eyllanesc/main-a207ef153f0b81b7.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original launcher spawns sys.executable with a PyQt5/PySide2 binding and launches quickcontrols2/gallery, which requires absent QtQml/QtQuick/QtQuickControls2. PythonQt also has no Python Signal/Slot declaration API. Replacing it with the in-host examples launcher changes its subprocess/binding-selection behavior; it is blocked.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("a207ef153f0b81b7") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 0d72445fb116793d
+
+`ports/network/eyllanesc/audiodevicesbase-ui-0d72445fb116793d.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("0d72445fb116793d") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 307534c4e8e2211c
+
+`ports/multimedia/eyllanesc/main-307534c4e8e2211c.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QAudio, QAudioDeviceInfo, QAudioFormat. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("307534c4e8e2211c") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 eea833917398267a
+
+`ports/network/eyllanesc/main-eea833917398267a.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt.QtCore has no QXmlStreamReader, required by GSuggestCompletion.handleNetworkData to parse suggestions. A stdlib XML parser plus owned localhost suggestion/search server is a possible behavior-preserving future adaptation; this record does not claim that substitution is implemented.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("eea833917398267a") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 ecc2e23449331df1
+
+`ports/network/eyllanesc/main-ecc2e23449331df1.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Reuse the existing 50 MiB/64 KiB loopback transfer implementation; owned 127.0.0.1 receiver and native QTcpSocket sender. Replace unparented server, blocking retry dialog, global cursor and premature deleteLater with owned Python receiver/timer delivery and tracked cleanup.
+
+Native: Launch under 5 s; inspection sends no data. Click startButton: transfer exact 50 MiB in 64 KiB chunks against owned 127.0.0.1 receiver, bytes_written/bytes_received reach total_bytes and progress bars finish. Repeat; error state is owned and no global cursor change. Close mid-transfer; native tcpClient aborts, receiver worker joins and free port is released before widgets are deleted.
+
+### Batch 9 ccad55f9e06bfa93
+
+`ports/platform/eyllanesc/main-ccad55f9e06bfa93.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtPositioning; required native APIs: QGeoCoordinate, QGeoPositionInfo, QGeoPositionInfoSource. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("ccad55f9e06bfa93") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 0b7e380ab45addbd
+
+`ports/graphics-painting/eyllanesc/main-0b7e380ab45addbd.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt.QtGui.QMatrix4x4 exposes neither __mul__ nor a matrix-product method. PaintedWindow.paintEvent requires projection * view * model; wrapper arithmetic is forbidden in FontLab. QRasterWindow exists, but numeric matrix replacement is not implemented.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("0b7e380ab45addbd") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b1c25455dbcb6bac
+
+`ports/graphics-painting/eyllanesc/main-b1c25455dbcb6bac.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Preserve native QWindow/QBackingStore, two top-level windows, Window B child and extra-screen windows. Owned QTimer replaces startTimer; explicit finally ends image/backing painters before endPaint/flush. Per-build colors, explicit backing-store delete and subclass-reference release. Demo/launcher now distinguish QWindow from QWidget without assigning native widget attributes. Preserve original Backspace rule.
+
+Native: Launch under 5 s; two native QWindow top levels (Window A/B), ChildOfB, plus one window per non-primary screen. Inspect window_count/windows titles/colors/geometry/image_size/text. Type/draw in each, Enter/Backspace (source keeps final one-character text), resize without losing old strokes; exercise renderTimerN and real expose/resize callbacks. Verify native QBackingStore paint begins, painters end, endPaint then flush. Close/relaunch including pending render; timers stop, backing stores deleted exactly once, all QWindows/children destroyed, host alive and screen/host state unchanged.
+
+### Batch 9 8284e0348b6f7020
+
+`ports/qml/eyllanesc/main-8284e0348b6f7020.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("8284e0348b6f7020") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b4d27c5a05969f77
+
+`ports/qml/eyllanesc/main-b4d27c5a05969f77.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine, QQuickStyle. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("b4d27c5a05969f77") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f5ecef06968ffad8
+
+`ports/qml/eyllanesc/main-f5ecef06968ffad8.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f5ecef06968ffad8") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 bd4a25944ae5b2d7
+
+`ports/qml/eyllanesc/main-bd4a25944ae5b2d7.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("bd4a25944ae5b2d7") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 9e402cdc525108dd
+
+`ports/qml/eyllanesc/main-9e402cdc525108dd.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("9e402cdc525108dd") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 3ed66f4363a81cf2
+
+`ports/platform/eyllanesc/main-3ed66f4363a81cf2.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtSerialPort; required native APIs: QSerialPortInfo. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("3ed66f4363a81cf2") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b2127700642ffb25
+
+`ports/platform/eyllanesc/main-b2127700642ffb25.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtSerialPort; required native APIs: QSerialPortInfo. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("b2127700642ffb25") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 a3c7c0e56d0452cf
+
+`ports/database/eyllanesc/main-a3c7c0e56d0452cf.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("a3c7c0e56d0452cf") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 5b93264cdefad0d7
+
+`ports/database/eyllanesc/main-5b93264cdefad0d7.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("5b93264cdefad0d7") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 fd7c0bbed85eb2d4
+
+`ports/database/eyllanesc/main-fd7c0bbed85eb2d4.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtSql; required native APIs: QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalDelegate, QSqlRelationalTableModel, QSqlTableModel. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. A sqlite3 substitution would replace QtSql model/delegate semantics and is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("fd7c0bbed85eb2d4") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b92988bc55b506ee
+
+`ports/webengine/eyllanesc/main-b92988bc55b506ee.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("b92988bc55b506ee") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 ea0deb959e907448
+
+`ports/webengine/eyllanesc/main-ea0deb959e907448.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("ea0deb959e907448") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 da960851c5ad3baa
+
+`ports/webengine/eyllanesc/main-da960851c5ad3baa.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("da960851c5ad3baa") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 5646535663e933c0
+
+`ports/webengine/eyllanesc/main-5646535663e933c0.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick / QtWebEngine; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("5646535663e933c0") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 a4f928dfc9be8596
+
+`ports/webengine/eyllanesc/main-a4f928dfc9be8596.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("a4f928dfc9be8596") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 e6abb656a88ccad4
+
+`ports/webengine/eyllanesc/cookiedialog-ui-e6abb656a88ccad4.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("e6abb656a88ccad4") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 1e800054206a98ec
+
+`ports/webengine/eyllanesc/cookiewidget-ui-1e800054206a98ec.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("1e800054206a98ec") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 0dfe1b3b36d41c8d
+
+`ports/webengine/eyllanesc/main-0dfe1b3b36d41c8d.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("0dfe1b3b36d41c8d") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 8460861d4a65f625
+
+`ports/webengine/eyllanesc/mainwindow-ui-8460861d4a65f625.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineCookieStore, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("8460861d4a65f625") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 1f671605e1034b71
+
+`ports/webengine/eyllanesc/main-1f671605e1034b71.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("1f671605e1034b71") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 72838df47d1eddc0
+
+`ports/webengine/eyllanesc/main-72838df47d1eddc0.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("72838df47d1eddc0") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 a7eae99cebfb1806
+
+`ports/webengine/eyllanesc/main-a7eae99cebfb1806.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("a7eae99cebfb1806") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 2253cce5a4c3a077
+
+`ports/webengine/eyllanesc/mainwindow-ui-2253cce5a4c3a077.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("2253cce5a4c3a077") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 23d091dcf5a72224
+
+`ports/webengine/eyllanesc/main-23d091dcf5a72224.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("23d091dcf5a72224") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 c9510fb6daa7d1bd
+
+`ports/webengine/eyllanesc/main-c9510fb6daa7d1bd.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("c9510fb6daa7d1bd") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 7fece60acaf2b392
+
+`ports/webengine/eyllanesc/main-7fece60acaf2b392.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("7fece60acaf2b392") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 856b2b33c69b4e19
+
+`ports/webengine/eyllanesc/main-856b2b33c69b4e19.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("856b2b33c69b4e19") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 11ec97a8c43a5283
+
+`ports/webengine/eyllanesc/main-11ec97a8c43a5283.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebEngineCore / QtWebEngineWidgets; required native APIs: QWebEnginePage, QWebEngineProfile, QWebEngineUrlRequestJob, QWebEngineUrlScheme, QWebEngineUrlSchemeHandler, QWebEngineView. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("11ec97a8c43a5283") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 768c423bdd1fa074
+
+`ports/network/eyllanesc/main-768c423bdd1fa074.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtWebSockets; required native APIs: QWebSocketServer. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("768c423bdd1fa074") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 edeef5f840c20e15
+
+`ports/network/eyllanesc/google-search-edeef5f840c20e15.py` — **implemented**, GPL-3.0-only; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Preserve QString completion/model/toolbar XML query and response behavior against owned localhost HTTP suggestions. Replace lib.py custom signals and blocking QEventLoop in splitPath with textEdited debounce and asynchronous replies; abort old reply and disconnect before delete, two-second request timeout, refuse redirects, parse with original stdlib ElementTree. No external Google request.
+
+Native: Launch 640x60 line edit under 5 s; inspection causes no request. Type Unicode to drive textEdited/suggestTimer or invoke search; expect exact input, input + PythonQt and input + FontLab from owned localhost XML response, row_count=3 and pending=false. Select completion natively, test empty query, replace pending request and requestTimer timeout. Close with popup/reply active: disconnect before abort/delete, stop timers, join fixture worker and release port; no Google/network redirect contact.
+
+### Batch 9 08ba2f1b1fe02894
+
+`ports/qml/eyllanesc/main-08ba2f1b1fe02894.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtQuick; required native APIs: QQmlApplicationEngine. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("08ba2f1b1fe02894") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 a0ac1b252a14609e
+
+`ports/gstreamer/eyllanesc/main-a0ac1b252a14609e.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QMediaContent, QMediaPlayer, QVideoWidget. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied. The Qt GStreamer pipeline player/video sink is also unavailable.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("a0ac1b252a14609e") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f13380d705146bff
+
+`ports/matplotlib/eyllanesc/subplot-f13380d705146bff.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f13380d705146bff") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 52871219c50cdd21
+
+`ports/matplotlib/eyllanesc/barchart-demo-52871219c50cdd21.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("52871219c50cdd21") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 7cc9bd76e925db18
+
+`ports/matplotlib/eyllanesc/date-7cc9bd76e925db18.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("7cc9bd76e925db18") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b76dc05cb743e9fc
+
+`ports/matplotlib/eyllanesc/ellipse-demo-b76dc05cb743e9fc.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("b76dc05cb743e9fc") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 43f4640a040ded3e
+
+`ports/matplotlib/eyllanesc/fill-43f4640a040ded3e.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("43f4640a040ded3e") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 26b75bfff47f567d
+
+`ports/matplotlib/eyllanesc/histogram-features-26b75bfff47f567d.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("26b75bfff47f567d") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 5354655012c2060e
+
+`ports/matplotlib/eyllanesc/image-demo-5354655012c2060e.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("5354655012c2060e") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 6cb023a08571bf96
+
+`ports/matplotlib/eyllanesc/legend-6cb023a08571bf96.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("6cb023a08571bf96") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 1ffcdfb872b0e689
+
+`ports/matplotlib/eyllanesc/log-demo-1ffcdfb872b0e689.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("1ffcdfb872b0e689") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 8fc6773f10b89095
+
+`ports/matplotlib/eyllanesc/main-8fc6773f10b89095.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas and NavigationToolbar2QT, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("8fc6773f10b89095") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 5c181bebc7c9773c
+
+`ports/matplotlib/eyllanesc/path-patch-5c181bebc7c9773c.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("5c181bebc7c9773c") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 e2f27c6394aa70c8
+
+`ports/matplotlib/eyllanesc/pcolormesh-levels-e2f27c6394aa70c8.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("e2f27c6394aa70c8") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 5d8303b0b2237124
+
+`ports/matplotlib/eyllanesc/pie-features-5d8303b0b2237124.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("5d8303b0b2237124") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 19398065f86e2762
+
+`ports/matplotlib/eyllanesc/plot-streamplot-19398065f86e2762.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("19398065f86e2762") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 80aa961de86e1704
+
+`ports/matplotlib/eyllanesc/polar-demo-80aa961de86e1704.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("80aa961de86e1704") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 2588c05ccd043d91
+
+`ports/matplotlib/eyllanesc/scatter-demo2-2588c05ccd043d91.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("2588c05ccd043d91") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 8cb9580232bd8081
+
+`ports/matplotlib/eyllanesc/simple-plot-8cb9580232bd8081.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("8cb9580232bd8081") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 207f7ce534696c20
+
+`ports/matplotlib/eyllanesc/subplot-207f7ce534696c20.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("207f7ce534696c20") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 96777c686c66d526
+
+`ports/matplotlib/eyllanesc/surface3d-96777c686c66d526.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("96777c686c66d526") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 d82b14fd5e1eb010
+
+`ports/matplotlib/eyllanesc/table-demo-d82b14fd5e1eb010.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("d82b14fd5e1eb010") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 ee1562b25c092ee8
+
+`ports/matplotlib/eyllanesc/tex-demo-ee1562b25c092ee8.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("ee1562b25c092ee8") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 60a3d030c4744735
+
+`ports/matplotlib/eyllanesc/buttons-60a3d030c4744735.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("60a3d030c4744735") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f5d13b3c5b699ab3
+
+`ports/matplotlib/eyllanesc/check-buttons-f5d13b3c5b699ab3.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f5d13b3c5b699ab3") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 620da7edd0cd23fc
+
+`ports/matplotlib/eyllanesc/cursor-620da7edd0cd23fc.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("620da7edd0cd23fc") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 c6effccd6f31f416
+
+`ports/matplotlib/eyllanesc/lasso-selector-demo-c6effccd6f31f416.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("c6effccd6f31f416") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 f2767c945bece214
+
+`ports/matplotlib/eyllanesc/menu-f2767c945bece214.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("f2767c945bece214") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 21a081a01365c096
+
+`ports/matplotlib/eyllanesc/multicursor-21a081a01365c096.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("21a081a01365c096") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 22be270b0ff2abf7
+
+`ports/matplotlib/eyllanesc/radio-buttons-22be270b0ff2abf7.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("22be270b0ff2abf7") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 01be5e33878e4940
+
+`ports/matplotlib/eyllanesc/rectangle-selector-01be5e33878e4940.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("01be5e33878e4940") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 9007853b5b845ed9
+
+`ports/matplotlib/eyllanesc/slider-demo-9007853b5b845ed9.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("9007853b5b845ed9") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 1862a5f7d89bd9b6
+
+`ports/matplotlib/eyllanesc/span-selector-1862a5f7d89bd9b6.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt. This is not an Agg-only demo. FontLab matplotlib availability is unverified; installing a binding or substituting a static image for the original canvas/event behavior is not performed.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("1862a5f7d89bd9b6") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 b3c5b8f7bcf09a1d
+
+`ports/video-overlay/eyllanesc/main-b3c5b8f7bcf09a1d.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtMultimedia / QtMultimediaWidgets; required native APIs: QGraphicsVideoItem, QMediaContent, QMediaPlayer. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("b3c5b8f7bcf09a1d") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 e9392311a500d3dd
+
+`ports/video-overlay/eyllanesc/main-e9392311a500d3dd.py` — **blocked**, GPL-3.0-only; native unexecuted.
+
+PythonQt does not export QtQml / QtMultimedia; required native APIs: QAbstractVideoBuffer, QAbstractVideoFilter, QAbstractVideoSurface, QQmlApplicationEngine, QVideoFilterRunnable, QVideoFrame, QVideoSurfaceFormat, qmlRegisterType. The pinned behavior requires these capabilities; no alternate Qt binding or replacement UI is supplied.
+
+Native: Confirm the recorded missing module/member/backend against the FontLab/Echopy exports. Call launch("e9392311a500d3dd") and direct build with an untouched host: both must raise NotImplementedError with the exact recorded reason before host lookup, UI, network, subprocess or resource access. Verify registry and FontLab state unchanged. This is blocker acceptance, not a functioning port.
+
+### Batch 9 1e79bddb6d52574d
+
+`ports/network/pyqt-examples/01-single-threaded-1e79bddb6d52574d.py` — **implemented**, MIT; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Preserve single GUI-thread 1000 ms polling pattern with bounded local requests. Stop/join workers before disconnect/delete; no dependency installed.
+
+Native: Launch under 5 s; no console input. Set name/message to Unicode, drive returnPressed/send_message, then wait for the one-second pollTimer. Inspect exact name: message text, sent/received and cleared edit. Requests contact only the owned numerical localhost endpoint and have 250 ms deadlines. Test owned service failure; close with polling active, verify fixture worker joined, timer stopped, slots disconnected and port freed. Host stays alive and relaunch starts empty.
+
+### Batch 9 88fa78cafb505cfa
+
+`ports/network/pyqt-examples/02-multithreaded-88fa78cafb505cfa.py` — **implemented**, MIT; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Cancellable Python worker, bounded plain-data queue and GUI timer drain replace infinite daemon/threadutil signals; 1000 ms display cadence. Stop/join workers before disconnect/delete; no dependency installed.
+
+Native: Launch under 5 s; set Unicode name/message, returnPressed queues POST, Python worker polls every 500 ms; one-second GUI timer drains results. Inspect worker_alive/phase/timer_active, sent/received and exact displayed text. Repeat sends, close immediately after enqueue and during poll; both owned service and client workers must join before disconnect/delete, with no Qt call from a worker, no third-party traffic and released localhost port.
+
+### Batch 9 83bc55d45ae367d0
+
+`ports/network/pyqt-examples/03-with-threadutil-83bc55d45ae367d0.py` — **implemented**, MIT; native unexecuted.
+
+Injected PythonQt namespace and host event loop; tracked connections, owned timers/resources and disconnect-before-delete ExampleHandle cleanup. Native acceptance remains unexecuted.
+
+Replace third-party chat HTTP endpoint with an owned localhost service and console input with owned name field. stdlib HTTPConnection replaces requests; 250 ms deadline. Cancellable Python worker, bounded plain-data queue and GUI timer drain replace infinite daemon/threadutil signals; 30 ms GUI delivery cadence. Stop/join workers before disconnect/delete; no dependency installed.
+
+Native: Launch under 5 s; set Unicode name/message, returnPressed queues POST; Python worker polls every 500 ms, 30 ms GUI delivery replaces threadutil custom signal. Verify exact displayed name: message, cleared input, sent/received and worker state. Close with pending results and relaunch; service/client workers stop and join before slots disconnect/delete; no native wrapper crosses a worker boundary or third-party request occurs.

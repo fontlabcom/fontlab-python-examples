@@ -115,8 +115,9 @@ class Demo:
             from fontlabapp.widgets import OwnedWidget
 
             self.handle.alerts.append(OwnedWidget(window, window))
-        window.setAttribute(self.qt.QtCore.Qt.WA_QuitOnClose, False)
-        window.setAttribute(self.qt.QtCore.Qt.WA_DeleteOnClose, False)
+        if window.inherits("QWidget"):
+            window.setAttribute(self.qt.QtCore.Qt.WA_QuitOnClose, False)
+            window.setAttribute(self.qt.QtCore.Qt.WA_DeleteOnClose, False)
 
     def prepare_close(self) -> None:
         """Keep the drag source alive until the native macOS drag returns."""
@@ -437,7 +438,9 @@ class Demo:
         self.handle.controls.update(self.controls)
         self.handle.controls["window"] = window
         self.handle.inspect_ui = lambda: {
-            "title": str(read(window, "windowTitle")),
+            "title": str(
+                read(window, "windowTitle" if window.inherits("QWidget") else "title")
+            ),
             "width": int(read(window, "width")),
             "height": int(read(window, "height")),
             "controls": {
@@ -689,11 +692,13 @@ class LocalFortune:
     Both IPC demos create this peer so acceptance never needs another process.
     """
 
-    def __init__(self, demo: Demo, fortunes: tuple[str, ...]) -> None:
+    def __init__(
+        self, demo: Demo, fortunes: tuple[str, ...], *, frame_bytes: int = 2
+    ) -> None:
         # Keep the Unix socket path below macOS's sockaddr_un length limit.
         demo.temporary = TemporaryDirectory(prefix="fl-ipc-", dir="/tmp")
         self.endpoint = str(Path(demo.temp_dir()) / "fortune")
-        self.demo, self.fortunes = demo, fortunes
+        self.demo, self.fortunes, self.frame_bytes = demo, fortunes, frame_bytes
         self.clients, self.sent = [], 0
         self.server = demo.remember(
             "server", demo.qt.QtNetwork.QLocalServer(demo.handle.widget)
@@ -716,6 +721,8 @@ class LocalFortune:
                 return
             self.clients.append(client)
             packet = fortune_packet(random.choice(self.fortunes))
+            if self.frame_bytes == 4:
+                packet = (len(packet) - 2).to_bytes(4, "big") + packet[2:]
             if client.write(self.demo.qt.QtCore.QByteArray(packet)) != len(packet):
                 self.demo.error = "Cannot queue complete local fortune frame"
                 client.abort()
@@ -732,3 +739,205 @@ class LocalFortune:
 
     def snapshot(self) -> dict:
         return {"listening": bool(self.server.isListening()), "sent": self.sent}
+
+
+class LocalHttp:
+    """Small owned HTTP fixture using LocalServer's existing cancellable worker."""
+
+    def __init__(self, demo: Demo, respond: Any) -> None:
+        import time
+
+        def serve(connection: Any, stop: Any, publish: Any) -> None:
+            data = bytearray()
+            deadline = time.monotonic() + 1.0
+            while b"\r\n\r\n" not in data:
+                if stop.is_set() or time.monotonic() > deadline or len(data) > 65536:
+                    return
+                try:
+                    chunk = connection.recv(4096)
+                except TimeoutError:
+                    continue
+                if not chunk:
+                    return
+                data.extend(chunk)
+            head, body = bytes(data).split(b"\r\n\r\n", 1)
+            lines = head.split(b"\r\n")
+            method, path, _version = lines[0].decode("ascii").split(" ", 2)
+            length = 0
+            for line in lines[1:]:
+                key, value = line.split(b":", 1)
+                if key.lower() == b"content-length":
+                    length = int(value.strip())
+            if length < 0 or length > 65536:
+                raise ValueError("Invalid owned HTTP request size")
+            while len(body) < length:
+                if stop.is_set() or time.monotonic() > deadline:
+                    return
+                try:
+                    chunk = connection.recv(min(4096, length - len(body)))
+                except TimeoutError:
+                    continue
+                if not chunk:
+                    return
+                body += chunk
+            response, content_type = respond(method, path, body[:length])
+            connection.sendall(
+                b"HTTP/1.1 200 OK\r\nContent-Type: "
+                + content_type.encode("ascii")
+                + b"\r\nContent-Length: "
+                + str(len(response)).encode("ascii")
+                + b"\r\nConnection: close\r\n\r\n"
+                + response
+            )
+            publish(("served", len(response)))
+
+        self.endpoint = LocalServer(demo, serve)
+
+    def url(self, path: str) -> str:
+        return f"http://{self.endpoint.host}:{self.endpoint.port}{path}"
+
+
+def build_chat(qt: Any, path: str, source_id: str, variant: str) -> ExampleHandle:
+    """Preserve the three chat delivery patterns against an owned HTTP peer.
+
+    Single-threaded keeps bounded synchronous local requests on its GUI timer;
+    multithreaded/threadutil deliver plain results through WorkerDelivery instead
+    of PyQt custom signals. Neither worker retains or touches a native wrapper.
+    """
+    from http.client import HTTPConnection
+    from queue import Empty, Queue
+    from threading import Lock
+    from urllib.parse import parse_qs, urlencode
+
+    demo = Demo(qt, path, source_id)
+    gui, core = qt.QtGui, qt.QtCore
+    window = gui.QWidget()
+    demo.begin(window)
+    try:
+        window.setWindowTitle("PyQt Thread " + variant)
+        layout = gui.QVBoxLayout(window)
+        name = demo.remember("name", gui.QLineEdit("Example user", window))
+        text_area = demo.remember("text_area", gui.QPlainTextEdit(window))
+        text_area.setFocusPolicy(core.Qt.NoFocus)
+        message = demo.remember("message", gui.QLineEdit(window))
+        for control in (name, text_area, message):
+            layout.addWidget(control)
+        pending, lock = [], Lock()
+
+        def respond(method: str, route: str, body: bytes) -> tuple[bytes, str]:
+            if route != "/chat":
+                raise ValueError("Unknown owned chat route")
+            with lock:
+                if method == "POST":
+                    values = parse_qs(body.decode("utf-8"))
+                    pending.append(
+                        values.get("name", [""])[0]
+                        + ": "
+                        + values.get("message", [""])[0]
+                    )
+                    return b"", "text/plain; charset=utf-8"
+                if method != "GET":
+                    raise ValueError("Unknown owned chat method")
+                result = "\n".join(pending)
+                pending.clear()
+                return result.encode("utf-8"), "text/plain; charset=utf-8"
+
+        server = LocalHttp(demo, respond)
+        host, port = server.endpoint.host, server.endpoint.port
+        state = {"received": 0, "sent": 0}
+        outgoing = Queue(16)
+
+        def request(method: str, body: str | None = None) -> str:
+            connection = HTTPConnection(host, port, timeout=0.25)
+            try:
+                connection.request(
+                    method,
+                    "/chat",
+                    body=body,
+                    headers={"Content-Type": "application/x-www-form-urlencoded"},
+                )
+                response = connection.getresponse()
+                if response.status != 200:
+                    raise OSError("Owned chat HTTP status " + str(response.status))
+                return response.read(65536).decode("utf-8")
+            finally:
+                connection.close()
+
+        def deliver(value: Any) -> None:
+            if value[0] == "messages" and value[1]:
+                text_area.appendPlainText(value[1])
+                state["received"] += 1
+            elif value[0] == "sent":
+                state["sent"] += 1
+
+        worker = WorkerDelivery(demo, deliver)
+
+        def poll(stop: Any, publish: Any) -> None:
+            while not stop.is_set():
+                try:
+                    body = outgoing.get_nowait()
+                except Empty:
+                    body = None
+                if body is not None:
+                    request("POST", body)
+                    publish(("sent", None))
+                publish(("messages", request("GET")))
+                if stop.wait(0.5):
+                    return
+
+        timer = demo.remember("pollTimer", core.QTimer(window))
+        demo.handle.cleanup.append(timer.stop)
+
+        def display() -> None:
+            try:
+                deliver(("messages", request("GET")))
+            except (OSError, ValueError) as error:
+                demo.error = str(error)
+
+        def send() -> None:
+            body = urlencode(
+                {"name": str(read(name, "text")), "message": str(read(message, "text"))}
+            )
+            if variant == "single_threaded":
+                try:
+                    request("POST", body)
+                    state["sent"] += 1
+                except (OSError, ValueError) as error:
+                    demo.error = str(error)
+                    return
+            else:
+                from queue import Full
+
+                try:
+                    outgoing.put_nowait(body)
+                except Full:
+                    demo.error = "Owned chat send queue is full"
+                    return
+            message.clear()
+
+        demo.connect(message, "returnPressed()", send)
+        demo.connect(timer, "timeout()", display)
+        if variant == "single_threaded":
+            timer.start(1000)
+        else:
+            worker.start(poll)
+            # Original 02 drains once per second; 03 threadutil dispatches promptly.
+            worker.timer.setInterval(1000 if variant == "multithreaded" else 30)
+        demo.remember("send_message", send)
+        return demo.finish(
+            window,
+            lambda: {
+                **state,
+                "variant": variant,
+                "name": str(read(name, "text")),
+                "message": str(read(message, "text")),
+                "text": str(text_area.toPlainText()),
+                "endpoint": server.url("/chat"),
+                "worker": worker.snapshot(),
+                "poll_timer_active": bool(timer.isActive()),
+                "owned_endpoint": True,
+            },
+        )
+    except BaseException:
+        demo.abort()
+        raise

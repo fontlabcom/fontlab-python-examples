@@ -6,6 +6,18 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Fix native screen selection in QPA windows and screenshot; use
+  static screen enumeration instead of the null primaryScreen property. Compare
+  name/geometry and cover native property semantics and screen aliases in doubles.
+
+- 2026-10-14: Account for the remaining 97 requested entrypoints (94 QtExamples
+  and three numbered chats): ten owned PythonQt implementations and 87 precise
+  blockers, all native acceptance unexecuted. Extend existing Demo, IPC, worker,
+  localhost and doubles infrastructure; preserve QWindow painting, style UI/assets,
+  maps, loopback, asynchronous suggestions and three chat delivery variants.
+  Record GPL-3.0-only/MIT evidence, exact resource hashes and per-entry native
+  checklists. No binding/dependency installation, TODO completion or commit.
+
 - 2026-10-14: Account for all remaining 74 official entrypoints: 16 PythonQt
   implementations and 58 precise capability/dependency blockers, native acceptance
   unexecuted. Preserve 14 exact UI/XML/XSD copies, per-source licences including

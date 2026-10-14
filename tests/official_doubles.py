@@ -86,6 +86,10 @@ def official_host(qt):
                 )
             if key in SIGNALS:
                 raise AttributeError(key)
+            if key == "primaryScreen" and cls._qt_name == "QApplication":
+                screen = streams.setdefault("nullScreen", classes["QScreen"]())
+                screen._extra["null"] = True
+                return screen
             if key == "ExtraSelection" and cls._qt_name == "QTextEdit":
                 return lambda: SimpleNamespace(
                     format=classes["QTextCharFormat"](),
@@ -95,6 +99,10 @@ def official_host(qt):
                 return enum(key) if key[0].isupper() else None
 
             def static(*args):
+                if key == "instance" and cls._qt_name == "QApplication":
+                    return streams.setdefault("app", classes["QApplication"]())
+                if key == "screens" and cls._qt_name == "QApplication":
+                    return qt._screens
                 if key == "keys":
                     return ["Fusion", "Windows"]
                 if key == "create":
@@ -345,6 +353,8 @@ def official_host(qt):
                 object.__setattr__(self, "geometry", classes["QRect"](0, 0, 400, 300))
 
         def __getattr__(self, key):
+            if key == "primaryScreen" and self._qt_name == "QApplication":
+                return None
             if key in self._fields:
                 if key in SIGNALS:
                     return self._signals.setdefault(key, Signal())
@@ -654,7 +664,9 @@ def official_host(qt):
                     url.hostname, url.port, timeout=0.5
                 )
                 try:
-                    connection.request("GET", url.path)
+                    connection.request(
+                        "GET", url.path + ("?" + url.query if url.query else "")
+                    )
                     response = connection.getresponse()
                     reply = classes["QNetworkReply"](self)
                     reply._extra.update(
@@ -1420,6 +1432,21 @@ def official_host(qt):
                     a[0], 1, *(a[1:] or (classes["QModelIndex"](),))
                 )
             if self._qt_name == "QStandardItemModel":
+                if key == "appendRow":
+                    items = a[0] if isinstance(a[0], list) else [a[0]]
+                    row = self._data["rowCount"]
+                    for column, item in enumerate(items):
+                        self._cells[(row, column)] = item
+                    self._data["rowCount"] += 1
+                    self._data["columnCount"] = max(
+                        self._data["columnCount"], len(items)
+                    )
+                    return None
+                if key == "clear":
+                    self._cells.clear()
+                    self._props.clear()
+                    self._data.update(rowCount=0, columnCount=0)
+                    return None
                 if key == "insertRow":
                     self._props = {
                         (r + (r >= a[0]), c, role): value
@@ -1546,7 +1573,26 @@ def official_host(qt):
             ):
                 return None
             if key == "inherits":
+                if self._qt_name in ("QWindow", "QBackingStore", "QScreen"):
+                    return a[0] == self._qt_name or (
+                        a[0] == "QObject" and self._qt_name != "QBackingStore"
+                    )
                 return a[0] == self._qt_name or a[0] in ("QObject", "QWidget")
+            if key == "screens":
+                return qt._screens
+            if key == "isExposed":
+                return self.visible
+            if key == "paintDevice" and self._qt_name == "QBackingStore":
+                return classes["QImage"](640, 480, classes["QImage"].Format_RGB32)
+            if (
+                key in ("beginPaint", "endPaint", "flush")
+                and self._qt_name == "QBackingStore"
+            ):
+                self._extra.setdefault("paint_calls", []).append(key)
+                return None
+            if key == "delete" and self._qt_name == "QBackingStore":
+                self.deleted = True
+                return None
             if key == "children":
                 return self._children
             if key == "setParent":
@@ -1595,6 +1641,10 @@ def official_host(qt):
                 if key not in self._extra:
                     self._extra[key] = classes[typ](self)
                 return self._extra[key]
+            if key == "appendPlainText":
+                self._data["text"] += ("\n" if self._data["text"] else "") + a[0]
+                self.emit("textChanged")
+                return None
             if key in ("setText", "setPlainText"):
                 self._data["text"] = a[-1]
                 if len(a) == 2:
@@ -1658,6 +1708,7 @@ def official_host(qt):
                 return self._extra.get(key)
             if key == "setGeometry":
                 self._position = a[0]._position[:] if len(a) == 1 else list(a)
+                self._data.update(width=self._position[2], height=self._position[3])
                 if self._fields.get("geometry") == "value":
                     self.geometry = classes["QRect"](*self._position)
                 return None
@@ -1683,6 +1734,8 @@ def official_host(qt):
                 return None
             if key == "isVisible":
                 return self.visible
+            if key == "isReadOnly":
+                return bool(self._data.get("readOnly", False))
             if key == "isEnabled":
                 return self._data["enabled"]
             if key == "isChecked":
@@ -2049,6 +2102,11 @@ def official_host(qt):
         def __iter__(self):
             return iter(self._items)
 
+        def __repr__(self):
+            if self._qt_name == "QScreen" and self._extra.get("null"):
+                return "QScreen (QScreen at: 0x0)"
+            return object.__repr__(self)
+
         def __eq__(self, other):
             if self._qt_name == "QColor":
                 return isinstance(other, Native) and self._args == other._args
@@ -2143,6 +2201,7 @@ def official_host(qt):
 
     qt.QtUiTools = SimpleNamespace(QUiLoader=Loader)
     qt._classes = classes
+    qt._screens = []
     qt._painters = []
     # Explicit injected native responses: this double does not implement XSD.
     qt._validation_result = (True, "", 1, 1)

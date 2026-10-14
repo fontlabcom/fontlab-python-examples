@@ -5,7 +5,7 @@ this_file: README.md
 # FontLab Python examples
 
 Complete source catalog for planned PythonQt ports of [pyqt/examples](https://github.com/pyqt/examples) and [eyllanesc/QtExamples](https://github.com/eyllanesc/QtExamples), for use inside running FontLab. Start at the [categorized index](catalog/INDEX.md).
-Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 127 official demos are implemented and await native acceptance.** Neither requested collection is complete.
+Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **All 298 Python entrypoint candidates plus the database initializer have port records: 148 implemented and 151 precisely blocked. Four retain recorded native acceptance; 144 implemented records await acceptance.** Collection-wide native acceptance is incomplete; ambiguous/QML/auxiliary candidates remain separate.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -250,6 +250,104 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official simpleselector` | `ae16288fede27692` | Blocked: PythonQt does not export QtWebKit / QtWebKitWidgets |
 | `Official schema` | `1e5d0f7289e1b36e` | Implemented; native acceptance unexecuted |
 
+| `QtExamples charts/areachart/main` | `93131a29a3b71ea3` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/audio/main` | `e1c73422208670cb` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/barchart/main` | `9fed8c2f3765272b` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/barmodelmapper/main` | `c862c1b57a0a0412` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/boxplotchart/main` | `f9107c0d26ffc4aa` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/callout/main` | `6bd9cbb60a6ac008` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples charts/candlestickchart/main` | `032d404c69db6baa` | Blocked: PythonQt does not export QtCharts (QtChart) |
+| `QtExamples corelib/ipc/localfortuneclient/main` | `4bc27e706ac146f5` | Implemented; native acceptance unexecuted |
+| `QtExamples corelib/ipc/localfortuneserver/main` | `cb1871959e42607b` | Implemented; native acceptance unexecuted |
+| `QtExamples corelib/ipc/sharedmemory/dialog_ui` | `04e8e49f95de6cf5` | Blocked: PythonQt.QtCore.QSharedMemory lacks detach() |
+| `QtExamples corelib/ipc/sharedmemory/main` | `24b0b2aa8998d701` | Blocked: PythonQt.QtCore.QSharedMemory lacks detach() |
+| `QtExamples dbus/pingpong/ping` | `7bddaa324636868a` | Blocked: PythonQt does not export QtDBus |
+| `QtExamples dbus/pingpong/pong` | `fa5e7696ac61b89f` | Blocked: PythonQt does not export QtDBus |
+| `QtExamples demos/calqlatr/main` | `9d1a670d70c19b6a` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples demos/clocks/main` | `3299c18eadf92b5d` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples demos/coffee/main` | `f581c1e4f121df88` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples demos/maroon/main` | `2529316479664459` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples demos/photosurface/main` | `6386ec6f1ca4ffd4` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples embedded/lightmaps/main` | `92fc3cf4b5dd009c` | Implemented; native acceptance unexecuted |
+| `QtExamples embedded/styleexample/main` | `631cc1bc310c00b9` | Implemented; native acceptance unexecuted |
+| `QtExamples gui/rasterwindow/main` | `3525151ac8d550f5` | Blocked: PythonQt.QtGui.QGradient lacks the NightFade preset and its preset constructor overload, required by RasterWindow.renderNow for its exact background |
+| `QtExamples main` | `a207ef153f0b81b7` | Blocked: The original launcher spawns sys.executable with a PyQt5/PySide2 binding and launches quickcontrols2/gallery, which requires absent QtQml/QtQuick/QtQuickControls2 |
+| `QtExamples multimedia/audiodevices/audiodevicesbase_ui` | `0d72445fb116793d` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `QtExamples multimedia/audiodevices/main` | `307534c4e8e2211c` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `QtExamples network/googlesuggest/main` | `eea833917398267a` | Blocked: PythonQt.QtCore has no QXmlStreamReader, required by GSuggestCompletion.handleNetworkData to parse suggestions |
+| `QtExamples network/loopback/main` | `ecc2e23449331df1` | Implemented; native acceptance unexecuted |
+| `QtExamples positioning/logfilepositionsource/main` | `ccad55f9e06bfa93` | Blocked: PythonQt does not export QtPositioning |
+| `QtExamples qpa/qrasterwindow/main` | `0b7e380ab45addbd` | Blocked: PythonQt.QtGui.QMatrix4x4 exposes neither __mul__ nor a matrix-product method |
+| `QtExamples qpa/windows/main` | `b1c25455dbcb6bac` | Implemented; native acceptance unexecuted |
+| `QtExamples quickcontrols2/flatstyle/main` | `8284e0348b6f7020` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples quickcontrols2/gallery/main` | `b4d27c5a05969f77` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples quickcontrols2/imagine/automotive/main` | `f5ecef06968ffad8` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples quickcontrols2/imagine/musicplayer/main` | `bd4a25944ae5b2d7` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples quickcontrols2/swipetoremove/main` | `9e402cdc525108dd` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples serialport/cenumerator/main` | `3ed66f4363a81cf2` | Blocked: PythonQt does not export QtSerialPort |
+| `QtExamples serialport/enumerator/main` | `b2127700642ffb25` | Blocked: PythonQt does not export QtSerialPort |
+| `QtExamples sql/cachedtable/main` | `a3c7c0e56d0452cf` | Blocked: PythonQt does not export QtSql |
+| `QtExamples sql/drilldown/main` | `5b93264cdefad0d7` | Blocked: PythonQt does not export QtSql |
+| `QtExamples sql/sqlwidgetmapper/main` | `fd7c0bbed85eb2d4` | Blocked: PythonQt does not export QtSql |
+| `QtExamples webengine/customdialogs/main` | `b92988bc55b506ee` | Blocked: PythonQt does not export QtQml / QtQuick / QtWebEngine |
+| `QtExamples webengine/lifecycle/main` | `ea0deb959e907448` | Blocked: PythonQt does not export QtQml / QtQuick / QtWebEngine |
+| `QtExamples webengine/minimal/main` | `da960851c5ad3baa` | Blocked: PythonQt does not export QtQml / QtQuick / QtWebEngine |
+| `QtExamples webengine/recipebrowser/main` | `5646535663e933c0` | Blocked: PythonQt does not export QtQml / QtQuick / QtWebEngine |
+| `QtExamples webenginewidgets/contentmanipulation/main` | `a4f928dfc9be8596` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/cookiebrowser/cookiedialog_ui` | `e6abb656a88ccad4` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/cookiebrowser/cookiewidget_ui` | `1e800054206a98ec` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/cookiebrowser/main` | `0dfe1b3b36d41c8d` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/cookiebrowser/mainwindow_ui` | `8460861d4a65f625` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/html2pdf/main` | `1f671605e1034b71` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/maps/main` | `72838df47d1eddc0` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/markdowneditor/main` | `a7eae99cebfb1806` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/markdowneditor/mainwindow_ui` | `2253cce5a4c3a077` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/minimal/main` | `23d091dcf5a72224` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/notifications/main` | `c9510fb6daa7d1bd` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/printme/main` | `7fece60acaf2b392` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/spellchecker/main` | `856b2b33c69b4e19` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples webenginewidgets/webui/main` | `11ec97a8c43a5283` | Blocked: PythonQt does not export QtWebEngineCore / QtWebEngineWidgets |
+| `QtExamples websockets/sslechoserver/main` | `768c423bdd1fa074` | Blocked: PythonQt does not export QtWebSockets |
+| `QtExamples customcompleter/google_search` | `edeef5f840c20e15` | Implemented; native acceptance unexecuted |
+| `QtExamples dynamicqmltable/main` | `08ba2f1b1fe02894` | Blocked: PythonQt does not export QtQml / QtQuick |
+| `QtExamples gst_pipeline/main` | `a0ac1b252a14609e` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `QtExamples matplotlib/Subplot` | `f13380d705146bff` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/barchart_demo` | `52871219c50cdd21` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/date` | `7cc9bd76e925db18` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/ellipse_demo` | `b76dc05cb743e9fc` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/fill` | `43f4640a040ded3e` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/histogram_features` | `26b75bfff47f567d` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/image_demo` | `5354655012c2060e` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/legend` | `6cb023a08571bf96` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/log_demo` | `1ffcdfb872b0e689` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/main` | `8fc6773f10b89095` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas and NavigationToolbar2QT, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/path_patch` | `5c181bebc7c9773c` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/pcolormesh_levels` | `e2f27c6394aa70c8` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/pie_features` | `5d8303b0b2237124` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/plot_streamplot` | `19398065f86e2762` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/polar_demo` | `80aa961de86e1704` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/scatter_demo2` | `2588c05ccd043d91` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/simple_plot` | `8cb9580232bd8081` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/subplot` | `207f7ce534696c20` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/surface3d` | `96777c686c66d526` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/table_demo` | `d82b14fd5e1eb010` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/tex_demo` | `ee1562b25c092ee8` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/buttons` | `60a3d030c4744735` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/check_buttons` | `f5d13b3c5b699ab3` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/cursor` | `620da7edd0cd23fc` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/lasso_selector_demo` | `c6effccd6f31f416` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/menu` | `f2767c945bece214` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/multicursor` | `21a081a01365c096` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/radio_buttons` | `22be270b0ff2abf7` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/rectangle_selector` | `01be5e33878e4940` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/slider_demo` | `9007853b5b845ed9` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples matplotlib/widgets/span_selector` | `1862a5f7d89bd9b6` | Blocked: The original imports matplotlib.backends.backend_qt5agg.FigureCanvas, which requires PyQt/PySide rather than PythonQt |
+| `QtExamples not_classified/1/main` | `b3c5b8f7bcf09a1d` | Blocked: PythonQt does not export QtMultimedia / QtMultimediaWidgets |
+| `QtExamples qmlvideoviewer/main` | `e9392311a500d3dd` | Blocked: PythonQt does not export QtQml / QtMultimedia |
+| `PyQt Thread 01_single_threaded` | `1e79bddb6d52574d` | Implemented; native acceptance unexecuted |
+| `PyQt Thread 02_multithreaded` | `88fa78cafb505cfa` | Implemented; native acceptance unexecuted |
+| `PyQt Thread 03_with_threadutil` | `83bc55d45ae367d0` | Implemented; native acceptance unexecuted |
+
 Source IDs also work as names. `get(name)` retrieves a launched handle, including its native widget, retained callbacks and alert owners. Repeated launch reshows the same owned window. Module state keeps handles alive across isolated external calls. A native window's close button hides it; `close(name)` removes ownership and schedules native destruction. External parent destruction makes inspection safe. Existing FontLab UI and preferences are not changed.
 The click alert uses asynchronous `open()` with example-window modality, keeping FontLab's event loop responsive. Dismissed alerts remain owned until the next click or named cleanup. Designer uses `QUiLoader`, loading its exact copied XML relative to the port file. Launch fails clearly outside FontLab, without an existing QApplication, for unknown names, or for known but unported source IDs and source paths.
 Ordinary external Python can use [fontlab-remopy](../fontlab-remopy) to run the same calls inside an already running FontLab with its MCP bridge configured.
@@ -262,7 +360,10 @@ Eighteen original Apache-2.0 examples provide owned type-design panels. See the 
 
 ## Licensing and remaining ports
 
-The repository's Apache license does not relicense upstream inputs. Pinned READMEs, actual notices and source headers supply per-file evidence. All 1,569 files retain **license review pending in the static catalog**; 43 have no recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and [the numbered-source notice](ports/pyqt-examples-LICENSE.md) and [the official-source notice](ports/pyqt-official-LICENSE.md). Nearby notices may apply only to specific assets: their association is evidence, not a blanket license assignment. Preserve the original notices and resolve scope before distributing a port or copying upstream resources.
-Four targets retain native acceptance; 134 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
+The repository's Apache license does not relicense upstream inputs. Pinned READMEs, actual notices and source headers supply per-file evidence. All 1,569 files retain **license review pending in the static catalog**; 43 have no recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and [the numbered-source notice](ports/pyqt-examples-LICENSE.md) and [the official-source notice](ports/pyqt-official-LICENSE.md) and [QtExamples notice](ports/eyllanesc-LICENSE.md). Nearby notices may apply only to specific assets: their association is evidence, not a blanket license assignment. Preserve the original notices and resolve scope before distributing a port or copying upstream resources.
+Four targets retain recorded native acceptance; 144 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
 The [first-batch evidence](verification/first-native-batch.json) records native text/layout/click/Designer acceptance, destruction of all 38 owned objects and unchanged host state. This proves source loading; wheel installation and other native checks remain required. Current states live in the port manifest.
 The 127 official ports use tracked callbacks, async dialogs, isolated host state and 244 exact resource copies; 60 further official entrypoints are precisely blocked. All 187 official entrypoints are accounted for; native acceptance remains a separate gate. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; five GPL alternatives are explicit.
+
+Batch 9 adds 10 implementations and 87 blockers for all remaining 97 requested
+entrypoints. The [per-entry table and native acceptance checklists](docs/pyqt-official-batch.md#batch-9-remaining-97-entrypoints) retain exact identities, paths, licences and adaptations. No native acceptance or collection completion is inferred from offline tests.

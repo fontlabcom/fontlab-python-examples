@@ -89,7 +89,8 @@ def launch(name: str) -> Any:
         return handle
     handle = _builder(record)(qt)
     try:
-        handle.widget.setAttribute(qt.QtCore.Qt.WA_QuitOnClose, False)
+        if handle.widget.inherits("QWidget"):
+            handle.widget.setAttribute(qt.QtCore.Qt.WA_QuitOnClose, False)
         handle.widget.show()
     except BaseException:
         handle.close()

@@ -34,6 +34,10 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             expected_target = (
                 f"ports/{category}/pyqt-official/" + Path(expected_target).name
             )
+        if original["repository"] == "eyllanesc/QtExamples":
+            expected_target = expected_target.replace(
+                "/eyllanesc-qtexamples/", "/eyllanesc/"
+            )
         assert port["target_path"] == expected_target
         assert port["implementation"] in {"implemented", "blocked"}
         if port["implementation"] == "blocked":
