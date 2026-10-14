@@ -107,6 +107,37 @@ BATCH_SIX_IDS = {
 }
 IDS |= BATCH_SIX_IDS
 
+BATCH_SEVEN_IDS = {
+    "409f3d46a9555f23",
+    "67170c89593ad35e",
+    "d8803c2afaabf3d5",
+    "9dab02b61cebbdb7",
+    "0bba8a80541ab04f",
+    "ebf87d5f5390b0fd",
+    "a96a7978c0b9f6ee",
+    "79f3a23172968ad2",
+    "98f207907001ce47",
+    "029ea0dabe87ae57",
+    "d50ad6638357e669",
+    "39de33366209402d",
+    "cf15c3e91cdd8ded",
+    "fbb4e3c7288fed7c",
+    "fff97a435b73d548",
+    "4b8851287931abd0",
+    "aad57160cfd51894",
+    "a58650b5461c0f48",
+    "43c6c2f6f5f036d3",
+    "90721289b8108c4f",
+    "fa6823667fdb918f",
+    "dc59f268ee01e364",
+    "bf3b39a8c2df8e94",
+    "cc95f9719b8e4eda",
+    "0a3b15766909bdc3",
+    "a59dae9770bfbefb",
+    "ddb20b1b68b18a91",
+}
+IDS |= BATCH_SEVEN_IDS
+
 
 def records():
     return [
@@ -119,7 +150,7 @@ def records():
 def test_official_manifest_covers_exact_batch_and_retains_provenance():
     rows = records()
     assert {r["source_id"] for r in rows} == IDS, (
-        "All 86 official entries require a result"
+        "All 113 official entries require a result"
     )
     sources = {
         r["id"]: r
@@ -2507,3 +2538,764 @@ def test_batch_six_python_callback_references_release_before_native_deletion(
         assert all(getattr(obj, callback) is None for callback in callbacks), (
             "Release private Python callbacks before native children"
         )
+
+
+def test_batch_seven_native_exports_and_no_external_network_shortcuts():
+    """All explicit Qt aliases resolve to the captured native host surface."""
+    from tests.official_doubles import CONTRACT
+
+    for row in records():
+        if row["source_id"] not in BATCH_SEVEN_IDS:
+            continue
+        path = ROOT / row["target_path"]
+        tree = ast.parse(path.read_text(), feature_version=(3, 11))
+        aliases = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Attribute):
+                parts = ast.unparse(node).split(".")
+                if len(parts) in (3, 4) and parts[0] == "qt" and parts[1] in CONTRACT:
+                    assert parts[2] in CONTRACT[parts[1]], (path, parts)
+                    if len(parts) == 4:
+                        assert parts[3] in CONTRACT[parts[1]][parts[2]], (path, parts)
+            if (
+                isinstance(node, ast.Assign)
+                and len(node.targets) == 1
+                and isinstance(node.targets[0], ast.Name)
+            ):
+                parts = ast.unparse(node.value).split(".")
+                if (
+                    isinstance(node.value, ast.Attribute)
+                    and len(parts) == 3
+                    and parts[0] == "qt"
+                    and parts[1] in CONTRACT
+                ):
+                    aliases[node.targets[0].id] = CONTRACT[parts[1]][parts[2]]
+        for node in ast.walk(tree):
+            if (
+                isinstance(node, ast.Attribute)
+                and isinstance(node.value, ast.Name)
+                and node.value.id in aliases
+            ):
+                assert node.attr in aliases[node.value.id], (path, ast.unparse(node))
+            if isinstance(node, ast.Call):
+                fn = ast.unparse(node.func)
+                assert fn not in {
+                    "QApplication",
+                    "sys.exit",
+                    "QDesktopServices.openUrl",
+                    "QTimer.singleShot",
+                }, (path, fn)
+                assert not fn.endswith(
+                    ("exec_", ".waitForConnected", ".waitForReadyRead")
+                ), (path, fn)
+
+
+BATCH_SEVEN_IMPLEMENTED = [
+    r
+    for r in records()
+    if r["source_id"] in BATCH_SEVEN_IDS and r["implementation"] == "implemented"
+]
+
+
+@pytest.mark.parametrize("row", BATCH_SEVEN_IMPLEMENTED, ids=lambda r: r["name"])
+def test_batch_seven_inspection_is_inert_and_failure_rolls_back(
+    row, official_qt, monkeypatch
+):
+    import threading
+
+    from fontlab_python_examples.official import Demo
+
+    qt, owners = official_qt
+    before = {t.ident for t in threading.enumerate() if t.name == "official-worker"}
+    h = load_record(row).build(qt)
+    initial = json.dumps(h.snapshot(), sort_keys=True)
+    connections = len(h.connections)
+    assert json.dumps(h.snapshot(), sort_keys=True) == initial, (
+        "Inspection must not drive UI/network state"
+    )
+    assert len(h.connections) == connections
+    h.close()
+    assert {
+        t.ident for t in threading.enumerate() if t.name == "official-worker"
+    } == before, "Close joins owned workers"
+    count = len(owners)
+
+    def fail(*args, **kwargs):
+        raise RuntimeError("Owned finish failure")
+
+    monkeypatch.setattr(Demo, "finish", fail)
+    with pytest.raises(RuntimeError, match="Owned finish failure"):
+        load_record(row).build(qt)
+    assert all(o.closed for o in owners[count:]), (
+        "Partial builds must close every owner"
+    )
+    assert {
+        t.ident for t in threading.enumerate() if t.name == "official-worker"
+    } == before
+
+
+def spin_until(qt, h, predicate, timeout=3):
+    import time
+
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        qt._pump_network()
+        for name, obj in list(h.controls.items()):
+            if getattr(obj, "_qt_name", None) == "QTimer" and obj.isActive():
+                obj.emit("timeout")
+        if predicate():
+            return
+        time.sleep(0.005)
+    pytest.fail("Owned loopback/worker delivery did not complete")
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "fortuneclient",
+        "blockingfortuneclient",
+        "fortuneserver",
+        "threadedfortuneserver",
+    ],
+)
+def test_batch_seven_fortune_roundtrip_worker_shutdown_and_foreign_peer_rejection(
+    name, official_qt
+):
+    qt, _ = official_qt
+    h = built(name, qt)
+    try:
+        c = h.controls
+        action = c.get("requestNewFortune", c.get("probe"))
+        action()
+        spin_until(qt, h, lambda: bool(h.snapshot()["fortune"]))
+        assert h.snapshot()["fortune"] in {
+            "You've been leading a dog's life. Stay off the furniture.",
+            "You've got to think about tomorrow.",
+            "You will be surprised by a loud noise.",
+            "You will feel hungry again in another hour.",
+            "You might have mail.",
+            "You cannot kill time without injuring eternity.",
+            "Computers are not intelligent. They only think they are.",
+        }
+        if "portLineEdit" in c:
+            c["portLineEdit"].setText("1")
+            action()
+            assert "owned" in h.snapshot()["error"]
+            assert h.controls["getFortuneButton"].enabled
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize("name", ["broadcastsender", "broadcastreceiver"])
+def test_batch_seven_udp_roundtrip_stops_timers_and_releases_port(name, official_qt):
+    import socket
+
+    qt, _ = official_qt
+    h = built(name, qt)
+    address = (h.snapshot()["host"], h.snapshot()["port"])
+    h.controls["sendSample"]()
+    spin_until(qt, h, lambda: bool(h.snapshot()["received"]))
+    assert h.snapshot()["received"] == ["Broadcast message 1"]
+    timers = [h.controls["timer"], h.controls["pollTimer"]]
+    h.close()
+    assert not any(t.isActive() for t in timers)
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as probe:
+        probe.bind(address)
+
+
+def test_batch_seven_http_download_cancel_missing_and_foreign_url(official_qt):
+    qt, _ = official_qt
+    h = built("http", qt)
+    try:
+        c = h.controls
+        c["urlLineEdit"].setText("https://example.invalid/file")
+        c["downloadButton"].click()
+        assert "owned" in h.snapshot()["error"] and not h.snapshot()["downloading"]
+        endpoint = h.snapshot()["endpoint"]
+        url = f"http://127.0.0.1:{endpoint['port']}"
+        c["urlLineEdit"].setText(url + "/sample.txt")
+        c["downloadButton"].click()
+        spin_until(qt, h, lambda: not h.snapshot()["downloading"])
+        path = Path(h.snapshot()["output_path"])
+        assert path.read_bytes() == b"Owned FontLab PythonQt HTTP download.\n"
+        assert h.snapshot()["bytes_read"] == len(path.read_bytes())
+        c["downloadButton"].click()
+        c["cancelDownload"]()
+        qt._pump_network()
+        assert h.snapshot()["aborted"] and not path.exists()
+        c["urlLineEdit"].setText(url + "/missing")
+        c["downloadButton"].click()
+        spin_until(qt, h, lambda: not h.snapshot()["downloading"])
+        assert h.snapshot()["error"] and not path.exists()
+    finally:
+        h.close()
+    assert not path.parent.exists(), "Owned HTTP output directory is released"
+
+
+def test_batch_seven_loopback_transfer_and_close_while_active(official_qt):
+    qt, _ = official_qt
+    h = built("loopback", qt)
+    try:
+        h.widget.TotalBytes = 128 * 1024
+        h.controls["startButton"].click()
+        spin_until(qt, h, lambda: h.snapshot()["bytes_received"] == h.widget.TotalBytes)
+        assert h.snapshot()["bytes_written"] == h.widget.TotalBytes
+        assert h.controls["startButton"].enabled
+        h.widget.TotalBytes = 50 * 1024 * 1024
+        h.controls["startButton"].click()
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize("name", ["simplewidgetmapper", "combowidgetmapper"])
+def test_batch_seven_mapper_navigation_matches_original_data(name, official_qt):
+    qt, _ = official_qt
+    h = built(name, qt)
+    try:
+        c = h.controls
+        assert c["nameEdit"].text == "Alice"
+        assert not c["previousButton"].enabled
+        c["nextButton"].click()
+        assert c["nameEdit"].text == "Bob" and h.snapshot()["current_index"] == 1
+        c["mapper"].toLast()
+        assert c["nameEdit"].text == "Emma" and not c["nextButton"].enabled
+        c["previousButton"].click()
+        assert c["nameEdit"].text == "Donald"
+        if name == "simplewidgetmapper":
+            assert c["ageSpinBox"].value == 19
+        else:
+            assert c["typeComboBox"].currentIndex == 0
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize(
+    "name,pattern,expected",
+    [("basicsortfiltermodel", "Andy", 2), ("customsortfiltermodel", "Sports", 3)],
+)
+def test_batch_seven_sort_filter_controls_and_dates(
+    name, pattern, expected, official_qt
+):
+    qt, _ = official_qt
+    h = built(name, qt)
+    try:
+        assert h.snapshot()["source_rows"] == 10
+        h.controls["filterPatternLineEdit"].setText(pattern)
+        assert h.snapshot()["proxy_rows"] == expected
+        h.controls["filterPatternLineEdit"].setText("nothing-matches")
+        assert h.snapshot()["proxy_rows"] == 0
+        h.controls["filterPatternLineEdit"].setText("")
+        assert h.snapshot()["proxy_rows"] == 10
+    finally:
+        h.close()
+
+
+def test_batch_seven_fetchmore_exact_insertion_and_empty_directory(
+    official_qt, tmp_path, monkeypatch
+):
+    qt, _ = official_qt
+    h = built("fetchmore", qt)
+    try:
+        model = h.controls["model"]
+        while h.controls["fixtureTimer"].isActive():
+            h.controls["fixtureTimer"].emit("timeout")
+        h.controls["scanTimer"].emit("timeout")
+        insertions = []
+        monkeypatch.setattr(
+            type(model),
+            "beginInsertRows",
+            lambda self, parent, start, end: insertions.append((start, end)),
+        )
+        h.controls["fetchMore"]()
+        assert model.rowCount() == 100 and insertions == [(0, 99)]
+        while model.canFetchMore(qt.QtCore.QModelIndex()):
+            h.controls["fetchMore"]()
+        assert model.rowCount() == 207 and insertions[-1] == (200, 206)
+        h.controls["fetchMore"]()
+        assert len(insertions) == 3
+        h.controls["lineEdit"].setText(str(tmp_path))
+        h.controls["scanTimer"].emit("timeout")
+        h.controls["fetchMore"]()
+        assert model.rowCount() == 2
+        assert not model.canFetchMore(qt.QtCore.QModelIndex())
+    finally:
+        h.close()
+
+
+def test_batch_seven_dom_preserves_node_types_and_rejects_bad_xml(
+    official_qt, tmp_path
+):
+    qt, _ = official_qt
+    h = built("simpledommodel", qt)
+    try:
+        model = h.controls["model"]
+        root = model.index(0, 0)
+        assert model.data(root) == "root"
+        assert model.data(model.index(0, 1)) == 'label="owned"'
+        assert model.rowCount(root) == 3
+        comment = model.index(0, 0, root)
+        instruction = model.index(1, 0, root)
+        child = model.index(2, 0, root)
+        assert model.data(comment) == "#comment" and model.data(instruction) == "demo"
+        assert (
+            model.data(child) == "child"
+            and model.parent(child).internalId() == root.internalId()
+        )
+        assert isinstance(root.internalId(), int)
+        bad = tmp_path / "bad.xml"
+        bad.write_text("<broken>")
+        h.controls["loadXml"](bad)
+        assert h.snapshot()["error"] and h.controls["model"] is model
+        good = tmp_path / "good.xml"
+        good.write_text('<new attribute="value"><a/></new>')
+        h.controls["loadXml"](good)
+        assert h.snapshot()["root_names"] == ["new"] and not h.snapshot()["error"]
+    finally:
+        h.close()
+
+
+def test_batch_seven_spreadsheet_formula_recursion_cycle_division_and_async_dialog(
+    official_qt,
+):
+    qt, _ = official_qt
+    h = built("spreadsheet", qt)
+    try:
+        c = h.controls
+        assert h.snapshot()["total"] == 21883
+        c["putFormula"]("C2", "200")
+        assert h.snapshot()["total"] == 21933
+        c["putFormula"]("F2", "= F2")
+        assert c["table"].item(1, 5).display() is None
+        c["putFormula"]("F2", "/ C2 C1")
+        assert c["table"].item(1, 5).display() == "nan"
+        c["cell_addAction"].trigger()
+        dialog = h.controls["active_dialog"]
+        dialog.accept()
+        assert "+ " in h.snapshot()["formulas"][2][2]
+        with pytest.raises(ValueError, match="Invalid cell"):
+            c["putFormula"]("Z100", "bad")
+        c["printAction"].trigger()
+        preview = h.controls["active_dialog"]
+        assert preview._qt_name == "QPrintPreviewDialog"
+        printer = preview.printer()
+        assert printer._data["outputFormat"] == qt.QtGui.QPrinter.PdfFormat
+        assert Path(printer._data["outputFileName"]).name == "spreadsheet.pdf"
+        preview.emit("paintRequested", printer)
+    finally:
+        h.close()
+
+
+def test_batch_seven_spinbox_delegate_commit_and_geometry(official_qt):
+    qt, _ = official_qt
+    h = built("spinboxdelegate", qt)
+    try:
+        c = h.controls
+        index = c["model"].index(2, 1)
+        option = SimpleNamespace(rect=qt.QtCore.QRect(2, 3, 20, 30))
+        editor = c["delegate"].createEditor(h.widget, option, index)
+        c["delegate"].setEditorData(editor, index)
+        assert editor.value == 6 and editor.minimum == 0 and editor.maximum == 100
+        editor.setValue(42)
+        c["delegate"].setModelData(editor, c["model"], index)
+        assert h.snapshot()["rows"][2][1] == 42
+        c["delegate"].updateEditorGeometry(editor, option, index)
+        assert editor._position == [2, 3, 20, 30]
+    finally:
+        h.close()
+
+
+def test_batch_seven_storage_bytes_tooltips_and_invalid_indices(official_qt):
+    qt, _ = official_qt
+    h = built("storageview", qt)
+    try:
+        model = h.controls["model"]
+        h.controls["loadTimer"].emit("timeout")
+        assert model.data(qt.QtCore.QModelIndex(), qt.QtCore.Qt.DisplayRole) is None
+        assert "Device: fixture" in model.data(
+            model.index(0, 0), qt.QtCore.Qt.ToolTipRole
+        )
+        assert model.data(model.index(0, 4), qt.QtCore.Qt.DisplayRole) == "4.00 kB"
+        assert model.rowCount(model.index(0, 0)) == 0
+    finally:
+        h.close()
+
+
+def test_batch_seven_delayed_png_encodes_only_on_first_data_request(
+    official_qt, monkeypatch
+):
+    from fontlab_python_examples.official import Demo
+
+    qt, _ = official_qt
+    requests = []
+
+    def drag(demo, source, *args):
+        mime = demo.handle.widget.mimeData
+        assert mime.formats() == ["image/png"]
+        assert demo.handle.widget.encodingCount == 0
+        value = mime.retrieveData("image/png", 0)
+        requests.append(value.data())
+        mime.retrieveData("image/png", 0)
+        assert demo.handle.widget.encodingCount == 1
+        assert mime.formats() == ["image/png"]
+
+    monkeypatch.setattr(Demo, "drag", drag)
+    h = built("delayedencoding", qt)
+    try:
+        assert h.snapshot()["encoding_count"] == 0
+        h.controls["dragIcon"].emit("pressed")
+        assert requests == [b"owned-image-double"]
+        assert h.snapshot()["encoding_count"] == 1 and h.widget.mimeData is None
+        assert all(not p.isActive() for p in qt._painters)
+    finally:
+        h.close()
+
+
+def test_batch_seven_drop_formats_text_and_raw_bytes_then_clear(official_qt):
+    qt, _ = official_qt
+    h = built("dropsite", qt)
+    try:
+        mime = qt.QtCore.QMimeData()
+        mime.setText("hello")
+        mime.setData("text/plain", qt.QtCore.QByteArray(b"hello"))
+        mime.setData("application/octet-stream", qt.QtCore.QByteArray(b"\x00\xff"))
+        event = SimpleNamespace(
+            mimeData=lambda: mime, acceptProposedAction=lambda: None
+        )
+        h.controls["dropArea"].dragEnterEvent(event)
+        h.controls["dropArea"].dropEvent(event)
+        assert h.snapshot()["drop_text"] == "hello"
+        assert h.snapshot()["formats"] == [
+            ["text/plain", "hello"],
+            ["application/octet-stream", "00 FF"],
+        ]
+        h.controls["clearButton"].emit("pressed")
+        assert h.snapshot()["formats"] == []
+    finally:
+        h.close()
+
+
+def test_batch_seven_color_factory_is_local_and_commits_qcolor(official_qt):
+    qt, _ = official_qt
+    h = built("coloreditorfactory", qt)
+    try:
+        delegate = h.controls["delegate"]
+        model = qt.QtGui.QStandardItemModel(1, 2, h.widget)
+        index = model.index(0, 1)
+        model.setData(index, qt.QtGui.QColor("aliceblue"))
+        editor = delegate.createEditor(h.widget, None, index)
+        delegate.setEditorData(editor, index)
+        assert editor.currentText == "aliceblue"
+        editor.setColor(qt.QtGui.QColor("aquamarine"))
+        delegate.setModelData(editor, model, index)
+        assert model.data(index) == qt.QtGui.QColor("aquamarine")
+        assert delegate.creator.valuePropertyName().data() == b"currentIndex"
+        assert (
+            "setDefaultFactory"
+            not in (
+                ROOT
+                / next(
+                    r["target_path"]
+                    for r in records()
+                    if r["name"] == "Official coloreditorfactory"
+                )
+            ).read_text()
+        )
+    finally:
+        h.close()
+
+
+def test_batch_seven_star_paint_hit_testing_and_integer_model_commit(official_qt):
+    qt, _ = official_qt
+    h = built("stardelegate", qt)
+    try:
+        assert h.snapshot()["ratings"] == [5, 4, 3, 5]
+        delegate = h.controls["delegate"]
+        model = qt.QtGui.QStandardItemModel(1, 4, h.widget)
+        index = model.index(0, 3)
+        model.setData(index, 5)
+        editor = delegate.createEditor(h.widget, None, index)
+        delegate.setEditorData(editor, index)
+        assert editor.starAtPosition(50) == 3 and editor.starAtPosition(200) == -1
+        editor.mouseMoveEvent(SimpleNamespace(x=lambda: 50))
+        editor.paintEvent(None)
+        delegate.setModelData(editor, model, index)
+        assert model.data(index) == 3 and type(model.data(index)) is int
+        assert all(not p.isActive() for p in qt._painters)
+    finally:
+        h.close()
+
+
+def test_batch_seven_pixelator_size_delegate_and_owned_print_cancel(official_qt):
+    qt, _ = official_qt
+    h = built("pixelator", qt)
+    try:
+        c = h.controls
+        c["pixelSizeSpinBox"].setValue(20)
+        assert h.snapshot()["pixel_size"] == 20
+        c["printAction"].trigger()
+        if h.controls["active_dialog"]._qt_name == "QMessageBox":
+            h.controls["active_dialog"].emit("buttonClicked", qt.QtGui.QMessageBox.Yes)
+        h.controls["active_dialog"].accept()
+        timer = h.controls["printTimer"]
+        assert timer.isActive()
+        h.controls["progress"].emit("canceled")
+        assert not timer.isActive() and all(not p.isActive() for p in qt._painters)
+    finally:
+        h.close()
+
+
+def test_batch_seven_graphics_topology_controls_and_explicit_timer_stop(official_qt):
+    qt, _ = official_qt
+    anchor = built("anchorlayout", qt)
+    try:
+        assert anchor.snapshot()["labels"] == list("ABCDEFG")
+        assert all(name in anchor.controls for name in "ABCDEFG")
+        assert len(anchor.snapshot()["geometry"]) == 7
+    finally:
+        anchor.close()
+    elastic = built("elasticnodes", qt)
+    try:
+        assert (
+            elastic.snapshot()["node_count"] == 9
+            and elastic.snapshot()["edge_count"] == 12
+        )
+        elastic.controls["step"]()
+        elastic.controls["scaleView"](1.2)
+        elastic.widget.stopMotion()
+        assert not elastic.snapshot()["timer_active"]
+    finally:
+        elastic.close()
+
+
+def test_batch_seven_pad_native_form_state_cleanup_and_no_custom_meta_property(
+    official_qt,
+):
+    qt, _ = official_qt
+    h = built("padnavigator", qt)
+    machine = h.controls["stateMachine"]
+    try:
+        assert h.snapshot()["icon_count"] == 9 and machine.isRunning()
+        assert "hostName" in h.controls
+        h.controls["pad"].setFill(True)
+        assert h.snapshot()["fill"]
+        assert not any(
+            b"fill" in getattr(obj, "_args", ()) for obj in h.controls.values()
+        )
+    finally:
+        h.close()
+    assert not machine.isRunning()
+
+
+def test_batch_seven_lightmaps_owned_tiles_pan_city_night_zoom_and_drag(official_qt):
+    qt, _ = official_qt
+    h = built("lightmaps", qt)
+    try:
+        map_ = h.controls["map"]
+        h.controls["berlinAction"].trigger()
+        spin_until(qt, h, lambda: h.snapshot()["tile_count"] > 0)
+        assert h.snapshot()["latitude"] == pytest.approx(52.52959)
+        before = h.snapshot()["longitude"]
+        h.controls["pan"](qt.QtCore.QPoint(20, 0))
+        assert h.snapshot()["longitude"] != before
+        h.controls["nightModeAction"].trigger()
+        assert h.snapshot()["night_mode"]
+        h.controls["activateZoom"]()
+        assert h.snapshot()["zoomed"]
+        map_.paintEvent(SimpleNamespace(rect=lambda: qt.QtCore.QRect(0, 0, 400, 300)))
+        map_.mouseReleaseEvent(None)
+        map_.pressed = map_.snapped = False
+        map_.mouseMoveEvent(
+            SimpleNamespace(
+                buttons=lambda: qt.QtCore.Qt.LeftButton,
+                pos=lambda: qt.QtCore.QPoint(30, 40),
+            )
+        )
+        assert all(not p.isActive() for p in qt._painters)
+    finally:
+        h.close()
+
+
+def test_batch_seven_dirview_owned_fixture_is_read_only_and_removed(official_qt):
+    qt, _ = official_qt
+    h = built("dirview", qt)
+    root = Path(h.snapshot()["root_path"])
+    h.controls["loadTimer"].emit("timeout")
+    assert h.snapshot()["read_only"] and h.snapshot()["column_count"] == 4
+    assert (root / "example.txt").is_file()
+    h.close()
+    assert not root.exists()
+
+
+@pytest.mark.parametrize("text", ["", "Fortune", "Zażółć 🐈"])
+def test_batch_seven_fortune_wire_format_is_qt4_and_fragment_safe(text):
+    import struct
+    import threading
+
+    from fontlab_python_examples.official import fortune_packet, receive_fortune
+
+    packet = fortune_packet(text)
+    assert packet == struct.pack(
+        ">HI", len(text.encode("utf-16-be")) + 4, len(text.encode("utf-16-be"))
+    ) + text.encode("utf-16-be")
+    chunks = list(packet)
+    connection = SimpleNamespace(
+        recv=lambda n: bytes([chunks.pop(0)]) if chunks else b""
+    )
+    assert receive_fortune(connection, threading.Event()) == text
+
+
+@pytest.mark.parametrize("packet", [b"", b"\x00\x08\x00", b"\x00\x04\x00\x00\x00\x04"])
+def test_batch_seven_fortune_wire_rejects_truncated_frames(packet):
+    import threading
+
+    from fontlab_python_examples.official import receive_fortune
+
+    chunks = bytearray(packet)
+
+    def receive(n):
+        result = bytes(chunks[:n])
+        del chunks[:n]
+        return result
+
+    with pytest.raises(ValueError):
+        receive_fortune(SimpleNamespace(recv=receive), threading.Event())
+
+
+@pytest.mark.parametrize("count", [0, 11])
+def test_storageview_launch_defers_native_tuple_scan_and_inspect_never_scans(
+    official_qt, monkeypatch, count
+):
+    qt, _ = official_qt
+    volumes = tuple(qt.QtCore.QStorageInfo(f"/volume-{i}") for i in range(count))
+    calls = []
+
+    def mounted_volumes():
+        calls.append(True)
+        return volumes
+
+    monkeypatch.setattr(qt.QtCore.QStorageInfo, "mountedVolumes", mounted_volumes)
+    h = built("storageview", qt)
+    try:
+        model = h.controls["model"]
+        timer = h.controls["loadTimer"]
+        assert model.volumes == [] and model.rowCount() == 0
+        assert timer.isActive() and not calls, "Launch must not enumerate volumes"
+        for _ in range(3):
+            assert h.snapshot()["loading"] and h.snapshot()["row_count"] == 0
+        assert not calls, "Inspection must never enumerate volumes"
+        timer.emit("timeout")
+        assert calls == [True] and model.volumes == list(volumes)
+        assert h.snapshot()["row_count"] == count and not h.snapshot()["loading"]
+        assert not timer.isActive(), "Owned single-shot stops before population"
+        for _ in range(3):
+            h.snapshot()
+        assert calls == [True], "Completed inspection uses cached volume state"
+    finally:
+        h.close()
+
+
+def test_storageview_scan_failure_finishes_loading_without_leaking_timer(
+    official_qt, monkeypatch
+):
+    qt, _ = official_qt
+
+    def unavailable():
+        raise OSError("Volume enumeration failed")
+
+    monkeypatch.setattr(qt.QtCore.QStorageInfo, "mountedVolumes", unavailable)
+    h = built("storageview", qt)
+    try:
+        timer = h.controls["loadTimer"]
+        timer.emit("timeout")
+        assert not h.snapshot()["loading"] and h.snapshot()["row_count"] == 0
+        assert "Volume enumeration failed" in h.snapshot()["error"]
+        assert not timer.isActive()
+    finally:
+        h.close()
+
+
+@pytest.mark.parametrize(
+    "name,timers",
+    [
+        ("storageview", ["loadTimer"]),
+        ("dirview", ["loadTimer"]),
+        ("fetchmore", ["scanTimer", "fixtureTimer"]),
+    ],
+)
+def test_deferred_startup_close_before_tick_stops_disconnects_and_guards_callbacks(
+    name, timers, official_qt, monkeypatch
+):
+    qt, _ = official_qt
+    h = built(name, qt)
+    retained = [h.controls[key] for key in timers]
+    callbacks = [slot for obj, _signature, slot in h.connections if obj in retained]
+    assert h.snapshot()["loading"], "Launch exposes pending startup work"
+    h.close()
+    assert all(not timer.isActive() for timer in retained)
+    assert all(
+        not signal.callbacks for timer in retained for signal in timer._signals.values()
+    )
+
+    def stale_native_access(*args):
+        pytest.fail("Stale callback accessed a destroyed native timer")
+
+    monkeypatch.setattr(qt.QtCore.QTimer, "stop", stale_native_access)
+    for callback in callbacks:
+        callback()
+
+
+def test_fetchmore_launch_defers_fixture_writes_and_directory_scan(
+    official_qt, monkeypatch
+):
+    qt, _ = official_qt
+    writes, scans = [], []
+    original_write = Path.write_text
+
+    def write(path, *args, **kwargs):
+        writes.append(path)
+        return original_write(path, *args, **kwargs)
+
+    def entry_list(directory):
+        scans.append(True)
+        return directory._invoke("entryList")
+
+    monkeypatch.setattr(Path, "write_text", write)
+    monkeypatch.setattr(qt.QtCore.QDir, "entryList", entry_list)
+    h = built("fetchmore", qt)
+    try:
+        assert not writes and not scans, "Build must not generate/list sample files"
+        model = h.controls["model"]
+        assert model.fileList == [] and h.snapshot()["loading"]
+        fixture = h.controls["fixtureTimer"]
+        fixture.emit("timeout")
+        assert 0 < len(writes) <= 32 and not scans
+        while fixture.isActive():
+            fixture.emit("timeout")
+        assert len(writes) == 205 and not scans
+        h.controls["scanTimer"].emit("timeout")
+        assert len(scans) == 1 and not h.snapshot()["loading"]
+        assert len(model.fileList) == 207
+    finally:
+        h.close()
+
+
+def test_dirview_launch_defers_filesystem_root_and_sample_creation(
+    official_qt, monkeypatch
+):
+    qt, _ = official_qt
+    calls = []
+
+    def set_root(model, path):
+        calls.append(path)
+        return model._invoke("setRootPath", path)
+
+    monkeypatch.setattr(qt.QtGui.QFileSystemModel, "setRootPath", set_root)
+    h = built("dirview", qt)
+    try:
+        root = Path(h.snapshot()["root_path"])
+        assert not calls and not (root / "example.txt").exists()
+        h.controls["loadTimer"].emit("timeout")
+        assert calls == [str(root)] and (root / "example.txt").exists()
+        assert not h.snapshot()["loading"]
+    finally:
+        h.close()

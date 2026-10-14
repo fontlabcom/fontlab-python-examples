@@ -6,6 +6,22 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Defer storageview volume enumeration after the controller reported
+  the five-second native launch deadline; cache tuple results and expose loading.
+  Audit all 142 port Python files; defer fetchmore fixture writes/directory scans
+  and dirview root setup using tracked, cancellable owned timers. Add eight
+  regressions for deferred startup, tuple/empty/error cases and early close.
+
+- 2026-10-14: Implement 27 further official itemviews, graphicsview, drag/drop and
+  network ports with 15 exact assets, per-file notices and unexecuted native states.
+  Extend the existing Demo/WorkerDelivery/doubles/tests and per-port controller
+  guide; retain scoped factories, numeric DOM IDs, async PDF/UI, component geometry
+  and cancellable owned localhost servers. Preserve actual Qt fortune framing;
+  no external hosts, proxies, broadcast or host settings/cache writes. No commit
+  or TODO changes; native virtual dispatch/rendering/teardown await the orchestrator.
+  Exact offline gate: 572 tests pass; 30-file Ruff/3.11 checks and provenance audit
+  pass, with all 101 prior manifest records preserved.
+
 - 2026-10-14: Fix orderform retaining a void addAction result by keeping its
   explicit tracked QAction before menu insertion. Audit every port/helper,
   enforce native overload returns in doubles and add 11 regression cases;

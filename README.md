@@ -5,8 +5,7 @@ this_file: README.md
 # FontLab Python examples
 
 Complete source catalog for planned PythonQt ports of [pyqt/examples](https://github.com/pyqt/examples) and [eyllanesc/QtExamples](https://github.com/eyllanesc/QtExamples), for use inside running FontLab. Start at the [categorized index](catalog/INDEX.md).
-
-Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 84 official demos are implemented and await native acceptance.** Neither requested collection is complete.
+Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **Four entrypoints are native-verified; seven further numbered examples and 111 official demos are implemented and await native acceptance.** Neither requested collection is complete.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -14,7 +13,6 @@ Both pinned collections are fully acquired and verified locally: **1,569 files, 
 | eyllanesc/QtExamples | `a01fd7d10d45801b10876f94c07aaefb11bc2e12` | 764 | 157 |
 
 The [machine-readable catalog](catalog/sources.json) preserves every logical source identity, exact original byte count, Git blob SHA, SHA-256, attribution and license evidence, source URL, resource associations and distinct target path. Both `others/matplotlib/Subplot.py` and `subplot.py` have separate mappings that also remain distinct on a case-insensitive filesystem. Duplicate bytes retain every original mapping.
-
 Static analysis identifies 298 Python entrypoint candidates, 14 ambiguous Python candidates, 153 auxiliary Python files and 3 uncertain QML launcher candidates. These are not a confirmed executable-example denominator. Static execution-scope analysis excludes deferred bodies; conditions and invoked functions need review. All imports/API requirements remain catalogued. The 69 shared/repository files have individual records with unresolved ownership; capability needs are source requirements, not proof of host support.
 
 ## Regenerate the inventory
@@ -49,7 +47,6 @@ Put this checkout on FontLab's Python module path and install `fontlab-fontlabap
 
 ```python
 import fontlab_python_examples as examples
-
 examples.available()                 # names, IDs, states and provenance; host-free handle = examples.launch("QLabel")    # run inside FontLab handle.widget                        # direct native QLabel examples.inspect("QLabel")           # JSON-friendly live state examples.close("QLabel")             # idempotent, only owned UI ```
 
 | Name | Original source ID | Preserved behavior |
@@ -154,14 +151,38 @@ examples.available()                 # names, IDs, states and provenance; host-f
 | `Official wiggly` | `509e781f1267967f` | Implemented; native acceptance unexecuted |
 | `Official windowflags` | `136c45cc9f97c218` | Implemented; native acceptance unexecuted |
 
+| `Official delayedencoding` | `43c6c2f6f5f036d3` | Implemented; native acceptance unexecuted |
+| `Official dropsite` | `fa6823667fdb918f` | Implemented; native acceptance unexecuted |
+| `Official anchorlayout` | `a96a7978c0b9f6ee` | Implemented; native acceptance unexecuted |
+| `Official elasticnodes` | `fff97a435b73d548` | Implemented; native acceptance unexecuted |
+| `Official padnavigator` | `a58650b5461c0f48` | Implemented; native acceptance unexecuted |
+| `Official basicsortfiltermodel` | `9dab02b61cebbdb7` | Implemented; native acceptance unexecuted |
+| `Official coloreditorfactory` | `0a3b15766909bdc3` | Implemented; native acceptance unexecuted |
+| `Official combowidgetmapper` | `cc95f9719b8e4eda` | Implemented; native acceptance unexecuted |
+| `Official customsortfiltermodel` | `029ea0dabe87ae57` | Implemented; native acceptance unexecuted |
+| `Official dirview` | `4b8851287931abd0` | Implemented; native acceptance unexecuted |
+| `Official fetchmore` | `67170c89593ad35e` | Implemented; native acceptance unexecuted |
+| `Official pixelator` | `d50ad6638357e669` | Implemented; native acceptance unexecuted |
+| `Official simpledommodel` | `a59dae9770bfbefb` | Implemented; native acceptance unexecuted |
+| `Official simplewidgetmapper` | `39de33366209402d` | Implemented; native acceptance unexecuted |
+| `Official spinboxdelegate` | `ddb20b1b68b18a91` | Implemented; native acceptance unexecuted |
+| `Official spreadsheet` | `bf3b39a8c2df8e94` | Implemented; native acceptance unexecuted |
+| `Official stardelegate` | `dc59f268ee01e364` | Implemented; native acceptance unexecuted |
+| `Official storageview` | `cf15c3e91cdd8ded` | Implemented; native acceptance unexecuted |
+| `Official blockingfortuneclient` | `79f3a23172968ad2` | Implemented; native acceptance unexecuted |
+| `Official broadcastreceiver` | `0bba8a80541ab04f` | Implemented; native acceptance unexecuted |
+| `Official broadcastsender` | `90721289b8108c4f` | Implemented; native acceptance unexecuted |
+| `Official fortuneclient` | `fbb4e3c7288fed7c` | Implemented; native acceptance unexecuted |
+| `Official fortuneserver` | `aad57160cfd51894` | Implemented; native acceptance unexecuted |
+| `Official http` | `409f3d46a9555f23` | Implemented; native acceptance unexecuted |
+| `Official lightmaps` | `d8803c2afaabf3d5` | Implemented; native acceptance unexecuted |
+| `Official loopback` | `ebf87d5f5390b0fd` | Implemented; native acceptance unexecuted |
+| `Official threadedfortuneserver` | `98f207907001ce47` | Implemented; native acceptance unexecuted |
+
 Source IDs also work as names. `get(name)` retrieves a launched handle, including its native widget, retained callbacks and alert owners. Repeated launch reshows the same owned window. Module state keeps handles alive across isolated external calls. A native window's close button hides it; `close(name)` removes ownership and schedules native destruction. External parent destruction makes inspection safe. Existing FontLab UI and preferences are not changed.
-
 The click alert uses asynchronous `open()` with example-window modality, keeping FontLab's event loop responsive. Dismissed alerts remain owned until the next click or named cleanup. Designer uses `QUiLoader`, loading its exact copied XML relative to the port file. Launch fails clearly outside FontLab, without an existing QApplication, for unknown names, or for known but unported source IDs and source paths.
-
 Ordinary external Python can use [fontlab-remopy](../fontlab-remopy) to run the same calls inside an already running FontLab with its MCP bridge configured.
-
 The [runnable Remopy example](examples/remopy.py) supports external launch, inspect and close calls while adding this checkout to the host module path.
-
 The static [source catalog](catalog/sources.json) stays unchanged. The separate [port manifest](catalog/ports.json) records individual licenses, exact original identities, resource hashes and implementation/native states. Tests use boundary doubles; they do not count as native acceptance.
 
 ## Insights
@@ -171,9 +192,6 @@ Eighteen original Apache-2.0 examples provide owned type-design panels. See the 
 ## Licensing and remaining ports
 
 The repository's Apache license does not relicense upstream inputs. Pinned READMEs, actual notices and source headers supply per-file evidence. All 1,569 files retain **license review pending in the static catalog**; 43 have no recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and [the numbered-source notice](ports/pyqt-examples-LICENSE.md) and [the official-source notice](ports/pyqt-official-LICENSE.md). Nearby notices may apply only to specific assets: their association is evidence, not a blanket license assignment. Preserve the original notices and resolve scope before distributing a port or copying upstream resources.
-
-Four targets retain native acceptance; 91 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
-
+Four targets retain native acceptance; 118 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
 The [first-batch evidence](verification/first-native-batch.json) records native text/layout/click/Designer acceptance, destruction of all 38 owned objects and unchanged host state. This proves source loading; wheel installation and other native checks remain required. Current states live in the port manifest.
-
-The 84 official ports use tracked callbacks, async dialogs, isolated host state and 215 exact resource copies. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; three GPL alternatives are explicit.
+The 111 official ports use tracked callbacks, async dialogs, isolated host state and 230 exact resource copies. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; five GPL alternatives are explicit.

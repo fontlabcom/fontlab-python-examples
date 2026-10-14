@@ -41,3 +41,13 @@ No additional
 FontLab dependency is installed. All implemented ports retain PythonQt and
 fontlab-fontlabapp ownership requirements. QSoundEffect, QtQml, QtQuick, QtSql
 and the standalone fbs/PyQt6 freezer are recorded host capability gaps.
+
+
+Batch 4 adds no packages. Standard-library csv, pathlib, pickle, math and a local
+random.Random preserve the upstream data/animation behavior. Pickle is limited
+to string dictionaries in an owned temporary directory and denies global/class
+loading. Qt's QBuffer/QDataStream QVariant methods replace unsupported Python
+stream operators. API names were checked against the host's QtCore/QtGui/private
+stubs; [PythonQt datatype documentation](https://mevislab.github.io/pythonqt/Developer.html)
+confirms QByteArray.data() and QVariant conversions. Exact overload and virtual
+callback behavior still requires the controller's native acceptance.

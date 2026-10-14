@@ -124,6 +124,26 @@ class Demo:
             raise RuntimeError("Finish or cancel the drag before closing this example")
         self.closing = True
 
+    def defer(self, name: str, callback: Any) -> Any:
+        """Run startup work after returning to the host, using an owned timer.
+
+        Unlike QTimer.singleShot, this retains an explicit connection and a timer
+        that named close can stop. A stale callback never touches deleted Qt UI.
+        """
+        timer = self.remember(name, self.qt.QtCore.QTimer(self.handle.widget))
+        timer.setSingleShot(True)
+
+        def run() -> None:
+            if self.closing or self.handle.owner.closed:
+                return
+            timer.stop()
+            callback()
+
+        self.connect(timer, "timeout()", run)
+        self.handle.cleanup.append(timer.stop)
+        timer.start(0)
+        return timer
+
     def drag(self, drag: Any, actions: Any, default: Any = None) -> Any:
         """Use QDrag's native operation, never a QApplication or modal dialog loop.
 
@@ -507,3 +527,105 @@ class WorkerDelivery:
         self.workers.clear()
         self.deliver = None
         self.demo = None
+
+
+class LocalServer:
+    """Owned loopback listener: plain Python sockets in the existing worker drain.
+
+    The handler receives no Qt objects. Listener/client deadlines bound shutdown;
+    the worker is joined before disconnection, resource release and widget deletion.
+    """
+
+    def __init__(self, demo: Demo, handler: Any, deliver: Any = None) -> None:
+        import socket
+
+        self.listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            self.listener.bind(("127.0.0.1", 0))
+            self.listener.listen(8)
+            self.listener.settimeout(0.05)
+            self.host, self.port = self.listener.getsockname()
+            self.delivery = WorkerDelivery(demo, deliver or (lambda value: None))
+            demo.handle.cleanup.append(self.listener.close)
+            listener = self.listener
+
+            def serve(stop: Any, publish: Any) -> None:
+                while not stop.is_set():
+                    try:
+                        connection, _address = listener.accept()
+                    except TimeoutError:
+                        continue
+                    with connection:
+                        connection.settimeout(0.1)
+                        try:
+                            handler(connection, stop, publish)
+                        except (OSError, ValueError) as error:
+                            if not stop.is_set():
+                                publish(("request_error", str(error)))
+
+            self.delivery.start(serve)
+        except BaseException:
+            self.listener.close()
+            raise
+
+    def validate(self, host: str, port: int) -> None:
+        """Accept only this build's numerical address and free port, without DNS."""
+        if host != self.host or port != self.port:
+            raise ValueError("Use this example's owned 127.0.0.1 endpoint")
+
+    def validate_url(self, url: str) -> None:
+        from urllib.parse import urlsplit
+
+        value = urlsplit(url)
+        if (
+            value.scheme != "http"
+            or value.hostname != self.host
+            or value.port != self.port
+            or value.username is not None
+            or value.password is not None
+        ):
+            raise ValueError("Use this example's owned localhost HTTP URL")
+
+    def snapshot(self) -> dict:
+        return {"host": self.host, "port": self.port, **self.delivery.snapshot()}
+
+
+def fortune_packet(text: str) -> bytes:
+    """Qt_4_0 big-endian UInt16 frame plus QString (UTF-16 byte length/data)."""
+    import struct
+
+    encoded = text.encode("utf-16-be")
+    body = struct.pack(">I", len(encoded)) + encoded
+    return struct.pack(">H", len(body)) + body
+
+
+def receive_fortune(connection: Any, stop: Any) -> str:
+    """Read fragmented Qt fortune frames in a cancellable Python worker."""
+    import struct
+    import time
+
+    deadline = time.monotonic() + 3
+
+    def exact(count: int) -> bytes:
+        result = bytearray()
+        while len(result) < count:
+            if stop.is_set():
+                raise InterruptedError("Fortune request cancelled")
+            if time.monotonic() >= deadline:
+                raise TimeoutError("Fortune request timed out")
+            try:
+                data = connection.recv(count - len(result))
+            except TimeoutError:
+                continue
+            if not data:
+                raise ValueError("Truncated fortune frame")
+            result.extend(data)
+        return bytes(result)
+
+    body = exact(struct.unpack(">H", exact(2))[0])
+    if len(body) < 4:
+        raise ValueError("Invalid fortune frame")
+    size = struct.unpack(">I", body[:4])[0]
+    if size != len(body) - 4 or size % 2:
+        raise ValueError("Invalid QString length")
+    return body[4:].decode("utf-16-be")

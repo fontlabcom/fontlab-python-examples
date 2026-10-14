@@ -1650,3 +1650,362 @@ Codex fix (same session): explicit tracked QAction, 248 calls audited, doubles
 enforce overload returns; offline 485 passed. Controller re-ran native
 launch/inspect/close for all 84 pyqt-official ports (batches 3–6, parent
 evidence/examples-batch6/native-all-official.jsonl): **84/84 pass, host alive**.
+
+## 2026-10-14 — Batch 7: 27 official PythonQt ports
+
+Baseline: exact offline test command passed 485 tests. Worked directly on
+issue-101-pythonqt-examples; no commit and no native FontLab acceptance.
+The existing Demo/ExampleHandle/WorkerDelivery, official tests/doubles, manifest,
+licence notice and controller guide are extended. No third-party dependency was
+added; pre-existing DEPENDENCIES.md, .DS_Store and .omc changes are preserved.
+PLAN.md, TODO.md and catalog/sources.json are unchanged.
+
+The following per-port adaptations and native acceptance instructions are also
+appended to docs/pyqt-official-batch.md; its common five-step host baseline,
+interaction, disconnect-before-delete, destruction and relaunch checks apply.
+
+## Batch 7: item views, graphics, drag/drop and owned network
+
+All 27 entries are implemented; every new native acceptance state is **unexecuted**.
+The common acceptance steps above apply to every row. Tests use strict doubles and
+real owned localhost transport; they do not prove PythonQt virtual dispatch or rendering.
+Network decision D4 permits only each port's numerical 127.0.0.1/free-port peer; there
+is no DNS, internet, system broadcast, host settings/cache or global cursor change.
+Native TCP/UDP clients and HTTP manager explicitly disable proxies.
+
+### Batch 7 43c6c2f6f5f036d3
+
+`Official delayedencoding` — `ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original SVG view/Export and lazy PNG drag retained. pyqtSignal becomes the native retrieveData virtual callback with a per-drag encoded flag; file assets, component-safe values, balanced painters and owned buffer replace resource registration.
+
+Native: Check SVG and Export icon; inspect encoding_count=0. Start a real native drag, cancel once (no requested PNG), then drop into Drop Site or a controller-owned file target. Confirm retrieveData dispatch, valid PNG bytes/size, one encoding per drag and responsive FontLab. Finish/cancel any drag before named close; verify no MIME producer/slot survives.
+
+### Batch 7 fa6823667fdb918f
+
+`Official dropsite` — `ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original drop area, MIME/content table and Clear/Quit retained. Direct owned change callback replaces custom signal; raw bytes use QByteArray.data(), and QImage values use QPixmap.fromImage.
+
+Native: Drive dropArea with native text, HTML, URL, image and binary drags; formats must show all MIME types and binary 00 FF correctly. Confirm displayed content changes on drop, drag-leave resets and clearButton empties rows. Close with a drag hovering; no stale Python callback.
+
+### Batch 7 a96a7978c0b9f6ee
+
+`Official anchorlayout` — `ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: All seven labelled proxy buttons and all 24 original anchors retained, with typed background brush and parent-owned scene; no wrapper arithmetic.
+
+Native: Check labels A-G and each proxy geometry. Resize window and anchorWidget to narrow/wide/tall sizes; verify original horizontal/vertical centre relationships and min/preferred/max sizes. Click all buttons (upstream has no callback). Named close must destroy scene and seven proxies.
+
+### Batch 7 fff97a435b73d548
+
+`Official elasticnodes` — `ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original nine-node/twelve-edge force graph, arrows, drag, keyboard and zoom retained. Component point offsets replace wrapper operators; private RNG, integer timer interval, explicit native handlers and stopMotion own teardown.
+
+Native: Expect node_count=9, edge_count=12. Drag centerNode and another node; confirm edges follow and timer settles. Arrow keys move the centre; space/enter shuffle; wheel/+/- zoom within source limits. Exercise step/scaleView, resize/background/shadows and arrow rendering; close during active motion, then relaunch.
+
+### Batch 7 a58650b5461c0f48
+
+`Official padnavigator` — `ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original 3x3 pad, native key/state transitions, history, flip/selection animations and optional OpenGL retained. Exact form.ui loads natively, PNGs load from files; entered callbacks set fill instead of a custom Qt meta-property. Typed easing values, component coordinates and explicit animation/state shutdown.
+
+Native: Verify nine icons/background and hostName/form controls. Any key dismisses splash; arrows wrap selection in both directions. Return/Enter flips to the form, edits stay owned, and returns restore the selected history position. Check tilt, opacity, half-flip scale/fill and resize fit. Close midway through animation and confirm machine/animation shutdown. Exercise software viewport and OpenGL when available.
+
+### Batch 7 9dab02b61cebbdb7
+
+`Official basicsortfiltermodel` — `ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original ten mails, dual views, date-display filtering and case/syntax/column controls retained. Proxy model moves to QtGui, native properties use read(), parent ownership and explicit native fallback.
+
+Native: Expect source_rows=10, initial proxy_rows=4. Set sender pattern Andy (2), no match (0), empty (10); exercise regexp/wildcard/fixed string, case toggles and all three filter columns including displayed date. Click headers to sort, check real proxy/view order. Close/relaunch without selection callbacks.
+
+### Batch 7 0a3b15766909bdc3
+
+`Official coloreditorfactory` — `ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original names/colours and colour-list factory retained. QMetaType.type("QColor") resolves the native type; a per-delegate factory/creator plus explicit QColor/index conversion replaces pyqtProperty and leaves the host default factory unchanged.
+
+Native: Expect Alice/aliceblue, Neptun/aquamarine, Ferdinand/springgreen. Double-click a colour cell, confirm native creator virtual dispatch and colour swatches; choose a new colour and commit/cancel. Name editing must use the standard editor. Check a separate host table keeps its editor factory; close with an editor open and verify native factory/creator lifetime.
+
+### Batch 7 cc95f9719b8e4eda
+
+`Official combowidgetmapper` — `ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original five records, rich addresses, Home/Work/Other and mapper navigation retained. QStringListModel lives in QtGui; mapping property uses native QByteArray and a private model field.
+
+Native: Next/Previous traverse Alice, Bob, Carol, Donald, Emma with original addresses/types 0,1,2,0,2; endpoint buttons disable correctly. Change name/address/type, leave the editor and navigate back; verify actual mapper commits. Inspect current_index and row_count=5; close with an editor focused.
+
+### Batch 7 029ea0dabe87ae57
+
+`Official customsortfiltermodel` — `ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original ten mails and text/date filters retained. QtGui proxy plus scalar Julian-day/ISO comparisons avoid Qt wrapper ordering; QDateTime values bypass email matching correctly.
+
+Native: Expect initial proxy_rows=5; Sports gives 3, no match 0, empty 10 with original inclusive dates. Change fromDateEdit/toDateEdit to narrow/empty/inverted ranges. Exercise syntaxes/case and sender-email/date sorting; confirm actual native lessThan/filterAcceptsRow dispatch and visible order. Close/relaunch.
+
+### Batch 7 4b8851287931abd0
+
+`Official dirview` — `ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original read-only QFileSystemModel/tree retained; argv and host filesystem defaults become an owned temporary directory containing example.txt.
+
+Native: Wait for model directory load; root_path must be owned and read_only true, column_count=4. Expand/select example.txt, resize/sort columns and confirm editing cannot write. Named close destroys watcher/model and removes the owned directory; host files stay unchanged.
+
+### Batch 7 67170c89593ad35e
+
+`Official fetchmore` — `ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original directory list, 100-row fetch batches, alternating backgrounds and population log retained. Starts with 205 owned files; custom signal becomes an owned callback set after log creation. Fix inclusive insertion range and reject child/empty fetches.
+
+Native: Drive lineEdit to owned fixtures. Repeated fetchMore should insert 100,100,7 rows for 205 files plus dot entries; verify rowsInserted bounds, alternating backgrounds and log totals. Empty/missing directory must not crash or insert an invalid range. Scroll the real view to trigger native canFetchMore/fetchMore; close while fetching.
+
+### Batch 7 d50ad6638357e669
+
+`Official pixelator` — `ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original image table, grayscale circle delegate, pixel-size control and file/about/print actions retained. Exact qt.png, private model, asynchronous image/large-image/print dialogs; bounded GUI print timer and owned PDF printer replace modal loops/processEvents.
+
+Native: Check original qt.png as circles, change pixelSizeSpinBox 4-32, load an owned PNG and cancel chooser. Trigger printAction: large-image Yes/No is async, printer defaults to an owned PDF, progress rows advance; cancel through progress and close during printing. Validate a completed PDF externally and painter/timer teardown.
+
+### Batch 7 a59dae9770bfbefb
+
+`Official simpledommodel` — `ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Stdlib minidom preserves element/text/comment/processing-instruction/attribute behaviour without absent QtXml. Native tree uses numeric internal IDs, async chooser and tracked model replacement; invalid XML retains the previous model.
+
+Native: Initial root label=owned contains comment, processing instruction and child/text; headers Name/Attributes/Value. Use loadXml/openAction for a fixture with whitespace/comments/namespaces, expand all levels and verify native parent/index relationships. Malformed/missing XML sets error and retains the old tree. Replace twice, close and confirm retired/current models are destroyed.
+
+### Batch 7 39de33366209402d
+
+`Official simplewidgetmapper` — `ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original five records, rich addresses, age spinner and mapper navigation retained. QtGui mapper uses a private model field and tracked callbacks.
+
+Native: Next/Previous traverse Alice/Bob/Carol/Donald/Emma with ages 20,31,32,19,26. Edit name/address/age, leave focus/navigate back and verify native mapper persistence. Endpoint buttons and current_index/row_count must match. Close with an editor focused.
+
+### Batch 7 ddb20b1b68b18a91
+
+`Official spinboxdelegate` — `ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original 4x2 multiplication values and 0-100 editor retained; QtGui styled delegate/model are parent-owned with explicit native editor geometry and retained controls.
+
+Native: Initial rows [[1,2],[2,4],[3,6],[4,8]]. Double-click row 2 column 1, expect 6; commit 42 through the native editor and verify model/inspect. Test 0/100 bounds, cancellation and resizing editor geometry. Close while editing; model/delegate/editor must be destroyed.
+
+### Batch 7 bf3b39a8c2df8e94
+
+`Official spreadsheet` — `ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py` — **implemented**, native acceptance **unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Adaptation: Original 10x6 expense sheet, formula operations, date/completion delegate, menus and context actions retained, with all four companion notices. Explicit subclass clone/recursive cell evaluation, cycle guard, typed brushes/shortcuts and async arithmetic/colour/font/owned PDF preview replace unsafe/native-attribute and modal patterns.
+
+Native: Initial total=21883; putFormula("C2","200") changes total to 21933. Drive formulaInput and all +,-,*,/,sum actions, division by zero and cyclic references; verify live cells, not just inspect. Test date formats/editor calendar/completion, colour/font/clear and context menu. Preview printer is dialog-owned and defaults to temporary PDF; validate PDF, then close with arithmetic/editor/preview open. Check native item data/clone virtual dispatch.
+
+### Batch 7 dc59f268ee01e364
+
+`Official stardelegate` — `ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original four music rows, painted stars/diamonds and hover/release editor retained. Integer QVariant ratings replace Python objects; original rating objects remain inside the Python painter/editor. Component QSize and list polygons, explicit native fallback and balanced paint.
+
+Native: Initial ratings [5,4,3,5]. Double-click a star cell, hover across centres including 0/5 boundaries, release to commit; cancel another editor. Verify integer model values, stars/diamonds, selection background and standard text-cell editing. Close with an editor active; no Python editing signal is left attached.
+
+### Batch 7 cf15c3e91cdd8ded
+
+`Official storageview` — `ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original ten-column mounted-volume model and size/tooltip formatting retained, with QtGui table model and QByteArray.data() decoding. Volume enumeration is read-only and captured at build.
+
+Native: Check headers and native mounted-volume count; compare root/name/device/filesystem/total/free/available/ready/read-only/valid with read-only host observations. Hover rows for all ten tooltip values and size units; expand/select/sort/resize. Repeated inspection must not refresh volumes or write to them; close model/view.
+
+### Batch 7 79f3a23172968ad2
+
+`Official blockingfortuneclient` — `ports/network/pyqt-official/blockingfortuneclient-79f3a23172968ad2.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original host/port/Get Fortune/status UI retained. Missing QThread/mutex/condition become WorkerDelivery with cancellable stdlib socket reads and GUI timer; owned loopback fixture sends the exact Qt_4_0 frame. Other host/port inputs are rejected before DNS/socket creation.
+
+Native: Click getFortuneButton repeatedly; inspect fortune, statusLabel and button recovery. Change hostLineEdit/portLineEdit to foreign values and expect an owned error without network contact. Close during connect/read/drain; worker joins and listener port is released. Relaunch for fresh state; host GUI remains responsive.
+
+### Batch 7 0bba8a80541ab04f
+
+`Official broadcastreceiver` — `ports/network/pyqt-official/broadcastreceiver-0bba8a80541ab04f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original receiver/status/Quit retained. Native QUdpSocket writes to an owned localhost UDP socket; bounded GUI timer/stdlib recvfrom replaces the unavailable PyQt tuple readDatagram overload. No real broadcast or fixed global port.
+
+Native: Invoke sendSample, then wait for pollTimer: expect Received datagram: "Broadcast message 1" and received list. Send multiple owned samples, verify ordering/bounded history. Inspect is inert. Close while draining, verify socket/free port and both timers released, then relaunch.
+
+### Batch 7 90721289b8108c4f
+
+`Official broadcastsender` — `ports/network/pyqt-official/broadcastsender-90721289b8108c4f.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original Start/Quit, one-second sender and message counter retained. Native QUdpSocket targets the port-owned localhost receiver; bounded stdlib receive drain replaces raw C-buffer readDatagram; no broadcast address or fixed port.
+
+Native: Click startButton, observe messages 1,2,3 at one-second intervals; status/counter and received list agree. Invoke sendSample for an explicit extra datagram. No packet leaves 127.0.0.1. Close while active; sender, receiver and timers release the free port; relaunch resets message_no.
+
+### Batch 7 fbb4e3c7288fed7c
+
+`Official fortuneclient` — `ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original host/port/Get Fortune/status UI and asynchronous QTcpSocket retained. A WorkerDelivery-owned localhost server supplies framed UTF-16 fortunes; partial reads accumulate bytes. Numeric endpoint validation, NoProxy and no host network-session/settings writes.
+
+Native: Click getFortuneButton repeatedly and verify distinct original fortunes/status/button recovery. Drive fragmented delivery/error via the owned peer; foreign hostCombo/portLineEdit values must fail before connection. Close with tcpSocket active and server queue pending; disconnect callbacks, abort socket, join server and release port.
+
+### Batch 7 aad57160cfd51894
+
+`Official fortuneserver` — `ports/network/pyqt-official/fortuneserver-aad57160cfd51894.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original server-status/Quit and seven fortunes retained. A plain-data WorkerDelivery listener binds only 127.0.0.1/free port; exact Qt_4_0 UInt16/QString wire format and owned probe replace network-session/global interface/settings behaviour.
+
+Native: Run probe or connect a controller-owned localhost client to endpoint; decode the UInt16/QString packet and verify original fortunes/sent_count. Connect repeatedly, close during a request or full delivery queue, and confirm worker joined/free port released. No host network settings or global interfaces change.
+
+### Batch 7 409f3d46a9555f23
+
+`Official http` — `ports/network/pyqt-official/http-409f3d46a9555f23.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original URL/Download/Quit/progress/cancel behaviour retained with QNetworkAccessManager and NoProxy. Owned HTTP fixture/output, before-request numerical endpoint validation, exported FollowRedirectsAttribute=False, no external redirect/authentication/SSL flows; reply disconnect precedes abort/delete.
+
+Native: Download default sample.txt, wait until downloading=false, check 38 bytes and exact owned file content. Cancel an active request and expect output removal/button recovery; /missing exercises failure. Foreign URL/port, credentials and redirects must not contact another peer. Close during active reply/progress; listener, reply callbacks and temporary files disappear. HTTPS/authentication are intentionally outside the D4 local fixture.
+
+### Batch 7 d8803c2afaabf3d5
+
+`Official lightmaps` — `ports/network/pyqt-official/lightmaps-d8803c2afaabf3d5.py` — **implemented**, native acceptance **unexecuted**. Licence: `GPL-3.0-only`; review `reviewed`.
+
+Adaptation: Original city selection, slippy coordinates/panning, magnifier/feathered ring and night mode retained. Missing QtXml is irrelevant; QObject uses private, custom update signals become direct owned callbacks, all wrapper arithmetic is component-based. Owned HTTP PNG fixture/cache replaces internet tiles/global disk cache; replies and hold timer stop on close.
+
+Native: Choose Oslo/Berlin/Jakarta, wait for tile_count, verify coordinates and the clearly labelled offline fixture. Pan by mouse/arrows, hold/Z magnifier and release, move lens, toggle night mode; check ring/clipping/tiling and repeated resize. Verify traffic only reaches endpoint and no host cache/browser is used. Close mid-download/hold/zoom; server joins and native replies/timers/owned tile file disappear. Geographic map imagery is not supplied.
+
+### Batch 7 ebf87d5f5390b0fd
+
+`Official loopback` — `ports/network/pyqt-official/loopback-ebf87d5f5390b0fd.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original 50 MiB transfer, 64 KiB payloads, Start/Quit and client/server progress retained. Native QTcpSocket sends to a WorkerDelivery-owned localhost receiver; bounded plain-data counts drain on GUI timer, NoProxy and no global cursor override.
+
+Native: Click startButton for full 50 MiB; bytes_written/bytes_received equal total_bytes and both progress bars complete. Start again and close mid-transfer; client aborts, server worker joins, callbacks disconnect and port releases. For quick diagnostics only, set window.TotalBytes to 128 KiB; full acceptance still requires original 50 MiB. Host cursor/windows remain unchanged.
+
+### Batch 7 98f207907001ce47
+
+`Official threadedfortuneserver` — `ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py` — **implemented**, native acceptance **unexecuted**. Licence: `BSD-3-Clause AND GPL-3.0-only`; review `unresolved`.
+
+Adaptation: Original threaded-server/status/Quit and seven fortunes retained. Unavailable QThread/socket-descriptor Qt worker becomes a cancellable plain Python listener/handler plus GUI timer drain; this bounded worker services accepted requests serially on an owned localhost/free port.
+
+Native: Run probe and several controller-owned localhost clients; each must receive a complete valid Qt_4_0 fortune frame, without Qt access from a worker. Verify sent_count and close while a client is connected/queue is full; worker joins and port releases. Relaunch for fresh endpoint; host stays responsive.
+
+### Final batch-7 gates and evidence
+
+The final exact offline command passes **572 tests in 11.27s**, with zero failures,
+errors or skips: **87 cases added** to the 485-test baseline. These include the
+27 added generic build/inspect/controls/disconnect/close cases and 60 batch-7
+cases covering inert inspection, failed-build rollback, native export/unsafe-call
+contracts, real owned localhost TCP/UDP/HTTP, fragmented Qt_4_0 wire framing,
+worker stop/join, ports/files/timer release, models/delegates, lazy MIME encoding,
+DOM node relationships, formula cycles and arithmetic continuations, paint paths,
+owned printing/preview, colour factories, graphics/state controls and local tiles.
+The doubles enforce the captured host surface; rendering and virtual dispatch
+still require native acceptance. The threaded fortune server services accepted
+connections serially in one bounded Python worker; it has no Qt worker thread.
+HTTP serves plain local HTTP; internet authentication/SSL/redirect flows are not
+exercised under D4. Lightmaps retains its original magnifier and coordinates but
+serves a clearly labelled generated offline PNG instead of geographic tiles.
+
+Commands (rtk proxy forwards them unchanged):
+
+```sh
+UV_CACHE_DIR=/private/tmp/fontlab-uv-cache UV_OFFLINE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m pytest -q tests
+RUFF_CACHE_DIR=/private/tmp/fontlab-ruff-cache python - <<'CHECK'
+import ast, json, subprocess
+from pathlib import Path
+records = json.loads(Path("catalog/ports.json").read_text())["ports"]
+files = [r["target_path"] for r in records if r.get("native_checklist", "").startswith("docs/pyqt-official-batch.md#batch-7-")]
+assert len(files) == 27
+files += ["fontlab_python_examples/official.py", "tests/test_official_batch.py", "tests/official_doubles.py"]
+subprocess.run(["ruff", "check", *files], check=True)
+subprocess.run(["ruff", "format", "--check", *files], check=True)
+for filename in files:
+    text = Path(filename).read_text()
+    ast.parse(text, feature_version=(3, 11))
+    assert "this_file: " + filename in text
+print(len(files), "Python 3.11 files checked")
+CHECK
+git diff --check
+git branch --show-current
+git rev-parse HEAD
+```
+
+Scoped Ruff check/format pass for **30 Python files**; ast.parse with
+feature_version=(3, 11) and this_file checks pass for all 30, including all 27 new
+ports. A direct hashlib/byte audit verifies **27 original entrypoint hashes**,
+**32 verbatim original notices** (including five companion Python headers),
+**15 exact resource copies**, **six Echopy native stub hashes**, and structural
+identity of **all 101 prior manifest records**. PLAN.md, TODO.md and
+catalog/sources.json are byte-identical to HEAD. README is 197 lines. Source
+originals were never edited and compiled resource blobs are neither copied nor
+executed. No new implementation blocker was found in the exported stubs; all 27
+new entries are implemented/unexecuted. The 25 BSD-header entries retain the
+existing unresolved collection-GPL scope, while spreadsheet/lightmaps select
+explicit GPLv3 alternatives. Asset-specific licence scope remains unresolved.
+
+A final direct review corrected lazy MIME's advertised-format/encoded-data
+confusion, callback registration before fetch-more construction completes,
+QDateTime email sorting, recursive spreadsheet text dispatch, caller-owned
+printer lifetime (preview now owns its printer), integer star ratings, map wrapper
+subtraction and feathered magnifier rendering. Fresh tests cover these paths.
+Native API inspection used the sibling Echopy stubs and the Qt 5.15 reference
+embedded in them; QTcpServer's official documentation was also consulted:
+https://doc.qt.io/archives/qt-5.15/qtcpserver.html .
+
+Branch/HEAD remain **issue-101-pythonqt-examples /
+2f174565d9ed876681c631409b841bd497d8d637**. No staging or commit. The controller
+must run the per-port native checklist above, particularly custom creator/delegate,
+item/model/MIME virtual callbacks, animation/OpenGL, PDF/PNG rendering and actual
+deferred native destruction. Test doubles and localhost transport do not resolve
+those remaining acceptance questions.
+
+## 2026-10-14 — Controller storageview deadline correction
+
+Controller reports 26/27 native batch-7 launch/inspect/close passes, host alive;
+storageview exceeded run_python's fixed five-second deadline. The native stub
+and controller both confirm mountedVolumes returns a tuple (11 native volumes).
+StorageModel now starts empty/loading and scans only in an owned single-shot GUI
+timer callback, normalizing to a list and resetting the model. Inspect returns
+cached row_count/loading without scans. The shared Demo.defer tracks connections,
+stops on close and guards stale callbacks before accessing native objects.
+
+Audited all **142 port Python files** for reads, enumeration, writes and network
+work reached during build. Also deferred fetchmore's 205 fixture writes (at most
+32 per tick) and its directory listing; deferred dirview sample/root setup.
+Other startup reads are bounded pinned assets (largest copied startup image file 42,654
+bytes), short sample/UI/animation/word-list files or fixed asset directories.
+The larger 235,456-byte audio asset is not read/played during build. Arbitrary
+user-file loads/searches are explicit actions; network requests/accept loops
+already use async Qt or owned Python workers, with only localhost bind/listen
+setup in build. No further expensive synchronous startup scan/request was found.
+
+Eight added regressions first failed, then passed: empty/11-volume tuple scans,
+scan error, close before any tick for all three ports, bounded fixture writes and
+deferred root setup. Existing model/fixture tests now drive the owned timers.
+Exact offline gate: **580 passed**, no failures/errors/skips. Scoped Ruff
+check/format and Python 3.11 grammar checks pass; git diff --check passes.
+Commands: UV_CACHE_DIR=/private/tmp/fontlab-uv-cache UV_OFFLINE=1
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m pytest
+-q tests; RUFF_CACHE_DIR=/private/tmp/fontlab-ruff-cache ruff check and ruff format
+--check on the three itemview ports, official.py, official_doubles.py and
+ test_official_batch.py; ast.parse(feature_version=(3, 11)); git diff --check.
+
+Native rerun: storageview must launch within the deadline, initially show
+row_count=0/loading=true, then finish loading the reported 11 volumes outside
+run_python; repeated inspect must stay fast. Rerun fetchmore/dirview through
+deferred initialization and close before/between timer ticks; verify no writes,
+scans or callbacks after close. No native rerun performed here; manifest native
+states stay unexecuted. No commit, staging or TODO edits.
+
+## 2026-10-14: Controller native acceptance of pyqt-official batch 7 and full re-runs
+
+Batch 7 (Codex): 27 ports (itemviews, graphicsview, draganddrop, network; network
+demos bound to 127.0.0.1 only). First native run 26/27: storageview exceeded the 5 s
+run_python deadline (synchronous QStorageInfo.mountedVolumes() model; natively a tuple).
+Codex fix: deferred, timer-driven population for storageview, fetchmore and dirview;
+offline gate 580 passed. Full native re-runs of all 111 pyqt-official ports in
+agent-owned no-document sessions (parent evidence/examples-batch7/): run 1 crashed
+FontLab at port 20 (icons, SIGSEGV in QSpinBox.setRange text layout — heap state from
+earlier activity; crash-icons-230515.ips); icons alone, ports 1–19 + icons, and
+bridge-driver + 1–19 + icons all passed; run 2 passed **111/111, host alive**. The crash
+is recorded as an intermittent open host issue (1 of 4 sequence runs).

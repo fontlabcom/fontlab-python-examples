@@ -9,6 +9,7 @@ import datetime
 import inspect
 import json
 import re
+import socket
 import threading
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -69,6 +70,7 @@ def official_host(qt):
     enums = {}
     sender = []
     streams = {}
+    network_objects = []
 
     def enum(name):
         if name not in enums:
@@ -105,7 +107,16 @@ def official_host(qt):
                         "red",
                         "white",
                         "yellow",
+                        "aliceblue",
+                        "aquamarine",
+                        "springgreen",
                     ]
+                if key == "type" and cls._qt_name == "QMetaType":
+                    return 67 if args[0] == "QColor" else 0
+                if key == "mountedVolumes":
+                    return tuple(
+                        classes["QStorageInfo"](f"/owned-volume-{i}") for i in range(11)
+                    )
                 if key == "longMonthName":
                     return datetime.date(2026, args[0], 1).strftime("%B")
                 if key == "longDayName":
@@ -285,6 +296,10 @@ def official_host(qt):
                 self._extra["date"] = (
                     datetime.date(*args[:3])
                     if self._qt_name == "QDate" and len(args) >= 3
+                    else args[0]._extra["date"]
+                    if self._qt_name == "QDateTime"
+                    and args
+                    and isinstance(args[0], Native)
                     else datetime.date(2026, 10, 14)
                 )
                 self._data.update(
@@ -463,6 +478,189 @@ def official_host(qt):
             assert threading.get_ident() == gui_thread, (
                 "Native Qt access on a Python worker"
             )
+            if key == "setItemData":
+                self._props[(a[0], a[2] if len(a) > 2 else enum("UserRole"))] = a[1]
+                return None
+            if key == "setSceneRect":
+                self._data["sceneRect"] = a[0] if len(a) == 1 else classes["QRectF"](*a)
+                return None
+            if key == "sceneRect":
+                scene = self._extra.get("scene")
+                return (
+                    scene._invoke("sceneRect")
+                    if scene
+                    else self._data.get(
+                        "sceneRect", classes["QRectF"](-200, -200, 400, 400)
+                    )
+                )
+            if key == "transform" and self._qt_name == "QGraphicsView":
+                return classes["QTransform"]()
+            if key == "mapRect" and self._qt_name == "QTransform":
+                return classes["QRectF"](a[0])
+            if key == "contains" and self._qt_name in ("QRect", "QRectF"):
+                x, y, w, h = self._position
+                px, py = a[0]._position[:2]
+                return x <= px < x + w and y <= py < y + h
+            if key == "loadFromData" and self._qt_name == "QImage":
+                return bool(a[0].data())
+            if key in ("pageRect", "paperRect") and self._qt_name == "QPrinter":
+                return classes["QRect"](0, 0, 600, 800)
+            if self._qt_name == "QDataWidgetMapper":
+                if key == "addMapping":
+                    self._extra.setdefault("mappings", []).append(a)
+                    return None
+                if key in (
+                    "toFirst",
+                    "toLast",
+                    "toNext",
+                    "toPrevious",
+                    "setCurrentIndex",
+                ):
+                    model = self._extra["model"]
+                    row = self._data["currentIndex"]
+                    row = {
+                        "toFirst": 0,
+                        "toLast": model.rowCount() - 1,
+                        "toNext": row + 1,
+                        "toPrevious": row - 1,
+                    }.get(key, a[0] if a else row)
+                    if not 0 <= row < model.rowCount():
+                        return None
+                    self._data["currentIndex"] = row
+                    for widget, column, *property_name in self._extra.get(
+                        "mappings", []
+                    ):
+                        value = model.data(model.index(row, column))
+                        prop = (
+                            property_name[0].data().decode()
+                            if property_name
+                            else "value"
+                            if widget._qt_name == "QSpinBox"
+                            else "text"
+                        )
+                        if prop in ("value", "currentIndex"):
+                            value = int(value)
+                        widget._invoke("set" + prop[0].upper() + prop[1:], value)
+                    self.emit("currentIndexChanged", row)
+                    return None
+            if self._qt_name == "QSortFilterProxyModel":
+                source = self._data.get("sourceModel")
+                if key in ("rowCount", "columnCount"):
+                    if source is None:
+                        return 0
+                    if key == "columnCount":
+                        return source.columnCount()
+                    return sum(
+                        self.filterAcceptsRow(row, classes["QModelIndex"]())
+                        for row in range(source.rowCount())
+                    )
+                if key == "filterAcceptsRow":
+                    if source is None:
+                        return False
+                    regexp = self._data.get("filterRegExp", classes["QRegExp"](""))
+                    column = self._data.get("filterKeyColumn", 0)
+                    return (
+                        regexp.indexIn(str(source.data(source.index(a[0], column))))
+                        >= 0
+                    )
+            if self._qt_name == "QFileSystemModel":
+                if key == "setRootPath":
+                    self._extra["rootPath"] = a[0]
+                    return classes["QModelIndex"]()
+                if key == "rootPath":
+                    return self._extra["rootPath"]
+                if key == "isReadOnly":
+                    return self._data.get("readOnly", True)
+                if key == "columnCount":
+                    return 4
+                if key == "index":
+                    return classes["QModelIndex"]()
+            if self._qt_name in ("QTcpSocket", "QUdpSocket"):
+                if key in ("abort", "close", "disconnectFromHost"):
+                    connection = self._extra.pop("socket", None)
+                    if connection:
+                        connection.close()
+                    return None
+                if key == "connectToHost":
+                    assert a[0] == "127.0.0.1", "Only owned loopback network fixtures"
+                    connection = socket.create_connection((a[0], a[1]), timeout=0.2)
+                    connection.setblocking(False)
+                    self._extra.update(socket=connection, connected=True)
+                    network_objects.append(self)
+                    return None
+                if key == "write":
+                    data = a[0].data()
+                    count = self._extra["socket"].send(data)
+                    self._extra["written"] = self._extra.get("written", 0) + count
+                    return count
+                if key == "writeDatagram":
+                    assert a[1]._args == ("127.0.0.1",)
+                    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as connection:
+                        return connection.sendto(a[0].data(), ("127.0.0.1", a[2]))
+                if key == "readAll":
+                    data = self._extra.pop("received", b"")
+                    return ByteArray(data)
+            if self._qt_name == "QNetworkAccessManager" and key == "get":
+                import http.client
+                from urllib.parse import urlsplit
+
+                url = urlsplit(a[0]._args[0]._args[0])
+                assert url.hostname == "127.0.0.1", "Only owned loopback HTTP fixtures"
+                connection = http.client.HTTPConnection(
+                    url.hostname, url.port, timeout=0.5
+                )
+                try:
+                    connection.request("GET", url.path)
+                    response = connection.getresponse()
+                    reply = classes["QNetworkReply"](self)
+                    reply._extra.update(
+                        received=response.read(), error=response.status >= 400
+                    )
+                    network_objects.append(reply)
+                    return reply
+                finally:
+                    connection.close()
+            if self._qt_name == "QNetworkReply":
+                if key == "readAll":
+                    return ByteArray(self._extra.pop("received", b""))
+                if key == "error":
+                    return int(self._extra.get("error", False))
+                if key == "attribute":
+                    return None
+                if key == "errorString":
+                    return "Owned HTTP error" if self._extra.get("error") else ""
+            if self._qt_name == "QSvgWidget" and key == "renderer":
+                return self._extra.setdefault("renderer", classes["QSvgRenderer"](self))
+            if self._qt_name == "QDir" and key == "entryList":
+                return [
+                    ".",
+                    "..",
+                    *sorted(p.name for p in Path(self._args[0]).iterdir()),
+                ]
+            if self._qt_name == "QItemEditorFactory":
+                if key == "registerEditor":
+                    self._extra.setdefault("creators", {})[a[0]] = a[1]
+                    return None
+                if key == "createEditor":
+                    return self._extra["creators"][a[0]].createWidget(a[1])
+            if self._qt_name == "QStorageInfo":
+                values = {
+                    "rootPath": "/owned-volume",
+                    "name": "Owned volume",
+                    "device": ByteArray(b"fixture"),
+                    "fileSystemType": ByteArray(b"fixturefs"),
+                    "bytesTotal": 4096,
+                    "bytesFree": 2048,
+                    "bytesAvailable": 1024,
+                    "isReadOnly": False,
+                    "isReady": True,
+                    "isValid": True,
+                }
+                if key in values:
+                    return values[key]
+            assert threading.get_ident() == gui_thread, (
+                "Native Qt access on a Python worker"
+            )
             if (
                 getattr(qt, "_strict_integer_coordinates", False)
                 and self._qt_name == "QPainter"
@@ -483,13 +681,40 @@ def official_host(qt):
                 return self._cells.get(a[:2])
             if self._qt_name == "QTableWidget" and key == "setItem":
                 self._cells[a[:2]] = a[2]
+                a[2]._extra.update(table=self, row=a[0], column=a[1])
                 return None
             if self._qt_name == "QTableWidgetItem" and key == "data":
-                return self._data["text"]
+                role = enum("DisplayRole") if a[0] in (0, enum("EditRole")) else a[0]
+                return self._props.get((role,), self._data["text"])
+            if self._qt_name == "QTableWidgetItem" and key == "setData":
+                role = enum("DisplayRole") if a[0] in (0, enum("EditRole")) else a[0]
+                self._props[(role,)] = a[1]
+                if role == enum("DisplayRole"):
+                    self._data["text"] = a[1]
+                return None
+            if self._qt_name == "QTableWidgetItem" and key == "tableWidget":
+                return self._extra.get("table")
+            if self._qt_name == "QSvgRenderer" and key == "load":
+                return (
+                    b"<svg" in a[0].data()
+                    if isinstance(a[0], ByteArray)
+                    else Path(a[0]).is_file()
+                )
+            if self._qt_name in ("QPixmap", "QImage") and key == "save":
+                value = b"owned-image-double"
+                if isinstance(a[0], Native):
+                    a[0]._extra["bytes"] = value
+                else:
+                    Path(a[0]).write_bytes(value)
+                return True
             if self._qt_name == "QFile" and key == "exists":
                 return Path(self._args[0]).is_file()
             if self._qt_name in ("QDate", "QDateTime"):
                 date = self._extra["date"]
+                if key == "toJulianDay":
+                    return date.toordinal()
+                if key == "date":
+                    return classes["QDate"](date.year, date.month, date.day)
                 if key in ("year", "month", "day", "dayOfWeek", "daysInMonth"):
                     return {
                         "year": date.year,
@@ -978,6 +1203,10 @@ def official_host(qt):
                         else enum("Ok")
                     )
             if self._qt_name == "QMimeData":
+                if key == "formats":
+                    return list(self._props)
+                if key == "retrieveData":
+                    return self._props.get(a[0], ByteArray())
                 if key == "setData":
                     self._props[a[0]] = (
                         a[1] if isinstance(a[1], ByteArray) else ByteArray(a[1])
@@ -1062,6 +1291,7 @@ def official_host(qt):
                     return self._extra["model"].data(self, *a)
             if key in ("createIndex", "index") and self._qt_name in (
                 "QAbstractItemModel",
+                "QAbstractTableModel",
                 "QAbstractListModel",
                 "QStandardItemModel",
             ):
@@ -1088,6 +1318,17 @@ def official_host(qt):
                     a[0], 1, *(a[1:] or (classes["QModelIndex"](),))
                 )
             if self._qt_name == "QStandardItemModel":
+                if key == "insertRow":
+                    self._props = {
+                        (r + (r >= a[0]), c, role): value
+                        for (r, c, role), value in self._props.items()
+                    }
+                    self._cells = {
+                        (r + (r >= a[0]), c): value
+                        for (r, c), value in self._cells.items()
+                    }
+                    self._data["rowCount"] += 1
+                    return True
                 if key == "setHorizontalHeaderLabels":
                     self._data["columnCount"] = len(a[0])
                     self._extra["headers"] = list(a[0])
@@ -1106,6 +1347,8 @@ def official_host(qt):
                     return True
                 if key == "data":
                     role = a[1] if len(a) > 1 else enum("DisplayRole")
+                    if role == enum("EditRole"):
+                        role = enum("DisplayRole")
                     cell = self._cells.get((a[0].row(), a[0].column()))
                     return self._props.get(
                         (a[0].row(), a[0].column(), role),
@@ -1468,7 +1711,23 @@ def official_host(qt):
             if key == "findText":
                 return next((i for i, x in enumerate(self._items) if x[0] == a[0]), -1)
             if key == "itemData":
-                return self._items[a[0]][1]
+                return self._props.get(
+                    (a[0], a[1] if len(a) > 1 else enum("UserRole")),
+                    self._items[a[0]][1],
+                )
+            if key == "setItemData":
+                self._props[(a[0], a[2] if len(a) > 2 else enum("UserRole"))] = a[1]
+                return None
+            if key == "findData":
+                role = a[1] if len(a) > 1 else enum("UserRole")
+                return next(
+                    (
+                        i
+                        for i in range(len(self._items))
+                        if self._props.get((i, role), self._items[i][1]) == a[0]
+                    ),
+                    -1,
+                )
             if key == "itemText":
                 return self._items[a[0]][0]
             if key == "actions":
@@ -1549,7 +1808,14 @@ def official_host(qt):
                 return enum("Running") if self._active else enum("NotRunning")
             if key == "isValid":
                 return True
-            if key in ("brush", "dark"):
+            if key in (
+                "brush",
+                "dark",
+                "highlight",
+                "windowText",
+                "highlightedText",
+                "alternateBase",
+            ):
                 return classes["QBrush"]()
             if key in ("color", "selectedColor"):
                 return classes["QColor"]()
@@ -1678,6 +1944,8 @@ def official_host(qt):
             return iter(self._items)
 
         def __eq__(self, other):
+            if self._qt_name == "QColor":
+                return isinstance(other, Native) and self._args == other._args
             if self._qt_name in ("QDate", "QDateTime", "QTime"):
                 return (
                     isinstance(other, Native)
@@ -1759,4 +2027,35 @@ def official_host(qt):
     qt.QtUiTools = SimpleNamespace(QUiLoader=Loader)
     qt._classes = classes
     qt._painters = []
+
+    def pump_network():
+        """Unit-test host event delivery; real loopback transport, no Qt event loop."""
+        for obj in list(network_objects):
+            if obj._qt_name == "QNetworkReply":
+                network_objects.remove(obj)
+                if obj.deleted:
+                    continue
+                obj.emit("readyRead")
+                obj.emit("finished")
+                if obj._parent:
+                    obj._parent.emit("finished", obj)
+                continue
+            if obj._extra.pop("connected", False):
+                obj.emit("connected")
+            count = obj._extra.pop("written", 0)
+            if count:
+                obj.emit("bytesWritten", count)
+            connection = obj._extra.get("socket")
+            if connection is None:
+                network_objects.remove(obj)
+                continue
+            try:
+                data = connection.recv(65536)
+            except BlockingIOError:
+                continue
+            if data:
+                obj._extra["received"] = obj._extra.get("received", b"") + data
+                obj.emit("readyRead")
+
+    qt._pump_network = pump_network
     return qt
