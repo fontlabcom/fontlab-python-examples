@@ -313,8 +313,8 @@ def batch_qt(native_boundary, monkeypatch):
     qt.QtCore.QPoint = lambda x, y: SimpleNamespace(x=lambda: x, y=lambda: y)
     qt.QtCore.QDateTime = SimpleNamespace(currentDateTime=lambda: "now")
     qt.QtCore.QTimer = Timer
-    qt.QtCore.QAbstractTableModel = Model
-    qt.QtCore.QStringListModel = ListModel
+    qt.QtGui.QAbstractTableModel = Model  # PythonQt placement
+    qt.QtGui.QStringListModel = ListModel  # PythonQt placement
     qt.QtCore.QModelIndex = Index
     qt.QtCore.Qt = SimpleNamespace(
         WA_QuitOnClose=2,

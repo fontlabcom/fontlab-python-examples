@@ -9,7 +9,7 @@ from fontlab_python_examples.handle import ExampleHandle
 
 def build(qt: Any) -> ExampleHandle:
     view = qt.QtGui.QListView()
-    model = qt.QtCore.QStringListModel(
+    model = qt.QtGui.QStringListModel(  # PythonQt places it in QtGui
         ["An element", "Another element", "Yay! Another one."], view
     )
     view.setModel(model)

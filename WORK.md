@@ -199,3 +199,15 @@ Slots, stopped timers/workers before disconnection, callback/model/reference
 release before alert/owner deletion, dynamic prompt disconnection, and subclass
 closure-cell release. Ruff lint/format and git diff --check passed. Native
 verification remains for the controller.
+
+## 2026-10-14: Controller native launch/inspect/close for second batch
+
+After the teardown fix (f384365), each of the ten implemented ports was run
+separately in relaunched FontLab 9 via installed Remopy: launch, inspect, close
+all succeed for 02, 07, 09, 10, 11 (three variants), 12, 13, 14; host alive after
+each; open-font list unchanged. QStringListModel/QAbstractTableModel live in
+PythonQt.QtGui in this host, not QtCore; ports and doubles corrected. Earlier
+attempt crashed FontLab (double delete closing 02) before the fix. Receipts:
+parent verification/issue-101-ecosystem/evidence/tg4-second-batch/. Interaction
+acceptance (clicks, save prompts, thread messaging, painting holes) is still
+pending, so ports.json native_acceptance remains "unexecuted".

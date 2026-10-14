@@ -17,7 +17,7 @@ ROWS = [
 def build(qt: Any) -> ExampleHandle:
     core = qt.QtCore
 
-    class TableModel(core.QAbstractTableModel):
+    class TableModel(qt.QtGui.QAbstractTableModel):  # PythonQt places it in QtGui
         def rowCount(self, parent: Any = None) -> int:
             return 0 if parent is not None and parent.isValid() else len(ROWS)
 
