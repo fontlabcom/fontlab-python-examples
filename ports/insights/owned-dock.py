@@ -1,0 +1,38 @@
+# this_file: ports/insights/owned-dock.py
+# SPDX-License-Identifier: Apache-2.0
+# Original code; inspiration only (no reference code copied):
+# _reference/RobotLocomotion_director/src/python/director/applogic.py:78 — source licence unresolved; see catalog/insights.json.
+from typing import Any
+
+from fontlab_python_examples.handle import ExampleHandle
+from fontlab_python_examples.insights import owned
+
+
+def build(qt: Any) -> ExampleHandle:
+    gui = qt.QtGui
+    with owned(gui.QMainWindow(), "Owned metrics workspace") as handle:
+        window = handle.widget
+        toggle = gui.QPushButton("Show / hide sample metrics", window)
+        window.setCentralWidget(toggle)
+        dock = gui.QDockWidget("Sample glyph metrics", window)
+        label = gui.QLabel("A: advance 600, LSB 40", dock)
+        dock.setWidget(label)
+        window.addDockWidget(qt.QtCore.Qt.RightDockWidgetArea, dock)
+
+        def toggle_dock() -> None:
+            dock.setVisible(not dock.isVisible())
+
+        handle.connect_old(toggle, "clicked()", toggle_dock)
+        handle.controls.update(toggle=toggle, dock=dock)
+        handle.inspect_ui = lambda: {
+            "dock_visible": bool(dock.isVisible()),
+            "metrics": str(label.text),
+            "scope": "owned main window",
+        }
+        return handle
+
+
+if __name__ == "__main__":
+    from fontlab_python_examples import launch
+
+    launch("owned-dock")

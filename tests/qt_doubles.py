@@ -2,7 +2,38 @@
 """Owned Qt boundary doubles: call contracts, not a runtime or native proof."""
 
 import sys
+from functools import wraps
 from types import SimpleNamespace
+
+
+def native_double(cls):
+    """Seal native instance fields after construction; Python subclasses stay open."""
+    initialize = cls.__init__
+
+    @wraps(initialize)
+    def init(self, *args, **kwargs):
+        previous = self.__dict__.get("_native_initializing", False)
+        object.__setattr__(self, "_native_initializing", True)
+        try:
+            initialize(self, *args, **kwargs)
+        finally:
+            object.__setattr__(self, "_native_initializing", previous)
+
+    def assign(self, name, value):
+        if (
+            type(self).__dict__.get("_native_double", False)
+            and not self.__dict__.get("_native_initializing", False)
+            and name not in self.__dict__
+            and not hasattr(type(self), name)
+        ):
+            raise AttributeError(
+                f"{name!r} does not exist; native instances reject new attributes"
+            )
+        object.__setattr__(self, name, value)
+
+    cls.__init__, cls.__setattr__ = init, assign
+    cls._native_double = True
+    return cls
 
 
 class Signal:
@@ -27,11 +58,14 @@ def fake_host(monkeypatch):
     qt = SimpleNamespace(fail_show=False, temporary_objects=[])
     owners = []
 
+    @native_double
     class Widget:
         def __init__(self, text="", parent=None):
             self.text, self.parent = text, parent
             self.clicked = Signal()
             self.visible = self.deleted = self.opened = False
+            self.layout = self.attribute = self.modality = self.loaded_path = None
+            self.modal = False
 
         def setAttribute(self, attribute, value):
             self.attribute = (attribute, value)
@@ -59,10 +93,12 @@ def fake_host(monkeypatch):
         def result(self):
             return 0
 
+    @native_double
     class MessageBox(Widget):
         def __init__(self, parent):
             super().__init__(parent=parent)
 
+    @native_double
     class Layout:
         def __init__(self, parent):
             self.widgets = []
@@ -83,6 +119,7 @@ def fake_host(monkeypatch):
                 self.widget.visible = False
                 self.widget = self.content = None
 
+    @native_double
     class File:
         def __init__(self, path):
             self.path, self.deleted = path, False
@@ -97,6 +134,7 @@ def fake_host(monkeypatch):
         def deleteLater(self):
             self.deleted = True
 
+    @native_double
     class Loader:
         def __init__(self):
             self.deleted = False

@@ -6,6 +6,22 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-14: Fix controller-reported insight launch failures: native PythonQt
+  wrappers reject new Python attributes. Move controls from windows to
+  ExampleHandle, clear them before owner deletion, and seal native doubles while
+  allowing Python subclass fields. Audit second-batch ports/editor/chat helpers;
+  their custom fields already belong to Python subclasses. Add regression tests.
+
+- 2026-10-14: Survey all 895 PythonQt reference files in 29 manifest source
+  entries; add a ranked, categorized guide with numbered citations, licence
+  evidence limits, existing coverage and controller native checks.
+- Add twelve original Apache-2.0 insight examples with named launch/inspect/close,
+  tracked disconnection and rollback for partial owned builds. Cover models,
+  timers, contour painting, scoped input, properties, persistence, errors, docks
+  and scenes; no runtime dependencies or changes to reference/catalog inputs.
+- Register insights separately with native acceptance unexecuted; test owned
+  interactions, manifest citations, build failures and disconnect-before-delete.
+
 - Track and disconnect every port-owned PythonQt signal before native teardown,
   including gallery string-signature connections, editor prompts/actions, chat
   timers/input/destruction, and the existing Signals and Slots port.

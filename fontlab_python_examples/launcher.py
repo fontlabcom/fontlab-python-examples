@@ -12,9 +12,25 @@ _handles: dict[str, Any] = {}
 
 def available() -> list[dict]:
     """Return recorded names/provenance, including explicit blocked states."""
-    return json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))[
+    records = json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))[
         "ports"
     ]
+    insight_path = ROOT / "catalog/insights.json"
+    if insight_path.exists():
+        for insight in json.loads(insight_path.read_text(encoding="utf-8"))["insights"]:
+            records.append(
+                {
+                    **insight,
+                    "name": insight["slug"],
+                    "source_id": "insight:" + insight["slug"],
+                    "source": {
+                        "path": insight["target_path"],
+                        "repository": "fontlab-python-examples",
+                    },
+                    "implementation": "implemented",
+                }
+            )
+    return records
 
 
 def describe(name: str) -> dict:

@@ -10,7 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
-from qt_doubles import Signal
+from qt_doubles import Signal, native_double
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = json.loads((ROOT / "catalog/ports.json").read_text(encoding="utf-8"))
@@ -39,6 +39,7 @@ def batch_qt(native_boundary, monkeypatch):
     base = qt.QtGui.QWidget
     gui_thread = threading.get_ident()
 
+    @native_double
     class Palette:
         def __init__(self):
             self.colors = {}
@@ -49,6 +50,7 @@ def batch_qt(native_boundary, monkeypatch):
         def color(self, role):
             return self.colors[role]
 
+    @native_double
     class Widget(base):
         Preferred = Ignored = Password = Save = 1
         Discard, Cancel = 2, 4
@@ -80,7 +82,7 @@ def batch_qt(native_boundary, monkeypatch):
                 def setter(*args):
                     if len(args) == 1:
                         attr = name[3:4].lower() + name[4:]
-                        setattr(self, attr, args[0])
+                        object.__setattr__(self, attr, args[0])
 
                 return setter
             raise AttributeError(name)
@@ -109,10 +111,11 @@ def batch_qt(native_boundary, monkeypatch):
             return self.check_state
 
         def setCheckState(self, state):
-            self.check_state = state
+            object.__setattr__(self, "check_state", state)
 
         def setRange(self, minimum, maximum):
-            self.minimum, self.maximum = minimum, maximum
+            object.__setattr__(self, "minimum", minimum)
+            self.maximum = maximum
 
         def isChecked(self):
             return self.checked
@@ -175,15 +178,18 @@ def batch_qt(native_boundary, monkeypatch):
         def standardButton(self, button):
             return button
 
+    @native_double
     class Style(Widget):
         def standardPalette(self):
             return Palette()
 
+    @native_double
     class Timer(Widget):
         def __init__(self, parent):
             super().__init__(parent)
             self.timeout = Signal()
             self.active = False
+            self.interval = 0
 
         def start(self, interval):
             self.active, self.interval = True, interval
@@ -191,6 +197,7 @@ def batch_qt(native_boundary, monkeypatch):
         def stop(self):
             self.active = False
 
+    @native_double
     class Index:
         def __init__(self, row=-1, column=-1, path=""):
             self.r, self.c, self.path = row, column, path
@@ -204,6 +211,7 @@ def batch_qt(native_boundary, monkeypatch):
         def column(self):
             return self.c
 
+    @native_double
     class Model(Widget):
         def __init__(self, *args):
             super().__init__(*args)
@@ -222,6 +230,7 @@ def batch_qt(native_boundary, monkeypatch):
         def columnCount(self, parent=None):
             return 4
 
+    @native_double
     class ListModel(Model):
         def __init__(self, strings, parent):
             super().__init__(parent)
@@ -231,7 +240,9 @@ def batch_qt(native_boundary, monkeypatch):
             return self.strings
 
     Widget.rootIndex = lambda self: self.rootIndex_value
-    Widget.setRootIndex = lambda self, index: setattr(self, "rootIndex_value", index)
+    Widget.setRootIndex = lambda self, index: object.__setattr__(
+        self, "rootIndex_value", index
+    )
     for name in (
         "QWidget",
         "QDialog",
@@ -262,6 +273,7 @@ def batch_qt(native_boundary, monkeypatch):
     ):
         setattr(qt.QtGui, name, Widget)
 
+    @native_double
     class Layout:
         def __init__(self, *args):
             self.widgets = []

@@ -215,3 +215,100 @@ pending, so ports.json native_acceptance remains "unexecuted".
 QPainter interaction (native): direct super().paintEvent/mousePressEvent raised AttributeError (text unpainted, base click ignored). Replaced with explicit QPlainTextEdit base calls; native click now moves cursor 0->39, hole recorded, no callback errors.
 
 Native interactions (controller): 02 disable toggle disables/restores all groups, timer progress 0->199 in 2.5 s; 13 model edit persists; 07 named close with unsaved text closes without prompt; fonts unchanged, host alive. Receipt native-interactions.json. Pending: 11 thread messaging (needs the chat server), editor Open/Save dialogs, 12 navigation.
+
+
+## 2026-10-14: PythonQt reference survey and original insights
+
+Read the house README/PLAN, WORK/CHANGELOG, handle/launcher, ports manifest,
+QLabel/QPainter ports and existing Qt doubles/tests. Systematically read all
+895 manifest-listed Python files in 29 source entries (the supplied task says
+28; the manifest actually lists 29), starting jcfr, TypeRig, RobotLocomotion,
+Slicer, Naali and CsoundQt. Scanner reads cover the full corpus; focused
+contextual reads cover repeating patterns and a sample from every source.
+The per-source byte-read ledger and 52 valid numbered citations are in
+`docs/pythonqt-reference-insights.md`. These are not 895 deep human reviews.
+
+Ranked 18 idioms with FontLab value, PythonQt gotchas and existing port coverage.
+The manifest supplies only licence-file paths, not licence identifiers or grant
+text; those files are absent from the reference tree. Citations and insights.json
+therefore retain evidence paths and explicitly unresolved source grants. New
+code is original Apache-2.0; no reference code/resources copied or executed.
+
+Implemented the top 12 under ports/insights with named launcher discovery,
+inspectable state, parent-owned children, tracked signals and disconnect-before-
+delete cleanup. Added the small owned-build rollback context manager; release
+child dictionaries, subclass fields and inspection/model callbacks before owner
+close. Timers stop and filters detach first; already-destroyed owners avoid dead
+native calls. All use injected QtGui widgets/models/private QObject and existing
+FontLab event loop. Settings explicitly writes only proof/sample under
+FontLabPythonExamples/InsightsSandbox on Save/Reset, never during build.
+No runtime dependency changes; README launch names and CHANGELOG updated.
+
+Wait, but boundary doubles cannot prove C++ model/paint/filter dispatch, wrapper
+identity, floating-dock cleanup or deferred deletion safety. Native checklists
+are recorded per example; all twelve native_acceptance values remain unexecuted
+for the controller. PLAN/TODO were not changed or ticked. No commit.
+
+Verification: baseline 103 tests passed in cached offline uv. Tests first failed
+for absent insight names/manifest, then passed after implementation. Full suite:
+127 passed (103 existing + 24 new), using the prescribed UV_CACHE_DIR and plugin
+autoload settings, plus UV_OFFLINE=1 to use the cached pytest environment.
+The exact supplied online gate was attempted twice and exited 2 before tests:
+PyPI DNS lookup failed. The cached offline command is:
+`UV_CACHE_DIR=/tmp/fontlab-examples-uv UV_OFFLINE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m pytest -q tests`.
+New tests cover every build/inspect/close and disconnect-before-delete sequence,
+manifest targets/citations/licence evidence, meaningful interactions, invalid
+model callbacks/input, bounded timers/logs, settings persistence/reset/error,
+painter finally cleanup, partial-build rollback and dead-owner cleanup.
+Scoped Ruff check/format pass for 17 Python files. Python 3.11 grammar/header
+checks pass for 14 runtime files. Every one of the 895 reference files still
+matches manifest bytes/SHA-256; manifest, ports.json and source catalog untouched.
+`git diff --check` passes. Native acceptance remains the controller's next step.
+
+
+## 2026-10-14: Native wrapper attribute correction
+
+Controller acceptance found 11 insight launches failed at shared owned() assigning
+window.controls; only the Python Canvas subclass accepted that field. Native
+PythonQt class instances reject new Python attributes; Python subclasses permit
+fields. Moved controls to ExampleHandle and clear them after signal disconnection
+and before reference release/native owner deletion. Removed the native assignment
+from fontlab_python_examples/insights.py. Replaced window.controls.update with
+handle.controls.update in signal-lifetime, glyph-list, timer-batch, owned-key-filter,
+metric-controls, glyph-properties, sandbox-settings, callback-errors, owned-dock
+and contour-scene. Updated interaction tests and documented get(name).controls.
+The common fix also covers metrics-table and contour-canvas builders.
+
+Audited every AST attribute assignment and setattr/delattr in all runtime helpers
+and all ports, including editor.py, chat.py, gallery, painting, themes and models.
+Remaining custom fields belong to Python classes/subclasses: gallery WidgetGallery,
+QPainter PlainTextEdit, insight Canvas/KeyObserver or ExampleHandle. label.text
+is an existing Qt property. Editor/chat keep native references in closures and
+use Qt setters; no additional unsafe assignments found. Their sources need no
+change for this host restriction.
+
+Hardened native-class doubles in tests/qt_doubles.py, tests/test_second_batch.py
+and tests/insight_doubles.py with a constructor-scoped __setattr__ guard. Direct
+native instances reject unknown fields; unmarked Python subclasses can add them.
+Native simulated constructors/setters populate legitimate internal fields without
+opening application assignments. Added widget/model/timer/settings/path/scene/
+QObject regressions and an owned-build/controls-release test.
+
+Tests first reproduced the permissive-double bug (expected AttributeError was
+not raised); after guarding doubles, the old helper failed at the exact native
+window.controls assignment. After moving controls to the handle, the prescribed
+offline gate passes: 138 tests (127 previous + 11 regressions). Cleanup-order and
+all second-batch tests pass under the stricter boundary. Ruff lint/format and
+git diff --check pass. No reference, manifest, native acceptance, PLAN/TODO or
+runtime dependency changes, and no commit. Controller must rerun native acceptance.
+
+## 2026-10-14: Issue 103 insights native acceptance (controller)
+
+First native run failed for 11 of 12: native PythonQt instances reject new
+attributes (`window.controls = {}`); Codex fixed storage on handles and
+hardened doubles (138 tests). Rerun after purging stale host modules: all 12
+launch/inspect/close pass, host alive, fonts unchanged. Interactions pass:
+signal-lifetime counts and relaunch reset, glyph-list filters, owned key filter
+logs without consuming, spin/slider sync without recursion, callback errors keep
+value, sandbox settings persist Unicode and reset. glyph-properties toggle not
+yet exercised (pending). Receipts: parent evidence/i103-insights/.

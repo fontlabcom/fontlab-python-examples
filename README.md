@@ -151,6 +151,21 @@ The static [source catalog](catalog/sources.json) stays unchanged. The separate
 identities, resource hashes and implementation/native states. Tests use boundary
 doubles; they do not count as native acceptance.
 
+## Insights
+
+Twelve original Apache-2.0 examples provide owned type-design panels. See the
+[ranked survey](docs/pythonqt-reference-insights.md) and [native checklists](catalog/insights.json).
+
+Use `examples.launch("glyph-list")`, `examples.inspect("glyph-list")` and
+`examples.close("glyph-list")`. Launch names, in rank order: `signal-lifetime`, `glyph-list`, `metrics-table`,
+`timer-batch`, `contour-canvas`, `owned-key-filter`, `metric-controls`,
+`glyph-properties`, `sandbox-settings`, `callback-errors`, `owned-dock`,
+`contour-scene`. `available()` includes idioms; `get(name).controls` exposes owned controls.
+All twelve await controller native acceptance; doubles do not prove native
+painting, model/filter dispatch or deferred deletion. Settings Save/Reset uses
+only `FontLabPythonExamples` / `InsightsSandbox` and its `proof/sample` key.
+No reference code was copied; source grants are unresolved. No new runtime dependencies.
+
 ## Licensing and remaining ports
 
 The repository's Apache license does not relicense upstream inputs. Pinned

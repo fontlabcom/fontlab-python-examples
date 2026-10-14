@@ -1,0 +1,308 @@
+{
+ "this_file": "catalog/insights.json",
+ "schema_version": "fontlab.examples-insights.v1",
+ "insights": [
+  {
+   "rank": 1,
+   "slug": "signal-lifetime",
+   "title": "Tracked signal lifetime",
+   "idiom": "String-signature connects and owned wrapper lifetime",
+   "inspiration": [
+    {
+     "citation": "_reference/jcfr_PythonQt/examples/PyGettingStarted/GettingStarted.py:21",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "COPYING"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/signal-lifetime.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Click twice: advance 600 → 610 → 620; reshow retains identity; close/relaunch resets safely.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-signal-lifetime.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 2,
+   "slug": "glyph-list",
+   "title": "Glyph name list",
+   "idiom": "Model/view separation with QStringListModel",
+   "inspiration": [
+    {
+     "citation": "_reference/exp111_pyTSon-Scripts/include/ts3widgets/filetransfer.py:660",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/glyph-list.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Apply A, empty and missing filters; verify visible list matches inspect(), then close/relaunch.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-glyph-list.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 3,
+   "slug": "metrics-table",
+   "title": "Sample glyph metrics",
+   "idiom": "Read-only QAbstractTableModel callbacks",
+   "inspiration": [
+    {
+     "citation": "_reference/exp111_pyTSon-Scripts/include/ts3widgets/filetransfer.py:240",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/metrics-table.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Verify three rows, glyph/advance/LSB headers and numeric cells; no edits to user font.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-metrics-table.json"
+   ]
+  },
+  {
+   "rank": 4,
+   "slug": "timer-batch",
+   "title": "Incremental glyph audit",
+   "idiom": "QTimer-driven bounded GUI work",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/timercallback.py:25",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/timer-batch.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Watch four names process one per tick, timer stop, FontLab remain responsive; close mid-batch.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-timer-batch.json"
+   ]
+  },
+  {
+   "rank": 5,
+   "slug": "contour-canvas",
+   "title": "Contour canvas",
+   "idiom": "Custom painting with genuine QPainterPath",
+   "inspiration": [
+    {
+     "citation": "_reference/kateliev_TypeRig/Scripts/TypeRig Tools/TR-DeltaPreview.py:21",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/contour-canvas.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Resize/repaint: closed curved outline remains visible; paint_count increases; close/relaunch without errors.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-contour-canvas.json"
+   ]
+  },
+  {
+   "rank": 6,
+   "slug": "owned-key-filter",
+   "title": "Owned key observer",
+   "idiom": "QObject event filter scoped to owned widget",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/docs/sphinx/tutorials/robot/normalSelectionWidget.py:28",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/owned-key-filter.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Type in owned input: log updates without consuming keys; type elsewhere: log unchanged; remove filter on close.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-owned-key-filter.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 7,
+   "slug": "metric-controls",
+   "title": "Synchronized advance controls",
+   "idiom": "Signal blocking to avoid control feedback",
+   "inspiration": [
+    {
+     "citation": "_reference/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/widgets.py:327",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/metric-controls.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Change spin and slider both directions; values agree, one update per change, no recursive callbacks.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-metric-controls.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 8,
+   "slug": "glyph-properties",
+   "title": "Glyph role properties",
+   "idiom": "Qt attributes and dynamic QObject properties",
+   "inspiration": [
+    {
+     "citation": "_reference/Belsepubi_naali/bin/pymodules/core/componentpropertyadder.py:53",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "license.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/glyph-properties.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "pending",
+   "native_checks": "Toggle default/alternate; label text attribute and dynamic glyphRole match inspect().",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-glyph-properties.json"
+   ]
+  },
+  {
+   "rank": 9,
+   "slug": "sandbox-settings",
+   "title": "Owned proof settings",
+   "idiom": "QSettings persistence in an isolated namespace",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/robotposegui.py:610",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/sandbox-settings.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Save Unicode sample; close/relaunch restores it; Reset removes only proof/sample in FontLabPythonExamples/InsightsSandbox.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-sandbox-settings.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 10,
+   "slug": "callback-errors",
+   "title": "Advance input errors",
+   "idiom": "Narrow callback error handling in owned UI",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/asynctaskqueue.py:72",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/callback-errors.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Apply bad, negative, huge and valid advances; errors stay in owned label, previous valid value survives; valid input clears error.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-callback-errors.json",
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-interactions.json"
+   ]
+  },
+  {
+   "rank": 11,
+   "slug": "owned-dock",
+   "title": "Owned metrics dock",
+   "idiom": "Dock/panel composition without host UI mutation",
+   "inspiration": [
+    {
+     "citation": "_reference/RobotLocomotion_director/src/python/director/applogic.py:78",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/owned-dock.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Toggle, float and redock the panel within its own window; FontLab panels unchanged; named close cleans all.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-owned-dock.json"
+   ]
+  },
+  {
+   "rank": 12,
+   "slug": "contour-scene",
+   "title": "Contour graphics scene",
+   "idiom": "QGraphicsScene ownership and view navigation",
+   "inspiration": [
+    {
+     "citation": "_reference/knossos-project_knossos/python/examples/graphics_view.py:6",
+     "license": {
+      "status": "unresolved",
+      "evidence_paths": [
+       "LICENSE.txt"
+      ],
+      "basis": "Manifest lists evidence paths only; licence text and grant are not included in the read-only corpus."
+     }
+    }
+   ],
+   "target_path": "ports/insights/contour-scene.py",
+   "license": "Apache-2.0",
+   "native_acceptance": "passed",
+   "native_checks": "Verify contour plus baseline and advance guides; drag/scroll owned view; scene/view disappear on close.",
+   "native_evidence": [
+    "verification/issue-101-ecosystem/evidence/i103-insights/native-contour-scene.json"
+   ]
+  }
+ ]
+}

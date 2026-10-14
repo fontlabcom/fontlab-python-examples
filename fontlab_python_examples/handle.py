@@ -19,6 +19,7 @@ class ExampleHandle:
         self.connections: list[tuple[Any, str | None, Callable]] = []
         self.release: list[Callable] = []
         self.model: Any = None
+        self.controls: dict[str, Any] = {}
 
     def connect(self, signal: Any, slot: Callable) -> None:
         """Retain the exact signal/slot pair until explicit disconnection."""
@@ -58,6 +59,7 @@ class ExampleHandle:
         self.callbacks.clear()
         self.inspect_ui = dict
         self.model = None
+        self.controls.clear()
         while self.release:
             self.release.pop(0)()
         for alert in self.alerts:

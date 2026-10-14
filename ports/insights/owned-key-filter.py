@@ -1,0 +1,55 @@
+# this_file: ports/insights/owned-key-filter.py
+# SPDX-License-Identifier: Apache-2.0
+# Original code; inspiration only (no reference code copied):
+# _reference/RobotLocomotion_director/docs/sphinx/tutorials/robot/normalSelectionWidget.py:28 — source licence unresolved; see catalog/insights.json.
+from typing import Any
+
+from fontlab_python_examples.handle import ExampleHandle
+from fontlab_python_examples.insights import owned
+
+
+def build(qt: Any) -> ExampleHandle:
+    gui, core = qt.QtGui, qt.QtCore
+
+    class KeyObserver(qt.private.QObject):
+        """Observe keys only in one owned input, without consuming events."""
+
+        def eventFilter(self, watched: Any, event: Any) -> bool:
+            if watched is self.target and event.type() == core.QEvent.KeyPress:
+                self.keys.append(str(event.text()))
+                del self.keys[:-20]
+                self.label.setText("Keys: " + " · ".join(self.keys))
+            return False
+
+        def release(self) -> None:
+            self.target = self.label = None
+
+    with owned(gui.QWidget(), "Owned glyph-name key observer") as handle:
+        window = handle.widget
+        editor = gui.QLineEdit(window)
+        editor.setPlaceholderText("Type a glyph name here")
+        label = gui.QLabel("Keys: ", window)
+        layout = gui.QVBoxLayout(window)
+        layout.addWidget(editor)
+        layout.addWidget(label)
+        observer = KeyObserver(window)
+        observer.target, observer.label, observer.keys = editor, label, []
+        handle.release.append(observer.release)
+        handle.cleanup.append(
+            lambda: (
+                editor.removeEventFilter(observer) if not handle.owner.closed else None
+            )
+        )
+        editor.installEventFilter(observer)
+        handle.controls.update(editor=editor, filter=observer, label=label)
+        handle.inspect_ui = lambda: {
+            "keys": list(observer.keys),
+            "text": str(editor.text),
+        }
+        return handle
+
+
+if __name__ == "__main__":
+    from fontlab_python_examples import launch
+
+    launch("owned-key-filter")
