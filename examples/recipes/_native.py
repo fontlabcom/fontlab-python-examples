@@ -40,16 +40,24 @@ SOURCES = {
 }
 
 RUN = r"""
-import importlib.util, sys
-for path in paths:
-    if path not in sys.path:
-        sys.path.insert(0, path)
-for name in [m for m in sys.modules if m == module_name or m.split(".")[0] in purge]:
-    del sys.modules[name]
-spec = importlib.util.spec_from_file_location(module_name, recipe_path)
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
-result = module.run(font_id=font_id, **arguments)
+import importlib, importlib.util, os, sys
+saved_path = list(sys.path)
+try:
+    # Controller rule (issue 104): each checkout's src first, its modules purged,
+    # the import proven to come from it, sys.path restored afterwards.
+    for path in reversed(paths):
+        sys.path[:] = [path] + [p for p in sys.path if os.path.realpath(p) != os.path.realpath(path)]
+    for name in [m for m in sys.modules if m == module_name or m.split(".")[0] in purge]:
+        del sys.modules[name]
+    for package, path in zip(purge, paths):
+        origin = os.path.realpath(importlib.import_module(package).__file__)
+        assert origin.startswith(os.path.realpath(path) + os.sep), (package, origin)
+    spec = importlib.util.spec_from_file_location(module_name, recipe_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    result = module.run(font_id=font_id, **arguments)
+finally:
+    sys.path[:] = saved_path
 """
 
 
