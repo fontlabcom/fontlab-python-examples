@@ -423,3 +423,64 @@ def test_run_port_when_verify_stays_unclean_then_reset_and_run_may_continue():
     assert receipt["status"] == "failed" and "reset" in calls
     assert receipt["continue_safe"], "a clean reset lets the run go on"
     assert receipt["reset"]["sessions_reset"] == 1
+
+
+def test_dependencies_when_port_delegates_then_closure_includes_helpers_and_package():
+    manifest = json.loads((ROOT / "catalog/ports.json").read_text())
+    row = next(r for r in manifest["ports"] if r["source_id"] == "029ea0dabe87ae57")
+    files = driver.dependencies(ROOT, row)
+    assert files == sorted(set(files))
+    assert row["target_path"] in files
+    assert (
+        "ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py"
+        in files
+    )
+    assert "ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py" in files
+    assert "fontlab_python_examples/launcher.py" in files
+    assert all((ROOT / name).is_file() for name in files)
+
+
+def test_dependencies_when_synthetic_tree_then_recursive_and_missing_names_ignored(
+    tmp_path,
+):
+    (tmp_path / "ports/x").mkdir(parents=True)
+    (tmp_path / "fontlab_python_examples").mkdir()
+    (tmp_path / "fontlab_python_examples/launcher.py").write_text("")
+    (tmp_path / "ports/x/a.py").write_text(
+        'S.port("x/b.py")\npath = root / "made-at-runtime.txt"\n'
+    )
+    (tmp_path / "ports/x/b.py").write_text('helper = "x/c.py"\n')
+    (tmp_path / "ports/x/c.py").write_text("")
+    row = {"target_path": "ports/x/a.py", "replacement_files": ["ports/x/a.py"]}
+    assert driver.dependencies(tmp_path, row) == [
+        "fontlab_python_examples/launcher.py",
+        "ports/x/a.py",
+        "ports/x/b.py",
+        "ports/x/c.py",
+    ]
+
+
+def test_changed_files_when_dependency_edited_during_run_then_reported(tmp_path):
+    (tmp_path / "a.py").write_text("one")
+    before = driver.file_hashes(tmp_path, ["a.py"])
+    assert driver.changed_files(tmp_path, before) == []
+    (tmp_path / "a.py").write_text("two")
+    assert driver.changed_files(tmp_path, before) == ["a.py"]
+
+
+def test_run_revision_when_git_checkout_then_commit_and_dirty_flag(tmp_path):
+    import subprocess
+
+    def git(*args):
+        subprocess.run(
+            ["git", "-C", str(tmp_path), *args], check=True, capture_output=True
+        )
+
+    git("init", "-q")
+    (tmp_path / "f.txt").write_text("x")
+    git("add", "f.txt")
+    git("-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-qm", "c")
+    revision = driver.run_revision(tmp_path)
+    assert len(revision["commit"]) == 40 and revision["dirty"] is False
+    (tmp_path / "f.txt").write_text("y")
+    assert driver.run_revision(tmp_path)["dirty"] is True

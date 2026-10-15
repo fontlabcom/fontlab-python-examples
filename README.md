@@ -129,12 +129,18 @@ verification/issue-104/fl-native.sh --lane L6c -- bash -c "cd fontlab-python-exa
 # --ids ID ... selects ports; --reset-stale first clears sessions an interrupted run left.
 ```
 
-Review the JSONL, write a proposal (port id -> evidence file and file hashes; see
-`tools/record_native.py`), then record it. The tool refuses stale or mismatched
-entries and writes nothing in that case:
+Run it from a clean, committed checkout: the summary records the commit, whether
+the tree was dirty and whether the revision stayed unchanged, and every receipt
+hashes the port's whole dependency closure (its files, the ports it loads and the
+launcher package) before it runs. Derive a proposal from the receipts, review it,
+then record it. `apply` refuses the whole proposal and writes nothing unless every
+receipt shows six successful phase envelopes and clean teardown, the run commit is
+in this checkout's history and clean, the driver matches that commit, and each
+closure matches both the run commit and the current files:
 
 ```sh
-python3 tools/record_native.py PROPOSAL.json --commit <examples commit of the run>
+python3 tools/record_native.py propose --output PROPOSAL.json OUT*.jsonl
+python3 tools/record_native.py apply PROPOSAL.json --commit <examples commit of the run>
 ```
 
 `tools/integrate_cleanroom.py` resets replacement acceptance; run `record_native.py`

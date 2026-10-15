@@ -24,6 +24,8 @@ import argparse
 import hashlib
 import importlib
 import json
+import re
+import subprocess
 import sys
 import threading
 import time
@@ -65,6 +67,78 @@ finally:
     sys.path[:] = _old
 result['path_restored'] = result['path_restored'] and sys.path == _old
 """
+
+
+FILE_LITERAL = re.compile(
+    r"""["']([\w./-]+\.(?:py|ui|qml|qrc|png|jpg|svg|txt|json))["']"""
+)
+PACKAGE = "fontlab_python_examples"
+
+
+def dependencies(root: Path, record: dict) -> list[str]:
+    """Repository files a port executes or loads: its own files, every file a path
+    literal in them names under ports/ (recursively: delegated helper ports and
+    resources), and the launcher package. Names that do not exist in the checkout
+    (files the port creates at run time) are not dependencies."""
+    root = Path(root).resolve()
+    ports = root / "ports"
+    seen: set[str] = set()
+    queue = [record["target_path"], *record.get("replacement_files", [])]
+    while queue:
+        name = queue.pop()
+        path = root / name
+        if name in seen or not path.is_file():
+            continue
+        seen.add(name)
+        if path.suffix != ".py":
+            continue
+        for literal in FILE_LITERAL.findall(
+            path.read_text(encoding="utf-8", errors="replace")
+        ):
+            for base in (ports, path.parent):
+                candidate = (base / literal).resolve()
+                if candidate.is_file() and candidate.is_relative_to(root):
+                    queue.append(candidate.relative_to(root).as_posix())
+                    break
+    package = {p.relative_to(root).as_posix() for p in (root / PACKAGE).glob("*.py")}
+    return sorted(seen | package)
+
+
+def file_hashes(root: Path, names: list[str]) -> dict[str, str]:
+    return {
+        name: hashlib.sha256((Path(root) / name).read_bytes()).hexdigest()
+        for name in names
+    }
+
+
+def changed_files(root: Path, before: dict[str, str]) -> list[str]:
+    """Names whose bytes differ from ``before`` (or that disappeared)."""
+    changed = []
+    for name, digest in before.items():
+        path = Path(root) / name
+        if (
+            not path.is_file()
+            or hashlib.sha256(path.read_bytes()).hexdigest() != digest
+        ):
+            changed.append(name)
+    return sorted(changed)
+
+
+def run_revision(root: Path) -> dict:
+    """The checkout's commit and whether its tree differs from it."""
+
+    def git(*args: str) -> str:
+        return subprocess.run(
+            ["git", "-C", str(root), *args], capture_output=True, text=True, check=True
+        ).stdout.strip()
+
+    try:
+        return {
+            "commit": git("rev-parse", "HEAD"),
+            "dirty": bool(git("status", "--porcelain")),
+        }
+    except (OSError, subprocess.CalledProcessError):
+        return {"commit": None, "dirty": True}
 
 
 def select_records(manifest: dict, ids: list[str]) -> list[dict]:
@@ -652,6 +726,7 @@ def main() -> int:
     results = []
     transport_error = None
     driver_sha256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    revision = run_revision(root)  # record_native.py verifies files against this commit
     args.output.parent.mkdir(parents=True, exist_ok=True)
     summary_path = args.output.with_suffix(".summary.json")
     if summary_path.exists():
@@ -690,11 +765,18 @@ def main() -> int:
                             result["client_seconds"] = time.monotonic() - started
                             return result
 
+                        # Bind the receipt to every file the port loads, hashed before
+                        # it runs and checked unchanged afterwards.
+                        before = file_hashes(root, dependencies(root, record))
                         receipt = run_port(call, record)
-                        receipt["files"] = {
-                            name: hashlib.sha256((root / name).read_bytes()).hexdigest()
-                            for name in record["replacement_files"]
-                        }
+                        receipt["files"] = before
+                        changed = changed_files(root, before)
+                        if changed:
+                            receipt.update(
+                                status="failed",
+                                error="dependencies changed during the run: "
+                                + ", ".join(changed),
+                            )
                         results.append(receipt)
                         output.write(json.dumps(receipt, ensure_ascii=False) + "\n")
                         output.flush()
@@ -726,6 +808,9 @@ def main() -> int:
             summary["driver_sha256"] = hashlib.sha256(
                 Path(__file__).read_bytes()
             ).hexdigest()
+            summary["examples_commit"] = revision["commit"]
+            summary["examples_dirty"] = revision["dirty"]
+            summary["revision_unchanged"] = run_revision(root) == revision
             summary_path.write_text(
                 json.dumps(summary, indent=2) + "\n", encoding="utf-8"
             )
