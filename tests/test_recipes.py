@@ -32,6 +32,10 @@ NATIVE = {
 ALLOWED = set(sys.stdlib_module_names) | NATIVE
 
 
+def test_recipes_when_listed_then_eight_or_more():
+    assert len(NAMES) >= 8, NAMES
+
+
 def load(name, file="recipe.py"):
     spec = importlib.util.spec_from_file_location(
         f"recipe_{name}", RECIPES / name / file
