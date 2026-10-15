@@ -3,7 +3,7 @@
 """Export the examples catalogue as Markdown pages for the documentation site.
 
 Reads catalog/ports.json, catalog/sources.json, catalog/insights.json and
-examples/recipes/*/README.md, and writes docs-export/ deterministically (no dates,
+examples/recipes/*/README.md, examples/getgo/README.md, and writes docs-export/ deterministically (no dates,
 sorted output, LF line endings):
 
     docs-export/index.md                  overview and per-category counts
@@ -11,6 +11,7 @@ sorted output, LF line endings):
     docs-export/insights.md               original insight examples
     docs-export/recipes/index.md          recipe overview
     docs-export/recipes/<name>.md         each recipe README, links resolved
+    docs-export/getgo.md                  real GetGo font examples (examples/getgo/README.md)
     docs-export/manifest.json             format, inputs, pages, counts
 
 Links to repository files use ``--source-base-url`` (default: the repository's
@@ -133,7 +134,7 @@ def anchors(titles: list[str]) -> list[str]:
 
 
 def index_page(
-    ports: list[dict], categories: dict, insights: list, recipes: list
+    ports: list[dict], categories: dict, insights: list, recipes: list, getgo: int
 ) -> str:
     counts: dict[str, list[int]] = {}
     for port in ports:
@@ -151,7 +152,8 @@ def index_page(
             f"({native} natively accepted: launch, inspect, close), {len(ports) - implemented} "
             "blocked by a recorded host capability. Also: "
             f"[{len(insights)} insight examples](insights.md) and "
-            f"[{len(recipes)} recipes](recipes/index.md)."
+            f"[{len(recipes)} recipes](recipes/index.md), plus "
+            f"[{getgo} examples on real GetGo fonts](getgo.md)."
         ),
         "",
         "| Category | Records | Implemented | Native passed |",
@@ -206,6 +208,11 @@ def recipe_pages(root: Path, base: str) -> dict[str, str]:
     return pages
 
 
+def getgo_page(root: Path, base: str) -> str:
+    """The GetGo examples README; its links to fixtures and scripts point at the repository."""
+    return resolve(read_md(root / "examples/getgo/README.md"), "examples/getgo/", base, [])
+
+
 def read_md(path: Path) -> str:
     """README text without its this_file front matter."""
     text = path.read_text(encoding="utf-8")
@@ -244,7 +251,7 @@ def inputs(root: Path) -> list[str]:
         p.relative_to(root).as_posix()
         for p in (root / "examples/recipes").rglob("README.md")
     )
-    return [*INPUTS, *readmes]
+    return [*INPUTS, *readmes, "examples/getgo/README.md", "examples/getgo/native_manifest.json"]
 
 
 def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
@@ -261,7 +268,11 @@ def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
     pages["insights.md"] = insights_page(insights, base)
     recipes = recipe_pages(root, base)
     pages.update(recipes)
-    pages["index.md"] = index_page(ports, categories, insights, sorted(recipes)[1:])
+    pages["getgo.md"] = getgo_page(root, base)
+    getgo = json.loads((root / "examples/getgo/native_manifest.json").read_text(encoding="utf-8"))
+    pages["index.md"] = index_page(
+        ports, categories, insights, sorted(recipes)[1:], len(getgo["examples"])
+    )
     pages = {path: text.rstrip("\n") + "\n" for path, text in sorted(pages.items())}
     implemented = sum(p["implementation"] == "implemented" for p in ports)
     manifest = {
@@ -280,6 +291,7 @@ def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
             "categories": len({categories[p["source_id"]] for p in ports}),
             "insights": len(insights),
             "recipes": len(recipes) - 1,
+            "getgo_examples": len(getgo["examples"]),
         },
         "entry": "index.md",
         "pages": [

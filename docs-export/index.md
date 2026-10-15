@@ -1,6 +1,6 @@
 # Python examples for FontLab
 
-299 catalogued examples: 148 implemented for FontLab's PythonQt (148 natively accepted: launch, inspect, close), 151 blocked by a recorded host capability. Also: [18 insight examples](insights.md) and [9 recipes](recipes/index.md).
+299 catalogued examples: 148 implemented for FontLab's PythonQt (148 natively accepted: launch, inspect, close), 151 blocked by a recorded host capability. Also: [18 insight examples](insights.md) and [9 recipes](recipes/index.md), plus [13 examples on real GetGo fonts](getgo.md).
 
 | Category | Records | Implemented | Native passed |
 | --- | ---: | ---: | ---: |

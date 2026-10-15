@@ -107,6 +107,9 @@ def test_manifest_inputs_when_listed_then_include_every_recipe_readme(tmp_path):
         (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(ROOT / name, tmp_path / name)
     shutil.copytree(ROOT / "examples/recipes", tmp_path / "examples/recipes")
+    for name in ("README.md", "native_manifest.json"):
+        (tmp_path / "examples/getgo").mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / "examples/getgo" / name, tmp_path / "examples/getgo" / name)
     before = json.loads(docs_export.build(tmp_path)["manifest.json"])["inputs"]
     readme = tmp_path / "examples/recipes/layer_backup/README.md"
     readme.write_text(readme.read_text() + "\nEdited.\n")
@@ -125,3 +128,16 @@ def test_links_when_github_fontlabcom_then_only_public_repositories():
     for path, text in docs_export.build(ROOT).items():
         for repo in re.findall(r"github\.com/fontlabcom/([\w.-]+)", text):
             assert repo in public, (path, repo)
+
+
+def test_getgo_page_when_built_then_links_public_fonts_and_counts_examples():
+    pages = docs_export.build(ROOT)
+    text = pages["getgo.md"]
+    assert text.startswith("# Real GetGo fonts")
+    assert text.count("https://code.fontlab.com/getgo-fonts/") >= 13, "each example links its GetGo page"
+    assert "](getgo.md)" in pages["index.md"]
+    manifest = json.loads(pages["manifest.json"])
+    native = json.loads((ROOT / "examples/getgo/native_manifest.json").read_text())
+    assert manifest["counts"]["getgo_examples"] == len(native["examples"]) == 13
+    assert "examples/getgo/README.md" in manifest["inputs"]
+    assert "(../../testdata" not in text, "relative repository links must be absolute"

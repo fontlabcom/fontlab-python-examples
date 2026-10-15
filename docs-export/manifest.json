@@ -15,7 +15,9 @@
     "examples/recipes/kerning_from_text/README.md": "45743b930ed87d284c4eeedc505e7a8bb7b2c9ed5b3534d89871abf5398959fb",
     "examples/recipes/layer_backup/README.md": "eb7b2d2fc92118783d0cc7d1b949b432baca5cab180558f4907ffd843c114124",
     "examples/recipes/round_coordinates/README.md": "319730c3a5e91877c2113a772028cf85611d7e5a8767b3c7c30be59189227a23",
-    "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe"
+    "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe",
+    "examples/getgo/README.md": "f3e2a4a540d0373c7baa88e8b09e6e15808b2339966b2d85112a9321b88990a2",
+    "examples/getgo/native_manifest.json": "03dcb30e40f72c2f575cc2eab7a64604f02607e6ccd256cfadd56b0fc6a40282"
   },
   "counts": {
     "records": 299,
@@ -24,7 +26,8 @@
     "native_passed": 148,
     "categories": 28,
     "insights": 18,
-    "recipes": 9
+    "recipes": 9,
+    "getgo_examples": 13
   },
   "entry": "index.md",
   "pages": [
@@ -169,9 +172,14 @@
       "sha256": "36326e76affe78b98f7dd2d0268e17db4b64cc9c7360ea4d49398a318aa953b1"
     },
     {
+      "path": "getgo.md",
+      "title": "Real GetGo fonts, disposable working copies",
+      "sha256": "623c3897d2f060b1174fa0921ab9036f321ce44f48b4e1763fa0d330b6edc8c3"
+    },
+    {
       "path": "index.md",
       "title": "Python examples for FontLab",
-      "sha256": "824335269203b65df57f791585f2863839d0594bccd64b334d326cce2a00de32"
+      "sha256": "e329109220298bb2d88c4212812aa85ece693c2893297b94b045ee71d30872fa"
     },
     {
       "path": "insights.md",
