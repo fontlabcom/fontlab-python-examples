@@ -98,3 +98,34 @@ def test_layer_backup_name_when_taken_then_next_free():
     assert backup_name("Regular", ["Regular", "Regular backup"]) == "Regular backup 2"
     assert backup_name("Bold", ["Bold backup", "Bold backup 2"], " old") == "Bold old"
     assert backup_name("Bold", ["Bold backup", "Bold backup 2"]) == "Bold backup 3"
+
+
+def test_round_snap_when_halves_and_grid_then_away_from_zero():
+    snap = load("round_coordinates").snap
+    assert [snap(v) for v in (0.5, 1.5, -0.5, -2.5, 2.49, 0.0)] == [1, 2, -1, -3, 2, 0]
+    assert snap(12.4, 5) == 10 and snap(12.5, 5) == 15
+    with pytest.raises(ValueError):
+        snap(1, 0)
+
+
+def test_contour_direction_when_nested_then_outer_ccw_counter_cw():
+    recipe = load("contour_direction")
+    outer = [(0, 0), (500, 0), (500, 700), (0, 700)]
+    counter = [(100, 100), (100, 600), (400, 600), (400, 100)]
+    island = [(200, 200), (300, 200), (300, 300), (200, 300)]
+    assert recipe.signed_area(outer) > 0 > recipe.signed_area(counter)
+    shapes = [outer, counter, island]
+    assert [recipe.wants_counter_clockwise(shapes, i) for i in range(3)] == [
+        True,
+        False,
+        True,
+    ]
+    assert (
+        recipe.start_index([(5, 9), (3, 0), (1, 0), (0, 0)], [True, True, True, False])
+        == 2
+    )
+
+
+def test_anchor_positions_when_bounds_then_centred_and_rounded():
+    positions = load("anchors_from_bounds").anchor_positions
+    assert positions(50, 0, 551, 700, 20) == {"top": (300, 720), "bottom": (300, 0)}
