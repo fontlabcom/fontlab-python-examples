@@ -165,7 +165,11 @@ def main(
     evidence: dict[str, Any] = {
         "recipe": recipe,
         "arguments": arguments,
-        "sources": {n: _commit(SOURCES[n]) for n in needs},
+        "sources": {
+            # A checkout's commit, or <NAME>_COMMIT for an exported snapshot.
+            n: _commit(SOURCES[n]) or os.environ.get(n.upper() + "_COMMIT")
+            for n in needs
+        },
         "examples_commit": _commit(RECIPES),
     }
     checks: dict[str, bool] = {}

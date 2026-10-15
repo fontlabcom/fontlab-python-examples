@@ -27,6 +27,7 @@ NATIVE = {
     "fontlabapp",
     "fontlab_glyport",
     "GlyphsApp",
+    "Foundation",  # PyObjC, inside Glyphs
 }
 ALLOWED = set(sys.stdlib_module_names) | NATIVE
 
@@ -68,9 +69,9 @@ def test_recipe_when_folder_then_script_readme_and_native_driver(name):
 
 @pytest.mark.parametrize("name", NAMES)
 def test_recipe_when_parsed_then_stdlib_and_host_modules_only(name):
-    for file in ("recipe.py", "native.py"):
-        path = RECIPES / name / file
+    for path in sorted((RECIPES / name).glob("*.py")):
         tree = ast.parse(path.read_text(encoding="utf-8"), str(path))
+        file = path.name
         extra = {"fontlab_remopy", "_native"} if file == "native.py" else set()
         assert set(imported(tree)) <= ALLOWED | extra, (
             f"{name}/{file} imports {set(imported(tree)) - ALLOWED - extra}"
@@ -155,3 +156,46 @@ def test_parse_pairs_when_comments_classes_and_junk_then_pairs_and_problems():
 def test_glyph_actions_batch_when_no_glyph_names_then_refuses_before_fontlab():
     with pytest.raises(ValueError, match="glyph_names"):
         load("glyph_actions_batch").run()
+
+
+class Node:
+    def __init__(self, x, y, type="line"):
+        self.x, self.y, self.type = x, y, type
+
+
+class Path:
+    def __init__(self, points, closed=True):
+        self.nodes, self.closed = [Node(x, y) for x, y in points], closed
+
+
+class Layer:
+    def __init__(self, *paths, width=500):
+        self.paths, self.anchors, self.width = list(paths), [], width
+
+
+def test_tabular_figures_when_layer_then_centred_without_glyphs_app():
+    script = load("glyphs_tabular_figures", "tabular_figures.py")
+    layer = Layer(Path([(100, 0), (100, 700), (200, 700), (200, 0)]), width=350)
+    assert script.centre_in_width(layer, 600) == 150
+    assert [n.x for n in layer.paths[0].nodes] == [
+        250,
+        250,
+        350,
+        350,
+    ] and layer.width == 600
+    assert script.centre_in_width(Layer(), 600) is None
+
+
+def test_path_problems_when_planted_then_each_reported_once():
+    problems = load("glyphs_path_report", "path_report.py").path_problems
+    assert problems(Layer(Path([(0, 0), (0, 700), (500, 700), (500, 0)]))) == []
+    assert problems(Layer(Path([(0, 0), (0, 700), (500, 700)], closed=False))) == [
+        "path 1 is open"
+    ]
+    assert problems(Layer(Path([(-0.0, 0), (-0.0, 0), (500, 700), (500, 0)]))) == [
+        "path 1 repeats the point (0, 0)"
+    ]
+    assert problems(Layer(Path([(0, 0), (500, 700)]))) == [
+        "path 1 has only 2 on-curve points"
+    ]
+    assert problems(Layer(Path([(1, 1), (1, 3), (3, 3)]))) == ["path 1 is tiny (2 x 2)"]

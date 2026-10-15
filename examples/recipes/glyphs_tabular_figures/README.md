@@ -1,0 +1,34 @@
+---
+this_file: examples/recipes/glyphs_tabular_figures/README.md
+---
+
+# Tabular figures (a Glyphs script run in FontLab)
+
+**Purpose.** Give figures one shared advance width and centre each outline in it.
+`tabular_figures.py` is an ordinary Glyphs 3/4 script: in Glyphs it works on the
+selected glyphs. `recipe.py` runs the *same file, unchanged* in FontLab through
+[glyport](https://github.com/fontlabcom/fontlab-glyport), whose `GlyphsApp` module is
+backed by the current FontLab font.
+
+```python
+run()                                   # zero..nine that exist, width 600
+run(glyph_names=["one", "seven"], width=620)
+```
+
+**What glyport needs and provides here.** `font.masters`, `font.glyphs[name]`,
+`glyph.layers[master.id]`, `layer.paths`/`path.nodes` with writable `node.x`, and
+`layer.width`. Glyport has no `layer.bounds` yet, so the script measures the outline
+from its nodes (which works in Glyphs too). Glyport cannot move anchors yet
+(`GSAnchor.position` write is unsupported), so in FontLab, figures with anchors raise
+glyport's `UnsupportedCapability` instead of being left half-moved.
+
+**Native check** (`native.py`, owned font, glyport commit recorded in the evidence):
+"one" (100–200 in 350) and "two" (40–540 in 580) end centred in 600 (shifts 150 and
+10), "A" is untouched, and the script's own `print` output comes back.
+
+**Provenance.** Written from scratch for this repository. The behaviour is the common
+"tabular figures / centre glyphs in width" task, as in the public mekkablue Glyphs
+scripts (https://github.com/mekkablue/Glyphs-Scripts, Metrics folder); their code was
+not read or copied.
+
+**Licence.** Apache-2.0, as the repository.
