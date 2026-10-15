@@ -275,3 +275,54 @@ def test_review_citations_when_originals_available_then_source_records_match():
                         record.get("source_id", record.get("id", record.get("qml_id")))
                         == source_id
                     )
+
+
+def _first_with(reviews, kind):
+    for section in ("classifications", "ownership"):
+        for review in reviews[section].values():
+            for item in review["evidence"]:
+                if kind in item:
+                    return item
+    raise LookupError(kind)
+
+
+@pytest.mark.parametrize(
+    ("kind", "change", "message"),
+    [
+        ("source_id", {"source_id": "does-not-exist"}, "unknown source"),
+        ("source_id", {"sha256": "0" * 64}, "does not match"),
+        ("source_id", {"path": "elsewhere.py"}, "does not match"),
+        ("source_id", {"lines": [5, 2]}, "line range"),
+        ("root", {"file": "does-not-exist.json"}, "evidence file"),
+        ("root", {"sha256": "f" * 64}, "evidence hash"),
+        ("root", {"pointer": "/rows/999999"}, "pointer"),
+        ("root", {"file": "../outside.json"}, "portable"),
+    ],
+)
+def test_reviews_when_citation_forged_then_rejected_before_any_change(
+    kind, change, message
+):
+    catalog = deepcopy(SOURCES)
+    reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
+    _first_with(reviews, kind).update(change)
+    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+    if kind == "root" and not external.is_dir() and message != "portable":
+        pytest.skip("workspace evidence unavailable")
+    with pytest.raises(ValueError, match=message):
+        apply_reviews(
+            catalog, reviews, evidence_root=external if external.is_dir() else None
+        )
+    assert catalog == SOURCES
+
+
+def test_reviews_when_evidence_root_given_then_every_citation_resolves():
+    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+    if not external.is_dir():
+        pytest.skip("workspace evidence unavailable")
+    catalog = deepcopy(SOURCES)
+    apply_reviews(
+        catalog,
+        json.loads((ROOT / "catalog/reviews.json").read_text()),
+        evidence_root=external,
+    )
+    assert catalog == SOURCES

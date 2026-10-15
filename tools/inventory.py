@@ -90,6 +90,11 @@ def main() -> None:
     )
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument(
+        "--evidence-root",
+        type=Path,
+        help="workspace evidence that review citations point to (default: ../verification/issue-101-ecosystem/evidence if present)",
+    )
+    parser.add_argument(
         "--reviews", type=Path, help="Apply hash-bound source review decisions"
     )
     parser.add_argument(
@@ -111,7 +116,15 @@ def main() -> None:
             roots,
         )
         if args.reviews:
-            apply_reviews(catalog, json.loads(args.reviews.read_text()))
+            evidence = args.evidence_root or (
+                Path(__file__).resolve().parents[2]
+                / "verification/issue-101-ecosystem/evidence"
+            )
+            apply_reviews(
+                catalog,
+                json.loads(args.reviews.read_text()),
+                evidence_root=evidence if evidence.is_dir() else None,
+            )
         ports_path = args.ports or args.output / "ports.json"
         ports = None
         if args.ports is not None or ports_path.is_file():
