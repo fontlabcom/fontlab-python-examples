@@ -4615,15 +4615,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 131,
+        "file": "examples-resources/acceptance01.jsonl",
+        "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+        "line": 4,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "ecc2e23449331df1": {
@@ -5025,15 +5027,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "tg4-second-batch/native-Qt_Text_Editor.json",
-        "sha256": "5275fd1c3b00e2a43423cd4c247eb5d040b4481d2bbd5f48001755f7447ae92d",
-        "pointer": "/Qt Text Editor",
+        "file": "examples-resources/acceptance01.jsonl",
+        "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+        "line": 2,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/_host_alive"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a33bb8c2dce4e115": {
@@ -5060,15 +5064,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "tg4-second-batch/native-Qt_dark_theme.json",
-        "sha256": "398f8f25f764660732e5c593a587180adb99e6464d5a63f3ad3c314caf91e7d9",
-        "pointer": "/Qt dark theme",
+        "file": "examples-resources/acceptance01.jsonl",
+        "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+        "line": 3,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/_host_alive"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1151b1cb878f192a": {
@@ -5095,15 +5101,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "tg4-second-batch/native-QPainter.json",
-        "sha256": "f70df764518c21caaaebb2734e67f3781906254a07641d0d3d36cf44c86bbf15",
-        "pointer": "/QPainter",
+        "file": "examples-resources/acceptance01.jsonl",
+        "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+        "line": 1,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/_host_alive"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "f5bf995791f1e87b": {
