@@ -1,0 +1,10 @@
+{
+  "port_id": "ed6d42d4faa7e0bb",
+  "target_path": "ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py",
+  "files": [
+    "ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QOpenGLContext.versionFunctions and version-specific GL wrappers are unavailable in FontLab.",
+  "spec_sha256": "d90c073a3f3a6fccd6d037562c4d0264f40f17ba8d476b9da352664ef5ee89a1"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "428c50abcef7adfe",
+  "target_path": "ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py",
+  "files": [
+    "ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "b6ea28a114f3c81a3267770f1c7eff0ff99d3120134dec011074cb4a7b8617e0"
+}

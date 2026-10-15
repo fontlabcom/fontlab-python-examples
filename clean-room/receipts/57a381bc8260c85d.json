@@ -1,0 +1,10 @@
+{
+  "port_id": "57a381bc8260c85d",
+  "target_path": "ports/dbus/pyqt-official/pong-57a381bc8260c85d.py",
+  "files": [
+    "ports/dbus/pyqt-official/pong-57a381bc8260c85d.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "a2c627706875221a98ee79de3dcb9b9d451598b4301ef6cfd6762643d593e8ec"
+}

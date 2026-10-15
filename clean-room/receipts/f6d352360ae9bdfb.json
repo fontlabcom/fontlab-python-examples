@@ -1,0 +1,10 @@
+{
+  "port_id": "f6d352360ae9bdfb",
+  "target_path": "ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py",
+  "files": [
+    "ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtMultimedia and QtMultimediaWidgets media bindings are unavailable in FontLab.",
+  "spec_sha256": "b3bc39b663d02e7d9739752887064511a54925dc4a6019462da20b9fa9cd24b4"
+}

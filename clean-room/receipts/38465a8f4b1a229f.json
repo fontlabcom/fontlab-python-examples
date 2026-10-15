@@ -1,0 +1,10 @@
+{
+  "port_id": "38465a8f4b1a229f",
+  "target_path": "ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py",
+  "files": [
+    "ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "63d1f47bbaa2cd8f2b3ea3e46e4b5146127791f34cbf4831f43de032a55e50ab"
+}

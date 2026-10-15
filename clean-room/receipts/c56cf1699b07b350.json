@@ -1,0 +1,10 @@
+{
+  "port_id": "c56cf1699b07b350",
+  "target_path": "ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py",
+  "files": [
+    "ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "071815d2cd5ad0a3d4060d066988d1d48d493215e0da35f267c8ddc6342c27d5"
+}

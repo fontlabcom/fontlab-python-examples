@@ -1,0 +1,10 @@
+{
+  "port_id": "303ea3ee09c4677d",
+  "target_path": "ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py",
+  "files": [
+    "ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QOpenGLContext.versionFunctions and version-specific GL wrappers are unavailable in FontLab.",
+  "spec_sha256": "3470104f4e1dd97847550aba488bc0c2e652cf33ab5933d35862168f6433499d"
+}

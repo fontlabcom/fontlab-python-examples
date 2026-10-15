@@ -1,0 +1,10 @@
+{
+  "port_id": "47298251b3c83ecf",
+  "target_path": "ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py",
+  "files": [
+    "ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtWebKit and QtWebKitWidgets DOM bindings are unavailable in FontLab.",
+  "spec_sha256": "515aafd459ccffe9d45c2edfe63c3e26e2c34b24a320cded9cd632f9b831e52c"
+}

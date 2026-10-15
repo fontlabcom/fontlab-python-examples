@@ -1,0 +1,10 @@
+{
+  "port_id": "9e41e71c41b116a8",
+  "target_path": "ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py",
+  "files": [
+    "ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "c4c3781fa468e3aff71b307510a18081b90c13f07803ddfab34ba8394178ce35"
+}
