@@ -4,6 +4,80 @@ this_file: WORK.md
 
 # Work record
 
+## 2026-10-15: Native catalog reconciliation, source roles and non-official licences
+
+Baseline: **973 tests passed**. Added review/evidence tests first; the five initial
+checks failed on absent receipts and unresolved catalog records before changes.
+
+- Reconciled all **148 implemented** native records: 137 exact JSONL lines in
+  parent evidence `examples-interactions/native-lic-final2.jsonl`, four first-batch
+  records in `verification/first-native-batch.json` (preserving their stronger
+  existing interaction/destruction receipt), and seven exact second-batch JSON
+  records in parent evidence `tg4-second-batch/`. Each native pass cites file,
+  SHA-256, line or JSON pointer, and launch/inspect/close selectors. A committed
+  receipt keeps only the exact acceptance-field projections, avoiding private
+  runtime paths and control contents. No new native execution or interaction,
+  delayed-destruction, rendering or installed-distribution acceptance is claimed.
+- Retained all **151 blocked** records as native unexecuted. Existing native
+  tests that assumed later batches were unexecuted now check implementation
+  state; the seven second-batch test subjects remain selected after acceptance.
+- Reviewed **14 Python and 3 QML** candidates against source hashes and the
+  recorded observations: two helpers, ten host plugins, one mathematical-plot
+  Python launcher, one database initializer, two QML resources and one standalone
+  QML entrypoint. Every reviewed record retains its original static classification,
+  source mapping, reasoning and exact evidence references. Mathtext still requires
+  matplotlib's PyQt/PySide backend; chapter6 still requires QML/plugin support.
+  This metadata work does not implement either newly identified launcher.
+- Resolved ownership of **69 shared files** at repository, collection,
+  documentation or example scope. Assigned the fbs sibling project resources to
+  its nested Python entrypoint and Quick's shared resources to animation/canvas;
+  kept build/documentation membership distinct from proven runtime loads.
+  `catalog/reviews.json` plus `inventory.py --reviews` makes the overlay repeatable
+  and rejects missing reasoning/evidence or mismatched source hashes.
+- Recorded **146 file licence/attribution reviews**: 112 non-pyqt-official port
+  sources (including blocked records), 15 resources, and 19 original insight
+  files. Exact pinned file/ancestor notices and source links are individually
+  hashed. Removed the nonexistent nested fbs README from reviewed-file claims.
+  Gallery 02 uses its explicit BSD exception under the root README's exception
+  clause; its complete source notice remains intact. The numbered licence notice
+  is synchronised with these decisions; no port source or resource bytes changed.
+- **14 resource grants remain unresolved**: three logical copies of icon.svg,
+  bullet.png and shot.wav in the numbered examples; styleexample's add.png,
+  application.qss, blue.qss, khaki.qss, nature_1.jpg, nostyle.qss, remove.png,
+  transparent.qss and stylewidget.ui. Existing source-code or collection notices
+  do not establish an individual resource grant/creator attribution. Five inferred
+  numbered-asset MIT selections were withdrawn rather than silently treated as
+  evidence. No resource deletion or replacement was attempted.
+
+Wait, but source review and old native receipts establish different facts. The
+static catalog keeps runtime unexecuted; native passes live in the port manifest.
+All **187 pyqt-official licence/resource records** compare equal to HEAD; their
+licence decisions are left to the separate D7/clean-room work. All 1,569 original
+source hashes and identities remain unchanged. Existing `.DS_Store` and `.omc/`
+untracked entries predate this task and are preserved. No git add/commit.
+
+Verification:
+
+- Required full repository command: **986 passed** (973 baseline, 13 new tests),
+  with `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`, `UV_CACHE_DIR=/private/tmp/issue101-uv-cache`
+  and `uv run --no-project --with pytest python -m pytest -q tests`.
+- Final evidence/review test rerun: **13 passed**, including original evidence
+  file hashes and exact records, missing-reason/evidence rejection, stale hashes,
+  idempotence and preserved ambiguity for empty overlays. Both conditional
+  workspace-original checks ran successfully; neither was skipped here.
+- Inventory regeneration verified all **1,569** original files and reproduced
+  `catalog/sources.json` and `catalog/INDEX.md` byte-for-byte.
+- Scoped Ruff check and format check: all eight changed Python files pass.
+- All 187 official records differ only in native fields. Every original source
+  identity, hash, target and raw licence record matches HEAD. Protected trees
+  differ only in the intended numbered-licence Markdown notice; no source edits.
+- `git diff --check` passes; staging is empty. Final status contains the intended
+  changes plus only the two pre-existing untracked entries noted above.
+
+No added dependencies; only standard-library catalog processing and existing
+pytest. Native interaction work, installed-distribution checks, documentation-site
+integration and the unresolved grants remain separate follow-up work.
+
 2026-10-14: Added the user's complete PythonQt example-port request to the root
 and repository plans/task lists. Both supplied URLs identify pyqt/examples.
 Read upstream README directly: numbered examples and official demos are included;

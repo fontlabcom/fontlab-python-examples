@@ -11,9 +11,12 @@ revision `83eed0514582c8deb60d9e9e6bff31ceffe4eaeb`. The exact copied
 
 The pinned [README Licensing section](https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/README.md#licensing)
 offers MIT or GPLv3 for numbered-example source 1–15, except where indicated.
-MIT is selected for the reviewed numbered sources/resources, except example 02.
-Example 02 preserves its Riverbank/Nokia BSD-3-Clause source header in full and
-retains unresolved license review in the manifest. The MIT-reviewed files and
+MIT is selected for the reviewed numbered program sources, except example 02.
+Example 02 preserves its Riverbank/Nokia BSD-3-Clause source header in full;
+the README's explicit exception permits retaining that file's BSD terms.
+The five icon/image/audio assets have unresolved individual grants and creator
+attribution in [the per-file ledger](../catalog/licenses.json); the previous
+inferred MIT selections for those assets are withdrawn. The MIT-reviewed files and
 example READMEs have no additional license or copyright notice. The Designer XML
 is reviewed as UI program source described by example 5's README, under that
 numbered-source grant. No upstream screenshots, book images or prose are copied.

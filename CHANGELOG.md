@@ -23,6 +23,13 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Reconcile all 148 implemented native acceptance records with exact
+  evidence files, line/JSON-pointer selectors and hashes; retain 151 unexecuted
+  blocked records. Review 17 uncertain candidates and 69 shared-file owners with
+  reproducible inventory overlays. Add 146 per-file non-official licence and
+  attribution records; preserve pyqt-official licences and expose 14 resource
+  grant gaps. Keep source ports, examples and reference trees unchanged.
+
 - 2026-10-15: Correct owned-path enforcement to apply only to writes. Allow
   bundled assets and user files as read sources across codecs, editors, image
   loaders, address books and settings imports; settings edits still use owned

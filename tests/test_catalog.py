@@ -47,7 +47,8 @@ def test_resources_helpers_and_license_gaps_are_visible(catalog):
         ]
     )
     assert catalog["counts"]["auxiliary_python_files"] > 0
-    assert catalog["counts"]["ambiguous_candidates"] > 0
+    assert catalog["counts"]["static_ambiguous_candidates"] == 17
+    assert catalog["counts"]["ambiguous_candidates"] == 0
     assert (
         sum(f["license"]["declared_terms"] == ["unknown"] for f in catalog["files"]) > 0
     )

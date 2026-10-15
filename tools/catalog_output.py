@@ -25,6 +25,17 @@ def write_catalog(catalog: dict, output: Path) -> None:
         "| Collection | Revision | Files | Python |",
         "| --- | --- | ---: | ---: |",
     ]
+    if "review_decisions" in catalog:
+        lines[6] = (
+            f"{catalog['counts']['source_files']:,} original files; "
+            f"{catalog['counts']['python_files']} Python source files. "
+            "This source inventory records static/reviewed roles; see ports.json for implementation and native status."
+        )
+        lines[8] = (
+            "Static candidates retain their identities. Reviewed classifications and shared ownership "
+            "are recorded per file in [sources.json](sources.json) and [reviews.json](reviews.json). "
+            "Runtime acceptance is recorded separately in [ports.json](ports.json). Targets remain planned paths."
+        )
     for source in catalog["sources"]:
         lines.append(
             f"| {source['repository']} | `{source['commit']}` | {source['source_files']} | {source['python_files']} |"

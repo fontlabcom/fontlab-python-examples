@@ -262,7 +262,9 @@ def test_official_manifest_covers_exact_batch_and_retains_provenance():
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
     }
     for row in rows:
-        assert row["native_acceptance"] == "unexecuted"
+        assert row["native_acceptance"] == (
+            "passed" if row["implementation"] == "implemented" else "unexecuted"
+        )
         assert row["source"]["sha256"] == sources[row["source_id"]]["sha256"]
         assert row["license"]["original_notices"], "Retain the actual source header"
         assert row["license"]["reviewed_files"] and row["license"]["basis"]
@@ -4041,7 +4043,9 @@ def test_batch_nine_provenance_license_resource_hashes_and_native_boundary(row):
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
     }
     assert row["source"]["sha256"] == sources[row["source_id"]]["sha256"]
-    assert row["native_acceptance"] == "unexecuted"
+    assert row["native_acceptance"] == (
+        "passed" if row["implementation"] == "implemented" else "unexecuted"
+    )
     assert row["license"]["selected"] == (
         "MIT" if row["source"]["repository"] == "pyqt/examples" else "GPL-3.0-only"
     )

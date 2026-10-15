@@ -45,7 +45,7 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             assert port["native_acceptance"] == "unexecuted"
             continue
         assert port["native_acceptance"] in {"pending", "passed", "unexecuted"}
-        if port["native_acceptance"] == "passed":
+        if port["native_acceptance"] == "passed" and port["source_id"] in IDS:
             evidence = port["native_evidence"]
             report_path = Path(evidence["report"])
             assert not report_path.is_absolute() and ".." not in report_path.parts

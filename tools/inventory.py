@@ -10,6 +10,7 @@ from pathlib import Path
 from catalog_examples import example_records
 from catalog_output import write_catalog
 from catalog_records import source_records
+from catalog_reviews import apply_reviews
 from provenance import verified_sources
 
 
@@ -86,6 +87,9 @@ def main() -> None:
         "--source-root", action="append", required=True, metavar="REPOSITORY=PATH"
     )
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--reviews", type=Path, help="Apply hash-bound source review decisions"
+    )
     args = parser.parse_args()
     roots = {}
     for value in args.source_root:
@@ -99,6 +103,8 @@ def main() -> None:
             json.loads(args.recovery_receipt.read_text()),
             roots,
         )
+        if args.reviews:
+            apply_reviews(catalog, json.loads(args.reviews.read_text()))
         write_catalog(catalog, args.output)
     except (ValueError, KeyError, OSError) as error:
         # OSError text may expose private absolute paths; keep CLI diagnostics portable.
