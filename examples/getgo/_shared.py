@@ -30,6 +30,7 @@ def owned_font(font_id: str, *, mutates: bool = False):
 
     No active-font lookup. Even a partially successful open is cleaned up by its
     unique path. A failed close retains the temporary directory for inspection.
+    The bridge discards edits without package.close(False)'s modal save prompt.
     """
     import fontlab
     import fontpr
@@ -63,7 +64,8 @@ def owned_font(font_id: str, *, mutates: bool = False):
         yield packages[0], record
     finally:
         for package in matching():
-            package.close(False)
+            # fontpr takes the FontGate ID, not the flObject wrapper's package.id.
+            fontpr.call("close_font", font_id=package.fgId, save=False)
         if matching():
             raise RuntimeError(f"Owned document did not close; retained {directory}")
         shutil.rmtree(directory)

@@ -242,7 +242,7 @@ def test_ui_handle_closes_and_deletes_its_window_only_once():
 
 
 @pytest.mark.parametrize(
-    "failure", [None, "body", "open", "reply", "no_document", "close"]
+    "failure", [None, "body", "open", "reply", "no_document", "close", "close_noop"]
 )
 @pytest.mark.parametrize("symlinked", [False, True])
 @pytest.mark.parametrize("prior_path", ["saved", None, ""])
@@ -261,25 +261,40 @@ def test_owned_document_lifecycle_with_real_fixture_and_host_doubles(
     monkeypatch.setattr(_shared.tempfile, "mkdtemp", lambda **kw: str(temp_dir))
     prior = SimpleNamespace(
         path=str(tmp_path / "user.vfj") if prior_path == "saved" else prior_path,
+        id=1001,
+        fgId=101,
         close=lambda save: pytest.fail("Closed user font"),
     )
-    packages, closed = [prior], []
+    packages, closed, calls = [prior], [], []
 
-    def open_copy(name, path):
-        assert name == "open_font" and Path(path).is_absolute()
-        assert Path(path).read_bytes() == original
-
-        def close(save):
-            assert save is False, "Never save discarded working copies"
+    def call(name, **arguments):
+        calls.append((name, arguments))
+        if name == "close_font":
+            assert arguments == {"font_id": 42, "save": False}, (
+                "Use the bridge font ID and discard edits explicitly"
+            )
+            package = next(p for p in packages if p.fgId == arguments["font_id"])
             if failure == "close":
                 raise RuntimeError("close failure")
-            closed.append(path)
-            packages.remove(package)
+            if failure != "close_noop":
+                closed.append(package.path)
+                packages.remove(package)
+            return {"status": "ok"}
+        path = arguments["path"]
+        assert name == "open_font" and Path(path).is_absolute()
+        assert Path(path).read_bytes() == original
 
         assert Path(path) == Path(path).resolve(), (
             "Always pass canonical /private/var paths"
         )
-        package = SimpleNamespace(path=str(Path(path).resolve()), close=close)
+        package = SimpleNamespace(
+            path=str(Path(path).resolve()),
+            id=2002,
+            fgId=42,
+            close=lambda save: pytest.fail(
+                "package.close(False) can open a modal save dialog"
+            ),
+        )
         if failure != "no_document":
             packages.append(package)
         if failure == "open":
@@ -298,7 +313,7 @@ def test_owned_document_lifecycle_with_real_fixture_and_host_doubles(
             ),
         ),
     )
-    monkeypatch.setitem(sys.modules, "fontpr", SimpleNamespace(call=open_copy))
+    monkeypatch.setitem(sys.modules, "fontpr", SimpleNamespace(call=call))
 
     def exercise():
         with _shared.owned_font("baar") as (package, found):
@@ -307,14 +322,20 @@ def test_owned_document_lifecycle_with_real_fixture_and_host_doubles(
                 raise RuntimeError("body failed")
 
     if failure:
-        with pytest.raises(RuntimeError):
+        with pytest.raises(RuntimeError) as error:
             exercise()
+        if failure == "close_noop":
+            assert "Owned document did not close; retained" in str(error.value)
     else:
         exercise()
     assert prior in packages and source.read_bytes() == original, (
         "Keep user's font and fixture untouched"
     )
-    if failure == "close":
+    close_calls = [arguments for name, arguments in calls if name == "close_font"]
+    assert close_calls == (
+        [] if failure == "no_document" else [{"font_id": 42, "save": False}]
+    )
+    if failure in {"close", "close_noop"}:
         assert (owned_dir / source.name).is_file(), (
             "Failed close must retain the open document's bytes"
         )
