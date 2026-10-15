@@ -1,0 +1,664 @@
+{
+  "format": "fontlab-getgo-examples.native.v2",
+  "this_file": "examples/getgo/native_manifest.json",
+  "host": "FontLab 9 Python 3.11 / PythonQt.QtGui",
+  "native_status": "unexecuted",
+  "setup": [
+    "Put the repository root on sys.path",
+    "Use a dedicated no-document FontLab session for mutation runs through the workspace native runner",
+    "Install FontTools in the FontLab interpreter for pen/export examples"
+  ],
+  "cleanup": [
+    "Every run opens only temporary VFJ copies verified against the fixture manifest",
+    "Owned font contexts close exact-path packages in finally, including partial-open and operation failures",
+    "Compare workspace documents before/after each run; no example may close a pre-existing document",
+    "Export outputs are retained for verification; choose a new destination for each run",
+    "For font_info_ui retain the returned handle and call handle.close() in finally; drain deferred deletion events"
+  ],
+  "examples": [
+    {
+      "id": "font_audit",
+      "script": "examples/getgo/font_audit.py",
+      "module": "examples.getgo.font_audit",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "glyph_count equals manifest glyphs (96)",
+        "metrics.unitsPerEm is positive",
+        "missing_anchors follows explicit A/H top-anchor policy"
+      ],
+      "expected": [
+        {
+          "path": [
+            "glyph_count"
+          ],
+          "equals": 96
+        },
+        {
+          "path": [
+            "anchor_count"
+          ],
+          "equals": 0
+        },
+        {
+          "path": [
+            "glyphs_with_anchors"
+          ],
+          "equals": 0
+        },
+        {
+          "path": [
+            "metrics",
+            "unitsPerEm"
+          ],
+          "gt": 0
+        },
+        {
+          "path": [
+            "missing_anchors",
+            "A"
+          ],
+          "equals": [
+            "top"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unicode_coverage",
+      "script": "examples/getgo/unicode_coverage.py",
+      "module": "examples.getgo.unicode_coverage",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "zoto-kufiarabic"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "covered contains U+0627 for the default Arabic sample",
+        "covered and missing are disjoint; their union equals distinct sample scalars"
+      ],
+      "expected": [
+        {
+          "path": [
+            "covered"
+          ],
+          "contains": "U+0627"
+        },
+        {
+          "path": [
+            "text"
+          ],
+          "equals": "مرحبا بالعالم 123"
+        }
+      ]
+    },
+    {
+      "id": "outline_pens",
+      "script": "examples/getgo/outline_pens.py",
+      "module": "examples.getgo.outline_pens",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "hint"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [
+        "fontTools"
+      ],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "A/B/O each report nonempty contours and positive point counts",
+        "bounds contain four finite numbers",
+        "closed directions agree with signed_area; intersections list valid contour indices"
+      ],
+      "expected": [
+        {
+          "path": [
+            "glyphs",
+            "A",
+            "contours"
+          ],
+          "len": 2
+        },
+        {
+          "path": [
+            "glyphs",
+            "B",
+            "contours"
+          ],
+          "len": 3
+        },
+        {
+          "path": [
+            "glyphs",
+            "O",
+            "contours"
+          ],
+          "len": 2
+        },
+        {
+          "path": [
+            "glyphs",
+            "A",
+            "contours",
+            0,
+            "pen_protocol_verified"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "naming",
+      "script": "examples/getgo/naming.py",
+      "module": "examples.getgo.naming",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": true,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "after.familyName equals Scripting Sample",
+        "after.postscriptFontName equals ScriptingSample-Regular",
+        "embedded copyright and licence survive assignments"
+      ],
+      "expected": [
+        {
+          "path": [
+            "after",
+            "familyName"
+          ],
+          "equals": "Scripting Sample"
+        },
+        {
+          "path": [
+            "after",
+            "postscriptFontName"
+          ],
+          "equals": "ScriptingSample-Regular"
+        }
+      ]
+    },
+    {
+      "id": "kerning_classes",
+      "script": "examples/getgo/kerning_classes.py",
+      "module": "examples.getgo.kerning_classes",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "stroke-chan"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "pair_count equals length of pairs",
+        "classes retain native member names and mode",
+        "each pair preserves native left/right object mode and explicit zero values"
+      ],
+      "expected": [
+        {
+          "path": [
+            "pair_count"
+          ],
+          "equals": 79
+        },
+        {
+          "path": [
+            "class_count"
+          ],
+          "equals": 233
+        },
+        {
+          "path": [
+            "limit"
+          ],
+          "equals": 5
+        },
+        {
+          "path": [
+            "pairs"
+          ],
+          "len": 5
+        },
+        {
+          "path": [
+            "classes"
+          ],
+          "len": 5
+        }
+      ]
+    },
+    {
+      "id": "designspace",
+      "script": "examples/getgo/designspace.py",
+      "module": "examples.getgo.designspace",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "cosm-var"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "masters contains 3 names; axes contains 1 axis tagged wght; instances contains 8 export instances",
+        "locations and instance coordinates have one coordinate per axis",
+        "default/current master selection is unchanged"
+      ],
+      "expected": [
+        {
+          "path": [
+            "masters"
+          ],
+          "len": 3
+        },
+        {
+          "path": [
+            "axes"
+          ],
+          "len": 1
+        },
+        {
+          "path": [
+            "axes",
+            0,
+            "tag"
+          ],
+          "equals": "wght"
+        },
+        {
+          "path": [
+            "instances"
+          ],
+          "len": 8
+        },
+        {
+          "path": [
+            "instances",
+            0,
+            "coordinates"
+          ],
+          "len": 1
+        }
+      ]
+    },
+    {
+      "id": "master_compatibility",
+      "script": "examples/getgo/master_compatibility.py",
+      "module": "examples.getgo.master_compatibility",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "plum-var"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "A/V/a contain one signature per native master",
+        "compatible equals the equality of actual contour/node-type signatures with no missing layer",
+        "no claim about component compatibility or geometric interpolation quality"
+      ],
+      "expected": [
+        {
+          "path": [
+            "glyphs",
+            "A",
+            "signatures"
+          ],
+          "len": 3
+        },
+        {
+          "path": [
+            "glyphs",
+            "V",
+            "signatures"
+          ],
+          "len": 3
+        },
+        {
+          "path": [
+            "glyphs",
+            "a",
+            "signatures"
+          ],
+          "len": 3
+        },
+        {
+          "path": [
+            "glyphs",
+            "A",
+            "missing_layers"
+          ],
+          "equals": []
+        }
+      ]
+    },
+    {
+      "id": "spacing",
+      "script": "examples/getgo/spacing.py",
+      "module": "examples.getgo.spacing",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": true,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "I sidebearings match H within 0.01 units after editing",
+        "I advance equals plan.width",
+        "only I on the default master is edited"
+      ],
+      "expected": [
+        {
+          "path": [
+            "glyph"
+          ],
+          "equals": "I"
+        },
+        {
+          "path": [
+            "reference"
+          ],
+          "equals": "H"
+        },
+        {
+          "path": [
+            "sidebearings"
+          ],
+          "len": 2
+        },
+        {
+          "path": [
+            "plan",
+            "width"
+          ],
+          "gt": 0
+        }
+      ]
+    },
+    {
+      "id": "batch_transform",
+      "script": "examples/getgo/batch_transform.py",
+      "module": "examples.getgo.batch_transform",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": true,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "A/V after_width equals before_width times scale within 0.01 units",
+        "all edited nodes read back their planned x/y within 0.01 units",
+        "anchors x scale and y stay unchanged"
+      ],
+      "expected": [
+        {
+          "path": [
+            "scale"
+          ],
+          "equals": 1.1
+        },
+        {
+          "path": [
+            "glyphs"
+          ],
+          "len": 2
+        },
+        {
+          "path": [
+            "glyphs",
+            "A",
+            "points"
+          ],
+          "gt": 0
+        },
+        {
+          "path": [
+            "glyphs",
+            "V",
+            "after_width"
+          ],
+          "gt": 0
+        }
+      ]
+    },
+    {
+      "id": "export_ttf",
+      "script": "examples/getgo/export_ttf.py",
+      "module": "examples.getgo.export_ttf",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [
+        "fontTools"
+      ],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "verified is true; format equals glyf",
+        "binary reopens with exactly .notdef/space/A/V, preserved cmap and advances",
+        "name ID 13 matches the full fixture licence; bounds agree within 2 units"
+      ],
+      "expected": [
+        {
+          "path": [
+            "verified"
+          ],
+          "equals": true
+        },
+        {
+          "path": [
+            "winding_verified"
+          ],
+          "equals": true
+        },
+        {
+          "path": [
+            "format"
+          ],
+          "equals": "glyf"
+        },
+        {
+          "path": [
+            "glyphs"
+          ],
+          "equals": [
+            ".notdef",
+            "space",
+            "A",
+            "V"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "export_otf",
+      "script": "examples/getgo/export_otf.py",
+      "module": "examples.getgo.export_otf",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [
+        "fontTools"
+      ],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "verified is true; format equals CFF",
+        "binary reopens with exactly .notdef/space/A/V, preserved cmap and advances",
+        "name ID 13 matches the full fixture licence; bounds agree within 2 units"
+      ],
+      "expected": [
+        {
+          "path": [
+            "verified"
+          ],
+          "equals": true
+        },
+        {
+          "path": [
+            "winding_verified"
+          ],
+          "equals": true
+        },
+        {
+          "path": [
+            "format"
+          ],
+          "equals": "CFF"
+        },
+        {
+          "path": [
+            "glyphs"
+          ],
+          "equals": [
+            ".notdef",
+            "space",
+            "A",
+            "V"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "font_info_ui",
+      "script": "examples/getgo/font_info_ui.py",
+      "module": "examples.getgo.font_info_ui",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "stroke-chan"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": "handle.close",
+      "native_observations": [
+        "handle.widget is a visible QDialog with font-info QLabel",
+        "handle.report.glyphs equals manifest glyphs (106)",
+        "font document is already closed when the window is shown",
+        "handle.close() clears widget; repeated close is safe; process deferred deletion events"
+      ],
+      "expected": [
+        {
+          "path": [
+            "report",
+            "glyphs"
+          ],
+          "equals": 106
+        },
+        {
+          "path": [
+            "report",
+            "upm"
+          ],
+          "gt": 0
+        },
+        {
+          "path": [
+            "report",
+            "masters"
+          ],
+          "len": 1
+        }
+      ]
+    },
+    {
+      "id": "compare_fonts",
+      "script": "examples/getgo/compare_fonts.py",
+      "module": "examples.getgo.compare_fonts",
+      "entry_function": "run",
+      "kwargs": {},
+      "fonts": [
+        "baar",
+        "hint"
+      ],
+      "mutates_owned_copy": false,
+      "dependencies": [],
+      "native_status": "unexecuted",
+      "cleanup_function": null,
+      "native_observations": [
+        "only_left/only_right agree with native glyph name differences",
+        "width_delta_em uses each fonts own UPM",
+        "both owned documents are closed after returning or failing"
+      ],
+      "expected": [
+        {
+          "path": [
+            "sources"
+          ],
+          "len": 2
+        },
+        {
+          "path": [
+            "width_delta_em"
+          ],
+          "contains": "A"
+        },
+        {
+          "path": [
+            "width_delta_em"
+          ],
+          "contains": "V"
+        }
+      ]
+    }
+  ],
+  "expected_assertion_function": "examples.getgo._checks.assert_expected",
+  "expected_schema": {
+    "path": "Nonempty array of dictionary keys, list indices or documented handle attributes",
+    "operators": [
+      "equals",
+      "len",
+      "contains",
+      "gt"
+    ],
+    "rule": "Exactly one operator per assertion; missing paths fail"
+  },
+  "execution": {
+    "mode": "scripting_panel",
+    "run_python": "setup_and_poll_only",
+    "run_python_deadline_seconds": 5,
+    "instruction": "Run each complete entry in the Scripting panel or an event-loop callback outside run_python; run_python calls only enqueue or inspect detached receipts, never execute run() synchronously."
+  },
+  "native_followups": [
+    "Observe modified-copy close(False) without a save prompt",
+    "Observe metadata renormalization and refreshed spacing bounds",
+    "Drive font_info_ui.py through __main__, discard panel globals, inspect canonical font_info_ui.TOOL and close it",
+    "Confirm native contour.draw standard segment protocol on open and closed contours; outline_pens explicitly validates it",
+    "Assert exported per-contour winding reports: TTF reverses source signs, CFF retains source signs; no absolute source-winding assumption is claimed"
+  ]
+}
