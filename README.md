@@ -166,8 +166,8 @@ do not constitute new native execution or installed-wheel acceptance.
 The repository's Apache-2.0 licence applies to its original code. Upstream inputs
 keep their own recorded terms. [The per-file ledger](catalog/licenses.json) covers
 112 non-official source records, 15 resources and 19 original insight files.
-Fourteen non-official resource grants/creator attributions remain unresolved;
-see the ledger, [numbered notices](ports/pyqt-examples-LICENSE.md) and
+The 14 non-official resources that had no individual grant are replaced by
+self-authored Apache-2.0 files (`tools/replacement_assets.py`); see the ledger, [numbered notices](ports/pyqt-examples-LICENSE.md) and
 [QtExamples notices](ports/eyllanesc-LICENSE.md). Official notices and old licence
 claims reside with the private archive, not the replacement implementations.
 

@@ -369,8 +369,9 @@ def test_batch_nine_provenance_license_resource_hashes_and_native_boundary(row):
                 )
     for resource in row["resources"]:
         data = (ROOT / resource["target_path"]).read_bytes()
-        assert hashlib.sha256(data).hexdigest() == resource["source"]["sha256"]
-        assert len(data) == resource["source"]["bytes"]
+        shipped = resource.get("replacement", resource["source"])  # self-authored file
+        assert hashlib.sha256(data).hexdigest() == shipped["sha256"]
+        assert len(data) == shipped["bytes"]
         assert not resource["target_path"].endswith("_rc.py")
 
 
@@ -448,12 +449,13 @@ def test_batch_nine_chat_unicode_roundtrip_and_close_stops_owned_threads(
         socket.create_connection((value.hostname, value.port), timeout=0.2)
 
 
-def test_batch_nine_style_original_ui_connections_and_owned_styles(official_qt):
+def test_batch_nine_style_self_authored_ui_connections_and_owned_styles(official_qt):
     qt, _ = official_qt
     h = nine("631cc1bc310c00b9", qt)
     h.controls["spinBox"].setValue(17)
-    assert h.controls["horizontalScrollBar"].value == 17
-    assert h.controls["horizontalScrollBar_2"].value == 17
+    assert h.controls["slider"].value == 17
+    h.controls["slider"].setValue(23)
+    assert h.controls["spinBox"].value == 23
     for button, style in [
         ("blueStyle", "blue"),
         ("khakiStyle", "khaki"),

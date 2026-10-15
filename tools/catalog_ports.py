@@ -55,6 +55,12 @@ def _project(target: dict, item: dict, port: dict) -> None:
             target["replacement_files"] = port["replacement_files"]
         else:
             target["distribution_state"] = "archived; not a replacement resource"
+    target.pop("replacement", None)
+    if "replacement" in item:  # tools/replacement_assets.py: upstream bytes not shipped
+        target["replacement"] = item["replacement"]
+        target["distribution_state"] = (
+            "replaced by a self-authored file; upstream not shipped"
+        )
     if port["implementation"] == "clean_room_pending":
         target.pop("license", None)
         target["archive"] = item["archive"]

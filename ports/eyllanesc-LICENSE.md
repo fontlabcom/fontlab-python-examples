@@ -12,8 +12,9 @@ are labelled as adaptations. No copyright year is inferred.
 
 The repository Apache licence and numbered-example MIT licence do not
 replace these terms. Shared official-port helpers retain their existing
-notices. Resource-specific evidence remains unresolved where an asset has
-no individual grant. No compiled resource module is copied or executed.
+notices. The styleexample form, style sheets and images had no individual
+grant; self-authored Apache-2.0 replacements (`tools/replacement_assets.py`) are
+shipped instead. No compiled resource module is copied or executed.
 
 ## Original entrypoint notices
 

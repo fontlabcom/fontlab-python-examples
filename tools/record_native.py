@@ -37,7 +37,7 @@ from pathlib import Path
 
 from catalog_output import write_catalog
 from catalog_ports import apply_port_states
-from native_cleanroom import HOST_BUDGET, dependencies
+from native_cleanroom import HOST_BUDGET, dependencies, driven
 
 RECEIPT = "verification/catalog-native-evidence.json"
 DRIVER = "tools/native_cleanroom.py"
@@ -238,8 +238,10 @@ def validate(
     for pid, entry in sorted(proposal["ports"].items()):
         try:
             row = ports.get(pid)
-            if row is None or not row.get("clean_room_receipt"):
-                raise StaleProposal(f"{pid}: not a clean-room catalogue record")
+            if row is None or not driven(row):
+                raise StaleProposal(
+                    f"{pid}: not a clean-room or replaced-resource record"
+                )
             if (
                 entry["implementation"] != row["implementation"]
                 or entry["native_acceptance"] != "passed"

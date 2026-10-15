@@ -45072,6 +45072,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45106,6 +45107,12 @@
       "path": "official/embedded/styleexample/files/add.png",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/add.png",
+      "replacement": {
+        "bytes": 89,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "22da5624f0ce12dc75670b3b116c4121e7feca7b0d211e11782a62da81889e49"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45119,6 +45126,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45153,6 +45161,12 @@
       "path": "official/embedded/styleexample/files/application.qss",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/application.qss",
+      "replacement": {
+        "bytes": 338,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "fc205ce2d08b68325699ad448c444c1b3da7497a021a2b367ebe37337582939d"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45166,6 +45180,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45200,6 +45215,12 @@
       "path": "official/embedded/styleexample/files/blue.qss",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/blue.qss",
+      "replacement": {
+        "bytes": 511,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "ee3911448b59b48fa484ac71f3044e4e4b41574809bfaeb576459ad8547c9af6"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45213,6 +45234,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45247,6 +45269,12 @@
       "path": "official/embedded/styleexample/files/khaki.qss",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/khaki.qss",
+      "replacement": {
+        "bytes": 524,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "eb3b56ee4b1eeda478b9c9d8a92e26f5696a6751f6763672cb3606ee2e0979d9"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45260,6 +45288,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45294,6 +45323,12 @@
       "path": "official/embedded/styleexample/files/nature_1.jpg",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/nature_1.jpg",
+      "replacement": {
+        "bytes": 9149,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "f8e626797833ec3c9c199c2adad1c889f891cfba6fd2b513902a4a60aa682161"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45307,6 +45342,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45341,6 +45377,12 @@
       "path": "official/embedded/styleexample/files/nostyle.qss",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/nostyle.qss",
+      "replacement": {
+        "bytes": 0,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45354,6 +45396,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45388,6 +45431,12 @@
       "path": "official/embedded/styleexample/files/remove.png",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/remove.png",
+      "replacement": {
+        "bytes": 83,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "fb74b24f52166bf570faaebba63cbf518343c65e93864cc802e1b55297f0b6f7"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45401,6 +45450,7 @@
       "capability_needs": [],
       "category": "embedded",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45435,6 +45485,12 @@
       "path": "official/embedded/styleexample/files/transparent.qss",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/transparent.qss",
+      "replacement": {
+        "bytes": 649,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "29330203be750f63433b38282bae90d91400006fe07bc2f1daafc80296d065a7"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -45828,6 +45884,7 @@
       ],
       "category": "designer-ui",
       "commit": "a01fd7d10d45801b10876f94c07aaefb11bc2e12",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "631cc1bc310c00b9",
         "a207ef153f0b81b7"
@@ -45862,6 +45919,12 @@
       "path": "official/embedded/styleexample/stylewidget.ui",
       "port_state": "implemented",
       "port_target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/stylewidget.ui",
+      "replacement": {
+        "bytes": 3039,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "930bd0d4c2d79b454e0435786526116284fb9b0226b657f58b99de4648d28791"
+      },
       "repository": "eyllanesc/QtExamples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -88760,6 +88823,7 @@
       "capability_needs": [],
       "category": "resources-metadata",
       "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "a601a41dc5a3c23a"
       ],
@@ -88783,6 +88847,12 @@
       "path": "src/07 Qt Text Editor/icon.svg",
       "port_state": "implemented",
       "port_target_path": "ports/widgets/pyqt-examples/icon-adeb6eaa0049d0d3.svg",
+      "replacement": {
+        "bytes": 726,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "d21202c8be55cf8a30a0dc0e9186fa0bafc8c0268ab18006a38a31a2bde61065"
+      },
       "repository": "pyqt/examples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -90287,6 +90357,7 @@
       "capability_needs": [],
       "category": "resources-metadata",
       "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "a33bb8c2dce4e115"
       ],
@@ -90310,6 +90381,12 @@
       "path": "src/09 Qt dark theme/icon.svg",
       "port_state": "implemented",
       "port_target_path": "ports/widgets/pyqt-examples/icon-3f05f5f2d0cc6df2.svg",
+      "replacement": {
+        "bytes": 726,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "d21202c8be55cf8a30a0dc0e9186fa0bafc8c0268ab18006a38a31a2bde61065"
+      },
       "repository": "pyqt/examples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -90503,6 +90580,7 @@
       ],
       "category": "graphics-painting",
       "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "1151b1cb878f192a"
       ],
@@ -90526,6 +90604,12 @@
       "path": "src/10 QPainter Python example/bullet.png",
       "port_state": "implemented",
       "port_target_path": "ports/multimedia/pyqt-examples/bullet-accab87abcc10bea.png",
+      "replacement": {
+        "bytes": 721,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "426c461b9bf5a9d15a4ad3cb8b3fdd07bcba94d6dd3e89ca9da3f10a0d633d5b"
+      },
       "repository": "pyqt/examples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -90541,6 +90625,7 @@
       ],
       "category": "graphics-painting",
       "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "1151b1cb878f192a"
       ],
@@ -90564,6 +90649,12 @@
       "path": "src/10 QPainter Python example/icon.svg",
       "port_state": "implemented",
       "port_target_path": "ports/multimedia/pyqt-examples/icon-6988c3833303e9d8.svg",
+      "replacement": {
+        "bytes": 726,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "d21202c8be55cf8a30a0dc0e9186fa0bafc8c0268ab18006a38a31a2bde61065"
+      },
       "repository": "pyqt/examples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",
@@ -90732,6 +90823,7 @@
       ],
       "category": "graphics-painting",
       "commit": "83eed0514582c8deb60d9e9e6bff31ceffe4eaeb",
+      "distribution_state": "replaced by a self-authored file; upstream not shipped",
       "example_ids": [
         "1151b1cb878f192a"
       ],
@@ -90755,6 +90847,12 @@
       "path": "src/10 QPainter Python example/shot.wav",
       "port_state": "implemented",
       "port_target_path": "ports/multimedia/pyqt-examples/shot-3d215869bc0bba5c.wav",
+      "replacement": {
+        "bytes": 11068,
+        "generator": "tools/replacement_assets.py",
+        "license": "Apache-2.0",
+        "sha256": "badaa5bc6ffc0b67a43897c0c12f0b7a3a31e5e8373327ced9f617d488ebbcd7"
+      },
       "repository": "pyqt/examples",
       "resource_reference_resolutions": [],
       "runtime_state": "passed",

@@ -12,11 +12,26 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import native_cleanroom as driver
 
+REPLACED = {
+    "1151b1cb878f192a",
+    "a601a41dc5a3c23a",
+    "a33bb8c2dce4e115",
+    "631cc1bc310c00b9",
+}
+
 
 def test_selection_when_all_or_ids_then_only_integrated_clean_room_records():
     manifest = json.loads((ROOT / "catalog/ports.json").read_text())
     rows = driver.select_records(manifest, [])
-    assert len(rows) == 187
+    assert len(rows) == 191, "187 clean-room records and 4 with replaced resources"
+    assert {r["source_id"] for r in rows if not r.get("clean_room_receipt")} == REPLACED
+    historical = next(
+        r["source_id"]
+        for r in manifest["ports"]
+        if not driver.driven(r) and r["implementation"] == "implemented"
+    )
+    with pytest.raises(ValueError):
+        driver.select_records(manifest, [historical])
     assert driver.select_records(
         manifest, [rows[1]["source_id"], rows[0]["source_id"]]
     ) == [rows[1], rows[0]]
@@ -224,7 +239,7 @@ def test_main_when_connection_fails_then_unknown_receipt_and_unrun_summary(
     receipt = json.loads(output.read_text())
     assert receipt["status"] == "unknown" and not receipt["continue_safe"]
     summary = json.loads(output.with_suffix(".summary.json").read_text())
-    assert summary["recorded"] == 1 and len(summary["not_run"]) == 186
+    assert summary["recorded"] == 1 and len(summary["not_run"]) == 190
 
 
 def test_owned_destruction_when_deferred_then_verify_waits_for_every_object(tmp_path):
@@ -458,6 +473,14 @@ def test_dependencies_when_synthetic_tree_then_recursive_and_missing_names_ignor
         "ports/x/b.py",
         "ports/x/c.py",
     ]
+
+
+def test_dependencies_when_resources_shipped_then_closure_includes_them():
+    manifest = json.loads((ROOT / "catalog/ports.json").read_text())
+    row = next(r for r in manifest["ports"] if r["source_id"] == "631cc1bc310c00b9")
+    closure = driver.dependencies(ROOT, row)
+    for resource in row["resources"]:
+        assert resource["target_path"] in closure, resource["target_path"]
 
 
 def test_changed_files_when_dependency_edited_during_run_then_reported(tmp_path):

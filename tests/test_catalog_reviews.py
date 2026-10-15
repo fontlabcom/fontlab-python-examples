@@ -205,6 +205,12 @@ def test_licenses_when_nonofficial_then_every_port_and_resource_has_file_review(
                 assert evidence["upstream_url"] == original["upstream_url"]
             if review["state"] == "unresolved":
                 assert row["license"]["review_state"] == "unresolved"
+            if "replacement" in row:
+                assert (
+                    review["selected"] == "Apache-2.0" and review["state"] == "reviewed"
+                )
+                assert review["replacement"] == row["replacement"]
+                assert row["license"]["selected"] == "Apache-2.0"
     insights = json.loads((ROOT / "catalog/insights.json").read_text())["insights"]
     for row in insights:
         assert reviews[row["target_path"]]["selected"] == "Apache-2.0"
@@ -342,3 +348,29 @@ def test_reviews_when_evidence_root_given_then_every_citation_resolves():
         evidence_root=external,
     )
     assert catalog == SOURCES
+
+
+def test_licenses_when_reviewed_then_no_resource_is_unresolved():
+    reviews = json.loads((ROOT / "catalog/licenses.json").read_text())["files"]
+    assert [
+        path for path, review in reviews.items() if review["state"] == "unresolved"
+    ] == []
+
+
+def test_replaced_resources_when_checked_then_generated_bytes_match_and_upstream_identity_kept():
+    replaced = [r for p in PORTS for r in p["resources"] if "replacement" in r]
+    assert len(replaced) == 14
+    for resource in replaced:
+        data = (ROOT / resource["target_path"]).read_bytes()
+        assert hashlib.sha256(data).hexdigest() == resource["replacement"]["sha256"]
+        assert resource["replacement"]["generator"] == "tools/replacement_assets.py"
+        assert resource["source"]["sha256"] == FILES[resource["source_id"]]["sha256"]
+    import subprocess
+
+    done = subprocess.run(
+        [sys.executable, str(ROOT / "tools/replacement_assets.py"), "--check"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert done.returncode == 0, done.stdout + done.stderr

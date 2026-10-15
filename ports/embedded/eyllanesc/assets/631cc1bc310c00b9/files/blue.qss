@@ -1,38 +1,7 @@
-*
-{
-	color: beige;
-}
-
-QLabel, QAbstractButton
-{
-    font: bold;
-	color: yellow;
-}
-
-QFrame
-{
-    background-color: rgba(96,96,255,60%);
-    border-color: rgb(32,32,196);
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 5;
-    padding: 3px;
-}
-
-QAbstractButton
-{
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                             stop:0 lightblue, stop:0.5 darkblue);
-    border-width: 3px;
-    border-color: darkblue;
-    border-style: solid;
-    border-radius: 5;
-    padding: 3px;
-}
-
-QAbstractButton:pressed
-{
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                             stop:0.5 darkblue, stop:1 lightblue);
-    border-color: beige;
-}
+/* Self-authored for fontlab-python-examples (Apache-2.0): cool blue panel. */
+QWidget { background: #1f4e79; color: #f2f6fa; }
+QPushButton { background: #2f6ea5; border: 1px solid #a9c7e3; border-radius: 4px; padding: 4px 10px; }
+QPushButton:pressed { background: #163b5c; }
+QSpinBox { background: #f2f6fa; color: #1f4e79; border: 1px solid #a9c7e3; padding-right: 18px; }
+QSpinBox::up-button { image: url(:/files/add.png); width: 16px; }
+QSpinBox::down-button { image: url(:/files/remove.png); width: 16px; }

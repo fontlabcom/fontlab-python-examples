@@ -75,6 +75,14 @@ FILE_LITERAL = re.compile(
 PACKAGE = "fontlab_python_examples"
 
 
+def driven(row: dict) -> bool:
+    """Records this driver accepts: integrated clean-room receipts, and ports whose
+    resources were replaced by self-authored files (tools/replacement_assets.py)."""
+    return bool(row.get("clean_room_receipt")) or any(
+        "replacement" in r for r in row.get("resources", [])
+    )
+
+
 def dependencies(root: Path, record: dict) -> list[str]:
     """Repository files a port executes or loads: its own files, every file a path
     literal in them names under ports/ (recursively: delegated helper ports and
@@ -83,7 +91,8 @@ def dependencies(root: Path, record: dict) -> list[str]:
     root = Path(root).resolve()
     ports = root / "ports"
     seen: set[str] = set()
-    queue = [record["target_path"], *record.get("replacement_files", [])]
+    resources = [r["target_path"] for r in record.get("resources", [])]
+    queue = [record["target_path"], *record.get("replacement_files", []), *resources]
     while queue:
         name = queue.pop()
         path = root / name
@@ -143,12 +152,12 @@ def run_revision(root: Path) -> dict:
 
 def select_records(manifest: dict, ids: list[str]) -> list[dict]:
     """Select only receipt-integrated ports; reject typos and duplicate requests."""
-    records = {
-        r["source_id"]: r for r in manifest["ports"] if r.get("clean_room_receipt")
-    }
+    records = {r["source_id"]: r for r in manifest["ports"] if driven(r)}
     requested = ids or list(records)
     if len(requested) != len(set(requested)) or set(requested) - records.keys():
-        raise ValueError("IDs must be distinct integrated clean-room port IDs")
+        raise ValueError(
+            "IDs must be distinct clean-room or replaced-resource port IDs"
+        )
     selected = [records[pid] for pid in requested]
     if not selected or any(
         r["implementation"] not in {"implemented", "blocked"} for r in selected
@@ -283,8 +292,8 @@ def _prepare(token: str, pid: str, root: Path, extras: tuple = ()) -> dict:
         if not any(widgets.is_relative_to(Path(e).resolve()) for e in extras):
             raise RuntimeError("fontlabapp does not come from the requested source")
     row = launcher.describe(pid)
-    if not row.get("clean_room_receipt"):
-        raise ValueError("Port has no integrated clean-room receipt")
+    if not driven(row):
+        raise ValueError("Port has no clean-room receipt or replaced resources")
     qt = importlib.import_module("PythonQt")
     app = qt.QtGui.QApplication.instance()
     if app is None:
@@ -681,7 +690,7 @@ def main() -> int:
         "--ids",
         nargs="+",
         default=[],
-        help="Port IDs, separated by spaces or commas; default all 187",
+        help="Port IDs, separated by spaces or commas; default all 191 (187 clean-room, 4 with replaced resources)",
     )
     parser.add_argument(
         "--batch-size",

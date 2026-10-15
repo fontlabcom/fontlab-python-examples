@@ -23,7 +23,7 @@ def build(qt: Any) -> ExampleHandle:
             sheet = Path(demo.asset("files/" + name + ".qss")).read_text(
                 encoding="utf-8"
             )
-            # Rewrite only the in-memory stylesheet; assets stay byte-identical.
+            # Rewrite only the in-memory stylesheet; the asset files stay unchanged.
             sheet = sheet.replace(":/files/", str(demo.assets / "files") + "/")
             window.setStyleSheet(sheet)
             state["style"] = name
