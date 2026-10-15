@@ -3079,3 +3079,11 @@ unmutated; start index after reversal). Native: contour_direction/native.py ->
 - Native at b9ead3f (fl-native.sh --lane L6e): native_cleanroom 4/4
   (`examples-resources/acceptance02.jsonl`), recorded with record_native apply;
   replaced_checks.py interactions04 4/4 (background PNG decodes at 320x240).
+
+## 2026-10-15 closing check
+
+The last TODO item (docs-lane wiring) was verified from fontlab-python-docs:
+`mkdocs.yml` has the "Examples: examples/index.md" nav entry; `api-sources.lock.json`
+(ff4c5e4, "examples be2712b") lists 41 `examples/` entries whose sha256 all match the
+current `docs-export/` files (HEAD be2712b); `.build/content/examples` holds 40 pages.
+PLAN.md and TODO.md are now empty; the item moved to CHANGELOG.md.

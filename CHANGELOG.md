@@ -50,6 +50,11 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Docs integration complete. The docs lane wired `docs-export/` into
+  fontlab-python-docs (its commits c8f6092 and 6a68778; nav entry "Examples"). Its
+  source lock (ff4c5e4) pins this repository's export at be2712b: all 41 export files
+  match their locked hashes, and the build has 40 example pages.
+
 - 2026-10-15 (review R-L6e): replacement assets are recorded and checked only as exact
   generator output; the background is a deterministic PNG (no sips JPEG); the docs
   export manifest hashes the recipe READMEs too.
