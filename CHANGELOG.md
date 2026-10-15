@@ -4,6 +4,23 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-15 — completed checklist (moved from TODO.md)
+
+- Acquire, pin and Git-blob-verify all 805 pyqt/examples source files.
+- Acquire, pin and Git-blob-verify all 764 eyllanesc/QtExamples source files.
+- Catalog all 1,569 original files/resources with exact hashes and portable planned paths.
+- Extract source imports, entrypoint evidence, resource associations and license evidence.
+- Correct deferred-body launch/main-guard evidence and portable output filesystem errors; reproduce all mappings.
+- Publish a categorized candidate index and retain every original mapping.
+- Port every numbered example to PythonQt in FontLab: each is implemented or precisely blocked (06 QML, 08 packaging, 15 QtSql blocked; 11 removed by D4); implemented ones launch and close natively (workspace evidence examples-first-native-sdd/, tg4-second-batch/, examples-numbered-complete-scope.json).
+- Port every official demo to PythonQt in FontLab: all 187 official entrypoints accounted (127 implemented, 60 precisely blocked); launch/inspect/close 137/137 and blocked records refuse launch (workspace evidence examples-interactions/, examples-batch9/).
+- Port every official and additional eyllanesc/QtExamples entry to PythonQt in FontLab: all accounted (implemented or precisely blocked; 299 records, 148 implemented, 151 blocked); the 10 eyllanesc implementations pass natively (6ef7756).
+- Provide simple in-host/external launch and owned cleanup. (2026-10-15 native: launch/inspect/close 137/137 implemented ports; all 151 blocked records refuse launch with NotImplementedError before host access; evidence in parent verification/issue-101-ecosystem/evidence/examples-interactions/ and examples-batch9/native-blocked-all.json.)
+- Implement first four exact numbered-source ports and copy verified Designer UI.
+- Record five individual source/resource MIT reviews in a separate port manifest.
+- Provide first-batch named launch/inspect/close, retained handles and Remopy example.
+- Accept first four source-loaded ports with native clicks, layout/text, alert dismissal/repeat, Designer OK/Cancel and tracked owned teardown.
+
 ## Unreleased
 
 - 2026-10-15: Correct owned-path enforcement to apply only to writes. Allow

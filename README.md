@@ -5,7 +5,7 @@ this_file: README.md
 # FontLab Python examples
 
 Complete source catalog for planned PythonQt ports of [pyqt/examples](https://github.com/pyqt/examples) and [eyllanesc/QtExamples](https://github.com/eyllanesc/QtExamples), for use inside running FontLab. Start at the [categorized index](catalog/INDEX.md).
-Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **All 298 Python entrypoint candidates plus the database initializer have port records: 148 implemented and 151 precisely blocked. Four retain recorded native acceptance; 144 implemented records await acceptance.** Collection-wide native acceptance is incomplete; ambiguous/QML/auxiliary candidates remain separate.
+Both pinned collections are fully acquired and verified locally: **1,569 files, 465 Python files**. The public catalog contains provenance and planned mappings; the upstream originals remain local. **All 298 Python entrypoint candidates plus the database initializer have port records: 148 implemented and 151 precisely blocked. All 148 implemented ports pass native launch/inspect/close (see "Status" below; the manifest's native fields still list only four).** Ambiguous/QML/auxiliary candidates remain separate.
 
 | Collection | Pinned revision | Original files | Python files |
 | --- | --- | ---: | ---: |
@@ -356,14 +356,36 @@ The static [source catalog](catalog/sources.json) stays unchanged. The separate 
 
 ## Insights
 
-Eighteen original Apache-2.0 examples provide owned type-design panels. See the [ranked survey](docs/pythonqt-reference-insights.md), [manifest](catalog/insights.json) and [second-batch controller guide](docs/insights-second-batch.md). Use `examples.launch(name)`, `examples.inspect(name)` and `examples.close(name)`; `examples.get(name).controls` exposes controls without adding native attributes. Ranks 1–12: `signal-lifetime`, `glyph-list`, `metrics- table`, `timer-batch`, `contour-canvas`, `owned-key-filter`, `metric-controls`, `glyph-properties`, `sandbox-settings`, `callback-errors`, `owned-dock`, `contour-scene`. Ranks 13–18: `loaded-glyph-form`, `worker-glyph-queue`, `owned-repl`, `plugin-tokens`, `metrics-undo`, `compiled-slot-exposure`. First-batch controller evidence is recorded; ranks 13–18 await native acceptance. Settings use `FontLabPythonExamples` / `InsightsSandbox`; console globals, menus and undo data are owned. Compiled exposure uses existing host bindings and fails clearly if absent. No new dependencies or copied reference code; grants unresolved.
+Eighteen original Apache-2.0 examples provide owned type-design panels. See the [ranked survey](docs/pythonqt-reference-insights.md), [manifest](catalog/insights.json) and [second-batch controller guide](docs/insights-second-batch.md). Use `examples.launch(name)`, `examples.inspect(name)` and `examples.close(name)`; `examples.get(name).controls` exposes controls without adding native attributes. Ranks 1–12: `signal-lifetime`, `glyph-list`, `metrics- table`, `timer-batch`, `contour-canvas`, `owned-key-filter`, `metric-controls`, `glyph-properties`, `sandbox-settings`, `callback-errors`, `owned-dock`, `contour-scene`. Ranks 13–18: `loaded-glyph-form`, `worker-glyph-queue`, `owned-repl`, `plugin-tokens`, `metrics-undo`, `compiled-slot-exposure`. All 18 pass native checks with interactions. Settings use `FontLabPythonExamples` / `InsightsSandbox`; console globals, menus and undo data are owned. Compiled exposure uses existing host bindings and fails clearly if absent. No new dependencies or copied reference code; grants unresolved.
 
 ## Licensing and remaining ports
 
 The repository's Apache license does not relicense upstream inputs. Pinned READMEs, actual notices and source headers supply per-file evidence. All 1,569 files retain **license review pending in the static catalog**; 43 have no recognized declaration. Per-entry source and resource reviews and attribution appear in [the manifest](catalog/ports.json) and [the numbered-source notice](ports/pyqt-examples-LICENSE.md) and [the official-source notice](ports/pyqt-official-LICENSE.md) and [QtExamples notice](ports/eyllanesc-LICENSE.md). Nearby notices may apply only to specific assets: their association is evidence, not a blanket license assignment. Preserve the original notices and resolve scope before distributing a port or copying upstream resources.
-Four targets retain recorded native acceptance; 144 implemented targets await acceptance. QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
+All 148 implemented targets pass native launch/inspect/close (see "Status"). QML (06), standalone fbs/PyQt6 packaging (08), and QtSql/database (15, including its initializer) have explicit blocked records; shared memory is also blocked by its missing detach API, and textobject by the absent QTextObjectInterface. The gallery (02) preserves its BSD notice with license review unresolved. Editor styles affect only owned UI. QPainter (10) preserves bullet/audio assets but cannot play QSoundEffect through QtCore/QtGui. See [second-batch native checks](docs/second-numbered-batch.md). Future ports must use FontLab's existing PythonQt/Qt runtime and QApplication/event loop, without loading PyQt, PySide or another Qt runtime. QML, WebEngine, multimedia, GStreamer, matplotlib, database, network and platform examples remain in scope. See [PLAN.md](PLAN.md) and [TODO.md](TODO.md) for the full remaining work.
 The [first-batch evidence](verification/first-native-batch.json) records native text/layout/click/Designer acceptance, destruction of all 38 owned objects and unchanged host state. This proves source loading; wheel installation and other native checks remain required. Current states live in the port manifest.
 The 127 official ports use tracked callbacks, async dialogs, isolated host state and 244 exact resource copies; 60 further official entrypoints are precisely blocked. All 187 official entrypoints are accounted for; native acceptance remains a separate gate. See [adaptations and native checks](docs/pyqt-official-batch.md). Their BSD headers and GPLv3 collection notice are retained; scope remains unresolved for the BSD-header ports; five GPL alternatives are explicit.
 
 Batch 9 adds 10 implementations and 87 blockers for all remaining 97 requested
 entrypoints. The [per-entry table and native acceptance checklists](docs/pyqt-official-batch.md#batch-9-remaining-97-entrypoints) retain exact identities, paths, licences and adaptations. No native acceptance or collection completion is inferred from offline tests.
+
+## Status
+
+Verified (workspace evidence under `verification/issue-101-ecosystem/evidence/`):
+
+- Both collections are pinned and catalogued: 1,569 files, 465 Python files.
+- Every catalogued entrypoint has a port record: 299 records, 148 implemented,
+  151 precisely blocked (missing host modules such as QML/Quick, WebEngine,
+  Charts, multimedia, QtSql drivers, D-Bus and matplotlib's Qt backend).
+- All 148 implemented ports launch, inspect and close natively with owned
+  cleanup (137 in `examples-interactions/`, 11 numbered ports in
+  `examples-first-native-sdd/` and `tg4-second-batch/`); all 151 blocked records
+  refuse launch before touching the host (`examples-batch9/`).
+- Scripted control interactions pass natively for 102 official ports and the
+  numbered ports' key controls; 25 ports have no scripted interaction, with
+  reasons in `examples-interactions/README.md`.
+- 18 original insight examples from the 28-repository PythonQt reference survey
+  pass native checks with interactions (`i103-insights/`).
+
+`catalog/ports.json` still records native acceptance for only the first four
+ports; its native fields have not yet been updated from the evidence above.
+Licence scope for the pyqt-official ports awaits owner decision D7.
