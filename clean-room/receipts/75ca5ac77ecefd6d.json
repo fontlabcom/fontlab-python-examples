@@ -1,0 +1,10 @@
+{
+  "port_id": "75ca5ac77ecefd6d",
+  "target_path": "ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py",
+  "files": [
+    "ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "FontLab does not expose QtQml; this declarative example cannot start.",
+  "spec_sha256": "f4dd522256b73d75548c2982188bee3d55527745057fd9cd10d84693a653cd00"
+}

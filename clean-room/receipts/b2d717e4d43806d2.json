@@ -1,0 +1,10 @@
+{
+  "port_id": "b2d717e4d43806d2",
+  "target_path": "ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+  "files": [
+    "ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "d2911e7043dea6897ddaf3591a9f56a12adaed8cd65764ddcf8848e2833ed4ca"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "409f3d46a9555f23",
+  "target_path": "ports/network/pyqt-official/http-409f3d46a9555f23.py",
+  "files": [
+    "ports/network/pyqt-official/http-409f3d46a9555f23.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "257d944c8f1e9d58425c04eb406977c4a09ad3f6b39661b6f0cde1103afe71d0"
+}

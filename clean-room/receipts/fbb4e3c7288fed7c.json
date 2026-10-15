@@ -1,0 +1,10 @@
+{
+  "port_id": "fbb4e3c7288fed7c",
+  "target_path": "ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py",
+  "files": [
+    "ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "5066e91d55dadec1e5d13522217ddc5bb8929f232185b0c74d515fb8c6c142db"
+}

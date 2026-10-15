@@ -1,0 +1,10 @@
+{
+  "port_id": "6417cdcf1bfd1752",
+  "target_path": "ports/qml/pyqt-official/default-6417cdcf1bfd1752.py",
+  "files": [
+    "ports/qml/pyqt-official/default-6417cdcf1bfd1752.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "FontLab does not expose QtQml; this declarative example cannot start.",
+  "spec_sha256": "683c457fcc723d80ea0070b33007ae139dd2b1544a6061277cc483f129f55ce4"
+}
