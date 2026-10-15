@@ -129,3 +129,29 @@ def test_contour_direction_when_nested_then_outer_ccw_counter_cw():
 def test_anchor_positions_when_bounds_then_centred_and_rounded():
     positions = load("anchors_from_bounds").anchor_positions
     assert positions(50, 0, 551, 700, 20) == {"top": (300, 720), "bottom": (300, 0)}
+
+
+def test_respace_when_reference_sidebearings_then_shift_and_width():
+    recipe = load("sidebearings_from_reference")
+    assert recipe.sidebearings(60, 540, 600) == (60, 60)
+    assert recipe.respace(200, 300, 60, 60) == (-140, 220)
+
+
+def test_parse_pairs_when_comments_classes_and_junk_then_pairs_and_problems():
+    recipe = load("kerning_from_text")
+    pairs, problems = recipe.parse_pairs(
+        "# c\nA V -80\n\n@O_left T -40.5  # x\nbad line\nA B c\n"
+    )
+    assert pairs == [("A", "V", -80.0), ("@O_left", "T", -40.5)]
+    assert problems == ["bad line", "A B c"]
+    assert [recipe.whole_units(v) for v in (-75.5, 75.5, -0.4, 12.0)] == [
+        -76,
+        76,
+        0,
+        12,
+    ]
+
+
+def test_glyph_actions_batch_when_no_glyph_names_then_refuses_before_fontlab():
+    with pytest.raises(ValueError, match="glyph_names"):
+        load("glyph_actions_batch").run()

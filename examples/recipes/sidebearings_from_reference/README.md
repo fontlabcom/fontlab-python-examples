@@ -1,0 +1,29 @@
+---
+this_file: examples/recipes/sidebearings_from_reference/README.md
+---
+
+# Copy sidebearings from a reference glyph
+
+**Purpose.** Spacing by analogy: give "I" the sidebearings of "H", or "h m" those of
+"n". Each target's outline and anchors shift so that its left sidebearing equals the
+reference's, and its advance width changes so that the right sidebearing matches
+too. Glyphs without outlines are skipped. One Edit > Undo step.
+
+```python
+run(glyph_names=["I"], reference="H")
+run(glyph_names=["h", "m"], reference="n", master="Bold")
+```
+
+**FontLab API.** `flLayer.boundingBox`, writable `flNode.x`, `flPinPoint.point`,
+`flLayer.advanceWidth`. Outlines are moved node by node in each shape's own
+coordinates; glyphs built from transformed components need FontLab's own metrics tools.
+
+**Native check** (`native.py`, owned font): "I" (x 200–300 in 700 units) gets "H"'s
+60/60 sidebearings: outline at 60–160, width 220, anchor moved by the same −140; "H"
+and an empty "space" are unchanged.
+
+**Provenance.** Behaviour modelled on the copy-metrics tools of the TypeRig GUI
+*Metrics* panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Metrics.py`, MPL-2.0). Written
+from scratch; only tool names were consulted.
+
+**Licence.** Apache-2.0, as the repository.
