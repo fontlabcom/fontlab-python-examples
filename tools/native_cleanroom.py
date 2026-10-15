@@ -32,6 +32,7 @@ PREFIXES = (
     "fontlab_example_",
     "fontlab_cleanroom_",
     "cleanroom_",
+    "fontlabapp",
 )
 
 # Import by exact filename, independently of any other checkout's tools package.
@@ -39,7 +40,7 @@ HOST_CODE = """import sys, importlib.util
 from pathlib import Path
 _old = list(sys.path)
 try:
-    sys.path[:] = [checkout] + [p for p in _old if p != checkout]
+    sys.path[:] = [checkout, *extras] + [p for p in _old if p != checkout and p not in extras]
     _key = '_fontlab_native_cleanroom_driver'
     _file = Path(checkout) / 'tools/native_cleanroom.py'
     _module = sys.modules.get(_key)
@@ -51,7 +52,7 @@ try:
         sys.modules[_key] = _module
         _spec.loader.exec_module(_module)
         _module._driver_sha256 = driver_sha256
-    result = _module.host_step(action, port_id, token, checkout)
+    result = _module.host_step(action, port_id, token, checkout, extras)
 finally:
     sys.path[:] = _old
 result['path_restored'] = result['path_restored'] and sys.path == _old
@@ -83,11 +84,12 @@ def batches(items: list, size: int):
 
 
 @contextmanager
-def checkout_path(root: Path):
+def checkout_path(root: Path, extras: tuple = ()):
+    """The checkout (and e.g. a fontlab-fontlabapp src) first; restored afterwards."""
     previous = list(sys.path)
-    first = str(root.resolve())
+    first = [str(root.resolve()), *(str(Path(e).resolve()) for e in extras)]
     try:
-        sys.path[:] = [first] + [p for p in previous if p != first]
+        sys.path[:] = first + [p for p in previous if p not in first]
         yield
     finally:
         sys.path[:] = previous
@@ -153,7 +155,7 @@ def _fds() -> set[str]:
     return result
 
 
-def _prepare(token: str, pid: str, root: Path) -> dict:
+def _prepare(token: str, pid: str, root: Path, extras: tuple = ()) -> dict:
     if _sessions:
         raise RuntimeError("An earlier acceptance session still needs cleanup")
     purged = purge_examples(sys.modules)
@@ -166,6 +168,10 @@ def _prepare(token: str, pid: str, root: Path) -> dict:
         != root / "fontlab_python_examples/__init__.py"
     ):
         raise RuntimeError("Example import does not come from the requested checkout")
+    if extras:
+        widgets = Path(importlib.import_module("fontlabapp.widgets").__file__).resolve()
+        if not any(widgets.is_relative_to(Path(e).resolve()) for e in extras):
+            raise RuntimeError("fontlabapp does not come from the requested source")
     row = launcher.describe(pid)
     if not row.get("clean_room_receipt"):
         raise ValueError("Port has no integrated clean-room receipt")
@@ -210,6 +216,10 @@ def _watch(session: dict) -> None:
         obj = queue.pop()
         if obj is None or not callable(getattr(type(obj), "inherits", None)):
             continue
+        try:  # a class wrapper kept as a control has an unbound inherits()
+            obj.inherits("QObject")
+        except TypeError:
+            continue
         key = str(obj)
         # Explicit safe methods only; generic property enumeration can crash
         # unloaded native renderers in this PythonQt build.
@@ -235,7 +245,9 @@ def _watch(session: dict) -> None:
 
         obj.connect("destroyed(QObject*)", destroyed)
         session["callbacks"].append(destroyed)
-        queue.extend(obj.children())
+        children = getattr(obj, "children", None)
+        if callable(children):  # some owned objects shadow children (e.g. None)
+            queue.extend(children())
     for callback in handle.after_close:
         owner = getattr(callback, "__self__", None)
         if isinstance(owner, TemporaryDirectory):
@@ -381,16 +393,16 @@ def _verify(session: dict) -> dict:
     }
 
 
-def host_step(action: str, port_id: str, token: str, checkout: str) -> dict:
+def host_step(action: str, port_id: str, token: str, checkout: str, extras: tuple = ()) -> dict:
     """Called in FontLab. Each phase restores sys.path even when it fails."""
     original = list(sys.path)
     started = time.monotonic()
     existed = token in _sessions
     result = {"ok": False, "data": None}
     try:
-        with checkout_path(Path(checkout)):
+        with checkout_path(Path(checkout), tuple(extras)):
             if action == "prepare":
-                data = _prepare(token, port_id, Path(checkout).resolve())
+                data = _prepare(token, port_id, Path(checkout).resolve(), tuple(extras))
             else:
                 session = _sessions[token]
                 if session["pid"] != port_id:
@@ -522,10 +534,18 @@ def main() -> int:
         "--output", type=Path, default=Path("verification/native-cleanroom.jsonl")
     )
     parser.add_argument("--command", help="Explicit FontLab MCP bridge executable")
+    parser.add_argument(
+        "--fontlabapp-src",
+        type=Path,
+        help="fontlab-fontlabapp src to import in FontLab when it is not installed "
+        "(default: a sibling ../fontlab-fontlabapp/src checkout, if present)",
+    )
     args = parser.parse_args()
     if args.batch_size < 1:
         parser.error("--batch-size must be positive")
     root = Path(__file__).resolve().parents[1]
+    fontlabapp_src = args.fontlabapp_src or root.parent / "fontlab-fontlabapp" / "src"
+    extras = [str(fontlabapp_src.resolve())] if (fontlabapp_src / "fontlabapp").is_dir() else []
     ids = [pid for value in args.ids for pid in value.split(",") if pid]
     try:
         records = select_records(
@@ -553,6 +573,7 @@ def main() -> int:
                             result = fl.run(
                                 HOST_CODE,
                                 checkout=str(root),
+                                extras=extras,
                                 driver_sha256=driver_sha256,
                                 action=action,
                                 **variables,

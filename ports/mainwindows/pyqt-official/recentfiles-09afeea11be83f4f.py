@@ -351,7 +351,7 @@ def configure(s):
             menu.addAction(action)
             toolbar.addAction(action)
             if shortcut:
-                action.setShortcut(shortcut)
+                action.setShortcut(gui.QKeySequence(shortcut))  # PythonQt: no str conversion
             s.connect(action, "triggered(bool)", lambda *args: callback())
             s.keep(label + str(len(documents)), action)
             return action
