@@ -23,6 +23,9 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: contour_direction plans every glyph before its first edit and skips
+  (and reports) collapsed closed contours instead of raising after partial edits.
+
 - 2026-10-15: Review round 2 (RR-examples). `apply_reviews` requires an existing
   evidence root and resolves every evidence selector to the reviewed file's record.
   contour_direction tests nesting exactly on the Bézier segments (recursive

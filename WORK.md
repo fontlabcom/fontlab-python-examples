@@ -3022,3 +3022,12 @@ fontlab-remopy python fontlab-python-examples/examples/recipes/contour_direction
 .../examples-recipes/contour_direction-rr2.json` -> exit 0, all 11 checks (new: 1-unit
 sliver at (4,90) inside the hump is a counter). Scripts-menu route re-run for all nine
 (`examples-recipes/menu_route.py`) -> 9/9, exit 0.
+
+
+## 2026-10-15 review round 3 (RR2-examples: collapsed contours)
+
+Commit 56e1c11. Tests 1546 passed (new: collapsed one-node and four-coincident
+contours skipped and reported; an unreadable second glyph leaves the first
+unmutated; start index after reversal). Native: contour_direction/native.py ->
+`examples-recipes/contour_direction-rr3.json`, exit 0, 12/12 checks (report skipped
+[{glyph U, contour 3}]). Scripts-menu route 9/9, exit 0.
