@@ -27,7 +27,7 @@ examples.close("92fc3cf4b5dd009c")
 - Source: [eyllanesc/QtExamples / official/embedded/styleexample/main.py](https://github.com/eyllanesc/QtExamples/blob/a01fd7d10d45801b10876f94c07aaefb11bc2e12/official/embedded/styleexample/main.py)
 - Port: [`ports/embedded/eyllanesc/main-631cc1bc310c00b9.py`](https://github.com/fontlabcom/fontlab-python-examples/blob/main/ports/embedded/eyllanesc/main-631cc1bc310c00b9.py)
 - Implementation: **implemented**
-- Native acceptance: passed (commit `d3ab76d`; workspace evidence `examples-resources/acceptance01.jsonl`)
+- Native acceptance: passed (commit `b9ead3f`; workspace evidence `examples-resources/acceptance02.jsonl`)
 - Licence: GPL-3.0-only
 
 ```python

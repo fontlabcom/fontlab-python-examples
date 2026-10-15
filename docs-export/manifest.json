@@ -3,7 +3,7 @@
   "generator": "tools/docs_export.py",
   "source_base_url": "https://github.com/fontlabcom/fontlab-python-examples/blob/main/",
   "inputs": {
-    "catalog/ports.json": "a71ddcd7203d768c439edd8b3514f784f3e31cb623f631b1b9dfc5dc97c21f5a",
+    "catalog/ports.json": "160840deb644e7547791cc85020dd0adf624fa3803afb8848ebe850d604303d0",
     "catalog/sources.json": "94eb48171bcfedb0ae1642ddb1cb8ca407ea16bac8308269787a3d34f5776780",
     "catalog/insights.json": "7940417f6e7932b8e0ee0056d6456fb8543a97d4afca291c899b61ad9811dc71",
     "examples/recipes/README.md": "7faf167cd0da5c32a95977c8c5327f0c4c6633062dc5de9083ec8a24ccc83325",
@@ -71,7 +71,7 @@
     {
       "path": "categories/embedded.md",
       "title": "Examples: embedded",
-      "sha256": "31745e076c6792ca80147fd9f91af7f011eb9d573fc405009735f2a2e47fa78f"
+      "sha256": "7e6548584138eeaf5cdf2b7072e341a791667f1f0d50cdeeb3b80b4c3575201f"
     },
     {
       "path": "categories/graphics-painting.md",
@@ -106,7 +106,7 @@
     {
       "path": "categories/multimedia.md",
       "title": "Examples: multimedia",
-      "sha256": "3c9b2b974d6ebeb8126951a1bc6b1e2fdab11db4b190d73c3b9db9018cd3d53a"
+      "sha256": "65caf135ee03ccc25e8a87f0d0f74646b921b7ddd48eabab57cf3c4612c4b7da"
     },
     {
       "path": "categories/network.md",
@@ -161,7 +161,7 @@
     {
       "path": "categories/widgets.md",
       "title": "Examples: widgets",
-      "sha256": "b37a03aa51ff01b7577bc25fd14ef3877d0c2cbb9c95bcaac31bf70cff3e8514"
+      "sha256": "a0a67d0b77a5d8b3fa793566fef8ea01769f8780242f268468b651b3456be10d"
     },
     {
       "path": "categories/xmlpatterns.md",

@@ -397,14 +397,14 @@
         }
       ],
       "native_evidence": {
-        "implementation_commit": "d3ab76d39077a9ee9b84e4638a41d1335d65de4b",
+        "implementation_commit": "b9ead3fb379a844a7979abf618197b4750025fe1",
         "report": "verification/catalog-native-evidence.json",
         "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a601a41dc5a3c23a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-resources/acceptance01.jsonl",
-          "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+          "file": "examples-resources/acceptance02.jsonl",
+          "sha256": "f494926d991068c651a763ccc965ac795b7f77816f504c62f7b43c2f007bc7e2",
           "line": 2,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -528,14 +528,14 @@
         }
       ],
       "native_evidence": {
-        "implementation_commit": "d3ab76d39077a9ee9b84e4638a41d1335d65de4b",
+        "implementation_commit": "b9ead3fb379a844a7979abf618197b4750025fe1",
         "report": "verification/catalog-native-evidence.json",
         "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a33bb8c2dce4e115",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-resources/acceptance01.jsonl",
-          "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+          "file": "examples-resources/acceptance02.jsonl",
+          "sha256": "f494926d991068c651a763ccc965ac795b7f77816f504c62f7b43c2f007bc7e2",
           "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -724,14 +724,14 @@
         "Painting is ported; QSoundEffect audio is unavailable in the permitted QtCore/QtGui namespaces. A self-authored shot.wav stands in for the upstream sound; playback requires a host capability extension."
       ],
       "native_evidence": {
-        "implementation_commit": "d3ab76d39077a9ee9b84e4638a41d1335d65de4b",
+        "implementation_commit": "b9ead3fb379a844a7979abf618197b4750025fe1",
         "report": "verification/catalog-native-evidence.json",
         "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1151b1cb878f192a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-resources/acceptance01.jsonl",
-          "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+          "file": "examples-resources/acceptance02.jsonl",
+          "sha256": "f494926d991068c651a763ccc965ac795b7f77816f504c62f7b43c2f007bc7e2",
           "line": 1,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -14098,14 +14098,14 @@
       ],
       "capability_evidence": "tests/official_contract.json",
       "native_evidence": {
-        "implementation_commit": "d3ab76d39077a9ee9b84e4638a41d1335d65de4b",
+        "implementation_commit": "b9ead3fb379a844a7979abf618197b4750025fe1",
         "report": "verification/catalog-native-evidence.json",
         "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/631cc1bc310c00b9",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-resources/acceptance01.jsonl",
-          "sha256": "829eca73c4af8cf997ba1041aa1ba26328e40f3ca140034d14bd8fca25574607",
+          "file": "examples-resources/acceptance02.jsonl",
+          "sha256": "f494926d991068c651a763ccc965ac795b7f77816f504c62f7b43c2f007bc7e2",
           "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",

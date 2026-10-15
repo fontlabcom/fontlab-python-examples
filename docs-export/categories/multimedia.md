@@ -73,7 +73,7 @@
 - Source: [pyqt/examples / src/10 QPainter Python example/main.py](https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/10%20QPainter%20Python%20example/main.py)
 - Port: [`ports/multimedia/pyqt-examples/main-1151b1cb878f192a.py`](https://github.com/fontlabcom/fontlab-python-examples/blob/main/ports/multimedia/pyqt-examples/main-1151b1cb878f192a.py)
 - Implementation: **implemented**
-- Native acceptance: passed (commit `d3ab76d`; workspace evidence `examples-resources/acceptance01.jsonl`)
+- Native acceptance: passed (commit `b9ead3f`; workspace evidence `examples-resources/acceptance02.jsonl`)
 - Licence: MIT
 
 ```python

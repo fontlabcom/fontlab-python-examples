@@ -3066,3 +3066,16 @@ unmutated; start index after reversal). Native: contour_direction/native.py ->
 - `python3 tools/docs_export.py` -> 40 pages + manifest; `--check` current; every
   in-page anchor resolves under Python-Markdown toc (299/299, checked with
   `uv run --no-project --with markdown`). Tests 1556 passed.
+
+## 2026-10-15 review R-L6e fixes
+
+- New tests first (tests/test_replacement_assets.py; docs-export input test): 9 failed.
+- `replacement_assets.py`: `stale()` regenerates in memory, exact match only; `--record`
+  refuses everything on any mismatch; background is `files/nature_1.png` (stored-deflate
+  PNG), upstream `nature_1.jpg` removed and recorded as moved. Generator output hash
+  identical on CPython 3.11.14 arm64, 3.11.16 x86_64, 3.12.12, 3.13.10 (367a0dd93e7e045d).
+- `docs_export.py`: manifest inputs include the 10 recipe READMEs.
+- Commit b9ead3f; tests 1566 passed.
+- Native at b9ead3f (fl-native.sh --lane L6e): native_cleanroom 4/4
+  (`examples-resources/acceptance02.jsonl`), recorded with record_native apply;
+  replaced_checks.py interactions04 4/4 (background PNG decodes at 320x240).

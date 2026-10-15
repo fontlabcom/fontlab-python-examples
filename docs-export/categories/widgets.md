@@ -265,7 +265,7 @@ examples.close("1bf0ade33cd6bf12")
 - Source: [pyqt/examples / src/09 Qt dark theme/main.py](https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/09%20Qt%20dark%20theme/main.py)
 - Port: [`ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py`](https://github.com/fontlabcom/fontlab-python-examples/blob/main/ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py)
 - Implementation: **implemented**
-- Native acceptance: passed (commit `d3ab76d`; workspace evidence `examples-resources/acceptance01.jsonl`)
+- Native acceptance: passed (commit `b9ead3f`; workspace evidence `examples-resources/acceptance02.jsonl`)
 - Licence: MIT
 
 ```python
@@ -280,7 +280,7 @@ examples.close("a33bb8c2dce4e115")
 - Source: [pyqt/examples / src/07 Qt Text Editor/main.py](https://github.com/pyqt/examples/blob/83eed0514582c8deb60d9e9e6bff31ceffe4eaeb/src/07%20Qt%20Text%20Editor/main.py)
 - Port: [`ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py`](https://github.com/fontlabcom/fontlab-python-examples/blob/main/ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py)
 - Implementation: **implemented**
-- Native acceptance: passed (commit `d3ab76d`; workspace evidence `examples-resources/acceptance01.jsonl`)
+- Native acceptance: passed (commit `b9ead3f`; workspace evidence `examples-resources/acceptance02.jsonl`)
 - Licence: MIT
 
 ```python
