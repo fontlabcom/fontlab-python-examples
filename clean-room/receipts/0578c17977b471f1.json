@@ -1,0 +1,10 @@
+{
+  "port_id": "0578c17977b471f1",
+  "target_path": "ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+  "files": [
+    "ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "4270076d764488617560b3256c3c5640885749b1d7973f9041052f65cc3a7721"
+}

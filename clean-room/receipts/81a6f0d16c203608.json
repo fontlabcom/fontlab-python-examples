@@ -1,0 +1,10 @@
+{
+  "port_id": "81a6f0d16c203608",
+  "target_path": "ports/qml/pyqt-official/grouped-81a6f0d16c203608.py",
+  "files": [
+    "ports/qml/pyqt-official/grouped-81a6f0d16c203608.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "FontLab does not expose QtQml; this declarative example cannot start.",
+  "spec_sha256": "793c2edb12e99869457a1f8ad7a29818f1afb476cb7b7a939aaa5e9cc7e149bd"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "dd226ba9fbb7b330",
+  "target_path": "ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py",
+  "files": [
+    "ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "FontLab does not expose QtQml; this declarative example cannot start.",
+  "spec_sha256": "c186c16044bdd2d7b491f5ef2a69d0f17d566fd7644bea698d599a7aec52e3f0"
+}

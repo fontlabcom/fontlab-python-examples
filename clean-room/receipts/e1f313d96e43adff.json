@@ -1,0 +1,10 @@
+{
+  "port_id": "e1f313d96e43adff",
+  "target_path": "ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py",
+  "files": [
+    "ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "7412edbe4b283c477a6fc6af0fa7683c328ac898c878c7fbeb66fea4159def22"
+}

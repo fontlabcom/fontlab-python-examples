@@ -1,0 +1,10 @@
+{
+  "port_id": "1ca857d797199ecf",
+  "target_path": "ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+  "files": [
+    "ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "933d735f0b673a75cc54ab9ea48cec0fb8ae81fee8155443d63acbd465c74d86"
+}

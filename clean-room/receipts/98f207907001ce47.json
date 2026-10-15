@@ -1,0 +1,10 @@
+{
+  "port_id": "98f207907001ce47",
+  "target_path": "ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py",
+  "files": [
+    "ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "ebb974830c362960866235077b73630761b709526cdf807937c3efaa719b14a1"
+}

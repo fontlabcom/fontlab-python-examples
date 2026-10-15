@@ -1,0 +1,10 @@
+{
+  "port_id": "60d40ce5671653cf",
+  "target_path": "ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py",
+  "files": [
+    "ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "fa6d40ede58cd63db70be88d9d9203144ec3f9fba323364d09a17c64c8b3357f"
+}
