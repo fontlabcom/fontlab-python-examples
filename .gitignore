@@ -221,3 +221,7 @@ __marimo__/
 
 # Issue 103 third-party PythonQt study copies; provenance in catalog/pythonqt-reference-manifest.json.
 _reference/
+
+# Local workspace artifacts
+.DS_Store
+.omc/

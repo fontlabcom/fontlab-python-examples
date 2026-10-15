@@ -36,6 +36,18 @@ def write_catalog(catalog: dict, output: Path) -> None:
             "are recorded per file in [sources.json](sources.json) and [reviews.json](reviews.json). "
             "Runtime acceptance is recorded separately in [ports.json](ports.json). Targets remain planned paths."
         )
+    if "port_manifest" in catalog:
+        states = catalog["counts"]["port_states"]
+        lines[6] = (
+            f"{catalog['counts']['source_files']:,} original files; "
+            f"{catalog['counts']['python_files']} Python source files. Port records: "
+            + ", ".join(f"{count} {state}" for state, count in states.items())
+            + "."
+        )
+        lines[8] += (
+            " Official demos marked clean_room_pending have moved to a private archive; "
+            "their public behavioural handoff is in [clean-room-specs](../clean-room-specs/INDEX.json)."
+        )
     for source in catalog["sources"]:
         lines.append(
             f"| {source['repository']} | `{source['commit']}` | {source['source_files']} | {source['python_files']} |"
@@ -55,13 +67,14 @@ def write_catalog(catalog: dict, output: Path) -> None:
             "",
             f"## {category_name}",
             "",
-            "| Original candidate | Planned port | Source evidence | Needs |",
-            "| --- | --- | --- | --- |",
+            "| Original candidate | Planned port | State | Source evidence | Needs |",
+            "| --- | --- | --- | --- | --- |",
         ]
         for example in catalog["examples"]:
             if example["category"] == category_name:
                 file = by_id[example["id"]]
+                target = example.get("port_target_path", example["target_path"])
                 lines.append(
-                    f"| [{example['repository']} / {example['source_entrypoint']}]({file['upstream_url']}) | `{example['target_path']}` | {example['classification']} | {', '.join(example['capability_needs']) or 'review source'} |"
+                    f"| [{example['repository']} / {example['source_entrypoint']}]({file['upstream_url']}) | `{target}` | {example['port_state']} | {example['classification']} | {', '.join(example['capability_needs']) or 'review source'} |"
                 )
     (output / "INDEX.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

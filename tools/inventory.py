@@ -3,12 +3,14 @@
 """Generate a portable complete source catalog; no upstream code is executed."""
 
 import argparse
+import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
 from catalog_examples import example_records
 from catalog_output import write_catalog
+from catalog_ports import apply_port_states
 from catalog_records import source_records
 from catalog_reviews import apply_reviews
 from provenance import verified_sources
@@ -90,6 +92,11 @@ def main() -> None:
     parser.add_argument(
         "--reviews", type=Path, help="Apply hash-bound source review decisions"
     )
+    parser.add_argument(
+        "--ports",
+        type=Path,
+        help="Port state overlay (defaults to existing OUTPUT/ports.json)",
+    )
     args = parser.parse_args()
     roots = {}
     for value in args.source_root:
@@ -105,7 +112,19 @@ def main() -> None:
         )
         if args.reviews:
             apply_reviews(catalog, json.loads(args.reviews.read_text()))
+        ports_path = args.ports or args.output / "ports.json"
+        ports = None
+        if args.ports is not None or ports_path.is_file():
+            ports = json.loads(ports_path.read_text(encoding="utf-8"))
+            apply_port_states(catalog, ports)
         write_catalog(catalog, args.output)
+        if ports is not None:
+            ports["source_catalog_sha256"] = hashlib.sha256(
+                (args.output / "sources.json").read_bytes()
+            ).hexdigest()
+            (args.output / "ports.json").write_text(
+                json.dumps(ports, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+            )
     except (ValueError, KeyError, OSError) as error:
         # OSError text may expose private absolute paths; keep CLI diagnostics portable.
         parser.exit(

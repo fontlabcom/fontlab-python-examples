@@ -1,6 +1,7 @@
 # this_file: tests/test_inventory.py
 """Inventory tests use owned source bytes; they never import upstream examples."""
 
+import hashlib
 import json
 import subprocess
 import sys
@@ -157,6 +158,62 @@ def test_cli_writes_catalog_and_reports_portable_errors(sources, tmp_path):
     assert result.returncode == 1
     assert str(tmp_path) not in result.stderr
     assert "FileNotFoundError" in result.stderr
+
+
+def test_cli_when_output_contains_relocated_ports_then_regenerates_states(
+    sources, tmp_path
+):
+    trees, recovery, roots = sources
+    tree_path, recovery_path = tmp_path / "trees.json", tmp_path / "recovery.json"
+    tree_path.write_text(json.dumps(trees))
+    recovery_path.write_text(json.dumps(recovery))
+    catalog = build_catalog(*sources)
+    source = next(row for row in catalog["files"] if row["path"] == "widgets/main.py")
+    output = tmp_path / "catalog"
+    output.mkdir()
+    manifest = {
+        "ports": [
+            {
+                "source_id": source["id"],
+                "source": source,
+                "target_path": source["target_path"],
+                "resources": [],
+                "implementation": "clean_room_pending",
+                "native_acceptance": "unexecuted",
+                "archive": "owned/private@revision:demo.py",
+                "spec": "clean-room-specs/demo.md",
+            }
+        ]
+    }
+    (output / "ports.json").write_text(json.dumps(manifest))
+    command = [
+        sys.executable,
+        str(Path(__file__).resolve().parents[1] / "tools/inventory.py"),
+        "--tree-receipt",
+        str(tree_path),
+        "--recovery-receipt",
+        str(recovery_path),
+        "--source-root",
+        f"owned/examples={roots['owned/examples']}",
+        "--output",
+        str(output),
+    ]
+    result = subprocess.run(command, capture_output=True, text=True, check=False)
+    assert result.returncode == 0, result.stderr
+    refreshed = json.loads((output / "ports.json").read_text())
+    assert (
+        refreshed["source_catalog_sha256"]
+        == hashlib.sha256((output / "sources.json").read_bytes()).hexdigest()
+    )
+    generated = json.loads((output / "sources.json").read_text())
+    assert generated["counts"]["examples_clean_room_pending"] == 1
+    assert "clean_room_pending" in (output / "INDEX.md").read_text()
+    before = {p.name: p.read_bytes() for p in output.iterdir()}
+    result = subprocess.run(command, capture_output=True, text=True, check=False)
+    assert result.returncode == 0, result.stderr
+    assert before == {p.name: p.read_bytes() for p in output.iterdir()}, (
+        "Regeneration must be byte-stable"
+    )
 
 
 def test_qml_launcher_keeps_source_identity_without_runtime_claim():

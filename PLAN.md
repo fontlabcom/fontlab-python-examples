@@ -13,8 +13,7 @@ Completed on 2026-10-15:
   ownership of 69 shared files. `inventory.py --reviews` reapplies the decisions
   after verifying source hashes. Raw static observations and every identity remain.
 - `catalog/licenses.json` records 112 non-official port source reviews, 15 resource
-  reviews and 19 original insight file reviews. Pyqt-official licence records are
-  untouched. The gallery's explicit BSD exception is retained; unsupported MIT
+  reviews and 19 original insight file reviews. The gallery's explicit BSD exception is retained; unsupported MIT
   selections for five numbered assets are replaced by unresolved grant records.
 
 Remaining work:
@@ -23,9 +22,14 @@ Remaining work:
    unresolved resources in `catalog/licenses.json`. Do not infer asset rights
    from directory association or a source-code grant. The nine styleexample
    resources retain the GPL collection notice without an individual grant claim.
-2. **Licences (R055).** Resolve per-file licence scope once the owner answers D7
-   (BSD-3 file headers vs the GPL-3.0 collection notice for pyqt-official ports);
-   then close the unresolved records.
+  Official-demo records and licence notes have since moved under D7 below.
+2. **Clean-room replacements (D7).** All 187 official records are
+   `clean_room_pending`; 431 source/resource/notice files were removed after
+   committed-archive hash and dependency checks. Implement independently from
+   `clean-room-specs/INDEX.json` under Apache-2.0, with fresh resources. Archive:
+   `fontlabcom/fontlab-python-examples-reference@040b2e8`. An unexposed developer
+   handles that phase. Restore each catalogue state as its replacement lands;
+   source-dependent tests resume automatically. Old native passes remain historical.
 3. **Interactions.** Script native interactions for the remaining ports where it
    does not touch user state (drag/drop inside owned widgets, mouse/key-only and
    visual checks).

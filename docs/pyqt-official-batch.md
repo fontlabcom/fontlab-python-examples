@@ -4,6 +4,15 @@ this_file: docs/pyqt-official-batch.md
 
 # Official PythonQt batches: controller acceptance
 
+**Historical record:** all 187 official demos were relocated to the private
+reference repository at commit `040b2e8`. Their public catalogue state is now
+`clean_room_pending`; the sources, resources and licence notes described below
+are absent. Use the [behavioural specifications](../clean-room-specs/INDEX.json)
+for independent Apache-2.0 implementations. Launch instructions, original
+resource hashes and licence descriptions below document the archived versions,
+not current availability or grants for replacement code. Non-official batch 9
+ports remain available according to `catalog/ports.json`.
+
 The first 23 entries are implemented; **the current fixes await native reacceptance**.
 The controller reported that the prior build passed launch/inspect/close only for
 trivialwizard and stylesheet; other ports failed or crashed. No commit was made. This is a source-checkout delivery, not wheel-installation evidence.

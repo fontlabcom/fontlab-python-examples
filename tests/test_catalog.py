@@ -50,9 +50,17 @@ def test_resources_helpers_and_license_gaps_are_visible(catalog):
     assert catalog["counts"]["static_ambiguous_candidates"] == 17
     assert catalog["counts"]["ambiguous_candidates"] == 0
     assert (
-        sum(f["license"]["declared_terms"] == ["unknown"] for f in catalog["files"]) > 0
+        sum(
+            f.get("license", {}).get("declared_terms") == ["unknown"]
+            for f in catalog["files"]
+        )
+        > 0
     )
-    assert all(f["license"]["review_state"] == "pending" for f in catalog["files"])
+    for file in catalog["files"]:
+        if file["port_state"] == "clean_room_pending":
+            assert "license" not in file and file["archive"] and file["spec"]
+        else:
+            assert file["license"]["review_state"] == "pending"
     assert all(
         len(f["sha256"]) == 64 and len(f["git_blob_sha"]) == 40
         for f in catalog["files"]
@@ -86,16 +94,23 @@ def test_required_capabilities_and_case_collision_are_mapped(catalog):
     assert first["example_ids"] and second["example_ids"]
 
 
-def test_all_native_and_port_states_remain_pending(catalog):
+def test_port_states_when_projected_then_match_explicit_manifest_only(catalog):
+    ports = json.loads((CATALOG.parent / "ports.json").read_text())["ports"]
+    projected = {
+        item["source_id"]: (port["implementation"], port["native_acceptance"])
+        for port in ports
+        for item in [port, *port["resources"]]
+    }
     for record in catalog["files"] + catalog["examples"]:
-        assert record["port_state"] == "pending", "Inventory must not manufacture ports"
-        assert record["runtime_state"] == "unexecuted", (
-            "Static analysis does not prove host support"
-        )
-    assert (
-        catalog["counts"]["examples_ported"]
-        == catalog["counts"]["examples_native_executed"]
-        == 0
+        assert (record["port_state"], record["runtime_state"]) == projected.get(
+            record["id"], ("pending", "unexecuted")
+        ), "Only manifest records may project implementation and acceptance"
+    assert catalog["counts"]["examples_ported"] == sum(
+        p["implementation"] == "implemented" for p in ports
+    )
+    assert catalog["counts"]["examples_native_executed"] == sum(
+        p["implementation"] == "implemented" and p["native_acceptance"] == "passed"
+        for p in ports
     )
     text = CATALOG.read_text(encoding="utf-8")
     assert (

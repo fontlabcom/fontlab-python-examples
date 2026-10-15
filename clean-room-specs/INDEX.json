@@ -1,0 +1,941 @@
+{
+  "this_file": "clean-room-specs/INDEX.json",
+  "schema_version": 1,
+  "ports": [
+    {
+      "port_id": "035f3fbd2b81479a",
+      "target_path": "ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py",
+      "spec_file": "clean-room-specs/035f3fbd2b81479a.md"
+    },
+    {
+      "port_id": "3f5f77c0358d9fef",
+      "target_path": "ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py",
+      "spec_file": "clean-room-specs/3f5f77c0358d9fef.md"
+    },
+    {
+      "port_id": "a1c26dbf9f995edb",
+      "target_path": "ports/dialogs/pyqt-official/extension-a1c26dbf9f995edb.py",
+      "spec_file": "clean-room-specs/a1c26dbf9f995edb.md"
+    },
+    {
+      "port_id": "63f2eeefd052f701",
+      "target_path": "ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py",
+      "spec_file": "clean-room-specs/63f2eeefd052f701.md"
+    },
+    {
+      "port_id": "e1a0a829f8f2e311",
+      "target_path": "ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py",
+      "spec_file": "clean-room-specs/e1a0a829f8f2e311.md"
+    },
+    {
+      "port_id": "dab5fd4c94ec518d",
+      "target_path": "ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py",
+      "spec_file": "clean-room-specs/dab5fd4c94ec518d.md"
+    },
+    {
+      "port_id": "c0d4a173b261a3e5",
+      "target_path": "ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py",
+      "spec_file": "clean-room-specs/c0d4a173b261a3e5.md"
+    },
+    {
+      "port_id": "2f94fe07de765888",
+      "target_path": "ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py",
+      "spec_file": "clean-room-specs/2f94fe07de765888.md"
+    },
+    {
+      "port_id": "f48955d43ed6196c",
+      "target_path": "ports/layouts/pyqt-official/borderlayout-f48955d43ed6196c.py",
+      "spec_file": "clean-room-specs/f48955d43ed6196c.md"
+    },
+    {
+      "port_id": "675c9f79650d7507",
+      "target_path": "ports/layouts/pyqt-official/flowlayout-675c9f79650d7507.py",
+      "spec_file": "clean-room-specs/675c9f79650d7507.md"
+    },
+    {
+      "port_id": "7da7020aa7e2732b",
+      "target_path": "ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py",
+      "spec_file": "clean-room-specs/7da7020aa7e2732b.md"
+    },
+    {
+      "port_id": "1415facde30a25cf",
+      "target_path": "ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py",
+      "spec_file": "clean-room-specs/1415facde30a25cf.md"
+    },
+    {
+      "port_id": "eba98690c141a070",
+      "target_path": "ports/mainwindows/pyqt-official/sdi-eba98690c141a070.py",
+      "spec_file": "clean-room-specs/eba98690c141a070.md"
+    },
+    {
+      "port_id": "907f39d8bf387501",
+      "target_path": "ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py",
+      "spec_file": "clean-room-specs/907f39d8bf387501.md"
+    },
+    {
+      "port_id": "19571722ed96aa9c",
+      "target_path": "ports/tools/pyqt-official/codecs-19571722ed96aa9c.py",
+      "spec_file": "clean-room-specs/19571722ed96aa9c.md"
+    },
+    {
+      "port_id": "10ef4dacb4db4080",
+      "target_path": "ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py",
+      "spec_file": "clean-room-specs/10ef4dacb4db4080.md"
+    },
+    {
+      "port_id": "eca1cd9ef1528607",
+      "target_path": "ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py",
+      "spec_file": "clean-room-specs/eca1cd9ef1528607.md"
+    },
+    {
+      "port_id": "626fd0acec74fd91",
+      "target_path": "ports/tools/pyqt-official/regexp-626fd0acec74fd91.py",
+      "spec_file": "clean-room-specs/626fd0acec74fd91.md"
+    },
+    {
+      "port_id": "9e41e71c41b116a8",
+      "target_path": "ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py",
+      "spec_file": "clean-room-specs/9e41e71c41b116a8.md"
+    },
+    {
+      "port_id": "505d60a757bbc177",
+      "target_path": "ports/widgets/pyqt-official/icons-505d60a757bbc177.py",
+      "spec_file": "clean-room-specs/505d60a757bbc177.md"
+    },
+    {
+      "port_id": "a3b3cbe51c1506c6",
+      "target_path": "ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py",
+      "spec_file": "clean-room-specs/a3b3cbe51c1506c6.md"
+    },
+    {
+      "port_id": "876eab33b6a99e31",
+      "target_path": "ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py",
+      "spec_file": "clean-room-specs/876eab33b6a99e31.md"
+    },
+    {
+      "port_id": "e62ce3eb648cfb4c",
+      "target_path": "ports/widgets/pyqt-official/tooltips-e62ce3eb648cfb4c.py",
+      "spec_file": "clean-room-specs/e62ce3eb648cfb4c.md"
+    },
+    {
+      "port_id": "5781fa4ba55c884f",
+      "target_path": "ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py",
+      "spec_file": "clean-room-specs/5781fa4ba55c884f.md"
+    },
+    {
+      "port_id": "700e96dec485e7a8",
+      "target_path": "ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py",
+      "spec_file": "clean-room-specs/700e96dec485e7a8.md"
+    },
+    {
+      "port_id": "da76600eaea7a121",
+      "target_path": "ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py",
+      "spec_file": "clean-room-specs/da76600eaea7a121.md"
+    },
+    {
+      "port_id": "c5b4e385cc921da4",
+      "target_path": "ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py",
+      "spec_file": "clean-room-specs/c5b4e385cc921da4.md"
+    },
+    {
+      "port_id": "b823a76f79197d84",
+      "target_path": "ports/effects/pyqt-official/lighting-b823a76f79197d84.py",
+      "spec_file": "clean-room-specs/b823a76f79197d84.md"
+    },
+    {
+      "port_id": "306c12d5cc1db46c",
+      "target_path": "ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py",
+      "spec_file": "clean-room-specs/306c12d5cc1db46c.md"
+    },
+    {
+      "port_id": "227efef76ed4ac74",
+      "target_path": "ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py",
+      "spec_file": "clean-room-specs/227efef76ed4ac74.md"
+    },
+    {
+      "port_id": "c98ae8ac71886586",
+      "target_path": "ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py",
+      "spec_file": "clean-room-specs/c98ae8ac71886586.md"
+    },
+    {
+      "port_id": "090c76a87351e771",
+      "target_path": "ports/itemviews/pyqt-official/interview-090c76a87351e771.py",
+      "spec_file": "clean-room-specs/090c76a87351e771.md"
+    },
+    {
+      "port_id": "878fe9f714df3b5e",
+      "target_path": "ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py",
+      "spec_file": "clean-room-specs/878fe9f714df3b5e.md"
+    },
+    {
+      "port_id": "321f8e535facafde",
+      "target_path": "ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py",
+      "spec_file": "clean-room-specs/321f8e535facafde.md"
+    },
+    {
+      "port_id": "e1f313d96e43adff",
+      "target_path": "ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py",
+      "spec_file": "clean-room-specs/e1f313d96e43adff.md"
+    },
+    {
+      "port_id": "55bcde890cd77ed7",
+      "target_path": "ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py",
+      "spec_file": "clean-room-specs/55bcde890cd77ed7.md"
+    },
+    {
+      "port_id": "f4d9e2927469223c",
+      "target_path": "ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py",
+      "spec_file": "clean-room-specs/f4d9e2927469223c.md"
+    },
+    {
+      "port_id": "4d19e62d93dd761c",
+      "target_path": "ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py",
+      "spec_file": "clean-room-specs/4d19e62d93dd761c.md"
+    },
+    {
+      "port_id": "94ab271d023d1ca3",
+      "target_path": "ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py",
+      "spec_file": "clean-room-specs/94ab271d023d1ca3.md"
+    },
+    {
+      "port_id": "2719ebb336f3a29e",
+      "target_path": "ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py",
+      "spec_file": "clean-room-specs/2719ebb336f3a29e.md"
+    },
+    {
+      "port_id": "bb1c114d38fb756a",
+      "target_path": "ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py",
+      "spec_file": "clean-room-specs/bb1c114d38fb756a.md"
+    },
+    {
+      "port_id": "0578c17977b471f1",
+      "target_path": "ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+      "spec_file": "clean-room-specs/0578c17977b471f1.md"
+    },
+    {
+      "port_id": "0788354954c8e613",
+      "target_path": "ports/threads/pyqt-official/mandelbrot-0788354954c8e613.py",
+      "spec_file": "clean-room-specs/0788354954c8e613.md"
+    },
+    {
+      "port_id": "1ca857d797199ecf",
+      "target_path": "ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+      "spec_file": "clean-room-specs/1ca857d797199ecf.md"
+    },
+    {
+      "port_id": "1cf57c0f2ac8880a",
+      "target_path": "ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+      "spec_file": "clean-room-specs/1cf57c0f2ac8880a.md"
+    },
+    {
+      "port_id": "243ae486f9528e8c",
+      "target_path": "ports/animation/pyqt-official/stickman-243ae486f9528e8c.py",
+      "spec_file": "clean-room-specs/243ae486f9528e8c.md"
+    },
+    {
+      "port_id": "27709a02d37b9ba9",
+      "target_path": "ports/threads/pyqt-official/waitconditions-27709a02d37b9ba9.py",
+      "spec_file": "clean-room-specs/27709a02d37b9ba9.md"
+    },
+    {
+      "port_id": "29f6a7d0a3bb6813",
+      "target_path": "ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py",
+      "spec_file": "clean-room-specs/29f6a7d0a3bb6813.md"
+    },
+    {
+      "port_id": "2cd6ffc2b2ed65bb",
+      "target_path": "ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "spec_file": "clean-room-specs/2cd6ffc2b2ed65bb.md"
+    },
+    {
+      "port_id": "65d15d1fbc1b15e9",
+      "target_path": "ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py",
+      "spec_file": "clean-room-specs/65d15d1fbc1b15e9.md"
+    },
+    {
+      "port_id": "b7283d74afb78218",
+      "target_path": "ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py",
+      "spec_file": "clean-room-specs/b7283d74afb78218.md"
+    },
+    {
+      "port_id": "b95b687bbc541207",
+      "target_path": "ports/threads/pyqt-official/semaphores-b95b687bbc541207.py",
+      "spec_file": "clean-room-specs/b95b687bbc541207.md"
+    },
+    {
+      "port_id": "bd6c8feb783ba845",
+      "target_path": "ports/animation/pyqt-official/easing-bd6c8feb783ba845.py",
+      "spec_file": "clean-room-specs/bd6c8feb783ba845.md"
+    },
+    {
+      "port_id": "c1b878b63f80e733",
+      "target_path": "ports/desktop/pyqt-official/systray-c1b878b63f80e733.py",
+      "spec_file": "clean-room-specs/c1b878b63f80e733.md"
+    },
+    {
+      "port_id": "de30d23621025fe6",
+      "target_path": "ports/animation/pyqt-official/appchooser-de30d23621025fe6.py",
+      "spec_file": "clean-room-specs/de30d23621025fe6.md"
+    },
+    {
+      "port_id": "de35a965dfcfd678",
+      "target_path": "ports/ipc/pyqt-official/sharedmemory-de35a965dfcfd678.py",
+      "spec_file": "clean-room-specs/de35a965dfcfd678.md"
+    },
+    {
+      "port_id": "fcfaf9667206bbd6",
+      "target_path": "ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py",
+      "spec_file": "clean-room-specs/fcfaf9667206bbd6.md"
+    },
+    {
+      "port_id": "4efac54bae01fc62",
+      "target_path": "ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py",
+      "spec_file": "clean-room-specs/4efac54bae01fc62.md"
+    },
+    {
+      "port_id": "60d40ce5671653cf",
+      "target_path": "ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py",
+      "spec_file": "clean-room-specs/60d40ce5671653cf.md"
+    },
+    {
+      "port_id": "09afeea11be83f4f",
+      "target_path": "ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py",
+      "spec_file": "clean-room-specs/09afeea11be83f4f.md"
+    },
+    {
+      "port_id": "2d36e0fe43f5d49a",
+      "target_path": "ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py",
+      "spec_file": "clean-room-specs/2d36e0fe43f5d49a.md"
+    },
+    {
+      "port_id": "912e5c751b20ce97",
+      "target_path": "ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+      "spec_file": "clean-room-specs/912e5c751b20ce97.md"
+    },
+    {
+      "port_id": "13a6bb9a9d2b9037",
+      "target_path": "ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+      "spec_file": "clean-room-specs/13a6bb9a9d2b9037.md"
+    },
+    {
+      "port_id": "b2d717e4d43806d2",
+      "target_path": "ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+      "spec_file": "clean-room-specs/b2d717e4d43806d2.md"
+    },
+    {
+      "port_id": "c12a2071adbab88b",
+      "target_path": "ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+      "spec_file": "clean-room-specs/c12a2071adbab88b.md"
+    },
+    {
+      "port_id": "c56cf1699b07b350",
+      "target_path": "ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py",
+      "spec_file": "clean-room-specs/c56cf1699b07b350.md"
+    },
+    {
+      "port_id": "c997677a2bdb4f34",
+      "target_path": "ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py",
+      "spec_file": "clean-room-specs/c997677a2bdb4f34.md"
+    },
+    {
+      "port_id": "428c50abcef7adfe",
+      "target_path": "ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py",
+      "spec_file": "clean-room-specs/428c50abcef7adfe.md"
+    },
+    {
+      "port_id": "b34b2f696a977e74",
+      "target_path": "ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py",
+      "spec_file": "clean-room-specs/b34b2f696a977e74.md"
+    },
+    {
+      "port_id": "806fd814a2ea4d46",
+      "target_path": "ports/richtext/pyqt-official/textobject-806fd814a2ea4d46.py",
+      "spec_file": "clean-room-specs/806fd814a2ea4d46.md"
+    },
+    {
+      "port_id": "d6dc56a5318ffe71",
+      "target_path": "ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py",
+      "spec_file": "clean-room-specs/d6dc56a5318ffe71.md"
+    },
+    {
+      "port_id": "356e4e807f1e789f",
+      "target_path": "ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py",
+      "spec_file": "clean-room-specs/356e4e807f1e789f.md"
+    },
+    {
+      "port_id": "b91effc45f81fbb0",
+      "target_path": "ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+      "spec_file": "clean-room-specs/b91effc45f81fbb0.md"
+    },
+    {
+      "port_id": "499e965d86347920",
+      "target_path": "ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+      "spec_file": "clean-room-specs/499e965d86347920.md"
+    },
+    {
+      "port_id": "3040b9f6b267a196",
+      "target_path": "ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py",
+      "spec_file": "clean-room-specs/3040b9f6b267a196.md"
+    },
+    {
+      "port_id": "f702b62aa47629ad",
+      "target_path": "ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py",
+      "spec_file": "clean-room-specs/f702b62aa47629ad.md"
+    },
+    {
+      "port_id": "16456ba02f4b79cc",
+      "target_path": "ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py",
+      "spec_file": "clean-room-specs/16456ba02f4b79cc.md"
+    },
+    {
+      "port_id": "84cb59e07adfae2c",
+      "target_path": "ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py",
+      "spec_file": "clean-room-specs/84cb59e07adfae2c.md"
+    },
+    {
+      "port_id": "8e5aa13798c2763c",
+      "target_path": "ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py",
+      "spec_file": "clean-room-specs/8e5aa13798c2763c.md"
+    },
+    {
+      "port_id": "248e64416b9b218c",
+      "target_path": "ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py",
+      "spec_file": "clean-room-specs/248e64416b9b218c.md"
+    },
+    {
+      "port_id": "36805750b888fba6",
+      "target_path": "ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+      "spec_file": "clean-room-specs/36805750b888fba6.md"
+    },
+    {
+      "port_id": "468179092748a72e",
+      "target_path": "ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "spec_file": "clean-room-specs/468179092748a72e.md"
+    },
+    {
+      "port_id": "9e21c6536fda7a23",
+      "target_path": "ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py",
+      "spec_file": "clean-room-specs/9e21c6536fda7a23.md"
+    },
+    {
+      "port_id": "e63bffc17abf2fde",
+      "target_path": "ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py",
+      "spec_file": "clean-room-specs/e63bffc17abf2fde.md"
+    },
+    {
+      "port_id": "509e781f1267967f",
+      "target_path": "ports/widgets/pyqt-official/wiggly-509e781f1267967f.py",
+      "spec_file": "clean-room-specs/509e781f1267967f.md"
+    },
+    {
+      "port_id": "136c45cc9f97c218",
+      "target_path": "ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py",
+      "spec_file": "clean-room-specs/136c45cc9f97c218.md"
+    },
+    {
+      "port_id": "43c6c2f6f5f036d3",
+      "target_path": "ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py",
+      "spec_file": "clean-room-specs/43c6c2f6f5f036d3.md"
+    },
+    {
+      "port_id": "fa6823667fdb918f",
+      "target_path": "ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py",
+      "spec_file": "clean-room-specs/fa6823667fdb918f.md"
+    },
+    {
+      "port_id": "a96a7978c0b9f6ee",
+      "target_path": "ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py",
+      "spec_file": "clean-room-specs/a96a7978c0b9f6ee.md"
+    },
+    {
+      "port_id": "fff97a435b73d548",
+      "target_path": "ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+      "spec_file": "clean-room-specs/fff97a435b73d548.md"
+    },
+    {
+      "port_id": "a58650b5461c0f48",
+      "target_path": "ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py",
+      "spec_file": "clean-room-specs/a58650b5461c0f48.md"
+    },
+    {
+      "port_id": "9dab02b61cebbdb7",
+      "target_path": "ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "spec_file": "clean-room-specs/9dab02b61cebbdb7.md"
+    },
+    {
+      "port_id": "0a3b15766909bdc3",
+      "target_path": "ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py",
+      "spec_file": "clean-room-specs/0a3b15766909bdc3.md"
+    },
+    {
+      "port_id": "cc95f9719b8e4eda",
+      "target_path": "ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py",
+      "spec_file": "clean-room-specs/cc95f9719b8e4eda.md"
+    },
+    {
+      "port_id": "029ea0dabe87ae57",
+      "target_path": "ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+      "spec_file": "clean-room-specs/029ea0dabe87ae57.md"
+    },
+    {
+      "port_id": "4b8851287931abd0",
+      "target_path": "ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py",
+      "spec_file": "clean-room-specs/4b8851287931abd0.md"
+    },
+    {
+      "port_id": "67170c89593ad35e",
+      "target_path": "ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py",
+      "spec_file": "clean-room-specs/67170c89593ad35e.md"
+    },
+    {
+      "port_id": "d50ad6638357e669",
+      "target_path": "ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py",
+      "spec_file": "clean-room-specs/d50ad6638357e669.md"
+    },
+    {
+      "port_id": "a59dae9770bfbefb",
+      "target_path": "ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py",
+      "spec_file": "clean-room-specs/a59dae9770bfbefb.md"
+    },
+    {
+      "port_id": "39de33366209402d",
+      "target_path": "ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py",
+      "spec_file": "clean-room-specs/39de33366209402d.md"
+    },
+    {
+      "port_id": "ddb20b1b68b18a91",
+      "target_path": "ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py",
+      "spec_file": "clean-room-specs/ddb20b1b68b18a91.md"
+    },
+    {
+      "port_id": "bf3b39a8c2df8e94",
+      "target_path": "ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py",
+      "spec_file": "clean-room-specs/bf3b39a8c2df8e94.md"
+    },
+    {
+      "port_id": "dc59f268ee01e364",
+      "target_path": "ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py",
+      "spec_file": "clean-room-specs/dc59f268ee01e364.md"
+    },
+    {
+      "port_id": "cf15c3e91cdd8ded",
+      "target_path": "ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py",
+      "spec_file": "clean-room-specs/cf15c3e91cdd8ded.md"
+    },
+    {
+      "port_id": "79f3a23172968ad2",
+      "target_path": "ports/network/pyqt-official/blockingfortuneclient-79f3a23172968ad2.py",
+      "spec_file": "clean-room-specs/79f3a23172968ad2.md"
+    },
+    {
+      "port_id": "0bba8a80541ab04f",
+      "target_path": "ports/network/pyqt-official/broadcastreceiver-0bba8a80541ab04f.py",
+      "spec_file": "clean-room-specs/0bba8a80541ab04f.md"
+    },
+    {
+      "port_id": "90721289b8108c4f",
+      "target_path": "ports/network/pyqt-official/broadcastsender-90721289b8108c4f.py",
+      "spec_file": "clean-room-specs/90721289b8108c4f.md"
+    },
+    {
+      "port_id": "fbb4e3c7288fed7c",
+      "target_path": "ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py",
+      "spec_file": "clean-room-specs/fbb4e3c7288fed7c.md"
+    },
+    {
+      "port_id": "aad57160cfd51894",
+      "target_path": "ports/network/pyqt-official/fortuneserver-aad57160cfd51894.py",
+      "spec_file": "clean-room-specs/aad57160cfd51894.md"
+    },
+    {
+      "port_id": "409f3d46a9555f23",
+      "target_path": "ports/network/pyqt-official/http-409f3d46a9555f23.py",
+      "spec_file": "clean-room-specs/409f3d46a9555f23.md"
+    },
+    {
+      "port_id": "d8803c2afaabf3d5",
+      "target_path": "ports/network/pyqt-official/lightmaps-d8803c2afaabf3d5.py",
+      "spec_file": "clean-room-specs/d8803c2afaabf3d5.md"
+    },
+    {
+      "port_id": "ebf87d5f5390b0fd",
+      "target_path": "ports/network/pyqt-official/loopback-ebf87d5f5390b0fd.py",
+      "spec_file": "clean-room-specs/ebf87d5f5390b0fd.md"
+    },
+    {
+      "port_id": "98f207907001ce47",
+      "target_path": "ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py",
+      "spec_file": "clean-room-specs/98f207907001ce47.md"
+    },
+    {
+      "port_id": "a1273c8940d43221",
+      "target_path": "ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py",
+      "spec_file": "clean-room-specs/a1273c8940d43221.md"
+    },
+    {
+      "port_id": "38465a8f4b1a229f",
+      "target_path": "ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py",
+      "spec_file": "clean-room-specs/38465a8f4b1a229f.md"
+    },
+    {
+      "port_id": "ab719a6a5c3afe4a",
+      "target_path": "ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py",
+      "spec_file": "clean-room-specs/ab719a6a5c3afe4a.md"
+    },
+    {
+      "port_id": "30cfa75ad45b3447",
+      "target_path": "ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py",
+      "spec_file": "clean-room-specs/30cfa75ad45b3447.md"
+    },
+    {
+      "port_id": "57a381bc8260c85d",
+      "target_path": "ports/dbus/pyqt-official/pong-57a381bc8260c85d.py",
+      "spec_file": "clean-room-specs/57a381bc8260c85d.md"
+    },
+    {
+      "port_id": "54c7440bdcdc3dfc",
+      "target_path": "ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py",
+      "spec_file": "clean-room-specs/54c7440bdcdc3dfc.md"
+    },
+    {
+      "port_id": "3cf5db95a691d200",
+      "target_path": "ports/dbus/pyqt-official/controller-3cf5db95a691d200.py",
+      "spec_file": "clean-room-specs/3cf5db95a691d200.md"
+    },
+    {
+      "port_id": "27bf65f8b059fd96",
+      "target_path": "ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py",
+      "spec_file": "clean-room-specs/27bf65f8b059fd96.md"
+    },
+    {
+      "port_id": "960c701fa6221ac5",
+      "target_path": "ports/designer/pyqt-official/plugins-960c701fa6221ac5.py",
+      "spec_file": "clean-room-specs/960c701fa6221ac5.md"
+    },
+    {
+      "port_id": "4d24cd77c74a8801",
+      "target_path": "ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py",
+      "spec_file": "clean-room-specs/4d24cd77c74a8801.md"
+    },
+    {
+      "port_id": "9941e3c752b3a3b7",
+      "target_path": "ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py",
+      "spec_file": "clean-room-specs/9941e3c752b3a3b7.md"
+    },
+    {
+      "port_id": "1321540b04f33117",
+      "target_path": "ports/designer/pyqt-official/counterlabel-1321540b04f33117.py",
+      "spec_file": "clean-room-specs/1321540b04f33117.md"
+    },
+    {
+      "port_id": "7ba49e67588b1329",
+      "target_path": "ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py",
+      "spec_file": "clean-room-specs/7ba49e67588b1329.md"
+    },
+    {
+      "port_id": "5941e31267112c98",
+      "target_path": "ports/designer/pyqt-official/helloglwidget-5941e31267112c98.py",
+      "spec_file": "clean-room-specs/5941e31267112c98.md"
+    },
+    {
+      "port_id": "de4979a99c6d0bed",
+      "target_path": "ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py",
+      "spec_file": "clean-room-specs/de4979a99c6d0bed.md"
+    },
+    {
+      "port_id": "773db5c24ae98ffb",
+      "target_path": "ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py",
+      "spec_file": "clean-room-specs/773db5c24ae98ffb.md"
+    },
+    {
+      "port_id": "bcfa5de0140286d5",
+      "target_path": "ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py",
+      "spec_file": "clean-room-specs/bcfa5de0140286d5.md"
+    },
+    {
+      "port_id": "5125860585e98b3a",
+      "target_path": "ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py",
+      "spec_file": "clean-room-specs/5125860585e98b3a.md"
+    },
+    {
+      "port_id": "0ad3432ccdca7ac0",
+      "target_path": "ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py",
+      "spec_file": "clean-room-specs/0ad3432ccdca7ac0.md"
+    },
+    {
+      "port_id": "a14d08fe23965bec",
+      "target_path": "ports/ipc/pyqt-official/localfortuneserver-a14d08fe23965bec.py",
+      "spec_file": "clean-room-specs/a14d08fe23965bec.md"
+    },
+    {
+      "port_id": "74af8d8d2d7774b8",
+      "target_path": "ports/multimedia/pyqt-official/audiodevices-74af8d8d2d7774b8.py",
+      "spec_file": "clean-room-specs/74af8d8d2d7774b8.md"
+    },
+    {
+      "port_id": "c391afd8516131e1",
+      "target_path": "ports/multimedia/pyqt-official/audiooutput-c391afd8516131e1.py",
+      "spec_file": "clean-room-specs/c391afd8516131e1.md"
+    },
+    {
+      "port_id": "f6d352360ae9bdfb",
+      "target_path": "ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py",
+      "spec_file": "clean-room-specs/f6d352360ae9bdfb.md"
+    },
+    {
+      "port_id": "5eb4b9eaa2d5c9dc",
+      "target_path": "ports/multimediawidgets/pyqt-official/player-5eb4b9eaa2d5c9dc.py",
+      "spec_file": "clean-room-specs/5eb4b9eaa2d5c9dc.md"
+    },
+    {
+      "port_id": "a57a89e523c75b7f",
+      "target_path": "ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py",
+      "spec_file": "clean-room-specs/a57a89e523c75b7f.md"
+    },
+    {
+      "port_id": "481c128fba3a714b",
+      "target_path": "ports/multimediawidgets/pyqt-official/videowidget-481c128fba3a714b.py",
+      "spec_file": "clean-room-specs/481c128fba3a714b.md"
+    },
+    {
+      "port_id": "c82d1af7d1a7b0cf",
+      "target_path": "ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py",
+      "spec_file": "clean-room-specs/c82d1af7d1a7b0cf.md"
+    },
+    {
+      "port_id": "303ea3ee09c4677d",
+      "target_path": "ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py",
+      "spec_file": "clean-room-specs/303ea3ee09c4677d.md"
+    },
+    {
+      "port_id": "1ad60855ca28f3cc",
+      "target_path": "ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py",
+      "spec_file": "clean-room-specs/1ad60855ca28f3cc.md"
+    },
+    {
+      "port_id": "b383fecf912548bb",
+      "target_path": "ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py",
+      "spec_file": "clean-room-specs/b383fecf912548bb.md"
+    },
+    {
+      "port_id": "fcada4fff6524fcf",
+      "target_path": "ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py",
+      "spec_file": "clean-room-specs/fcada4fff6524fcf.md"
+    },
+    {
+      "port_id": "ed6d42d4faa7e0bb",
+      "target_path": "ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py",
+      "spec_file": "clean-room-specs/ed6d42d4faa7e0bb.md"
+    },
+    {
+      "port_id": "5a8e48d2a1396cea",
+      "target_path": "ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py",
+      "spec_file": "clean-room-specs/5a8e48d2a1396cea.md"
+    },
+    {
+      "port_id": "b7db02f540cc7559",
+      "target_path": "ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py",
+      "spec_file": "clean-room-specs/b7db02f540cc7559.md"
+    },
+    {
+      "port_id": "b9660f4ee653ca01",
+      "target_path": "ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py",
+      "spec_file": "clean-room-specs/b9660f4ee653ca01.md"
+    },
+    {
+      "port_id": "8847cbce50b72500",
+      "target_path": "ports/qml/pyqt-official/adding-8847cbce50b72500.py",
+      "spec_file": "clean-room-specs/8847cbce50b72500.md"
+    },
+    {
+      "port_id": "dd226ba9fbb7b330",
+      "target_path": "ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py",
+      "spec_file": "clean-room-specs/dd226ba9fbb7b330.md"
+    },
+    {
+      "port_id": "eb7a89f07f63cca7",
+      "target_path": "ports/qml/pyqt-official/binding-eb7a89f07f63cca7.py",
+      "spec_file": "clean-room-specs/eb7a89f07f63cca7.md"
+    },
+    {
+      "port_id": "ad499afe23726248",
+      "target_path": "ports/qml/pyqt-official/coercion-ad499afe23726248.py",
+      "spec_file": "clean-room-specs/ad499afe23726248.md"
+    },
+    {
+      "port_id": "6417cdcf1bfd1752",
+      "target_path": "ports/qml/pyqt-official/default-6417cdcf1bfd1752.py",
+      "spec_file": "clean-room-specs/6417cdcf1bfd1752.md"
+    },
+    {
+      "port_id": "81a6f0d16c203608",
+      "target_path": "ports/qml/pyqt-official/grouped-81a6f0d16c203608.py",
+      "spec_file": "clean-room-specs/81a6f0d16c203608.md"
+    },
+    {
+      "port_id": "75ca5ac77ecefd6d",
+      "target_path": "ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py",
+      "spec_file": "clean-room-specs/75ca5ac77ecefd6d.md"
+    },
+    {
+      "port_id": "d0a18273fa604bb6",
+      "target_path": "ports/qml/pyqt-official/properties-d0a18273fa604bb6.py",
+      "spec_file": "clean-room-specs/d0a18273fa604bb6.md"
+    },
+    {
+      "port_id": "0a13f60f5f0561db",
+      "target_path": "ports/qml/pyqt-official/signal-0a13f60f5f0561db.py",
+      "spec_file": "clean-room-specs/0a13f60f5f0561db.md"
+    },
+    {
+      "port_id": "738a22ef3062ed51",
+      "target_path": "ports/qml/pyqt-official/valuesource-738a22ef3062ed51.py",
+      "spec_file": "clean-room-specs/738a22ef3062ed51.md"
+    },
+    {
+      "port_id": "85a56a1f3c25ccca",
+      "target_path": "ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py",
+      "spec_file": "clean-room-specs/85a56a1f3c25ccca.md"
+    },
+    {
+      "port_id": "835281a1ab864833",
+      "target_path": "ports/quick/pyqt-official/animation-835281a1ab864833.py",
+      "spec_file": "clean-room-specs/835281a1ab864833.md"
+    },
+    {
+      "port_id": "36246fcbffecdeba",
+      "target_path": "ports/quick/pyqt-official/canvas-36246fcbffecdeba.py",
+      "spec_file": "clean-room-specs/36246fcbffecdeba.md"
+    },
+    {
+      "port_id": "e1316fee99c63555",
+      "target_path": "ports/quick/pyqt-official/abstractitemmodel-e1316fee99c63555.py",
+      "spec_file": "clean-room-specs/e1316fee99c63555.md"
+    },
+    {
+      "port_id": "68d664f95f48ce52",
+      "target_path": "ports/quick/pyqt-official/objectlistmodel-68d664f95f48ce52.py",
+      "spec_file": "clean-room-specs/68d664f95f48ce52.md"
+    },
+    {
+      "port_id": "b64d66dbce7274fe",
+      "target_path": "ports/quick/pyqt-official/stringlistmodel-b64d66dbce7274fe.py",
+      "spec_file": "clean-room-specs/b64d66dbce7274fe.md"
+    },
+    {
+      "port_id": "34538a4e2600b918",
+      "target_path": "ports/quick/pyqt-official/customgeometry-34538a4e2600b918.py",
+      "spec_file": "clean-room-specs/34538a4e2600b918.md"
+    },
+    {
+      "port_id": "6b1f4f5590a5518a",
+      "target_path": "ports/quick/pyqt-official/chapter1-basics-6b1f4f5590a5518a.py",
+      "spec_file": "clean-room-specs/6b1f4f5590a5518a.md"
+    },
+    {
+      "port_id": "8d1557cbfed9c7a0",
+      "target_path": "ports/quick/pyqt-official/chapter2-methods-8d1557cbfed9c7a0.py",
+      "spec_file": "clean-room-specs/8d1557cbfed9c7a0.md"
+    },
+    {
+      "port_id": "3cd3713a5dc9f6dc",
+      "target_path": "ports/quick/pyqt-official/chapter3-bindings-3cd3713a5dc9f6dc.py",
+      "spec_file": "clean-room-specs/3cd3713a5dc9f6dc.md"
+    },
+    {
+      "port_id": "831ac8ea61da03f3",
+      "target_path": "ports/quick/pyqt-official/chapter4-custompropertytypes-831ac8ea61da03f3.py",
+      "spec_file": "clean-room-specs/831ac8ea61da03f3.md"
+    },
+    {
+      "port_id": "b88e7eb0fcb53264",
+      "target_path": "ports/quick/pyqt-official/chapter5-listproperties-b88e7eb0fcb53264.py",
+      "spec_file": "clean-room-specs/b88e7eb0fcb53264.md"
+    },
+    {
+      "port_id": "4dbe92cd1e720dce",
+      "target_path": "ports/remoteobjects/pyqt-official/modelviewclient-4dbe92cd1e720dce.py",
+      "spec_file": "clean-room-specs/4dbe92cd1e720dce.md"
+    },
+    {
+      "port_id": "781a3a959215eb81",
+      "target_path": "ports/remoteobjects/pyqt-official/modelviewserver-781a3a959215eb81.py",
+      "spec_file": "clean-room-specs/781a3a959215eb81.md"
+    },
+    {
+      "port_id": "54cbd9afababdf71",
+      "target_path": "ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py",
+      "spec_file": "clean-room-specs/54cbd9afababdf71.md"
+    },
+    {
+      "port_id": "2f1e2f679775d89e",
+      "target_path": "ports/remoteobjects/pyqt-official/directconnectdynamicserver-2f1e2f679775d89e.py",
+      "spec_file": "clean-room-specs/2f1e2f679775d89e.md"
+    },
+    {
+      "port_id": "333f0272885ca1b7",
+      "target_path": "ports/remoteobjects/pyqt-official/registryconnecteddynamicclient-333f0272885ca1b7.py",
+      "spec_file": "clean-room-specs/333f0272885ca1b7.md"
+    },
+    {
+      "port_id": "b83377c9b48aec14",
+      "target_path": "ports/remoteobjects/pyqt-official/registryconnecteddynamicserver-b83377c9b48aec14.py",
+      "spec_file": "clean-room-specs/b83377c9b48aec14.md"
+    },
+    {
+      "port_id": "0b0d8d2fae153e5e",
+      "target_path": "ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py",
+      "spec_file": "clean-room-specs/0b0d8d2fae153e5e.md"
+    },
+    {
+      "port_id": "2c4c366f259d7d80",
+      "target_path": "ports/sql/pyqt-official/querymodel-2c4c366f259d7d80.py",
+      "spec_file": "clean-room-specs/2c4c366f259d7d80.md"
+    },
+    {
+      "port_id": "9030a87a532b8d8f",
+      "target_path": "ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py",
+      "spec_file": "clean-room-specs/9030a87a532b8d8f.md"
+    },
+    {
+      "port_id": "0677ebfd7fa2cc60",
+      "target_path": "ports/sql/pyqt-official/tablemodel-0677ebfd7fa2cc60.py",
+      "spec_file": "clean-room-specs/0677ebfd7fa2cc60.md"
+    },
+    {
+      "port_id": "8d5ea81a74e30222",
+      "target_path": "ports/webkit/pyqt-official/domtraversal-8d5ea81a74e30222.py",
+      "spec_file": "clean-room-specs/8d5ea81a74e30222.md"
+    },
+    {
+      "port_id": "f4000cf8ca288375",
+      "target_path": "ports/webkit/pyqt-official/fancybrowser-f4000cf8ca288375.py",
+      "spec_file": "clean-room-specs/f4000cf8ca288375.md"
+    },
+    {
+      "port_id": "6ed36280660df7ea",
+      "target_path": "ports/webkit/pyqt-official/formextractor-6ed36280660df7ea.py",
+      "spec_file": "clean-room-specs/6ed36280660df7ea.md"
+    },
+    {
+      "port_id": "ca47b83fbf3f31b9",
+      "target_path": "ports/webkit/pyqt-official/framecapture-ca47b83fbf3f31b9.py",
+      "spec_file": "clean-room-specs/ca47b83fbf3f31b9.md"
+    },
+    {
+      "port_id": "47298251b3c83ecf",
+      "target_path": "ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py",
+      "spec_file": "clean-room-specs/47298251b3c83ecf.md"
+    },
+    {
+      "port_id": "ae16288fede27692",
+      "target_path": "ports/webkit/pyqt-official/simpleselector-ae16288fede27692.py",
+      "spec_file": "clean-room-specs/ae16288fede27692.md"
+    },
+    {
+      "port_id": "1e5d0f7289e1b36e",
+      "target_path": "ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py",
+      "spec_file": "clean-room-specs/1e5d0f7289e1b36e.md"
+    }
+  ]
+}

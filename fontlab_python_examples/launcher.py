@@ -78,6 +78,10 @@ def _builder(record: dict) -> Any:
 def launch(name: str) -> Any:
     """Build or reshow one owned example; return its direct native handle."""
     record = describe(name)
+    if record["implementation"] == "clean_room_pending":
+        raise NotImplementedError(
+            f"Example {name!r} awaits clean-room implementation; see {record['spec']}"
+        )
     if record["implementation"] == "blocked":
         raise NotImplementedError(
             f"Example {name!r} is not ported: {record['blocked_reason']}"

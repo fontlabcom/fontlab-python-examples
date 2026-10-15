@@ -9,6 +9,7 @@ from pathlib import Path
 import pytest
 
 from fontlab_python_examples.official import Demo, read
+from tests.port_state import require_current
 from tests.test_official_batch import built
 from tests.test_official_batch import official_qt as official_qt  # noqa: PLC0414
 
@@ -477,6 +478,9 @@ def test_close_refuses_foreign_directory_replacing_owned_name(official_qt, tmp_p
 
 
 def test_all_ports_convert_settings_list_defaults_before_use():
+    from tests.test_official_batch import records
+
+    require_current(next(r for r in records() if r["name"] == "Official recentfiles"))
     root = Path(__file__).resolve().parents[1]
     checked = 0
     for path in (root / "ports").rglob("*.py"):

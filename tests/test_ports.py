@@ -39,7 +39,15 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
                 "/eyllanesc-qtexamples/", "/eyllanesc/"
             )
         assert port["target_path"] == expected_target
-        assert port["implementation"] in {"implemented", "blocked"}
+        assert port["implementation"] in {
+            "implemented",
+            "blocked",
+            "clean_room_pending",
+        }
+        if port["implementation"] == "clean_room_pending":
+            assert port["archive"] and port["spec"] and "license" not in port
+            assert port["native_acceptance"] == "unexecuted"
+            continue
         if port["implementation"] == "blocked":
             assert port["blocked_reason"]
             assert port["native_acceptance"] == "unexecuted"
@@ -65,6 +73,7 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             assert destruction["registry_empty"] is True
             assert destruction["host_application_alive"] is True
         assert port["license"]["selected"] in {
+            "Apache-2.0",
             "MIT",
             "BSD-3-Clause",
             "BSD-3-Clause AND GPL-3.0-only",

@@ -42,14 +42,23 @@ def test_native_fields_when_passed_then_each_has_matching_launch_and_close():
     implemented = {
         row["source_id"] for row in PORTS if row["implementation"] == "implemented"
     }
-    assert len(implemented) == 148
-    assert set(receipt["records"]) == implemented
+    accepted = {
+        row["source_id"]
+        for row in PORTS
+        if row["implementation"] == "implemented"
+        and row["native_acceptance"] == "passed"
+    }
+    assert len(implemented) == SOURCES["counts"]["examples_ported"]
+    assert accepted <= set(receipt["records"]), "Current passes need evidence"
+    assert set(receipt["records"]) <= {row["source_id"] for row in PORTS}
     for row in PORTS:
         if row["source_id"] not in implemented:
             assert row["native_acceptance"] == "unexecuted"
             assert "native_evidence" not in row
             continue
-        assert row["native_acceptance"] == "passed", row["source_id"]
+        if row["native_acceptance"] != "passed":
+            assert "native_evidence" not in row
+            continue
         assert (ROOT / row["native_evidence"]["report"]).is_file(), (
             "Native acceptance must cite an existing receipt"
         )
@@ -167,7 +176,10 @@ def test_licenses_when_nonofficial_then_every_port_and_resource_has_file_review(
     reviews = licenses["files"]
     for port in PORTS:
         if port["source"]["path"].startswith("src/pyqt-official/"):
-            assert "file_review" not in port["license"]
+            if port["implementation"] == "clean_room_pending":
+                assert "license" not in port
+            else:
+                assert port["license"]["selected"] == "Apache-2.0"
             continue
         for row in [port, *port["resources"]]:
             review = reviews[row["target_path"]]

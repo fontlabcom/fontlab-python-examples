@@ -239,6 +239,9 @@ BATCH_EIGHT_IMPLEMENTED = {
 
 
 def test_batch_eight_supported_entrypoints_have_real_ports():
+    require_all_current(
+        [r for r in records() if r["source_id"] in BATCH_EIGHT_IMPLEMENTED]
+    )
     rows = json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
     implemented = {r["source_id"] for r in rows if r["implementation"] == "implemented"}
     assert BATCH_EIGHT_IMPLEMENTED <= implemented, "All 16 supported demos need ports"
@@ -262,12 +265,18 @@ def test_official_manifest_covers_exact_batch_and_retains_provenance():
         for r in json.loads((ROOT / "catalog/sources.json").read_text())["files"]
     }
     for row in rows:
+        if row["implementation"] == "clean_room_pending":
+            assert "license" not in row and row["archive"] and row["spec"]
+            assert row["native_acceptance"] == "unexecuted"
+            assert row["source"]["sha256"] == sources[row["source_id"]]["sha256"]
+            continue
         assert row["native_acceptance"] == (
             "passed" if row["implementation"] == "implemented" else "unexecuted"
         )
         assert row["source"]["sha256"] == sources[row["source_id"]]["sha256"]
-        assert row["license"]["original_notices"], "Retain the actual source header"
-        assert row["license"]["reviewed_files"] and row["license"]["basis"]
+        assert row["license"]["selected"] == "Apache-2.0", (
+            "Use independent implementations"
+        )
         if row["implementation"] == "blocked":
             assert row["blocked_reason"], "A blocker needs specific absent host APIs"
             continue
@@ -292,6 +301,7 @@ from types import SimpleNamespace
 import pytest
 
 from tests.official_doubles import official_host
+from tests.port_state import require_all_current, require_current
 from tests.qt_doubles import fake_host
 
 
@@ -302,6 +312,7 @@ def official_qt(monkeypatch):
 
 
 def load_record(row):
+    require_current(row)
     spec = util.spec_from_file_location(
         "official_" + row["source_id"], ROOT / row["target_path"]
     )
@@ -312,7 +323,11 @@ def load_record(row):
 
 @pytest.mark.parametrize(
     "row",
-    [r for r in records() if r["implementation"] == "implemented"],
+    [
+        r
+        for r in records()
+        if r["implementation"] in ("implemented", "clean_room_pending")
+    ],
     ids=lambda r: r["name"],
 )
 def test_official_build_inspect_controls_disconnect_and_close(row, official_qt):
@@ -694,10 +709,10 @@ def test_icons_images_and_size_controls(official_qt):
     handle = built("icons", qt)
     assert handle.widget.centralWidget() is handle.controls["centralWidget"]
     assert handle.widget.centralWidget().layout() is not None
-    path = (
-        ROOT
-        / "ports/widgets/pyqt-official/assets/505d60a757bbc177/images/find_normal.png"
-    )
+    path = owned_directory(handle) / "sample.png"
+    image = qt.QtGui.QImage(16, 16, qt.QtGui.QImage.Format_ARGB32)
+    image.fill(0)
+    assert image.save(str(path)), "Use an owned fixture, never the archived icon"
     handle.controls["addImagesAct"].trigger()
     box = handle.controls["active_dialog"]
     box._extra["selectedFiles"] = [str(path)]
@@ -842,6 +857,7 @@ def test_findfiles_cancel_closes_in_progress_file(official_qt, tmp_path):
 
 
 def test_no_untracked_signals_or_blocking_application_calls_in_ports():
+    require_all_current(records())
     for row in records():
         tree = ast.parse((ROOT / row["target_path"]).read_text())
         for node in ast.walk(tree):
@@ -1476,6 +1492,7 @@ def test_batch_four_inspect_is_inert_and_build_failure_releases_root(
 
 
 def test_batch_four_native_aliases_members_and_resource_literals_match_contract():
+    require_all_current([r for r in records() if r["source_id"] in BATCH_FOUR_IDS])
     from tests.official_doubles import CONTRACT
 
     for row in records():
@@ -1558,7 +1575,8 @@ def test_puzzle_view_native_drag_uses_model_mime_and_removes_only_moved_rows(
 BATCH_FIVE_IMPLEMENTED = [
     row
     for row in records()
-    if row["source_id"] in BATCH_FIVE_IDS and row["implementation"] == "implemented"
+    if row["source_id"] in BATCH_FIVE_IDS
+    and row["implementation"] in ("implemented", "clean_room_pending")
 ]
 
 
@@ -1587,6 +1605,7 @@ def test_batch_five_shared_memory_has_precise_native_blocker(official_qt, monkey
     import fontlab_python_examples as examples
 
     row = next(r for r in records() if r["source_id"] == "de35a965dfcfd678")
+    require_current(row)
     assert row["implementation"] == "blocked"
     assert (
         "detach()" in row["blocked_reason"] and "byte-buffer" in row["blocked_reason"]
@@ -2060,6 +2079,7 @@ def test_batch_five_python_callbacks_are_released_without_clearing_native_method
 
 
 def test_batch_five_native_members_resources_and_no_modal_shortcuts():
+    require_all_current([r for r in records() if r["source_id"] in BATCH_FIVE_IDS])
     from tests.official_doubles import CONTRACT
 
     sources = {
@@ -2071,12 +2091,7 @@ def test_batch_five_native_members_resources_and_no_modal_shortcuts():
             continue
         path = ROOT / row["target_path"]
         text = path.read_text()
-        assert (
-            row["license"]["original_notices"][0]
-            .removeprefix("#!/usr/bin/env python\n")
-            .strip()
-            in text
-        )
+        assert row["license"]["selected"] == "Apache-2.0"
         tree = ast.parse(text, feature_version=(3, 11))
         for node in ast.walk(tree):
             if isinstance(node, ast.Attribute):
@@ -2110,7 +2125,7 @@ def test_batch_five_native_members_resources_and_no_modal_shortcuts():
                 resource["license"]["basis"] and resource["license"]["reviewed_files"]
             )
             assert not resource["target_path"].endswith("_rc.py")
-        assert row["source_id"] in (ROOT / "README.md").read_text()
+        assert (ROOT / "clean-room-specs" / (row["source_id"] + ".md")).is_file()
         assert (
             f"batch-5-{row['source_id']}"
             in (ROOT / "docs/pyqt-official-batch.md").read_text()
@@ -2122,7 +2137,8 @@ def test_batch_five_native_members_resources_and_no_modal_shortcuts():
     [
         r
         for r in records()
-        if r["source_id"] in BATCH_SIX_IDS and r["implementation"] == "implemented"
+        if r["source_id"] in BATCH_SIX_IDS
+        and r["implementation"] in ("implemented", "clean_room_pending")
     ],
     ids=lambda r: r["name"],
 )
@@ -2163,6 +2179,7 @@ def test_batch_six_textobject_blocker_is_native_interface_absence(official_qt):
     from tests.official_doubles import CONTRACT
 
     row = next(r for r in records() if r["source_id"] == "806fd814a2ea4d46")
+    require_current(row)
     assert (
         row["implementation"] == "blocked"
         and "QTextObjectInterface" in row["blocked_reason"]
@@ -2600,6 +2617,9 @@ def test_batch_six_virtual_paint_and_resize_paths_do_not_use_wrapper_operators(
 
 
 def test_batch_six_native_exports_and_resource_references_match_captured_stubs():
+    require_all_current(
+        [r for r in records() if r["source_id"] in BATCH_SIX_IDS | BATCH_EIGHT_IDS]
+    )
     from tests.official_doubles import CONTRACT
 
     for row in records():
@@ -2678,6 +2698,7 @@ def test_batch_six_python_callback_references_release_before_native_deletion(
 
 def test_batch_seven_native_exports_and_no_external_network_shortcuts():
     """All explicit Qt aliases resolve to the captured native host surface."""
+    require_all_current([r for r in records() if r["source_id"] in BATCH_SEVEN_IDS])
     from tests.official_doubles import CONTRACT
 
     for row in records():
@@ -2729,7 +2750,8 @@ def test_batch_seven_native_exports_and_no_external_network_shortcuts():
 BATCH_SEVEN_IMPLEMENTED = [
     r
     for r in records()
-    if r["source_id"] in BATCH_SEVEN_IDS and r["implementation"] == "implemented"
+    if r["source_id"] in BATCH_SEVEN_IDS
+    and r["implementation"] in ("implemented", "clean_room_pending")
 ]
 
 
@@ -3444,6 +3466,7 @@ def batch_eight(id, qt):
 def test_batch_eight_accounts_for_every_remaining_official_entrypoint():
     rows = [r for r in records() if r["source_id"] in BATCH_EIGHT_IDS]
     assert len(rows) == 74
+    require_all_current(rows)
     assert sum(r["implementation"] == "implemented" for r in rows) == 16
     assert sum(r["implementation"] == "blocked" for r in rows) == 58
     catalog = json.loads((ROOT / "catalog/sources.json").read_text())["files"]
@@ -3463,7 +3486,8 @@ def test_batch_eight_accounts_for_every_remaining_official_entrypoint():
     [
         r
         for r in records()
-        if r["source_id"] in BATCH_EIGHT_IDS and r["implementation"] == "blocked"
+        if r["source_id"] in BATCH_EIGHT_IDS
+        and r["implementation"] in ("blocked", "clean_room_pending")
     ],
     ids=lambda r: r["source_id"],
 )
@@ -3870,25 +3894,15 @@ def test_batch_eight_xml_close_before_deferred_start_and_stale_callback(official
     assert not timer._active and not qt._schema_requests
 
 
-def test_batch_eight_actual_licences_include_docstring_and_denviso_notices():
-    rows = {r["source_id"]: r for r in records() if r["source_id"] in BATCH_EIGHT_IDS}
-    for id in (
-        "9941e3c752b3a3b7",
-        "1321540b04f33117",
-        "5941e31267112c98",
-        "773db5c24ae98ffb",
-        "5125860585e98b3a",
-    ):
-        licence = rows[id]["license"]
-        assert licence["upstream_expression"] == "GPL-2.0-or-later"
-        assert licence["selected"] == "GPL-3.0-only"
-        assert "David Boddie" in licence["original_notices"][0]
-        assert "either version 2" in licence["original_notices"][0]
-    licence = rows["7ba49e67588b1329"]["license"]
-    assert licence["selected"] == "HPND AND GPL-3.0-only"
-    assert "Denviso GmbH" in licence["attribution"]
-    assert "DENVISO DISCLAIMS ALL WARRANTIES" in licence["original_notices"][0]
-    assert rows["de4979a99c6d0bed"]["license"]["selected"] == "GPL-3.0-only"
+def test_batch_eight_replacements_use_apache_without_copied_source_notices():
+    for row in records():
+        if row["source_id"] not in BATCH_EIGHT_IDS:
+            continue
+        if row["implementation"] == "clean_room_pending":
+            assert "license" not in row
+        else:
+            assert row["license"]["selected"] == "Apache-2.0"
+            assert not row["license"].get("original_notices")
 
 
 def test_batch_eight_eight_designer_widgets_keep_explicit_plugin_blockers():
@@ -4080,7 +4094,11 @@ def test_batch_nine_provenance_license_resource_hashes_and_native_boundary(row):
 
 @pytest.mark.parametrize(
     "row",
-    [r for r in batch_nine_records() if r["implementation"] == "implemented"],
+    [
+        r
+        for r in batch_nine_records()
+        if r["implementation"] in ("implemented", "clean_room_pending")
+    ],
     ids=lambda r: r["source_id"],
 )
 def test_batch_nine_build_inspect_controls_disconnect_and_close(row, official_qt):
@@ -4089,7 +4107,11 @@ def test_batch_nine_build_inspect_controls_disconnect_and_close(row, official_qt
 
 @pytest.mark.parametrize(
     "row",
-    [r for r in batch_nine_records() if r["implementation"] == "blocked"],
+    [
+        r
+        for r in batch_nine_records()
+        if r["implementation"] in ("blocked", "clean_room_pending")
+    ],
     ids=lambda r: r["source_id"],
 )
 def test_batch_nine_blockers_reject_before_host_access(row, monkeypatch):
@@ -4213,7 +4235,11 @@ def test_batch_nine_native_windows_input_painting_timers_and_store_cleanup(offic
 
 @pytest.mark.parametrize(
     "row",
-    [r for r in batch_nine_records() if r["implementation"] == "implemented"],
+    [
+        r
+        for r in batch_nine_records()
+        if r["implementation"] in ("implemented", "clean_room_pending")
+    ],
     ids=lambda r: r["source_id"],
 )
 def test_batch_nine_partial_build_failure_rolls_back_owned_ui_and_workers(

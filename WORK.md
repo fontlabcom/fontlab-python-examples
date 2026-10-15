@@ -2,6 +2,78 @@
 this_file: WORK.md
 ---
 
+# 2026-10-15: D7 public clean-room relocation
+
+Removed the 431 unique files listed beneath `ports/` in the private archive's
+committed manifest at `040b2e8`: 187 Python entrypoints, 243 resources and the
+licence-notes file (the notice is already included in 431). Every public file
+matched its committed SHA-256 before deletion. Checked remaining non-official
+port/resource records, executable imports, exact file references and source-ID
+references; none depended on a removed file. The legacy icon test now generates
+an owned picture instead of opening its bundled icon. Catalogue-driven test
+loading is guarded before file import; static audits exclude pending sources by
+state. Absence assertions and archival metadata are not runtime dependencies.
+
+Also removed 318 untracked compiled caches whose names match the archived source
+identities, including four stale pre-move category paths. No original official
+source/resource/cache directory remains. Checksums and paths are recorded in
+`verification/clean-room-relocation.json`; no reference code was copied there.
+
+All 187 port records retain exact source provenance and original target paths,
+have `implementation: clean_room_pending`, reset current native acceptance,
+drop removed-file licence/adaptation claims and point to the private archive
+and public spec. Resource provenance and archive pointers remain. All 112
+non-official port records are unchanged. Historical native receipts remain
+historical, not current acceptance for removed ports. Inventory tools now apply
+hash-bound port states, expose actual port paths alongside immutable planned
+paths, and regenerate sources/INDEX and the source-catalogue hash together.
+
+Copied exactly 187 Markdown specs and INDEX.json from committed private objects;
+all 188 Git blob hashes match `040b2e8`. No original-reading checker/tests,
+reference archive or private README was copied. The private repository was read
+only. The independent implementation phase remains with another, unexposed worker.
+
+Wait, but missing-file skips would hide broken replacements. Tests skip only
+`clean_room_pending`, never file absence, and retain the collected cases; a state
+change resumes source-loading tests. Shared helpers and non-official tests stay
+active. New tests verify host-free rejection for every pending record, a guard
+that resumes on state changes, hash-mismatch rejection, metadata-only handoff and
+deterministic inventory CLI regeneration. No FontLab/native workflow was run.
+
+Updated README, PLAN, TODO, CHANGELOG, dependency notes and the historical batch
+notice. Preserved the existing 223-line ignore configuration and added only local
+DS_Store/OMC exclusions; those existing artifacts were not deleted.
+
+Verification (commands use the workspace `rtk proxy` wrapper):
+
+- Baseline: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/fontlab-uv-cache
+  uv run --no-project --with pytest python -m pytest -q tests`: exit 0,
+  **986 passed**.
+- New tests first: the relocation-only file failed five cases before the
+  launcher, state overlay and handoff existed; four synthetic cases passed after
+  implementation, before deletion. Intermediate negative-existence and old
+  static-state assertions failed as expected and were resolved.
+- Full reviewed-source regeneration: `uv run --no-project python
+  tools/inventory.py --tree-receipt
+  ../verification/issue-101-ecosystem/evidence/examples-upstream-trees.json
+  --recovery-receipt
+  ../verification/issue-101-ecosystem/evidence/examples-source-recovery.json
+  --source-root pyqt/examples=../verification/issue-101-ecosystem/examples-sources/pyqt--examples--83eed0514582c8deb60d9e9e6bff31ceffe4eaeb--verified
+  --source-root eyllanesc/QtExamples=../verification/issue-101-ecosystem/examples-sources/eyllanesc--QtExamples--a01fd7d10d45801b10876f94c07aaefb11bc2e12--verified
+  --reviews catalog/reviews.json --output catalog`: exit 0; 21 implemented,
+  91 blocked and 187 clean-room pending, all 1,569 original identities retained.
+- Requested full suite after changes: same command as baseline, exit 0,
+  **451 passed, 621 skipped**. Scoped Ruff lint and format checks pass on all
+  14 changed/new Python files; `git diff --check` passes.
+- A later full run with `--junitxml=/private/tmp/clean-room-relocation-tests.xml`
+  proved all 621 skipped cases cite `clean_room_pending`, without empty-parameter
+  or unconditional relocation skips. It also collected newly appearing concurrent
+  recipe work: **455 passed, 621 skipped, 1 failed** because that external work's
+  test expected at least eight recipes while only one existed at collection.
+  The recipe files/test were not created or edited by this task and are preserved.
+
+No staging, commit, history rewrite or private-repository write was performed by this task.
+
 # Work record
 
 ## 2026-10-15: Native catalog reconciliation, source roles and non-official licences
@@ -2793,3 +2865,19 @@ run in an agent-owned no-document session: **interactions 102/102, launch/inspec
 native-interactions-final.jsonl, native-lic-final2.jsonl). 25 ports remain without scripted
 interaction (real drag/drop, mouse/key-only, user clipboard/screen/tray, visual-only),
 listed with reasons in the evidence README. Offline gate 973 passed.
+
+D7 artifact recheck: all 188 handoff blobs match the private commit; all 112
+non-official record dictionaries are unchanged. A fresh full real-input inventory
+run into a separate temporary output reproduced sources.json, INDEX.md and
+ports.json byte-for-byte. The staged diff is empty. Concurrent recipe work also
+advanced the public branch HEAD through recipe-only commits; relocation changes
+remain unstaged and those commits were not made by this task.
+
+Final complete-suite rerun, including the now-completed concurrent recipe additions:
+`PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/fontlab-uv-cache uv run
+--no-project --with pytest python -m pytest -q tests
+--junitxml=/private/tmp/clean-room-relocation-final-tests.xml`: **476 passed,
+621 skipped, zero failures** (exit 0). Parsed the XML: every skip cites
+`clean_room_pending`. Recipe-only commits completed outside this task; final
+status contains only intended relocation edits, 431 deletions, the 188 handoff
+files and four new test/tool/verification files. Staged diff remains empty.

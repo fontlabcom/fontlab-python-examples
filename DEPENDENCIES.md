@@ -8,6 +8,10 @@ The inventory CLI uses Python 3.12's standard library: `ast` for source structur
 `tokenize` for Python encoding detection, `xml.etree.ElementTree` for UI/qrc
 structure, `hashlib` for exact original hashes, and `argparse`/`json`/`pathlib`
 for explicit local inputs and portable output. It has no Qt runtime dependencies.
+Port-state regeneration adds no packages. It projects existing manifest metadata
+and checks source hashes without accessing the private archive. State-dependent
+tests use [pytest.skip](https://docs.pytest.org/en/stable/how-to/skipping.html),
+with `clean_room_pending` as their only relocation skip condition.
 Official [AST](https://docs.python.org/3/library/ast.html),
 [tokenize](https://docs.python.org/3/library/tokenize.html) and
 [ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html)

@@ -23,6 +23,14 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Relocate all 187 official demos to the private archive at `040b2e8`.
+  Remove 431 archived source/resource/notice files after hash and dependency
+  checks; remove stale compiled caches too. Preserve source provenance and add
+  archive/spec pointers with `clean_room_pending` state and no removed-file
+  licence or current native-pass claims. Publish 187 behavioural specs plus their
+  index; keep original-reading checkers private. Regenerate source/index states,
+  reject pending launches before host access and resume tests by catalogue state.
+
 - 2026-10-15: Reconcile all 148 implemented native acceptance records with exact
   evidence files, line/JSON-pointer selectors and hashes; retain 151 unexecuted
   blocked records. Review 17 uncertain candidates and 69 shared-file owners with

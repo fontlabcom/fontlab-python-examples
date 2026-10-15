@@ -389,6 +389,9 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
         for resource in record["resources"]:
             original = by_id[resource["source_id"]]
             assert resource["source"]["sha256"] == original["sha256"]
+            if record["implementation"] == "clean_room_pending":
+                assert resource["archive"] and "license" not in resource
+                continue
             data = (ROOT / resource["target_path"]).read_bytes()
             assert hashlib.sha256(data).hexdigest() == original["sha256"], resource[
                 "target_path"

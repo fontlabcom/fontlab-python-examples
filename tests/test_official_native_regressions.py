@@ -14,9 +14,11 @@ from tests.test_official_batch import (
     official_qt as official_qt,  # noqa: PLC0414 - pytest fixture re-export
 )
 
-SOURCES = [ROOT / row["target_path"] for row in records()] + [
-    ROOT / "fontlab_python_examples/official.py"
-]
+SOURCES = [
+    ROOT / row["target_path"]
+    for row in records()
+    if row["implementation"] != "clean_room_pending"
+] + [ROOT / "fontlab_python_examples/official.py"]
 
 
 @pytest.mark.parametrize("container_name", ["QMenu", "QToolBar", "QWidget"])
