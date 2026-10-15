@@ -14,10 +14,10 @@ DEFAULT_STEPS = ("remove_overlap",)
 
 def run(font_id=None, glyph_names=None, steps=DEFAULT_STEPS, layer_mode="active", search="overlap") -> dict:
     """Apply ``steps`` (Actions ids) to ``glyph_names``; returns native results."""
-    from fontlabapp import host
-
     if not glyph_names:
         raise ValueError("Name the glyphs to process: run(glyph_names=[...])")
+    from fontlabapp import host
+
     known = host.glyph_actions.items()
     unknown = [step for step in steps if step not in known]
     if unknown:
