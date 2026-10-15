@@ -152,41 +152,68 @@ def _targets(font_id, glyph_names):
     return package, glyphs
 
 
+def _reversed_order(items: list) -> list:
+    """Node order after flContour.reverse(): the first node stays, the rest reverse."""
+    return items[:1] + items[1:][::-1]
+
+
+def plan(glyph_name: str, contours: list) -> tuple[list, list]:
+    """Edits for one layer's closed contours, computed without touching them.
+
+    Returns ``(edits, skipped)``: edits are ``(contour, reverse, start)`` tuples;
+    contours with no segments (one node, or all on-curve nodes coincident) have no
+    direction and are skipped and reported instead.
+    """
+    outlines = [([(n.x, n.y) for n in c.nodes()], [n.isOn() for n in c.nodes()]) for c in contours]
+    shapes = [segments(*outline) for outline in outlines]
+    usable = [i for i, shape in enumerate(shapes) if shape]
+    skipped = [{"glyph": glyph_name, "contour": i} for i in range(len(contours)) if not shapes[i]]
+    edits = []
+    for k, index in enumerate(usable):
+        points, on_curve = outlines[index]
+        ccw = signed_area(flatten(points, on_curve)) > 0
+        reverse = ccw != wants_counter_clockwise([shapes[i] for i in usable], k)
+        if reverse:
+            points, on_curve = _reversed_order(points), _reversed_order(on_curve)
+        start = start_index(points, on_curve)
+        if reverse or start:
+            edits.append((contours[index], reverse, start))
+    return edits, skipped
+
+
 def run(font_id=None, glyph_names=None, master=None) -> dict:
-    """Fix direction and start point of every closed contour; returns what changed."""
+    """Fix direction and start point of every closed contour; returns what changed.
+
+    Every layer is read and planned before the first edit, so an unreadable glyph
+    or contour leaves the font unchanged.
+    """
     import fontlab
 
     package, glyphs = _targets(font_id, glyph_names)
     master = master or package.master
-    reversed_, restarted, layers, changed = 0, 0, [], []
+    planned, skipped = [], []
     for glyph in glyphs:
         layer = glyph.findLayer(master)
         if layer is None:
             continue
-        contours = [c for c in layer.getContours() if c.closed]
-        outlines = [([(n.x, n.y) for n in c.nodes()], [n.isOn() for n in c.nodes()])
-                    for c in contours]
-        shapes = [segments(*outline) for outline in outlines]
-        touched = False
-        for index, contour in enumerate(contours):
-            ccw = signed_area(flatten(*outlines[index])) > 0
-            if ccw != wants_counter_clockwise(shapes, index):
+        edits, missed = plan(glyph.name, [c for c in layer.getContours() if c.closed])
+        skipped += missed
+        if edits:
+            planned.append((glyph, layer, edits))
+    reversed_ = restarted = 0
+    for _glyph, _layer, edits in planned:
+        for contour, reverse, start in edits:
+            if reverse:
                 contour.reverse()
                 reversed_ += 1
-                touched = True
-            nodes = contour.nodes()
-            first = start_index([(n.x, n.y) for n in nodes], [n.isOn() for n in nodes])
-            if first:
-                contour.setStartPoint(first)
+            if start:
+                contour.setStartPoint(start)
                 restarted += 1
-                touched = True
-        if touched:
-            layers.append(layer)
-            changed.append(glyph)
-    if changed:
+    if planned:
+        layers, changed = [p[1] for p in planned], [p[0] for p in planned]
         fontlab.flItems().notifyChangesApplied("Correct contour direction", layers + changed)
     return {"master": master, "reversed": reversed_, "restarted": restarted,
-            "glyphs": [g.name for g in changed]}
+            "glyphs": [p[0].name for p in planned], "skipped": skipped}
 
 
 # Menu use: name glyphs, then run the script. Nothing happens while GLYPHS is empty.

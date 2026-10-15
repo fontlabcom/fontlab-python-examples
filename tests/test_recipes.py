@@ -9,6 +9,7 @@ import ast
 import importlib.util
 import subprocess
 import sys
+import types
 from pathlib import Path
 
 import pytest
@@ -335,3 +336,94 @@ def test_parse_pairs_when_nonfinite_or_out_of_range_then_reported_not_applied():
     pairs, problems = recipe.parse_pairs("A V -80\nA W nan\nB C 1e999\nD E 40000\nF G -inf\n")
     assert pairs == [("A", "V", -80.0)]
     assert problems == ["A W nan", "B C 1e999", "D E 40000", "F G -inf"]
+
+
+class FakeNode:
+    def __init__(self, x, y, on=True):
+        self.x, self.y, self.on = x, y, on
+
+    def isOn(self):
+        return self.on
+
+
+class FakeContour:
+    """flContour double: reverse() keeps the first node, as FontLab's does."""
+
+    def __init__(self, points, broken=False):
+        self._nodes = [FakeNode(x, y) for x, y in points]
+        self.closed, self.broken, self.calls = True, broken, []
+
+    def nodes(self):
+        if self.broken:
+            raise RuntimeError("unreadable contour")
+        return list(self._nodes)
+
+    def reverse(self):
+        self.calls.append("reverse")
+        self._nodes = self._nodes[:1] + self._nodes[1:][::-1]
+
+    def setStartPoint(self, index):
+        self.calls.append(("start", index))
+        self._nodes = self._nodes[index:] + self._nodes[:index]
+
+
+def fake_host(monkeypatch, glyph_contours):
+    """Install fontlab/fontpr doubles; returns the notifications list."""
+    notified = []
+
+    class Layer:
+        def __init__(self, contours):
+            self.contours = contours
+
+        def getContours(self):
+            return list(self.contours)
+
+    class Glyph:
+        def __init__(self, name, contours):
+            self.name, self.layer = name, Layer(contours)
+
+        def findLayer(self, master):
+            return self.layer
+
+    glyphs = {name: Glyph(name, contours) for name, contours in glyph_contours.items()}
+    package = types.SimpleNamespace(master="Regular", findName=glyphs.get)
+    workspace = types.SimpleNamespace(findPackageId=lambda font_id: package)
+    items = types.SimpleNamespace(notifyChangesApplied=lambda name, objs: notified.append(name))
+    fontlab = types.ModuleType("fontlab")
+    fontlab.flWorkspace = types.SimpleNamespace(instance=lambda: workspace)
+    fontlab.flItems = lambda: items
+    monkeypatch.setitem(sys.modules, "fontlab", fontlab)
+    monkeypatch.setitem(sys.modules, "fontpr", types.ModuleType("fontpr"))
+    return notified
+
+
+CLOCKWISE_SQUARE = [(0, 0), (0, 100), (100, 100), (100, 0)]
+
+
+@pytest.mark.parametrize("collapsed", [[(50, 50)], [(50, 50)] * 4])
+def test_contour_direction_when_contour_collapsed_then_skipped_and_reported(monkeypatch, collapsed):
+    recipe = load("contour_direction")
+    square, point = FakeContour(CLOCKWISE_SQUARE), FakeContour(collapsed)
+    notified = fake_host(monkeypatch, {"A": [square, point]})
+    report = recipe.run(font_id=1, glyph_names=["A"])
+    assert square.calls[0] == "reverse" and point.calls == []
+    assert report["skipped"] == [{"glyph": "A", "contour": 1}]
+    assert report["reversed"] == 1 and notified == ["Correct contour direction"]
+
+
+def test_contour_direction_when_any_glyph_unreadable_then_nothing_is_mutated(monkeypatch):
+    recipe = load("contour_direction")
+    square = FakeContour(CLOCKWISE_SQUARE)
+    notified = fake_host(monkeypatch, {"A": [square], "B": [FakeContour(CLOCKWISE_SQUARE, broken=True)]})
+    with pytest.raises(RuntimeError, match="unreadable"):
+        recipe.run(font_id=1, glyph_names=["A", "B"])
+    assert square.calls == [] and notified == []
+
+
+def test_contour_direction_when_reversed_then_start_index_matches_reversed_order(monkeypatch):
+    recipe = load("contour_direction")
+    square = FakeContour([(100, 100), (100, 0), (0, 0), (0, 100)])  # clockwise, starts top-right
+    fake_host(monkeypatch, {"A": [square]})
+    recipe.run(font_id=1, glyph_names=["A"])
+    points = [(n.x, n.y) for n in square.nodes()]
+    assert points[0] == (0, 0) and recipe.signed_area(points) > 0

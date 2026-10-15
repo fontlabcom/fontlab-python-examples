@@ -20,6 +20,11 @@ on the cubic and TrueType quadratic segments (recursive subdivision, not a fixed
 flattening), so a contour inside a curve's handles but outside the curve is an outer
 contour, and one hugging the inside of a curve is a counter.
 
+The recipe reads and plans every glyph before its first edit, so an unreadable
+glyph leaves the font unchanged. Collapsed contours (a single node, or all on-curve
+nodes at one point) have no direction: they are left alone and listed under
+`skipped` in the report.
+
 **FontLab API.** `flContour.reverse()` (keeps the first node, reverses the rest),
 `flContour.setStartPoint(index)`, `flNode.isOn()`. Orientation is computed from the
 node positions with the shoelace formula: in this FontLab 9 build `flContour.clockwise`

@@ -24,6 +24,9 @@ ISLAND = [(450, 800), (450, 900), (550, 900), (550, 800)]
 # A 1-unit counter drawn counter-clockwise just inside the hump's left flank (review
 # RR-examples): a 16-step chord passes right of it, the curve itself encloses it.
 SLIVER = [(4, 90), (5, 90), (5, 91), (4, 91)]
+# A collapsed closed contour (four coincident on-curve nodes) has no direction: it
+# must be skipped, reported, and must not stop the other edits (review RR2).
+COLLAPSED = [(700, 300)] * 4
 CURVED = r"""
 import fontlab
 from PythonQt.QtCore import QPointF
@@ -37,6 +40,7 @@ shape = fontlab.flShape()
 shape.addContour(contour([(0, 0, True), (0, 1000, False), (1000, 1000, False), (1000, 0, True)]), True)
 shape.addContour(contour([(x, y, True) for x, y in island]), True)
 shape.addContour(contour([(x, y, True) for x, y in sliver]), True)
+shape.addContour(contour([(x, y, True) for x, y in collapsed]), True)
 layer.addShape(shape)
 fontlab.flItems().notifyChangesApplied("fixture", [layer, glyph])
 result = [len(c.nodes()) for c in layer.getContours()]
@@ -44,8 +48,8 @@ result = [len(c.nodes()) for c in layer.getContours()]
 
 
 def setup(fl, font_id):
-    made = fl.run(CURVED, font_id=font_id, island=ISLAND, sliver=SLIVER).value
-    assert made == [4, 4, 4], made
+    made = fl.run(CURVED, font_id=font_id, island=ISLAND, sliver=SLIVER, collapsed=COLLAPSED).value
+    assert made == [4, 4, 4, 4], made
 
 
 def check(report, glyphs, fl, font_id):
@@ -65,7 +69,9 @@ def check(report, glyphs, fl, font_id):
         "same_points": sorted(o[0]) == sorted((float(x), float(y)) for x, y in OUTER)
         and sorted(o[1]) == sorted((float(x), float(y)) for x, y in INNER),
         "correct_glyph_untouched": d == [[(float(x), float(y)) for x, y in GOOD]],
-        "report": report["reversed"] == 5 and report["glyphs"] == ["O", "U"],
+        "collapsed_untouched": u[3] == [(float(x), float(y)) for x, y in COLLAPSED],
+        "report": report["reversed"] == 5 and report["glyphs"] == ["O", "U"]
+        and report["skipped"] == [{"glyph": "U", "contour": 3}],
     }
 
 
