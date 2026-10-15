@@ -41,8 +41,12 @@ def run() -> dict:
         target.advanceWidth = plan["width"]
         notify("GetGo sidebearings", [(glyph, target)])
         _, readback = required_layer(package, "I")
-        after = readback.boundingBox
-        bearings = [after.x(), readback.advanceWidth - after.x() - after.width()]
+        # GG Baar I is a straight-line, component-free outline. Native cached
+        # boundingBox/contourRect stay stale after node edits; re-read the nodes.
+        xs = [node.x for contour in readback.getContours() for node in contour.nodes()]
+        if not xs:
+            raise AssertionError("I has no read-back outline nodes")
+        bearings = [min(xs), readback.advanceWidth - max(xs)]
         if any(abs(a - b) > 0.01 for a, b in zip(bearings, (lsb, rsb))):
             raise AssertionError("Sidebearing readback differs from the plan")
         return {

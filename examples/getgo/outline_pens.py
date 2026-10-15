@@ -8,6 +8,7 @@ Original example code: Apache-2.0. Intersections are boundary tests, not boolean
 
 from itertools import combinations
 
+from examples.getgo._pens import TuplePen
 from examples.getgo._shared import owned_font, required_layer
 
 
@@ -28,7 +29,7 @@ def contour_report(contour) -> dict:
 
     recording = RecordingPen()
     try:
-        contour.draw(recording)
+        contour.draw(TuplePen(recording))
     except AttributeError as exc:
         raise RuntimeError(
             "Native contour.draw did not emit the standard segment-pen protocol"

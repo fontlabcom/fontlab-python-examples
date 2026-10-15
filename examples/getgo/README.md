@@ -65,7 +65,7 @@ curve bounds and signed areas. Expected: point counts, open/closed flags,
 winding labels and FontLab `hasIntersPoints` boundary-intersection index pairs.
 Contained counters and self-intersections are outside the pairwise test;
 this is not filled-region boolean overlap detection or overlap removal. Each native
-recording is validated as standard segment-pen calls before replay; open paths
+recording converts QPointF operands to tuples before segment-pen validation; open paths
 require `endPath`, closed paths `closePath`. Native protocol acceptance remains
 a required follow-up, rather than an assumed pass.
 
@@ -83,7 +83,7 @@ and spaces and enforces the 63-character PS limit. Changes are discarded on clos
 [GG Stroke Chan OFL Italic](https://code.fontlab.com/getgo-fonts/stroke-chan/)
 (OFL-1.1). Expected: default-master pair count, typed glyph/group pair sides,
 explicit zero values, class members/modes and dangling member names. The default
-`run(limit=5)` returns totals (79 pairs, 233 classes) and up to five pairs, classes
+`run(limit=5)` returns totals (619 pairs across 79 left sides, 233 classes) and up to five pairs, classes
 and members per class; `run(limit=None)` returns complete data. Opaque native
 modes become text for JSON. No class expansion or OFL font renaming occurs.
 
@@ -110,7 +110,8 @@ reads bearings back. Expected: I's bearings match H within 0.01 units, plus
 `plan` and resulting `sidebearings`. The fixed H/I inputs have direct outlines;
 only I on the owned font's default master changes. The basic node/anchor move
 follows [the existing sidebearing recipe](../recipes/sidebearings_from_reference/recipe.py);
-this demo adds an owned real input, an RSB-aware plan and fresh-layer readback.
+this demo adds an owned real input, an RSB-aware plan and bounds from re-read nodes
+of the straight-line I outline; native cached boundingBox/contourRect remain stale.
 
 ## batch_transform — widen A and V
 
@@ -127,6 +128,7 @@ Only the disposable default master changes; source data stays intact.
 [export_ttf.py](export_ttf.py) uses [GG Baar](https://code.fontlab.com/getgo-fonts/baar/)
 (CC0-1.0). Native contour pens capture `.notdef`, `space`, `A`, `V`; the font
 closes before Cu2QuPen/TTGlyphPen and FontBuilder create a TTF geometry subset.
+The native pen adapter detaches QPointF coordinates into ordinary tuples for both exports.
 Expected: `verified: true`, `format: glyf`, retained binary path, exact glyph
 order/cmap/advances/UPM and full licence name record. Reopened bounds must agree
 within two units for curve conversion and coordinate rounding. Every contour

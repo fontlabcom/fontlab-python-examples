@@ -218,7 +218,7 @@
           "path": [
             "pair_count"
           ],
-          "equals": 79
+          "equals": 619
         },
         {
           "path": [
@@ -656,7 +656,7 @@
   },
   "native_followups": [
     "Observe modified-copy close(False) without a save prompt",
-    "Observe metadata renormalization and refreshed spacing bounds",
+    "Observe metadata renormalization and spacing readback from nodes despite stale cached boxes",
     "Drive font_info_ui.py through __main__, discard panel globals, inspect canonical font_info_ui.TOOL and close it",
     "Confirm native contour.draw standard segment protocol on open and closed contours; outline_pens explicitly validates it",
     "Assert exported per-contour winding reports: TTF reverses source signs, CFF retains source signs; no absolute source-winding assumption is claimed"

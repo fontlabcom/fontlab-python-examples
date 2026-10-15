@@ -10,6 +10,7 @@ only to run the two export examples, not to import this module.
 import tempfile
 from pathlib import Path
 
+from examples.getgo._pens import TuplePen
 from examples.getgo._shared import FIXTURES, owned_font, required_layer
 from examples.getgo._winding import verify_winding
 
@@ -32,7 +33,7 @@ def snapshot(package, record: dict) -> dict:
         for contour in layer.getContours():
             if not contour.closed:
                 raise ValueError(f"Binary subset needs closed contours: {name}")
-            contour.draw(pen)
+            contour.draw(TuplePen(pen))
         glyphs[name] = {
             "width": round(layer.advanceWidth),
             "unicodes": encoding[name],

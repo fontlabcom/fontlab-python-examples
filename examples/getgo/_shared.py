@@ -50,7 +50,7 @@ def owned_font(font_id: str, *, mutates: bool = False):
     def matching() -> list:
         # packages() returns flObject wrappers; promote registered objects first.
         packages = [fontlab.flPackage(obj) for obj in workspace.packages()]
-        return [p for p in packages if Path(p.path).resolve() == copy]
+        return [p for p in packages if p.path and Path(p.path).resolve() == copy]
 
     try:
         shutil.copyfile(source, copy)

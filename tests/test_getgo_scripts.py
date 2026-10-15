@@ -245,8 +245,9 @@ def test_ui_handle_closes_and_deletes_its_window_only_once():
     "failure", [None, "body", "open", "reply", "no_document", "close"]
 )
 @pytest.mark.parametrize("symlinked", [False, True])
+@pytest.mark.parametrize("prior_path", ["saved", None, ""])
 def test_owned_document_lifecycle_with_real_fixture_and_host_doubles(
-    tmp_path, monkeypatch, failure, symlinked
+    tmp_path, monkeypatch, failure, symlinked, prior_path
 ):
     from examples.getgo import _shared
 
@@ -259,7 +260,7 @@ def test_owned_document_lifecycle_with_real_fixture_and_host_doubles(
         temp_dir.symlink_to(owned_dir, target_is_directory=True)
     monkeypatch.setattr(_shared.tempfile, "mkdtemp", lambda **kw: str(temp_dir))
     prior = SimpleNamespace(
-        path=str(tmp_path / "user.vfj"),
+        path=str(tmp_path / "user.vfj") if prior_path == "saved" else prior_path,
         close=lambda save: pytest.fail("Closed user font"),
     )
     packages, closed = [prior], []
@@ -532,8 +533,9 @@ def test_export_entries_close_native_input_before_real_compilation(
         result_value(result, check["path"])
 
 
+@pytest.mark.parametrize("native_points", [False, True])
 def test_binary_snapshot_detaches_native_outlines_and_preserves_notices(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, native_points
 ):
     pytest.importorskip("fontTools")
     from fontTools.pens.recordingPen import replayRecording
@@ -549,7 +551,23 @@ def test_binary_snapshot_detaches_native_outlines_and_preserves_notices(
             [
                 SimpleNamespace(
                     closed=True,
-                    draw=lambda pen, data=data: replayRecording(data["recording"], pen),
+                    draw=lambda pen, data=data: replayRecording(
+                        [
+                            (
+                                op,
+                                tuple(
+                                    FakePoint(*p)
+                                    if native_points and p is not None
+                                    else p
+                                    for p in args
+                                ),
+                            )
+                            if op in {"moveTo", "lineTo", "curveTo", "qCurveTo"}
+                            else (op, args)
+                            for op, args in data["recording"]
+                        ],
+                        pen,
+                    ),
                 )
             ]
             if data["recording"]
@@ -583,6 +601,9 @@ def test_binary_snapshot_detaches_native_outlines_and_preserves_notices(
         and result["copyright"] == "Original author"
     )
     assert result["glyphs"]["A"]["recording"] == source["glyphs"]["A"]["recording"]
+    for is_ttf, suffix in [(True, ".ttf"), (False, ".otf")]:
+        path = _binary.compile_subset(result, tmp_path / ("detached" + suffix), is_ttf)
+        assert _binary.verify_subset(path, result, is_ttf)["winding_verified"]
     layers["A"].components = [object()]
     with pytest.raises(ValueError, match="components"):
         _binary.snapshot(
@@ -627,7 +648,7 @@ def test_master_report_has_design_ranges_and_locations_without_setting_master():
     assert masters(static)["locations"] == [{"master": "Regular", "coordinates": []}]
 
 
-@pytest.mark.parametrize("other_path", ["/fonts/User Font.vfj", ""])
+@pytest.mark.parametrize("other_path", ["/fonts/User Font.vfj", "", None])
 def test_mutation_guard_refuses_other_documents_before_fixture_or_temp_creation(
     monkeypatch, other_path
 ):
@@ -1158,3 +1179,124 @@ def test_compare_uses_fontgate_widths_without_layer_lookups(run_host):
         "Width comparison does not need native layer lookups"
     )
     assert "A" in module.run()["width_delta_em"]
+
+
+def test_native_point_adapter_normalizes_all_operands_and_preserves_quadratic_none():
+    from examples.getgo._pens import TuplePen
+
+    class Recording:
+        def __init__(self):
+            self.value = []
+
+        def __getattr__(self, name):
+            return lambda *args: self.value.append((name, args))
+
+    recorder = Recording()
+    pen = TuplePen(recorder)
+    point = FakePoint(12, 34)
+    ordinary = (56, 78)
+    pen.moveTo(point)
+    pen.lineTo(ordinary)
+    pen.curveTo(point, ordinary, FakePoint(90, 12))
+    pen.qCurveTo(point, ordinary, None)
+    pen.closePath()
+    pen.endPath()
+    pen.addComponent("A", (1, 0, 0, 1, 0, 0))
+    assert recorder.value == [
+        ("moveTo", ((12, 34),)),
+        ("lineTo", (ordinary,)),
+        ("curveTo", ((12, 34), ordinary, (90, 12))),
+        ("qCurveTo", ((12, 34), ordinary, None)),
+        ("closePath", ()),
+        ("endPath", ()),
+        ("addComponent", ("A", (1, 0, 0, 1, 0, 0))),
+    ]
+    assert recorder.value[1][1][0] is ordinary, "Tuple points pass through unchanged"
+
+
+@pytest.mark.parametrize("closed", [False, True])
+def test_native_qpoint_contour_draw_reaches_real_bounds_and_area_pens(closed):
+    from examples.getgo.outline_pens import contour_report
+
+    def draw(pen):
+        pen.moveTo(FakePoint(0, 0))
+        pen.curveTo(FakePoint(0, 100), FakePoint(100, 100), FakePoint(100, 0))
+        pen.closePath() if closed else pen.endPath()
+
+    result = contour_report(
+        SimpleNamespace(draw=draw, closed=closed, nodes=lambda: [None] * 4)
+    )
+    assert result["bounds"] == [0, 0, 100, 75]
+    assert result["direction"] == ("clockwise" if closed else "open")
+    assert result["pen_protocol_verified"]
+
+
+def test_spacing_reads_shifted_nodes_when_native_bounds_stay_cached(run_host):
+    class CachedLayer(FakeLayer):
+        def __init__(self):
+            super().__init__()
+            self.cached_box = FakeBox([point[:] for point in self.points])
+
+        @property
+        def boundingBox(self):
+            return self.cached_box
+
+    module, package = run_host.prepare("spacing")
+    layer = CachedLayer()
+    package.layers["I"] = layer
+    before = layer.boundingBox.x()
+    result = module.run()
+    assert layer.boundingBox.x() == before, (
+        "Reproduce the measured native stale bounding-box cache"
+    )
+    assert result["sidebearings"] == [30, 50], (
+        "Read back the actual shifted nodes and changed advance"
+    )
+    assert min(point[0] for point in layer.points) == 30 and layer.node_reads >= 2
+
+
+def test_kerning_manifest_and_native_item_count_flatten_vfj_right_sides(run_host):
+    manifest = json.loads((ROOT / "testdata/getgo/manifest.json").read_text())
+    record = next(row for row in manifest["fonts"] if row["id"] == "stroke-chan")
+    font = json.loads((ROOT / "testdata/getgo" / record["path"]).read_text())["font"]
+    kerning = font["masters"][0]["fontMaster"]["kerning"]
+    pairs = kerning["pairs"]
+    expected = sum(len(rights) for rights in pairs.values())
+    assert expected > len(pairs), "Left-side count is not the native kerning-item count"
+    row = next(
+        row
+        for row in json.loads((GETGO / "native_manifest.json").read_text())["examples"]
+        if row["id"] == "kerning_classes"
+    )
+    assert (
+        next(
+            check["equals"]
+            for check in row["expected"]
+            if check["path"] == ["pair_count"]
+        )
+        == expected
+    )
+    items = [
+        (
+            SimpleNamespace(
+                left=SimpleNamespace(id=left, mode="groupMode"),
+                right=SimpleNamespace(id=right, mode="groupMode"),
+            ),
+            float(value),
+        )
+        for left, rights in pairs.items()
+        for right, value in rights.items()
+    ]
+    groups = [
+        (group["name"], (group["names"], "KernLeft"))
+        for group in kerning["kerningClasses"]
+    ]
+    module, package = run_host.prepare("kerning_classes")
+    package.kerning = lambda master: SimpleNamespace(
+        items=lambda: items, groups=SimpleNamespace(items=lambda: groups)
+    )
+    result = module.run()
+    assert result["pair_count"] == expected and result["class_count"] == len(groups)
+    from examples.getgo._checks import assert_expected
+
+    assert_expected(result, row["expected"])
