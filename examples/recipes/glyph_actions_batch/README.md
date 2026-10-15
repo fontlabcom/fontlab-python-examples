@@ -11,7 +11,7 @@ Extremes, Shift...) on a list of glyphs from a script, using the Pythonic tree o
 ```python
 from fontlabapp import host
 dir(host.glyph_actions)                      # 72 actions, e.g. remove_overlap
-host.glyph_actions.remove_overlap(["X"])     # FontLab's run_actions, with undo
+host.glyph_actions.remove_overlap(["X"])     # FontLab's own run_actions
 host.actions.search("overlap")               # related menu commands (read-only)
 ```
 

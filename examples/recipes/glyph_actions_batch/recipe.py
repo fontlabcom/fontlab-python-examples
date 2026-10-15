@@ -4,7 +4,7 @@
 
 ``fontlabapp.host.glyph_actions`` lists FontLab's Actions catalogue as Python
 attributes (``glyph_actions.remove_overlap``); calling one runs it through
-FontLab's own ``run_actions``, with undo. ``fontlabapp.host.actions.search`` finds
+FontLab's own ``run_actions``. ``fontlabapp.host.actions.search`` finds
 the menu commands with a related name, read-only, so you can see what else the
 menus offer. Needs fontlab-fontlabapp installed in FontLab.
 """
@@ -29,5 +29,12 @@ def run(font_id=None, glyph_names=None, steps=DEFAULT_STEPS, layer_mode="active"
     return {"steps": list(steps), "results": results, "related_menu_commands": related}
 
 
+# Menu use: name glyphs and steps, then run the script. Nothing happens while GLYPHS is empty.
+GLYPHS = []  # e.g. ["A", "B"]
+STEPS = DEFAULT_STEPS
+
 if __name__ == "__main__":
-    print(run(glyph_names=["A"]))
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS, steps=STEPS))
+    else:
+        print("Batch Tools Actions: set GLYPHS (and STEPS) at the end of this script first.")

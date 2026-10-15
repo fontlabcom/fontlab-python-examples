@@ -1,5 +1,5 @@
 # this_file: examples/recipes/round_coordinates/native.py
-"""Native check: every node, anchor and width ends on the grid; one undo step."""
+"""Native check: every node, anchor and width ends on the grid."""
 
 import sys
 from pathlib import Path
@@ -19,18 +19,10 @@ GLYPHS = [
         "I", [[(100, 0), (100, 700), (200, 700), (200, 0)]], width=300, unicode="0049"
     ),
 ]
-UNDO = r"""
-import fontlab
-from PythonQt import QtGui
-action = [a for a in fontlab.flWorkspace.instance().mainWindow.children()
-          if isinstance(a, QtGui.QAction) and a.objectName == "actionUndo"][0]
-result = [action.enabled, action.text]
-"""
 
 
 def check(report, glyphs, fl, font_id):
     a, i = read_layer(glyphs["A"]), read_layer(glyphs["I"])
-    undo = fl.run(UNDO).value
     return {
         "a_nodes_rounded": a["contours"]
         == [[(10.0, 1.0), (301.0, 700.0), (590.0, -1.0)]],
@@ -38,7 +30,6 @@ def check(report, glyphs, fl, font_id):
         "a_width_rounded": a["width"] == 601.0,
         "integer_glyph_untouched": report["glyphs"] == ["A"] and i["width"] == 300.0,
         "counts": report["changed"] == {"nodes": 3, "anchors": 1, "widths": 1},
-        "one_undo_step": undo == [True, "&Undo Round Coordinates"],
     }
 
 

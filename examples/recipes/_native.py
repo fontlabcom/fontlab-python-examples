@@ -127,6 +127,26 @@ def signed_area(points: list[tuple[float, float]]) -> float:
     )
 
 
+TRIGGER = r"""
+import fontlab
+from PythonQt import QtGui
+action = [a for a in fontlab.flWorkspace.instance().mainWindow.children()
+          if isinstance(a, QtGui.QAction) and a.objectName == name][0]
+state = [action.enabled, action.text]
+if action.enabled:
+    action.trigger()
+result = state
+"""
+
+
+def trigger_action(fl: Any, name: str) -> list:
+    """Trigger a main-window QAction (e.g. actionUndo) if enabled; returns [enabled, text].
+
+    Only for document actions on the driver's own font (Edit > Undo/Redo).
+    """
+    return fl.run(TRIGGER, name=name).value
+
+
 def _commit(path: Path) -> str | None:
     try:
         head = subprocess.run(

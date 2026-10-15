@@ -4,8 +4,9 @@
 
 Run from FontLab's Scripting panel or Scripts menu: every glyph of the current
 font (or ``glyph_names``) gets a non-master copy of its current master layer,
-named "Regular backup", "Regular backup 2"... The master layer stays active,
-and the whole run is one Edit > Undo step.
+named "Regular backup", "Regular backup 2"... The master layer stays active.
+Use it before other recipes: Edit > Undo does not restore script edits in
+FontLab 9.0.9783.
 """
 
 SUFFIX = " backup"
@@ -58,7 +59,7 @@ def run(font_id=None, glyph_names=None, master=None, suffix=SUFFIX) -> dict:
         layers.append(copy)
         changed.append(glyph)
     if changed:
-        # Layers before their glyphs, in one list: one Edit > Undo step.
+        # Changed layers, then their glyphs, in one list (refreshes FontLab's views).
         fontlab.flItems().notifyChangesApplied("Back up master layers", layers + changed)
     return {"master": master, "backups": made}
 

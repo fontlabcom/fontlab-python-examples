@@ -3,7 +3,8 @@
 __doc__ = """
 Centre the selected glyphs' outlines in one fixed advance width (Glyphs 3 or 4).
 
-Runs unchanged in Glyphs and, through glyport, in FontLab (see recipe.py).
+Written against the Glyphs 3 API. Verified in FontLab through glyport (see recipe.py);
+not yet run in Glyphs itself.
 """
 
 WIDTH = 600

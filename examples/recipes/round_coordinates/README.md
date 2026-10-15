@@ -7,7 +7,7 @@ this_file: examples/recipes/round_coordinates/README.md
 **Purpose.** Scaling, interpolation and imports leave fractional coordinates. This
 snaps every node (on- and off-curve), anchor and advance width of the current master
 to a grid (`grid=1` for whole units, `grid=10` for coarse sketches). Halves round away
-from zero. The run is one Edit > Undo step titled "Round Coordinates".
+from zero. Run layer_backup first: Edit > Undo does not restore script edits in FontLab 9.0.9783 (see ../README.md).
 
 ```python
 run()                                   # all glyphs, whole units
@@ -18,11 +18,10 @@ run(glyph_names=["a", "b"], grid=5, anchors=False, width=False)
 `flPinPoint.point`, `flLayer.advanceWidth`, `flItems.notifyChangesApplied`.
 
 **Native check** (`native.py`, owned font): fractional nodes, an anchor and the width
-end on the grid; an already-integer glyph is left alone; Edit > Undo offers
-"Undo Round Coordinates".
+end on the grid; an already-integer glyph is left alone.
 
-**Provenance.** Behaviour modelled on the node-rounding tools of the TypeRig GUI *Node*
-panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Node.py`, MPL-2.0) and FontLab's own
-rounding commands. Written from scratch; only tool names were consulted.
+**Provenance.** Written from scratch for this repository. FontLab's own
+Contour > Coordinates > Apply Rounding rounds interactively; this recipe scripts the
+same idea across many glyphs, with anchors and widths.
 
 **Licence.** Apache-2.0, as the repository.

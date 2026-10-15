@@ -5,7 +5,8 @@
 For each target, the outline and anchors shift horizontally so that its left
 sidebearing equals the reference's, and the advance width is set so that the
 right sidebearing matches too: "H" spacing for "I", "n" for "h m". Glyphs
-without outlines are skipped. One Edit > Undo step.
+without outlines are skipped. Run layer_backup first: Edit > Undo does not
+restore script edits in FontLab 9.0.9783.
 """
 
 
@@ -76,5 +77,12 @@ def run(font_id=None, glyph_names=None, reference="H", master=None) -> dict:
     return {"master": master, "reference": reference, "sidebearings": done}
 
 
+# Menu use: fill these in, then run the script. Nothing happens while GLYPHS is empty.
+REFERENCE = "H"
+GLYPHS = []  # e.g. ["I", "J"]
+
 if __name__ == "__main__":
-    print(run(reference="H"))
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS, reference=REFERENCE))
+    else:
+        print("Copy Sidebearings: set GLYPHS (and REFERENCE) at the end of this script first.")

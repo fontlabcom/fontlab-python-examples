@@ -20,8 +20,8 @@ run(glyph_names=["a", "e", "o"], offset=30)
 **Native check** (`native.py`, owned font): "A" gets both anchors, "n" has its
 misplaced "top" moved while its "ogonek" stays, and an empty "space" is skipped.
 
-**Provenance.** Behaviour modelled on the anchor tools of the TypeRig GUI *Anchor*
-panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Anchor.py`, MPL-2.0). Written from
-scratch; only tool names were consulted.
+**Provenance.** The kind of task done by the "Add" and "Move" anchor buttons of the
+TypeRig GUI *Anchor* panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Anchor.py`,
+MPL-2.0). Written from scratch: only the panel's button labels and tooltips were consulted, never its implementation.
 
 **Licence.** Apache-2.0, as the repository.

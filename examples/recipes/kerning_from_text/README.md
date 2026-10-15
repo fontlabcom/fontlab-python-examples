@@ -24,14 +24,15 @@ run(text=pairs, glyph_names=["A"], master="Bold")
 ```
 
 **FontLab API.** `fontpr.call("set_kerning_pair", ...)`, FontLab's MCP kerning tool
-(undoable), from FontLab's own Python.
+from FontLab's own Python.
 
 **Native check** (`native.py`, owned font): three pairs, read back with
 `list_kerning_pairs`, carry the values −80, −76 (from −75.5) and −60; the bad line is
 reported.
 
-**Provenance.** Behaviour modelled on the pair import of the TypeRig GUI *Kerning*
-manager (`typerig-lib/Scripts/TypeRig GUI/Manager/Kerning.py`, MPL-2.0). Written from
-scratch; only tool names were consulted.
+**Provenance.** The kind of task done by "Import Kerning" and "Add new pair" in the
+TypeRig GUI *Kerning* manager (`typerig-lib/Scripts/TypeRig GUI/Manager/Kerning.py`,
+MPL-2.0). Written from scratch: only the manager's menu labels were consulted, never
+its implementation.
 
 **Licence.** Apache-2.0, as the repository.

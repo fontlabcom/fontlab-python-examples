@@ -35,5 +35,12 @@ def run(font_id=None, glyph_names=None, width=600) -> dict:
     return {"width": width, "shifts": shifts, "output": "".join(output)}
 
 
+# Menu use: name the figures, then run the script. Nothing happens while GLYPHS is empty.
+GLYPHS = []  # e.g. list(FIGURES)
+WIDTH = 600
+
 if __name__ == "__main__":
-    print(run())
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS, width=WIDTH))
+    else:
+        print("Tabular Figures: set GLYPHS (and WIDTH) at the end of this script first.")

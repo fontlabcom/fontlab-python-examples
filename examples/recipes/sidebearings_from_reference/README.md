@@ -7,7 +7,7 @@ this_file: examples/recipes/sidebearings_from_reference/README.md
 **Purpose.** Spacing by analogy: give "I" the sidebearings of "H", or "h m" those of
 "n". Each target's outline and anchors shift so that its left sidebearing equals the
 reference's, and its advance width changes so that the right sidebearing matches
-too. Glyphs without outlines are skipped. One Edit > Undo step.
+too. Glyphs without outlines are skipped. Run layer_backup first: Edit > Undo does not restore script edits in FontLab 9.0.9783 (see ../README.md).
 
 ```python
 run(glyph_names=["I"], reference="H")
@@ -22,8 +22,7 @@ coordinates; glyphs built from transformed components need FontLab's own metrics
 60/60 sidebearings: outline at 60–160, width 220, anchor moved by the same −140; "H"
 and an empty "space" are unchanged.
 
-**Provenance.** Behaviour modelled on the copy-metrics tools of the TypeRig GUI
-*Metrics* panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Metrics.py`, MPL-2.0). Written
-from scratch; only tool names were consulted.
+**Provenance.** The kind of task done by "Copy Metrics" (LSB/RSB) in the TypeRig GUI
+*Metrics* panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Metrics.py`, MPL-2.0). Written from scratch: only the panel's button labels and tooltips were consulted, never its implementation.
 
 **Licence.** Apache-2.0, as the repository.

@@ -6,8 +6,7 @@
     A V -80
     @O_left T -40         (@ marks a kerning class, as in FontLab)
 
-Each pair goes through FontLab's own kerning tool on the current master, so each
-pair is an undoable kerning change. FontLab stores whole units, so values are
+Each pair goes through FontLab's own kerning tool on the current master. FontLab stores whole units, so values are
 rounded first (halves away from zero, as FontLab does) and the stored value is
 reported. Lines that can't be read are reported, not guessed at.
 """
@@ -57,5 +56,12 @@ def run(font_id=None, glyph_names=None, text="", master=None) -> dict:
     return {"applied": applied, "unreadable": problems}
 
 
+# Menu use: paste pairs here, then run the script. Nothing happens while PAIRS is empty.
+PAIRS = """
+"""
+
 if __name__ == "__main__":
-    print(run(text="A V -80\nV A -80\nT o -60\n"))
+    if PAIRS.strip():
+        print(run(text=PAIRS))
+    else:
+        print("Kerning Pairs from Text: paste 'left right value' lines into PAIRS first.")

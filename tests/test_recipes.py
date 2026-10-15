@@ -203,3 +203,27 @@ def test_path_problems_when_planted_then_each_reported_once():
         "path 1 has only 2 on-curve points"
     ]
     assert problems(Layer(Path([(1, 1), (1, 3), (3, 3)]))) == ["path 1 is tiny (2 x 2)"]
+
+
+GUARDED = [
+    "anchors_from_bounds",
+    "sidebearings_from_reference",
+    "kerning_from_text",
+    "glyph_actions_batch",
+    "glyphs_tabular_figures",
+]
+
+
+@pytest.mark.parametrize("name", GUARDED)
+def test_menu_entry_when_constants_empty_then_prints_usage_and_touches_nothing(name):
+    code = (
+        "import runpy, sys\n"
+        f"runpy.run_path({str(RECIPES / name / 'recipe.py')!r}, run_name='__main__')\n"
+        f"loaded = sorted(set(sys.modules) & set({sorted(NATIVE)!r}))\n"
+        "assert not loaded, loaded\n"
+    )
+    done = subprocess.run(
+        [sys.executable, "-I", "-c", code], capture_output=True, text=True, check=False
+    )
+    assert done.returncode == 0, done.stderr
+    assert "first" in done.stdout, done.stdout

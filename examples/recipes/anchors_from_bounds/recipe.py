@@ -66,5 +66,13 @@ def run(font_id=None, glyph_names=None, offset=0, master=None) -> dict:
     return {"master": master, "anchors": placed}
 
 
+# Menu use: name glyphs, then run the script. Nothing happens while GLYPHS is empty,
+# because existing "top"/"bottom" anchors are moved.
+GLYPHS = []  # e.g. ["A", "E", "O"]
+OFFSET = 0
+
 if __name__ == "__main__":
-    print(run())
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS, offset=OFFSET))
+    else:
+        print("Place Top and Bottom Anchors: set GLYPHS (and OFFSET) at the end of this script first.")

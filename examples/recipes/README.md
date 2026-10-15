@@ -30,6 +30,16 @@ verification/issue-104/fl-native.sh --mutating --lane L6b -- uv run --project fo
   python fontlab-python-examples/examples/recipes/<name>/native.py [EVIDENCE.json]
 ```
 
-The TypeRig-inspired recipes reimplement behaviour only: TypeRig (MPL-2.0) was
-consulted for tool names, and no TypeRig code is included. Host-free tests:
-`tests/test_recipes.py`.
+**Undo.** In FontLab 9.0.9783, Edit > Undo after these script edits names the recipe
+but does not restore the outline (measured: `undo_probe.py` in the workspace evidence
+`examples-recipes/`). Run `layer_backup` before experimenting.
+
+**Menu use.** Recipes that change only what you name (`anchors_from_bounds`,
+`sidebearings_from_reference`, `kerning_from_text`, `glyph_actions_batch`,
+`glyphs_tabular_figures`) do nothing from the Scripts menu until you fill in the
+constant at the end of the file (`GLYPHS`, `PAIRS`...). The Scripting-panel and menu
+route itself has not been run natively; the checks call `run()`.
+
+The TypeRig-inspired recipes reimplement behaviour only: for TypeRig (MPL-2.0) only
+panel button labels and tooltips were consulted, and no TypeRig code is included.
+Host-free tests: `tests/test_recipes.py`.

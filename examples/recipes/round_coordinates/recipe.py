@@ -4,8 +4,9 @@
 
 Fractional coordinates appear after scaling, interpolation or imports. This
 rounds every node (on- and off-curve), anchor and advance width of the current
-master to multiples of ``grid`` (1 = whole units), half away from zero, as one
-Edit > Undo step. Coordinates are in each shape's own space.
+master to multiples of ``grid`` (1 = whole units), half away from zero.
+Coordinates are in each shape's own space. Run layer_backup first: Edit > Undo
+does not restore script edits in FontLab 9.0.9783.
 """
 
 import math

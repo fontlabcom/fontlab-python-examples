@@ -5,8 +5,9 @@ this_file: examples/recipes/glyphs_tabular_figures/README.md
 # Tabular figures (a Glyphs script run in FontLab)
 
 **Purpose.** Give figures one shared advance width and centre each outline in it.
-`tabular_figures.py` is an ordinary Glyphs 3/4 script: in Glyphs it works on the
-selected glyphs. `recipe.py` runs the *same file, unchanged* in FontLab through
+`tabular_figures.py` is written as an ordinary Glyphs 3 script (in Glyphs it would work
+on the selected glyphs; it has not been run in Glyphs itself). `recipe.py` runs the *same
+file, unchanged* in FontLab through
 [glyport](https://github.com/fontlabcom/fontlab-glyport), whose `GlyphsApp` module is
 backed by the current FontLab font.
 

@@ -25,9 +25,8 @@ doesn't rely on it.
 ends with a counter-clockwise outer contour and a clockwise counter, both starting
 bottom-left, with the same points; a correct glyph is left alone.
 
-**Provenance.** Behaviour modelled on the direction and start-point tools of the
-TypeRig GUI *Contour* panel (`typerig-lib/Scripts/TypeRig GUI/Panel/Contour.py`,
-MPL-2.0) and on the common "correct path direction" commands of font editors.
-Written from scratch; only tool names were consulted.
+**Provenance.** The kind of task done by the clockwise/counter-clockwise and
+start-point (bottom-left) buttons of the TypeRig GUI *Contour* panel
+(`typerig-lib/Scripts/TypeRig GUI/Panel/Contour.py`, MPL-2.0). Written from scratch: only the panel's button labels and tooltips were consulted, never its implementation.
 
 **Licence.** Apache-2.0, as the repository.
