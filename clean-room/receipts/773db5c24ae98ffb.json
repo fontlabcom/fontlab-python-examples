@@ -1,0 +1,10 @@
+{
+  "port_id": "773db5c24ae98ffb",
+  "target_path": "ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py",
+  "files": [
+    "ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "b47eb82cab470f494961ba514aa8a64e0ae9182e7a438ea71023250e7de080d1"
+}

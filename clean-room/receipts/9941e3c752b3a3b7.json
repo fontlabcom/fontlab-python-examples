@@ -1,0 +1,10 @@
+{
+  "port_id": "9941e3c752b3a3b7",
+  "target_path": "ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py",
+  "files": [
+    "ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "ff4017d9e166b2049e3de86d38a66dd60ea3a4094f2a01fdfc6ed4f0aac1630e"
+}

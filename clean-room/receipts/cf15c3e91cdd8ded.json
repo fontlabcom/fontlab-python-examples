@@ -1,0 +1,10 @@
+{
+  "port_id": "cf15c3e91cdd8ded",
+  "target_path": "ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py",
+  "files": [
+    "ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "e654a291ea4ca57e04aa7289c91e933a19c5d248bcc8b32d5e5b864d2babe4e8"
+}

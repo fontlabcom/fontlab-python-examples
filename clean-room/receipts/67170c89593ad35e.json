@@ -1,0 +1,10 @@
+{
+  "port_id": "67170c89593ad35e",
+  "target_path": "ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py",
+  "files": [
+    "ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "49202d425426ace276123f77ee6b6ec0986f505ac98269ac2733c2f72ddd03d6"
+}

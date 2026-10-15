@@ -1,0 +1,10 @@
+{
+  "port_id": "de4979a99c6d0bed",
+  "target_path": "ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py",
+  "files": [
+    "ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "e4692e08edde6d8e3c0b140a78e0519f6618de6fb5322964a7d991590d9ac8fb"
+}

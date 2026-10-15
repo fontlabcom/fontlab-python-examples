@@ -1,0 +1,10 @@
+{
+  "port_id": "136c45cc9f97c218",
+  "target_path": "ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py",
+  "files": [
+    "ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "b6f5c492eb2febfe065e2de72249d11dae1d37ce0208fd076c0e55f935b61847"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "cc95f9719b8e4eda",
+  "target_path": "ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py",
+  "files": [
+    "ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "5ccdae0296898203095c9bf2f7357e731b9a8cc6c17b673828d4fa0d6afc949a"
+}
