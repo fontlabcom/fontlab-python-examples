@@ -225,3 +225,8 @@ _reference/
 # Local workspace artifacts
 .DS_Store
 .omc/
+# Private and scratch state: macOS metadata, agent scratch dirs, local envs (never source)
+**/.omc/
+.local/
+.superpowers/
+.worktrees/
