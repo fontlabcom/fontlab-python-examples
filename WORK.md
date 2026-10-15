@@ -3087,3 +3087,18 @@ The last TODO item (docs-lane wiring) was verified from fontlab-python-docs:
 (ff4c5e4, "examples be2712b") lists 41 `examples/` entries whose sha256 all match the
 current `docs-export/` files (HEAD be2712b); `.build/content/examples` holds 40 pages.
 PLAN.md and TODO.md are now empty; the item moved to CHANGELOG.md.
+
+2026-10-15 workspace reconciliation: fresh source suite 1567passed/0skipped, exit0.
+Exact command and retained initial failures: parent verification/plan-todo-audit-20261015/baseline-tests.json.
+Completed repository plans were archived where no repository tasks remain;
+workspace integration/release gates remain separate.
+
+## 2026-10-15 — GetGo real-font scope added
+
+The owner supplied the GetGo corpus for actual tests/examples. Source checkout
+revision25a4d6d7099143090093e5820660b77222ac670b,99VFJs294313046bytes. Copied
+all99 unchanged under fontlab-python-examples/testdata/getgo; retained81Apache,
+11CC0 and7OFL records with original licence texts, SHA-256, public font-page and
+VFJ/TTF links, embedded notices and registry attribution. No source font edited.
+Tests failed first on missing manifest; actual-file/static checks now run. Native
+corpus/mutation/export tests and practical examples are new active scope.
