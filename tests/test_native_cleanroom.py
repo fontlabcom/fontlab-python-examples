@@ -329,3 +329,97 @@ def test_repeated_prepare_when_token_retained_then_does_not_discard_cleanup_stat
     monkeypatch.setattr(driver, "_sessions", retained)
     result = driver.host_step("prepare", "one", "same", str(ROOT))
     assert not result["ok"] and retained == {"same": {"owned": "must retain"}}
+
+
+def test_owned_descriptors_when_transport_sockets_and_pipes_appear_then_ignored():
+    before = {"3": "file", "4": "socket"}
+    after = {"3": "file", "4": "socket", "9": "socket", "10": "fifo"}
+    assert driver.owned_descriptors(before, after) == []
+    assert driver.owned_descriptors(before, after | {"11": "file", "12": "dir"}) == [
+        "11",
+        "12",
+    ]
+
+
+class _Handle:
+    def __init__(self):
+        self.closed = 0
+
+
+class _Launcher:
+    def __init__(self, pid):
+        self._handles = {pid: _Handle()}
+
+    def close(self, pid):
+        self._handles[pid].closed += 1
+        del self._handles[pid]
+
+
+class _Witnessed:
+    def __init__(self):
+        self.disconnected = []
+
+    def disconnect(self, signature, slot):
+        self.disconnected.append(signature)
+
+
+def _stale_session(pid="one"):
+    survivor, gone = _Witnessed(), _Witnessed()
+    return (
+        {
+            "pid": pid,
+            "launcher": _Launcher(pid),
+            "witnesses": {"a": (survivor, print), "b": (gone, print)},
+            "destroyed": {"b"},
+        },
+        survivor,
+        gone,
+    )
+
+
+def test_reset_when_session_left_unclean_then_owned_cleanup_and_session_cleared(
+    monkeypatch,
+):
+    session, survivor, gone = _stale_session()
+    launcher = session["launcher"]
+    monkeypatch.setattr(driver, "_sessions", {"tok": session})
+    monkeypatch.setattr(driver, "purge_examples", lambda modules: 0)
+    result = driver.host_step("reset", "one", "tok", str(ROOT))
+    assert result["ok"], result
+    assert result["data"] == {
+        "sessions_reset": 1,
+        "examples_closed": 1,
+        "witnesses_disconnected": 1,
+    }
+    assert launcher._handles == {} and driver._sessions == {}
+    assert survivor.disconnected == ["destroyed(QObject*)"] and gone.disconnected == []
+
+
+def test_reset_when_wildcard_then_every_stale_session_cleared(monkeypatch):
+    sessions = {"t1": _stale_session("one")[0], "t2": _stale_session("two")[0]}
+    monkeypatch.setattr(driver, "_sessions", sessions)
+    monkeypatch.setattr(driver, "purge_examples", lambda modules: 0)
+    result = driver.host_step("reset", "*", "*", str(ROOT))
+    assert result["ok"] and result["data"]["sessions_reset"] == 2
+    assert driver._sessions == {}
+
+
+def test_run_port_when_verify_stays_unclean_then_reset_and_run_may_continue():
+    calls = []
+
+    def call(action, **variables):
+        calls.append(action)
+        clean = action != "verify"
+        return {
+            "ok": True,
+            "host_seconds": 0.01,
+            "path_restored": True,
+            "data": {"clean": clean, "sessions_reset": 1},
+        }
+
+    receipt = driver.run_port(
+        call, {"source_id": "one", "implementation": "blocked"}, pause=lambda _: None
+    )
+    assert receipt["status"] == "failed" and "reset" in calls
+    assert receipt["continue_safe"], "a clean reset lets the run go on"
+    assert receipt["reset"]["sessions_reset"] == 1

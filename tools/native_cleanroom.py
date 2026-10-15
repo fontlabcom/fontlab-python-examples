@@ -146,21 +146,49 @@ def _windows(qt: Any) -> dict:
     }
 
 
-def _fds() -> set[str]:
+def _fds() -> dict[str, str]:
+    """Open descriptors of this process and their kind (file, dir, socket, fifo...)."""
     import os
+    import stat
 
     try:
         names = os.listdir("/dev/fd")
     except OSError:
-        return set()
-    result = set()
+        return {}
+    result = {}
     for name in names:
         try:
-            os.fstat(int(name))
+            mode = os.fstat(int(name)).st_mode
         except (ValueError, OSError):
             continue
-        result.add(name)
+        result[name] = next(
+            (
+                kind
+                for test, kind in [
+                    (stat.S_ISSOCK, "socket"),
+                    (stat.S_ISFIFO, "fifo"),
+                    (stat.S_ISREG, "file"),
+                    (stat.S_ISDIR, "dir"),
+                    (stat.S_ISCHR, "char"),
+                ]
+                if test(mode)
+            ),
+            "other",
+        )
     return result
+
+
+def owned_descriptors(before: dict[str, str], after: dict[str, str]) -> list[str]:
+    """New descriptors a port could own: FontLab's MCP transport opens and closes
+    sockets and pipes between calls, so those kinds are not counted."""
+    return sorted(
+        (
+            fd
+            for fd, kind in after.items()
+            if fd not in before and kind not in ("socket", "fifo")
+        ),
+        key=int,
+    )
 
 
 def _prepare(token: str, pid: str, root: Path, extras: tuple = ()) -> dict:
@@ -197,6 +225,7 @@ def _prepare(token: str, pid: str, root: Path, extras: tuple = ()) -> dict:
         "threads": {t.ident for t in threading.enumerate()},
         "fds": _fds(),
         "watched": {},
+        "witnesses": {},
         "destroyed": set(),
         "callbacks": [],
         "temporary": set(),
@@ -253,6 +282,7 @@ def _watch(session: dict) -> None:
 
         obj.connect("destroyed(QObject*)", destroyed)
         session["callbacks"].append(destroyed)
+        session.setdefault("witnesses", {})[key] = (obj, destroyed)
         children = getattr(obj, "children", None)
         if callable(children):  # some owned objects shadow children (e.g. None)
             queue.extend(children())
@@ -376,7 +406,7 @@ def _verify(session: dict) -> dict:
     ]
     directories = [p for p in session["temporary"] if Path(p).exists()]
     blocked = session["row"]["implementation"] == "blocked"
-    descriptors = sorted(_fds() - session["fds"]) if blocked else []
+    descriptors = owned_descriptors(session["fds"], _fds()) if blocked else []
     clean = not (
         survivors
         or new_windows
@@ -401,7 +431,44 @@ def _verify(session: dict) -> dict:
     }
 
 
-def host_step(action: str, port_id: str, token: str, checkout: str, extras: tuple = ()) -> dict:
+def _reset(session: dict) -> tuple[int, int]:
+    """Owned cleanup of a session left unclean: close its example if still
+    registered, disconnect witnesses of objects that survived. Returns counts."""
+    closed = disconnected = 0
+    launcher = session["launcher"]
+    if session["pid"] in launcher._handles:
+        launcher.close(session["pid"])
+        closed = 1
+    for key, (obj, callback) in session.get("witnesses", {}).items():
+        if key in session["destroyed"]:
+            continue  # native destruction already disconnected it
+        try:
+            obj.disconnect("destroyed(QObject*)", callback)
+            disconnected += 1
+        except Exception:  # noqa: BLE001,S112 - a wrapper may already be invalid
+            continue
+    return closed, disconnected
+
+
+def reset_sessions(token: str) -> dict:
+    """Clear one session (or every one with ``*``) after owned cleanup, then purge."""
+    tokens = list(_sessions) if token == "*" else [token] if token in _sessions else []
+    closed = disconnected = 0
+    for name in tokens:
+        c, d = _reset(_sessions[name])
+        closed, disconnected = closed + c, disconnected + d
+        del _sessions[name]
+    purge_examples(sys.modules)
+    return {
+        "sessions_reset": len(tokens),
+        "examples_closed": closed,
+        "witnesses_disconnected": disconnected,
+    }
+
+
+def host_step(
+    action: str, port_id: str, token: str, checkout: str, extras: tuple = ()
+) -> dict:
     """Called in FontLab. Each phase restores sys.path even when it fails."""
     original = list(sys.path)
     started = time.monotonic()
@@ -409,7 +476,9 @@ def host_step(action: str, port_id: str, token: str, checkout: str, extras: tupl
     result = {"ok": False, "data": None}
     try:
         with checkout_path(Path(checkout), tuple(extras)):
-            if action == "prepare":
+            if action == "reset":
+                data = reset_sessions(token)
+            elif action == "prepare":
                 data = _prepare(token, port_id, Path(checkout).resolve(), tuple(extras))
             else:
                 session = _sessions[token]
@@ -508,6 +577,14 @@ def run_port(call: Any, record: dict, pause: Any = time.sleep) -> dict:
                     receipt["continue_safe"] = True
             except Exception as error:  # noqa: BLE001 - never hide cleanup failure
                 receipt.update(status="failed", cleanup_error=str(error))
+            if not receipt["continue_safe"]:
+                # Explicit owned cleanup and session reset, so one unclean port
+                # does not poison the host for every later port.
+                try:
+                    receipt["reset"] = step("reset")["data"]
+                    receipt["continue_safe"] = True
+                except Exception as error:  # noqa: BLE001 - reported, run stops
+                    receipt["reset_error"] = str(error)
     return receipt
 
 
@@ -543,6 +620,11 @@ def main() -> int:
     )
     parser.add_argument("--command", help="Explicit FontLab MCP bridge executable")
     parser.add_argument(
+        "--reset-stale",
+        action="store_true",
+        help="first clear sessions an interrupted run left in FontLab (owned cleanup)",
+    )
+    parser.add_argument(
         "--fontlabapp-src",
         type=Path,
         help="fontlab-fontlabapp src to import in FontLab when it is not installed "
@@ -553,7 +635,11 @@ def main() -> int:
         parser.error("--batch-size must be positive")
     root = Path(__file__).resolve().parents[1]
     fontlabapp_src = args.fontlabapp_src or root.parent / "fontlab-fontlabapp" / "src"
-    extras = [str(fontlabapp_src.resolve())] if (fontlabapp_src / "fontlabapp").is_dir() else []
+    extras = (
+        [str(fontlabapp_src.resolve())]
+        if (fontlabapp_src / "fontlabapp").is_dir()
+        else []
+    )
     ids = [pid for value in args.ids for pid in value.split(",") if pid]
     try:
         records = select_records(
@@ -572,6 +658,21 @@ def main() -> int:
         parser.error("Summary already exists; choose a new --output")
     with args.output.open("x", encoding="utf-8") as output:
         try:
+            if args.reset_stale:
+                with FontLab(command=args.command, timeout=4) as fl:
+                    print(
+                        json.dumps(
+                            fl.run(
+                                HOST_CODE,
+                                checkout=str(root),
+                                extras=extras,
+                                driver_sha256=driver_sha256,
+                                action="reset",
+                                port_id="*",
+                                token="*",
+                            ).value
+                        )
+                    )
             for group in batches(records, args.batch_size):
                 with FontLab(command=args.command, timeout=4) as fl:
                     for record in group:
