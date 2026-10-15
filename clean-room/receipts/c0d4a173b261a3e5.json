@@ -1,0 +1,10 @@
+{
+  "port_id": "c0d4a173b261a3e5",
+  "target_path": "ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py",
+  "files": [
+    "ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "9c97ebbc80670b96dec4b92476d0661e78047732cda55f4b858c528e5e248f0a"
+}

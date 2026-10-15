@@ -1,0 +1,10 @@
+{
+  "port_id": "9e21c6536fda7a23",
+  "target_path": "ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py",
+  "files": [
+    "ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "832fd4d191c004fa13ebcf3cfb74401c14328ff28f9a8ec70bfd2098696dde41"
+}

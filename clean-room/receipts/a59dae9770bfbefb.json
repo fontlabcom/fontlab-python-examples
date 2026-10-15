@@ -1,0 +1,10 @@
+{
+  "port_id": "a59dae9770bfbefb",
+  "target_path": "ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py",
+  "files": [
+    "ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "ee8a92ef0e82177650cde2c067920bfdf1d3da54396294366514c541a38cbad3"
+}

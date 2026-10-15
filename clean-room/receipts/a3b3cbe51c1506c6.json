@@ -1,0 +1,10 @@
+{
+  "port_id": "a3b3cbe51c1506c6",
+  "target_path": "ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py",
+  "files": [
+    "ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "fcd9ad08e41ae873beca08a37491a2165903c50c4c0d5c680733979983845e10"
+}

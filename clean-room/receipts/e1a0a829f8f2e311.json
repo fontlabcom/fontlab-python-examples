@@ -1,0 +1,10 @@
+{
+  "port_id": "e1a0a829f8f2e311",
+  "target_path": "ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py",
+  "files": [
+    "ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "ac13a2ab942c7f103bb2dbf79cfeb544b3a2d1b3b4c4d5e523947d49e350c983"
+}
