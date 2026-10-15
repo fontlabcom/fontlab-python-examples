@@ -3012,3 +3012,13 @@ refused: `python3 tools/record_native.py apply ... --commit 9bec8bb` -> "run com
 Recorded: `python3 tools/record_native.py propose --output review/proposal.json
 review/run01..03,06..08.jsonl` -> 187 ports, then `apply review/proposal.json --commit
 f3585891067184a0f14d708b805a766e2073331e` -> passed 127, blocked_verified 60.
+
+## 2026-10-15 review round 2 (RR-examples: 2 P2 not addressed)
+
+Commit c4b09c7. Tests 1542 passed. Fuzz (scratch): exact containment agreed with a
+4000-step flattening on 9000 random points over 300 random cubic/line contours.
+Native: `verification/issue-104/fl-native.sh --mutating --lane L6b -- uv run --project
+fontlab-remopy python fontlab-python-examples/examples/recipes/contour_direction/native.py
+.../examples-recipes/contour_direction-rr2.json` -> exit 0, all 11 checks (new: 1-unit
+sliver at (4,90) inside the hump is a counter). Scripts-menu route re-run for all nine
+(`examples-recipes/menu_route.py`) -> 9/9, exit 0.

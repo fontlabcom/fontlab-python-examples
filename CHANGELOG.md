@@ -23,6 +23,11 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Review round 2 (RR-examples). `apply_reviews` requires an existing
+  evidence root and resolves every evidence selector to the reviewed file's record.
+  contour_direction tests nesting exactly on the Bézier segments (recursive
+  subdivision) instead of a 16-step flattening.
+
 - 2026-10-15 (R046): DEPENDENCIES.md records the dependency re-evaluation (no host
   packages; recipes import sibling workspace packages; dev tools via uv).
 
