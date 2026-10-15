@@ -13,6 +13,11 @@ The driver creates its own font, adds the fixture glyphs with FontLab's
 ``run_python`` call, below the 5-second host deadline), reads the result back
 independently through ``get_glyph``/``list_kerning_pairs``, closes the font
 without saving and checks that no font is left behind.
+
+Sibling packages (fontlabapp, fontlab_glyport) are imported from the real
+workspace checkouts (``fontlab-fontlabapp/src``, ``fontlab-glyport/src``) under
+the issue 104 sys.path guard. ``FONTLABAPP_SRC``/``GLYPORT_SRC`` may name another
+checkout; never a temporary copy, whose path could outlive the run.
 """
 
 from __future__ import annotations
