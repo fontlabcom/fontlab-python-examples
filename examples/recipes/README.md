@@ -37,8 +37,10 @@ but does not restore the outline (measured: `undo_probe.py` in the workspace evi
 **Menu use.** Recipes that change only what you name (`anchors_from_bounds`,
 `sidebearings_from_reference`, `kerning_from_text`, `glyph_actions_batch`,
 `glyphs_tabular_figures`) do nothing from the Scripts menu until you fill in the
-constant at the end of the file (`GLYPHS`, `PAIRS`...). The Scripting-panel and menu
-route itself has not been run natively; the checks call `run()`.
+constant at the end of the file (`GLYPHS`, `PAIRS`...). The menu route was also run
+natively: each file, with its constants filled in a temporary copy, executed as a
+script (`__name__ == "__main__"`) on an owned font; all nine passed the same checks
+(workspace evidence `examples-recipes/menu-*.json`).
 
 The TypeRig-inspired recipes reimplement behaviour only: for TypeRig (MPL-2.0) only
 panel button labels and tooltips were consulted, and no TypeRig code is included.

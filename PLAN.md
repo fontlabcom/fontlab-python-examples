@@ -23,8 +23,7 @@ Remaining work:
    from directory association or a source-code grant. The nine styleexample
    resources retain the GPL collection notice without an individual grant claim.
   Official-demo records and licence notes have since moved under D7 below.
-3. **Recipes.** Optionally exercise the recipes' Scripts-menu route natively (the
-   checks call `run()`), and Glyphs-side runs of the two Glyphs scripts.
+3. **Recipes.** Optionally run the two Glyphs scripts inside Glyphs itself.
 4. **Docs.** Integrate the categorized examples with exact status into the rebuilt
    fontlab-python-docs site.
 

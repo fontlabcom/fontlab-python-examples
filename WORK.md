@@ -2982,3 +2982,13 @@ checks use inspect() state or QWidget.grab hashes. Final: 20 passed, 2 skipped
 table tests: `test_events_table.py` 3 passed. A first run failed shapedclock (helper
 recomputed screen positions from the moving window) and tetrix (wrong piece-count
 assumption); both fixed in the driver.
+
+## 2026-10-15 issue 104 lane L6d (2): recipes through the Scripts-menu route
+
+`verification/issue-104/fl-native.sh --mutating --lane L6d -- uv run --project
+fontlab-remopy python verification/issue-101-ecosystem/evidence/examples-recipes/menu_route.py`
+copies each recipe folder to a temp dir, fills GLYPHS/PAIRS/OFFSET/REFERENCE/WIDTH in the
+copy, runs it with Remopy execute_script on the owned fixture font, parses the printed
+report and applies the recipe's native checks: 9/9 passed. fontlabapp/glyport checkouts
+are put on sys.path in a guarded call before the script and restored after; FontLab's
+sys.path verified clean afterwards. Offline: `test_menu_route.py` 4 passed.

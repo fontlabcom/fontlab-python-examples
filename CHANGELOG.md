@@ -23,6 +23,10 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: All nine recipes also pass when run the way the Scripts menu runs them
+  (file executed as `__main__` with menu constants filled in a temporary copy; workspace
+  evidence `examples-recipes/menu_route.py`, `menu-*.json`).
+
 - 2026-10-15: Mouse/keyboard/drop checks for the 22 clean-room ports without state
   controls (workspace evidence `examples-cleanroom/events_cleanroom.py`,
   `events-final.jsonl`): 20 passed, 2 skipped by reason.

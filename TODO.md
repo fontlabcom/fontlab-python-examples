@@ -16,4 +16,5 @@ this_file: TODO.md
 - [x] Script native interactions for clean-room ports that need no user state (106 passed, 21 skipped by reason).
 - [x] Mouse/key/drop interactions for the 22 paint/drag/button-only clean-room ports (20 passed, 2 skipped by reason).
 - [x] Add nine native-checked recipes in `examples/recipes` (TypeRig- and Glyphs-inspired, reimplemented).
+- [x] Run every recipe through the Scripts-menu route natively (9/9).
 - [ ] Review complete coverage and integrate examples into rebuilt documentation.
