@@ -7,17 +7,15 @@ this_file: PLAN.md
 Owner request: use the public GetGo VFJ/TTF fonts for real tests and scripting
 examples, keeping public code.fontlab.com links and licence provenance.
 
-1. Copy all 99 VFJs unchanged into testdata/getgo, retain the three licence texts
-   and pin source revision, hashes, attribution, public pages and download links.
-   Verify every actual font file, master/axis counts and manifest completeness.
-2. Run native load/read acceptance on the real corpus through the shared runner
-   using owned copies; preserve every failure and source hash. Run actual
-   mutations/save/reopen and exported-artifact checks on representative static,
-   variable, hinted, non-Latin and OFL/Apache/CC0 fonts.
-3. Build practical original scripting examples around the real fixtures: font
-   audit, pen/outline interchange, metadata/kerning, multimasters/designspace and
-   exported results. Public docs link each font's GetGo page; results distinguish
-   supported behavior from measured native limits.
-4. Verify examples natively, update the generated documentation export, run the
-   complete host-free suite and record receipts/commands. Archive only complete
-   groups; broader workspace integration/publication remains in the parent plan.
+Done and archived in CHANGELOG.md: item 1 (fixtures, provenance, verification).
+
+2. Native acceptance is recorded for the current VFJs (corpus 99/99; 17 fonts edited,
+   saved, reopened, exported; 6 of 16 variable exports pass, the other 10 fail on the
+   unedited originals). Remaining: after F1 fixes the source VFJs, re-sync them into
+   testdata/getgo (new hashes), re-run corpus and variable exports.
+3. The 13 examples exist and pass natively 13/13 only with the uncommitted `_shared.py`
+   close fix (spacing otherwise stalls on FontLab's Save Changes dialog). Remaining:
+   commit that fix and replace "native status: unexecuted" in README and native_manifest
+   with the measured receipts (verification/issue-106/evidence/getgo/examples3-all).
+4. Docs export (getgo.md) and the 1874-test suite are done. Close the group when 2 and 3
+   are complete; broader publication stays in the parent plan.

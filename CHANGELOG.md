@@ -4,6 +4,10 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-16 - GetGo fixtures and provenance (moved from TODO.md)
+
+- Copied the 99 GetGo VFJs unchanged into testdata/getgo (81 Apache-2.0, 11 CC0-1.0, 7 OFL-1.1) with the three licence texts and a manifest pinning source revision 25a4d6d7, SHA-256, glyph/master/axis counts, public code.fontlab.com page and VFJ/TTF links. Verified against the upstream checkout and fonts.json, all 297 links HTTP 200; `*.vfj -diff` in .gitattributes (ac98f06; tools/verify_getgo_source.py, 206 tests).
+
 ## 2026-10-15 — completed checklist (moved from TODO.md)
 
 - Acquire, pin and Git-blob-verify all 805 pyqt/examples source files.

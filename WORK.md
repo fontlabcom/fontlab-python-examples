@@ -3102,3 +3102,11 @@ all99 unchanged under fontlab-python-examples/testdata/getgo; retained81Apache,
 VFJ/TTF links, embedded notices and registry attribution. No source font edited.
 Tests failed first on missing manifest; actual-file/static checks now run. Native
 corpus/mutation/export tests and practical examples are new active scope.
+
+## 2026-10-16 - E1 GetGo native acceptance (issue 106)
+
+- Fixtures verified (ac98f06); corpus3 99/99; edits7 + edits9-heavy: 17 fonts edit/save/reopen equal,
+  static TTF/OTF 17/17 (fontTools), variable 6/16 (10 reproduce on unedited originals; cosm filed as
+  Fontlab/fl#8506; F1 is fixing sources). Examples: examples1 8/13, examples2(+rest) 12/13, examples3-all
+  13/13 with X2's uncommitted _shared.py close fix. Details and commands: verification/issue-106/reports/E1-getgo-native.md.
+- Open: F1 re-sync; commit _shared.py fix; README/native_manifest status.
