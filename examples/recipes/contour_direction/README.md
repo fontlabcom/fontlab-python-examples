@@ -15,9 +15,10 @@ run()                          # all glyphs
 run(glyph_names=["O", "Q"])
 ```
 
-Orientation and nesting use the actual outline: cubic and TrueType quadratic segments
-are flattened, so a contour inside a curve's handles but outside the curve itself is
-correctly an outer contour.
+Orientation and nesting use the actual outline. Nesting is an exact ray-crossing test
+on the cubic and TrueType quadratic segments (recursive subdivision, not a fixed
+flattening), so a contour inside a curve's handles but outside the curve is an outer
+contour, and one hugging the inside of a curve is a counter.
 
 **FontLab API.** `flContour.reverse()` (keeps the first node, reverses the rest),
 `flContour.setStartPoint(index)`, `flNode.isOn()`. Orientation is computed from the

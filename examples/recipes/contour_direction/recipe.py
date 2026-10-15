@@ -5,11 +5,13 @@
 Outer contours run counter-clockwise and counters clockwise (the PostScript/CFF
 convention, in FontLab's y-up coordinates); nesting decides which is which.
 Each contour then starts at its lowest, then leftmost on-curve node. Orientation
-and nesting are computed from the actual outline (Bézier segments flattened),
-not from the control points and not read from FontLab.
+(signed area of the flattened outline) and nesting (an exact ray-crossing test on
+the Bézier segments themselves) come from the actual outline, not from the
+control points and not from FontLab.
 """
 
-FLATTEN_STEPS = 16
+FLATTEN_STEPS = 16  # for the signed area only; containment does not flatten
+MAX_DEPTH = 48  # subdivision depth bound: segments shorter than ~2**-48 units
 
 
 def _cubic(p0, p1, p2, p3, steps):
@@ -31,32 +33,45 @@ def _mid(a, b):
     return ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
 
 
-def flatten(points: list, on_curve: list[bool], steps: int = FLATTEN_STEPS) -> list:
-    """Polygon along a closed outline: two off-curve points between on-curve points
-    make a cubic; one or more make TrueType quadratics with implied on-curve midpoints."""
-    points, on_curve = list(points), list(on_curve)
+def segments(points: list, on_curve: list[bool]) -> list[tuple]:
+    """Segments of a closed outline as control-point tuples: 2 points for a line, 3
+    for a quadratic, 4 for a cubic. Two off-curve points between on-curve points make
+    a cubic; one or more make TrueType quadratics with implied on-curve midpoints."""
+    points, on_curve = [tuple(p) for p in points], list(on_curve)
     if not any(on_curve):  # all off-curve (a TrueType circle): add one implied point
         points.insert(0, _mid(points[-1], points[0]))
         on_curve.insert(0, True)
     start = on_curve.index(True)
     points = points[start:] + points[:start]
     on_curve = on_curve[start:] + on_curve[:start]
-    current, polygon, handles = points[0], [points[0]], []
+    current, result, handles = points[0], [], []
     for point, on in zip(points[1:] + points[:1], on_curve[1:] + [True]):
         if not on:
             handles.append(point)
             continue
-        if not handles:
-            polygon.append(point)
-        elif len(handles) == 2:
-            polygon += _cubic(current, handles[0], handles[1], point, steps)
-        else:
+        if len(handles) == 2:
+            result.append((current, handles[0], handles[1], point))
+        elif handles:
             for k, handle in enumerate(handles):
                 end = point if k == len(handles) - 1 else _mid(handle, handles[k + 1])
-                polygon += _quad(current, handle, end, steps)
+                result.append((current, handle, end))
                 current = end
+        elif point != current:
+            result.append((current, point))
         current, handles = point, []
-    return polygon[:-1] if len(polygon) > 1 and polygon[-1] == polygon[0] else polygon
+    return result
+
+
+def flatten(points: list, on_curve: list[bool], steps: int = FLATTEN_STEPS) -> list:
+    """Polygon along a closed outline (see ``segments``), for its signed area."""
+    polygon = []
+    for segment in segments(points, on_curve):
+        polygon.append(segment[0])
+        if len(segment) == 4:
+            polygon += _cubic(*segment, steps)[:-1]
+        elif len(segment) == 3:
+            polygon += _quad(*segment, steps)[:-1]
+    return polygon
 
 
 def signed_area(points: list[tuple[float, float]]) -> float:
@@ -65,19 +80,48 @@ def signed_area(points: list[tuple[float, float]]) -> float:
     return sum(x0 * y1 - x1 * y0 for (x0, y0), (x1, y1) in pairs) / 2
 
 
-def contains(polygon: list[tuple[float, float]], point: tuple[float, float]) -> bool:
-    """Even-odd ray test: is ``point`` inside ``polygon``?"""
+def _split(segment: tuple) -> tuple[tuple, tuple]:
+    """de Casteljau halves of a Bézier segment of any degree."""
+    left, right, row = [segment[0]], [segment[-1]], list(segment)
+    while len(row) > 1:
+        row = [_mid(a, b) for a, b in zip(row, row[1:])]
+        left.append(row[0])
+        right.append(row[-1])
+    return tuple(left), tuple(reversed(right))
+
+
+def _crossings(segment: tuple, x: float, y: float, depth: int = 0) -> int:
+    """Parity of the crossings of the ray from (x, y) towards +x with ``segment``.
+
+    Exact for curves: a segment's control hull bounds it, so a hull wholly beside,
+    above or below the ray decides by its end points alone; otherwise subdivide.
+    """
+    (x0, y0), (x1, y1) = segment[0], segment[-1]
+    xs, ys = [p[0] for p in segment], [p[1] for p in segment]
+    straddles = (y0 > y) != (y1 > y)
+    if min(ys) > y or max(ys) <= y or max(xs) <= x:
+        return 0  # wholly above, below or left of the ray
+    if min(xs) > x:
+        return int(straddles)  # wholly right: a continuous curve crosses with end-point parity
+    if len(segment) == 2 or depth >= MAX_DEPTH:
+        return int(straddles and x < x0 + (y - y0) * (x1 - x0) / (y1 - y0))
+    left, right = _split(segment)
+    return _crossings(left, x, y, depth + 1) ^ _crossings(right, x, y, depth + 1)
+
+
+def contains(contour: list[tuple], point: tuple[float, float]) -> bool:
+    """Even-odd ray test against the segments of ``contour`` (see ``segments``)."""
     x, y = point
-    inside = False
-    for (x0, y0), (x1, y1) in zip(polygon, polygon[1:] + polygon[:1]):
-        if (y0 > y) != (y1 > y) and x < x0 + (y - y0) * (x1 - x0) / (y1 - y0):
-            inside = not inside
-    return inside
+    inside = 0
+    for segment in contour:
+        inside ^= _crossings(segment, x, y)
+    return bool(inside)
 
 
-def wants_counter_clockwise(contours: list[list[tuple[float, float]]], index: int) -> bool:
-    """Outer (even nesting depth) contours run counter-clockwise."""
-    probe = contours[index][0]
+def wants_counter_clockwise(contours: list[list[tuple]], index: int) -> bool:
+    """Outer (even nesting depth) contours run counter-clockwise; ``contours`` are
+    segment lists."""
+    probe = contours[index][0][0]
     depth = sum(contains(other, probe) for i, other in enumerate(contours) if i != index)
     return depth % 2 == 0
 
@@ -120,11 +164,12 @@ def run(font_id=None, glyph_names=None, master=None) -> dict:
         if layer is None:
             continue
         contours = [c for c in layer.getContours() if c.closed]
-        shapes = [flatten([(n.x, n.y) for n in c.nodes()], [n.isOn() for n in c.nodes()])
-                  for c in contours]
+        outlines = [([(n.x, n.y) for n in c.nodes()], [n.isOn() for n in c.nodes()])
+                    for c in contours]
+        shapes = [segments(*outline) for outline in outlines]
         touched = False
         for index, contour in enumerate(contours):
-            ccw = signed_area(shapes[index]) > 0
+            ccw = signed_area(flatten(*outlines[index])) > 0
             if ccw != wants_counter_clockwise(shapes, index):
                 contour.reverse()
                 reversed_ += 1

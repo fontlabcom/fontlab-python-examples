@@ -18,15 +18,32 @@ def _pointer(document, value: str):
     return document
 
 
+RECORD_IDS = ("source_id", "id", "qml_id")
+
+
+def _cites(node, subject: str) -> bool:
+    """True when a resolved evidence node is the reviewed file's record.
+
+    A record names the file by ``source_id``, ``id`` or ``qml_id``; a list
+    selector (e.g. a whole file tree) must contain such a record.
+    """
+    if isinstance(node, list):
+        return any(_cites(row, subject) for row in node if isinstance(row, dict))
+    if not isinstance(node, dict):
+        return False
+    return next((node[key] for key in RECORD_IDS if key in node), None) == subject
+
+
 def check_citation(
-    item: dict, files: dict, evidence_root: Path | None, cache: dict
+    subject: str, item: dict, files: dict, evidence_root: Path, cache: dict
 ) -> None:
     """Raise ValueError unless a review citation names a real, matching source or record.
 
     Source citations must equal the catalogue's own record for that id (path,
     repository, hash, URL; optional one-based line range). Evidence citations need a
-    portable path, a hash and a JSON pointer; with ``evidence_root`` the file must
-    exist with that hash and the pointer must resolve.
+    portable path, a hash and a JSON pointer; the file under ``evidence_root`` must
+    exist with that hash, and the pointer must resolve to the record of ``subject``,
+    the reviewed file.
     """
     if "source_id" in item:
         record = files.get(item["source_id"])
@@ -56,8 +73,6 @@ def check_citation(
         raise ValueError(
             f"Review evidence needs a sha256 and a JSON pointer: {item['file']}"
         )
-    if evidence_root is None:
-        return
     path = evidence_root / relative
     if not path.is_file():
         raise ValueError(f"Review evidence file is missing: {item['file']}")
@@ -68,20 +83,26 @@ def check_citation(
     if digest != item["sha256"]:
         raise ValueError(f"Review evidence hash differs: {item['file']}")
     try:
-        _pointer(document, item["pointer"])
+        node = _pointer(document, item["pointer"])
     except (KeyError, IndexError, ValueError, TypeError) as error:
         raise ValueError(
             f"Review evidence pointer does not resolve: {item['pointer']}"
         ) from error
+    if not _cites(node, subject):
+        raise ValueError(
+            f"Review evidence {item['file']}#{item['pointer']} does not cite {subject}"
+        )
 
 
-def apply_reviews(
-    catalog: dict, reviews: dict, evidence_root: Path | None = None
-) -> None:
+def apply_reviews(catalog: dict, reviews: dict, evidence_root: Path | None) -> None:
     """Keep static observations and identities while applying reviewed decisions.
 
-    Every citation is checked (``check_citation``) before any record changes.
+    ``evidence_root`` (the workspace evidence directory) is required: every citation
+    is checked against it (``check_citation``) before any record changes.
     """
+    if evidence_root is None or not Path(evidence_root).is_dir():
+        raise ValueError(f"Reviews need an existing evidence root: {evidence_root}")
+    evidence_root = Path(evidence_root)
     files = {row["id"]: row for row in catalog["files"]}
     examples = {row["id"]: row for row in catalog["examples"]}
     cache: dict = {}
@@ -94,7 +115,7 @@ def apply_reviews(
             ):
                 raise ValueError(f"Review needs reasoning and evidence: {source_id}")
             for item in review["evidence"]:
-                check_citation(item, files, evidence_root, cache)
+                check_citation(source_id, item, files, evidence_root, cache)
     for source_id, review in reviews["classifications"].items():
         file, example = files[source_id], examples[source_id]
         if file["sha256"] != review["source_sha256"]:

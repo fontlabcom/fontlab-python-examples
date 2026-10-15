@@ -119,7 +119,7 @@ def test_contour_direction_when_nested_then_outer_ccw_counter_cw():
     counter = [(100, 100), (100, 600), (400, 600), (400, 100)]
     island = [(200, 200), (300, 200), (300, 300), (200, 300)]
     assert recipe.signed_area(outer) > 0 > recipe.signed_area(counter)
-    shapes = [outer, counter, island]
+    shapes = [recipe.segments(s, [True] * 4) for s in (outer, counter, island)]
     assert [recipe.wants_counter_clockwise(shapes, i) for i in range(3)] == [
         True,
         False,
@@ -238,11 +238,39 @@ def test_contour_direction_when_curved_then_nesting_uses_the_curve_not_its_handl
     hump_points = [(0, 0), (0, 1000), (1000, 1000), (1000, 0)]
     hump = recipe.flatten(hump_points, [True, False, False, True])
     assert max(y for _, y in hump) == pytest.approx(750, abs=1)
+    curve = recipe.segments(hump_points, [True, False, False, True])
     island = [(450, 800), (550, 800), (550, 900), (450, 900)]  # inside the handles only
-    shapes = [hump, recipe.flatten(island, [True] * 4)]
+    shapes = [curve, recipe.segments(island, [True] * 4)]
     assert recipe.wants_counter_clockwise(shapes, 1) is True, "outside the curve: an outer contour"
-    inner = [(450, 300), (550, 300), (550, 400), (450, 400)]
-    assert recipe.wants_counter_clockwise([hump, inner], 1) is False, "inside the curve: a counter"
+    inner = recipe.segments([(450, 300), (550, 300), (550, 400), (450, 400)], [True] * 4)
+    assert recipe.wants_counter_clockwise([curve, inner], 1) is False, "inside the curve: a counter"
+
+
+@pytest.mark.parametrize(
+    ("corner", "inside"),
+    [
+        ((4, 90), True),  # reviewer's case: between the curve and any 16-step chord
+        ((1, 20), True),
+        ((0.5, -1), False),  # below the base line
+        ((10, 760), False),  # above the curve's peak
+        ((995, 90), True),
+    ],
+)
+def test_contour_direction_when_point_hugs_the_curve_then_containment_is_exact(corner, inside):
+    recipe = load("contour_direction")
+    curve = recipe.segments([(0, 0), (0, 1000), (1000, 1000), (1000, 0)], [True, False, False, True])
+    x, y = corner
+    box = recipe.segments([(x, y), (x + 1, y), (x + 1, y + 1), (x, y + 1)], [True] * 4)
+    assert recipe.contains(curve, (x, y)) is inside
+    assert recipe.wants_counter_clockwise([curve, box], 1) is (not inside)
+
+
+def test_contour_direction_contains_when_quadratic_circle_then_exact():
+    recipe = load("contour_direction")
+    # TrueType all-off-curve square of handles: the curve stays inside the handles.
+    circle = recipe.segments([(0, 50), (50, 100), (100, 50), (50, 0)], [False] * 4)
+    assert recipe.contains(circle, (50, 50)) is True
+    assert recipe.contains(circle, (2, 50)) is False  # inside handles, outside the curve
 
 
 def test_contour_direction_flatten_when_quadratic_runs_then_implied_on_curve_points():

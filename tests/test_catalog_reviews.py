@@ -17,6 +17,14 @@ from catalog_reviews import apply_reviews
 SOURCES = json.loads((ROOT / "catalog/sources.json").read_text())
 PORTS = json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
 FILES = {row["id"]: row for row in SOURCES["files"]}
+EVIDENCE = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+
+
+def evidence_root():
+    """Reviews are applied only against the workspace evidence they cite."""
+    if not EVIDENCE.is_dir():
+        pytest.skip("workspace evidence unavailable")
+    return EVIDENCE
 
 
 def pointer(document, value):
@@ -214,15 +222,15 @@ def test_reviews_when_source_hash_changes_then_reject_stale_decision(section):
     first = next(iter(reviews[section]))
     reviews[section][first]["source_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="review hash mismatch"):
-        apply_reviews(catalog, reviews)
+        apply_reviews(catalog, reviews, evidence_root())
 
 
 def test_reviews_when_applied_twice_then_static_evidence_and_output_are_identical():
     catalog = deepcopy(SOURCES)
     reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
-    apply_reviews(catalog, reviews)
+    apply_reviews(catalog, reviews, evidence_root())
     first = deepcopy(catalog)
-    apply_reviews(catalog, reviews)
+    apply_reviews(catalog, reviews, evidence_root())
     assert catalog == first == SOURCES, (
         "Reapplying reviews must preserve raw observations"
     )
@@ -233,7 +241,7 @@ def test_reviews_when_no_decisions_then_ambiguity_is_preserved():
     for row in catalog["examples"]:
         if "static_classification" in row:
             row["classification"] = row["static_classification"]
-    apply_reviews(catalog, {"classifications": {}, "ownership": {}})
+    apply_reviews(catalog, {"classifications": {}, "ownership": {}}, evidence_root())
     assert catalog["counts"]["ambiguous_candidates"] == 17, (
         "An empty review must not resolve a candidate without evidence"
     )
@@ -245,7 +253,7 @@ def test_reviews_when_evidence_or_reasoning_missing_then_no_state_is_changed(fie
     reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
     next(iter(reviews["classifications"].values())).pop(field)
     with pytest.raises(ValueError, match="Review needs reasoning and evidence"):
-        apply_reviews(catalog, reviews)
+        apply_reviews(catalog, reviews, evidence_root())
     assert catalog == SOURCES, (
         "Reject unsupported review claims before changing records"
     )
@@ -297,6 +305,8 @@ def _first_with(reviews, kind):
         ("root", {"sha256": "f" * 64}, "evidence hash"),
         ("root", {"pointer": "/rows/999999"}, "pointer"),
         ("root", {"file": "../outside.json"}, "portable"),
+        ("root", {"pointer": "/scope"}, "does not cite"),
+        ("root", {"pointer": "/rows/1"}, "does not cite"),
     ],
 )
 def test_reviews_when_citation_forged_then_rejected_before_any_change(
@@ -305,13 +315,19 @@ def test_reviews_when_citation_forged_then_rejected_before_any_change(
     catalog = deepcopy(SOURCES)
     reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
     _first_with(reviews, kind).update(change)
-    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
-    if kind == "root" and not external.is_dir() and message != "portable":
-        pytest.skip("workspace evidence unavailable")
+    root = evidence_root()
     with pytest.raises(ValueError, match=message):
-        apply_reviews(
-            catalog, reviews, evidence_root=external if external.is_dir() else None
-        )
+        apply_reviews(catalog, reviews, evidence_root=root)
+    assert catalog == SOURCES
+
+
+@pytest.mark.parametrize("root", [None, Path("/nonexistent-evidence-root")])
+def test_reviews_when_evidence_root_missing_then_refused_before_any_change(root):
+    catalog = deepcopy(SOURCES)
+    reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
+    _first_with(reviews, "root").update(file="does-not-exist.json", sha256="f" * 64)
+    with pytest.raises(ValueError, match="evidence root"):
+        apply_reviews(catalog, reviews, evidence_root=root)
     assert catalog == SOURCES
 
 
