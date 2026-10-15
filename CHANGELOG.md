@@ -23,6 +23,19 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Native acceptance of all 187 clean-room records in FontLab 9.0.9783
+  (127 implemented pass launch/inspect/close with clean owned teardown, 60 blocked
+  raise their reason without host access), recorded by the new
+  `tools/record_native.py` (validates every entry against its evidence and the
+  current port files; refuses stale proposals). 148 implemented records now carry
+  native passes. Five mainwindows ports pass `QKeySequence` to `setShortcut`.
+  `tools/native_cleanroom.py`: `--fontlabapp-src`, `--reset-stale`, a session
+  reset after any unclean port, transport-safe descriptor checks, robust owned-object
+  traversal, and a resolvable `fontlab-remopy` source. Interactions (workspace
+  evidence): 106 passed, 21 skipped by reason.
+- 2026-10-15: Add nine FontLab 9 recipes in `examples/recipes` with native drivers
+  and `tests/test_recipes.py` (TypeRig- and Glyphs-inspired, reimplemented).
+
 - 2026-10-15: Integrate all 187 independent clean-room receipts (127 implemented,
   60 blocked) with reviewed Apache-2.0 replacement grants and spec hashes. Preserve
   immutable original provenance and archived resource metadata; regenerate source

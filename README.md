@@ -10,9 +10,9 @@ upstream inventory and explicit implementation states. Start at the
 
 | Current port state | Records |
 | --- | ---: |
-| Implemented, with recorded native launch/inspect/close | 21 |
+| Implemented, with recorded native launch/inspect/close | 148 |
+| of which independent clean-room implementations | 127 |
 | Blocked by recorded host capabilities | 151 |
-| Independent clean-room implementations, native unexecuted | 127 |
 | Total | 299 |
 
 The original insight examples in [ports/insights](ports/insights) are a separate
@@ -26,8 +26,16 @@ the private `fontlabcom/fontlab-python-examples-reference` repository, commit
 metadata and [187 behavioural specifications](clean-room-specs/INDEX.json).
 All 187 receipts are integrated: **127 implemented, 60 blocked**. The replacements
 and their newly authored resources use Apache-2.0; the catalogue records the spec
-hash and review basis. All replacement native acceptance remains **unexecuted**.
-The 21 previously accepted non-official ports retain their recorded acceptance.
+hash and review basis. **All 187 pass native acceptance in FontLab 9.0.9783**: the
+127 implementations launch, show a populated window and close with every owned
+object, timer and window gone; the 60 blocked records raise their recorded
+capability reason without touching the host. Two independent runs agree (workspace
+evidence `examples-cleanroom/final*` and `examples-cleanroom/controller/`).
+Interactions: 106 implementations had every state control changed and read back
+without a slot error, then were closed and relaunched; 21 whose specs need files,
+network, printing, the clipboard or the tray were skipped by reason
+(`examples-cleanroom/interactions-final.jsonl`). The 21 earlier non-official ports
+retain their recorded acceptance.
 
 Each record preserves its original source repository, revision, path, byte counts,
 hashes, upstream URL, archive and spec pointers. These identify archived inputs;
@@ -39,7 +47,7 @@ removed implementations remain historical, as described in the
 ## Launch an available example
 
 Put this checkout on FontLab's Python path and install `fontlab-fontlabapp` in its
-interpreter. Use FontLab's existing PythonQt and QApplication; do not load a
+interpreter (or, for the native driver, keep a sibling `fontlab-fontlabapp` checkout). Use FontLab's existing PythonQt and QApplication; do not load a
 second Qt binding or run another application event loop.
 
 ```python
@@ -56,6 +64,17 @@ The four introductory examples are QLabel, QVBoxLayout, Signals and Slots, and
 Qt Designer. Further implemented numbered examples and QtExamples entries are
 listed in the catalogue. `examples/remopy.py` provides an external controller.
 The [numbered-example checks](docs/second-numbered-batch.md) describe their scope.
+
+## Recipes for everyday glyph work
+
+[examples/recipes](examples/recipes/README.md) holds nine small FontLab 9 scripts,
+each checked natively on a font it creates and throws away: layer backup,
+coordinate rounding, contour direction and start points, anchors from bounds,
+sidebearings from a reference glyph, kerning pairs from text, Tools > Actions on
+named glyphs (via fontlab-fontlabapp), and two unchanged Glyphs scripts run through
+fontlab-glyport. They are written from scratch (Apache-2.0); TypeRig and Glyphs
+scripts were consulted for tool names and behaviour only. Host-free tests:
+`tests/test_recipes.py`.
 
 ## Inventory and provenance
 
@@ -96,17 +115,27 @@ independent batches exercise replacement behavior; obsolete assertions about
 removed fixtures and Python implementation details have been replaced. Shared
 helpers, binding regressions and unchanged non-official ports remain covered.
 
-Run the native acceptance driver separately, against an owned FontLab session
-with Fontlabapp installed in its interpreter:
+Run the native acceptance driver separately, in a FontLab session without open
+documents, from the workspace root (it resolves `fontlab-remopy` from the sibling
+checkout and imports `fontlab-fontlabapp` from `../fontlab-fontlabapp/src` when
+FontLab has it not installed):
 
 ```sh
-uv run --python 3.11 tools/native_cleanroom.py --batch-size 8 \
-  --output /private/tmp/fontlab-cleanroom-native.jsonl
-# Optional selection (space- or comma-separated IDs):
-uv run --python 3.11 tools/native_cleanroom.py \
-  --ids 035f3fbd2b81479a 960c701fa6221ac5 --batch-size 2 \
-  --output /private/tmp/fontlab-cleanroom-selected.jsonl
+verification/issue-104/fl-native.sh --lane L6c -- bash -c "cd fontlab-python-examples && \
+  uv run --python 3.11 tools/native_cleanroom.py --batch-size 8 --output OUT.jsonl"
+# --ids ID ... selects ports; --reset-stale first clears sessions an interrupted run left.
 ```
+
+Review the JSONL, write a proposal (port id -> evidence file and file hashes; see
+`tools/record_native.py`), then record it. The tool refuses stale or mismatched
+entries and writes nothing in that case:
+
+```sh
+python3 tools/record_native.py PROPOSAL.json --commit <examples commit of the run>
+```
+
+`tools/integrate_cleanroom.py` resets replacement acceptance; run `record_native.py`
+again after it.
 
 Batches reuse client connections; every host phase is a separate call with a
 3.5-second host budget and a four-second transport deadline. The driver purges

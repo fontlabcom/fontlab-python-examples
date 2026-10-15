@@ -6,7 +6,7 @@ this_file: catalog/INDEX.md
 
 1,569 original files; 465 Python source files. Port records: 151 blocked, 148 implemented.
 
-Static candidates retain their identities. Reviewed classifications and shared ownership are recorded per file in [sources.json](sources.json) and [reviews.json](reviews.json). Runtime acceptance is recorded separately in [ports.json](ports.json). Targets remain planned paths. Official originals remain archived. Independent replacements and capability blockers are bound to [specifications](../clean-room-specs/INDEX.json) by [receipts](../clean-room/receipts/). Archived resources are not re-licensed as replacements. Native launch/inspect/close passes: 21; independent replacements await new native acceptance.
+Static candidates retain their identities. Reviewed classifications and shared ownership are recorded per file in [sources.json](sources.json) and [reviews.json](reviews.json). Runtime acceptance is recorded separately in [ports.json](ports.json). Targets remain planned paths. Official originals remain archived. Independent replacements and capability blockers are bound to [specifications](../clean-room-specs/INDEX.json) by [receipts](../clean-room/receipts/). Archived resources are not re-licensed as replacements. Native launch/inspect/close passes: 148 (every implemented port; recorded by tools/record_native.py).
 
 | Collection | Revision | Files | Python |
 | --- | --- | ---: | ---: |

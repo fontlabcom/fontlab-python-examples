@@ -23,17 +23,12 @@ Remaining work:
    from directory association or a source-code grant. The nine styleexample
    resources retain the GPL collection notice without an individual grant claim.
   Official-demo records and licence notes have since moved under D7 below.
-2. **Native acceptance of clean-room replacements (D7).** All 187 independent
-   receipts are merged: 127 implemented and 60 blocked, with reviewed Apache-2.0
-   replacement grants, spec hashes and retained archive/provenance fields.
-   Overall: 299 records, 148 implemented, 151 blocked, zero clean-room pending;
-   only the 21 unchanged non-official implementations retain native passes.
-   Run `tools/native_cleanroom.py` next, review its JSONL and summary, and record
-   new native outcomes independently of historical evidence. Its offline phase,
-   cleanup, selection and failure-path tests do not establish a native pass.
-3. **Interactions.** Script native interactions for the remaining ports where it
-   does not touch user state (drag/drop inside owned widgets, mouse/key-only and
-   visual checks).
+2. **Interactions beyond state controls.** 22 clean-room implementations are
+   paint, mouse or drag driven or button-only (clocks, drawings, drag and drop,
+   calculator, tetrix...): their checks cover launch/inspect/close/relaunch only.
+   Script owned mouse/key interactions for them where no user state is touched.
+3. **Recipes.** Optionally exercise the recipes' Scripts-menu route natively (the
+   checks call `run()`), and Glyphs-side runs of the two Glyphs scripts.
 4. **Docs.** Integrate the categorized examples with exact status into the rebuilt
    fontlab-python-docs site.
 

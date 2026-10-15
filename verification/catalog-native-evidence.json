@@ -9,15 +9,13 @@
         "source_id": "035f3fbd2b81479a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "035f3fbd2b81479a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "035f3fbd2b81479a",
@@ -27,15 +25,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 1,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "3f5f77c0358d9fef": {
@@ -44,15 +44,13 @@
         "source_id": "3f5f77c0358d9fef",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "3f5f77c0358d9fef",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "3f5f77c0358d9fef",
@@ -62,15 +60,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 2,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a1c26dbf9f995edb": {
@@ -79,15 +79,13 @@
         "source_id": "a1c26dbf9f995edb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "a1c26dbf9f995edb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "a1c26dbf9f995edb",
@@ -97,15 +95,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 3,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "63f2eeefd052f701": {
@@ -114,15 +114,13 @@
         "source_id": "63f2eeefd052f701",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "63f2eeefd052f701",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "63f2eeefd052f701",
@@ -132,15 +130,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 4,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "e1a0a829f8f2e311": {
@@ -149,15 +149,13 @@
         "source_id": "e1a0a829f8f2e311",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "e1a0a829f8f2e311",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "e1a0a829f8f2e311",
@@ -167,15 +165,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 5,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "dab5fd4c94ec518d": {
@@ -184,15 +184,13 @@
         "source_id": "dab5fd4c94ec518d",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "dab5fd4c94ec518d",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "dab5fd4c94ec518d",
@@ -202,15 +200,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 6,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c0d4a173b261a3e5": {
@@ -219,15 +219,13 @@
         "source_id": "c0d4a173b261a3e5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c0d4a173b261a3e5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c0d4a173b261a3e5",
@@ -237,15 +235,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 7,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "2f94fe07de765888": {
@@ -254,15 +254,13 @@
         "source_id": "2f94fe07de765888",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "2f94fe07de765888",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "2f94fe07de765888",
@@ -272,15 +270,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 8,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "f48955d43ed6196c": {
@@ -289,15 +289,13 @@
         "source_id": "f48955d43ed6196c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "f48955d43ed6196c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "f48955d43ed6196c",
@@ -307,15 +305,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 9,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "675c9f79650d7507": {
@@ -324,15 +324,13 @@
         "source_id": "675c9f79650d7507",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "675c9f79650d7507",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "675c9f79650d7507",
@@ -342,15 +340,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 10,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "7da7020aa7e2732b": {
@@ -377,15 +377,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 11,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1415facde30a25cf": {
@@ -412,15 +414,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 12,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "eba98690c141a070": {
@@ -447,15 +451,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 13,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "907f39d8bf387501": {
@@ -464,15 +470,13 @@
         "source_id": "907f39d8bf387501",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "907f39d8bf387501",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "907f39d8bf387501",
@@ -482,15 +486,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 14,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "19571722ed96aa9c": {
@@ -499,15 +505,13 @@
         "source_id": "19571722ed96aa9c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "19571722ed96aa9c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "19571722ed96aa9c",
@@ -517,15 +521,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 15,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "10ef4dacb4db4080": {
@@ -534,15 +540,13 @@
         "source_id": "10ef4dacb4db4080",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "10ef4dacb4db4080",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "10ef4dacb4db4080",
@@ -552,15 +556,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 16,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "eca1cd9ef1528607": {
@@ -569,15 +575,13 @@
         "source_id": "eca1cd9ef1528607",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "eca1cd9ef1528607",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "eca1cd9ef1528607",
@@ -587,15 +591,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 17,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "626fd0acec74fd91": {
@@ -604,15 +610,13 @@
         "source_id": "626fd0acec74fd91",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "626fd0acec74fd91",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "626fd0acec74fd91",
@@ -622,15 +626,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 18,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "9e41e71c41b116a8": {
@@ -639,15 +645,13 @@
         "source_id": "9e41e71c41b116a8",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "9e41e71c41b116a8",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "9e41e71c41b116a8",
@@ -657,15 +661,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 19,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "505d60a757bbc177": {
@@ -674,15 +680,13 @@
         "source_id": "505d60a757bbc177",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "505d60a757bbc177",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "505d60a757bbc177",
@@ -692,15 +696,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 20,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a3b3cbe51c1506c6": {
@@ -727,15 +733,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 21,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "876eab33b6a99e31": {
@@ -744,15 +752,13 @@
         "source_id": "876eab33b6a99e31",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "876eab33b6a99e31",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "876eab33b6a99e31",
@@ -762,15 +768,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 22,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "e62ce3eb648cfb4c": {
@@ -779,15 +787,13 @@
         "source_id": "e62ce3eb648cfb4c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "e62ce3eb648cfb4c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "e62ce3eb648cfb4c",
@@ -797,15 +803,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 23,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "5781fa4ba55c884f": {
@@ -814,15 +822,13 @@
         "source_id": "5781fa4ba55c884f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "5781fa4ba55c884f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "5781fa4ba55c884f",
@@ -832,15 +838,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 24,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "700e96dec485e7a8": {
@@ -849,15 +857,13 @@
         "source_id": "700e96dec485e7a8",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "700e96dec485e7a8",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "700e96dec485e7a8",
@@ -867,15 +873,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 25,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "da76600eaea7a121": {
@@ -884,15 +892,13 @@
         "source_id": "da76600eaea7a121",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "da76600eaea7a121",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "da76600eaea7a121",
@@ -902,15 +908,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 26,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c5b4e385cc921da4": {
@@ -919,15 +927,13 @@
         "source_id": "c5b4e385cc921da4",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c5b4e385cc921da4",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c5b4e385cc921da4",
@@ -937,15 +943,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 27,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b823a76f79197d84": {
@@ -954,15 +962,13 @@
         "source_id": "b823a76f79197d84",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b823a76f79197d84",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b823a76f79197d84",
@@ -972,15 +978,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 28,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "306c12d5cc1db46c": {
@@ -989,15 +997,13 @@
         "source_id": "306c12d5cc1db46c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "306c12d5cc1db46c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "306c12d5cc1db46c",
@@ -1007,15 +1013,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 29,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "227efef76ed4ac74": {
@@ -1024,15 +1032,13 @@
         "source_id": "227efef76ed4ac74",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "227efef76ed4ac74",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "227efef76ed4ac74",
@@ -1042,15 +1048,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 30,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c98ae8ac71886586": {
@@ -1059,15 +1067,13 @@
         "source_id": "c98ae8ac71886586",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c98ae8ac71886586",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c98ae8ac71886586",
@@ -1077,15 +1083,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 31,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "090c76a87351e771": {
@@ -1094,15 +1102,13 @@
         "source_id": "090c76a87351e771",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "090c76a87351e771",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "090c76a87351e771",
@@ -1112,15 +1118,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 32,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "878fe9f714df3b5e": {
@@ -1129,15 +1137,13 @@
         "source_id": "878fe9f714df3b5e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "878fe9f714df3b5e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "878fe9f714df3b5e",
@@ -1147,15 +1153,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 33,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "321f8e535facafde": {
@@ -1164,15 +1172,13 @@
         "source_id": "321f8e535facafde",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "321f8e535facafde",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "321f8e535facafde",
@@ -1182,15 +1188,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 34,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "e1f313d96e43adff": {
@@ -1199,15 +1207,13 @@
         "source_id": "e1f313d96e43adff",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "e1f313d96e43adff",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "e1f313d96e43adff",
@@ -1217,15 +1223,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 35,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "55bcde890cd77ed7": {
@@ -1252,15 +1260,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 36,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "f4d9e2927469223c": {
@@ -1287,15 +1297,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 37,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "4d19e62d93dd761c": {
@@ -1322,15 +1334,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 38,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "94ab271d023d1ca3": {
@@ -1357,15 +1371,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 39,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "2719ebb336f3a29e": {
@@ -1392,15 +1408,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
+        "file": "examples-cleanroom/final01.jsonl",
+        "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
         "line": 40,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "bb1c114d38fb756a": {
@@ -1427,15 +1445,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 41,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 1,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "0578c17977b471f1": {
@@ -1444,15 +1464,13 @@
         "source_id": "0578c17977b471f1",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "0578c17977b471f1",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "0578c17977b471f1",
@@ -1462,15 +1480,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 42,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 2,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "0788354954c8e613": {
@@ -1479,15 +1499,13 @@
         "source_id": "0788354954c8e613",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "0788354954c8e613",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "0788354954c8e613",
@@ -1497,15 +1515,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 43,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 3,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1ca857d797199ecf": {
@@ -1514,15 +1534,13 @@
         "source_id": "1ca857d797199ecf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "1ca857d797199ecf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "1ca857d797199ecf",
@@ -1532,15 +1550,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 44,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 4,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1cf57c0f2ac8880a": {
@@ -1549,15 +1569,13 @@
         "source_id": "1cf57c0f2ac8880a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "1cf57c0f2ac8880a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "1cf57c0f2ac8880a",
@@ -1567,15 +1585,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 45,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 5,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "243ae486f9528e8c": {
@@ -1584,15 +1604,13 @@
         "source_id": "243ae486f9528e8c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "243ae486f9528e8c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "243ae486f9528e8c",
@@ -1602,15 +1620,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 46,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 6,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "27709a02d37b9ba9": {
@@ -1619,15 +1639,13 @@
         "source_id": "27709a02d37b9ba9",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "27709a02d37b9ba9",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "27709a02d37b9ba9",
@@ -1637,15 +1655,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 47,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 7,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "29f6a7d0a3bb6813": {
@@ -1654,15 +1674,13 @@
         "source_id": "29f6a7d0a3bb6813",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "29f6a7d0a3bb6813",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "29f6a7d0a3bb6813",
@@ -1672,15 +1690,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 48,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 8,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "2cd6ffc2b2ed65bb": {
@@ -1689,15 +1709,13 @@
         "source_id": "2cd6ffc2b2ed65bb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "2cd6ffc2b2ed65bb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "2cd6ffc2b2ed65bb",
@@ -1707,15 +1725,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 49,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 9,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "65d15d1fbc1b15e9": {
@@ -1724,15 +1744,13 @@
         "source_id": "65d15d1fbc1b15e9",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "65d15d1fbc1b15e9",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "65d15d1fbc1b15e9",
@@ -1742,15 +1760,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 50,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 10,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b7283d74afb78218": {
@@ -1759,15 +1779,13 @@
         "source_id": "b7283d74afb78218",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b7283d74afb78218",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b7283d74afb78218",
@@ -1777,15 +1795,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 51,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 11,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b95b687bbc541207": {
@@ -1794,15 +1814,13 @@
         "source_id": "b95b687bbc541207",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b95b687bbc541207",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b95b687bbc541207",
@@ -1812,15 +1830,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 52,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 12,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "bd6c8feb783ba845": {
@@ -1829,15 +1849,13 @@
         "source_id": "bd6c8feb783ba845",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "bd6c8feb783ba845",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "bd6c8feb783ba845",
@@ -1847,15 +1865,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 53,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 13,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c1b878b63f80e733": {
@@ -1864,15 +1884,13 @@
         "source_id": "c1b878b63f80e733",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c1b878b63f80e733",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c1b878b63f80e733",
@@ -1882,15 +1900,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 54,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 14,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "de30d23621025fe6": {
@@ -1899,15 +1919,13 @@
         "source_id": "de30d23621025fe6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "de30d23621025fe6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "de30d23621025fe6",
@@ -1917,15 +1935,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 55,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 15,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "fcfaf9667206bbd6": {
@@ -1934,15 +1954,13 @@
         "source_id": "fcfaf9667206bbd6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "fcfaf9667206bbd6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "fcfaf9667206bbd6",
@@ -1952,15 +1970,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 56,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 17,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "4efac54bae01fc62": {
@@ -1987,15 +2007,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 57,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 18,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "60d40ce5671653cf": {
@@ -2004,15 +2026,13 @@
         "source_id": "60d40ce5671653cf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "60d40ce5671653cf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "60d40ce5671653cf",
@@ -2022,15 +2042,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 58,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 19,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "09afeea11be83f4f": {
@@ -2057,15 +2079,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 59,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 20,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "2d36e0fe43f5d49a": {
@@ -2074,15 +2098,13 @@
         "source_id": "2d36e0fe43f5d49a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "2d36e0fe43f5d49a",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "2d36e0fe43f5d49a",
@@ -2092,15 +2114,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 60,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 21,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "912e5c751b20ce97": {
@@ -2109,15 +2133,13 @@
         "source_id": "912e5c751b20ce97",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "912e5c751b20ce97",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "912e5c751b20ce97",
@@ -2127,15 +2149,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 61,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 22,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "13a6bb9a9d2b9037": {
@@ -2144,15 +2168,13 @@
         "source_id": "13a6bb9a9d2b9037",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "13a6bb9a9d2b9037",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "13a6bb9a9d2b9037",
@@ -2162,15 +2184,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 62,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 23,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b2d717e4d43806d2": {
@@ -2179,15 +2203,13 @@
         "source_id": "b2d717e4d43806d2",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b2d717e4d43806d2",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b2d717e4d43806d2",
@@ -2197,15 +2219,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 63,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 24,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c12a2071adbab88b": {
@@ -2214,15 +2238,13 @@
         "source_id": "c12a2071adbab88b",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c12a2071adbab88b",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c12a2071adbab88b",
@@ -2232,15 +2254,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 64,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 25,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c56cf1699b07b350": {
@@ -2249,15 +2273,13 @@
         "source_id": "c56cf1699b07b350",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c56cf1699b07b350",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c56cf1699b07b350",
@@ -2267,15 +2289,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 65,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 26,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c997677a2bdb4f34": {
@@ -2284,15 +2308,13 @@
         "source_id": "c997677a2bdb4f34",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c997677a2bdb4f34",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c997677a2bdb4f34",
@@ -2302,15 +2324,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 66,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 27,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "428c50abcef7adfe": {
@@ -2319,15 +2343,13 @@
         "source_id": "428c50abcef7adfe",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "428c50abcef7adfe",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "428c50abcef7adfe",
@@ -2337,15 +2359,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 67,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 28,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b34b2f696a977e74": {
@@ -2354,15 +2378,13 @@
         "source_id": "b34b2f696a977e74",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b34b2f696a977e74",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b34b2f696a977e74",
@@ -2372,15 +2394,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 68,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 29,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "d6dc56a5318ffe71": {
@@ -2389,15 +2413,13 @@
         "source_id": "d6dc56a5318ffe71",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "d6dc56a5318ffe71",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "d6dc56a5318ffe71",
@@ -2407,15 +2429,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 69,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 31,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "356e4e807f1e789f": {
@@ -2424,15 +2448,13 @@
         "source_id": "356e4e807f1e789f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "356e4e807f1e789f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "356e4e807f1e789f",
@@ -2442,15 +2464,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 70,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 32,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b91effc45f81fbb0": {
@@ -2459,15 +2483,13 @@
         "source_id": "b91effc45f81fbb0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b91effc45f81fbb0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b91effc45f81fbb0",
@@ -2477,15 +2499,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 71,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 33,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "499e965d86347920": {
@@ -2494,15 +2518,13 @@
         "source_id": "499e965d86347920",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "499e965d86347920",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "499e965d86347920",
@@ -2512,15 +2534,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 72,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 34,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "3040b9f6b267a196": {
@@ -2529,15 +2553,13 @@
         "source_id": "3040b9f6b267a196",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "3040b9f6b267a196",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "3040b9f6b267a196",
@@ -2547,15 +2569,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 73,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 35,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "f702b62aa47629ad": {
@@ -2564,15 +2588,13 @@
         "source_id": "f702b62aa47629ad",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "f702b62aa47629ad",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "f702b62aa47629ad",
@@ -2582,15 +2604,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 74,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 36,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "16456ba02f4b79cc": {
@@ -2599,15 +2623,13 @@
         "source_id": "16456ba02f4b79cc",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "16456ba02f4b79cc",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "16456ba02f4b79cc",
@@ -2617,15 +2639,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 75,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 37,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "84cb59e07adfae2c": {
@@ -2634,15 +2658,13 @@
         "source_id": "84cb59e07adfae2c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "84cb59e07adfae2c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "84cb59e07adfae2c",
@@ -2652,15 +2674,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 76,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 38,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "8e5aa13798c2763c": {
@@ -2669,15 +2693,13 @@
         "source_id": "8e5aa13798c2763c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "8e5aa13798c2763c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "8e5aa13798c2763c",
@@ -2687,15 +2709,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 77,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 39,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "248e64416b9b218c": {
@@ -2704,15 +2728,13 @@
         "source_id": "248e64416b9b218c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "248e64416b9b218c",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "248e64416b9b218c",
@@ -2722,15 +2744,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 78,
+        "file": "examples-cleanroom/final02.jsonl",
+        "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+        "line": 40,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "36805750b888fba6": {
@@ -2739,15 +2763,13 @@
         "source_id": "36805750b888fba6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "36805750b888fba6",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "36805750b888fba6",
@@ -2757,15 +2779,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 79,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 1,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "468179092748a72e": {
@@ -2774,15 +2798,13 @@
         "source_id": "468179092748a72e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "468179092748a72e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "468179092748a72e",
@@ -2792,15 +2814,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 80,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 2,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "9e21c6536fda7a23": {
@@ -2809,15 +2833,13 @@
         "source_id": "9e21c6536fda7a23",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "9e21c6536fda7a23",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "9e21c6536fda7a23",
@@ -2827,15 +2849,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 81,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 3,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "e63bffc17abf2fde": {
@@ -2844,15 +2868,13 @@
         "source_id": "e63bffc17abf2fde",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "e63bffc17abf2fde",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "e63bffc17abf2fde",
@@ -2862,15 +2884,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 82,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 4,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "509e781f1267967f": {
@@ -2879,15 +2903,13 @@
         "source_id": "509e781f1267967f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "509e781f1267967f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "509e781f1267967f",
@@ -2897,15 +2919,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 83,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 5,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "136c45cc9f97c218": {
@@ -2914,15 +2938,13 @@
         "source_id": "136c45cc9f97c218",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "136c45cc9f97c218",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "136c45cc9f97c218",
@@ -2932,15 +2954,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 84,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 6,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "43c6c2f6f5f036d3": {
@@ -2949,15 +2973,13 @@
         "source_id": "43c6c2f6f5f036d3",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "43c6c2f6f5f036d3",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "43c6c2f6f5f036d3",
@@ -2967,15 +2989,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 85,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 7,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "fa6823667fdb918f": {
@@ -2984,15 +3008,13 @@
         "source_id": "fa6823667fdb918f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "fa6823667fdb918f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "fa6823667fdb918f",
@@ -3002,15 +3024,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 86,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 8,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a96a7978c0b9f6ee": {
@@ -3019,15 +3043,13 @@
         "source_id": "a96a7978c0b9f6ee",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "a96a7978c0b9f6ee",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "a96a7978c0b9f6ee",
@@ -3037,15 +3059,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 87,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 9,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "fff97a435b73d548": {
@@ -3054,15 +3078,13 @@
         "source_id": "fff97a435b73d548",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "fff97a435b73d548",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "fff97a435b73d548",
@@ -3072,15 +3094,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 88,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 10,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a58650b5461c0f48": {
@@ -3089,15 +3113,13 @@
         "source_id": "a58650b5461c0f48",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "a58650b5461c0f48",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "a58650b5461c0f48",
@@ -3107,15 +3129,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 89,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 11,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "9dab02b61cebbdb7": {
@@ -3124,15 +3148,13 @@
         "source_id": "9dab02b61cebbdb7",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "9dab02b61cebbdb7",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "9dab02b61cebbdb7",
@@ -3142,15 +3164,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 90,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 12,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "0a3b15766909bdc3": {
@@ -3159,15 +3183,13 @@
         "source_id": "0a3b15766909bdc3",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "0a3b15766909bdc3",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "0a3b15766909bdc3",
@@ -3177,15 +3199,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 91,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 13,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "cc95f9719b8e4eda": {
@@ -3194,15 +3218,13 @@
         "source_id": "cc95f9719b8e4eda",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "cc95f9719b8e4eda",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "cc95f9719b8e4eda",
@@ -3212,15 +3234,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 92,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 14,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "029ea0dabe87ae57": {
@@ -3229,15 +3253,13 @@
         "source_id": "029ea0dabe87ae57",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "029ea0dabe87ae57",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "029ea0dabe87ae57",
@@ -3247,15 +3269,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 93,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 15,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "4b8851287931abd0": {
@@ -3264,15 +3288,13 @@
         "source_id": "4b8851287931abd0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "4b8851287931abd0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "4b8851287931abd0",
@@ -3282,15 +3304,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 94,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 16,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "67170c89593ad35e": {
@@ -3299,15 +3323,13 @@
         "source_id": "67170c89593ad35e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "67170c89593ad35e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "67170c89593ad35e",
@@ -3317,15 +3339,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 95,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 17,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "d50ad6638357e669": {
@@ -3334,15 +3358,13 @@
         "source_id": "d50ad6638357e669",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "d50ad6638357e669",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "d50ad6638357e669",
@@ -3352,15 +3374,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 96,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 18,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a59dae9770bfbefb": {
@@ -3369,15 +3393,13 @@
         "source_id": "a59dae9770bfbefb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "a59dae9770bfbefb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "a59dae9770bfbefb",
@@ -3387,15 +3409,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 97,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 19,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "39de33366209402d": {
@@ -3404,15 +3428,13 @@
         "source_id": "39de33366209402d",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "39de33366209402d",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "39de33366209402d",
@@ -3422,15 +3444,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 98,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 20,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "ddb20b1b68b18a91": {
@@ -3439,15 +3463,13 @@
         "source_id": "ddb20b1b68b18a91",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "ddb20b1b68b18a91",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "ddb20b1b68b18a91",
@@ -3457,15 +3479,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 99,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 21,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "bf3b39a8c2df8e94": {
@@ -3474,15 +3498,13 @@
         "source_id": "bf3b39a8c2df8e94",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "bf3b39a8c2df8e94",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "bf3b39a8c2df8e94",
@@ -3492,15 +3514,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 100,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 22,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "dc59f268ee01e364": {
@@ -3509,15 +3533,13 @@
         "source_id": "dc59f268ee01e364",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "dc59f268ee01e364",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "dc59f268ee01e364",
@@ -3527,15 +3549,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 101,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 23,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "cf15c3e91cdd8ded": {
@@ -3544,15 +3568,13 @@
         "source_id": "cf15c3e91cdd8ded",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "cf15c3e91cdd8ded",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "cf15c3e91cdd8ded",
@@ -3562,15 +3584,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 102,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 24,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "79f3a23172968ad2": {
@@ -3597,15 +3621,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 103,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 25,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "0bba8a80541ab04f": {
@@ -3614,15 +3640,13 @@
         "source_id": "0bba8a80541ab04f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "0bba8a80541ab04f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "0bba8a80541ab04f",
@@ -3632,15 +3656,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 104,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 26,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "90721289b8108c4f": {
@@ -3649,15 +3675,13 @@
         "source_id": "90721289b8108c4f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "90721289b8108c4f",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "90721289b8108c4f",
@@ -3667,15 +3691,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 105,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 27,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "fbb4e3c7288fed7c": {
@@ -3702,15 +3728,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 106,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 28,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "aad57160cfd51894": {
@@ -3737,15 +3765,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 107,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 29,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "409f3d46a9555f23": {
@@ -3772,15 +3802,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 108,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 30,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "d8803c2afaabf3d5": {
@@ -3789,15 +3821,13 @@
         "source_id": "d8803c2afaabf3d5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "d8803c2afaabf3d5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "d8803c2afaabf3d5",
@@ -3807,15 +3837,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 109,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 31,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "ebf87d5f5390b0fd": {
@@ -3842,15 +3874,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 110,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 32,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "98f207907001ce47": {
@@ -3877,15 +3911,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 111,
+        "file": "examples-cleanroom/final03.jsonl",
+        "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+        "line": 33,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "27bf65f8b059fd96": {
@@ -3894,15 +3930,13 @@
         "source_id": "27bf65f8b059fd96",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "27bf65f8b059fd96",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "27bf65f8b059fd96",
@@ -3912,15 +3946,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 112,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 1,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "4d24cd77c74a8801": {
@@ -3929,15 +3965,13 @@
         "source_id": "4d24cd77c74a8801",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "4d24cd77c74a8801",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "4d24cd77c74a8801",
@@ -3947,15 +3981,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 113,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 3,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "9941e3c752b3a3b7": {
@@ -3964,15 +4000,13 @@
         "source_id": "9941e3c752b3a3b7",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "9941e3c752b3a3b7",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "9941e3c752b3a3b7",
@@ -3982,15 +4016,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 114,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 4,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1321540b04f33117": {
@@ -3999,15 +4035,13 @@
         "source_id": "1321540b04f33117",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "1321540b04f33117",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "1321540b04f33117",
@@ -4017,15 +4051,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 115,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 5,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "7ba49e67588b1329": {
@@ -4034,15 +4070,13 @@
         "source_id": "7ba49e67588b1329",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "7ba49e67588b1329",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "7ba49e67588b1329",
@@ -4052,15 +4086,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 116,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 6,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "de4979a99c6d0bed": {
@@ -4069,15 +4105,13 @@
         "source_id": "de4979a99c6d0bed",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "de4979a99c6d0bed",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "de4979a99c6d0bed",
@@ -4087,15 +4121,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 117,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 8,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "773db5c24ae98ffb": {
@@ -4104,15 +4140,13 @@
         "source_id": "773db5c24ae98ffb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "773db5c24ae98ffb",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "773db5c24ae98ffb",
@@ -4122,15 +4156,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 118,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 9,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "bcfa5de0140286d5": {
@@ -4139,15 +4175,13 @@
         "source_id": "bcfa5de0140286d5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "bcfa5de0140286d5",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "bcfa5de0140286d5",
@@ -4157,15 +4191,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 119,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 10,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "5125860585e98b3a": {
@@ -4192,15 +4228,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 120,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 11,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "0ad3432ccdca7ac0": {
@@ -4209,15 +4247,13 @@
         "source_id": "0ad3432ccdca7ac0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "0ad3432ccdca7ac0",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "0ad3432ccdca7ac0",
@@ -4227,15 +4263,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 121,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 12,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "a14d08fe23965bec": {
@@ -4244,15 +4282,13 @@
         "source_id": "a14d08fe23965bec",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "a14d08fe23965bec",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "a14d08fe23965bec",
@@ -4262,15 +4298,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 122,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 13,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "c82d1af7d1a7b0cf": {
@@ -4279,15 +4317,13 @@
         "source_id": "c82d1af7d1a7b0cf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "c82d1af7d1a7b0cf",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "c82d1af7d1a7b0cf",
@@ -4297,15 +4333,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 123,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 20,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "5a8e48d2a1396cea": {
@@ -4314,15 +4352,13 @@
         "source_id": "5a8e48d2a1396cea",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "5a8e48d2a1396cea",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "5a8e48d2a1396cea",
@@ -4332,15 +4368,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 124,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 26,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b7db02f540cc7559": {
@@ -4349,15 +4387,13 @@
         "source_id": "b7db02f540cc7559",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b7db02f540cc7559",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b7db02f540cc7559",
@@ -4367,15 +4403,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 125,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 27,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "b9660f4ee653ca01": {
@@ -4384,15 +4422,13 @@
         "source_id": "b9660f4ee653ca01",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "b9660f4ee653ca01",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "b9660f4ee653ca01",
@@ -4402,15 +4438,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 126,
+        "file": "examples-cleanroom/final04.jsonl",
+        "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
+        "line": 28,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "1e5d0f7289e1b36e": {
@@ -4419,15 +4457,13 @@
         "source_id": "1e5d0f7289e1b36e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "inspect": {
         "source_id": "1e5d0f7289e1b36e",
         "launched": true,
         "closed": false,
-        "visible": true,
-        "error": ""
+        "visible": true
       },
       "close": {
         "source_id": "1e5d0f7289e1b36e",
@@ -4437,15 +4473,17 @@
       "host_alive": true,
       "source": {
         "root": "ecosystem-evidence",
-        "file": "examples-interactions/native-lic-final2.jsonl",
-        "sha256": "0bcfce010711135c771fdd3921ef20677a4dfdddec4963db93f525566e3ffe31",
-        "line": 127,
+        "file": "examples-cleanroom/final05.jsonl",
+        "sha256": "19e1682f8d88c16fbc06994e9be5a220c78c934e8feb0eda4b3b6451a420f5b9",
+        "line": 27,
+        "format": "native-cleanroom.v1",
+        "id_pointer": "/port_id",
         "phase_pointers": {
-          "launch": "/launch/value",
-          "inspect": "/inspect/value",
-          "close": "/close/value"
+          "launch": "/phases/inspect/data/snapshot",
+          "inspect": "/phases/inspect/data/snapshot",
+          "close": "/phases/close/data/snapshot"
         },
-        "host_alive_pointer": "/host_alive_after"
+        "host_alive_pointer": "/phases/finish/data/host_alive"
       }
     },
     "4bc27e706ac146f5": {

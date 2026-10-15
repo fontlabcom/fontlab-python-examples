@@ -2953,3 +2953,21 @@ Final complete-suite rerun, including the now-completed concurrent recipe additi
 `clean_room_pending`. Recipe-only commits completed outside this task; final
 status contains only intended relocation edits, 431 deletions, the 188 handoff
 files and four new test/tool/verification files. Staged diff remains empty.
+
+## 2026-10-15 issue 104 lanes L6b/L6c (recipes, clean-room native acceptance)
+
+- Recipes: nine in `examples/recipes`, each native-checked on an owned font
+  (`examples/recipes/<name>/native.py` through `verification/issue-104/fl-native.sh
+  --mutating --lane L6b`; evidence `examples-recipes/`). Measured: Edit > Undo does
+  not restore native script edits in 9.0.9783, so no recipe claims undo.
+- Native acceptance: `tools/native_cleanroom.py` over all 187 records, final runs
+  `examples-cleanroom/final01..05` (187/187) and the controller's independent run
+  `examples-cleanroom/controller/` (187/187 after one transport-fd false alarm, since
+  fixed). Recorded with `python3 tools/record_native.py
+  ../verification/issue-101-ecosystem/evidence/examples-cleanroom/native-acceptance-proposal.json
+  --commit 9bec8bb` -> passed 127, blocked_verified 60.
+- Interactions: `examples-cleanroom/interactions_cleanroom.py` -> 106 passed, 21
+  skipped (network 8, user files 5, printing 3, file dialog 2, clipboard 2, tray 1),
+  60 blocked; 523/727 controls changed and read back.
+- Tests: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m
+  pytest -q tests` -> 1500 passed.

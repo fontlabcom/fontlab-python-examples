@@ -12,6 +12,8 @@ this_file: TODO.md
 - [x] Regenerate catalogue states/INDEX and gate source-dependent tests on `clean_room_pending` only.
 - [x] Independently implement or explicitly block all 187 official examples under Apache-2.0 (127 implemented, 60 blocked), and merge hash-bound receipts into the catalogue.
 - [x] Add the short-phase Remopy native acceptance driver and offline tests; cover every replacement through its public launcher.
-- [ ] Run new native acceptance for the 187 clean-room records and review JSONL destruction/capability receipts before updating native states (currently all unexecuted).
-- [ ] Script native interactions for the remaining ports that need no user state (owned drag/drop, mouse/key-only, visual checks).
+- [x] Run new native acceptance for the 187 clean-room records and record it with `tools/record_native.py` (187/187; 127 passed, 60 blocked verified).
+- [x] Script native interactions for clean-room ports that need no user state (106 passed, 21 skipped by reason).
+- [ ] Mouse/key interactions for the 22 paint/drag/button-only clean-room ports.
+- [x] Add nine native-checked recipes in `examples/recipes` (TypeRig- and Glyphs-inspired, reimplemented).
 - [ ] Review complete coverage and integrate examples into rebuilt documentation.
