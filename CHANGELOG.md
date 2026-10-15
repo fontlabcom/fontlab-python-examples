@@ -23,6 +23,9 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15 (R046): DEPENDENCIES.md records the dependency re-evaluation (no host
+  packages; recipes import sibling workspace packages; dev tools via uv).
+
 - 2026-10-15: Review fixes (R-examples). Native acceptance is now bound to its run:
   `tools/native_cleanroom.py` hashes each port's dependency closure (own files, ports
   it loads, launcher package) before it runs and records the examples commit, a dirty

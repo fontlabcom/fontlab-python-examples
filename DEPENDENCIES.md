@@ -58,3 +58,14 @@ stream operators. API names were checked against the host's QtCore/QtGui/private
 stubs; [PythonQt datatype documentation](https://mevislab.github.io/pythonqt/Developer.html)
 confirms QByteArray.data() and QVariant conversions. Exact overload and virtual
 callback behavior still requires the controller's native acceptance.
+
+## Re-evaluation 2026-10-15 (R046)
+
+- No pip packages are installed into FontLab for the examples. Ports use FontLab's
+  PythonQt only.
+- `examples/recipes/` import sibling workspace packages: fontlab-fontlabapp, fontlab-glyport
+  (including its synthesized `GlyphsApp`/`Foundation` modules) and, from the external
+  controller, fontlab-remopy. The native drivers put the real checkouts on
+  FontLab's sys.path in a guarded call and restore it afterwards.
+- Development tools: pytest (`uv run --no-project --with pytest`), pytest-cov (optional)
+  and ruff (`uvx ruff`). None of them run inside FontLab.
