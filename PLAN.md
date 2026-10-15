@@ -2,12 +2,22 @@
 this_file: PLAN.md
 ---
 
-# Plan
+# GetGo real-font scripting acceptance
 
-No open work; completed items are in CHANGELOG.md.
+Owner request: use the public GetGo VFJ/TTF fonts for real tests and scripting
+examples, keeping public code.fontlab.com links and licence provenance.
 
-Standing scope notes: blocked records stay in the denominator (R004). Removed as not
-feasible (workspace DECISIONS.md D8): implementing the missing Qt modules in FontLab's
-PythonQt (QML/Quick, WebEngine, Charts, multimedia/GStreamer, QtSql drivers, D-Bus,
-matplotlib's Qt backend), and interactions that would use the user's clipboard,
-screen capture or system tray.
+1. Copy all 99 VFJs unchanged into testdata/getgo, retain the three licence texts
+   and pin source revision, hashes, attribution, public pages and download links.
+   Verify every actual font file, master/axis counts and manifest completeness.
+2. Run native load/read acceptance on the real corpus through the shared runner
+   using owned copies; preserve every failure and source hash. Run actual
+   mutations/save/reopen and exported-artifact checks on representative static,
+   variable, hinted, non-Latin and OFL/Apache/CC0 fonts.
+3. Build practical original scripting examples around the real fixtures: font
+   audit, pen/outline interchange, metadata/kerning, multimasters/designspace and
+   exported results. Public docs link each font's GetGo page; results distinguish
+   supported behavior from measured native limits.
+4. Verify examples natively, update the generated documentation export, run the
+   complete host-free suite and record receipts/commands. Archive only complete
+   groups; broader workspace integration/publication remains in the parent plan.

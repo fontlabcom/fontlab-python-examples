@@ -334,3 +334,27 @@ this_file: CHANGELOG.md
   Retain/resolve Python graphics objects after native item retrieval and expose
   Elastic Nodes' center control. Preserve original CounterLabel offset semantics.
   Add 22 regression cases with stricter native doubles; native reacceptance pending.
+
+## 2026-10-15 — workspace plan and checklist reconciliation
+
+Completed repository scope archived after reading WORK.md and checking the
+workspace evidence. Workspace release/integration gates remain in the parent
+PLAN.md. Historical verification limits below remain part of the record.
+
+### Archived PLAN.md
+
+# Plan
+
+No open work; completed items are in CHANGELOG.md.
+
+Standing scope notes: blocked records stay in the denominator (R004). Removed as not
+feasible (workspace DECISIONS.md D8): implementing the missing Qt modules in FontLab's
+PythonQt (QML/Quick, WebEngine, Charts, multimedia/GStreamer, QtSql drivers, D-Bus,
+matplotlib's Qt backend), and interactions that would use the user's clipboard,
+screen capture or system tray.
+
+### Archived TODO.md
+
+# Tasks
+
+No open tasks.
