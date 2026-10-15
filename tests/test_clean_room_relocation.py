@@ -133,7 +133,11 @@ def test_relocated_records_when_integrated_then_receipts_replace_pending_state()
         assert (ROOT / row["target_path"]).is_file()
         assert row["license"]["selected"] == "Apache-2.0"
         assert row["license"]["review_state"] == "reviewed"
-        assert row["native_acceptance"] == "unexecuted" and "native_evidence" not in row
+        # Native runs are recorded by tools/record_native.py: passed needs evidence.
+        assert row["native_acceptance"] in {"unexecuted", "passed"}
+        assert ("native_evidence" in row) == (row["native_acceptance"] == "passed")
+        if row["implementation"] == "blocked":
+            assert row["native_acceptance"] == "unexecuted"
         assert row["spec"] == f"clean-room-specs/{row['source_id']}.md"
         assert (ROOT / row["spec"]).is_file()
         for item in row["resources"]:

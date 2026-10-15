@@ -2,12 +2,20 @@
 # /// script
 # requires-python = ">=3.11"
 # dependencies = ["fontlab-remopy"]
+# [tool.uv.sources]
+# fontlab-remopy = { path = "../../fontlab-remopy" }
 # ///
 # SPDX-License-Identifier: Apache-2.0
 # this_file: tools/native_cleanroom.py
 """Launch/inspect/close acceptance through Remopy, one short host call per phase.
 
-Run in an owned FontLab session. This driver never edits catalogue acceptance.
+Run in an owned FontLab session. This driver never edits catalogue acceptance
+(tools/record_native.py applies a reviewed proposal). From the workspace root:
+
+    verification/issue-104/fl-native.sh --lane L6c -- bash -c \
+      "cd fontlab-python-examples && uv run --python 3.11 tools/native_cleanroom.py --output OUT.jsonl"
+
+fontlab-remopy resolves from the sibling ../fontlab-remopy checkout (not on PyPI).
 Its destroyed-signal witnesses retain plain data only and expire with Qt objects.
 No application loop, processEvents, screen/clipboard/tray action or font mutation.
 """

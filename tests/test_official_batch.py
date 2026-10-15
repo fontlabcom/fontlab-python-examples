@@ -70,7 +70,11 @@ def test_replacement_when_catalogued_then_receipt_and_independent_source_match(r
         row["license"]["selected"] == "Apache-2.0"
         and row["license"]["review_state"] == "reviewed"
     )
-    assert row["native_acceptance"] == "unexecuted" and "native_evidence" not in row
+    # Native runs are recorded by tools/record_native.py: passed needs evidence.
+    assert row["native_acceptance"] in {"unexecuted", "passed"}
+    assert ("native_evidence" in row) == (row["native_acceptance"] == "passed")
+    if row["implementation"] == "blocked":
+        assert row["native_acceptance"] == "unexecuted"
     for file in receipt["files"]:
         path = ROOT / file
         assert path.is_file()

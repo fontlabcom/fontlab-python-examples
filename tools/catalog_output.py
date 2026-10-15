@@ -49,8 +49,12 @@ def write_catalog(catalog: dict, output: Path) -> None:
             "are bound to [specifications](../clean-room-specs/INDEX.json) by "
             "[receipts](../clean-room/receipts/). Archived resources are not re-licensed as replacements."
         )
-        lines[8] += (
-            f" Native launch/inspect/close passes: {catalog['counts']['examples_native_executed']}; independent replacements await new native acceptance."
+        executed = catalog["counts"]["examples_native_executed"]
+        ported = catalog["counts"].get("examples_ported", executed)
+        lines[8] += f" Native launch/inspect/close passes: {executed}" + (
+            "; independent replacements await new native acceptance."
+            if executed < ported
+            else " (every implemented port; recorded by tools/record_native.py)."
         )
     for source in catalog["sources"]:
         lines.append(

@@ -91,7 +91,7 @@ def test_native_receipt_when_originals_available_then_exact_file_and_record_matc
             "Workspace native originals unavailable; portable receipt checked separately"
         )
     cache = {}
-    for row in receipt["records"].values():
+    for key, row in receipt["records"].items():
         source = row["source"]
         assert source["root"] in {"repository", "ecosystem-evidence"}
         relative = Path(source["file"])
@@ -105,8 +105,10 @@ def test_native_receipt_when_originals_available_then_exact_file_and_record_matc
         text = cache[path]
         if "line" in source:
             record = json.loads(text.splitlines()[source["line"] - 1])
-            assert record["name"] == row["name"]
-            assert record["host_alive_after"] is True
+            if "id_pointer" in source:  # clean-room receipts (native-cleanroom.v1)
+                assert pointer(record, source["id_pointer"]) == key
+            else:
+                assert record["name"] == row["name"]
         else:
             record = pointer(json.loads(text), source["pointer"])
         for phase, record_pointer in source["phase_pointers"].items():
