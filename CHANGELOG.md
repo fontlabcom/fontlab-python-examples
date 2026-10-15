@@ -4,6 +4,10 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-16 - GetGo examples native acceptance (moved from TODO.md)
+
+- Owned GetGo copies close via close_font(save=False) (f151195); native status recorded in README and native_manifest.json (7ed3e39). Native run examples4-all: 13/13 pass, spacing 0.11 s, 0 stray documents (verification/issue-106/evidence/getgo/examples4-all). Suite 1881 passed with fontTools; docs-export 42 files current.
+
 ## 2026-10-16 - GetGo fixtures and provenance (moved from TODO.md)
 
 - Copied the 99 GetGo VFJs unchanged into testdata/getgo (81 Apache-2.0, 11 CC0-1.0, 7 OFL-1.1) with the three licence texts and a manifest pinning source revision 25a4d6d7, SHA-256, glyph/master/axis counts, public code.fontlab.com page and VFJ/TTF links. Verified against the upstream checkout and fonts.json, all 297 links HTTP 200; `*.vfj -diff` in .gitattributes (ac98f06; tools/verify_getgo_source.py, 206 tests).

@@ -3110,3 +3110,9 @@ corpus/mutation/export tests and practical examples are new active scope.
   Fontlab/fl#8506; F1 is fixing sources). Examples: examples1 8/13, examples2(+rest) 12/13, examples3-all
   13/13 with X2's uncommitted _shared.py close fix. Details and commands: verification/issue-106/reports/E1-getgo-native.md.
 - Open: F1 re-sync; commit _shared.py fix; README/native_manifest status.
+
+## 2026-10-16 - examples4-all
+
+`fl-native.sh --mutating --lane E1-getgo-native -- ... native_getgo_examples.py --output .../examples4-all`
+exit 0: 13/13 PASS at f151195 (spacing 0.11 s, closed_stray_documents 0). docs_export --check 42 files
+current; suite 1881 passed. Open: F1 VFJ re-sync (controller sends file list and hashes).
