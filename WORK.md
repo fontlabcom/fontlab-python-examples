@@ -3031,3 +3031,19 @@ contours skipped and reported; an unreadable second glyph leaves the first
 unmutated; start index after reversal). Native: contour_direction/native.py ->
 `examples-recipes/contour_direction-rr3.json`, exit 0, 12/12 checks (report skipped
 [{glyph U, contour 3}]). Scripts-menu route 9/9, exit 0.
+
+## 2026-10-15 closing check (PLAN/TODO review)
+
+- Glyphs recipes in Glyphs: `uv run --quiet --no-project --with pyobjc-framework-Cocoa
+  python verification/issue-101-ecosystem/evidence/examples-recipes/glyphs-app/run_recipes_in_glyphs.py
+  "/Applications/Glyphs 3.app" glyphs3.json` exit 0 (3.5.1, 10/10 checks, quit); same
+  with Glyphs 4.app exit 0 (4.2, 10/10, quit). In-memory GSFont only, never added to
+  Glyphs.fonts or saved; refuses if that Glyphs is already running.
+- FontLab drivers re-run after docstring updates: glyphs_tabular_figures and
+  glyphs_path_report native.py exit 0 (`examples-recipes/*-final.json`).
+- Licence provenance: `python3 .../examples-licences/provenance.py fontlab-python-examples
+  provenance.json` -> 14 unresolved; 5 byte-identical and 4 whitespace-equal to Qt
+  qtbase styleexample (5.15, 6.5); 5 pyqt assets untraced. Left unresolved for the owner.
+- Coverage review (inline script): 299 records; 148 implemented all passed with
+  evidence and files; 151 blocked all with blocked_reason; 18 insights; 9 recipes.
+- Tests: 1546 passed.

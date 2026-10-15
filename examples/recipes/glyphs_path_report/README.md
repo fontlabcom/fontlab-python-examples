@@ -7,8 +7,8 @@ this_file: examples/recipes/glyphs_path_report/README.md
 **Purpose.** Find outline problems before export: open paths, closed paths with fewer
 than three on-curve points, repeated consecutive points and tiny paths (narrower or
 lower than 4 units). Read-only. `path_report.py` is written as an ordinary Glyphs 3
-script (in Glyphs it would check the selected glyphs, or all; it has not been run in
-Glyphs itself); `recipe.py` runs the same file unchanged in FontLab through [glyport](https://github.com/fontlabcom/fontlab-glyport).
+script (in Glyphs it checks the selected glyphs, or all; its functions were run inside
+Glyphs 3.5.1 and 4.2 on an in-memory test font); `recipe.py` runs the same file unchanged in FontLab through [glyport](https://github.com/fontlabcom/fontlab-glyport).
 
 ```python
 run()                              # every glyph of the current font

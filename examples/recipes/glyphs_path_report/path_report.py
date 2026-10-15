@@ -3,8 +3,8 @@
 __doc__ = """
 List open paths, paths with too few points, duplicate points and tiny paths (Glyphs 3 or 4).
 
-Read-only. Written against the Glyphs 3 API. Verified in FontLab through glyport (see recipe.py);
-not yet run in Glyphs itself.
+Read-only. Written against the Glyphs 3 API. Verified in FontLab through glyport (see recipe.py)
+and inside Glyphs 3.5.1 and 4.2 on an in-memory test font.
 """
 
 MIN_SIZE = 4  # paths narrower or lower than this many units are reported as tiny

@@ -21,6 +21,33 @@ this_file: CHANGELOG.md
 - Provide first-batch named launch/inspect/close, retained handles and Remopy example.
 - Accept first four source-loaded ports with native clicks, layout/text, alert dismissal/repeat, Designer OK/Cancel and tracked owned teardown.
 
+## 2026-10-15 — issue 101/104 examples work completed (moved from PLAN.md/TODO.md)
+
+- 148 implemented native-acceptance records carry exact evidence file/record
+  citations with cross-checking tests.
+- 14 Python and 3 QML candidates and all 69 shared-file ownership records resolved,
+  preserving original identities and reasoning (`catalog/reviews.json`).
+- Per-file licences and attribution for all non-pyqt-official ports, resources and
+  original insights in `catalog/licenses.json` (14 resources still await an owner
+  decision; see PLAN.md).
+- D7: 187 official records relocated, 431 archive-verified files removed, prose-only
+  public handoff copied from private commit 040b2e8; catalogue states/INDEX
+  regenerated; source-dependent tests gated on `clean_room_pending` only.
+- All 187 official examples independently implemented or explicitly blocked under
+  Apache-2.0 (127 implemented, 60 blocked), with hash-bound receipts merged.
+- Short-phase Remopy native acceptance driver and offline tests; native acceptance
+  of the 187 clean-room records recorded with `tools/record_native.py`, re-run and
+  re-recorded at f358589 after review R-examples (127 passed, 60 blocked verified).
+- Native interactions: 106 passed and 21 skipped by reason; mouse/key/drop checks for
+  22 ports: 20 passed and 2 skipped by reason.
+- Nine native-checked recipes in `examples/recipes`, all passing through the
+  Scripts-menu route (9/9). The two Glyphs scripts also ran inside Glyphs 3.5.1 and
+  4.2 on an in-memory font (curve extent, shift, anchor move, other master untouched,
+  components refused, empty list, path report); workspace evidence
+  `examples-recipes/glyphs-app/`.
+- Coverage review: 299 records, 148 implemented (each with native pass, evidence and
+  file), 151 blocked (each with `blocked_reason`), 18 insights, 9 recipes.
+
 ## Unreleased
 
 - 2026-10-15: contour_direction plans every glyph before its first edit and skips
