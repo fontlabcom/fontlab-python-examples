@@ -87,6 +87,10 @@ elif action == "edit":
     p.checkInitHistoryState(0)
     fontlab.flItems.notifyChangesApplied("GetGo acceptance info", history)
     p.info.familyName = family
+    style = str(p.info.styleName or "Regular")
+    p.info.postscriptFullName = family + " " + style  # FontLab warns when it does not start with the family
+    p.info.postscriptFontName = family.replace(" ", "") + "-" + style.replace(" ", "")
+    p.info.openTypeNameCompatibleFullName = family + " " + style
     fontlab.flItems.notifyChangesApplied("GetGo acceptance info", history)
     glyph = p.findName(sample)
     touched = []
@@ -201,6 +205,7 @@ def export(native, path, font_id, directory, name, kind, output) -> dict:
     except Exception as error:
         record["error"] = f"{type(error).__name__}: {error}"
     record["files"] = sorted(str(p.relative_to(folder)) for p in folder.rglob("*"))
+    record["name_warnings"] = [l for l in record.get("native_output", "").splitlines() if "Full name" in l or "should begin" in l]
     return record
 
 
@@ -347,12 +352,13 @@ def check_static(item: dict, kind: str, path: Path) -> dict:
             "name_id_1": font["name"].getDebugName(1),
             "name_id_16": font["name"].getDebugName(16),
             "family_ok": font["name"].getDebugName(16) == item["family"],
+            "full_name_ok": (font["name"].getDebugName(4) or "").startswith(item["family"]),
             "width_ok": advance is not None and (min(widths) <= advance <= max(widths) if multi else advance == widths[0]),
             "unicode_ok": exported is not None and all(cmap.get(u) == exported for u in after["unicodes"]),
             "upm": font["head"].unitsPerEm,
             "kind_ok": ("glyf" in font) if kind == "ttf" else ("CFF " in font),
         }
-        required = ["family_ok", "width_ok", "unicode_ok", "kind_ok"]
+        required = ["family_ok", "full_name_ok", "width_ok", "unicode_ok", "kind_ok"]
         if not multi and exported and not item.get("stroked"):
             points = outline_points(font, exported)
             result["moved_node_present"] = tuple(round(v) for v in after["layers"][key]["node"]) in points
