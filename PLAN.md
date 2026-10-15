@@ -23,10 +23,6 @@ Remaining work:
    from directory association or a source-code grant. The nine styleexample
    resources retain the GPL collection notice without an individual grant claim.
   Official-demo records and licence notes have since moved under D7 below.
-2. **Interactions beyond state controls.** 22 clean-room implementations are
-   paint, mouse or drag driven or button-only (clocks, drawings, drag and drop,
-   calculator, tetrix...): their checks cover launch/inspect/close/relaunch only.
-   Script owned mouse/key interactions for them where no user state is touched.
 3. **Recipes.** Optionally exercise the recipes' Scripts-menu route natively (the
    checks call `run()`), and Glyphs-side runs of the two Glyphs scripts.
 4. **Docs.** Integrate the categorized examples with exact status into the rebuilt

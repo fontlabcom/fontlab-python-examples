@@ -23,6 +23,10 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Mouse/keyboard/drop checks for the 22 clean-room ports without state
+  controls (workspace evidence `examples-cleanroom/events_cleanroom.py`,
+  `events-final.jsonl`): 20 passed, 2 skipped by reason.
+
 - 2026-10-15: Native acceptance of all 187 clean-room records in FontLab 9.0.9783
   (127 implemented pass launch/inspect/close with clean owned teardown, 60 blocked
   raise their reason without host access), recorded by the new

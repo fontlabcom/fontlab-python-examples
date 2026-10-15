@@ -2971,3 +2971,14 @@ files and four new test/tool/verification files. Staged diff remains empty.
   60 blocked; 523/727 controls changed and read back.
 - Tests: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m
   pytest -q tests` -> 1500 passed.
+
+## 2026-10-15 issue 104 lane L6d (1): event checks for 22 clean-room ports
+
+`verification/issue-104/fl-native.sh --lane L6d -- uv run --project fontlab-remopy python
+verification/issue-101-ecosystem/evidence/examples-cleanroom/events_cleanroom.py OUT.jsonl`
+sends QMouseEvent/QKeyEvent/QDragEnter+QDrop (owned QMimeData) to the ports' own widgets;
+checks use inspect() state or QWidget.grab hashes. Final: 20 passed, 2 skipped
+(delayedencoding: QDrag.exec drag-out only; broadcastsender: LAN broadcast). Offline
+table tests: `test_events_table.py` 3 passed. A first run failed shapedclock (helper
+recomputed screen positions from the moving window) and tetrix (wrong piece-count
+assumption); both fixed in the driver.

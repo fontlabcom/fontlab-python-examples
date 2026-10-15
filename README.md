@@ -34,7 +34,10 @@ evidence `examples-cleanroom/final*` and `examples-cleanroom/controller/`).
 Interactions: 106 implementations had every state control changed and read back
 without a slot error, then were closed and relaunched; 21 whose specs need files,
 network, printing, the clipboard or the tray were skipped by reason
-(`examples-cleanroom/interactions-final.jsonl`). The 21 earlier non-official ports
+(`examples-cleanroom/interactions-final.jsonl`). The 22 implementations without state
+controls were driven with synthetic mouse, keyboard and drop events on their own
+widgets (`examples-cleanroom/events-final.jsonl`): 20 passed; delayedencoding (drag-out
+only, a system drag loop) and broadcastsender (LAN broadcast) are skipped by reason. The 21 earlier non-official ports
 retain their recorded acceptance.
 
 Each record preserves its original source repository, revision, path, byte counts,

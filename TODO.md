@@ -14,6 +14,6 @@ this_file: TODO.md
 - [x] Add the short-phase Remopy native acceptance driver and offline tests; cover every replacement through its public launcher.
 - [x] Run new native acceptance for the 187 clean-room records and record it with `tools/record_native.py` (187/187; 127 passed, 60 blocked verified).
 - [x] Script native interactions for clean-room ports that need no user state (106 passed, 21 skipped by reason).
-- [ ] Mouse/key interactions for the 22 paint/drag/button-only clean-room ports.
+- [x] Mouse/key/drop interactions for the 22 paint/drag/button-only clean-room ports (20 passed, 2 skipped by reason).
 - [x] Add nine native-checked recipes in `examples/recipes` (TypeRig- and Glyphs-inspired, reimplemented).
 - [ ] Review complete coverage and integrate examples into rebuilt documentation.
