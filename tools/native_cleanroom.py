@@ -91,7 +91,10 @@ def dependencies(root: Path, record: dict) -> list[str]:
     root = Path(root).resolve()
     ports = root / "ports"
     seen: set[str] = set()
-    resources = [r["target_path"] for r in record.get("resources", [])]
+    resources = [  # shipped path: a replacement may live elsewhere
+        r.get("replacement", {}).get("target_path", r["target_path"])
+        for r in record.get("resources", [])
+    ]
     queue = [record["target_path"], *record.get("replacement_files", []), *resources]
     while queue:
         name = queue.pop()

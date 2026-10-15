@@ -3,9 +3,19 @@
   "generator": "tools/docs_export.py",
   "source_base_url": "https://github.com/fontlabcom/fontlab-python-examples/blob/main/",
   "inputs": {
-    "catalog/ports.json": "31b3c39d69364fbb9dd473c15e04bd2f53142018f4edbf7a6f25584b71fb5645",
-    "catalog/sources.json": "3541047c6a7ffc7e207d65a71f5d616199a0c985aacd9ad8469e1bbe420043cf",
-    "catalog/insights.json": "7940417f6e7932b8e0ee0056d6456fb8543a97d4afca291c899b61ad9811dc71"
+    "catalog/ports.json": "a71ddcd7203d768c439edd8b3514f784f3e31cb623f631b1b9dfc5dc97c21f5a",
+    "catalog/sources.json": "94eb48171bcfedb0ae1642ddb1cb8ca407ea16bac8308269787a3d34f5776780",
+    "catalog/insights.json": "7940417f6e7932b8e0ee0056d6456fb8543a97d4afca291c899b61ad9811dc71",
+    "examples/recipes/README.md": "7faf167cd0da5c32a95977c8c5327f0c4c6633062dc5de9083ec8a24ccc83325",
+    "examples/recipes/anchors_from_bounds/README.md": "b2930d1a3212633793a4b697992fa383cecdd8f60a294ba08466f8f8fb019522",
+    "examples/recipes/contour_direction/README.md": "456a5599e1d31adf999508bb2fe01db3502062997201be3ab50cad8e2fdcf63d",
+    "examples/recipes/glyph_actions_batch/README.md": "ed8b885165f51ec64411d3bf751c0083219a2e44d9a6e1ef8dde273bbf7bca0b",
+    "examples/recipes/glyphs_path_report/README.md": "2dce14d0f61ab369777fee3b1742d399df7954d18ee94534c567a3c8bb4efd49",
+    "examples/recipes/glyphs_tabular_figures/README.md": "96add25c4d3452e57a8e878d279e40d5a61d6a12d79558d633d5884ed01edf22",
+    "examples/recipes/kerning_from_text/README.md": "45743b930ed87d284c4eeedc505e7a8bb7b2c9ed5b3534d89871abf5398959fb",
+    "examples/recipes/layer_backup/README.md": "eb7b2d2fc92118783d0cc7d1b949b432baca5cab180558f4907ffd843c114124",
+    "examples/recipes/round_coordinates/README.md": "319730c3a5e91877c2113a772028cf85611d7e5a8767b3c7c30be59189227a23",
+    "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe"
   },
   "counts": {
     "records": 299,

@@ -480,7 +480,10 @@ def test_dependencies_when_resources_shipped_then_closure_includes_them():
     row = next(r for r in manifest["ports"] if r["source_id"] == "631cc1bc310c00b9")
     closure = driver.dependencies(ROOT, row)
     for resource in row["resources"]:
-        assert resource["target_path"] in closure, resource["target_path"]
+        shipped = resource.get("replacement", {}).get(
+            "target_path", resource["target_path"]
+        )
+        assert shipped in closure, shipped
 
 
 def test_changed_files_when_dependency_edited_during_run_then_reported(tmp_path):

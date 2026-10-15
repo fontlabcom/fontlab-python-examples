@@ -2,12 +2,14 @@
 # this_file: tools/replacement_assets.py
 """Self-authored replacements for the 14 resources that had no individual grant.
 
-Every file is generated here from code (pure Python: SVG text, PNG through zlib,
-WAV through ``wave``); the one JPEG is the generated PNG converted by macOS
-``sips``. The upstream files are no longer shipped; catalog/ports.json keeps their
-identities and records each replacement. ``--check`` verifies the committed bytes
-(the JPEG only by its decoded format and size, since another sips may encode
-differently). From the repository root::
+Every file is generated here from code in pure Python (SVG and style-sheet text,
+PNG with stored (uncompressed) deflate blocks, WAV through ``wave``), so the bytes do
+not depend on the zlib build or any external encoder.
+The upstream background JPEG is replaced by a PNG at a new path
+(``files/nature_1.png``); all other replacements keep the upstream path. The upstream
+files are no longer shipped; catalog/ports.json keeps their identities and records
+each replacement. ``--record`` and ``--check`` regenerate every file in memory and
+accept only exact matches. From the repository root::
 
     python3 tools/replacement_assets.py --write
     python3 tools/replacement_assets.py --record   # catalog/ports.json + licenses.json
@@ -20,15 +22,16 @@ import io
 import json
 import math
 import struct
-import subprocess
 import sys
-import tempfile
 import wave
 import zlib
 from pathlib import Path
 
 NUMBERED = "ports/widgets/pyqt-examples", "ports/multimedia/pyqt-examples"
 STYLE = "ports/embedded/eyllanesc/assets/631cc1bc310c00b9"
+BACKGROUND = f"{STYLE}/files/nature_1.png"
+# Upstream planned path -> shipped replacement path, where they differ.
+MOVED = {f"{STYLE}/files/nature_1.jpg": BACKGROUND}
 
 ICON = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Self-authored for fontlab-python-examples (Apache-2.0): a page with a pencil. -->
@@ -64,7 +67,7 @@ QSpinBox::down-button { image: url(:/files/remove.png); width: 16px; }
 QLabel { font-weight: bold; }
 """,
     "transparent.qss": """/* Self-authored for fontlab-python-examples (Apache-2.0): see-through over a picture. */
-QWidget#StyleWidget { background-image: url(:/files/nature_1.jpg); }
+QWidget#StyleWidget { background-image: url(:/files/nature_1.png); }
 QWidget { background: transparent; color: #ffffff; }
 QPushButton { background: rgba(255, 255, 255, 60); border: 1px solid rgba(255, 255, 255, 160); border-radius: 4px; padding: 4px 10px; }
 QPushButton:pressed { background: rgba(0, 0, 0, 80); }
@@ -122,6 +125,18 @@ UI = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 
+def stored(data: bytes) -> bytes:
+    """A zlib stream of stored deflate blocks: byte-identical on every zlib build."""
+    blocks = [data[i : i + 65535] for i in range(0, len(data), 65535)] or [b""]
+    body = b"".join(
+        bytes([index == len(blocks) - 1])
+        + struct.pack("<HH", len(block), 0xFFFF ^ len(block))
+        + block
+        for index, block in enumerate(blocks)
+    )
+    return b"\x78\x01" + body + struct.pack(">I", zlib.adler32(data))
+
+
 def png(width: int, height: int, pixel) -> bytes:
     """RGBA PNG; ``pixel(x, y)`` returns four 0..255 ints."""
     rows = b"".join(
@@ -141,7 +156,7 @@ def png(width: int, height: int, pixel) -> bytes:
     return (
         b"\x89PNG\r\n\x1a\n"
         + chunk(b"IHDR", header)
-        + chunk(b"IDAT", zlib.compress(rows, 9))
+        + chunk(b"IDAT", stored(rows))
         + chunk(b"IEND", b"")
     )
 
@@ -204,31 +219,8 @@ def shot() -> bytes:
     return buffer.getvalue()
 
 
-def jpeg(png_bytes: bytes) -> bytes:
-    with tempfile.TemporaryDirectory() as folder:
-        source, target = Path(folder) / "in.png", Path(folder) / "out.jpg"
-        source.write_bytes(png_bytes)
-        subprocess.run(
-            [
-                "sips",
-                "-s",
-                "format",
-                "jpeg",
-                "-s",
-                "formatOptions",
-                "85",
-                str(source),
-                "--out",
-                str(target),
-            ],
-            check=True,
-            capture_output=True,
-        )
-        return target.read_bytes()
-
-
 def assets() -> dict[str, bytes]:
-    """Target path -> bytes for every generated file except the JPEG."""
+    """Shipped path -> bytes for every generated file."""
     icon = ICON.encode("utf-8")
     files = {
         f"{NUMBERED[0]}/icon-adeb6eaa0049d0d3.svg": icon,
@@ -239,6 +231,7 @@ def assets() -> dict[str, bytes]:
         f"{STYLE}/files/add.png": png(16, 16, sign(False)),
         f"{STYLE}/files/remove.png": png(16, 16, sign(True)),
         f"{STYLE}/stylewidget.ui": UI.encode("utf-8"),
+        BACKGROUND: png(320, 240, landscape),
     }
     files.update(
         {f"{STYLE}/files/{name}": text.encode("utf-8") for name, text in QSS.items()}
@@ -246,7 +239,6 @@ def assets() -> dict[str, bytes]:
     return files
 
 
-JPEG_PATH = f"{STYLE}/files/nature_1.jpg"
 GENERATOR = "tools/replacement_assets.py"
 ATTRIBUTION = "FontLab Python examples contributors; self-authored replacement (upstream file not shipped)."
 BASIS = (
@@ -256,9 +248,28 @@ BASIS = (
 )
 
 
+def stale(root: Path) -> list[str]:
+    """Shipped paths whose bytes are not the generator's output, plus upstream files
+    that are still present where a replacement moved."""
+    files = assets()
+    wrong = [
+        name
+        for name, data in files.items()
+        if not (root / name).is_file() or (root / name).read_bytes() != data
+    ]
+    return sorted(wrong + [name for name in MOVED if (root / name).exists()])
+
+
 def record(root: Path) -> int:
-    """Mark the 14 resources as replaced in catalog/ports.json and catalog/licenses.json."""
-    targets = set(assets()) | {JPEG_PATH}
+    """Mark the 14 resources as replaced in catalog/ports.json and catalog/licenses.json.
+
+    Refuses (ValueError, nothing written) unless every shipped file is exactly the
+    generator's output: a file of other origin is never declared self-authored.
+    """
+    problems = stale(root)
+    if problems:
+        raise ValueError("not generator output: " + ", ".join(problems))
+    files = assets()
     manifest_path, ledger_path = (
         root / "catalog/ports.json",
         root / "catalog/licenses.json",
@@ -268,15 +279,18 @@ def record(root: Path) -> int:
     done = 0
     for port in manifest["ports"]:
         for resource in port["resources"]:
-            if resource["target_path"] not in targets:
+            shipped = MOVED.get(resource["target_path"], resource["target_path"])
+            if shipped not in files:
                 continue
-            data = (root / resource["target_path"]).read_bytes()
+            data = files[shipped]
             replacement = {
                 "sha256": hashlib.sha256(data).hexdigest(),
                 "bytes": len(data),
                 "generator": GENERATOR,
                 "license": "Apache-2.0",
             }
+            if shipped != resource["target_path"]:
+                replacement["target_path"] = shipped
             resource["replacement"] = replacement
             resource["this_file_note"] = (
                 "Self-authored replacement; upstream identity kept in source."
@@ -310,6 +324,8 @@ def record(root: Path) -> int:
                 replacement=replacement,
             )
             done += 1
+    if done != len(files):
+        raise ValueError(f"recorded {done} replacements, expected {len(files)}")
     manifest_path.write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
@@ -317,7 +333,7 @@ def record(root: Path) -> int:
         json.dumps(ledger, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(f"recorded {done} replacements")
-    return 0 if done == len(targets) else 1
+    return 0
 
 
 def main() -> int:
@@ -331,22 +347,25 @@ def main() -> int:
     mode.add_argument("--record", action="store_true")
     args = parser.parse_args()
     if args.record:
-        return record(args.root)
-    files = assets()
+        try:
+            return record(args.root)
+        except ValueError as error:
+            parser.exit(1, f"{error}\n")
     if args.write:
-        files[JPEG_PATH] = jpeg(png(320, 240, landscape))
+        files = assets()
         for name, data in files.items():
             (args.root / name).write_bytes(data)
+        for name in MOVED:
+            (args.root / name).unlink(missing_ok=True)
         print(f"wrote {len(files)} files")
         return 0
-    stale = [
-        name for name, data in files.items() if (args.root / name).read_bytes() != data
-    ]
-    picture = (args.root / JPEG_PATH).read_bytes()
-    if not picture.startswith(b"\xff\xd8\xff"):
-        stale.append(JPEG_PATH)
-    print("stale: " + ", ".join(stale) if stale else f"{len(files) + 1} files current")
-    return 1 if stale else 0
+    problems = stale(args.root)
+    print(
+        "stale: " + ", ".join(problems)
+        if problems
+        else f"{len(assets())} files current"
+    )
+    return 1 if problems else 0
 
 
 if __name__ == "__main__":

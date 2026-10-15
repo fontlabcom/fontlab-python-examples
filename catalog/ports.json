@@ -2,7 +2,7 @@
   "this_file": "catalog/ports.json",
   "schema_version": "fontlab.examples-ports.v1",
   "scope": "299 port records: 187 official demos relocated as clean_room_pending, 21 implemented non-official ports and 91 blocked non-official records. Original source provenance remains metadata; removed files make no public licence or current native-acceptance claim. Independent specifications are public; verbatim ports and resources remain in the private archive at 040b2e8. Historical native evidence is separate from current availability.",
-  "source_catalog_sha256": "3541047c6a7ffc7e207d65a71f5d616199a0c985aacd9ad8469e1bbe420043cf",
+  "source_catalog_sha256": "94eb48171bcfedb0ae1642ddb1cb8ca407ea16bac8308269787a3d34f5776780",
   "license_evidence": {
     "path": "README.md",
     "repository": "pyqt/examples",
@@ -606,8 +606,8 @@
           },
           "this_file_note": "Self-authored replacement; upstream identity kept in source.",
           "replacement": {
-            "sha256": "426c461b9bf5a9d15a4ad3cb8b3fdd07bcba94d6dd3e89ca9da3f10a0d633d5b",
-            "bytes": 721,
+            "sha256": "c85c6581dde63615200376463f7f2e91a43ccd6608f102d336989ee90996f77e",
+            "bytes": 4196,
             "generator": "tools/replacement_assets.py",
             "license": "Apache-2.0"
           },
@@ -13804,8 +13804,8 @@
             "selected": "Apache-2.0"
           },
           "replacement": {
-            "sha256": "22da5624f0ce12dc75670b3b116c4121e7feca7b0d211e11782a62da81889e49",
-            "bytes": 89,
+            "sha256": "a1e4642bd25e8fbd4569f53c4bc1435a4f293658b536bd0d217838f4c9b2e39e",
+            "bytes": 1108,
             "generator": "tools/replacement_assets.py",
             "license": "Apache-2.0"
           },
@@ -13940,10 +13940,11 @@
             "selected": "Apache-2.0"
           },
           "replacement": {
-            "sha256": "f8e626797833ec3c9c199c2adad1c889f891cfba6fd2b513902a4a60aa682161",
-            "bytes": 9149,
+            "sha256": "5bc05b6a20fd0dd7b28205159ee8a6c8311fe998e64a24f2335abbb9a59be0ac",
+            "bytes": 307528,
             "generator": "tools/replacement_assets.py",
-            "license": "Apache-2.0"
+            "license": "Apache-2.0",
+            "target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/nature_1.png"
           },
           "this_file_note": "Self-authored replacement; upstream identity kept in source.",
           "upstream_license": {
@@ -14008,8 +14009,8 @@
             "selected": "Apache-2.0"
           },
           "replacement": {
-            "sha256": "fb74b24f52166bf570faaebba63cbf518343c65e93864cc802e1b55297f0b6f7",
-            "bytes": 83,
+            "sha256": "41dc139da19e3819520e63b7168414b6c60a95977324b4f82a4ce9f390863db2",
+            "bytes": 1108,
             "generator": "tools/replacement_assets.py",
             "license": "Apache-2.0"
           },
@@ -14042,7 +14043,7 @@
             "selected": "Apache-2.0"
           },
           "replacement": {
-            "sha256": "29330203be750f63433b38282bae90d91400006fe07bc2f1daafc80296d065a7",
+            "sha256": "22afdb44fb48f21936e6c6db878fec58fc4c51ae99c62b5a19081b5cf43908d5",
             "bytes": 649,
             "generator": "tools/replacement_assets.py",
             "license": "Apache-2.0"

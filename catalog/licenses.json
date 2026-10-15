@@ -561,8 +561,8 @@
         "reason": "Pinned README grants numbered example source code; inspected asset and ancestor notices contain no explicit resource grant or creator attribution. Prior inferred MIT asset selection withdrawn; permission/attribution confirmation required."
       },
       "replacement": {
-        "sha256": "426c461b9bf5a9d15a4ad3cb8b3fdd07bcba94d6dd3e89ca9da3f10a0d633d5b",
-        "bytes": 721,
+        "sha256": "c85c6581dde63615200376463f7f2e91a43ccd6608f102d336989ee90996f77e",
+        "bytes": 4196,
         "generator": "tools/replacement_assets.py",
         "license": "Apache-2.0"
       }
@@ -1703,8 +1703,8 @@
         "reason": "Pinned repository LICENSE declares GPL version 3. Full source and ancestor notices inspected; resource-specific grant is not established; collection GPL notice recorded without inferring individual asset rights."
       },
       "replacement": {
-        "sha256": "22da5624f0ce12dc75670b3b116c4121e7feca7b0d211e11782a62da81889e49",
-        "bytes": 89,
+        "sha256": "a1e4642bd25e8fbd4569f53c4bc1435a4f293658b536bd0d217838f4c9b2e39e",
+        "bytes": 1108,
         "generator": "tools/replacement_assets.py",
         "license": "Apache-2.0"
       }
@@ -1915,10 +1915,11 @@
         "reason": "Pinned repository LICENSE declares GPL version 3. Full source and ancestor notices inspected; resource-specific grant is not established; collection GPL notice recorded without inferring individual asset rights."
       },
       "replacement": {
-        "sha256": "f8e626797833ec3c9c199c2adad1c889f891cfba6fd2b513902a4a60aa682161",
-        "bytes": 9149,
+        "sha256": "5bc05b6a20fd0dd7b28205159ee8a6c8311fe998e64a24f2335abbb9a59be0ac",
+        "bytes": 307528,
         "generator": "tools/replacement_assets.py",
-        "license": "Apache-2.0"
+        "license": "Apache-2.0",
+        "target_path": "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/nature_1.png"
       }
     },
     "ports/embedded/eyllanesc/assets/631cc1bc310c00b9/files/nostyle.qss": {
@@ -2021,8 +2022,8 @@
         "reason": "Pinned repository LICENSE declares GPL version 3. Full source and ancestor notices inspected; resource-specific grant is not established; collection GPL notice recorded without inferring individual asset rights."
       },
       "replacement": {
-        "sha256": "fb74b24f52166bf570faaebba63cbf518343c65e93864cc802e1b55297f0b6f7",
-        "bytes": 83,
+        "sha256": "41dc139da19e3819520e63b7168414b6c60a95977324b4f82a4ce9f390863db2",
+        "bytes": 1108,
         "generator": "tools/replacement_assets.py",
         "license": "Apache-2.0"
       }
@@ -2074,7 +2075,7 @@
         "reason": "Pinned repository LICENSE declares GPL version 3. Full source and ancestor notices inspected; resource-specific grant is not established; collection GPL notice recorded without inferring individual asset rights."
       },
       "replacement": {
-        "sha256": "29330203be750f63433b38282bae90d91400006fe07bc2f1daafc80296d065a7",
+        "sha256": "22afdb44fb48f21936e6c6db878fec58fc4c51ae99c62b5a19081b5cf43908d5",
         "bytes": 649,
         "generator": "tools/replacement_assets.py",
         "license": "Apache-2.0"

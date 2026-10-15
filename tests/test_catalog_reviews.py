@@ -217,8 +217,11 @@ def test_licenses_when_nonofficial_then_every_port_and_resource_has_file_review(
     for path, review in reviews.items():
         assert review["target_path"] == path
         planned = {p["target_path"] for p in PORTS if p["implementation"] == "blocked"}
+        shipped = review.get("replacement", {}).get("target_path", path)
         if path not in planned:
-            assert (ROOT / path).is_file()
+            assert (ROOT / shipped).is_file()
+        if shipped != path:
+            assert not (ROOT / path).exists(), "a moved upstream file is not shipped"
 
 
 @pytest.mark.parametrize("section", ["classifications", "ownership"])
@@ -361,7 +364,12 @@ def test_replaced_resources_when_checked_then_generated_bytes_match_and_upstream
     replaced = [r for p in PORTS for r in p["resources"] if "replacement" in r]
     assert len(replaced) == 14
     for resource in replaced:
-        data = (ROOT / resource["target_path"]).read_bytes()
+        data = (
+            ROOT
+            / resource.get("replacement", {}).get(
+                "target_path", resource["target_path"]
+            )
+        ).read_bytes()
         assert hashlib.sha256(data).hexdigest() == resource["replacement"]["sha256"]
         assert resource["replacement"]["generator"] == "tools/replacement_assets.py"
         assert resource["source"]["sha256"] == FILES[resource["source_id"]]["sha256"]

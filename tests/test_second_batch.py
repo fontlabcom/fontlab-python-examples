@@ -396,7 +396,12 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
             if record["implementation"] == "clean_room_pending":
                 assert resource["archive"] and "license" not in resource
                 continue
-            data = (ROOT / resource["target_path"]).read_bytes()
+            data = (
+                ROOT
+                / resource.get("replacement", {}).get(
+                    "target_path", resource["target_path"]
+                )
+            ).read_bytes()
             shipped = resource.get("replacement", original)  # self-authored file
             assert hashlib.sha256(data).hexdigest() == shipped["sha256"], resource[
                 "target_path"

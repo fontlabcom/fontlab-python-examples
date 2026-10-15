@@ -238,6 +238,15 @@ def resolve(text: str, folder: str, base: str, recipes: list[str]) -> str:
     return LINK.sub(replace, text)
 
 
+def inputs(root: Path) -> list[str]:
+    """Every file the export reads: the catalogue files and each recipe README."""
+    readmes = sorted(
+        p.relative_to(root).as_posix()
+        for p in (root / "examples/recipes").rglob("README.md")
+    )
+    return [*INPUTS, *readmes]
+
+
 def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
     """Relative page path -> text, plus manifest.json."""
     ports = json.loads((root / "catalog/ports.json").read_text(encoding="utf-8"))[
@@ -261,7 +270,7 @@ def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
         "source_base_url": base,
         "inputs": {
             name: hashlib.sha256((root / name).read_bytes()).hexdigest()
-            for name in INPUTS
+            for name in inputs(root)
         },
         "counts": {
             "records": len(ports),

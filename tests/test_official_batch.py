@@ -368,7 +368,12 @@ def test_batch_nine_provenance_license_resource_hashes_and_native_boundary(row):
                     "No untracked native signal connections"
                 )
     for resource in row["resources"]:
-        data = (ROOT / resource["target_path"]).read_bytes()
+        data = (
+            ROOT
+            / resource.get("replacement", {}).get(
+                "target_path", resource["target_path"]
+            )
+        ).read_bytes()
         shipped = resource.get("replacement", resource["source"])  # self-authored file
         assert hashlib.sha256(data).hexdigest() == shipped["sha256"]
         assert len(data) == shipped["bytes"]

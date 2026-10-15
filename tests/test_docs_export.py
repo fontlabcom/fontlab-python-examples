@@ -42,7 +42,7 @@ def test_manifest_when_read_then_lists_every_page_with_hash_and_counts():
     assert manifest["counts"]["records"] == len(PORTS) == 299
     assert manifest["counts"]["implemented"] == implemented
     assert manifest["counts"]["recipes"] == 9 and manifest["counts"]["insights"] == 18
-    for name in docs_export.INPUTS:
+    for name in docs_export.inputs(ROOT):
         assert (
             manifest["inputs"][name]
             == hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
@@ -92,3 +92,24 @@ def test_source_base_url_when_given_then_repository_links_use_it():
         json.loads(pages["manifest.json"])["source_base_url"]
         == "https://example.test/repo/"
     )
+
+
+def test_manifest_inputs_when_listed_then_include_every_recipe_readme(tmp_path):
+    readmes = sorted(
+        p.relative_to(ROOT).as_posix()
+        for p in (ROOT / "examples/recipes").rglob("README.md")
+    )
+    inputs = json.loads(docs_export.build(ROOT)["manifest.json"])["inputs"]
+    assert set(readmes) <= set(inputs) and len(readmes) == 10
+    import shutil
+
+    for name in ("catalog/ports.json", "catalog/sources.json", "catalog/insights.json"):
+        (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / name, tmp_path / name)
+    shutil.copytree(ROOT / "examples/recipes", tmp_path / "examples/recipes")
+    before = json.loads(docs_export.build(tmp_path)["manifest.json"])["inputs"]
+    readme = tmp_path / "examples/recipes/layer_backup/README.md"
+    readme.write_text(readme.read_text() + "\nEdited.\n")
+    after = json.loads(docs_export.build(tmp_path)["manifest.json"])["inputs"]
+    changed = {k for k in before if before[k] != after[k]}
+    assert changed == {"examples/recipes/layer_backup/README.md"}
