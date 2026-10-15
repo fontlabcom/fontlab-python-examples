@@ -1,1 +1,3 @@
 ports/**/assets/** -text
+# GetGo fixtures are up to 64 MB of JSON: never diff them.
+*.vfj -diff
