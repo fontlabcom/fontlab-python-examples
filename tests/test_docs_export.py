@@ -113,3 +113,15 @@ def test_manifest_inputs_when_listed_then_include_every_recipe_readme(tmp_path):
     after = json.loads(docs_export.build(tmp_path)["manifest.json"])["inputs"]
     changed = {k for k in before if before[k] != after[k]}
     assert changed == {"examples/recipes/layer_backup/README.md"}
+
+
+def test_links_when_github_fontlabcom_then_only_public_repositories():
+    public = {
+        "fontlab-python-docs",
+        "fontlab-python-examples",
+        "typerig-lib",
+        "extend-fontlab",
+    }
+    for path, text in docs_export.build(ROOT).items():
+        for repo in re.findall(r"github\.com/fontlabcom/([\w.-]+)", text):
+            assert repo in public, (path, repo)

@@ -9,9 +9,9 @@
     "examples/recipes/README.md": "7faf167cd0da5c32a95977c8c5327f0c4c6633062dc5de9083ec8a24ccc83325",
     "examples/recipes/anchors_from_bounds/README.md": "b2930d1a3212633793a4b697992fa383cecdd8f60a294ba08466f8f8fb019522",
     "examples/recipes/contour_direction/README.md": "456a5599e1d31adf999508bb2fe01db3502062997201be3ab50cad8e2fdcf63d",
-    "examples/recipes/glyph_actions_batch/README.md": "ed8b885165f51ec64411d3bf751c0083219a2e44d9a6e1ef8dde273bbf7bca0b",
-    "examples/recipes/glyphs_path_report/README.md": "2dce14d0f61ab369777fee3b1742d399df7954d18ee94534c567a3c8bb4efd49",
-    "examples/recipes/glyphs_tabular_figures/README.md": "96add25c4d3452e57a8e878d279e40d5a61d6a12d79558d633d5884ed01edf22",
+    "examples/recipes/glyph_actions_batch/README.md": "0c4b5a07632bcbe5e87ebd74c5327cd1b15e17bf1c987e3b0dbf256351e5fadf",
+    "examples/recipes/glyphs_path_report/README.md": "863d897a17ef03ecaa1ac762aa9e3e3d6b7228aa320b74d64675eec34fd88826",
+    "examples/recipes/glyphs_tabular_figures/README.md": "fea5893d9c96dcaf94d19c88d574b47cc6a3118380d8bb45c48d1d6e8899836d",
     "examples/recipes/kerning_from_text/README.md": "45743b930ed87d284c4eeedc505e7a8bb7b2c9ed5b3534d89871abf5398959fb",
     "examples/recipes/layer_backup/README.md": "eb7b2d2fc92118783d0cc7d1b949b432baca5cab180558f4907ffd843c114124",
     "examples/recipes/round_coordinates/README.md": "319730c3a5e91877c2113a772028cf85611d7e5a8767b3c7c30be59189227a23",
@@ -191,17 +191,17 @@
     {
       "path": "recipes/glyph_actions_batch.md",
       "title": "Batch Tools > Actions on named glyphs",
-      "sha256": "afde6cb1218183caea7c6bedbe5a5279b0715e1c106229be24c38dfafba70812"
+      "sha256": "214dbe5608e7bd8c0dcf2a132e9c9a2a36406abb692da138e51f1d60a1a8a9f4"
     },
     {
       "path": "recipes/glyphs_path_report.md",
       "title": "Path problem report (a Glyphs script run in FontLab)",
-      "sha256": "89b1487c96d28a1d05d3e4f984ee786584765ba2aeb80b036e3e25a0f9434765"
+      "sha256": "ef64d501739168b1b0fd2b71743b127378be125e8afa06a6a91cab3a2b4f0216"
     },
     {
       "path": "recipes/glyphs_tabular_figures.md",
       "title": "Tabular figures (a Glyphs script run in FontLab)",
-      "sha256": "7ff86bbee8c3fb32822fa2054918aecfdd9288d4e52e0f84d7f2bda04d597d54"
+      "sha256": "65c64c666fcb7603ac3565741ddb85855ffcf1c4f9bac93df64465d0c414efc5"
     },
     {
       "path": "recipes/index.md",

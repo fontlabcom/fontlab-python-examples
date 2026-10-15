@@ -9,7 +9,7 @@ this_file: examples/recipes/glyphs_tabular_figures/README.md
 on the selected glyphs; its functions were run inside Glyphs 3.5.1 and 4.2 on an
 in-memory test font, including the anchor move). `recipe.py` runs the *same
 file, unchanged* in FontLab through
-[glyport](https://github.com/fontlabcom/fontlab-glyport), whose `GlyphsApp` module is
+glyport (`fontlab-glyport`), whose `GlyphsApp` module is
 backed by the current FontLab font.
 
 ```python

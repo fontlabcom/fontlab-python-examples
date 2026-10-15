@@ -2,7 +2,7 @@
 
 **Purpose.** Run steps from FontLab's Tools > Actions catalogue (Remove Overlap, Add
 Extremes, Shift...) on a list of glyphs from a script, using the Pythonic tree of
-[fontlab-fontlabapp](https://github.com/fontlabcom/fontlab-fontlabapp):
+`fontlab-fontlabapp`:
 
 ```python
 from fontlabapp import host
