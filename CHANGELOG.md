@@ -23,6 +23,19 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Review fixes (R-examples). Native acceptance is now bound to its run:
+  `tools/native_cleanroom.py` hashes each port's dependency closure (own files, ports
+  it loads, launcher package) before it runs and records the examples commit, a dirty
+  flag and revision stability; `tools/record_native.py propose|apply` refuses
+  incomplete phase envelopes, unclean teardown, resets, host-touching blocked ports,
+  closures that differ from the run commit or the working tree, dirty or unknown run
+  commits and a driver that differs from the run commit. All 187 clean-room records
+  re-run at f358589 (127 passed, 60 blocked verified; workspace evidence
+  `examples-cleanroom/review/`). `tools/catalog_reviews.py` resolves review citations.
+  Recipes: empty-GLYPHS guards for round/contour menu entries, curve-aware contour
+  direction, exact outline bounds and current master for tabular figures
+  (`glyph_names=[]` is no work), finite bounded kerning values.
+
 - 2026-10-15: All nine recipes also pass when run the way the Scripts menu runs them
   (file executed as `__main__` with menu constants filled in a temporary copy; workspace
   evidence `examples-recipes/menu_route.py`, `menu-*.json`).

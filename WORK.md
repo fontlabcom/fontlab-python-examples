@@ -2992,3 +2992,23 @@ copy, runs it with Remopy execute_script on the owned fixture font, parses the p
 report and applies the recipe's native checks: 9/9 passed. fontlabapp/glyport checkouts
 are put on sys.path in a guarded call before the script and restored after; FontLab's
 sys.path verified clean afterwards. Offline: `test_menu_route.py` 4 passed.
+
+## 2026-10-15 review fixes (R-examples, NEEDS_FIXES)
+
+Commits 135212d (review citations), 6e2ef2f (recipes), f358589 (native acceptance
+bound to run commit and dependency closure), then the catalogue record below.
+Tests: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m
+pytest -q tests` -> 1532 passed. Native (fl-native.sh --lane L6c, clean tree at
+f358589): `uv run --python 3.11 tools/native_cleanroom.py --batch-size 8 --ids ...
+--output .../examples-cleanroom/review/run0N.jsonl`. run01-02 40/40 each; run03 23
+passed, then storageview (cf15c3e91cdd8ded) timed out in inspect (status unknown,
+stopped safely) and left its session, so run04/run05 refused at prepare ("An earlier
+acceptance session still needs cleanup"). Re-run of those 84 ids with --reset-stale
+(reset 1 session, 33 witnesses) as run06-08: 84/84. Logs `review/run01-05.log`,
+`review/run06-08.log`.
+The old proposal (native-acceptance-proposal.json, commit 9bec8bb, rewritten by D9) is
+refused: `python3 tools/record_native.py apply ... --commit 9bec8bb` -> "run commit
+9bec8bb is not in this checkout's history" (exit 1).
+Recorded: `python3 tools/record_native.py propose --output review/proposal.json
+review/run01..03,06..08.jsonl` -> 187 ports, then `apply review/proposal.json --commit
+f3585891067184a0f14d708b805a766e2073331e` -> passed 127, blocked_verified 60.

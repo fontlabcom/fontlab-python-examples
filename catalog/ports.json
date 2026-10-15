@@ -978,14 +978,14 @@
         "spec_sha256": "054378e6acd0605d41e43e9a9442c61f6988a899a3280b8b0057d8344e27ebb6"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/035f3fbd2b81479a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 1,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1072,14 +1072,14 @@
         "spec_sha256": "4828c5c47616b83c7e1745635527103605fd75e08a5ee3d714111de029eef2a6"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/3f5f77c0358d9fef",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 2,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1123,14 +1123,14 @@
         "spec_sha256": "397d4b514ac9899ef39ea5a8c43af4a8948bf2ecc8460daea63297ba893ab4b9"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a1c26dbf9f995edb",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1174,14 +1174,14 @@
         "spec_sha256": "0f7896a8f4e405d061db6be73d7d985844f097bb90d34f073982c7028d866ed5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/63f2eeefd052f701",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1225,14 +1225,14 @@
         "spec_sha256": "ac13a2ab942c7f103bb2dbf79cfeb544b3a2d1b3b4c4d5e523947d49e350c983"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/e1a0a829f8f2e311",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 5,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1276,14 +1276,14 @@
         "spec_sha256": "9e335c616d3bd44441be769ced2078dbe7aa9244fc94b6a8267f45c5964f8c61"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/dab5fd4c94ec518d",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 6,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1327,14 +1327,14 @@
         "spec_sha256": "9c97ebbc80670b96dec4b92476d0661e78047732cda55f4b858c528e5e248f0a"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c0d4a173b261a3e5",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 7,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1378,14 +1378,14 @@
         "spec_sha256": "9feba0d1555d7083a67842d4e2029c0da2b366ecb1dd55350c6416006f651102"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/2f94fe07de765888",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 8,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1429,14 +1429,14 @@
         "spec_sha256": "5902c443bda24aacd24cb87d4cad16674e5960389459164b2ed19eb808b1f0f2"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/f48955d43ed6196c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 9,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1480,14 +1480,14 @@
         "spec_sha256": "939c2fbb675be2643243f5583644ce0953273c59aaa397b0c325537c42eccb21"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/675c9f79650d7507",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 10,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1616,14 +1616,14 @@
         "spec_sha256": "9df1ee41e51bd8c1dd0ea1309d4b793462f89ffb3e2f1ce36e4c031d2cb26541"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/7da7020aa7e2732b",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 11,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1752,14 +1752,14 @@
         "spec_sha256": "fb487a4ab1b944701ced3f0d6e95129609043495038a7dcb91daf201fcb04f4c"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1415facde30a25cf",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 12,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1888,14 +1888,14 @@
         "spec_sha256": "7dbbcd2cb73c5a94d6396288f1d2a753c549f8e0fd8c6949cb43e761d2224f01"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/eba98690c141a070",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 13,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -1968,14 +1968,14 @@
         "spec_sha256": "287f9c7c7dc70d9b5816fb7758fe7afec7cf55e9459e73d2b2f31b513c2b8845"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/907f39d8bf387501",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 14,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2104,14 +2104,14 @@
         "spec_sha256": "a6785521067bb6642355b2a0138ac5592ef69d763222470a2feaf185dd4de4db"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/19571722ed96aa9c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 15,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2170,14 +2170,14 @@
         "spec_sha256": "bf7e35a87e0b7e6c5de4e26f292d5d1da23a218b5dce3ea79c9d8fa2096c795e"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/10ef4dacb4db4080",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 16,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2432,14 +2432,14 @@
         "spec_sha256": "96657a810194acf7d8cf22f7aa8ebd49adfbdf3f3cb24eb061c416d32356e845"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/eca1cd9ef1528607",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 17,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2483,14 +2483,14 @@
         "spec_sha256": "f5e9501abe8d7ed6086e8979f881c79c3370c350dfa97ea3d70e9028504407fc"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/626fd0acec74fd91",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 18,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2563,14 +2563,14 @@
         "spec_sha256": "c4c3781fa468e3aff71b307510a18081b90c13f07803ddfab34ba8394178ce35"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/9e41e71c41b116a8",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 19,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2811,14 +2811,14 @@
         "spec_sha256": "5e90cc677378f12bdfc41d4da6175e4b95f4ddb2ca54678233ff2065a374ac84"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/505d60a757bbc177",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 20,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -2877,14 +2877,14 @@
         "spec_sha256": "fcd9ad08e41ae873beca08a37491a2165903c50c4c0d5c680733979983845e10"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a3b3cbe51c1506c6",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 21,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3419,14 +3419,14 @@
         "spec_sha256": "f29ba222e94d88a42892756aa70ab14983137ca700ffc40d4905f9a9d692b51b"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/876eab33b6a99e31",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 22,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3513,14 +3513,14 @@
         "spec_sha256": "6a6d835f8c17ec2f6e249fb23ae09b288d6c8d4f60b0a2a865ace9226b3e682d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/e62ce3eb648cfb4c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 23,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3607,14 +3607,14 @@
         "spec_sha256": "b663fb2fd54be33742d1790379d4004ad26946b9d7e97c705b3a6c8d70a7f9d2"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/5781fa4ba55c884f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 24,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3673,14 +3673,14 @@
         "spec_sha256": "22670fdecbfedaa8c880dd5f073906d0da3210deea1014d93cdfb6b953977db5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/700e96dec485e7a8",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 25,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3739,14 +3739,14 @@
         "spec_sha256": "2a56846b3ffe0f94fb49009171b8117833eacf5baa451169676dd3436384fa42"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/da76600eaea7a121",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 26,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3805,14 +3805,14 @@
         "spec_sha256": "45d26bd7202a8b9685b50b4a476f7f9ccc2a317d024bdd0b9292b39ae55ade9c"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c5b4e385cc921da4",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 27,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3856,14 +3856,14 @@
         "spec_sha256": "28a27c8e6d1447d91c8ce99c86b65b9f34277f08be49245c089876b3d0701c93"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b823a76f79197d84",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 28,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -3936,14 +3936,14 @@
         "spec_sha256": "e8bd8bdf26faf98d8e0ff67b8f9c4995a54e3658db24ae172b2539a2e7829ff4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/306c12d5cc1db46c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 29,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4016,14 +4016,14 @@
         "spec_sha256": "daa2e538ccb650a9790c81a250cac54d6fd2e51112235cd1d9688d6cade539ac"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/227efef76ed4ac74",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 30,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4082,14 +4082,14 @@
         "spec_sha256": "a6d1a4ea511e16ba7414d38f3d5e20ca595a58041d6e7393e055208551497b1d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c98ae8ac71886586",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 31,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4162,14 +4162,14 @@
         "spec_sha256": "faa359f1307dfd3afc694bfa7529241897b6e728db92a433fb57574fd6264400"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/090c76a87351e771",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 32,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4228,14 +4228,14 @@
         "spec_sha256": "42b6749a7e7b26720d36d67d27fdb9a70a329d35909b4f2ee0b0b2cd96d64247"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/878fe9f714df3b5e",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 33,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4294,14 +4294,14 @@
         "spec_sha256": "8edf9e8ecac47f35108a673259c890a286ad89d3001e939f2fad4092ab714342"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/321f8e535facafde",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 34,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4345,14 +4345,14 @@
         "spec_sha256": "7412edbe4b283c477a6fc6af0fa7683c328ac898c878c7fbeb66fea4159def22"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/e1f313d96e43adff",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 35,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4396,14 +4396,14 @@
         "spec_sha256": "3d0582ef0533c42b086c593c82a080fad169d04fecf65820969480e6c2ba34f4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/55bcde890cd77ed7",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 36,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4447,14 +4447,14 @@
         "spec_sha256": "ed764934be940bc9b92a0310ba06d95286aa9f4c9e32e6aece692b7c5074045c"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/f4d9e2927469223c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 37,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4498,14 +4498,14 @@
         "spec_sha256": "885d952e1218d20a29f22c59c6c50f8b4c4fc9dc82c7863004d13da7ce219490"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/4d19e62d93dd761c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 38,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4549,14 +4549,14 @@
         "spec_sha256": "b86d3d5083aa85e4bbf99284c9dfa3e2bef0a552f3966d05bcffcb3c89b61eed"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/94ab271d023d1ca3",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 39,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4600,14 +4600,14 @@
         "spec_sha256": "dfe810fcb767a1e3b90cc141bbb43d934c2ef03e20b76d8fde8c6030338f4dc0"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/2719ebb336f3a29e",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final01.jsonl",
-          "sha256": "86f5279e0bdc5dd1bb92a9221010aea21ace6c5888a6285c90c549a79ee90792",
+          "file": "examples-cleanroom/review/run01.jsonl",
+          "sha256": "a28c2d8b8b5cac6906b7dacc2470137ac279f3ae1b4115ade221d125a763adf5",
           "line": 40,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4651,14 +4651,14 @@
         "spec_sha256": "3e4e586306c85b97a8ca4d461262d8aecb4f4ee625601f10cd35b7f177d7272c"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/bb1c114d38fb756a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 1,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4730,14 +4730,14 @@
         "spec_sha256": "4270076d764488617560b3256c3c5640885749b1d7973f9041052f65cc3a7721"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/0578c17977b471f1",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 2,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -4780,14 +4780,14 @@
         "spec_sha256": "bd8ec5889c0b582a179e877d093f9806a159338dd8e02122ee51a6b682ad9c15"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/0788354954c8e613",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5041,14 +5041,14 @@
         "spec_sha256": "933d735f0b673a75cc54ab9ea48cec0fb8ae81fee8155443d63acbd465c74d86"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1ca857d797199ecf",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5190,14 +5190,14 @@
         "spec_sha256": "5fda4332c9be579532c1b55a7a6f4abe89c9f1cdbd5dc177aca9b01ba044d82d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1cf57c0f2ac8880a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 5,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5297,14 +5297,14 @@
         "spec_sha256": "719f9ecb7ca91341349ae517d077980df5a0f43c60d16ebb42ea485e5ab376b3"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/243ae486f9528e8c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 6,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5347,14 +5347,14 @@
         "spec_sha256": "26ece704e61a0cc0582d97a0f13ef21b5122200ec20ada3fe31cf82b439d57b5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/27709a02d37b9ba9",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 7,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5482,14 +5482,14 @@
         "spec_sha256": "9267ad3046e6ceff9f9d380e22e3c7c5f1341d663c58273f6dd6fbf985475034"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/29f6a7d0a3bb6813",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 8,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5547,14 +5547,14 @@
         "spec_sha256": "0929cb8adc57dbd915b08d1c7ac83d8cb6bcfc73b4cdb159855253d1fb6b3c00"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/2cd6ffc2b2ed65bb",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 9,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5597,14 +5597,14 @@
         "spec_sha256": "a9e60e0f87468cc4abdac5d1aa2edf1a10308d1bf2dcae9077d7e732eee304f9"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/65d15d1fbc1b15e9",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 10,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5647,14 +5647,14 @@
         "spec_sha256": "e3437de8c2156f8508ed71294ade1f1330c1c4973f5e72872a651da55171613d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b7283d74afb78218",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 11,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5697,14 +5697,14 @@
         "spec_sha256": "598a52c8ca096f3efd3aeb69c3ccc9c3eae465ebe586fb8e5540376192fa9a37"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b95b687bbc541207",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 12,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5776,14 +5776,14 @@
         "spec_sha256": "b6eb431b76273546d0df020356b699287dab493314b08f784b8ea128d3c01e8b"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/bd6c8feb783ba845",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 13,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5869,14 +5869,14 @@
         "spec_sha256": "750ae010b7d6b7f13c5715df83c705bbe38f5946dd644b955c05b015aded8f8d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c1b878b63f80e733",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 14,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -5976,14 +5976,14 @@
         "spec_sha256": "ce23744ca9ffa564a82f4891e26bddf598b0b682673debb386fcc0b941367178"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/de30d23621025fe6",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 15,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6072,14 +6072,14 @@
         "spec_sha256": "f57739239874cc93b8c41f79fc16ac42e01401521837b9af88b3044dc0ee67f9"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/fcfaf9667206bbd6",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 17,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6179,14 +6179,14 @@
         "spec_sha256": "9285519015812ef526ede47bc3ebbdf3a530734a1818dfaf2e1909373c793276"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/4efac54bae01fc62",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 18,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6229,14 +6229,14 @@
         "spec_sha256": "fa6d40ede58cd63db70be88d9d9203144ec3f9fba323364d09a17c64c8b3357f"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/60d40ce5671653cf",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 19,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6279,14 +6279,14 @@
         "spec_sha256": "cad4e33e797884c6ed49329fcc724731a113a2eee3b411124b486979a1c9dd2b"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/09afeea11be83f4f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 20,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6329,14 +6329,14 @@
         "spec_sha256": "39bad65ed8966caf187a2b94e67f9f30b1fcaa2250899991afc521929f6fa5d4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/2d36e0fe43f5d49a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 21,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6379,14 +6379,14 @@
         "spec_sha256": "d3fc3535f2fe23ed30a167e152affb3bf4a979a2db4949049699b7cea2b6210d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/912e5c751b20ce97",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 22,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6429,14 +6429,14 @@
         "spec_sha256": "6f6c4557ba5ba62550f9da54a79050344f985ca3fed786b0b93c2d37013499a7"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/13a6bb9a9d2b9037",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 23,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6522,14 +6522,14 @@
         "spec_sha256": "d2911e7043dea6897ddaf3591a9f56a12adaed8cd65764ddcf8848e2833ed4ca"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b2d717e4d43806d2",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 24,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6572,14 +6572,14 @@
         "spec_sha256": "dfbf3eb5a9c91ebddd0ede3e54e8a8e2a5bbf38e50d51c98547235daf6d215c6"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c12a2071adbab88b",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 25,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6622,14 +6622,14 @@
         "spec_sha256": "071815d2cd5ad0a3d4060d066988d1d48d493215e0da35f267c8ddc6342c27d5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c56cf1699b07b350",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 26,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6672,14 +6672,14 @@
         "spec_sha256": "e2342f65a079bd94a763b18e96a66da84c2d158b56c99c06ef6e07e8dfea1d18"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c997677a2bdb4f34",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 27,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -6722,14 +6722,14 @@
         "spec_sha256": "b6ea28a114f3c81a3267770f1c7eff0ff99d3120134dec011074cb4a7b8617e0"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/428c50abcef7adfe",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 28,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7347,14 +7347,14 @@
         "spec_sha256": "bd1dd72970f2e738f12672f572f88c3a17488d132f6985cff4fe54540afad8e4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b34b2f696a977e74",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 29,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7428,14 +7428,14 @@
         "spec_sha256": "dd5f1986080cc46fb469df8dc827ba17e67b6bfd657b038971fa6c0904eda2f5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/d6dc56a5318ffe71",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 31,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7478,14 +7478,14 @@
         "spec_sha256": "1b4377e546659628e4a3bf294b11000a9abbca4a64c4887c23ca138cf4f65637"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/356e4e807f1e789f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 32,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7528,14 +7528,14 @@
         "spec_sha256": "753d84c7f2afa883b51eb65732d4c8b174bdf642e63214582b0f816afea38b72"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b91effc45f81fbb0",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 33,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7578,14 +7578,14 @@
         "spec_sha256": "e8ec8f9ea46d33c27e9879897597b4c8b125b935d76473a940dc5d5cdcd79217"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/499e965d86347920",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 34,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7628,14 +7628,14 @@
         "spec_sha256": "ed980ffb05b508223c120760a809d6987a6eac71e3c65d85646c441a36470382"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/3040b9f6b267a196",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 35,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7678,14 +7678,14 @@
         "spec_sha256": "306168affd6f671a9dbee032d0ef20449b85926e78adccced66ae8fe7cc363f5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/f702b62aa47629ad",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 36,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7728,14 +7728,14 @@
         "spec_sha256": "1d31c80103b448ad1af9dc100c25f79ffa69eee69a2fb9198669e64414caee55"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/16456ba02f4b79cc",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 37,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7778,14 +7778,14 @@
         "spec_sha256": "81c2fe88e9b396575cfaf1287c4499f6fa8e28f9a8641ed31021743743502e11"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/84cb59e07adfae2c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 38,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7828,14 +7828,14 @@
         "spec_sha256": "7154479b52a91b8fb5ba9ccd7ddbb6f79eeccf7618eda7929196b0ee52a094a8"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/8e5aa13798c2763c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 39,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7878,14 +7878,14 @@
         "spec_sha256": "14dea2d37facc00ff065858f3316a86ede5b5d5da9ec760882baf4a3989b9519"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/248e64416b9b218c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final02.jsonl",
-          "sha256": "d702036976c33a9e794daeb95d5c6517b51640979972a15d303d737aeb38ef7e",
+          "file": "examples-cleanroom/review/run02.jsonl",
+          "sha256": "dccf4978cfcf7bff21fb571fad295136e9f327938662f354225f75bc0a4daf20",
           "line": 40,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7928,14 +7928,14 @@
         "spec_sha256": "f9c8daa76bb208d15f869288a8e4cffb45254477dafc875b279af3d78d5324c5"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/36805750b888fba6",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 1,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -7978,14 +7978,14 @@
         "spec_sha256": "8c0b7e1d3b5c06a600e6ac85091009998b1311764baaa1dd4b36862f96e1582e"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/468179092748a72e",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 2,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8028,14 +8028,14 @@
         "spec_sha256": "832fd4d191c004fa13ebcf3cfb74401c14328ff28f9a8ec70bfd2098696dde41"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/9e21c6536fda7a23",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8078,14 +8078,14 @@
         "spec_sha256": "1f104f4a71ba0582d9eb5b80ac937ecafa796fa26cbbebea69972eaba232faa8"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/e63bffc17abf2fde",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8128,14 +8128,14 @@
         "spec_sha256": "dcedbc645280d4a95990f8804a5a32ce0b375539aa864382f9bced0892b245c8"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/509e781f1267967f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 5,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8178,14 +8178,14 @@
         "spec_sha256": "b6f5c492eb2febfe065e2de72249d11dae1d37ce0208fd076c0e55f935b61847"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/136c45cc9f97c218",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 6,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8257,14 +8257,14 @@
         "spec_sha256": "0f0428745b2bf391ccaba2a1c3e20a85d7a2acce1ffba24f2de0ef9227c555ce"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/43c6c2f6f5f036d3",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 7,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8307,14 +8307,14 @@
         "spec_sha256": "a6659d92d858558a60abd9c490bb7543844465781e02ec65fed576e4063d4ad1"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/fa6823667fdb918f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 8,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8357,14 +8357,14 @@
         "spec_sha256": "25405917a46a15080325f38db1bb7a1d53382793c2705b228f4438ec79209ed7"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a96a7978c0b9f6ee",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 9,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8407,14 +8407,14 @@
         "spec_sha256": "3896e65dc20bbbc72c5512f421ef5de0debb5d29e4b0c48af8d74b5a08ec079d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/fff97a435b73d548",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 10,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8612,14 +8612,14 @@
         "spec_sha256": "63db48049e190a19cbd216caa0aace49b8ee60b5d8cbc12c22ec2ca4107da30a"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a58650b5461c0f48",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 11,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8662,14 +8662,14 @@
         "spec_sha256": "50e5d25a273cc3c9ba7fa7635b8be1f91050636b5dd7b43db1049d1505349a4a"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/9dab02b61cebbdb7",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 12,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8712,14 +8712,14 @@
         "spec_sha256": "72cba585ad22a2516149ba72143a1ada5952664184832a907398ddb652dd6310"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/0a3b15766909bdc3",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 13,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8762,14 +8762,14 @@
         "spec_sha256": "5ccdae0296898203095c9bf2f7357e731b9a8cc6c17b673828d4fa0d6afc949a"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/cc95f9719b8e4eda",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 14,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8812,14 +8812,14 @@
         "spec_sha256": "5e5bf59db8c7961c66cae55bea07a5e615e7e65b6604c7a9c29b04fdddab9949"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/029ea0dabe87ae57",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 15,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8862,14 +8862,14 @@
         "spec_sha256": "38cbde1f599052fc7fcaf9a9abc3697cd80d64e6b4df0c8b443de29f88f0657e"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/4b8851287931abd0",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 16,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8912,14 +8912,14 @@
         "spec_sha256": "49202d425426ace276123f77ee6b6ec0986f505ac98269ac2733c2f72ddd03d6"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/67170c89593ad35e",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 17,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -8977,14 +8977,14 @@
         "spec_sha256": "4ed513ca11fc1864ae9b8a34daa21484a0561c5d45a17033281f630d42755e2c"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/d50ad6638357e669",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 18,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9027,14 +9027,14 @@
         "spec_sha256": "ee8a92ef0e82177650cde2c067920bfdf1d3da54396294366514c541a38cbad3"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a59dae9770bfbefb",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 19,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9077,14 +9077,14 @@
         "spec_sha256": "1a098d4d3583a00b702c96d2e3fecdd259149cee3767c11984d79fba9990a9c4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/39de33366209402d",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 20,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9127,14 +9127,14 @@
         "spec_sha256": "49522960b33da52cbeb6cc6f1611f5ff4c32ab5efcb2e0803c3c29f65dd5183d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/ddb20b1b68b18a91",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 21,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9192,14 +9192,14 @@
         "spec_sha256": "30fbabccaea9919871fb7eefddabaef37037df1afe5e46cd238c8c53a3f781cf"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/bf3b39a8c2df8e94",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 22,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9242,14 +9242,14 @@
         "spec_sha256": "ef24d1baa4dd57cbaa3f400bdceb5ca1928f322c64e50bb89e49c70a2a7c5a5f"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/dc59f268ee01e364",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
+          "file": "examples-cleanroom/review/run03.jsonl",
+          "sha256": "f2acaf25496723e2bfa56ae063988525fbd3c550428fb3c134eb5dc1318fdfd9",
           "line": 23,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
@@ -9292,15 +9292,15 @@
         "spec_sha256": "e654a291ea4ca57e04aa7289c91e933a19c5d248bcc8b32d5e5b864d2babe4e8"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/cf15c3e91cdd8ded",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 24,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 1,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9342,15 +9342,15 @@
         "spec_sha256": "a5c25452d604097838e3b72a81f2c5f498e645b08f721776b27de29189cea5e6"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/79f3a23172968ad2",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 25,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 2,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9392,15 +9392,15 @@
         "spec_sha256": "e4740bbbcc3f899729fb39f827f71604cdbbd6f44e224b17a67553211567ea8b"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/0bba8a80541ab04f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 26,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9442,15 +9442,15 @@
         "spec_sha256": "85eef06cc441631565f7f745a636c1af7d876f5fa3ec2cc5df13bd4774dea90f"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/90721289b8108c4f",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 27,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9492,15 +9492,15 @@
         "spec_sha256": "5066e91d55dadec1e5d13522217ddc5bb8929f232185b0c74d515fb8c6c142db"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/fbb4e3c7288fed7c",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 28,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 5,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9542,15 +9542,15 @@
         "spec_sha256": "49c605d6b2a0e3c30e8dbe60224e3d12681340457f5367a7b7adebd2ed7292f4"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/aad57160cfd51894",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 29,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 6,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9592,15 +9592,15 @@
         "spec_sha256": "257d944c8f1e9d58425c04eb406977c4a09ad3f6b39661b6f0cde1103afe71d0"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/409f3d46a9555f23",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 30,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 7,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9642,15 +9642,15 @@
         "spec_sha256": "9cee0eda04e8fd6c1dcab15f59df00c039177b8b8b70785aae9fd678e3eebdf2"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/d8803c2afaabf3d5",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 31,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 8,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9692,15 +9692,15 @@
         "spec_sha256": "3ac25157fb021dc9d03ea2afbed9ebecc6176b3d6f1d9cf266ba010c996b1a23"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/ebf87d5f5390b0fd",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 32,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 9,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -9742,15 +9742,15 @@
         "spec_sha256": "ebb974830c362960866235077b73630761b709526cdf807937c3efaa719b14a1"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/98f207907001ce47",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final03.jsonl",
-          "sha256": "adf5fa181cc896da413e581e3253d52a2505027140b2b3aabc7ad2fd0cfa619f",
-          "line": 33,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 10,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10032,15 +10032,15 @@
         "spec_sha256": "e0b1c5b587c18261a9daa5a52be89a26380db58c102eac40c181530672c8b2de"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/27bf65f8b059fd96",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 1,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 18,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10119,15 +10119,15 @@
         "spec_sha256": "4f1df3901ee1b0117a4805a81ba49a1bfbd1602394e4bc297835523e0ca16d5f"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/4d24cd77c74a8801",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 3,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 20,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10174,15 +10174,15 @@
         "spec_sha256": "ff4017d9e166b2049e3de86d38a66dd60ea3a4094f2a01fdfc6ed4f0aac1630e"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/9941e3c752b3a3b7",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 4,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 21,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10229,15 +10229,15 @@
         "spec_sha256": "9b36d3af1b8917c5d743eb32f3c2849f7e55adf2bfce882ac2039781f2d52a40"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1321540b04f33117",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 5,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 22,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10284,15 +10284,15 @@
         "spec_sha256": "1d08efc291ddf68eb49c3256384945cdffc0c1ab03ded6b30c03aa305c0139e8"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/7ba49e67588b1329",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 6,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 23,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10371,15 +10371,15 @@
         "spec_sha256": "e4692e08edde6d8e3c0b140a78e0519f6618de6fb5322964a7d991590d9ac8fb"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/de4979a99c6d0bed",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 8,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 25,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10426,15 +10426,15 @@
         "spec_sha256": "b47eb82cab470f494961ba514aa8a64e0ae9182e7a438ea71023250e7de080d1"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/773db5c24ae98ffb",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 9,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 26,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10481,15 +10481,15 @@
         "spec_sha256": "2877215f6a691215604a0825a19d38728577fbf983a9fe6b84482d70af7a2b14"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/bcfa5de0140286d5",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 10,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 27,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10536,15 +10536,15 @@
         "spec_sha256": "68b307dcec67f8b8bbf79ce4a7e4d182f343a112834d17ab8784953b800c0688"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/5125860585e98b3a",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 11,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 28,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10587,15 +10587,15 @@
         "spec_sha256": "1054b0f86acce5206864b151cc69b7d05c564832e23afc641bef1400e1ca4fa3"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/0ad3432ccdca7ac0",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 12,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 29,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10638,15 +10638,15 @@
         "spec_sha256": "05beb44a7f77afd1c5b7a3b1d971858308bfad9db952318ff4a939fd821e566b"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/a14d08fe23965bec",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 13,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 30,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -10881,15 +10881,15 @@
         "spec_sha256": "f35731d579470a5b54009badd0f927fc034b323154f687b7425830eea49a4baa"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/c82d1af7d1a7b0cf",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 20,
+          "file": "examples-cleanroom/review/run06.jsonl",
+          "sha256": "b687b04b9f857467c1f380d4a65adcfdcd1c5eba20755b8b5bff413dd957f8df",
+          "line": 37,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -11107,15 +11107,15 @@
         "spec_sha256": "1b58ba3a412c2a5c0e075785001227763f1d9a91d9a809246f437e1f7e268df7"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/5a8e48d2a1396cea",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 26,
+          "file": "examples-cleanroom/review/run07.jsonl",
+          "sha256": "fd6396a2199b33dd9cd638311c0bcb049d51da61d4647f7ca7fe64fc568867a1",
+          "line": 3,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -11173,15 +11173,15 @@
         "spec_sha256": "b3788e3bf2dd204d8bf6393155093b0d7f73e50c318b5f4490216f90a504bf45"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b7db02f540cc7559",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 27,
+          "file": "examples-cleanroom/review/run07.jsonl",
+          "sha256": "fd6396a2199b33dd9cd638311c0bcb049d51da61d4647f7ca7fe64fc568867a1",
+          "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -11239,15 +11239,15 @@
         "spec_sha256": "1c291e3728ff2f90f366d01255829ba8e21ae621596a038aff96c3078d4e498d"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/b9660f4ee653ca01",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final04.jsonl",
-          "sha256": "8512216cbd4d1f50a9e0a6a217b00518e01a637f34e717751a0493dd59a4ca65",
-          "line": 28,
+          "file": "examples-cleanroom/review/run07.jsonl",
+          "sha256": "fd6396a2199b33dd9cd638311c0bcb049d51da61d4647f7ca7fe64fc568867a1",
+          "line": 5,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
@@ -12647,15 +12647,15 @@
         "spec_sha256": "6e84b2f7b26d1098a672e1d8fa5cf9bcdc98812d09dc1b792709947455a94fdf"
       },
       "native_evidence": {
-        "implementation_commit": "9bec8bb",
+        "implementation_commit": "f3585891067184a0f14d708b805a766e2073331e",
         "report": "verification/catalog-native-evidence.json",
-        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py)",
+        "verification": "clean-room native acceptance: launch, inspect, close, owned teardown verified clean, host alive (tools/native_cleanroom.py); receipt bound to the port's dependency closure at the run commit",
         "catalog_record": "/records/1e5d0f7289e1b36e",
         "source": {
           "root": "ecosystem-evidence",
-          "file": "examples-cleanroom/final05.jsonl",
-          "sha256": "19e1682f8d88c16fbc06994e9be5a220c78c934e8feb0eda4b3b6451a420f5b9",
-          "line": 27,
+          "file": "examples-cleanroom/review/run08.jsonl",
+          "sha256": "53e1b378ec90bc67bd5cf6c33cb77acf8c693d6a2be488c5a2f49fb2474e5d58",
+          "line": 4,
           "format": "native-cleanroom.v1",
           "id_pointer": "/port_id",
           "phase_pointers": {
