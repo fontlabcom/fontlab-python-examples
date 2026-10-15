@@ -107,7 +107,7 @@ def main() -> int:
             finally:
                 for opened in fl.fonts():
                     if opened["id"] in owned:
-                        fl.close_font(font_id=opened["id"])
+                        fl.close_font(font_id=opened["id"], save=False)
                 item["no_fonts_left"] = not fl.fonts()
                 item["fixture_unchanged"] = hashlib.sha256(source.read_bytes()).hexdigest() == row["sha256"]
                 item["passed"] = item.get("passed",False) and item["no_fonts_left"] and item["fixture_unchanged"]

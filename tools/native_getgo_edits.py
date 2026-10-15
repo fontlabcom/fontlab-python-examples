@@ -261,7 +261,7 @@ def run_one(fl, row: dict, output: Path) -> dict:
         assert saved.is_file() and saved.stat().st_size > 0, "save_font wrote nothing"
         item["saved_bytes"] = saved.stat().st_size
         item["steps"].append("saved copy")
-        retry_busy(lambda: fl.close_font(font_id=font_id))
+        retry_busy(lambda: fl.close_font(font_id=font_id, save=False))
         owned.discard(font_id)
         font_id = open_owned(saved)
         reopened = native("snapshot", saved, font_id, sample=sample)
@@ -280,7 +280,7 @@ def run_one(fl, row: dict, output: Path) -> dict:
         for font in fl.fonts():
             if font["id"] in owned:
                 try:
-                    retry_busy(lambda: fl.close_font(font_id=font["id"]))
+                    retry_busy(lambda: fl.close_font(font_id=font["id"], save=False))
                 except Exception as error:
                     item.setdefault("cleanup_errors", []).append(f"{type(error).__name__}: {error}")
         item["no_fonts_left"] = not fl.fonts()

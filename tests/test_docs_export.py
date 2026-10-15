@@ -141,3 +141,15 @@ def test_getgo_page_when_built_then_links_public_fonts_and_counts_examples():
     assert manifest["counts"]["getgo_examples"] == len(native["examples"]) == 13
     assert "examples/getgo/README.md" in manifest["inputs"]
     assert "(../../testdata" not in text, "relative repository links must be absolute"
+
+
+def test_check_when_finder_metadata_is_present_then_export_stays_current_and_is_kept(tmp_path):
+    out = tmp_path / "docs-export"
+    base = [sys.executable, str(ROOT / "tools/docs_export.py"), "--output", str(out)]
+    assert subprocess.run(base, capture_output=True, text=True).returncode == 0
+    for junk in (".DS_Store", "._index.md", "categories/.DS_Store"):
+        (out / junk).write_bytes(b"finder")
+    done = subprocess.run([*base, "--check"], capture_output=True, text=True)
+    assert done.returncode == 0, done.stdout + done.stderr
+    assert subprocess.run(base, capture_output=True, text=True).returncode == 0
+    assert (out / ".DS_Store").is_file(), "generation must not delete or depend on Finder files"

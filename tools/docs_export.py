@@ -307,6 +307,11 @@ def build(root: Path, base: str = SOURCE_BASE_URL) -> dict[str, str]:
     return pages
 
 
+def is_finder_metadata(path: Path) -> bool:
+    """macOS Finder files (.DS_Store, AppleDouble ._*) are not part of the export."""
+    return path.name == ".DS_Store" or path.name.startswith("._")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument(
@@ -321,7 +326,11 @@ def main() -> int:
     output = args.output or args.root / OUTPUT
     pages = build(args.root, args.source_base_url)
     existing = (
-        {p.relative_to(output).as_posix() for p in output.rglob("*") if p.is_file()}
+        {
+            p.relative_to(output).as_posix()
+            for p in output.rglob("*")
+            if p.is_file() and not is_finder_metadata(p)
+        }
         if output.is_dir()
         else set()
     )

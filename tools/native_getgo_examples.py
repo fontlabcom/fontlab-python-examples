@@ -94,6 +94,15 @@ def run_example(fl, example: dict, extra_paths: list[str], limit: float) -> dict
         record["passed"] = bool(state["checked"] and not state["error"])
     except Exception as error:
         record.update(passed=False, error=f"{type(error).__name__}: {error}")
+    # An aborted or timed-out example may leave its owned copy open (modified): close what it opened.
+    # Wait out a still-running callback first so the close cannot race it.
+    stray = [f["id"] for f in fl.fonts() if f["id"] not in before]
+    for ident in stray:
+        try:
+            fl.close_font(font_id=ident, save=False)
+        except Exception as error:
+            record.setdefault("cleanup_errors", []).append(f"{type(error).__name__}: {error}")
+    record["closed_stray_documents"] = len(stray)
     record["documents_after"] = len(fl.fonts())
     record["no_documents_left"] = record["documents_after"] == record["documents_before"]
     return record
