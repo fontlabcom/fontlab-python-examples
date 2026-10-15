@@ -2,6 +2,78 @@
 this_file: WORK.md
 ---
 
+# 2026-10-15: Independent clean-room receipt integration and native driver
+
+Integrated the three merged batches on `issue-101-pythonqt-examples` at base
+`db922a6`, without reading the private archive, original source trees or Git
+history. `tools/integrate_cleanroom.py` validates exact 187-spec receipt coverage,
+spec SHA-256, target/file paths and replacement headers, then uses the existing
+catalogue projection/output tools on checked-in metadata only. It is repeatable
+without original-tree acquisition. Reapplying resets replacement native states
+and produces byte-identical ports.json, sources.json and INDEX.md.
+
+- Clean-room results: **127 implemented, 60 blocked**, all with reviewed
+  Apache-2.0 replacement grants, the exact spec hash and the requested review
+  basis. Preserve archive/spec fields, immutable source provenance and all
+  original resource records. Inventory projections use `port_license` for the
+  new grant; they do not grant Apache-2.0 to archived original bytes/resources.
+- Overall catalogue: **299 records, 148 implemented, 151 blocked, zero pending**.
+  All 187 replacements/capability stubs are native **unexecuted**. Only the 21
+  unchanged non-official implementations retain current native passes; earlier
+  official-code receipts remain historical. All 1,569 original source identities
+  and 465 Python-file identities remain in the inventory.
+- Replace relocation absence assertions with receipt/state coverage. Retire tests
+  tied to removed Python attributes, exact original fixtures and archived assets;
+  retain the three independent spec-based batch suites, native-double/shared
+  boundary regressions and unchanged non-official examples. Add public launcher
+  coverage for all 187 records (including blocked host/builder rejection), receipt
+  validation, deterministic integration and native-driver pure-part coverage.
+  The previously missing-reference test passes in this checkout; it was not
+  modified. No broad skip or failure suppression was added.
+- Add executable `tools/native_cleanroom.py` (Python 3.11, external Remopy only).
+  Client connection batches contain separate prepare/launch/inspect/close/verify/
+  finish calls. Each phase restores sys.path and enforces a 3.5-second host
+  budget with a four-second transport deadline. Purge stale example modules only
+  without retained handles, put this checkout first, and assert the package and
+  launcher import paths. Check visible top-level content, retained callback/model
+  ownership, stopped timers/listeners/threads, destroyed owned QObjects, remaining
+  windows/threads and removed owned temporary directories. Blocked launches must
+  fail with their specific reason before host/builder access and without new
+  windows, threads, descriptors or handles. Destruction witnesses retain plain
+  state only and never touch a destroyed wrapper. Outputs include per-port JSONL,
+  replacement hashes, phase timings and a summary of successes/failures/unknown
+  outcomes and unrun IDs. Stop on uncertain execution or failed cleanup; never
+  retry a timed-out launch or mark catalogue acceptance from this driver itself.
+- Update README/INDEX/PLAN/TODO/CHANGELOG and dependency notes with current counts
+  and the exact native command. Further native acceptance, interaction coverage,
+  the 14 existing non-official resource grant gaps and docs-site integration remain.
+
+Verification:
+
+- Baseline required suite: **1 failed, 1,093 passed, 621 skipped**. The failure
+  was the obsolete relocation absence assertion; the insight-reference fixture
+  check passed here.
+- Required final suite, with JUnit output outside the checkout:
+  `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/private/tmp/cleanroom-integration-uv
+  uv run --no-project --with pytest python -m pytest -q tests
+  --junitxml=/private/tmp/cleanroom-integration-final.xml`: exit 0,
+  **1,485 passed, zero skipped**, 32.45 seconds.
+- Native driver offline tests: **19 passed**, including connection errors,
+  unknown outcomes/no launch retry, cleanup failure, deferred destruction,
+  repeated prepare with retained state, sys.path restoration, module purge,
+  batching and JSONL/summary generation with fake transports only.
+- `python3 -m py_compile` passed all 14 changed/new Python files with
+  `PYTHONPYCACHEPREFIX=/private/tmp/cleanroom-integration-pyc`.
+- Scoped Ruff check/format passed; `git diff --check` passed. Metadata-only
+  regeneration was byte-identical. Recipes, port sources, specs, implementation
+  receipts and historical evidence were not modified; staging remains empty.
+
+Native usage (not executed by this integration task):
+`uv run --python 3.11 tools/native_cleanroom.py --batch-size 8
+--output /private/tmp/fontlab-cleanroom-native.jsonl`.
+Use `--ids id1 id2` or comma-separated IDs to select ports. The orchestrator runs
+new native acceptance next. No FontLab call, git add or commit was made here.
+
 # 2026-10-15: D7 public clean-room relocation
 
 Removed the 431 unique files listed beneath `ports/` in the private archive's

@@ -45,8 +45,12 @@ def write_catalog(catalog: dict, output: Path) -> None:
             + "."
         )
         lines[8] += (
-            " Official demos marked clean_room_pending have moved to a private archive; "
-            "their public behavioural handoff is in [clean-room-specs](../clean-room-specs/INDEX.json)."
+            " Official originals remain archived. Independent replacements and capability blockers "
+            "are bound to [specifications](../clean-room-specs/INDEX.json) by "
+            "[receipts](../clean-room/receipts/). Archived resources are not re-licensed as replacements."
+        )
+        lines[8] += (
+            f" Native launch/inspect/close passes: {catalog['counts']['examples_native_executed']}; independent replacements await new native acceptance."
         )
     for source in catalog["sources"]:
         lines.append(

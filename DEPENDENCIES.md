@@ -29,7 +29,10 @@ imports that dependency only for launch, so catalog/help work outside the host.
 No PyQt/PySide, Qt.py or second Qt runtime is required. Standard-library importlib
 loads the four catalog-mapped port paths; pathlib resolves the exact UI resource.
 `fontlab-remopy` is optional on the external controller only, used by
-`examples/remopy.py` to execute ordinary Python in an already configured FontLab.
+`examples/remopy.py` and `tools/native_cleanroom.py` to execute ordinary Python
+in an already configured FontLab. The acceptance driver requires Python 3.11 and
+adds no host dependencies. Its phases use the current local Remopy `FontLab.run`
+result contract and the existing Fontlabapp ownership implementation.
 
 Consumer calls were checked against the current local `fontlabapp/widgets.py`
 and Remopy `control.py`/`execution.py`, and official

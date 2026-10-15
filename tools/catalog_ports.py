@@ -44,6 +44,17 @@ def _project(target: dict, item: dict, port: dict) -> None:
     )
     for field in ("archive", "spec"):
         target.pop(field, None)
+        if field in item or field in port and field == "spec":
+            target[field] = item.get(field, port.get(field))
+    if port.get("clean_room_receipt"):
+        target.pop("license", None)
+        target["clean_room_receipt"] = port["clean_room_receipt"]
+        if item["source_id"] == port["source_id"]:
+            # This inventory's bytes/hash identify the original, not the new file.
+            target["port_license"] = port["license"]
+            target["replacement_files"] = port["replacement_files"]
+        else:
+            target["distribution_state"] = "archived; not a replacement resource"
     if port["implementation"] == "clean_room_pending":
         target.pop("license", None)
         target["archive"] = item["archive"]

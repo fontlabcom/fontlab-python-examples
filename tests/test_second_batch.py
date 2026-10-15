@@ -386,6 +386,10 @@ def test_batch_when_catalogued_then_all_entrypoints_and_resources_match():
     assert expected <= actual, "Every requested upstream entrypoint must have a record"
     assert len(NEW) == 7, "02, 07, 09, 10, 12, 13 and 14 are implemented"
     for record in MANIFEST["ports"]:
+        if record.get("clean_room_receipt"):
+            assert record["license"]["selected"] == "Apache-2.0"
+            assert (ROOT / record["clean_room_receipt"]).is_file()
+            continue
         for resource in record["resources"]:
             original = by_id[resource["source_id"]]
             assert resource["source"]["sha256"] == original["sha256"]

@@ -80,8 +80,14 @@ def test_manifest_when_first_batch_then_exact_catalog_sources_and_licensed_paths
             "GPL-3.0-only",
             "HPND AND GPL-3.0-only",
         }
-        assert original["path"] in port["license"]["reviewed_files"]
-        assert (ROOT / port["license"]["notice_path"]).is_file()
+        if port.get("clean_room_receipt"):
+            assert port["license"]["basis"] == (
+                f"clean-room implementation from {port['spec']}; no upstream code"
+            )
+            assert (ROOT / port["clean_room_receipt"]).is_file()
+        else:
+            assert original["path"] in port["license"]["reviewed_files"]
+            assert (ROOT / port["license"]["notice_path"]).is_file()
         assert not Path(port["target_path"]).is_absolute()
         tree = ast.parse((ROOT / port["target_path"]).read_text())
         imports = [

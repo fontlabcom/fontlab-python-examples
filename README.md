@@ -11,8 +11,8 @@ upstream inventory and explicit implementation states. Start at the
 | Current port state | Records |
 | --- | ---: |
 | Implemented, with recorded native launch/inspect/close | 21 |
-| Blocked by recorded host capabilities | 91 |
-| Official demos relocated, `clean_room_pending` | 187 |
+| Blocked by recorded host capabilities | 151 |
+| Independent clean-room implementations, native unexecuted | 127 |
 | Total | 299 |
 
 The original insight examples in [ports/insights](ports/insights) are a separate
@@ -24,15 +24,17 @@ Owner decision D7 moved the official-demo sources, resources and licence notes t
 the private `fontlabcom/fontlab-python-examples-reference` repository, commit
 `040b2e8`, under `pyqt-official-ports/`. This public tree contains their provenance
 metadata and [187 behavioural specifications](clean-room-specs/INDEX.json).
-The independent implementer should use those specifications and fresh resources,
-without reading the private reference repository or original Git history.
+All 187 receipts are integrated: **127 implemented, 60 blocked**. The replacements
+and their newly authored resources use Apache-2.0; the catalogue records the spec
+hash and review basis. All replacement native acceptance remains **unexecuted**.
+The 21 previously accepted non-official ports retain their recorded acceptance.
 
-Each relocated port record preserves its original source repository, revision,
-path, byte counts, hashes and upstream URL, and supplies `archive` and `spec`
-pointers. Removed files carry no public licence grant or current native pass.
-Launching a relocated entry reports its pending state and spec before accessing
-FontLab. Historical implementation/checklist material is identified in
-[the batch notes](docs/pyqt-official-batch.md); it does not describe current files.
+Each record preserves its original source repository, revision, path, byte counts,
+hashes, upstream URL, archive and spec pointers. These identify archived inputs;
+they do not describe replacement bytes or grant Apache-2.0 to archived resources.
+`sources.json` keeps replacement grants in `port_license`. Historical passes for
+removed implementations remain historical, as described in the
+[batch notes](docs/pyqt-official-batch.md).
 
 ## Launch an available example
 
@@ -43,7 +45,7 @@ second Qt binding or run another application event loop.
 ```python
 import fontlab_python_examples as examples
 
-examples.available()                   # Includes pending and blocked metadata
+examples.available()                   # Includes implemented and blocked metadata
 handle = examples.launch("QLabel")     # Inside FontLab
 handle.widget                         # Direct owned native widget
 examples.inspect("QLabel")             # JSON-friendly live state
@@ -69,24 +71,18 @@ The original 298 entrypoint candidates plus the database initializer retain 299
 port records. Reviewed additional launcher, QML, plugin and helper roles remain
 visible without being presented as implemented examples.
 
-Regenerate from verified local receipts and source roots:
+Regenerate current states and the derived inventory without accessing originals:
 
 ```sh
-python tools/inventory.py \
-  --tree-receipt "$TREE_RECEIPT" \
-  --recovery-receipt "$RECOVERY_RECEIPT" \
-  --source-root "pyqt/examples=$PYQT_SOURCE" \
-  --source-root "eyllanesc/QtExamples=$QTEXAMPLES_SOURCE" \
-  --reviews catalog/reviews.json \
-  --ports catalog/ports.json \
-  --output catalog
+python3 tools/integrate_cleanroom.py
 ```
 
-`inventory.py` validates original bytes without executing upstream code. It applies
-hash-bound reviews and port states, regenerates sources/INDEX and refreshes the
-port manifest's catalogue hash. Existing output `ports.json` is the default state
-overlay when `--ports` is omitted. Relocated resources retain archive pointers;
-planned inventory paths remain distinct from recorded port destinations.
+The tool validates all receipts, target paths, source headers and spec hashes,
+keeps the immutable source/resource provenance, regenerates sources/INDEX and
+updates the manifest's source-catalogue hash. Reapplying is deterministic and
+resets replacement native acceptance to unexecuted. Original-tree acquisition
+and analysis through `tools/inventory.py` remain separate from this clean-room
+integration; they are not required to regenerate the checked-in catalogue.
 
 ## Verify
 
@@ -94,12 +90,38 @@ planned inventory paths remain distinct from recorded port destinations.
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest python -m pytest -q tests
 ```
 
-Tests use owned fixtures and doubles. Cases needing relocated code skip only when
-its catalogue state is `clean_room_pending`; they resume when that state changes.
-Shared-helper, non-official, metadata, relocation and launcher checks remain active.
-[Native evidence projections](verification/catalog-native-evidence.json) include
-historical records for archived ports; offline success is not a new native run,
-rendering, destruction or installed-wheel acceptance claim.
+Tests use owned fixtures and doubles. Every clean-room record has a receipt,
+import/build or explicit capability check, and public-launcher coverage. The
+independent batches exercise replacement behavior; obsolete assertions about
+removed fixtures and Python implementation details have been replaced. Shared
+helpers, binding regressions and unchanged non-official ports remain covered.
+
+Run the native acceptance driver separately, against an owned FontLab session
+with Fontlabapp installed in its interpreter:
+
+```sh
+uv run --python 3.11 tools/native_cleanroom.py --batch-size 8 \
+  --output /private/tmp/fontlab-cleanroom-native.jsonl
+# Optional selection (space- or comma-separated IDs):
+uv run --python 3.11 tools/native_cleanroom.py \
+  --ids 035f3fbd2b81479a 960c701fa6221ac5 --batch-size 2 \
+  --output /private/tmp/fontlab-cleanroom-selected.jsonl
+```
+
+Batches reuse client connections; every host phase is a separate call with a
+3.5-second host budget and a four-second transport deadline. The driver purges
+stale example modules, verifies this checkout's import, restores `sys.path` after
+every call, checks visible top-level content and owned cleanup/deferred native
+destruction, and verifies blocked launches before host/builder access. It stops
+if cleanup fails or execution becomes uncertain, records remaining IDs as not
+run, and never retries a launch after a timeout. Outputs are JSONL plus a sibling
+`.summary.json`; choose a new output name for each run.
+
+The driver performs launch/inspect/close only, without screen capture, clipboard,
+tray notifications or font edits. It does not update catalogue acceptance.
+[Existing native evidence](verification/catalog-native-evidence.json) includes
+historical archived-code records; offline tests and this driver implementation
+do not constitute new native execution or installed-wheel acceptance.
 
 ## Licences and remaining work
 
@@ -111,5 +133,5 @@ see the ledger, [numbered notices](ports/pyqt-examples-LICENSE.md) and
 [QtExamples notices](ports/eyllanesc-LICENSE.md). Official notices and old licence
 claims reside with the private archive, not the replacement implementations.
 
-The remaining work is independent Apache-2.0 implementation, acceptance checks,
+The remaining work is new native acceptance, further interaction checks,
 resource review and documentation integration: [PLAN](PLAN.md), [TODO](TODO.md).

@@ -57,7 +57,14 @@ def test_resources_helpers_and_license_gaps_are_visible(catalog):
         > 0
     )
     for file in catalog["files"]:
-        if file["port_state"] == "clean_room_pending":
+        if file.get("clean_room_receipt"):
+            assert "license" not in file and file["archive"] and file["spec"]
+            if "port_license" in file:
+                assert file["port_license"]["selected"] == "Apache-2.0"
+                assert file["port_license"]["review_state"] == "reviewed"
+            else:
+                assert file["distribution_state"].startswith("archived")
+        elif file["port_state"] == "clean_room_pending":
             assert "license" not in file and file["archive"] and file["spec"]
         else:
             assert file["license"]["review_state"] == "pending"

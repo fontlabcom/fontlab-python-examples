@@ -6,7 +6,7 @@ this_file: PLAN.md
 
 Completed on 2026-10-15:
 
-- All 148 implemented native records cite exact original files/records and hashes,
+- The historical 148-port native audit cites exact original files/records and hashes,
   with portable projections in `verification/catalog-native-evidence.json` and
   tests comparing them to the workspace originals when present.
 - `catalog/reviews.json` resolves 14 Python candidates, 3 QML candidates and
@@ -23,13 +23,14 @@ Remaining work:
    from directory association or a source-code grant. The nine styleexample
    resources retain the GPL collection notice without an individual grant claim.
   Official-demo records and licence notes have since moved under D7 below.
-2. **Clean-room replacements (D7).** All 187 official records are
-   `clean_room_pending`; 431 source/resource/notice files were removed after
-   committed-archive hash and dependency checks. Implement independently from
-   `clean-room-specs/INDEX.json` under Apache-2.0, with fresh resources. Archive:
-   `fontlabcom/fontlab-python-examples-reference@040b2e8`. An unexposed developer
-   handles that phase. Restore each catalogue state as its replacement lands;
-   source-dependent tests resume automatically. Old native passes remain historical.
+2. **Native acceptance of clean-room replacements (D7).** All 187 independent
+   receipts are merged: 127 implemented and 60 blocked, with reviewed Apache-2.0
+   replacement grants, spec hashes and retained archive/provenance fields.
+   Overall: 299 records, 148 implemented, 151 blocked, zero clean-room pending;
+   only the 21 unchanged non-official implementations retain native passes.
+   Run `tools/native_cleanroom.py` next, review its JSONL and summary, and record
+   new native outcomes independently of historical evidence. Its offline phase,
+   cleanup, selection and failure-path tests do not establish a native pass.
 3. **Interactions.** Script native interactions for the remaining ports where it
    does not touch user state (drag/drop inside owned widgets, mouse/key-only and
    visual checks).

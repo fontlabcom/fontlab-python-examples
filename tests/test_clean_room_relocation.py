@@ -113,7 +113,7 @@ def test_overlay_when_source_hash_differs_then_rejects_stale_metadata():
         apply_port_states(catalog, {"ports": [row]})
 
 
-def test_relocated_records_when_catalogued_then_metadata_specs_and_removed_files_match():
+def test_relocated_records_when_integrated_then_receipts_replace_pending_state():
     ports = json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
     index = json.loads((ROOT / "clean-room-specs/INDEX.json").read_text())["ports"]
     official = [
@@ -124,12 +124,19 @@ def test_relocated_records_when_catalogued_then_metadata_specs_and_removed_files
     )
     assert {r["port_id"] for r in index} == {r["source_id"] for r in official}
     for row in official:
-        if row["implementation"] != "clean_room_pending":
-            continue
+        assert row["implementation"] in {"implemented", "blocked"}
+        receipt = json.loads((ROOT / row["clean_room_receipt"]).read_text())
+        assert receipt["port_id"] == row["source_id"]
+        assert receipt["target_path"] == row["target_path"]
+        assert receipt["implementation"] == row["implementation"]
+        assert receipt["blocked_reason"] == row.get("blocked_reason")
+        assert (ROOT / row["target_path"]).is_file()
+        assert row["license"]["selected"] == "Apache-2.0"
+        assert row["license"]["review_state"] == "reviewed"
         assert row["native_acceptance"] == "unexecuted" and "native_evidence" not in row
         assert row["spec"] == f"clean-room-specs/{row['source_id']}.md"
         assert (ROOT / row["spec"]).is_file()
-        for item in (row, *row["resources"]):
+        for item in row["resources"]:
             assert "license" not in item, (
                 "Removed files must make no public licence grant"
             )

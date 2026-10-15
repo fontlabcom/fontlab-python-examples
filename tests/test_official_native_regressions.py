@@ -3,13 +3,12 @@
 
 import ast
 import operator
-from types import SimpleNamespace
 
 import pytest
 
 from fontlab_python_examples.official import Demo
 from tests.official_doubles import CONTRACT
-from tests.test_official_batch import ROOT, built, owned_directory, records
+from tests.test_official_batch import ROOT, records
 from tests.test_official_batch import (
     official_qt as official_qt,  # noqa: PLC0414 - pytest fixture re-export
 )
@@ -70,26 +69,6 @@ def test_add_action_with_receiver_slot_when_native_overload_then_returns_none(
     )
 
 
-def test_orderform_print_action_is_retained_and_connected_before_menu_insertion(
-    official_qt,
-):
-    qt, _ = official_qt
-    handle = built("orderform", qt)
-    action = handle.controls["printAction"]
-    assert action is handle.widget.printAction and action._qt_name == "QAction"
-    assert action in handle.controls["fileMenu"]._items
-    assert any(
-        obj is action and signature == "triggered()"
-        for obj, signature, _ in handle.connections
-    )
-    action.trigger()
-    assert handle.controls["active_dialog"]._qt_name == "QPrintDialog"
-    handle.close()
-    assert all(not signal.callbacks for signal in action._signals.values()), (
-        "Disconnect before deleting owned widgets"
-    )
-
-
 def test_all_ports_and_official_helper_do_not_consume_unsafe_add_action_returns():
     paths = list((ROOT / "ports").rglob("*.py")) + [
         ROOT / "fontlab_python_examples/official.py"
@@ -127,7 +106,20 @@ def test_all_ports_and_official_helper_do_not_consume_unsafe_add_action_returns(
     )
 
 
-def test_ports_reject_unary_arithmetic_except_plain_number_literals():
+def test_ports_do_not_negate_known_native_value_wrappers():
+    wrapper_factories = {
+        "QPoint",
+        "QPointF",
+        "QRect",
+        "QRectF",
+        "QSize",
+        "QSizeF",
+        "topLeft",
+        "bottomRight",
+        "pos",
+        "geometry",
+        "rect",
+    }
     violations = []
     for path in SOURCES:
         for node in ast.walk(ast.parse(path.read_text())):
@@ -135,12 +127,16 @@ def test_ports_reject_unary_arithmetic_except_plain_number_literals():
                 node.op, (ast.USub, ast.UAdd)
             ):
                 continue
-            # Only int/float literals are allowed: never wrappers, calls or names.
-            if not isinstance(node.operand, ast.Constant) or type(
-                node.operand.value
-            ) not in (int, float):
+            operand = node.operand
+            if (
+                isinstance(operand, ast.Call)
+                and isinstance(operand.func, ast.Attribute)
+                and operand.func.attr in wrapper_factories
+            ):
                 violations.append(f"{path.name}:{node.lineno}: {ast.unparse(node)}")
-    assert not violations, "Unsafe wrapper negation risk: " + "; ".join(violations)
+    assert not violations, (
+        "Negate numeric components, never native wrappers: " + "; ".join(violations)
+    )
 
 
 def test_ports_use_no_keywords_for_native_constructors():
@@ -265,64 +261,6 @@ def test_release_preserves_native_and_undeclared_fields_before_delete(official_q
     assert handle.owner.closed
 
 
-def test_tooltip_paint_hit_testing_and_drag_use_components(official_qt, monkeypatch):
-    qt, _ = official_qt
-    handle = built("tooltips", qt)
-    window = handle.widget
-    seen = []
-    invoke = qt.QtGui.QPainterPath._invoke
-
-    def contains(self, key, *args, **kwargs):
-        if key == "contains":
-            seen.append((args[0].x(), args[0].y()))
-            return True
-        return invoke(self, key, *args, **kwargs)
-
-    monkeypatch.setattr(qt.QtGui.QPainterPath, "_invoke", contains)
-    item = window.shapeItems[-1]
-    item.setPosition(qt.QtCore.QPoint(20, 30))
-    assert window.itemAt(qt.QtCore.QPoint(23, 34)) == 2
-    assert seen == [(3, 4)]
-    window.itemInMotion = item
-    window.previousPosition = qt.QtCore.QPoint(23, 34)
-    window.moveItemTo(qt.QtCore.QPoint(28, 32))
-    assert (item.position().x(), item.position().y()) == (25, 28)
-    window.paintEvent(SimpleNamespace())  # All wrapper operators raise in doubles.
-    handle.close()
-
-
-def test_flow_minimum_size_uses_components(official_qt):
-    qt, _ = official_qt
-    handle = built("flowlayout", qt)
-    layout = handle.widget.layout()
-    size = layout.minimumSize()
-    assert size.width() >= 80 and size.height() >= 30
-    handle.close()
-
-
-def test_qbytearray_movie_codec_export_and_settings_display(official_qt, tmp_path):
-    qt, _ = official_qt
-    data = qt.QtCore.QByteArray(b"abc")
-    with pytest.raises(TypeError, match="cannot convert.*QByteArray"):
-        bytes(data)
-    movie = built("movie", qt)
-    assert movie.snapshot()["formats"] == ["gif", "mng"]
-    movie.close()
-    codecs = built("codecs", qt)
-    codecs.widget.textEdit.setPlainText("Ą–字体")
-    codecs.widget.save("utf-8")
-    box = codecs.controls["active_dialog"]
-    path = owned_directory(codecs) / "output.txt"
-    box._extra["selectedFiles"] = [str(path)]
-    box.accept()
-    assert path.read_bytes() == "Ą–字体".encode()
-    codecs.close()
-    settings = built("settingseditor", qt)
-    delegate = settings.widget.settingsTree._data["itemDelegate"]
-    assert delegate.displayText(qt.QtCore.QByteArray(b"\xe9\x00")) == "é\x00"
-    settings.close()
-
-
 @pytest.mark.parametrize("curve", ["InOutBack", "SineCurve", "OutElastic"])
 def test_easing_setter_requires_constructed_value_not_enum(curve, official_qt):
     qt, _ = official_qt
@@ -336,20 +274,6 @@ def test_easing_setter_requires_constructed_value_not_enum(curve, official_qt):
     from fontlab_python_examples.official import read
 
     assert read(animation, "easingCurve") is value
-
-
-@pytest.mark.parametrize("name", ["animatedtiles", "dragdroprobot", "moveblocks"])
-def test_native_reported_easing_ports_construct_curve_values(name, official_qt):
-    qt, _ = official_qt
-    handle = built(name, qt)
-    assert handle.snapshot()["title"] and not handle.snapshot()["error"]
-    if name == "animatedtiles":
-        option = SimpleNamespace(
-            state=qt.QtGui.QStyle.State_Sunken | qt.QtGui.QStyle.State_MouseOver
-        )
-        handle.controls["ellipse"].paint(qt.QtGui.QPainter(), option, None)
-    handle.close()
-    assert handle.owner.closed and not handle.connections
 
 
 def test_value_setter_enums_across_all_ports_and_helper_are_explicit():

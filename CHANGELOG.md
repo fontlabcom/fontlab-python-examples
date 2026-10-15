@@ -23,6 +23,19 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- 2026-10-15: Integrate all 187 independent clean-room receipts (127 implemented,
+  60 blocked) with reviewed Apache-2.0 replacement grants and spec hashes. Preserve
+  immutable original provenance and archived resource metadata; regenerate source
+  projections/INDEX and the manifest hash without reading originals. Current total:
+  148 implemented, 151 blocked; 127 replacement implementations remain native
+  unexecuted, with only 21 unchanged non-official native passes retained.
+- Replace relocated-file absence assertions and obsolete implementation-specific
+  tests with receipt, public-launcher and independent behavioral coverage. Keep
+  shared/native-boundary and unchanged non-official tests active. Add
+  `tools/native_cleanroom.py`: bounded per-phase Remopy calls, exact-checkout
+  imports, sys.path restoration, blocked zero-side-effect checks, owned native
+  destruction checks and JSONL/summary output. Native acceptance runs separately.
+
 - 2026-10-15: Relocate all 187 official demos to the private archive at `040b2e8`.
   Remove 431 archived source/resource/notice files after hash and dependency
   checks; remove stale compiled caches too. Preserve source provenance and add
