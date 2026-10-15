@@ -1,0 +1,10 @@
+{
+  "port_id": "54c7440bdcdc3dfc",
+  "target_path": "ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py",
+  "files": [
+    "ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "d33e9ccb2b7d87d7a1b3113647fc3de1a26b536e20179bacf26f6337574f16b8"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "85a56a1f3c25ccca",
+  "target_path": "ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py",
+  "files": [
+    "ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtQuick/QtQml, external PyQt launchers and documentation remote control are unavailable in FontLab.",
+  "spec_sha256": "559e959e03577e849ec69ef9a4250e2f982ab5c5a4a084107be4a83e8f5c6f9a"
+}

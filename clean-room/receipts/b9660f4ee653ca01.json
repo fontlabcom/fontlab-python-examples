@@ -1,0 +1,10 @@
+{
+  "port_id": "b9660f4ee653ca01",
+  "target_path": "ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py",
+  "files": [
+    "ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "1c291e3728ff2f90f366d01255829ba8e21ae621596a038aff96c3078d4e498d"
+}

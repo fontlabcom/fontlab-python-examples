@@ -1,0 +1,10 @@
+{
+  "port_id": "0b0d8d2fae153e5e",
+  "target_path": "ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py",
+  "files": [
+    "ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtSql model and delegate bindings are unavailable in FontLab.",
+  "spec_sha256": "8871ef71df6995ca68e2206410954f339ff04820251796015bf971f6de790f02"
+}

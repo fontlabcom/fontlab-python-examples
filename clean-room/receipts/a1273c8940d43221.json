@@ -1,0 +1,10 @@
+{
+  "port_id": "a1273c8940d43221",
+  "target_path": "ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py",
+  "files": [
+    "ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QAxContainer.QAxWidget is unavailable in FontLab.",
+  "spec_sha256": "a169fc4198637a4345c17dfca0350c8acada6f335c644188280ecc058bfd1587"
+}
