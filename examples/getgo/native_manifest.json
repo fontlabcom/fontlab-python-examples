@@ -1,8 +1,8 @@
 {
   "format": "fontlab-getgo-examples.native.v2",
   "this_file": "examples/getgo/native_manifest.json",
-  "host": "FontLab 9 Python 3.11 / PythonQt.QtGui",
-  "native_status": "unexecuted",
+  "host": "FontLab 9.0.9783 / Python 3.11 / PythonQt.QtGui",
+  "native_status": "passed",
   "setup": [
     "Put the repository root on sys.path",
     "Use a dedicated no-document FontLab session for mutation runs through the workspace native runner",
@@ -27,7 +27,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "glyph_count equals manifest glyphs (96)",
@@ -69,7 +69,32 @@
             "top"
           ]
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.21,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "glyph_count": 96,
+          "encoded_count": 95,
+          "anchor_count": 0,
+          "glyphs_with_anchors": 0,
+          "metrics": {
+            "unitsPerEm": 2048.0,
+            "ascender": 1664.0,
+            "descender": -384.0,
+            "xHeight": 1280.0,
+            "capHeight": 1536.0
+          }
+        }
+      }
     },
     {
       "id": "unicode_coverage",
@@ -82,7 +107,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "covered contains U+0627 for the default Arabic sample",
@@ -101,7 +126,27 @@
           ],
           "equals": "مرحبا بالعالم 123"
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.27,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "covered_count": 8,
+          "missing": [
+            "U+0031",
+            "U+0032",
+            "U+0033"
+          ]
+        }
+      }
     },
     {
       "id": "outline_pens",
@@ -116,7 +161,7 @@
       "dependencies": [
         "fontTools"
       ],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "A/B/O each report nonempty contours and positive point counts",
@@ -158,7 +203,48 @@
           ],
           "equals": true
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.18,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "glyphs": {
+            "A": {
+              "contours": 2,
+              "points": 11,
+              "directions": [
+                "clockwise",
+                "counter-clockwise"
+              ]
+            },
+            "B": {
+              "contours": 3,
+              "points": 55,
+              "directions": [
+                "clockwise",
+                "counter-clockwise",
+                "counter-clockwise"
+              ]
+            },
+            "O": {
+              "contours": 2,
+              "points": 42,
+              "directions": [
+                "clockwise",
+                "counter-clockwise"
+              ]
+            }
+          }
+        }
+      }
     },
     {
       "id": "naming",
@@ -171,7 +257,7 @@
       ],
       "mutates_owned_copy": true,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "after.familyName equals Scripting Sample",
@@ -193,7 +279,28 @@
           ],
           "equals": "ScriptingSample-Regular"
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.12,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "after": {
+            "familyName": "Scripting Sample",
+            "styleName": "Regular",
+            "postscriptFontName": "ScriptingSample-Regular",
+            "openTypeNamePreferredFamilyName": "Scripting Sample",
+            "openTypeNamePreferredSubfamilyName": "Regular"
+          }
+        }
+      }
     },
     {
       "id": "kerning_classes",
@@ -206,7 +313,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "pair_count equals length of pairs",
@@ -244,7 +351,25 @@
           ],
           "len": 5
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.19,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "master": "Italic",
+          "pair_count": 619,
+          "class_count": 233,
+          "limit": 5
+        }
+      }
     },
     {
       "id": "designspace",
@@ -257,7 +382,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "masters contains 3 names; axes contains 1 axis tagged wght; instances contains 8 export instances",
@@ -299,7 +424,40 @@
           ],
           "len": 1
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.26,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "masters": [
+            "Thi Upr",
+            "Reg Upr",
+            "Bla Upr"
+          ],
+          "axes": [
+            {
+              "name": "weight",
+              "tag": "wght",
+              "short_name": "wt",
+              "minimum": 100.0,
+              "default": 400.0,
+              "maximum": 900.0,
+              "design_minimum": 100.0,
+              "design_default": 500.0,
+              "design_maximum": 900.0
+            }
+          ],
+          "instance_count": 8
+        }
+      }
     },
     {
       "id": "master_compatibility",
@@ -312,7 +470,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "A/V/a contain one signature per native master",
@@ -352,7 +510,35 @@
           ],
           "equals": []
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.23,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "glyphs": {
+            "A": {
+              "compatible": true,
+              "missing_layers": []
+            },
+            "V": {
+              "compatible": true,
+              "missing_layers": []
+            },
+            "a": {
+              "compatible": true,
+              "missing_layers": []
+            }
+          }
+        }
+      }
     },
     {
       "id": "spacing",
@@ -365,7 +551,7 @@
       ],
       "mutates_owned_copy": true,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "I sidebearings match H within 0.01 units after editing",
@@ -398,7 +584,29 @@
           ],
           "gt": 0
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.11,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "plan": {
+            "shift": 48.0,
+            "width": 416.0
+          },
+          "sidebearings": [
+            128.0,
+            0.0
+          ]
+        }
+      }
     },
     {
       "id": "batch_transform",
@@ -411,7 +619,7 @@
       ],
       "mutates_owned_copy": true,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "A/V after_width equals before_width times scale within 0.01 units",
@@ -447,7 +655,34 @@
           ],
           "gt": 0
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.11,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "scale": 1.1,
+          "glyphs": {
+            "A": {
+              "before_width": 640.0,
+              "after_width": 704.0,
+              "points": 26
+            },
+            "V": {
+              "before_width": 640.0,
+              "after_width": 704.0,
+              "points": 23
+            }
+          }
+        }
+      }
     },
     {
       "id": "export_ttf",
@@ -462,7 +697,7 @@
       "dependencies": [
         "fontTools"
       ],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "verified is true; format equals glyf",
@@ -499,7 +734,36 @@
             "V"
           ]
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.17,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "format": "glyf",
+          "glyphs": [
+            ".notdef",
+            "space",
+            "A",
+            "V"
+          ],
+          "cmap": {
+            "32": "space",
+            "65": "A",
+            "86": "V"
+          },
+          "upm": 2048,
+          "verified": true,
+          "winding_verified": true
+        }
+      }
     },
     {
       "id": "export_otf",
@@ -514,7 +778,7 @@
       "dependencies": [
         "fontTools"
       ],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "verified is true; format equals CFF",
@@ -551,7 +815,36 @@
             "V"
           ]
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.11,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "format": "CFF",
+          "glyphs": [
+            ".notdef",
+            "space",
+            "A",
+            "V"
+          ],
+          "cmap": {
+            "32": "space",
+            "65": "A",
+            "86": "V"
+          },
+          "upm": 2048,
+          "verified": true,
+          "winding_verified": true
+        }
+      }
     },
     {
       "id": "font_info_ui",
@@ -564,7 +857,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": "handle.close",
       "native_observations": [
         "handle.widget is a visible QDialog with font-info QLabel",
@@ -594,7 +887,27 @@
           ],
           "len": 1
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.15,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "family": "GG Stroke Chan OFL",
+          "glyphs": 106,
+          "upm": 1000.0,
+          "masters": [
+            "Italic"
+          ]
+        }
+      }
     },
     {
       "id": "compare_fonts",
@@ -608,7 +921,7 @@
       ],
       "mutates_owned_copy": false,
       "dependencies": [],
-      "native_status": "unexecuted",
+      "native_status": "passed",
       "cleanup_function": null,
       "native_observations": [
         "only_left/only_right agree with native glyph name differences",
@@ -634,7 +947,28 @@
           ],
           "contains": "V"
         }
-      ]
+      ],
+      "native_verification": {
+        "date": "2026-10-16",
+        "fontlab_version": "9.0.9783",
+        "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+        "seconds": 0.31,
+        "checked": true,
+        "documents_before": 0,
+        "documents_after": 0,
+        "closed_stray_documents": 0,
+        "no_documents_left": true,
+        "fixtures_unchanged": true,
+        "measured": {
+          "common_glyph_count": 96,
+          "only_left_count": 0,
+          "only_right_count": 274,
+          "width_delta_em": {
+            "A": 0.500488,
+            "V": 0.505371
+          }
+        }
+      }
     }
   ],
   "expected_assertion_function": "examples.getgo._checks.assert_expected",
@@ -655,10 +989,18 @@
     "instruction": "Run each complete entry in the Scripting panel or an event-loop callback outside run_python; run_python calls only enqueue or inspect detached receipts, never execute run() synchronously."
   },
   "native_followups": [
-    "Observe modified-copy close(False) without a save prompt",
+    "Confirm modified-copy close_font(save=False) without a save prompt",
     "Observe metadata renormalization and spacing readback from nodes despite stale cached boxes",
     "Drive font_info_ui.py through __main__, discard panel globals, inspect canonical font_info_ui.TOOL and close it",
     "Confirm native contour.draw standard segment protocol on open and closed contours; outline_pens explicitly validates it",
     "Assert exported per-contour winding reports: TTF reverses source signs, CFF retains source signs; no absolute source-winding assumption is claimed"
-  ]
+  ],
+  "native_verification": {
+    "date": "2026-10-16",
+    "fontlab_version": "9.0.9783",
+    "receipt": "verification/issue-106/evidence/getgo/examples3-all/receipt.json",
+    "receipt_sha256": "5921051dd1c32e871322bed48a14428d527cf7903a522783e7934e7225f09eaa",
+    "run_manifest_sha256": "03dcb30e40f72c2f575cc2eab7a64604f02607e6ccd256cfadd56b0fc6a40282",
+    "scope": "Manifest run() entries and expected assertions from a QTimer callback, owned-document cleanup and unchanged fixtures; no Scripting-panel __main__ acceptance is implied."
+  }
 }

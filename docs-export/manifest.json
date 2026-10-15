@@ -16,8 +16,8 @@
     "examples/recipes/layer_backup/README.md": "eb7b2d2fc92118783d0cc7d1b949b432baca5cab180558f4907ffd843c114124",
     "examples/recipes/round_coordinates/README.md": "319730c3a5e91877c2113a772028cf85611d7e5a8767b3c7c30be59189227a23",
     "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe",
-    "examples/getgo/README.md": "f3e2a4a540d0373c7baa88e8b09e6e15808b2339966b2d85112a9321b88990a2",
-    "examples/getgo/native_manifest.json": "03dcb30e40f72c2f575cc2eab7a64604f02607e6ccd256cfadd56b0fc6a40282"
+    "examples/getgo/README.md": "4866c7c9fd6d3d805ad0a7cd208ec604dd4eb15c2b181e5a2591b6bf7a9ebcc7",
+    "examples/getgo/native_manifest.json": "392eead9c297bcd59b84641b5d9d19943742194321b76c7bbde6d3026190424f"
   },
   "counts": {
     "records": 299,
@@ -174,7 +174,7 @@
     {
       "path": "getgo.md",
       "title": "Real GetGo fonts, disposable working copies",
-      "sha256": "623c3897d2f060b1174fa0921ab9036f321ce44f48b4e1763fa0d330b6edc8c3"
+      "sha256": "785d95afaa4a2f959b3340cc87ec540654dffda214a30e2aaa7f41fb8af9e61d"
     },
     {
       "path": "index.md",

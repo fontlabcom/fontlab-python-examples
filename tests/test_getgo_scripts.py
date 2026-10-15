@@ -48,7 +48,7 @@ def test_native_manifest_covers_thirteen_original_host_free_examples():
         ), "Native imports belong inside entry functions"
         module = importlib.import_module(row["module"])
         assert callable(getattr(module, row["entry_function"]))
-        assert row["native_status"] == "unexecuted"
+        assert row["native_status"] == "passed"
         assert row["expected"]
         for check in row["expected"]:
             assert isinstance(check, dict) and len(check) == 2
@@ -62,6 +62,52 @@ def test_native_manifest_covers_thirteen_original_host_free_examples():
         )
         assert path.stem in (GETGO / "README.md").read_text()
     assert manifest["execution"]["run_python"] == "setup_and_poll_only"
+
+
+def test_native_pass_records_have_dated_portable_receipts_and_measured_results():
+    manifest = json.loads((GETGO / "native_manifest.json").read_text())
+    assert manifest["native_status"] == "passed"
+    receipt = "verification/issue-106/evidence/getgo/examples3-all/receipt.json"
+    evidence = manifest["native_verification"]
+    assert evidence["date"] == "2026-10-16"
+    assert evidence["fontlab_version"] == "9.0.9783"
+    assert evidence["receipt"] == receipt
+    for key in ("receipt_sha256", "run_manifest_sha256"):
+        assert len(evidence[key]) == 64 and int(evidence[key], 16) >= 0
+    for row in manifest["examples"]:
+        run = row["native_verification"]
+        for key in ("date", "fontlab_version", "receipt"):
+            assert run[key] == evidence[key]
+        assert run["checked"] and run["fixtures_unchanged"] and run["no_documents_left"]
+        assert (
+            run["documents_before"]
+            == run["documents_after"]
+            == run["closed_stray_documents"]
+            == 0
+        )
+        assert isinstance(run["seconds"], (float, int)) and run["seconds"] >= 0
+        assert isinstance(run["measured"], dict) and run["measured"]
+        text = json.dumps(run)
+        assert "/Users/" not in text and "/var/folders/" not in text
+    rows = {
+        row["id"]: row["native_verification"]["measured"]
+        for row in manifest["examples"]
+    }
+    assert rows["spacing"]["sidebearings"] == [128, 0]
+    assert rows["batch_transform"]["glyphs"]["A"]["after_width"] == 704
+    assert rows["kerning_classes"]["pair_count"] == 619
+    for name in ("export_ttf", "export_otf"):
+        assert rows[name]["verified"] and rows[name]["winding_verified"]
+    readme = (GETGO / "README.md").read_text()
+    assert "2026-10-16" in readme and "9.0.9783" in readme and "13/13" in readme
+    for row in manifest["examples"]:
+        heading = next(
+            line
+            for line in readme.splitlines()
+            if line.startswith("## " + row["id"] + " ")
+        )
+        assert "native passed" in heading
+    assert "close(False)" not in json.dumps(manifest)
 
 
 def test_pure_audit_reports_duplicates_unencoded_and_missing_anchors():
