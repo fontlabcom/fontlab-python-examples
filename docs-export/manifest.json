@@ -1,0 +1,222 @@
+{
+  "format": "fontlab-python-examples.docs-export.v1",
+  "generator": "tools/docs_export.py",
+  "source_base_url": "https://github.com/fontlabcom/fontlab-python-examples/blob/main/",
+  "inputs": {
+    "catalog/ports.json": "31b3c39d69364fbb9dd473c15e04bd2f53142018f4edbf7a6f25584b71fb5645",
+    "catalog/sources.json": "3541047c6a7ffc7e207d65a71f5d616199a0c985aacd9ad8469e1bbe420043cf",
+    "catalog/insights.json": "7940417f6e7932b8e0ee0056d6456fb8543a97d4afca291c899b61ad9811dc71"
+  },
+  "counts": {
+    "records": 299,
+    "implemented": 148,
+    "blocked": 151,
+    "native_passed": 148,
+    "categories": 28,
+    "insights": 18,
+    "recipes": 9
+  },
+  "entry": "index.md",
+  "pages": [
+    {
+      "path": "categories/charts.md",
+      "title": "Examples: charts",
+      "sha256": "bab0f26db92b2d3a7e11aadf4047c539f447044b72eed86929f6318c8d7c3f23"
+    },
+    {
+      "path": "categories/corelib.md",
+      "title": "Examples: corelib",
+      "sha256": "3d5c482b76e612b0af923a7eb6735c12a273c6aa933c509998dbc8c24db56846"
+    },
+    {
+      "path": "categories/database.md",
+      "title": "Examples: database",
+      "sha256": "1cf0921c57b94cdfc4f85899a987fecfa231618f91c57e06f99afd41fc0f8ea6"
+    },
+    {
+      "path": "categories/designer-ui.md",
+      "title": "Examples: designer-ui",
+      "sha256": "0d3cbde3c13aba1a8a819860523f4aea6a7af9cc1e4dc57fab2c83e12eef67de"
+    },
+    {
+      "path": "categories/designer.md",
+      "title": "Examples: designer",
+      "sha256": "9e2807cd6ec214ef52a66c06156d046aafe804f07b1140e2f97ee3b6ec15c72b"
+    },
+    {
+      "path": "categories/desktop.md",
+      "title": "Examples: desktop",
+      "sha256": "fbbf2f296714d5dabc3d19600afb71d6c677db1d23903c1b6efb93772c3cfd88"
+    },
+    {
+      "path": "categories/dialogs.md",
+      "title": "Examples: dialogs",
+      "sha256": "3703613fc68440c9e3c7b48b47e29f0f4d08c4051a491b5488a21217897ba5d7"
+    },
+    {
+      "path": "categories/draganddrop.md",
+      "title": "Examples: draganddrop",
+      "sha256": "22dc24327c5a54404575f495fbee7df0ebea20620b36ffe4a5d9a51c19a9d217"
+    },
+    {
+      "path": "categories/embedded.md",
+      "title": "Examples: embedded",
+      "sha256": "31745e076c6792ca80147fd9f91af7f011eb9d573fc405009735f2a2e47fa78f"
+    },
+    {
+      "path": "categories/graphics-painting.md",
+      "title": "Examples: graphics-painting",
+      "sha256": "839db556e4fba3b75050d39e381f4b317e8a9e687a1c401eb7c457d14906f2c1"
+    },
+    {
+      "path": "categories/gstreamer.md",
+      "title": "Examples: gstreamer",
+      "sha256": "4760a2017bd78ffd5ac3836a601d6cb3277a4da599fc7d820a09056220e2841d"
+    },
+    {
+      "path": "categories/itemviews.md",
+      "title": "Examples: itemviews",
+      "sha256": "4d0737e1985ace52bb91bc8c3191ad3fbd3876378de19c444db837fc14fa84ba"
+    },
+    {
+      "path": "categories/layouts.md",
+      "title": "Examples: layouts",
+      "sha256": "e5e5490fc9c4bdd30f26114d967b0e8aabe7b69d86314a123b45f3b763369d1d"
+    },
+    {
+      "path": "categories/mainwindows.md",
+      "title": "Examples: mainwindows",
+      "sha256": "bc754c10b87372ac90b61c73f667aa75a273c4de90a545d19ef581ce013292d8"
+    },
+    {
+      "path": "categories/matplotlib.md",
+      "title": "Examples: matplotlib",
+      "sha256": "7b7eafd7ca09e7fd1b10f82f0822347ccf2db8f0d430cde80cbbc6d82d5e40b7"
+    },
+    {
+      "path": "categories/multimedia.md",
+      "title": "Examples: multimedia",
+      "sha256": "3c9b2b974d6ebeb8126951a1bc6b1e2fdab11db4b190d73c3b9db9018cd3d53a"
+    },
+    {
+      "path": "categories/network.md",
+      "title": "Examples: network",
+      "sha256": "e5ec6a07755a04a67961186fe9c33eec279752f343bc806d76b8a0c3029f6dcf"
+    },
+    {
+      "path": "categories/platform.md",
+      "title": "Examples: platform",
+      "sha256": "c17f88c2bb218c2b645a23dbb5eef509ac557f696b91ac505672492ba965a673"
+    },
+    {
+      "path": "categories/qml.md",
+      "title": "Examples: qml",
+      "sha256": "13fd452e44c106279c15341235139adc7abb31277b91fe32d4d99a16ddd9748f"
+    },
+    {
+      "path": "categories/remoteobjects.md",
+      "title": "Examples: remoteobjects",
+      "sha256": "63cca5c41e309a6ba65ee0334ccb6d2089f253b0bbda0e03887149d9febe8d44"
+    },
+    {
+      "path": "categories/richtext.md",
+      "title": "Examples: richtext",
+      "sha256": "74e226a3c4ce6c5d5976f29661a3b61202e290975f686d02589aa4614364acbe"
+    },
+    {
+      "path": "categories/threads-processes.md",
+      "title": "Examples: threads-processes",
+      "sha256": "0af1f14cbb8938e579f7a6f77d89731e22deeae8ad99b04b0a8bc8472e7218e5"
+    },
+    {
+      "path": "categories/tools.md",
+      "title": "Examples: tools",
+      "sha256": "f064cb9c4bf75475ee2f4fa530d811b70149f18d8defe4a7fd6b32e2079c05b4"
+    },
+    {
+      "path": "categories/tutorials.md",
+      "title": "Examples: tutorials",
+      "sha256": "6c33a427f8875f1615795b6df76aebfb3a946cd2bfb40e5ea2f0a21ad61392b6"
+    },
+    {
+      "path": "categories/video-overlay.md",
+      "title": "Examples: video-overlay",
+      "sha256": "ce525e40be6f0138008e7a2d4ea2e3e899cb8ffe83d41c6a4e187a63591625da"
+    },
+    {
+      "path": "categories/webengine.md",
+      "title": "Examples: webengine",
+      "sha256": "9a4145401841583fa43279a3f5dbb317ff6a11f9ec3ddc0151df29a87c6f9b7c"
+    },
+    {
+      "path": "categories/widgets.md",
+      "title": "Examples: widgets",
+      "sha256": "b37a03aa51ff01b7577bc25fd14ef3877d0c2cbb9c95bcaac31bf70cff3e8514"
+    },
+    {
+      "path": "categories/xmlpatterns.md",
+      "title": "Examples: xmlpatterns",
+      "sha256": "36326e76affe78b98f7dd2d0268e17db4b64cc9c7360ea4d49398a318aa953b1"
+    },
+    {
+      "path": "index.md",
+      "title": "Python examples for FontLab",
+      "sha256": "824335269203b65df57f791585f2863839d0594bccd64b334d326cce2a00de32"
+    },
+    {
+      "path": "insights.md",
+      "title": "Insight examples",
+      "sha256": "1f2fce0caee8025b37d63e151cbcae708e5f02f369658365043253213d2d2458"
+    },
+    {
+      "path": "recipes/anchors_from_bounds.md",
+      "title": "Place top and bottom anchors",
+      "sha256": "d37142f913dd9608919ad0aab9866690c528a58b70d957e2a166fc94d030831b"
+    },
+    {
+      "path": "recipes/contour_direction.md",
+      "title": "Correct contour direction and start points",
+      "sha256": "8328733003d574851f89d52e5d346e1f7d6b0d11a70809dfe738178cf9a6d315"
+    },
+    {
+      "path": "recipes/glyph_actions_batch.md",
+      "title": "Batch Tools > Actions on named glyphs",
+      "sha256": "afde6cb1218183caea7c6bedbe5a5279b0715e1c106229be24c38dfafba70812"
+    },
+    {
+      "path": "recipes/glyphs_path_report.md",
+      "title": "Path problem report (a Glyphs script run in FontLab)",
+      "sha256": "89b1487c96d28a1d05d3e4f984ee786584765ba2aeb80b036e3e25a0f9434765"
+    },
+    {
+      "path": "recipes/glyphs_tabular_figures.md",
+      "title": "Tabular figures (a Glyphs script run in FontLab)",
+      "sha256": "7ff86bbee8c3fb32822fa2054918aecfdd9288d4e52e0f84d7f2bda04d597d54"
+    },
+    {
+      "path": "recipes/index.md",
+      "title": "FontLab 9 recipes",
+      "sha256": "65f17508f341071dcee401e62f98790ecf68af7d3604e90400228d1907cfc18c"
+    },
+    {
+      "path": "recipes/kerning_from_text.md",
+      "title": "Kerning pairs from text",
+      "sha256": "70b9d5ea6fc145d8843baa679cb9deebf89156a44a6acc41c402257ca2f3219f"
+    },
+    {
+      "path": "recipes/layer_backup.md",
+      "title": "Back up master layers",
+      "sha256": "5d0d0a9f4c3e7488311cf9a4f2209c560dc0a213cb3270ff09f88c1e0bc48b59"
+    },
+    {
+      "path": "recipes/round_coordinates.md",
+      "title": "Round coordinates to grid",
+      "sha256": "8f3611a6d601c33e2aba121d1bbc5ae6ed5b29508b4ed1d7a88fc1661846b83f"
+    },
+    {
+      "path": "recipes/sidebearings_from_reference.md",
+      "title": "Copy sidebearings from a reference glyph",
+      "sha256": "0d2781e8b48b31179cfd13d775eff7180dc8d69cf74f0e3be8f735f55586c157"
+    }
+  ]
+}

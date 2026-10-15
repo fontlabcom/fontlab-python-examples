@@ -3047,3 +3047,22 @@ unmutated; start index after reversal). Native: contour_direction/native.py ->
 - Coverage review (inline script): 299 records; 148 implemented all passed with
   evidence and files; 151 blocked all with blocked_reason; 18 insights; 9 recipes.
 - Tests: 1546 passed.
+
+## 2026-10-15 L6e: resource replacements and docs export
+
+- `python3 tools/replacement_assets.py --write`, `--record`, `--check` (14 files
+  current). Commit d3ab76d. Tests 1549 passed.
+- Native acceptance (`verification/issue-104/fl-native.sh --lane L6e -- bash -c "cd
+  fontlab-python-examples && uv run --python 3.11 tools/native_cleanroom.py --reset-stale
+  --batch-size 4 --ids 1151b1cb878f192a a601a41dc5a3c23a a33bb8c2dce4e115
+  631cc1bc310c00b9 --output .../examples-resources/acceptance01.jsonl"`) exit 0: 4/4,
+  clean tree at d3ab76d. Recorded with `record_native.py propose` + `apply --commit
+  d3ab76d...` -> passed 4 (commit 35f4e41). The clean-room proposal still validates (187).
+- Interaction checks (`.../examples-resources/replaced_checks.py`): interactions01
+  failed 4/4 (driver bugs: `windowIcon` is a property; the result's stderr key broke
+  equality checks); interactions02 failed 3 (the editors show the icon only as an
+  About-box image, not as the window icon; check changed to decoding the SVG);
+  interactions03 exit 0, 4/4.
+- `python3 tools/docs_export.py` -> 40 pages + manifest; `--check` current; every
+  in-page anchor resolves under Python-Markdown toc (299/299, checked with
+  `uv run --no-project --with markdown`). Tests 1556 passed.

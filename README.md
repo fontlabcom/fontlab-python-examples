@@ -161,6 +161,21 @@ tray notifications or font edits. It does not update catalogue acceptance.
 historical archived-code records; offline tests and this driver implementation
 do not constitute new native execution or installed-wheel acceptance.
 
+## Documentation export
+
+`tools/docs_export.py` turns the catalogue into Markdown for the documentation site:
+[docs-export/index.md](docs-export/index.md) (counts per category), one page per
+category with each record's implementation, native status, licence and a launch
+snippet, the insight examples and the recipe pages, plus `docs-export/manifest.json`
+(format `fontlab-python-examples.docs-export.v1`: inputs and page hashes, counts).
+The output is deterministic; regenerate it after any catalogue change, and the
+tests fail while it is stale:
+
+```sh
+python3 tools/docs_export.py            # write docs-export/
+python3 tools/docs_export.py --check
+```
+
 ## Licences and remaining work
 
 The repository's Apache-2.0 licence applies to its original code. Upstream inputs
@@ -171,5 +186,5 @@ self-authored Apache-2.0 files (`tools/replacement_assets.py`); see the ledger, 
 [QtExamples notices](ports/eyllanesc-LICENSE.md). Official notices and old licence
 claims reside with the private archive, not the replacement implementations.
 
-The remaining work is new native acceptance, further interaction checks,
-resource review and documentation integration: [PLAN](PLAN.md), [TODO](TODO.md).
+The remaining work is wiring `docs-export/` into fontlab-python-docs, which the docs
+lane does: [PLAN](PLAN.md), [TODO](TODO.md).
