@@ -16,6 +16,10 @@ run()                                   # zero..nine that exist, width 600
 run(glyph_names=["one", "seven"], width=620)
 ```
 
+Bounds are the real outline extents (cubic and quadratic extrema), not the handles.
+Layers with components are refused before any change. It works on the current master
+(FontLab's, or Glyphs' selected master), and an empty glyph list does nothing.
+
 **What glyport needs and provides here.** `font.masters`, `font.glyphs[name]`,
 `glyph.layers[master.id]`, `layer.paths`/`path.nodes` with writable `node.x`, and
 `layer.width`. Glyport has no `layer.bounds` yet, so the script measures the outline

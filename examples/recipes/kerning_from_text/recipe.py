@@ -13,6 +13,8 @@ reported. Lines that can't be read are reported, not guessed at.
 
 import math
 
+KERNING_LIMIT = 32767  # kerning values are 16-bit signed in OpenType
+
 
 def parse_pairs(text: str) -> tuple[list[tuple[str, str, float]], list[str]]:
     """([(left, right, value)], [unreadable lines]) from 'left right value' lines."""
@@ -24,9 +26,14 @@ def parse_pairs(text: str) -> tuple[list[tuple[str, str, float]], list[str]]:
         parts = line.split()
         try:
             left, right, value = parts
-            pairs.append((left, right, float(value)))
+            value = float(value)
         except ValueError:
             problems.append(line)
+            continue
+        if not math.isfinite(value) or abs(value) > KERNING_LIMIT:
+            problems.append(line)  # nan, inf, 1e999 or beyond the font format's range
+            continue
+        pairs.append((left, right, value))
     return pairs, problems
 
 

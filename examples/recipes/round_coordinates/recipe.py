@@ -77,5 +77,11 @@ def run(font_id=None, glyph_names=None, grid=1, anchors=True, width=True, master
     return {"master": master, "grid": grid, "changed": counts, "glyphs": [g.name for g in changed]}
 
 
+# Menu use: name glyphs, then run the script. Nothing happens while GLYPHS is empty.
+GLYPHS = []  # e.g. ["A", "B"]
+
 if __name__ == "__main__":
-    print(run())
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS))
+    else:
+        print("Round Coordinates: set GLYPHS at the end of this script first.")

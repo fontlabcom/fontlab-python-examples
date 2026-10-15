@@ -34,9 +34,9 @@ verification/issue-104/fl-native.sh --mutating --lane L6b -- uv run --project fo
 but does not restore the outline (measured: `undo_probe.py` in the workspace evidence
 `examples-recipes/`). Run `layer_backup` before experimenting.
 
-**Menu use.** Recipes that change only what you name (`anchors_from_bounds`,
-`sidebearings_from_reference`, `kerning_from_text`, `glyph_actions_batch`,
-`glyphs_tabular_figures`) do nothing from the Scripts menu until you fill in the
+**Menu use.** Recipes that change only what you name (`round_coordinates`,
+`contour_direction`, `anchors_from_bounds`, `sidebearings_from_reference`,
+`kerning_from_text`, `glyph_actions_batch`, `glyphs_tabular_figures`) do nothing from the Scripts menu until you fill in the
 constant at the end of the file (`GLYPHS`, `PAIRS`...). The menu route was also run
 natively: each file, with its constants filled in a temporary copy, executed as a
 script (`__name__ == "__main__"`) on an owned font; all nine passed the same checks

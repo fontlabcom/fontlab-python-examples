@@ -13,6 +13,8 @@ TEXT = """# test pairs
 A V -80
 V A -75.5
 T o -60
+A W nan
+B C 1e999
 not a pair
 """
 
@@ -28,7 +30,8 @@ def check(report, glyphs, fl, font_id):
         "pairs_set": found == {("A", "V"): -80, ("V", "A"): -76, ("T", "o"): -60},
         "report_matches_stored": report["applied"]
         == [["A", "V", -80], ["V", "A", -76], ["T", "o", -60]],
-        "bad_line_reported": report["unreadable"] == ["not a pair"],
+        "bad_lines_reported": report["unreadable"]
+        == ["A W nan", "B C 1e999", "not a pair"],
         "report": len(report["applied"]) == 3,
     }
 

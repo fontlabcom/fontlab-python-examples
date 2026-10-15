@@ -17,7 +17,7 @@ run(glyph_names=["a", "b"])["problems"]
 
 **What glyport needs and provides here.** `font.glyphs` iteration, `glyph.layers[master.id]`,
 `layer.paths`, `path.closed`, `path.nodes` with `x`, `y` and `type`. Coordinates
-FontLab returns as `-0.0` are printed as `0`.
+FontLab returns as `-0.0` are printed as `0`. It checks FontLab's current master (Glyphs' selected master inside Glyphs).
 
 **Native check** (`native.py`, owned font, glyport commit recorded in the evidence):
 exactly the three planted problems are reported (a repeated point, a 2 × 2 path, a

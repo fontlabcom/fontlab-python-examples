@@ -12,8 +12,23 @@ from pathlib import Path
 FIGURES = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
 
 
+def current_master_id(font, font_id):
+    """glyport master id of FontLab's current master (by name) for this font."""
+    import fontlab
+    import fontpr
+
+    if font_id is None:
+        font_id = fontpr.call("get_active_font")["id"]
+    name = fontlab.flWorkspace.instance().findPackageId(font_id).master
+    found = [m.id for m in font.masters if m.name == name]
+    if len(found) != 1:
+        raise LookupError(f"FontLab master {name!r} not found once among {[m.name for m in font.masters]}")
+    return found[0]
+
+
 def run(font_id=None, glyph_names=None, width=600) -> dict:
-    """Centre figures (default: zero..nine present in the font) in ``width``."""
+    """Centre figures on FontLab's current master (default: zero..nine present in
+    the font; an empty list does nothing) in ``width``."""
     import fontpr
     from fontlab_glyport import ExecutionContext
     from fontlab_glyport.glyphsapp.fontlab_bridge import fontlab_glyphsapp_provider
@@ -28,8 +43,12 @@ def run(font_id=None, glyph_names=None, width=600) -> dict:
             script = context.import_module("tabular_figures")
             glyphs_app = context.import_module("GlyphsApp")
         font = glyphs_app.Glyphs.font
-        names = glyph_names or [n for n in FIGURES if font.glyphs[n] is not None]
-        shifts = context.wrap(script.tabular_figures)(font, names, width)
+        if glyph_names is None:
+            names = [n for n in FIGURES if font.glyphs[n] is not None]
+        else:
+            names = list(glyph_names)
+        master = current_master_id(font, font_id)
+        shifts = context.wrap(script.tabular_figures)(font, names, width, master)
     finally:
         context.close()
     return {"width": width, "shifts": shifts, "output": "".join(output)}

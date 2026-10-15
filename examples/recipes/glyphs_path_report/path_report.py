@@ -35,14 +35,16 @@ def path_problems(layer, min_size=MIN_SIZE):
     return problems
 
 
-def path_report(font, glyph_names=None, master_index=0):
-    """{glyph name: [problems]} for glyphs with problems; prints one line per problem."""
-    master = font.masters[master_index]
+def path_report(font, glyph_names=None, master_id=None):
+    """{glyph name: [problems]} on one master (default: the selected master);
+    prints one line per problem."""
+    if master_id is None:
+        master_id = font.selectedFontMaster.id
     report = {}
     for glyph in font.glyphs:
         if glyph_names is not None and glyph.name not in glyph_names:
             continue
-        problems = path_problems(glyph.layers[master.id])
+        problems = path_problems(glyph.layers[master_id])
         if problems:
             report[glyph.name] = problems
             for problem in problems:

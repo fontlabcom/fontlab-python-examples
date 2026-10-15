@@ -9,8 +9,22 @@ FontLab. Needs fontlab-glyport installed in FontLab.
 from pathlib import Path
 
 
+def current_master_id(font, font_id):
+    """glyport master id of FontLab's current master (by name) for this font."""
+    import fontlab
+    import fontpr
+
+    if font_id is None:
+        font_id = fontpr.call("get_active_font")["id"]
+    name = fontlab.flWorkspace.instance().findPackageId(font_id).master
+    found = [m.id for m in font.masters if m.name == name]
+    if len(found) != 1:
+        raise LookupError(f"FontLab master {name!r} not found once among {[m.name for m in font.masters]}")
+    return found[0]
+
+
 def run(font_id=None, glyph_names=None) -> dict:
-    """{glyph: [problems]} for ``glyph_names`` (default: every glyph)."""
+    """{glyph: [problems]} on FontLab's current master for ``glyph_names`` (default: every glyph)."""
     import fontpr
     from fontlab_glyport import ExecutionContext
     from fontlab_glyport.glyphsapp.fontlab_bridge import fontlab_glyphsapp_provider
@@ -24,7 +38,8 @@ def run(font_id=None, glyph_names=None) -> dict:
         with context:
             script = context.import_module("path_report")
             glyphs_app = context.import_module("GlyphsApp")
-        report = context.wrap(script.path_report)(glyphs_app.Glyphs.font, glyph_names)
+        font = glyphs_app.Glyphs.font
+        report = context.wrap(script.path_report)(font, glyph_names, current_master_id(font, font_id))
     finally:
         context.close()
     return {"problems": report, "output": "".join(output)}

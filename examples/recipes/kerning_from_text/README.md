@@ -15,7 +15,8 @@ A V -80
 
 `@name` is a FontLab kerning class. Values are rounded to whole units (FontLab stores
 whole units; halves round away from zero, as FontLab does) and the stored values are
-reported. Unreadable lines are listed, not guessed at. `glyph_names` limits the run to
+reported. Unreadable lines (including `nan`, infinities and values beyond ±32767, the 16-bit
+range of OpenType kerning) are listed, not guessed at, before anything is applied. `glyph_names` limits the run to
 pairs that involve those glyphs.
 
 ```python

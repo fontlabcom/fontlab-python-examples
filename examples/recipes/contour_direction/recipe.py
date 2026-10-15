@@ -4,9 +4,59 @@
 
 Outer contours run counter-clockwise and counters clockwise (the PostScript/CFF
 convention, in FontLab's y-up coordinates); nesting decides which is which.
-Each contour then starts at its lowest, then leftmost on-curve node. The
-orientation is computed here from the nodes rather than read from FontLab.
+Each contour then starts at its lowest, then leftmost on-curve node. Orientation
+and nesting are computed from the actual outline (Bézier segments flattened),
+not from the control points and not read from FontLab.
 """
+
+FLATTEN_STEPS = 16
+
+
+def _cubic(p0, p1, p2, p3, steps):
+    return [
+        tuple((1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t * t * c + t ** 3 * d
+              for a, b, c, d in zip(p0, p1, p2, p3))
+        for t in (i / steps for i in range(1, steps + 1))
+    ]
+
+
+def _quad(p0, p1, p2, steps):
+    return [
+        tuple((1 - t) ** 2 * a + 2 * (1 - t) * t * b + t * t * c for a, b, c in zip(p0, p1, p2))
+        for t in (i / steps for i in range(1, steps + 1))
+    ]
+
+
+def _mid(a, b):
+    return ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+
+
+def flatten(points: list, on_curve: list[bool], steps: int = FLATTEN_STEPS) -> list:
+    """Polygon along a closed outline: two off-curve points between on-curve points
+    make a cubic; one or more make TrueType quadratics with implied on-curve midpoints."""
+    points, on_curve = list(points), list(on_curve)
+    if not any(on_curve):  # all off-curve (a TrueType circle): add one implied point
+        points.insert(0, _mid(points[-1], points[0]))
+        on_curve.insert(0, True)
+    start = on_curve.index(True)
+    points = points[start:] + points[:start]
+    on_curve = on_curve[start:] + on_curve[:start]
+    current, polygon, handles = points[0], [points[0]], []
+    for point, on in zip(points[1:] + points[:1], on_curve[1:] + [True]):
+        if not on:
+            handles.append(point)
+            continue
+        if not handles:
+            polygon.append(point)
+        elif len(handles) == 2:
+            polygon += _cubic(current, handles[0], handles[1], point, steps)
+        else:
+            for k, handle in enumerate(handles):
+                end = point if k == len(handles) - 1 else _mid(handle, handles[k + 1])
+                polygon += _quad(current, handle, end, steps)
+                current = end
+        current, handles = point, []
+    return polygon[:-1] if len(polygon) > 1 and polygon[-1] == polygon[0] else polygon
 
 
 def signed_area(points: list[tuple[float, float]]) -> float:
@@ -70,7 +120,8 @@ def run(font_id=None, glyph_names=None, master=None) -> dict:
         if layer is None:
             continue
         contours = [c for c in layer.getContours() if c.closed]
-        shapes = [[(n.x, n.y) for n in c.nodes()] for c in contours]
+        shapes = [flatten([(n.x, n.y) for n in c.nodes()], [n.isOn() for n in c.nodes()])
+                  for c in contours]
         touched = False
         for index, contour in enumerate(contours):
             ccw = signed_area(shapes[index]) > 0
@@ -93,5 +144,11 @@ def run(font_id=None, glyph_names=None, master=None) -> dict:
             "glyphs": [g.name for g in changed]}
 
 
+# Menu use: name glyphs, then run the script. Nothing happens while GLYPHS is empty.
+GLYPHS = []  # e.g. ["A", "B"]
+
 if __name__ == "__main__":
-    print(run())
+    if GLYPHS:
+        print(run(glyph_names=GLYPHS))
+    else:
+        print("Correct Contour Direction: set GLYPHS at the end of this script first.")

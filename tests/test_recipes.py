@@ -206,6 +206,8 @@ def test_path_problems_when_planted_then_each_reported_once():
 
 
 GUARDED = [
+    "round_coordinates",
+    "contour_direction",
     "anchors_from_bounds",
     "sidebearings_from_reference",
     "kerning_from_text",
@@ -227,3 +229,81 @@ def test_menu_entry_when_constants_empty_then_prints_usage_and_touches_nothing(n
     )
     assert done.returncode == 0, done.stderr
     assert "first" in done.stdout, done.stdout
+
+
+
+def test_contour_direction_when_curved_then_nesting_uses_the_curve_not_its_handles():
+    recipe = load("contour_direction")
+    # A hump whose curve peaks at y=750 while its handles reach y=1000.
+    hump_points = [(0, 0), (0, 1000), (1000, 1000), (1000, 0)]
+    hump = recipe.flatten(hump_points, [True, False, False, True])
+    assert max(y for _, y in hump) == pytest.approx(750, abs=1)
+    island = [(450, 800), (550, 800), (550, 900), (450, 900)]  # inside the handles only
+    shapes = [hump, recipe.flatten(island, [True] * 4)]
+    assert recipe.wants_counter_clockwise(shapes, 1) is True, "outside the curve: an outer contour"
+    inner = [(450, 300), (550, 300), (550, 400), (450, 400)]
+    assert recipe.wants_counter_clockwise([hump, inner], 1) is False, "inside the curve: a counter"
+
+
+def test_contour_direction_flatten_when_quadratic_runs_then_implied_on_curve_points():
+    recipe = load("contour_direction")
+    square = recipe.flatten([(0, 0), (0, 100), (100, 100), (100, 0)], [True, False, False, False])
+    assert max(x for x, _ in square) <= 100 and len(square) > 4
+
+
+class CurveNode:
+    def __init__(self, x, y, type):
+        self.x, self.y, self.type = x, y, type
+
+
+def test_tabular_figures_when_handles_overshoot_then_real_curve_bounds_are_used():
+    script = load("glyphs_tabular_figures", "tabular_figures.py")
+    path = Path([])
+    path.nodes = [CurveNode(100, 0, "line"), CurveNode(900, 0, "offcurve"),
+                  CurveNode(900, 500, "offcurve"), CurveNode(100, 500, "curve")]
+    layer = Layer(path, width=600)
+    left, right = script.outline_extent(layer)
+    assert left == pytest.approx(100) and right == pytest.approx(700)
+    assert script.centre_in_width(layer, 1000) == 100
+
+
+def test_tabular_figures_when_components_then_refused_before_editing():
+    script = load("glyphs_tabular_figures", "tabular_figures.py")
+    layer = Layer(Path([(0, 0), (0, 10), (10, 10)]))
+    layer.components = ["one.base"]
+    with pytest.raises(ValueError, match="component"):
+        script.centre_in_width(layer, 600)
+    assert [n.x for n in layer.paths[0].nodes] == [0, 0, 10]
+
+
+class Master:
+    def __init__(self, id):
+        self.id = id
+
+
+class Glyph:
+    def __init__(self, layers):
+        self.layers = layers
+
+
+class Font:
+    def __init__(self, glyphs, masters):
+        self.glyphs, self.masters = glyphs, masters
+
+
+def test_tabular_figures_when_master_given_then_only_that_master_and_empty_list_is_no_work():
+    script = load("glyphs_tabular_figures", "tabular_figures.py")
+    regular = Layer(Path([(100, 0), (100, 700), (200, 700), (200, 0)]), width=350)
+    bold = Layer(Path([(100, 0), (100, 700), (300, 700), (300, 0)]), width=400)
+    font = Font({"one": Glyph({"m1": regular, "m2": bold})}, [Master("m1"), Master("m2")])
+    assert script.tabular_figures(font, ["one"], 600, master_id="m2") == {"one": 100}
+    assert regular.width == 350 and bold.width == 600
+    assert script.tabular_figures(font, [], 600, master_id="m1") == {}
+    assert regular.width == 350
+
+
+def test_parse_pairs_when_nonfinite_or_out_of_range_then_reported_not_applied():
+    recipe = load("kerning_from_text")
+    pairs, problems = recipe.parse_pairs("A V -80\nA W nan\nB C 1e999\nD E 40000\nF G -inf\n")
+    assert pairs == [("A", "V", -80.0)]
+    assert problems == ["A W nan", "B C 1e999", "D E 40000", "F G -inf"]
