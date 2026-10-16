@@ -7,7 +7,11 @@ this_file: examples/samples/README.md
 106 single-file PythonQt dialogs for everyday font work: anchors, metrics,
 kerning, outlines, masters, names, guides, font info, features, hinting, cleanup,
 generators, reports and proofs. Each one works on the current font, offers a master
-scope where that makes sense, previews its changes and applies them as one Undo step.
+scope where that makes sense and previews its changes before applying them. Report,
+browser and proof scripts change nothing. Glyph edits are one Undo step per Apply.
+Font-wide data (font info, OpenType features, master settings) is written directly
+and Edit > Undo may not cover it: for example, Italic Angle (Masters) states that Undo
+does not restore its change.
 
 Copy any file into FontLab's `Scripts` folder (for example `Scripts/Samples`) and run
 it from the **Scripts** menu, or open it in the Scripting panel. A script needs only

@@ -18,7 +18,7 @@
     "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe",
     "examples/getgo/README.md": "4866c7c9fd6d3d805ad0a7cd208ec604dd4eb15c2b181e5a2591b6bf7a9ebcc7",
     "examples/getgo/native_manifest.json": "392eead9c297bcd59b84641b5d9d19943742194321b76c7bbde6d3026190424f",
-    "examples/samples/README.md": "2061dfde61cdf28163a07295ffc38741d648a57bbce595c11c2dbd8b8374542b"
+    "examples/samples/README.md": "1656c73af8d9da6a205a8cce1ab79b080485eab5900f2e154e0bc0f407f024e8"
   },
   "counts": {
     "records": 299,
@@ -241,7 +241,7 @@
     {
       "path": "samples.md",
       "title": "Samples: GUI scripts for FontLab 9",
-      "sha256": "5a4424b742831340768fcac353ffeea54288f3543a8b9f316fba4b1e902b6328"
+      "sha256": "7a49028128e235fd791bd7cf60f01991c1489e17e6595ed195c400e3952e567a"
     }
   ]
 }
