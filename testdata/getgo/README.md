@@ -5,7 +5,7 @@ this_file: testdata/getgo/README.md
 # GetGo real-font fixtures
 
 These 99 unchanged VFJs are copied from [GetGo Fonts for FontLab](https://code.fontlab.com/getgo-fonts/)
-at source revision 25a4d6d7099143090093e5820660b77222ac670b. Each file's public
+at source revision cf1319fa3c0c9f8c0703615231eabeab02cb5901. Each file's public
 font page, original VFJ/TTF download links, SHA-256, size, glyph/master/axis counts,
 licence and original attribution are in [manifest.json](manifest.json).
 CC0-1.0, Apache-2.0 and OFL-1.1 texts remain in their original licence folders;
