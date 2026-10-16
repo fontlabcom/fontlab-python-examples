@@ -4,6 +4,10 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Release - GetGo testdata re-sync (issue 106)
+
+Seven GetGo VFJs re-synced with getgo-fonts cf1319f (export fixes); manifest axes, name and hashes updated. Native: corpus 99/99, examples 13/13. Merged issue-101-pythonqt-examples into main.
+
 ## 2026-10-16 - GetGo examples native acceptance (moved from TODO.md)
 
 - Owned GetGo copies close via close_font(save=False) (f151195); native status recorded in README and native_manifest.json (7ed3e39). Native run examples4-all: 13/13 pass, spacing 0.11 s, 0 stray documents (verification/issue-106/evidence/getgo/examples4-all). Suite 1881 passed with fontTools; docs-export 42 files current.
