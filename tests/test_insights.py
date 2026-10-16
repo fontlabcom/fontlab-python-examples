@@ -12,6 +12,8 @@ import test_second_batch
 insight_qt = insight_doubles.insight_qt
 batch_qt = test_second_batch.batch_qt
 
+from workspace_paths import reference_file
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -100,7 +102,7 @@ def test_manifest_when_validated_then_unique_original_targets_and_real_citations
         for cite in item["inspiration"]:
             path, line = cite["citation"].rsplit(":", 1)
             assert path.startswith("_reference/")
-            assert 1 <= int(line) <= len((ROOT / path).read_text().splitlines())
+            assert 1 <= int(line) <= len(reference_file(path).read_text().splitlines())
             name = path.split("/")[1]
             assert cite["license"]["evidence_paths"] == by_name[name]["license_files"]
             assert cite["license"]["status"] == "unresolved"

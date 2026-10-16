@@ -7,6 +7,8 @@ import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from workspace_paths import WORKSPACE
+
 ROOT = Path(__file__).resolve().parents[1]
 IDS = {"ce3e17a7a2a03a02", "f5ddfd0eaacbf845", "79cc15680bc2cebb", "402068f40005cd66"}
 
@@ -137,7 +139,7 @@ def test_recovered_originals_when_local_receipt_available_then_manifest_hashes()
     import pytest
 
     receipt = (
-        ROOT.parent
+        WORKSPACE
         / "verification/issue-101-ecosystem/evidence/examples-source-recovery.json"
     )
     if not receipt.exists():
@@ -152,7 +154,7 @@ def test_recovered_originals_when_local_receipt_available_then_manifest_hashes()
             )
             mapping = repo["files"][source["path"]]
             data = (
-                ROOT.parent / repo["source_directory"] / mapping["storage_path"]
+                WORKSPACE / repo["source_directory"] / mapping["storage_path"]
             ).read_bytes()
             assert (
                 source["sha256"]

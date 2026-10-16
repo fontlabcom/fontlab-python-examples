@@ -10,6 +10,8 @@ from pathlib import Path
 
 import pytest
 
+from workspace_paths import WORKSPACE
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from catalog_reviews import apply_reviews
@@ -17,7 +19,7 @@ from catalog_reviews import apply_reviews
 SOURCES = json.loads((ROOT / "catalog/sources.json").read_text())
 PORTS = json.loads((ROOT / "catalog/ports.json").read_text())["ports"]
 FILES = {row["id"]: row for row in SOURCES["files"]}
-EVIDENCE = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+EVIDENCE = WORKSPACE / "verification/issue-101-ecosystem/evidence"
 
 
 def evidence_root():
@@ -93,7 +95,7 @@ def test_native_receipt_when_originals_available_then_exact_file_and_record_matc
     receipt = json.loads(
         (ROOT / "verification/catalog-native-evidence.json").read_text()
     )
-    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+    external = WORKSPACE / "verification/issue-101-ecosystem/evidence"
     if not external.is_dir():
         pytest.skip(
             "Workspace native originals unavailable; portable receipt checked separately"
@@ -269,7 +271,7 @@ def test_reviews_when_evidence_or_reasoning_missing_then_no_state_is_changed(fie
 
 
 def test_review_citations_when_originals_available_then_source_records_match():
-    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+    external = WORKSPACE / "verification/issue-101-ecosystem/evidence"
     if not external.is_dir():
         pytest.skip("Workspace source observations unavailable")
     reviews = json.loads((ROOT / "catalog/reviews.json").read_text())
@@ -341,7 +343,7 @@ def test_reviews_when_evidence_root_missing_then_refused_before_any_change(root)
 
 
 def test_reviews_when_evidence_root_given_then_every_citation_resolves():
-    external = ROOT.parent / "verification/issue-101-ecosystem/evidence"
+    external = WORKSPACE / "verification/issue-101-ecosystem/evidence"
     if not external.is_dir():
         pytest.skip("workspace evidence unavailable")
     catalog = deepcopy(SOURCES)
