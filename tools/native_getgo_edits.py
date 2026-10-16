@@ -27,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "testdata/getgo"
 EDIT_DX, EDIT_DY, EDIT_DW = 13, 7, 24
+RESAVE_PROBE_MAX_BYTES = 20 * 1024 * 1024
 PROFILES = {"ttf": 0, "otf": 1, "vf-ttf": 11, "vf-otf": 12}
 DEFAULT_IDS = ("baar", "hint", "stroke-grot", "stroke-chan", "zoto-kufiarabic", "zotosans-tamil",
                "zotosans-hebrew", "plum-var", "cosm-var", "cosm-italic-var", "rafi-var", "rafi-italic-var",
@@ -48,7 +49,7 @@ def snapshot(pkg, sample):
             continue
         shapes = call(layer.shapes)
         contours = [c for s in shapes for c in call(s.contours)]
-        first = call(contours[0].nodes)[0] if contours else None
+        first = call(contours[-1].nodes)[0] if contours else None
         layers[name] = {"width": layer.advanceWidth, "contours": len(contours),
                         "node": [first.x, first.y] if first is not None else None}
     return {"family": pkg.info.familyName, "glyphs": len(list(pkg.fgPackage)),
@@ -97,7 +98,10 @@ elif action == "edit":
     for name in p.masters:
         layer = glyph.findLayer(name)
         layer.advanceWidth = layer.advanceWidth + dw
-        node = call(call(call(layer.shapes)[0].contours)[0].nodes)[0]
+        shapes = call(layer.shapes)
+        # Last contour (an inner counter): editing the outer contour's first node of A changes the
+        # auto-generated hint masters and rafi-var then fails Variable TT (probe: evidence/getgo/hint-probe).
+        node = call([c for s in shapes for c in call(s.contours)][-1].nodes)[0]
         node.x = node.x + dx
         node.y = node.y + dy
         touched.append(layer)
@@ -256,6 +260,17 @@ def run_one(fl, row: dict, output: Path) -> dict:
             assert layer["node"] == [old["node"][0] + EDIT_DX, old["node"][1] + EDIT_DY], ("node", name)
         assert edit["after"]["family"] == family
         item["steps"].append("edited in memory")
+        # Variable binaries are exported from the edited in-memory package: FontLab's VFJ writer
+        # turns integer axisGraph keys back into tag IDs on re-save (fontlab/fl#8506), so a
+        # saved copy of cosm fails Variable TT for a reason unrelated to the edit.
+        # The saved copy is still exported below, to keep that defect on record.
+        multi = row["masters"] > 1 or row["axes"] > 0
+        item["exports"] = {}
+        if multi:
+            for kind in ("vf-ttf", "vf-otf"):
+                item["exports"][kind] = export(native, copy, font_id, directory, "export-" + kind, kind, output)
+                item["exports"][kind]["source"] = "edited in-memory package"
+            item["steps"].append("variable exports from memory")
         saved = directory / (row["id"] + "-edited.vfj")
         item["save_note"] = retry_busy(lambda: fl.tool("save_font", font_id=font_id, path=str(saved), overwrite=True))
         assert saved.is_file() and saved.stat().st_size > 0, "save_font wrote nothing"
@@ -268,10 +283,12 @@ def run_one(fl, row: dict, output: Path) -> dict:
         assert reopened == edit["after"], "reopened VFJ differs from the edited state"
         item["reopened_equal"] = True
         item["steps"].append("reopened equal")
-        item["exports"] = {}
-        kinds = ["ttf", "otf"] + (["vf-ttf", "vf-otf"] if row["masters"] > 1 or row["axes"] > 0 else [])
-        for kind in kinds:
+        for kind in ("ttf", "otf"):
             item["exports"][kind] = export(native, saved, font_id, directory, "export-" + kind, kind, output)
+            item["exports"][kind]["source"] = "reopened saved copy"
+        if multi and row["bytes"] <= RESAVE_PROBE_MAX_BYTES:
+            # Informational, not part of ``check``: documents the re-save defect (fl#8506).
+            item["resave_probe"] = export(native, saved, font_id, directory, "resaved-vf-ttf", "vf-ttf", output)
         item["steps"].append("exports attempted")
         item["native_ok"] = True
     except Exception as error:
@@ -436,6 +453,11 @@ def check(args) -> int:
                     check = {"ok": False, "error": f"{type(error).__name__}: {error}"}
                 check.update(file=path.name, bytes=path.stat().st_size, files=record["files"])
                 entry["kinds"][kind] = check
+            probe = item.get("resave_probe")
+            if probe:  # informational: Variable TT of the re-saved copy (fontlab/fl#8506)
+                entry["resave_probe_exported"] = any(
+                    f.endswith((".ttf", ".otf")) and "~VF" not in f for f in probe["files"])
+                entry["resave_probe_tail"] = native_tail(probe)
             if item["id"] == "hint":
                 hinting = [t for t in ("fpgm", "prep", "cvt ") if t in entry["kinds"].get("ttf", {}).get("tables", [])]
                 entry["hinting_tables_in_native_ttf"] = hinting

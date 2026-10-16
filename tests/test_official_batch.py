@@ -20,6 +20,8 @@ import pytest
 from tests.official_doubles import official_host
 from tests.qt_doubles import fake_host
 
+from workspace_paths import WORKSPACE
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -565,7 +567,7 @@ def test_batch_nine_missing_capabilities_match_captured_and_current_native_stubs
             module, cls = name.split(".")
             for member in members:
                 assert member not in CONTRACT[module][cls]
-    stub_root = ROOT.parent / "fontlab-echopy/src/fontlab_echopy/PythonQt"
+    stub_root = WORKSPACE / "fontlab-echopy/src/fontlab_echopy/PythonQt"
     if stub_root.exists():
         for module, sha in evidence["stub_sha256"].items():
             assert (
