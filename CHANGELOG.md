@@ -60,7 +60,10 @@ Seven GetGo VFJs re-synced with getgo-fonts cf1319f (export fixes); manifest axe
 - Coverage review: 299 records, 148 implemented (each with native pass, evidence and
   file), 151 blocked (each with `blocked_reason`), 18 insights, 9 recipes.
 
-## Unreleased
+## v1.0.1 (2026-10-16)
+
+GetGo edit/export driver exports all variable fonts it can (rafi-italic-var Variable PS remains fontlab/fl#8507); tests find the workspace from any worktree; GetGo testdata re-synced.
+
 
 - 2026-10-15: Docs integration complete. The docs lane wired `docs-export/` into
   fontlab-python-docs (its commits c8f6092 and 6a68778; nav entry "Examples"). Its
