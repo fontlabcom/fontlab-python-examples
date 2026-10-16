@@ -4,6 +4,11 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.2 (2026-10-16)
+
+Samples: 106 FontLab 9 GUI scripts under examples/samples (copied from Scripts/Samples with tools/sync_samples.py) and a Samples page in docs-export.
+
+
 ## 2026-10-16 - Samples GUI scripts
 
 - examples/samples/: the 106 Samples GUI scripts copied byte for byte from FontLab 9's deployed Scripts/Samples (fontlab-samples 38cf218), with a README generated from each script's #FLM line and docstring (tools/sync_samples.py, --check). docs-export gains samples.md, an index link and a samples count. tests/test_samples.py; suite 1886 passed with fontTools; docs-export 43 files current.
