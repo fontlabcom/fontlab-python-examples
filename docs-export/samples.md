@@ -5,10 +5,12 @@ kerning, outlines, masters, names, guides, font info, features, hinting, cleanup
 generators, reports and proofs. Each one works on the current font and offers a master
 scope where that makes sense; most list what an Apply will change before you press it,
 and a few (such as mark-colour swatches) apply on click. Report, browser and proof
-scripts change nothing. Glyph edits are one Undo step per Apply.
-Font-wide data (font info, OpenType features, master settings) is written directly
-and Edit > Undo may not cover it: for example, Italic Angle (Masters) states that Undo
-does not restore its change.
+scripts change no font data (some select glyphs, copy to the clipboard or export files).
+Many glyph-editing tools group their edits into one Undo step, but Undo coverage varies.
+Seven metrics scripts warn that moved stem hints are not restored, and font-wide data
+(font info, OpenType features, master settings) is written directly: Italic Angle
+(Masters) states that Undo does not restore its change. Read each script's notes before
+applying changes.
 
 Copy any file into FontLab's `Scripts` folder (for example `Scripts/Samples`) and run
 it from the **Scripts** menu, or open it in the Scripting panel. A script needs only
