@@ -8,6 +8,10 @@ this_file: CHANGELOG.md
 
 - examples/samples/: the 106 Samples GUI scripts copied byte for byte from FontLab 9's deployed Scripts/Samples (fontlab-samples 38cf218), with a README generated from each script's #FLM line and docstring (tools/sync_samples.py, --check). docs-export gains samples.md, an index link and a samples count. tests/test_samples.py; suite 1886 passed with fontTools; docs-export 43 files current.
 
+## Release - GetGo testdata re-sync (issue 106)
+
+Seven GetGo VFJs re-synced with getgo-fonts cf1319f (export fixes); manifest axes, name and hashes updated. Native: corpus 99/99, examples 13/13. Merged issue-101-pythonqt-examples into main.
+
 ## 2026-10-16 - GetGo examples native acceptance (moved from TODO.md)
 
 - Owned GetGo copies close via close_font(save=False) (f151195); native status recorded in README and native_manifest.json (7ed3e39). Native run examples4-all: 13/13 pass, spacing 0.11 s, 0 stray documents (verification/issue-106/evidence/getgo/examples4-all). Suite 1881 passed with fontTools; docs-export 42 files current.
@@ -60,7 +64,10 @@ this_file: CHANGELOG.md
 - Coverage review: 299 records, 148 implemented (each with native pass, evidence and
   file), 151 blocked (each with `blocked_reason`), 18 insights, 9 recipes.
 
-## Unreleased
+## v1.0.1 (2026-10-16)
+
+GetGo edit/export driver exports all variable fonts it can (rafi-italic-var Variable PS remains fontlab/fl#8507); tests find the workspace from any worktree; GetGo testdata re-synced.
+
 
 - 2026-10-15: Docs integration complete. The docs lane wired `docs-export/` into
   fontlab-python-docs (its commits c8f6092 and 6a68778; nav entry "Examples"). Its
