@@ -3116,3 +3116,7 @@ corpus/mutation/export tests and practical examples are new active scope.
 `fl-native.sh --mutating --lane E1-getgo-native -- ... native_getgo_examples.py --output .../examples4-all`
 exit 0: 13/13 PASS at f151195 (spacing 0.11 s, closed_stray_documents 0). docs_export --check 42 files
 current; suite 1881 passed. Open: F1 VFJ re-sync (controller sends file list and hashes).
+
+## 2026-10-16 Samples copy
+- `python3 tools/sync_samples.py` (106 scripts copied, rc 0); `--check` rc 0; `python3 tools/docs_export.py` then `--check` rc 0 (43 files).
+- `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest --with fonttools python -m pytest -q tests`: 1886 passed (rc 0). Without fontTools the two pre-existing outline-pen tests fail on the missing module.

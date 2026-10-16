@@ -1,0 +1,613 @@
+#FLM: Outlines · Slant
+# this_file: samples/outlines_slant.py
+"""Slant (skew) the selected glyphs by an angle, optionally the font's italic angle.
+
+Slanting about the baseline pushes tall glyphs to the right; slanting about half the x-height
+keeps the glyph visually centred in its advance (the usual x-centre correction). Nodes,
+component offsets and, if asked, anchors are slanted. A painted preview shows the first glyph.
+One Apply is one Undo step; auto layers are skipped.
+"""
+
+import math
+import sys
+
+import fontlab
+from PythonQt import QtCore, QtGui
+
+TITLE = "Slant"
+KEY = "outlines_slant"
+
+
+# ---------------------------------------------------------------- font access
+def current_package():
+    package = fontlab.flWorkspace.instance().currentPackage
+    if package is None or package.isNull:
+        return None
+    return package
+
+
+def selected_names():
+    """Glyph names selected in the Font window, in font order; else the current glyph."""
+    names = []
+    try:
+        import FL
+
+        font = FL.fl.font
+        names = [font[i].name for i in range(len(font)) if FL.fl.Selected(i)]
+    except Exception:
+        names = []
+    if not names:
+        glyph = fontlab.CurrentGlyph()
+        names = [glyph.name] if glyph is not None else []
+    return names
+
+
+def master_layers(glyph, masters):
+    """{master: flLayer} for the masters present in this glyph."""
+    found = {}
+    for master in masters:
+        layer = glyph.findLayer(master)
+        if layer is not None and not layer.isNull:
+            found[master] = layer
+    return found
+
+
+def own_contours(layer):
+    """Contours drawn in this layer; layer.getContours() also lists the contours of components."""
+    return [contour for shape in layer.shapes if not shape.isComponent for contour in shape.contours]
+
+
+def node_points(contour):
+    return [(node.x, node.y, bool(node.isOn())) for node in contour.nodes()]
+
+
+def swap_for_clones(layer):
+    """FontLab's history keeps references to shapes, so in-place edits leak into the Undo state:
+    replace every shape by its clone at the same index and edit the clones."""
+    for index, shape in enumerate(list(layer.shapes)):
+        clone = shape.clone()
+        layer.removeShape(shape)
+        layer.insertShape(index, clone)
+
+
+def undoable(layers, glyphs, edit):
+    """One Undo step: notify, swap shapes for clones, run edit(), notify again with the same list."""
+    items = list(layers) + list(glyphs)
+    fontlab.flItems().notifyChangesApplied(TITLE, items)
+    for layer in layers:
+        swap_for_clones(layer)
+    result = edit()
+    fontlab.flItems().notifyChangesApplied(TITLE, items)
+    fontlab.UpdateAll()
+    return result
+
+
+def auto_dependants(package, names):
+    """Auto composites (any auto master layer) that use one of `names` as a component."""
+    wanted = set(names)
+    if package is None or not wanted:
+        return []
+    import FL
+
+    font, found = FL.fl.font, []
+    for index in range(len(font)):
+        glyph = package.findName(font[index].name)
+        if glyph is None or glyph.name in wanted:
+            continue
+        for layer in glyph.layers:
+            if layer.isMasterLayer and layer.autoLayer and any(
+                    shape.isComponent and str(shape.shapeData.componentGlyph) in wanted for shape in layer.shapes):
+                found.append(glyph.name)
+                break
+    return found
+
+
+def rebuild_note(package, names, limit=5):
+    """Status text naming the auto composites FontLab rebuilds when their bases are notified (fl#8512)."""
+    found = auto_dependants(package, names)
+    if not found:
+        return ""
+    shown = ", ".join(found[:limit]) + (f" +{len(found) - limit} more" if len(found) > limit else "")
+    return f"FontLab will rebuild auto {shown} (anchors/locks may change; Undo does not restore them)"
+
+
+def show_rebuilds(dialog, names):
+    """Append the auto composites FontLab will rebuild to the dialog's status: notifying a base of
+    auto composites re-resolves auto layers font-wide (AGENTS: editing a BASE of auto composites)."""
+    status = getattr(dialog, "status", None)
+    note = rebuild_note(dialog.package, names) if status is not None else ""
+    if note:
+        text = status.text
+        status.setText(f"{text} · {note}" if text else note)
+        # the wrapped note must not overlap the table: reserve its height, which grows the dialog
+        status.setMinimumHeight(status.heightForWidth(max(status.width, 320)))
+
+
+# ---------------------------------------------------------------- core
+def slant_fn(angle, pivot_y):
+    k = math.tan(math.radians(angle))
+    return lambda x, y: (x + k * (y - pivot_y), y)
+
+
+def pivot(package, master, choice):
+    """y of the slant origin: baseline (0) or half the master's x-height."""
+    if choice == 0:
+        return 0.0
+    return fontlab.FontMetrics(package, master).xHeight / 2.0
+
+
+def italic_angle(package):
+    return float(package.italicAngle_value)
+
+
+def slant_layer(layer, angle, pivot_y, anchors):
+    fn = slant_fn(angle, pivot_y)
+    for contour in own_contours(layer):
+        for node in contour.nodes():
+            node.x, node.y = fn(node.x, node.y)
+    for shape in layer.shapes:
+        if shape.isComponent:
+            t = shape.transform
+            # x' = x + k (y - p): shear the matrix and shift its offset
+            k = math.tan(math.radians(angle))
+            shape.transform = QtGui.QTransform(t.m11() + k * t.m12(), t.m12(), t.m21() + k * t.m22(), t.m22(),
+                                               t.dx() + k * (t.dy() - pivot_y), t.dy())
+    if anchors:
+        for anchor in layer.anchors:
+            x, y = fn(anchor.point.x(), anchor.point.y())
+            anchor.point = QtCore.QPointF(x, y)
+    return 1
+
+
+# ---------------------------------------------------------------- GUI kit
+def muted(widget, alpha=150):
+    color = QtGui.QColor(widget.palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText))  # copy: color() can alias the palette
+    color.setAlpha(alpha)
+    return color.name(QtGui.QColor.HexArgb)
+
+
+def make_table(headers, min_height=280):
+    table = QtGui.QTableWidget(0, len(headers))
+    table.setHorizontalHeaderLabels(headers)
+    table.verticalHeader().setVisible(False)
+    table.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+    table.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
+    table.setAlternatingRowColors(True)
+    table.setShowGrid(False)
+    header = table.horizontalHeader()
+    header.setSectionResizeMode(QtGui.QHeaderView.Stretch)
+    header.setSectionResizeMode(0, QtGui.QHeaderView.ResizeToContents)
+    table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+    table.setMinimumHeight(min_height)
+    return table
+
+
+def compact(spin, width=150):
+    """Spin boxes read better at a fixed width than stretched across the form."""
+    spin.setAlignment(QtCore.Qt.AlignRight)
+    spin.setMaximumWidth(width)
+    return readable(spin)
+
+
+def readable(spin):
+    """Spin box values render pale in FontLab's inactive palette: pin the text to WindowText."""
+    spin.setStyleSheet(f"color: {spin.palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText).name()};")
+    return spin
+
+
+def fill_table(table, rows, highlight=None):
+    """Fill a QTableWidget; a 2-tuple row (label, note) shows the note muted across the row."""
+    accent = QtGui.QColor(table.palette.color(QtGui.QPalette.Active, QtGui.QPalette.Link))  # copy: color() can alias the palette
+    ink = QtGui.QColor(table.palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText))  # copy: color() can alias the palette
+    note_color = QtGui.QColor(ink)
+    note_color.setAlpha(130)
+    table.clearSpans()
+    table.setRowCount(0)
+    table.setRowCount(len(rows))
+    for row, cells in enumerate(rows):
+        for column, text in enumerate(cells):
+            item = QtGui.QTableWidgetItem(text)
+            item.setForeground(QtGui.QBrush(ink))
+            if len(cells) == 2 and column == 1:
+                item.setForeground(QtGui.QBrush(note_color))
+                if table.columnCount > 2:
+                    table.setSpan(row, 1, 1, table.columnCount - 1)
+            elif column:
+                item.setTextAlignment(int(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter))
+                if highlight is not None and highlight(row, column, text):
+                    bold = item.font()
+                    bold.setBold(True)
+                    item.setFont(bold)
+                    item.setForeground(QtGui.QBrush(accent))
+            table.setItem(row, column, item)
+
+
+class SampleDialog(QtGui.QDialog):
+    """Heading, muted subtitle, the subclass's body, then a footer: status, Close, action button."""
+
+    ACTION = "Apply"
+
+    def __init__(self, parent=None):
+        QtGui.QDialog.__init__(self, parent)
+        self.setWindowTitle(TITLE)
+        self.setMinimumWidth(520)
+        # FontLab can report a light Text colour on a light Base, and its inactive group is paler
+        # still (a dialog loses focus to the Font window after Apply): use the active WindowText.
+        palette = self.palette
+        ink = QtGui.QColor(palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText))  # copy: color() can alias the palette
+        for group in (QtGui.QPalette.Active, QtGui.QPalette.Inactive):
+            for role in (QtGui.QPalette.WindowText, QtGui.QPalette.Text, QtGui.QPalette.ButtonText):
+                palette.setColor(group, role, ink)
+            palette.setColor(group, QtGui.QPalette.Link, palette.color(QtGui.QPalette.Active, QtGui.QPalette.Link))
+        self.setPalette(palette)
+        self.package = current_package()
+        self.names = selected_names() if self.package else []
+        self.masters = list(self.package.masters) if self.package else []
+        self.current_master = self.package.master if self.package else ""
+        self._connections = []
+        self.last_error = ""
+
+        self.root = QtGui.QVBoxLayout(self)
+        self.root.setContentsMargins(20, 18, 20, 16)
+        self.root.setSpacing(12)
+        heading = QtGui.QLabel(TITLE)
+        font = heading.font
+        font.setPointSizeF(font.pointSizeF() * 1.35)
+        font.setBold(True)
+        heading.setFont(font)
+        self.root.addWidget(heading)
+        self.subtitle = QtGui.QLabel()
+        self.subtitle.setWordWrap(True)
+        self.subtitle.setStyleSheet(f"color: {muted(self)};")
+        self.root.addWidget(self.subtitle)
+
+        self.build()
+
+        footer = QtGui.QHBoxLayout()
+        self.status = QtGui.QLabel()
+        self.status.setWordWrap(True)
+        self.status.setStyleSheet(f"color: {muted(self)};")
+        footer.addWidget(self.status, 1)
+        self.close_button = QtGui.QPushButton("Close")
+        footer.addWidget(self.close_button)
+        self._connect(self.close_button.clicked, lambda *a: self.close())
+        if self.ACTION:
+            self.apply_button = QtGui.QPushButton(self.ACTION)
+            self.apply_button.setDefault(True)
+            footer.addWidget(self.apply_button)
+            self._connect(self.apply_button.clicked, lambda *a: self.apply())
+        self.root.addLayout(footer)
+        try:
+            self.refresh()
+        except Exception as error:
+            self.show_error(error)
+
+    def _connect(self, signal, slot):
+        """Connect through a guard: an exception in a slot is shown in the status line, never raised into Qt."""
+        def guarded(*args):
+            try:
+                slot(*args)
+            except Exception as error:
+                self.show_error(error)
+        signal.connect(guarded)
+        self._connections.append((signal, guarded))
+
+    def paint_report(self, text):
+        """Painters call this when drawing failed; the message stays in last_error for tests."""
+        self.last_error = text
+        self.status.setText(text)
+
+    def show_error(self, error):
+        self.last_error = f"{type(error).__name__}: {error}"
+        status = getattr(self, "status", None)
+        if status is not None:
+            status.setText(f"Error: {self.last_error}")
+
+    def scope_combo(self):
+        combo = QtGui.QComboBox()
+        combo.addItem(f"Current master ({self.current_master})")
+        combo.addItem(f"All masters ({len(self.masters)})")
+        self._connect(combo.currentIndexChanged, lambda *a: self.refresh())
+        return combo
+
+    def chosen_masters(self):
+        return [self.current_master] if self.scope.currentIndex == 0 else self.masters
+
+    def form(self):
+        grid = QtGui.QGridLayout()
+        grid.setHorizontalSpacing(10)
+        grid.setVerticalSpacing(8)
+        self.root.addLayout(grid)
+        return grid
+
+    def describe_selection(self, what="glyph"):
+        """Subtitle for the selection; False when there is nothing to work on."""
+        count = len(self.names)
+        if self.package is None:
+            self.subtitle.setText("Open a font first.")
+            return False
+        if not count:
+            self.subtitle.setText("Select glyphs in the Font window, then run this script again.")
+            return False
+        shown = ", ".join(self.names[:8]) + (" …" if count > 8 else "")
+        self.subtitle.setText(f"{count} {what}{'s' if count != 1 else ''}: {shown}")
+        return True
+
+    def glyphs(self):
+        found = [self.package.findName(name) for name in self.names] if self.package else []
+        return [glyph for glyph in found if glyph is not None]
+
+    def build(self):
+        pass
+
+    def refresh(self):
+        pass
+
+    def apply(self):
+        pass
+
+    def closeEvent(self, event):
+        self.teardown()
+        for signal, slot in self._connections:
+            try:
+                signal.disconnect(slot)
+            except Exception:
+                pass
+        self._connections = []
+        getattr(sys, "_fontlab_samples", {}).pop(KEY, None)
+        QtGui.QDialog.closeEvent(self, event)
+
+    def teardown(self):
+        pass
+
+
+class LayerEditDialog(SampleDialog):
+    """Preview table of glyph · master rows, then one Undo step editing every listed layer.
+
+    Subclasses set HEADERS and implement preview(name, master, layer) -> (cells, pending)
+    and edit(name, master, layer) -> number of changes. Auto layers are listed and skipped.
+    """
+
+    HEADERS = ["Glyph · master"]
+    UNIT = "change"
+
+    def build_table(self):
+        self.table = make_table(self.HEADERS)
+        self.root.addWidget(self.table, 1)
+
+    def highlight(self, row, column, text):
+        return False
+
+    def layers(self):
+        for glyph in self.glyphs():
+            for master, layer in master_layers(glyph, self.chosen_masters()).items():
+                yield glyph, master, layer
+
+    def refresh(self):
+        if not self.describe_selection():
+            fill_table(self.table, [])
+            self.apply_button.setEnabled(False)
+            self.status.setText("")
+            return
+        rows, pending, editing = [], 0, []
+        for glyph, master, layer in self.layers():
+            label = f"{glyph.name} · {master}"
+            if layer.autoLayer:
+                rows.append((label, "auto layer · skipped"))
+                continue
+            cells, count = self.preview(glyph.name, master, layer)
+            pending += count
+            if count and glyph.name not in editing:
+                editing.append(glyph.name)
+            rows.append((label,) + tuple(cells))
+        self.rows = rows
+        fill_table(self.table, rows, self.highlight)
+        self.apply_button.setEnabled(pending > 0)
+        self.status.setText(f"{pending} {self.UNIT}{'s' if pending != 1 else ''} pending")
+        show_rebuilds(self, editing)
+
+    def prepare(self):
+        """Hook: plan the edits once the shapes are clones (earlier contour references are stale)."""
+
+    def apply(self):
+        targets, skipped = [], []
+        for glyph, master, layer in list(self.layers()):
+            if layer.autoLayer:
+                skipped.append(f"{glyph.name}/{master}")
+            elif self.preview(glyph.name, master, layer)[1]:
+                targets.append((glyph, master, layer))
+        layers = [layer for _, _, layer in targets]
+        glyphs = []
+        for glyph, _, _ in targets:
+            if glyph not in glyphs:
+                glyphs.append(glyph)
+
+        def edit_all():
+            self.prepare()
+            return sum(self.edit(glyph.name, master, layer) for glyph, master, layer in targets)
+
+        total = undoable(layers, glyphs, edit_all) if targets else 0
+        self.last_result = {"changes": total, "layers": len(layers), "glyphs": len(glyphs), "skipped": skipped}
+        self.refresh()
+        note = f" · {len(skipped)} auto layers skipped" if skipped else ""
+        self.status.setText(f"{total} {self.UNIT}{'s' if total != 1 else ''} in {len(glyphs)} glyphs{note}")
+
+
+def outline_path(contours):
+    """QPainterPath from contours given as [(x, y, on)] lists (cubic for two handles)."""
+    path = QtGui.QPainterPath()
+    for points in contours:
+        start = next((i for i, p in enumerate(points) if p[2]), None)
+        if start is None:
+            continue
+        pts = points[start:] + points[:start]
+        path.moveTo(pts[0][0], pts[0][1])
+        handles = []
+        for x, y, on in pts[1:] + pts[:1]:
+            if not on:
+                handles.append((x, y))
+                continue
+            if len(handles) == 2:
+                path.cubicTo(handles[0][0], handles[0][1], handles[1][0], handles[1][1], x, y)
+            elif len(handles) == 1:
+                path.quadTo(handles[0][0], handles[0][1], x, y)
+            else:
+                path.lineTo(x, y)
+            handles = []
+        path.closeSubpath()
+    return path
+
+
+def layer_outline(layer):
+    """Every contour the layer shows as [(x, y, on)] lists; component contours placed by their transform."""
+    result = []
+    for shape in layer.shapes:
+        transform = shape.transform
+        for contour in shape.contours:
+            points = node_points(contour)
+            if not transform.isIdentity():
+                points = [(p.x(), p.y(), on) for x, y, on in points for p in [transform.map(QtCore.QPointF(x, y))]]
+            result.append(points)
+    return result
+
+
+def fit_transform(rect, width, height, margin=16):
+    """QTransform mapping font units in rect (y up) into a width × height widget (y down)."""
+    if rect.width() <= 0 or rect.height() <= 0:
+        return QtGui.QTransform()
+    scale = min((width - 2 * margin) / rect.width(), (height - 2 * margin) / rect.height())
+    if scale <= 0:
+        return QtGui.QTransform()
+    dx = (width - rect.width() * scale) / 2 - rect.x() * scale
+    dy = (height + rect.height() * scale) / 2 + rect.y() * scale
+    return QtGui.QTransform(scale, 0, 0, -scale, dx, dy)
+
+
+class Preview(QtGui.QWidget):
+    """Paints the outline before (faint fill) and after (accent outline) slanting."""
+
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
+        self.report, self._paint_error = None, ""
+        self.setMinimumHeight(220)
+        self.before, self.after, self.pivot = [], [], 0.0
+
+    def paintEvent(self, event):
+        self._paint_error = ""
+        painter = QtGui.QPainter(self)
+        try:
+            self.draw(painter)
+        except Exception as error:  # an exception escaping paintEvent crashes FontLab
+            self._paint_error = repr(error)
+            if self.report is not None:
+                self.report(f"Drawing failed: {self._paint_error}")
+        finally:
+            painter.end()
+
+    def draw(self, painter):
+        painter.setRenderHint(QtGui.QPainter.Antialiasing)
+        palette = self.palette
+        painter.fillRect(self.rect, palette.color(QtGui.QPalette.Base))
+        before, after = outline_path(self.before), outline_path(self.after)
+        rect = before.boundingRect().united(after.boundingRect())
+        painter.setTransform(fit_transform(rect, self.width, self.height, 24))
+        guide = QtGui.QColor(palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText))  # copy: color() can alias the palette
+        guide.setAlpha(70)
+        dash = QtGui.QPen(guide)
+        dash.setCosmetic(True)
+        dash.setStyle(QtCore.Qt.DashLine)
+        painter.setPen(dash)
+        painter.drawLine(QtCore.QPointF(rect.left() - 40, self.pivot), QtCore.QPointF(rect.right() + 40, self.pivot))
+        ink = QtGui.QColor(palette.color(QtGui.QPalette.Active, QtGui.QPalette.WindowText))  # copy: color() can alias the palette
+        ink.setAlpha(45)
+        painter.setPen(QtCore.Qt.NoPen)
+        painter.setBrush(QtGui.QBrush(ink))
+        painter.drawPath(before)
+        accent = QtGui.QColor(palette.color(QtGui.QPalette.Active, QtGui.QPalette.Link))  # copy: color() can alias the palette
+        pen = QtGui.QPen(accent)
+        pen.setCosmetic(True)
+        pen.setWidthF(1.6)
+        painter.setPen(pen)
+        fill = QtGui.QColor(accent)
+        fill.setAlpha(40)
+        painter.setBrush(QtGui.QBrush(fill))
+        painter.drawPath(after)
+
+
+class Slant(LayerEditDialog):
+    HEADERS = ["Glyph · master", "Nodes", "Pivot y"]
+    UNIT = "layer"
+
+    def build(self):
+        grid = self.form()
+        self.scope = self.scope_combo()
+        self.angle = QtGui.QDoubleSpinBox()
+        self.angle.setRange(-45, 45)
+        self.angle.setDecimals(1)
+        self.angle.setValue(10)
+        self.angle.setSuffix("°")
+        compact(self.angle)
+        self._connect(self.angle.valueChanged, lambda *a: self.refresh())
+        angle = italic_angle(self.package) if self.package else 0.0
+        self.use_italic = QtGui.QPushButton(f"Italic angle ({angle:g}°)")
+        self.use_italic.setEnabled(bool(angle))
+        self._connect(self.use_italic.clicked, lambda *a: self.angle.setValue(-italic_angle(self.package)))
+        self.origin = QtGui.QComboBox()
+        self.origin.addItem("Baseline")
+        self.origin.addItem("Half x-height (keeps the glyph centred)")
+        self.origin.setCurrentIndex(1)
+        self._connect(self.origin.currentIndexChanged, lambda *a: self.refresh())
+        self.anchors = QtGui.QCheckBox("Slant anchors too")
+        self.anchors.setChecked(True)
+        grid.addWidget(QtGui.QLabel("Angle"), 0, 0)
+        grid.addWidget(self.angle, 0, 1)
+        grid.addWidget(self.use_italic, 0, 2)
+        grid.addWidget(QtGui.QLabel("About"), 1, 0)
+        grid.addWidget(self.origin, 1, 1, 1, 2)
+        grid.addWidget(QtGui.QLabel("Masters"), 2, 0)
+        grid.addWidget(self.scope, 2, 1, 1, 2)
+        grid.addWidget(self.anchors, 3, 1, 1, 2)
+        grid.setColumnStretch(1, 1)
+        self.preview_widget = Preview()
+        self.preview_widget.report = self.paint_report
+        self.root.addWidget(self.preview_widget, 2)
+        self.table = make_table(self.HEADERS, 120)
+        self.root.addWidget(self.table, 1)
+
+    def refresh(self):
+        LayerEditDialog.refresh(self)
+        layers = [glyph.findLayer(self.current_master) for glyph in self.glyphs()]
+        layer = next((lr for lr in layers if lr is not None and not lr.autoLayer), None)
+        if layer is not None:
+            y0 = pivot(self.package, self.current_master, self.origin.currentIndex)
+            fn = slant_fn(self.angle.value, y0)
+            before = layer_outline(layer)
+            self.preview_widget.before = before
+            self.preview_widget.after = [[fn(x, y) + (on,) for x, y, on in c] for c in before]
+            self.preview_widget.pivot = y0
+        self.preview_widget.update()
+
+    def preview(self, name, master, layer):
+        nodes = sum(c.nodesCount for c in own_contours(layer))
+        y0 = pivot(self.package, master, self.origin.currentIndex)
+        return (str(nodes), f"{y0:g}"), 0 if self.angle.value == 0 else 1
+
+    def edit(self, name, master, layer):
+        y0 = pivot(self.package, master, self.origin.currentIndex)
+        return slant_layer(layer, self.angle.value, y0, self.anchors.isChecked())
+
+
+def main():
+    windows = sys.__dict__.setdefault("_fontlab_samples", {})
+    old = windows.pop(KEY, None)
+    if old is not None:
+        old.close()
+    dialog = Slant(fontlab.MainWindow())
+    windows[KEY] = dialog
+    dialog.show()
+    dialog.raise_()
+    return dialog
+
+
+if __name__ == "__main__":
+    main()

@@ -4,6 +4,10 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-16 - Samples GUI scripts
+
+- examples/samples/: the 106 Samples GUI scripts copied byte for byte from FontLab 9's deployed Scripts/Samples (fontlab-samples 38cf218), with a README generated from each script's #FLM line and docstring (tools/sync_samples.py, --check). docs-export gains samples.md, an index link and a samples count. tests/test_samples.py; suite 1886 passed with fontTools; docs-export 43 files current.
+
 ## 2026-10-16 - GetGo examples native acceptance (moved from TODO.md)
 
 - Owned GetGo copies close via close_font(save=False) (f151195); native status recorded in README and native_manifest.json (7ed3e39). Native run examples4-all: 13/13 pass, spacing 0.11 s, 0 stray documents (verification/issue-106/evidence/getgo/examples4-all). Suite 1881 passed with fontTools; docs-export 42 files current.

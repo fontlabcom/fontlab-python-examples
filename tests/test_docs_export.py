@@ -110,6 +110,7 @@ def test_manifest_inputs_when_listed_then_include_every_recipe_readme(tmp_path):
     for name in ("README.md", "native_manifest.json"):
         (tmp_path / "examples/getgo").mkdir(parents=True, exist_ok=True)
         shutil.copy(ROOT / "examples/getgo" / name, tmp_path / "examples/getgo" / name)
+    shutil.copytree(ROOT / "examples/samples", tmp_path / "examples/samples")
     before = json.loads(docs_export.build(tmp_path)["manifest.json"])["inputs"]
     readme = tmp_path / "examples/recipes/layer_backup/README.md"
     readme.write_text(readme.read_text() + "\nEdited.\n")

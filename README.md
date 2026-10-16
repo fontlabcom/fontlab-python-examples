@@ -18,6 +18,12 @@ upstream inventory and explicit implementation states. Start at the
 The original insight examples in [ports/insights](ports/insights) are a separate
 collection; 18 have recorded native interaction checks.
 
+[examples/samples](examples/samples/README.md) holds 106 ready-to-use GUI scripts for
+FontLab's Scripts menu (anchors, metrics, kerning, outlines, masters, names, guides,
+font info, features, hinting, cleanup, generators, reports, proofs). They are copied
+byte for byte from the deployed `Scripts/Samples` folder with `tools/sync_samples.py`,
+which also regenerates their README.
+
 ## Official-demo clean-room work
 
 Owner decision D7 moved the official-demo sources, resources and licence notes to

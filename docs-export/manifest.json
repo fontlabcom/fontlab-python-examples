@@ -17,7 +17,8 @@
     "examples/recipes/round_coordinates/README.md": "319730c3a5e91877c2113a772028cf85611d7e5a8767b3c7c30be59189227a23",
     "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe",
     "examples/getgo/README.md": "4866c7c9fd6d3d805ad0a7cd208ec604dd4eb15c2b181e5a2591b6bf7a9ebcc7",
-    "examples/getgo/native_manifest.json": "392eead9c297bcd59b84641b5d9d19943742194321b76c7bbde6d3026190424f"
+    "examples/getgo/native_manifest.json": "392eead9c297bcd59b84641b5d9d19943742194321b76c7bbde6d3026190424f",
+    "examples/samples/README.md": "2061dfde61cdf28163a07295ffc38741d648a57bbce595c11c2dbd8b8374542b"
   },
   "counts": {
     "records": 299,
@@ -27,7 +28,8 @@
     "categories": 28,
     "insights": 18,
     "recipes": 9,
-    "getgo_examples": 13
+    "getgo_examples": 13,
+    "samples": 106
   },
   "entry": "index.md",
   "pages": [
@@ -179,7 +181,7 @@
     {
       "path": "index.md",
       "title": "Python examples for FontLab",
-      "sha256": "e329109220298bb2d88c4212812aa85ece693c2893297b94b045ee71d30872fa"
+      "sha256": "add9971a1d33ef62cc8db8ec1983b0ddc94d68f6c9fb37bfe7855f10997e4546"
     },
     {
       "path": "insights.md",
@@ -235,6 +237,11 @@
       "path": "recipes/sidebearings_from_reference.md",
       "title": "Copy sidebearings from a reference glyph",
       "sha256": "0d2781e8b48b31179cfd13d775eff7180dc8d69cf74f0e3be8f735f55586c157"
+    },
+    {
+      "path": "samples.md",
+      "title": "Samples: GUI scripts for FontLab 9",
+      "sha256": "5a4424b742831340768fcac353ffeea54288f3543a8b9f316fba4b1e902b6328"
     }
   ]
 }
