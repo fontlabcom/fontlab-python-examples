@@ -1,0 +1,10 @@
+{
+  "port_id": "5125860585e98b3a",
+  "target_path": "ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py",
+  "files": [
+    "ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "68b307dcec67f8b8bbf79ce4a7e4d182f343a112834d17ab8784953b800c0688"
+}

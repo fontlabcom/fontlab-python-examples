@@ -1,0 +1,10 @@
+{
+  "port_id": "1415facde30a25cf",
+  "target_path": "ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py",
+  "files": [
+    "ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "fb487a4ab1b944701ced3f0d6e95129609043495038a7dcb91daf201fcb04f4c"
+}

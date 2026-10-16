@@ -1,0 +1,10 @@
+{
+  "port_id": "7da7020aa7e2732b",
+  "target_path": "ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py",
+  "files": [
+    "ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "9df1ee41e51bd8c1dd0ea1309d4b793462f89ffb3e2f1ce36e4c031d2cb26541"
+}

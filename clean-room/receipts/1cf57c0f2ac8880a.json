@@ -1,0 +1,10 @@
+{
+  "port_id": "1cf57c0f2ac8880a",
+  "target_path": "ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+  "files": [
+    "ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "5fda4332c9be579532c1b55a7a6f4abe89c9f1cdbd5dc177aca9b01ba044d82d"
+}

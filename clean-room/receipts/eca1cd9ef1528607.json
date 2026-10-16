@@ -1,0 +1,10 @@
+{
+  "port_id": "eca1cd9ef1528607",
+  "target_path": "ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py",
+  "files": [
+    "ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "96657a810194acf7d8cf22f7aa8ebd49adfbdf3f3cb24eb061c416d32356e845"
+}

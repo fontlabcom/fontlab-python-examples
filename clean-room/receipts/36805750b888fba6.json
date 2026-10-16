@@ -1,0 +1,10 @@
+{
+  "port_id": "36805750b888fba6",
+  "target_path": "ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+  "files": [
+    "ports/widgets/pyqt-official/sliders-36805750b888fba6.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "f9c8daa76bb208d15f869288a8e4cffb45254477dafc875b279af3d78d5324c5"
+}

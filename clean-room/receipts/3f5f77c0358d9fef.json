@@ -1,0 +1,10 @@
+{
+  "port_id": "3f5f77c0358d9fef",
+  "target_path": "ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py",
+  "files": [
+    "ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "4828c5c47616b83c7e1745635527103605fd75e08a5ee3d714111de029eef2a6"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "a57a89e523c75b7f",
+  "target_path": "ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py",
+  "files": [
+    "ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtMultimedia and QtMultimediaWidgets media bindings are unavailable in FontLab.",
+  "spec_sha256": "4703529b3bed709ee9044f0300c2017995f7930673a2cb9e76f40b14af0db2c7"
+}

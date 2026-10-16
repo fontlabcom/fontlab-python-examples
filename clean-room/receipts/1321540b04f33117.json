@@ -1,0 +1,10 @@
+{
+  "port_id": "1321540b04f33117",
+  "target_path": "ports/designer/pyqt-official/counterlabel-1321540b04f33117.py",
+  "files": [
+    "ports/designer/pyqt-official/counterlabel-1321540b04f33117.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "9b36d3af1b8917c5d743eb32f3c2849f7e55adf2bfce882ac2039781f2d52a40"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "8847cbce50b72500",
+  "target_path": "ports/qml/pyqt-official/adding-8847cbce50b72500.py",
+  "files": [
+    "ports/qml/pyqt-official/adding-8847cbce50b72500.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "FontLab does not expose QtQml; this declarative example cannot start.",
+  "spec_sha256": "6ac663d03cab5285729d1e4a050580fede9fbef2be27657ba1204176735f012c"
+}

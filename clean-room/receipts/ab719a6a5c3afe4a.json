@@ -1,0 +1,10 @@
+{
+  "port_id": "ab719a6a5c3afe4a",
+  "target_path": "ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py",
+  "files": [
+    "ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "84b4efb9a6c992a845bc6bd9830f0418cdb20acbbd426f59caeccf5d44197974"
+}

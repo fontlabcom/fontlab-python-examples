@@ -1,0 +1,10 @@
+{
+  "port_id": "fa6823667fdb918f",
+  "target_path": "ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py",
+  "files": [
+    "ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "a6659d92d858558a60abd9c490bb7543844465781e02ec65fed576e4063d4ad1"
+}

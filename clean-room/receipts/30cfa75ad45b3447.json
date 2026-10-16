@@ -1,0 +1,10 @@
+{
+  "port_id": "30cfa75ad45b3447",
+  "target_path": "ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py",
+  "files": [
+    "ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "8724c76f0aad2c989a969a9d58b3f85bd0071652a00b301698289792746ec650"
+}

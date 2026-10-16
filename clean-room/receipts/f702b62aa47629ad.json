@@ -1,0 +1,10 @@
+{
+  "port_id": "f702b62aa47629ad",
+  "target_path": "ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py",
+  "files": [
+    "ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "306168affd6f671a9dbee032d0ef20449b85926e78adccced66ae8fe7cc363f5"
+}

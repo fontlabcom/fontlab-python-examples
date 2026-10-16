@@ -1,0 +1,10 @@
+{
+  "port_id": "16456ba02f4b79cc",
+  "target_path": "ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py",
+  "files": [
+    "ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "1d31c80103b448ad1af9dc100c25f79ffa69eee69a2fb9198669e64414caee55"
+}

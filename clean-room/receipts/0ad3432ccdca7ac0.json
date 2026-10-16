@@ -1,0 +1,10 @@
+{
+  "port_id": "0ad3432ccdca7ac0",
+  "target_path": "ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py",
+  "files": [
+    "ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "1054b0f86acce5206864b151cc69b7d05c564832e23afc641bef1400e1ca4fa3"
+}

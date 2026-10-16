@@ -1,0 +1,10 @@
+{
+  "port_id": "10ef4dacb4db4080",
+  "target_path": "ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py",
+  "files": [
+    "ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "bf7e35a87e0b7e6c5de4e26f292d5d1da23a218b5dce3ea79c9d8fa2096c795e"
+}

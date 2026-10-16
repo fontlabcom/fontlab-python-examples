@@ -1,0 +1,10 @@
+{
+  "port_id": "da76600eaea7a121",
+  "target_path": "ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py",
+  "files": [
+    "ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "2a56846b3ffe0f94fb49009171b8117833eacf5baa451169676dd3436384fa42"
+}

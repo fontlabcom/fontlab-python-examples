@@ -1,0 +1,8 @@
+/* Self-authored for fontlab-python-examples (Apache-2.0): warm khaki panel. */
+QWidget { background: #e6dcb4; color: #3d3521; }
+QPushButton { background: #c9b977; border: 2px solid #7a6c38; border-radius: 6px; padding: 4px 10px; }
+QPushButton:hover { background: #d8ca8c; }
+QSpinBox { background: #fbf7e8; border: 2px solid #7a6c38; padding-right: 18px; }
+QSpinBox::up-button { image: url(:/files/add.png); width: 16px; }
+QSpinBox::down-button { image: url(:/files/remove.png); width: 16px; }
+QLabel { font-weight: bold; }

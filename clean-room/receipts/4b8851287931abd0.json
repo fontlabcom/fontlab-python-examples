@@ -1,0 +1,10 @@
+{
+  "port_id": "4b8851287931abd0",
+  "target_path": "ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py",
+  "files": [
+    "ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "38cbde1f599052fc7fcaf9a9abc3697cd80d64e6b4df0c8b443de29f88f0657e"
+}

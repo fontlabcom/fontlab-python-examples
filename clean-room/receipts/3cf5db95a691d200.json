@@ -1,0 +1,10 @@
+{
+  "port_id": "3cf5db95a691d200",
+  "target_path": "ports/dbus/pyqt-official/controller-3cf5db95a691d200.py",
+  "files": [
+    "ports/dbus/pyqt-official/controller-3cf5db95a691d200.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtDBus session-bus bindings are unavailable in FontLab.",
+  "spec_sha256": "47971a1f7649ac2a91b22cae4e9ac70395499c89e11a97ff1cca800500cf5586"
+}

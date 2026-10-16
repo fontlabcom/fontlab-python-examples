@@ -1,0 +1,10 @@
+{
+  "port_id": "c12a2071adbab88b",
+  "target_path": "ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+  "files": [
+    "ports/painting/pyqt-official/transformations-c12a2071adbab88b.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "dfbf3eb5a9c91ebddd0ede3e54e8a8e2a5bbf38e50d51c98547235daf6d215c6"
+}

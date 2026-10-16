@@ -1,0 +1,58 @@
+# this_file: ports/insights/sandbox-settings.py
+# SPDX-License-Identifier: Apache-2.0
+# Original code; inspiration only (no reference code copied):
+# _reference/RobotLocomotion_director/src/python/director/robotposegui.py:610 — source licence unresolved; see catalog/insights.json.
+from typing import Any
+
+from fontlab_python_examples.handle import ExampleHandle
+from fontlab_python_examples.insights import owned
+
+
+def build(qt: Any) -> ExampleHandle:
+    gui, core = qt.QtGui, qt.QtCore
+    key = "proof/sample"
+    with owned(gui.QWidget(), "Owned proof sample — isolated settings") as handle:
+        window = handle.widget
+        settings = core.QSettings("FontLabPythonExamples", "InsightsSandbox", window)
+        settings.setFallbacksEnabled(False)
+        editor = gui.QLineEdit(window)
+        editor.setText(str(settings.value(key, "Hamburgefontsiv")))
+        save = gui.QPushButton("Save sample", window)
+        reset = gui.QPushButton("Reset owned sample", window)
+        label = gui.QLabel("Only the example namespace is used", window)
+        layout = gui.QVBoxLayout(window)
+        for control in (editor, save, reset, label):
+            layout.addWidget(control)
+        state = {"error": ""}
+
+        def persist(remove: bool = False) -> None:
+            if remove:
+                settings.remove(key)
+                editor.setText("Hamburgefontsiv")
+            else:
+                settings.setValue(key, str(editor.text))
+            settings.sync()
+            state["error"] = (
+                "Settings write failed"
+                if settings.status() != core.QSettings.NoError
+                else ""
+            )
+            label.setText(state["error"] or ("Reset" if remove else "Saved"))
+
+        handle.connect_old(save, "clicked()", persist)
+        handle.connect_old(reset, "clicked()", lambda: persist(True))
+        handle.controls.update(input=editor, save=save, reset=reset)
+        handle.inspect_ui = lambda: {
+            "sample": str(editor.text),
+            "saved": str(settings.value(key, "Hamburgefontsiv")),
+            "organization": "FontLabPythonExamples",
+            "application": "InsightsSandbox",
+            **state,
+        }
+        return handle
+
+
+if __name__ == "__main__":
+    from fontlab_python_examples import launch
+
+    launch("sandbox-settings")

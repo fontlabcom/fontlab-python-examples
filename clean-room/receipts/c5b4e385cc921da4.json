@@ -1,0 +1,10 @@
+{
+  "port_id": "c5b4e385cc921da4",
+  "target_path": "ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py",
+  "files": [
+    "ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "45d26bd7202a8b9685b50b4a476f7f9ccc2a317d024bdd0b9292b39ae55ade9c"
+}

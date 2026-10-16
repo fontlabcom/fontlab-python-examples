@@ -1,0 +1,10 @@
+{
+  "port_id": "54cbd9afababdf71",
+  "target_path": "ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py",
+  "files": [
+    "ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtRemoteObjects host and replica bindings are unavailable in FontLab.",
+  "spec_sha256": "e45ef54b77c275b579920b14fe4d40bfb2687acbc2212dacaa6d6d30636b4812"
+}

@@ -1,0 +1,10 @@
+{
+  "port_id": "029ea0dabe87ae57",
+  "target_path": "ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+  "files": [
+    "ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "5e5bf59db8c7961c66cae55bea07a5e615e7e65b6604c7a9c29b04fdddab9949"
+}

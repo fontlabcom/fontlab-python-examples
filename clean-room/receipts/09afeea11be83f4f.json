@@ -1,0 +1,10 @@
+{
+  "port_id": "09afeea11be83f4f",
+  "target_path": "ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py",
+  "files": [
+    "ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "cad4e33e797884c6ed49329fcc724731a113a2eee3b411124b486979a1c9dd2b"
+}

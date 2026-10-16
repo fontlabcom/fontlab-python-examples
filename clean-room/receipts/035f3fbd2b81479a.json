@@ -1,0 +1,10 @@
+{
+  "port_id": "035f3fbd2b81479a",
+  "target_path": "ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py",
+  "files": [
+    "ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "054378e6acd0605d41e43e9a9442c61f6988a899a3280b8b0057d8344e27ebb6"
+}

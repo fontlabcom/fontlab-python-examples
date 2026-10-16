@@ -1,0 +1,10 @@
+{
+  "port_id": "9030a87a532b8d8f",
+  "target_path": "ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py",
+  "files": [
+    "ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py"
+  ],
+  "implementation": "blocked",
+  "blocked_reason": "QtSql model and delegate bindings are unavailable in FontLab.",
+  "spec_sha256": "83b41c73a9a5acdda727b61b9e557e96cb56b60889b3fa07a30928528d5afd41"
+}

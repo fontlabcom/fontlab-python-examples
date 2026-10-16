@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Issue 103 third-party PythonQt study copies; provenance in catalog/pythonqt-reference-manifest.json.
+_reference/
+
+# Local workspace artifacts
+.DS_Store
+.omc/
+# Private and scratch state: macOS metadata, agent scratch dirs, local envs (never source)
+**/.omc/
+.local/
+.superpowers/
+.worktrees/

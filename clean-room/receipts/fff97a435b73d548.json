@@ -1,0 +1,10 @@
+{
+  "port_id": "fff97a435b73d548",
+  "target_path": "ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+  "files": [
+    "ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py"
+  ],
+  "implementation": "implemented",
+  "blocked_reason": null,
+  "spec_sha256": "3896e65dc20bbbc72c5512f421ef5de0debb5d29e4b0c48af8d74b5a08ec079d"
+}
