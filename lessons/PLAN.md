@@ -1,5 +1,5 @@
 ---
-this_file: docs/lessons/PLAN.md
+this_file: lessons/PLAN.md
 ---
 
 # Remaining integration gates

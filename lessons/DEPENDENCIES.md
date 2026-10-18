@@ -1,5 +1,5 @@
 ---
-this_file: docs/lessons/DEPENDENCIES.md
+this_file: lessons/DEPENDENCIES.md
 ---
 
 # Dependencies

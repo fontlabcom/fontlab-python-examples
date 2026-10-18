@@ -1,5 +1,5 @@
 ---
-this_file: docs/lessons/README.md
+this_file: lessons/README.md
 ---
 
 # Learn Qt models and forms with real FontLab data
@@ -32,13 +32,13 @@ registry in the verified installation run. Fly's latest GitHub release asset was
 
 For a complete installation test outside FontLab, collect these eight reviewed
 wheels into one otherwise empty `wheelhouse` directory. The verified collection
-uses Lessons1.0.3.dev0+g7b5d6726a.d20261018, App0.2.22,
+uses Lessons1.0.3.dev1+gef544f608, App0.2.23,
 Fly0.2.2.dev3+g6cf9dc150, Echopy0.2.3,
 pythonqtside0.2.1.dev54+g2777e85cd, TypeRig0.2.1.dev8+gf589189,
 Fontport1.0.2 and Glyport1.0.8.dev12+g756df2ac8. Development versions identify
 read-only canonical-checkout builds; they are not publication claims. Build a
 checkout wheel with `uv build --out-dir /path/to/wheelhouse`; obtain the reviewed
-App0.2.22 wheel from its GitHub release. Record every source revision and wheel
+App0.2.23 wheel from its GitHub release. Record every source revision and wheel
 hash before installation. Then run:
 
 ```sh
@@ -84,10 +84,12 @@ values rather than native glyph wrappers. UI controls and Close/status exist
 before font reads; failed reads clear obsolete data and keep Close usable.
 Missing/corrupt form resources report an error in a closable dialog.
 
-## Validation and candidate status
+## Validation
 
-This is a source candidate. Fresh installed-artifact FontLab checks and review
-must pass before integration/release. Host-free tests use actual offscreen Qt6
+The installed candidate passes all three actual menu workflows and twelve
+edge/lifecycle controls in FontLab 9.0.9784 on macOS arm64, with complete font
+and history preservation. Final integration/release gates remain open.
+Host-free tests use actual offscreen Qt6
 widgets behind a PythonQt-shaped facade and App's real lifecycle implementation;
 they do not prove native PythonQt/FontLab compatibility. PySide6 is a test-only
 dependency, never a production import or FontLab installation requirement.
@@ -118,18 +120,24 @@ FontTools test dependency to exercise GetGo's pen tests:
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with fonttools python -m pytest -q tests
 ```
 
-Passing historical tests does not accept299catalogue records or18insights
-natively. Passing the37candidate tests covers these three lessons and four
-namespace-order controls, including unchanged legacy QLabel launcher routing.
+The 1,886 historical tests and 40 lesson tests pass. All eleven changed
+production modules exceed 80% statement, branch and aggregate coverage;
+combined coverage is 97.77%. Four independent namespace-order controls and the
+actual legacy QLabel panel pass alongside the installed lessons. These results
+cover the three lessons; the broader catalogue and eighteen-insight migration
+remain open.
 
 The distribution version comes from Git through hatch-vcs. An uninstalled source
 import reports `0+uninstalled`; this does not create an installation claim. No
 broader catalogue, Scriptmix, GetGo or archive completion follows from these three
 lessons. Active Font-window verification in App is required before legacy
 selection writers are safe; an open font alone does not establish that context.
-App0.2.22 is the required reviewed safe release. Full dependency resolution was
+App0.2.22 is the minimum reviewed safe release; acceptance uses App0.2.23.
+Full dependency resolution was
 verified with its actual release wheel and the explicit source-wheel collection
-above; registry-only installation remains unavailable.
+above. The verified clean environment contains 23 compatible packages. The
+lesson source documentation lives in `lessons/`, separately from generated
+site output in `docs/`, so a site rebuild cannot remove it.
 
 The form validates known control types before retaining the loaded widget.
 Missing, malformed or wrong-type resources leave a usable Close button. See

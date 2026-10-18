@@ -1,5 +1,5 @@
 ---
-this_file: docs/lessons/WORK.md
+this_file: lessons/WORK.md
 ---
 
 # Lesson package integration
@@ -40,5 +40,9 @@ uv build --no-sources
 The standalone source copy also passes all 40 tests with an explicit retained
 legacy checkout. Exact commands and durable artifact/native receipts are kept
 in the workspace work log. Normal dependency installation, final installed
-native checks, canonical integration and release verification are still pending
-for this integration layout. No broader catalogue/archive completion is claimed.
+native checks now pass: normal installation resolves 23 compatible packages,
+four namespace orders coexist, and actual installed menus pass all three
+workflows plus twelve edge controls on FontLab 9.0.9784. Complete font/history,
+Close and import-state preservation pass. Canonical integration and release
+verification remain pending. Source documentation lives in lessons/ to avoid
+the owner's generated docs/ output. No broader archive completion is claimed.

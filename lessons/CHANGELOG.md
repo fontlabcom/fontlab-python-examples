@@ -1,5 +1,5 @@
 ---
-this_file: docs/lessons/CHANGELOG.md
+this_file: lessons/CHANGELOG.md
 ---
 
 # Lesson changes
@@ -13,4 +13,7 @@ this_file: docs/lessons/CHANGELOG.md
 - Preserve the historical catalogue namespace and every old tracked file.
   Do not restore the canonical owner's archived root files.
 - Verify actual menu dispatch, complete changed-module coverage, all lesson
-  tests and the unchanged historical suite. Final release gates remain open.
+  tests and the unchanged historical suite. Verify the installed menus and
+  twelve edge controls in FontLab with unchanged font/history data.
+- Keep source documentation outside generated docs/ output. Final release gates
+  remain open.
