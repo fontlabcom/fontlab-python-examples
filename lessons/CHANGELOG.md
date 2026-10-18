@@ -4,7 +4,13 @@ this_file: lessons/CHANGELOG.md
 
 # Lesson changes
 
-## Unreleased
+## 1.0.3 — 2026-10-18
+
+Release the three installed current-font lessons as fontlab-python-lessons.
+All40lesson and1886legacy tests pass; all14whole changed production modules
+exceed80% coverage (97.85% combined). Actual installed menus and twelve edge
+controls preserve complete font/history state in FontLab9.0.9784. The package
+lives under lessons/; all1,231existing owner statuses/hashes remain unchanged.
 
 - Package Glyph Name Filter, Glyph Metrics Model and Glyph Metrics Form under
   the distinct fontlab_python_lessons namespace. Use the existing App lifecycle.
@@ -15,5 +21,5 @@ this_file: lessons/CHANGELOG.md
 - Verify actual menu dispatch, complete changed-module coverage, all lesson
   tests and the unchanged historical suite. Verify the installed menus and
   twelve edge controls in FontLab with unchanged font/history data.
-- Keep source documentation outside generated docs/ output. Final release gates
-  remain open.
+- Keep source documentation outside generated docs/ output. Independent
+  downloaded-tag verification is recorded separately after publication.
