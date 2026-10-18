@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this_file: src/fontlab_python_lessons/resources/glyph-metrics-form.ui -->
+<!-- SPDX-License-Identifier: Apache-2.0; adapted owned form, see provenance/models.json. -->
+<ui version="4.0">
+ <class>GlyphMetricsForm</class>
+ <widget class="QWidget" name="GlyphMetricsForm">
+  <layout class="QVBoxLayout" name="formLayout">
+   <item><widget class="QLabel" name="glyphLabel"><property name="text"><string>Glyph in the current font</string></property></widget></item>
+   <item><widget class="QComboBox" name="glyphName"/></item>
+   <item><layout class="QFormLayout" name="metricFields">
+    <item row="0" column="0"><widget class="QLabel" name="advanceLabel"><property name="text"><string>Actual advance</string></property></widget></item>
+    <item row="0" column="1"><widget class="QLabel" name="actualAdvance"><property name="text"><string>—</string></property></widget></item>
+    <item row="1" column="0"><widget class="QLabel" name="lsbLabel"><property name="text"><string>Actual left sidebearing</string></property></widget></item>
+    <item row="1" column="1"><widget class="QLabel" name="actualLsb"><property name="text"><string>—</string></property></widget></item>
+    <item row="2" column="0"><widget class="QLabel" name="previewLabel"><property name="text"><string>Hypothetical advance</string></property></widget></item>
+    <item row="2" column="1"><widget class="QDoubleSpinBox" name="advanceBox"><property name="decimals"><number>3</number></property><property name="minimum"><double>-1000000000.000000000000000</double></property><property name="maximum"><double>1000000000.000000000000000</double></property></widget></item>
+   </layout></item>
+   <item><widget class="QPushButton" name="previewButton"><property name="text"><string>Preview Difference</string></property></widget></item>
+   <item><widget class="QLabel" name="resultLabel"><property name="text"><string/></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

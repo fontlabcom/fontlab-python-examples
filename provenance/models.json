@@ -1,0 +1,19 @@
+{
+  "this_file": "provenance/models.json",
+  "schema_version": 1,
+  "scope": "Three original Apache-2.0 insight adaptations; no private reference code or assets",
+  "license": "Apache-2.0",
+  "status": "candidate; fresh native installed-artifact acceptance pending",
+  "inputs": [
+    {"archive_path": "part2/ports/insights/glyph-list.py", "sha256": "6cceb5202a9f4bdec96c993d7cf66d225d7b181e594cfa44d7478d095ff9ecbc", "destination": "Scripts/Models/Glyph Name Filter.py", "adaptation": "Replace fixed names with current-font names and guarded explicit selection"},
+    {"archive_path": "part2/ports/insights/metrics-table.py", "sha256": "7966a62e0a1613e3f2f1b0e9ed279224b5a4ae9fe4f0bdca0dd96c10e1218667", "destination": "Scripts/Models/Glyph Metrics Model.py", "adaptation": "Replace fixed rows with selected-glyph current-master metrics and explicit missing values"},
+    {"archive_path": "part2/ports/insights/loaded-glyph-form.py", "sha256": "263c0c6715f4fe22418b6da27ee83cc2a39683e23bcdc58723ab7d60e34b1c87", "destination": "Scripts/Forms/Glyph Metrics Form.py", "adaptation": "Load packaged form; read a real glyph and compare hypothetical width without setters"},
+    {"archive_path": "part2/ports/insights/loaded-glyph-form.ui", "sha256": "668c85ff0f4c60b69b8db8b1e7f76dcf2743040f073bc5997cf00742d954fe93", "destination": "src/fontlab_python_lessons/resources/glyph-metrics-form.ui", "adaptation": "Retain Designer loader lesson; add actual names, advance/LSB and explicit preview-only labels"}
+  ],
+  "archive_root": "fontlab-python-examples/_old",
+  "license_basis": "Original insight catalogue records Apache-2.0; owned .ui explicitly declares Apache-2.0. Referenced third-party bodies were not used.",
+  "catalogue_metadata": "catalog/insights.json; original inspiration citation metadata remains historical and does not grant copied third-party code",
+  "shared_host_implementation": "Existing fly.ap.scripting and inspectors.layout; no new native host adapter",
+  "native_acceptance": "pending",
+  "originals_removed": false
+}
