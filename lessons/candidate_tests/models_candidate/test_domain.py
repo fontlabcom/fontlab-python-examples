@@ -1,4 +1,4 @@
-# this_file: candidate_tests/models_candidate/test_domain.py
+# this_file: lessons/candidate_tests/models_candidate/test_domain.py
 """Exercise real-font source guards with immutable owned boundary doubles."""
 
 from dataclasses import replace

@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/ui.py
+# this_file: lessons/src/fontlab_python_lessons/ui.py
 # SPDX-License-Identifier: Apache-2.0
 """Resolve native lesson classes lazily, inside the existing FontLab process."""
 from typing import Any

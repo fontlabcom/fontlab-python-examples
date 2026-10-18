@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/models.py
+# this_file: lessons/src/fontlab_python_lessons/models.py
 # SPDX-License-Identifier: Apache-2.0
 """Build an immutable Qt table model from real, already measured glyph rows.
 

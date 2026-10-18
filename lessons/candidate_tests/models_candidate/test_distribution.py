@@ -1,4 +1,4 @@
-# this_file: candidate_tests/models_candidate/test_distribution.py
+# this_file: lessons/candidate_tests/models_candidate/test_distribution.py
 """Keep the complete small lesson package separate from historical examples."""
 
 import ast
@@ -20,7 +20,7 @@ def test_menu_when_packaged_then_contains_only_three_shallow_python_entries():
     assert len(paths) == 3 and all(len(path.parts) == 2 and path.suffix == ".py" for path in paths)
     for path in paths:
         body = (ROOT / "Scripts" / path).read_text()
-        assert f"this_file: Scripts/{path.as_posix()}" in body
+        assert f"this_file: lessons/Scripts/{path.as_posix()}" in body
         tree = ast.parse(body)
         assert ast.get_docstring(tree) and "from fontlab_python_lessons import launch" in body
 

@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/__init__.py
+# this_file: lessons/src/fontlab_python_lessons/__init__.py
 # SPDX-License-Identifier: Apache-2.0
 """Run three useful FontLab UI lessons without importing the host eagerly.
 

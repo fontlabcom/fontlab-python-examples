@@ -94,16 +94,16 @@ widgets behind a PythonQt-shaped facade and App's real lifecycle implementation;
 they do not prove native PythonQt/FontLab compatibility. PySide6 is a test-only
 dependency, never a production import or FontLab installation requirement.
 
-From this candidate checkout, use the workspace's cached isolated tools:
+From this checkout's `lessons/` directory, use isolated tools:
 
 ```sh
 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --offline --no-project --python cpython-3.11-macos-aarch64-none --with PySide6 --with pytest --with pytest-cov python -m pytest -p pytest_cov --confcutdir candidate_tests/models_candidate -q candidate_tests/models_candidate --cov=src/fontlab_python_lessons --cov-branch --cov-fail-under=80
 uv build --no-sources
 ```
 
-The widget tests resolve the sibling fontlab-fontlabapp source checkout to use
-its actual dialog lifecycle. Set `EXAMPLES_APP_SOURCE` to its `src/fontlabapp`
-directory when testing an extracted distribution outside this workspace.
+Set `EXAMPLES_APP_SOURCE` to the reviewed App package directory to test its
+actual dialog lifecycle, such as the `fontlabapp` directory in a disposable
+environment's site-packages.
 The coexistence tests also need the unchanged historical checkout; set
 `LEGACY_EXAMPLES_SOURCE` to that checkout when testing an extracted sdist. This
 does not package or modify the historical launcher.
@@ -136,8 +136,10 @@ App0.2.22 is the minimum reviewed safe release; acceptance uses App0.2.23.
 Full dependency resolution was
 verified with its actual release wheel and the explicit source-wheel collection
 above. The verified clean environment contains 23 compatible packages. The
-lesson source documentation lives in `lessons/`, separately from generated
-site output in `docs/`, so a site rebuild cannot remove it.
+lesson project lives in `lessons/`, separately from the root documentation
+build metadata and generated `docs/` site. Build it with `uv build lessons`
+from the repository root. Both root `Scripts/` and the distribution's Scripts
+contain the three small menu entries; tests require identical executable bodies.
 
 The form validates known control types before retaining the loaded widget.
 Missing, malformed or wrong-type resources leave a usable Close button. See

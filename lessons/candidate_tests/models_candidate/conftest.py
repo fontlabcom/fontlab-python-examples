@@ -1,4 +1,4 @@
-# this_file: candidate_tests/models_candidate/conftest.py
+# this_file: lessons/candidate_tests/models_candidate/conftest.py
 """Load only the candidate src package; legacy root tests remain untouched."""
 
 import sys

@@ -1,5 +1,5 @@
 ---
-this_file: provenance/NOTICE-models.md
+this_file: lessons/provenance/NOTICE-models.md
 ---
 
 # Models and form lesson notice

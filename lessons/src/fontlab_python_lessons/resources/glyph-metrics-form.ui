@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- this_file: src/fontlab_python_lessons/resources/glyph-metrics-form.ui -->
+<!-- this_file: lessons/src/fontlab_python_lessons/resources/glyph-metrics-form.ui -->
 <!-- SPDX-License-Identifier: Apache-2.0; adapted owned form, see provenance/models.json. -->
 <ui version="4.0">
  <class>GlyphMetricsForm</class>

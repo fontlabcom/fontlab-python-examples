@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/domain.py
+# this_file: lessons/src/fontlab_python_lessons/domain.py
 # SPDX-License-Identifier: Apache-2.0
 """Keep lesson data immutable; delegate all native reads to existing App APIs.
 

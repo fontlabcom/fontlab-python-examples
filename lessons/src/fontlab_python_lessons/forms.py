@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/forms.py
+# this_file: lessons/src/fontlab_python_lessons/forms.py
 # SPDX-License-Identifier: Apache-2.0
 """Load only the packaged owned Designer form, with bounded known controls.
 

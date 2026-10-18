@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/panels.py
+# this_file: lessons/src/fontlab_python_lessons/panels.py
 # SPDX-License-Identifier: Apache-2.0
 """Teach native list/table models using real current-font data and safe actions."""
 from typing import Any

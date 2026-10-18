@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/form_dialog.py
+# this_file: lessons/src/fontlab_python_lessons/form_dialog.py
 # SPDX-License-Identifier: Apache-2.0
 """Teach Designer loading with real glyph metrics and a strictly local preview."""
 from typing import Any

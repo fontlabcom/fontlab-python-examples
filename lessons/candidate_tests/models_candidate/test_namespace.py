@@ -1,4 +1,4 @@
-# this_file: candidate_tests/models_candidate/test_namespace.py
+# this_file: lessons/candidate_tests/models_candidate/test_namespace.py
 """Both public APIs must coexist regardless of checkout/source/import precedence."""
 
 import os
@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
-LEGACY_ROOT = Path(os.environ.get("LEGACY_EXAMPLES_SOURCE", str(ROOT))).resolve()
+LEGACY_ROOT = Path(os.environ.get("LEGACY_EXAMPLES_SOURCE", str(ROOT.parent))).resolve()
 
 
 @pytest.mark.parametrize("source_first", [False, True])

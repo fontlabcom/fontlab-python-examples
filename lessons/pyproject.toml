@@ -1,4 +1,4 @@
-# this_file: pyproject.toml
+# this_file: lessons/pyproject.toml
 [build-system]
 requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
 build-backend = "hatchling.build"
@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 name = "fontlab-python-lessons"
 dynamic = ["version"]
 description = "Useful current-font list, table and Designer-form lessons for FontLab"
-readme = "lessons/README.md"
+readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 license-files = ["provenance/LICENSE-Apache-2.0.txt", "provenance/NOTICE-models.md"]
@@ -20,6 +20,7 @@ Repository = "https://github.com/fontlabcom/fontlab-python-examples"
 source = "vcs"
 
 [tool.hatch.version.raw-options]
+root = ".."
 fallback_version = "1.0.3.dev0"
 
 [tool.hatch.build.targets.wheel]
@@ -28,12 +29,12 @@ packages = ["src/fontlab_python_lessons"]
 [tool.hatch.build.targets.wheel.shared-data]
 "Scripts" = "share/fontlab-python-lessons/Scripts"
 "provenance" = "share/fontlab-python-lessons/provenance"
-"lessons/README.md" = "share/fontlab-python-lessons/docs/README.md"
-"lessons/DEPENDENCIES.md" = "share/fontlab-python-lessons/docs/DEPENDENCIES.md"
-"lessons/CHANGELOG.md" = "share/fontlab-python-lessons/docs/CHANGELOG.md"
+"README.md" = "share/fontlab-python-lessons/docs/README.md"
+"DEPENDENCIES.md" = "share/fontlab-python-lessons/docs/DEPENDENCIES.md"
+"CHANGELOG.md" = "share/fontlab-python-lessons/docs/CHANGELOG.md"
 
 [tool.hatch.build.targets.sdist]
-only-include = ["src", "Scripts", "candidate_tests", "pyproject.toml", "provenance", "lessons/README.md", "lessons/DEPENDENCIES.md", "lessons/CHANGELOG.md"]
+only-include = ["src", "Scripts", "candidate_tests", "pyproject.toml", "provenance", "README.md", "DEPENDENCIES.md", "CHANGELOG.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["candidate_tests/models_candidate"]

@@ -1,4 +1,4 @@
-# this_file: src/fontlab_python_lessons/_dialog.py
+# this_file: lessons/src/fontlab_python_lessons/_dialog.py
 # SPDX-License-Identifier: Apache-2.0
 """Compose lessons on App's existing owned NamesDialog lifecycle.
 

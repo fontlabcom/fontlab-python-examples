@@ -1,4 +1,4 @@
-# this_file: candidate_tests/models_candidate/test_widgets.py
+# this_file: lessons/candidate_tests/models_candidate/test_widgets.py
 """Actual offscreen Qt widgets behind a PythonQt-shaped, host-free boundary.
 
 PySide6 is used in this isolated test process only. Production imports PythonQt

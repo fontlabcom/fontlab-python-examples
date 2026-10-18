@@ -6,8 +6,11 @@ this_file: lessons/WORK.md
 
 The three lessons use real font names and metrics. Their distinct
 fontlab_python_lessons namespace preserves the historical catalogue API.
-The eight runtime modules, three menus and UI resource match the previously
-reviewed and natively verified candidate. No old tracked file changes.
+The eight runtime modules, three menus and UI resource preserve the previously
+reviewed and natively verified candidate; relocation changes path headers only.
+No old tracked file changes. The build metadata and package live under lessons/
+to coexist with the owner's new root documentation project. Root Scripts keeps
+the same three shallow entries; tests compare their packaged executable bodies.
 
 The new package uses its own full Apache license in provenance. A standalone
 build without the archived root LICENSE succeeded but omitted the license;
@@ -27,10 +30,10 @@ Commands use explicit EXAMPLES_APP_SOURCE pointing at the reviewed App package.
 Run from the workspace:
 
 ```sh
-sh .metaswarm/quality.sh coverage .worktrees/issue111-lessons-package fontlab-python-examples
+sh .metaswarm/quality.sh coverage .worktrees/issue111-lessons-final fontlab-python-examples
 ```
 
-From this checkout:
+From this checkout's lessons/ directory:
 
 ```sh
 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with PySide6 --with pytest python -m pytest -q --confcutdir candidate_tests/models_candidate candidate_tests/models_candidate
