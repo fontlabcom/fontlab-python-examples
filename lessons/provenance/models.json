@@ -3,7 +3,7 @@
   "schema_version": 1,
   "scope": "Three original Apache-2.0 insight adaptations; no private reference code or assets",
   "license": "Apache-2.0",
-  "status": "installed candidate accepted; canonical integration and independent release verification pending",
+  "status": "installed candidate accepted and canonically integrated; independent release verification pending",
   "inputs": [
     {"archive_path": "part2/ports/insights/glyph-list.py", "sha256": "6cceb5202a9f4bdec96c993d7cf66d225d7b181e594cfa44d7478d095ff9ecbc", "destination": "Scripts/Models/Glyph Name Filter.py", "adaptation": "Replace fixed names with current-font names and guarded explicit selection"},
     {"archive_path": "part2/ports/insights/metrics-table.py", "sha256": "7966a62e0a1613e3f2f1b0e9ed279224b5a4ae9fe4f0bdca0dd96c10e1218667", "destination": "Scripts/Models/Glyph Metrics Model.py", "adaptation": "Replace fixed rows with selected-glyph current-master metrics and explicit missing values"},

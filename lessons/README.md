@@ -120,9 +120,9 @@ FontTools test dependency to exercise GetGo's pen tests:
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with fonttools python -m pytest -q tests
 ```
 
-The 1,886 historical tests and 40 lesson tests pass. All eleven changed
+The 1,886 historical tests and 40 lesson tests pass. All fourteen changed
 production modules exceed 80% statement, branch and aggregate coverage;
-combined coverage is 97.77%. Four independent namespace-order controls and the
+combined coverage is 97.85%. Four independent namespace-order controls and the
 actual legacy QLabel panel pass alongside the installed lessons. These results
 cover the three lessons; the broader catalogue and eighteen-insight migration
 remain open.

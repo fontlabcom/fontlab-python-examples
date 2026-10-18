@@ -21,8 +21,8 @@ Build success alone is insufficient evidence.
 Fresh baseline: 1,886 legacy tests pass. Three actual-menu tests fail before
 the menu files are added, then pass. All 40 lesson tests pass. The project
 quality gate runs both full suites in separate processes under one appended
-coverage data set: all 11 changed production modules exceed 80% statement,
-branch and aggregate coverage; total 97.77%. The three menus each have 100%.
+coverage data set: all 14 changed production modules exceed 80% statement,
+branch and aggregate coverage; total 97.85%. Both sets of menus have 100%.
 All legacy runtime/tests remain unchanged. The canonical owner's archive moves
 and deletions remain untouched.
 
@@ -47,5 +47,8 @@ native checks now pass: normal installation resolves 23 compatible packages,
 four namespace orders coexist, and actual installed menus pass all three
 workflows plus twelve edge controls on FontLab 9.0.9784. Complete font/history,
 Close and import-state preservation pass. Canonical integration and release
-verification remain pending. Source documentation lives in lessons/ to avoid
-the owner's generated docs/ output. No broader archive completion is claimed.
+verification remain pending. Canonical integration preserves all 1,231 owner
+status entries and every existing dirty-file hash/symlink exactly. Source
+documentation lives in lessons/ to avoid the owner's generated docs/ output.
+The package project also preserves the owner's root documentation metadata.
+No broader archive completion is claimed.
