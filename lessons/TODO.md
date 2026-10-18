@@ -9,5 +9,5 @@ this_file: lessons/TODO.md
 - [x] Resolve/install all declared dependencies normally in clean Python 3.11.
 - [x] Repeat installed native workflows, edge/lifecycle and preservation checks.
 - [x] Merge added paths while preserving owner archive/deletion status.
-- [ ] Release and independently verify downloaded tags and assets.
-- [ ] Record accepted source dispositions without removing unresolved archives.
+- [x] Release and independently verify downloaded tags and assets.
+- [x] Record accepted source dispositions without removing unresolved archives.

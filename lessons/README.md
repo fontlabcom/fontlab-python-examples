@@ -32,7 +32,7 @@ registry in the verified installation run. Fly's latest GitHub release asset was
 
 For a complete installation test outside FontLab, collect these eight reviewed
 wheels into one otherwise empty `wheelhouse` directory. The verified collection
-uses Lessons1.0.3.dev1+gef544f608, App0.2.23,
+uses Lessons1.0.3, App0.2.23,
 Fly0.2.2.dev3+g6cf9dc150, Echopy0.2.3,
 pythonqtside0.2.1.dev54+g2777e85cd, TypeRig0.2.1.dev8+gf589189,
 Fontport1.0.2 and Glyport1.0.8.dev12+g756df2ac8. Development versions identify
@@ -86,9 +86,10 @@ Missing/corrupt form resources report an error in a closable dialog.
 
 ## Validation
 
-The installed candidate passes all three actual menu workflows and twelve
+The independently downloaded v1.0.3 wheel passes all three actual menu workflows and twelve
 edge/lifecycle controls in FontLab 9.0.9784 on macOS arm64, with complete font
-and history preservation. Final integration/release gates remain open.
+and history preservation. Source and release assets are available in the
+[v1.0.3 release](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.0.3).
 Host-free tests use actual offscreen Qt6
 widgets behind a PythonQt-shaped facade and App's real lifecycle implementation;
 they do not prove native PythonQt/FontLab compatibility. PySide6 is a test-only

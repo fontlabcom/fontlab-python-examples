@@ -2,18 +2,19 @@
 this_file: lessons/PLAN.md
 ---
 
-# Remaining integration gates
+# Accepted three-lesson slice
 
-Build the actual wheel through its source distribution. Audit every payload and
-the required full license. Install with normal dependency resolution in a clean
-arm64 Python 3.11 environment, using reviewed dependency wheels where the package
-index does not supply them. Verify all namespace orders, resources and menus.
+The wheel/sdist and menu ZIP are released as v1.0.3. Independent downloads match
+their published hashes. Full-license/privacy/source audits pass, as do normal
+23-package resolution, four namespace orders, resources and actual menus.
 
-Run the three workflows and twelve edge/lifecycle controls in FontLab through
-the shared owned-fixture runner, using the new artifact and reviewed App release.
-Verify complete font/history preservation, actual Close and restored imports.
+The downloaded wheel passes all three workflows and twelve edge/lifecycle
+controls on FontLab9.0.9784 with App0.2.23. Complete font/history preservation,
+Close and restored imports pass; six screenshots match the inspected candidate.
 
-Merge only added paths into the canonical checkout. Prove the owner's existing
-archive/deletion status is unchanged. Release from an isolated clean main
-checkout, retain prior tags and independently download/install/verify the tag.
-Record the four source-input dispositions without removing unresolved archives.
+The additions-only canonical merge preserves all1,231owner status entries and
+dirty-file hashes/symlinks. The root documentation project remains intact;
+lesson packaging lives here. All prior tags remain unchanged. The four input
+dispositions are recorded in provenance/models.json and the workspace ledger.
+The originals remain because complete archive and documentation gates are open.
+Further catalogue/insight/recipe/GetGo work is tracked by the workspace plan.

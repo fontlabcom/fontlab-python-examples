@@ -47,8 +47,15 @@ native checks now pass: normal installation resolves 23 compatible packages,
 four namespace orders coexist, and actual installed menus pass all three
 workflows plus twelve edge controls on FontLab 9.0.9784. Complete font/history,
 Close and import-state preservation pass. Canonical integration and release
-verification remain pending. Canonical integration preserves all 1,231 owner
+verification now pass at v1.0.3/8a35cb8aab447d662bcd9be8bb62733f255edc01.
+Canonical integration preserves all 1,231 owner
 status entries and every existing dirty-file hash/symlink exactly. Source
 documentation lives in lessons/ to avoid the owner's generated docs/ output.
 The package project also preserves the owner's root documentation metadata.
 No broader archive completion is claimed.
+
+Independent downloaded wheel/sdist/ZIP hashes match. Fresh tag40lesson and1886
+legacy tests pass; downloaded native3workflows+12edges preserve complete font
+and history, Close and import state. All six screenshots match the inspected
+candidate byte-for-byte. The normal clean install contains23compatible packages.
+Source input mappings are accepted without removing the four retained originals.
