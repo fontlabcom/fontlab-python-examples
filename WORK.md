@@ -3120,3 +3120,26 @@ current; suite 1881 passed. Open: F1 VFJ re-sync (controller sends file list and
 ## 2026-10-16 Samples copy
 - `python3 tools/sync_samples.py` (106 scripts copied, rc 0); `--check` rc 0; `python3 tools/docs_export.py` then `--check` rc 0 (43 files).
 - `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --with pytest --with fonttools python -m pytest -q tests`: 1886 passed (rc 0). Without fontTools the two pre-existing outline-pen tests fail on the missing module.
+
+
+## 2026-10-19 — isolated packaged GetGo source milestone
+
+Selected only B5-owned lesson/menu files into a clean feature checkout based on
+28bc505. Canonical/inherited rescued relocation and deleted old tests are excluded.
+Original legacy directories and tests remain as Git records them on this branch.
+Source19modules/99fonts/16distributed menus are byte-identical to reviewed B5.
+Native acceptance and canonical migration remain pending.
+
+First clean package test run:13fail/185pass because the B5 integration test
+required the inherited untracked root rescue-index. Kept that original migration
+check in the B5 worktree. This clean branch tests the13exact expected menu paths
+directly (same route/original-main/no-import-launch oracles), preserving source
+provenance and fixture hashes without importing the owner's unrelated migration.
+
+Fresh clean-branch checks:
+- Lesson source suite198passed(exit0), Python3.11 integrationenv with EXAMPLES_APP_SOURCE pointing only to reviewed App integration.
+- Broad original root suite initially1802passed/21skip then2fail/1error due systemGit and absent ignored reference location. HomebrewPATH fixedGit fixtures; reference-only test passes with FONTLAB_WORKSPACE and FONTLAB_EXAMPLES_REFERENCE pointing to real read-only canonical references. No corpus code runs.
+- Full remaining root suite1864passed/21existing native/evidence skips/1deselected(exit0); the deselected source-citation test separately1passed(exit0). No skip or production behavior changed to pass.
+- Fresh clean package wheel/sdist built as unpublished1.0.4.dev0 under verification/issue-120/app-integration/lessons-dist; normal dependency installs pass.
+- Combined App/Glyport/clean-GetGo installed179tests per wheel/sdist pass;241runtime/resourcehashes,99fonts and16menus verified each. Both uv pip checks pass, delegatedqtsafe identities/import origins pass.
+Native validation remains pending. No unrelated owner relocation/deletions staged.

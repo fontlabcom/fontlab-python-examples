@@ -382,3 +382,5 @@ screen capture or system tray.
 # Tasks
 
 No open tasks.
+
+- Add all13 packaged GetGo lessons with99licensed fixtures and shared App detached reports; source/artifact checks pass, native acceptance remains pending.

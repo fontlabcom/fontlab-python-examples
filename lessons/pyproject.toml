@@ -9,9 +9,12 @@ dynamic = ["version"]
 description = "Useful current-font list, table and Designer-form lessons for FontLab"
 readme = "README.md"
 requires-python = ">=3.11"
-license = "Apache-2.0"
-license-files = ["provenance/LICENSE-Apache-2.0.txt", "provenance/NOTICE-models.md"]
-dependencies = ["fontlab-fontlabapp>=0.2.22", "fontlab-fly>=0.2.1"]
+license = "Apache-2.0 AND CC0-1.0 AND OFL-1.1"
+license-files = ["provenance/LICENSE-Apache-2.0.txt", "provenance/NOTICE-models.md", "src/fontlab_python_lessons/getgo/data/**/LICENSE.txt"]
+dependencies = ["fontlab-fontlabapp>=0.2.26.dev0", "fontlab-fly>=0.2.1"]
+
+[project.optional-dependencies]
+fonttools = ["fonttools>=4.59"]
 
 [project.urls]
 Repository = "https://github.com/fontlabcom/fontlab-python-examples"

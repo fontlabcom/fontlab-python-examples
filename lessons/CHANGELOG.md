@@ -23,3 +23,13 @@ lives under lessons/; all1,231existing owner statuses/hashes remain unchanged.
   twelve edge controls in FontLab with unchanged font/history data.
 - Keep source documentation outside generated docs/ output. Independent
   downloaded-tag verification is recorded separately after publication.
+
+## 2026-10-19
+
+Package all13GetGo lessons and99licensed fixtures without rescued runtime
+dependencies. Add shared App report windows, retain originalrun defaults and
+owned-font cleanup, and distribute16menu entries. Packaged native acceptance
+remains pending; prior9783receipts are historical only.
+
+Add explicit boundary annotations to all GetGo functions without changing original
+algorithms. InfoTool delegates App deletion once and retains failed-close owners.

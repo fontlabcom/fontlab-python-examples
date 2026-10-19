@@ -146,3 +146,7 @@ The form validates known control types before retaining the loaded widget.
 Missing, malformed or wrong-type resources leave a usable Close button. See
 [Qt's loader contract](https://doc.qt.io/archives/qt-5.15/quiloader.html) and
 [hatch-vcs configuration](https://github.com/ofek/hatch-vcs).
+
+The package also includes 13 GetGo font lessons with all 99 licensed fixtures.
+See src/fontlab_python_lessons/getgo/README.md for setup, original calls and
+expected outputs. Their packaged native acceptance remains pending.

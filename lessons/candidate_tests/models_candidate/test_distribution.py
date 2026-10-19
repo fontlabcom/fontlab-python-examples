@@ -11,18 +11,20 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def test_menu_when_packaged_then_contains_only_three_shallow_python_entries():
+def test_menu_when_packaged_then_contains_all_sixteen_shallow_python_entries():
     paths = sorted(
         path.relative_to(ROOT / "Scripts")
         for path in (ROOT / "Scripts").rglob("*")
         if path.is_file()
     )
-    assert len(paths) == 3 and all(len(path.parts) == 2 and path.suffix == ".py" for path in paths)
+    assert len(paths) == 16 and all(len(path.parts) == 2 and path.suffix == ".py" for path in paths)
     for path in paths:
         body = (ROOT / "Scripts" / path).read_text()
         assert f"this_file: lessons/Scripts/{path.as_posix()}" in body
         tree = ast.parse(body)
-        assert ast.get_docstring(tree) and "from fontlab_python_lessons import launch" in body
+        assert ast.get_docstring(tree)
+        expected = "from fontlab_python_lessons.getgo import launch" if path.parts[0] == "GetGo Fonts" else "from fontlab_python_lessons import launch"
+        assert expected in body
 
 
 def test_resource_when_packaged_then_has_exact_known_controls_and_no_external_assets():
