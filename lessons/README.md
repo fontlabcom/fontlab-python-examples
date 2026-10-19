@@ -2,151 +2,141 @@
 this_file: lessons/README.md
 ---
 
-# Learn Qt models and forms with real FontLab data
+# Learn FontLab models, forms and real-font workflows
 
-Three Python3.11 lessons turn list models, table models and Designer forms into
-useful current-font panels. They run inside FontLab's existing application.
-No new QApplication, event loop or alternate Qt binding is loaded in FontLab.
-Install distribution `fontlab-python-lessons`; its Python namespace is
-`fontlab_python_lessons`. The historical `fontlab_python_examples` catalogue
-launcher keeps its own available/launch/inspect/close API and works alongside it.
+Sixteen Python3.11 menu entries cover current-font Qt models/forms and thirteen
+GetGo font workflows. The package runs inside FontLab's existing application.
+It creates no QApplication or second event loop and loads no alternate Qt binding.
+The distribution is `fontlab-python-lessons`; import `fontlab_python_lessons`.
 
-| Menu entry | Use |
+## Choose a lesson
+
+| FontLab menu | Result |
 | --- | --- |
-| Models > Glyph Name Filter | Filter actual glyph names by prefix; explicitly select chosen rows. |
-| Models > Glyph Metrics Model | Read selected glyph names, advances and left sidebearings in font order. |
-| Forms > Glyph Metrics Form | Load a Designer form and compare a hypothetical advance against a real glyph. |
+| Models > Glyph Name Filter | Filter real glyph names by prefix; explicitly select chosen rows. |
+| Models > Glyph Metrics Model | Read selected names, advances and left sidebearings in font order. |
+| Forms > Glyph Metrics Form | Load a Designer form; compare a hypothetical advance with a real glyph. |
+| GetGo Fonts > GetGo - Audit a Real Font | Report fixture metrics, encoding collisions and anchor policy. |
+| GetGo Fonts > GetGo - Arabic Text Coverage | Compare a text's Unicode scalars with actual encoding. This does not shape Arabic. |
+| GetGo Fonts > GetGo - Outline Pens and Intersections | Inspect contour bounds, areas, points and boundary intersections. |
+| GetGo Fonts > GetGo - Name a Disposable Derivative | Rename only the owned fixture copy; retain its license. |
+| GetGo Fonts > GetGo - Kerning and Classes Report | Read typed pairs, zero values and native class members. |
+| GetGo Fonts > GetGo - Masters Axes and Instances | Report designspace coordinates without changing the active master. |
+| GetGo Fonts > GetGo - Compare Master Topology | Compare contour/node types across the fixture's masters. |
+| GetGo Fonts > GetGo - Sidebearings from H | Give I the sidebearings of H on the owned copy. |
+| GetGo Fonts > GetGo - Widen Two Glyphs | Scale A/V nodes, anchors and advances on the owned copy. |
+| GetGo Fonts > GetGo - Export a TTF Geometry Subset | Write and reopen a new TrueType geometry subset. |
+| GetGo Fonts > GetGo - Export an OTF Geometry Subset | Write and reopen a new CFF geometry subset. |
+| GetGo Fonts > GetGo - Font Info Mini Tool | Show a detached information snapshot after closing its fixture. |
+| GetGo Fonts > GetGo - Compare Two Real Fonts | Compare names and widths using each font's own UPM. |
 
-Install the wheel and its `fontlab-fly`/`fontlab-fontlabapp>=0.2.22` dependencies in the
-FontLab Python3.11 environment. Find the menu files under the installed Python
-prefix's `share/fontlab-python-lessons/Scripts`. Copy its Models and Forms
-folders into a configured FontLab Scripts folder. Keep the package installed:
-the menu files import it, and the form loads its packaged `.ui` resource.
-The source checkout's Scripts folder contains the same three menu files.
+The three model/form lessons use the current font. GetGo lessons use packaged
+fixtures, not the current font. All99licensed fonts, the source manifest and
+license texts ship beside the GetGo modules. No rescued directory is needed.
 
-The required FontLab packages are currently supplied as reviewed checkout builds
-or GitHub release artifacts. A plain install of this wheel from PyPI cannot
-resolve the complete set: `fontlab-fly` and `fontlab-echopy` were absent from the
-registry in the verified installation run. Fly's latest GitHub release asset was
-0.2.0, below this package's minimum; later Git tags alone are not wheel releases.
+## Install the matched candidate packages
 
-For a complete installation test outside FontLab, collect these eight reviewed
-wheels into one otherwise empty `wheelhouse` directory. The verified collection
-uses Lessons1.0.3, App0.2.23,
-Fly0.2.2.dev3+g6cf9dc150, Echopy0.2.3,
-pythonqtside0.2.1.dev54+g2777e85cd, TypeRig0.2.1.dev8+gf589189,
-Fontport1.0.2 and Glyport1.0.8.dev12+g756df2ac8. Development versions identify
-read-only canonical-checkout builds; they are not publication claims. Build a
-checkout wheel with `uv build --out-dir /path/to/wheelhouse`; obtain the reviewed
-App0.2.23 wheel from its GitHub release. Record every source revision and wheel
-hash before installation. Then run:
+The current candidate requires `fontlab-fontlabapp>=0.2.26.dev0` and
+`fontlab-fly>=0.2.1`. Older App0.2.22/0.2.23 releases lack the reports API needed
+by GetGo. App0.2.26.dev0 and Lessons1.0.4.dev0 are unpublished development
+candidates. Review and native acceptance must precede release or normal use.
+
+Use a matched, reviewed wheel collection. Some FontLab packages are supplied as
+checkout builds or GitHub artifacts; do not assume a plain PyPI install resolves
+all dependencies. The verified candidate collection includes App, Lessons, Fly,
+Echopy, pythonqtside, TypeRig, Fontport and Glyport. Record source revisions and
+wheel hashes. Install FontTools for pen/export lessons:
 
 ```sh
 uv venv --python cpython-3.11-macos-aarch64-none .venv-install-check
-uv pip install --python .venv-install-check/bin/python wheelhouse/*.whl
+uv pip install --python .venv-install-check/bin/python --prerelease=allow wheelhouse/*.whl fonttools
 uv pip check --python .venv-install-check/bin/python
-.venv-install-check/bin/python -I -c 'import importlib.resources as r; import fontlab_python_lessons as p; import fly, fontlabapp; assert fly.ap is fontlabapp; assert r.files(p).joinpath("resources/glyph-metrics-form.ui").is_file(); print(p.__version__)'
+.venv-install-check/bin/python -I -c 'import fly, fontlabapp; assert fly.ap is fontlabapp; from fly.ap.reports import show_report; from fontlab_python_lessons.getgo import launch'
 ```
 
-This resolves every declared dependency normally, including public third-party
-dependencies. Fly requires all six target packages even though these lessons use
-only its App and native Qt aliases. FontLab itself supplies PythonQt; a clean
-external environment cannot launch the panels. This verification installs into
-the disposable environment only. It does not alter FontLab's live installation.
+These commands create a disposable external install check. They do not install
+into FontLab or launch native panels. Use Python3.11 and the host architecture
+for FontLab installations. FontLab supplies PythonQt itself; PySide6/PyQt are
+not runtime requirements and must not be installed as alternate host bindings.
 
-Open a font before using a lesson. Refresh explicitly adopts the current font,
-master and relevant selection/data. No automatic polling or background work runs.
-Changed font membership/master or displayed metrics refuse stale actions until
-Refresh. Filter and form actions do not silently adopt another font. The metrics
-table shows a frozen snapshot and says to Refresh after edits.
+After installing reviewed packages in FontLab's Python environment, find the
+menu files under that interpreter prefix's `share/fontlab-python-lessons/Scripts`.
+Copy **Models**, **Forms** and **GetGo Fonts** into a configured FontLab Scripts
+folder. Keep the package installed: menus import it and the form loads a packaged
+`.ui` file. The checkout's `Scripts/` contains the same sixteen entrypoints.
 
-Glyph Name Filter uses case-insensitive prefix matching and preserves font order.
-Apply Prefix updates only the view. Select Chosen Rows changes only Font window
-selection, after every requested name is checked; it never changes font data.
-No chosen rows means no selection action. This lesson reads exact Font window
-selection and does not invent a current-glyph fallback.
+## Current-font panels
+
+Open a font, then run a Models or Forms entry. Refresh explicitly captures the
+current font, master and relevant selection/data. No polling or background work
+runs. Changed font membership/master or displayed metrics refuse stale actions
+until Refresh. A failed read clears old data and leaves Close usable.
+
+Glyph Name Filter uses case-insensitive prefixes and keeps font order. Apply
+Prefix changes only the view. Select Chosen Rows changes only Font-window
+selection after checking every requested name. Empty chosen rows do nothing.
+There is no current-glyph fallback; legacy selection writers need an active
+Font window, not merely an open font.
 
 Glyph Metrics Model uses an immutable QAbstractTableModel. Advance and LSB stay
-numeric, including zero and negative values. An em dash means a missing layer or
-unavailable outline sidebearing. Empty selection yields an empty table.
-The table offers no setters, sorting or hidden write behavior.
+numeric, including zero and negative values. An em dash means a missing layer
+or unavailable outline sidebearing. Empty selection yields an empty table.
+The panel has no setters, sorting or hidden writes.
 
 Glyph Metrics Form starts with the first selected glyph in font order, otherwise
-the first glyph. Choose another actual name to inspect its current-master data.
+the first glyph. Choose another actual name to inspect current-master data.
 Preview Difference compares a hypothetical width in plain Python values. There
-is no Apply button: geometry, metrics, history and preferences remain unchanged.
-The form's numeric input supports three decimals within ±1,000,000,000 font units.
-Missing current-master layers disable Preview; an empty font invents no rows.
+is no Apply button. Geometry, metrics, history and preferences remain unchanged.
+The input supports three decimals within ±1,000,000,000 units. A missing layer
+disables Preview; an empty font invents no rows.
 
-All panels reuse `fly.ap.scripting` native reads, owned signal connections,
-registry replacement and Close handling. Snapshot records retain plain immutable
-values rather than native glyph wrappers. UI controls and Close/status exist
-before font reads; failed reads clear obsolete data and keep Close usable.
-Missing/corrupt form resources report an error in a closable dialog.
+All panels use `fly.ap.scripting` native reads, signal ownership, replacement and
+Close handling. Snapshot records keep detached values, not native glyph wrappers.
+A missing, corrupt or wrong-type form resource produces a closable error.
 
-## Validation
+## GetGo workflows
 
-The independently downloaded v1.0.3 wheel passes all three actual menu workflows and twelve
-edge/lifecycle controls in FontLab 9.0.9784 on macOS arm64, with complete font
-and history preservation. Source and release assets are available in the
-[v1.0.3 release](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.0.3).
-Host-free tests use actual offscreen Qt6
-widgets behind a PythonQt-shaped facade and App's real lifecycle implementation;
-they do not prove native PythonQt/FontLab compatibility. PySide6 is a test-only
-dependency, never a production import or FontLab installation requirement.
+Choose a GetGo Fonts entry. Twelve entries show detached read-only nonmodal JSON
+snapshots through App. Repeating an entry replaces its owned window. Font Info
+Mini Tool retains an InfoTool with `report`, `widget` and `close()`; its App
+window uses the same read-only report UI. The active font and Output panel are
+not report destinations.
 
-From this checkout's `lessons/` directory, use isolated tools:
+Each entry opens a hash-verified fixture as an absolute temporary copy and closes
+only that exact package, including operation/partial-open failures. Naming,
+sidebearing and transform lessons require a dedicated session with no other
+FontLab documents and discard their edits. A failed close retains the temporary
+directory and raises. Export lessons retain new output files, omit native hints,
+features and kerning, and verify reopened geometry/cmap/advances/license data.
+
+See [the complete GetGo guide](src/fontlab_python_lessons/getgo/README.md) for
+all original calls/defaults, fixture licenses, expected values and limitations.
+To obtain an original dictionary, call an entry module's `run(**kwargs)`.
+`getgo.launch(name, **kwargs)` instead runs the entry and returns its report
+window (or the retained InfoTool for `font_info_ui`). Keep and close returned UI.
+
+## Verification and provenance
+
+The [v1.0.3 release](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.0.3)
+contains the original three model/form lessons. Its historical FontLab9784
+acceptance does not establish acceptance of this expanded package. All thirteen
+packaged GetGo runtime rows remain **pending native acceptance**. Historical9783
+GetGo receipts describe the earlier source only.
+
+Current tests cover original algorithms/defaults, fake owned-font operations,
+real FontTools binary write/reopen, all menu routes, fixture hashes and offscreen
+Qt lifecycle failures. Normal independent wheel/sdist installs establish package
+closure and installed behavior; they do not prove native FontLab results.
+
+Build with `uv build lessons` from the repository root. The version comes from
+hatch-vcs; a source import without distribution metadata reports `0+uninstalled`.
+From `lessons/`, run the candidate tests with reviewed App sources:
 
 ```sh
-QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --offline --no-project --python cpython-3.11-macos-aarch64-none --with PySide6 --with pytest --with pytest-cov python -m pytest -p pytest_cov --confcutdir candidate_tests/models_candidate -q candidate_tests/models_candidate --cov=src/fontlab_python_lessons --cov-branch --cov-fail-under=80
-uv build --no-sources
+QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with PySide6-Essentials --with pytest --with pytest-cov --with fonttools python -m pytest -p pytest_cov --confcutdir candidate_tests/models_candidate -q candidate_tests/models_candidate --cov=src/fontlab_python_lessons --cov-branch --cov-fail-under=80
 ```
 
-Set `EXAMPLES_APP_SOURCE` to the reviewed App package directory to test its
-actual dialog lifecycle, such as the `fontlabapp` directory in a disposable
-environment's site-packages.
-The coexistence tests also need the unchanged historical checkout; set
-`LEGACY_EXAMPLES_SOURCE` to that checkout when testing an extracted sdist. This
-does not package or modify the historical launcher.
-Only candidate_tests/models_candidate belongs to this new package. Historical root files
-remain untouched in this worktree and are explicitly excluded from wheel/sdist.
-See provenance/models.json and NOTICE-models.md for original paths/hashes/licence.
-
-Historical tests use the separate root `fontlab_python_examples` launcher.
-Keep their process separate from the candidate tests above for scoped checks. The
-root README's `pytest -q tests` command remains intact; include its existing
-FontTools test dependency to exercise GetGo's pen tests:
-
-```sh
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with fonttools python -m pytest -q tests
-```
-
-The 1,886 historical tests and 40 lesson tests pass. All fourteen changed
-production modules exceed 80% statement, branch and aggregate coverage;
-combined coverage is 97.85%. Four independent namespace-order controls and the
-actual legacy QLabel panel pass alongside the installed lessons. These results
-cover the three lessons; the broader catalogue and eighteen-insight migration
-remain open.
-
-The distribution version comes from Git through hatch-vcs. An uninstalled source
-import reports `0+uninstalled`; this does not create an installation claim. No
-broader catalogue, Scriptmix, GetGo or archive completion follows from these three
-lessons. Active Font-window verification in App is required before legacy
-selection writers are safe; an open font alone does not establish that context.
-App0.2.22 is the minimum reviewed safe release; acceptance uses App0.2.23.
-Full dependency resolution was
-verified with its actual release wheel and the explicit source-wheel collection
-above. The verified clean environment contains 23 compatible packages. The
-lesson project lives in `lessons/`, separately from the root documentation
-build metadata and generated `docs/` site. Build it with `uv build lessons`
-from the repository root. Both root `Scripts/` and the distribution's Scripts
-contain the three small menu entries; tests require identical executable bodies.
-
-The form validates known control types before retaining the loaded widget.
-Missing, malformed or wrong-type resources leave a usable Close button. See
-[Qt's loader contract](https://doc.qt.io/archives/qt-5.15/quiloader.html) and
-[hatch-vcs configuration](https://github.com/ofek/hatch-vcs).
-
-The package also includes 13 GetGo font lessons with all 99 licensed fixtures.
-See src/fontlab_python_lessons/getgo/README.md for setup, original calls and
-expected outputs. Their packaged native acceptance remains pending.
+Set `EXAMPLES_APP_SOURCE` to the reviewed `fontlabapp` package directory. Historical
+root catalogue tests run separately. Source/license hashes are in
+`provenance/models.json`, `provenance/getgo.json` and the packaged fixture manifest.
+Code is Apache-2.0; fixture fonts retain Apache-2.0, CC0-1.0 and OFL-1.1 notices.

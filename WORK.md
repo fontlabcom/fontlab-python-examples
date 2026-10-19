@@ -3143,3 +3143,37 @@ Fresh clean-branch checks:
 - Fresh clean package wheel/sdist built as unpublished1.0.4.dev0 under verification/issue-120/app-integration/lessons-dist; normal dependency installs pass.
 - Combined App/Glyport/clean-GetGo installed179tests per wheel/sdist pass;241runtime/resourcehashes,99fonts and16menus verified each. Both uv pip checks pass, delegatedqtsafe identities/import origins pass.
 Native validation remains pending. No unrelated owner relocation/deletions staged.
+
+
+## 2026-10-19 — D3 current GetGo documentation and native manifest
+
+The main lessonREADME still described onlythree entries and obsolete App0.2.22
+minimum while the candidate ships16and requires0.2.26.dev0. Rewrote142lines
+with all16actualmenus, matched devpackage setup, model/form behavior, GetGo
+ownedfixture/edit/export limits and explicit historical-vs-pending acceptance.
+No oldnativeacceptance is applied to the new13entries.
+Native manifest's checker still referenced archived examples.getgo._checks;
+changed it to the shipped fontlab_python_lessons.getgo._checks.assert_expected.
+FontInfo observation now matches the actual read-onlyQPlainTextEdit JSON report.
+Queued native acceptance must enforce its own in-hostdeadline/cancellation;
+client/run_python timeouts do not stop hostcode. No nativeexecution claimed.
+
+First newtest imported the archivedchecker from this legacy-containing checkout,
+so strengthened it to require the distributed namespace. Red1failure; corrected
+manifest green. Full199lesson cases pass, upfrom198. Initial artifactinstall
+was attempted before the buildprocess finished and found no archive; after its
+recorded completion, both normalfresh installs pass without dependencybypass.
+Both installed wheel/sdist179existing integration cases pass. Isolated Python-I
+probes independentlyimport/call checker with noarchivednamespace, verify242
+reviewed runtime/resource hashes,99fonts,16menus, deadlinegate and UIobservation;
+both uvpipchecks pass. CurrentREADME bytes match both packagearchives.
+Exact normalinstall arguments/logs, checks and hashes:verification/issue-120/getgo-docs-d3/.
+
+Commands: `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 EXAMPLES_APP_SOURCE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-vanilla-app/src/fontlabapp QT_QPA_PLATFORM=offscreen /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/vanilla-session/wheel-env/bin/python -m pytest -q lessons/candidate_tests/models_candidate`:exit0,199passed.
+Rootbuild: `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=1.0.4.dev0 uv build .worktrees/issue120-getgo-package/lessons --out-dir verification/issue-120/getgo-docs-d3/dist`:exit0.
+From/tmp, eachnewinstalledPython-I with pytestconfigdisabled runs retained
+D3installed-tests179cases(exit0) and artifact_probe.py(exit0); checksexactcommands
+retained in checks.json. ScopeRuff/whitespace run beforecommit.
+
+Wait, but: no rendered-site or native acceptance follows from packagedREADME
+and checker verification. Newfunctions/nativeUI/history/fullscope remainpending.

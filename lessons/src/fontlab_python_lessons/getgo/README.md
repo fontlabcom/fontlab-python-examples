@@ -179,7 +179,7 @@ Original example code: Apache-2.0. PythonQt.QtGui uses FontLab's existing event 
 
 Original call: `run() -> InfoTool`.
 
-Expected output and limits: handle.widget is a visible QDialog with font-info QLabel handle.report.glyphs equals manifest glyphs (106) font document is already closed when the window is shown handle.close() clears widget; repeated close is safe; process deferred deletion events
+Expected output and limits: handle.widget is a visible owned QDialog with a read-only QPlainTextEdit displaying the detached report fields handle.report.glyphs equals manifest glyphs (106) font document is already closed when the window is shown handle.close() clears widget; repeated close is safe; process deferred deletion events
 
 Fixtures: `stroke-chan`. Changes owned copy: false. Additional dependencies: none.
 

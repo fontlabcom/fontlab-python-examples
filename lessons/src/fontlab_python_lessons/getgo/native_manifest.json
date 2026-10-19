@@ -567,7 +567,7 @@
       "native_status": "pending",
       "cleanup_function": "handle.close",
       "native_observations": [
-        "handle.widget is a visible QDialog with font-info QLabel",
+        "handle.widget is a visible owned QDialog with read-only QPlainTextEdit displaying the detached report fields",
         "handle.report.glyphs equals manifest glyphs (106)",
         "font document is already closed when the window is shown",
         "handle.close() clears widget; repeated close is safe; process deferred deletion events"
@@ -637,7 +637,7 @@
       ]
     }
   ],
-  "expected_assertion_function": "examples.getgo._checks.assert_expected",
+  "expected_assertion_function": "fontlab_python_lessons.getgo._checks.assert_expected",
   "expected_schema": {
     "path": "Nonempty array of dictionary keys, list indices or documented handle attributes",
     "operators": [
@@ -652,7 +652,8 @@
     "mode": "scripting_panel",
     "run_python": "setup_and_poll_only",
     "run_python_deadline_seconds": 5,
-    "instruction": "Run each complete entry in the Scripting panel or an event-loop callback outside run_python; run_python calls only enqueue or inspect detached receipts, never execute run() synchronously."
+    "instruction": "Run each complete entry in a dedicated owned-font harness with an in-host absolute deadline and cancellation checks. If queued outside run_python, the queued work must enforce its own deadline. Client/run_python timeouts do not stop host code. Poll detached receipts only; never submit an unbounded entry synchronously.",
+    "in_host_deadline_required": true
   },
   "native_followups": [
     "Confirm modified-copy close_font(save=False) without a save prompt",

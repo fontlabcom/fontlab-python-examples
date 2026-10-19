@@ -33,3 +33,5 @@ remains pending; prior9783receipts are historical only.
 
 Add explicit boundary annotations to all GetGo functions without changing original
 algorithms. InfoTool delegates App deletion once and retains failed-close owners.
+
+- Correct current sixteen-menu setup and App minimum; retain three-lesson release history separately. Resolve pending native assertions through the packaged helper and require an in-host deadline for queued acceptance work.

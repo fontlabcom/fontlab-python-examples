@@ -384,3 +384,5 @@ screen capture or system tray.
 No open tasks.
 
 - Add all13 packaged GetGo lessons with99licensed fixtures and shared App detached reports; source/artifact checks pass, native acceptance remains pending.
+
+- GetGo candidate: correct sixteen-menu guide, matching App prerequisite and distributed native-checker namespace. Native verification remains pending.

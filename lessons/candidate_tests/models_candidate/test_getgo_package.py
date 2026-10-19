@@ -146,8 +146,9 @@ def test_info_handle_after_owned_parent_destruction_is_idempotent():
 
 
 def test_designspace_run_refuses_changed_master_during_inspection(monkeypatch):
-    from test_getgo import FakePackage
     from contextlib import contextmanager
+
+    from test_getgo import FakePackage
 
     module = importlib.import_module("fontlab_python_lessons.getgo.designspace")
     package = FakePackage()
@@ -189,6 +190,7 @@ def test_binary_rejects_wrong_suffix_and_missing_notdef(tmp_path):
 )
 def test_binary_verification_detects_independent_readback_damage(tmp_path, damage, match):
     from test_getgo import binary_data
+
     from fontlab_python_lessons.getgo._binary import compile_subset, verify_subset
 
     data = binary_data()
@@ -256,3 +258,15 @@ def test_all_getgo_functions_have_explicit_boundary_annotations():
                 args = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
                 args += [a for a in (node.args.vararg, node.args.kwarg) if a is not None]
                 assert all(arg.annotation is not None for arg in args), (path, node.name)
+
+
+def test_native_manifest_checker_imports_from_installed_lesson_namespace():
+    """The acceptance driver must work without the archived examples package."""
+    module_name, _, function_name = MANIFEST["expected_assertion_function"].rpartition(".")
+    assert module_name == "fontlab_python_lessons.getgo._checks", (
+        "Use the distributed helper, not the retained archive"
+    )
+    checker = getattr(importlib.import_module(module_name), function_name)
+    checker({"glyphs": 106}, [{"path": ["glyphs"], "equals": 106}])
+    with pytest.raises(AssertionError):
+        checker({"glyphs": 0}, [{"path": ["glyphs"], "equals": 106}])
