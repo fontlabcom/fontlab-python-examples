@@ -12,10 +12,10 @@ from types import ModuleType
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_dispatcher():
+def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_route():
     manifest = json.loads((ROOT / "menu-adaptations.json").read_text())
     rows = [r for r in manifest["adaptations"] if r.get("family") == "calendar-part2"]
-    assert len(manifest["adaptations"]) == 7 and len(rows) == 1
+    assert len(manifest["adaptations"]) == 8 and len(rows) == 1
     row = rows[0]
     assert row["api_module"] == "glyph_calendar" and row["entry_point"] == "show"
     index = json.loads((ROOT / "rescue-index.json").read_text())
@@ -38,9 +38,17 @@ def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_dispatcher():
         for r in index["menus"]
         if "calendarwidget" in r["target"] and "/part3/" in r["target"]
     )
-    assert (ROOT / part3["menu"]).is_file() and all(
-        r["source_menu"] != part3["menu"] for r in manifest["adaptations"]
+    official = next(
+        r for r in manifest["adaptations"] if r.get("family") == "calendar-part3"
     )
+    assert (
+        official["source_menu"] == part3["menu"]
+        and official["source_sha256"] == part3["target_sha256"]
+    )
+    assert (ROOT / official["menu"]).is_file() and official[
+        "entry_point"
+    ] == "show_official"
+    assert row["entry_point"] == "show", "keep the distinct part2 policy"
 
 
 def test_calendar_facade_is_lazy_typed_and_routes_through_fly(monkeypatch):

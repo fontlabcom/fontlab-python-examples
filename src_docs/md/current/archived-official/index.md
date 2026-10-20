@@ -25,7 +25,6 @@
 - [calculator-356e4e807f1e789f - da2daf75](calculator-356e4e807f1e789f-da2daf75.md)
 - [calculatorform-27bf65f8b059fd96 - 49713bba](calculatorform-27bf65f8b059fd96-49713bba.md)
 - [calendar-c56cf1699b07b350 - 1280f1ee](calendar-c56cf1699b07b350-1280f1ee.md)
-- [calendarwidget-b91effc45f81fbb0 - 2cd76d8c](calendarwidget-b91effc45f81fbb0-2cd76d8c.md)
 - [camera-f6d352360ae9bdfb - 1eeb7223](camera-f6d352360ae9bdfb-1eeb7223.md)
 - [canvas-36246fcbffecdeba - 0173dc35](canvas-36246fcbffecdeba-0173dc35.md)
 - [car-54c7440bdcdc3dfc - 3ec71ea0](car-54c7440bdcdc3dfc-3ec71ea0.md)

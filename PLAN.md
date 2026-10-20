@@ -115,3 +115,26 @@ is not implemented by this entry. Originals/dependencies remain read-only and
 unexecuted. Actual PythonQt/FontLab/getter/cache/font/history/dirty/reopen/native
 workflow, release/integration/download/docs/publication and full issue120 gates
 remain pending D25. Standalone scalar/Qt tests do not accept those requirements.
+
+
+## Issue120 Z17 — complete distinct part3 calendar candidate
+
+Part3 retains every Qt locale in original order, native language/country labels
+and last matching initial locale, all seven week starts, both selection modes,
+grid/navigation, every heading format, 1900–3000 date limits and MMM d yyyy
+editors, four weekday/weekend colours and Bold/Italic/Plain headers. The latent
+programmatic Green header rule remains without a new UI choice. Blue first-Friday
+and red May1 switches are independent; May1 wins collisions. Only owned old marks
+clear after page/year/switch changes. Full locale labels remain in the popup and
+tooltip while the field stays bounded. No global locale or theme setting changes.
+
+A shared injected-Qt base owns geometry, fields, coherent dates and callback
+fencing. Part2 retains every public import path and its distinct policy. Both
+modeless panels share whole captured local-day glyph reports and separate registry
+keys. Source/type/empty/error/deadline/close/teardown paths remain complete.
+
+Requires reviewed unpublished App>=0.2.61.dev0 through Fly. No original/corpus
+script, native font/selection/history/preferences/clipboard/file/Output writer,
+live install, canonical merge, release or publication is introduced. Actual
+PythonQt/native UI/getter/font/cache/history/dirty/save/reopen and all original
+issue120 source/integration/distribution/docs/publication gates remain pending D25.

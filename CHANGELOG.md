@@ -470,3 +470,7 @@ goal remain open. No new native API, writer or live installation is used.
 ## Unreleased — Issue120 Z16
 
 - Adapt the complete part2 Calendar Controls workflow to current-font modification dates through Fly and shared App UI. Keep all original controls; synchronize defaults/limits and repair dark date-surface readability. Preserve the distinct part3 source and all original bytes. Native qualification remains pending.
+
+## Unreleased — Issue120 Z17
+
+- Adapt the distinct complete part3 calendar to current-font dates via Fly and App. Preserve every locale, seven week starts, source ranges/styles and independent first-Friday/May1 rules; clear stale owned marks. Share mechanics and lifecycle while retaining the full part2 policy/public paths. Native qualification remains pending.

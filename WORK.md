@@ -3436,3 +3436,17 @@ no native driver, restart, preference change, live install, canonical merge,
 tag/release or site publication occurred. Every original issue120 gate remains
 open. Goal ACTIVE; 98% unproved. Exact commands/exits and evidence are retained
 in calendar-z16 and root WORK.md. Feature push gates are recorded separately.
+
+## Issue120 Z17 — in progress
+
+Fresh inherited App 2,517/Examples 2,004 suites pass. Implemented distinct part3 calendar and shared base/panel; 158 focused calendar checks pass before final full/artifact gates. D25 is still pending with TCP errno61 and unchanged busy fence. Original/corpus bodies remain read only and unexecuted. Exact verification is retained privately in calendar-official-z17 and root WORK.md.
+
+## Issue120 Z17 — source and artifact verification
+
+Implemented the distinct part3 calendar through show_official(): full ordered Qt locale rows, seven week starts, 1900–3000 range, four colors, Bold/Italic/Plain headers and independent first-Friday/May-1 marks. Shared date/signal lifecycle preserves part2 exactly. Old owned marks clear when controls or page change.
+
+Fresh full source suites: App 2,580; Examples 2,006; SDK 6. Strict offline docs pass. Six changed whole App modules exceed 80% statements and branches with zero exclusions (base 95.89/100, dialog 100/93.33, other four 100/100). The new menu is 100/100. Ordinary independent wheel and sdist installs pass App 2,578/2 existing skips, Glyport 3,054/3, Fontport 4,489/2 with 63 existing warnings, Lessons 197, Scriptmix 1,074/1 and Examples 2,006. All 498 runtime/resource pairs match. App candidate is 0.2.61.dev0.
+
+Standalone installed arm64 Qt5 5.15.19 passes 158 focused checks. All 603 locale rows are retained. Four light/dark renders match source exactly; part2 also matches its prior candidate exactly. All 510 Examples menus render source exactly, and all eight authored guides/privacy checks pass. All 669 other menu bodies, 494 original bodies, 11 zone originals, 7,247 ledger rows, 1,111 owner hashes and three canonical statuses are unchanged. Prior 184 App and all 115 Glyport runtime files remain exact apart from three intentional App changes and three additions.
+
+Wait, but: standalone Qt and installed checks do not establish native PythonQt behavior or full font/cache/history/dirty/save/reopen preservation. D25 remains pending. No native calls, restart, live install, canonical merge, release or site publication. Every native/original acceptance gate remains pending; 98% is unproved. Exact commands, logs and artifacts are retained in verification/issue-120/calendar-official-z17 and root WORK.md. Feature hook results are recorded separately.

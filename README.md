@@ -83,3 +83,5 @@ render retained as evidence. No canonical owner path or live site was changed.
 The two read-only Simple Tree Model adaptations show full glyph/Unicode/local-date hierarchies. Part2 keeps selection status and File > Exit; part3 keeps its distinct data roles/columns. Both use shared App tree models and remain native-unqualified; separate editable-tree lessons stay pending.
 
 The part2 Calendar Controls adaptation is Glyph Modification Calendar. It keeps every original locale/date/format option and shows all glyphs modified on the chosen local day. It requires reviewed unpublished App>=0.2.60.dev0 through Fly. The distinct part3 calendar stays pending; native qualification is not implied.
+
+Glyph Modification Calendar with Formats is the distinct complete part3 workflow: every Qt locale, seven week starts, font-style headers and independent first-Friday/May-1 rules. It shares generic date/ownership/report mechanics with part2 through reviewed unpublished App>=0.2.61.dev0 and Fly. Both remain native-unqualified.

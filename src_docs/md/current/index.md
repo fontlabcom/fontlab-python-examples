@@ -49,7 +49,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [calculator-356e4e807f1e789f - da2daf75](archived-official/calculator-356e4e807f1e789f-da2daf75.md)
 - [calculatorform-27bf65f8b059fd96 - 49713bba](archived-official/calculatorform-27bf65f8b059fd96-49713bba.md)
 - [calendar-c56cf1699b07b350 - 1280f1ee](archived-official/calendar-c56cf1699b07b350-1280f1ee.md)
-- [calendarwidget-b91effc45f81fbb0 - 2cd76d8c](archived-official/calendarwidget-b91effc45f81fbb0-2cd76d8c.md)
 - [camera-f6d352360ae9bdfb - 1eeb7223](archived-official/camera-f6d352360ae9bdfb-1eeb7223.md)
 - [canvas-36246fcbffecdeba - 0173dc35](archived-official/canvas-36246fcbffecdeba-0173dc35.md)
 - [car-54c7440bdcdc3dfc - 3ec71ea0](archived-official/car-54c7440bdcdc3dfc-3ec71ea0.md)
@@ -543,4 +542,5 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Widgets
 
+- [Glyph Modification Calendar with Formats](widgets/glyph-modification-calendar-with-formats.md)
 - [Glyph Modification Calendar](widgets/glyph-modification-calendar.md)

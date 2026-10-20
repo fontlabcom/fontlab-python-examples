@@ -94,6 +94,20 @@
       "scope": "Complete part2 read-only Calendar Controls workflow: 3 locales, Monday/Sunday, single/no selection, grid/navigation, all 4 horizontal and 2 vertical headings, selected/minimum/maximum dates, 3 choices for weekday/weekend/header colours, first Friday and January 1 highlighting; practical complete local-day glyph metadata report. Synchronize advertised initial defaults and crossing limits; preserve the distinct part3 workflow.",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/calendarwidget-b91effc45f81fbb0 - 2cd76d8c.py",
+      "menu": "Scripts/Widgets/Glyph Modification Calendar with Formats.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+      "source_sha256": "feb734fd0e15a9b4217552e8823ee07beb8ce6d73bd27c21dfa36a537ecd1407",
+      "destination_sha256": "743c610ca7ade4bc68a82f914e8a010170b710838064bbf168ba4faeaf852fd6",
+      "entry_point": "show_official",
+      "api_module": "glyph_calendar",
+      "family": "calendar-part3",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete distinct part3 read-only calendar: all ordered Qt locale rows/native labels with last matching initial locale; seven week starts; selection/grid/navigation/headings; source date ranges and MMM d yyyy editors; four weekday/weekend colours; Bold/Italic/Plain headers with latent programmatic Green; independent blue first-Friday/red May1 rules and collision order. Share only generic mechanics and complete glyph metadata reports; repair stale owned marks and keep separate part2 behavior.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }
