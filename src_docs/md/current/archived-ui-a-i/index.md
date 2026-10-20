@@ -63,7 +63,6 @@
 - [itemviews - coloreditorfactory-0a3b15766909bdc3](itemviews-coloreditorfactory-0a3b15766909bdc3.md)
 - [itemviews - combowidgetmapper-cc95f9719b8e4eda](itemviews-combowidgetmapper-cc95f9719b8e4eda.md)
 - [itemviews - dirview-4b8851287931abd0](itemviews-dirview-4b8851287931abd0.md)
-- [itemviews - editabletreemodel-227efef76ed4ac74](itemviews-editabletreemodel-227efef76ed4ac74.md)
 - [itemviews - fetchmore-67170c89593ad35e](itemviews-fetchmore-67170c89593ad35e.md)
 - [itemviews - frozencolumn-c98ae8ac71886586](itemviews-frozencolumn-c98ae8ac71886586.md)
 - [itemviews - interview-090c76a87351e771](itemviews-interview-090c76a87351e771.md)

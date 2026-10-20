@@ -87,7 +87,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [draggabletext-700e96dec485e7a8 - ec422745](archived-official/draggabletext-700e96dec485e7a8-ec422745.md)
 - [dropsite-fa6823667fdb918f - 479f0e3b](archived-official/dropsite-fa6823667fdb918f-479f0e3b.md)
 - [easing-bd6c8feb783ba845 - f3eacab2](archived-official/easing-bd6c8feb783ba845-f3eacab2.md)
-- [editabletreemodel-227efef76ed4ac74 - 5e8b1615](archived-official/editabletreemodel-227efef76ed4ac74-5e8b1615.md)
 - [elasticnodes-fff97a435b73d548 - 3045bdbe](archived-official/elasticnodes-fff97a435b73d548-3045bdbe.md)
 - [embeddeddialogs-0578c17977b471f1 - 15ae7441](archived-official/embeddeddialogs-0578c17977b471f1-15ae7441.md)
 - [extension-a1c26dbf9f995edb - e86dda6d](archived-official/extension-a1c26dbf9f995edb-e86dda6d.md)
@@ -415,7 +414,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [itemviews - coloreditorfactory-0a3b15766909bdc3](archived-ui-a-i/itemviews-coloreditorfactory-0a3b15766909bdc3.md)
 - [itemviews - combowidgetmapper-cc95f9719b8e4eda](archived-ui-a-i/itemviews-combowidgetmapper-cc95f9719b8e4eda.md)
 - [itemviews - dirview-4b8851287931abd0](archived-ui-a-i/itemviews-dirview-4b8851287931abd0.md)
-- [itemviews - editabletreemodel-227efef76ed4ac74](archived-ui-a-i/itemviews-editabletreemodel-227efef76ed4ac74.md)
 - [itemviews - fetchmore-67170c89593ad35e](archived-ui-a-i/itemviews-fetchmore-67170c89593ad35e.md)
 - [itemviews - frozencolumn-c98ae8ac71886586](archived-ui-a-i/itemviews-frozencolumn-c98ae8ac71886586.md)
 - [itemviews - interview-090c76a87351e771](archived-ui-a-i/itemviews-interview-090c76a87351e771.md)
@@ -540,6 +538,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Tools
 
+- [Editable Glyph Outline](tools/editable-glyph-outline.md)
+- [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](tools/glyph-name-completion.md)
 

@@ -136,6 +136,34 @@
       "scope": "Complete distinct part3 custom-completer controls, key/focus/suffix/menu policies and whole current-font glyph vocabulary; generic owned Qt completion mechanics in App. Modeless status replaces modal About. Repair safe QString sorting, plain tooltip data and retryable teardown faults. Both popups use content width; repair the original part2 caret-wide popup.",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/itemviews - editabletreemodel-227efef76ed4ac74.py",
+      "menu": "Scripts/Tools/Editable Glyph Outline.py",
+      "source": "rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py",
+      "source_sha256": "e2eeecb1ac3c93e603e98f49d9c56c0a967430d3021ae3255a2e3fad841e4c61",
+      "destination_sha256": "4d4e7c25096cca46dc8a45637f7e552dc1e0d606e99741a927bc380167a35d98",
+      "entry_point": "show_outline",
+      "api_module": "editable_glyph_tree",
+      "family": "editable-tree-part2",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete distinct part2 editable-tree row/column/child/header/menu/shortcut/selection policies over full local glyph metadata. Shared complete Qt model/view and retryable owned lifecycle; preserve drafts on failed capture/setup and require explicit Reset Draft for edited data. No native font mutation.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/editabletreemodel-227efef76ed4ac74 - 5e8b1615.py",
+      "menu": "Scripts/Tools/Editable Glyph Tree.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py",
+      "source_sha256": "5a5cbea2baea2987297c1d25d577b361e21cb164fe0860220ca9a94637b18031",
+      "destination_sha256": "4cbe866f7598868e15004cf6c831ef2df46a38572b4ece7dad1d293f6bdadea7",
+      "entry_point": "show_tree",
+      "api_module": "editable_glyph_tree",
+      "family": "editable-tree-part3",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete distinct part3 editable-tree row/column/child/header/menu/shortcut/selection policies over full local glyph metadata. Shared complete Qt model/view and retryable owned lifecycle; preserve drafts on failed capture/setup and require explicit Reset Draft for edited data. No native font mutation.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }
