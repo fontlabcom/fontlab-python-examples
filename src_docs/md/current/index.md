@@ -39,6 +39,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](tools/glyph-name-completion.md)
+- [Glyph Name Pattern Lab](tools/glyph-name-pattern-lab.md)
 - [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 

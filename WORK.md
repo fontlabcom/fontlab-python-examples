@@ -3606,3 +3606,28 @@ Wait, but offline public dispatch does not establish PythonQt virtuals or native
 font/getter/cache/history/dirty/save/reopen preservation. Native acceptance is
 0/432 pending. No FontLab call, live install, canonical write, release, tag, push
 or publication is authorized by this private integration candidate.
+
+## 2026-10-21 — Glyph Name Pattern Lab candidate (N56/Z30)
+
+Added one tiny lazy Fly facade and complete authoring guide/full rendered source.
+Curated31 menus,15 mappings,479 remaining archived entries; original494index,
+all30 prior menu bytes, Lessons, licences and retained provenance stay exact.
+No source body/helper is imported or executed; full replacement/spec/original
+identity and Apache licence are retained in NOTICE and mapping. Native pending.
+
+Fresh commands/results in workspace verification/issue-120/next-example-z30:
+`rtk proxy /opt/homebrew/bin/python3.11 run.py` receipts record tests-first red,
+then550 full tests in each independently installed App.76 wheel/sdist lane.
+Each seven-consumer lane passes12,965/four existing optional skips. The failed
+shared generated-catalogue races are retained; serialized repairs pass.
+`quality.py examples` exit0 unchanged whole-module gate, baseline8a35cb8,62whole
+modules, statement+branch>=80, zero exclusions,96.82 aggregate,199 Lessons+550
+root+11SDK tests. `bash build.sh --offline` actual locked launcher exit0.
+`docs_audit.py` exit0:31full rendered source bodies, guide/source routes, whole
+site privacy and84byte-exact source/built notices. `browser_audit.py` exit0:
+84HTTP bodies and eight realChromium light/dark390/1440 source/guide views.
+Actual installed public dispatch covers all31 facades:14previous App,16Lessons,
+and the new actualQt5 editor with144native oracle cases per artifact lane.
+
+Wait, but native acceptance remains pending. No FontLab invocation, owner/live
+install, canonical write, push, tag, release or publication occurred.

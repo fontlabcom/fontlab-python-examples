@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 30 reviewed practical facades in one category level: Forms,
+`Scripts/` contains 31 reviewed practical facades in one category level: Forms,
 Models, Tools, Widgets and GetGo Fonts. Install their matching reviewed Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
@@ -24,8 +24,8 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 14 reviewed practical replacements, with original
-workflow acceptance still pending. The other 480 identities remain migration
+`menu-adaptations.json` maps 15 reviewed practical replacements, with original
+workflow acceptance still pending. The other 479 identities remain migration
 backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -53,3 +53,5 @@ App0.2.73.dev0 candidate). They show four local factor recipes against all
 captured selected-layer advances, without applying metrics. All 432 native
 artifact/scenario bindings remain pending. Read
 [the worksheet guide](src_docs/md/spacing-worksheets.md).
+
+Glyph Name Pattern Lab authors complete native Qt5 QRegExp rules against captured whole-font glyph names. Editable pattern/input histories, all four syntaxes, case/minimal matching and complete native captures remain. Refresh keeps drafts; no font writer is used. Requires reviewed App0.2.76.dev0 via Fly; native qualification pending.

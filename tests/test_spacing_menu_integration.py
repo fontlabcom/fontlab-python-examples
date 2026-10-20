@@ -15,10 +15,10 @@ NEW = {
 
 def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
     paths = {p.relative_to(ROOT).as_posix() for p in (ROOT / "Scripts").rglob("*.py")}
-    assert paths == set(BASE["menus"]) | NEW, (
+    assert paths == set(BASE["menus"]) | NEW | {"Scripts/Tools/Glyph Name Pattern Lab.py"}, (
         "Keep every curated menu and add exactly the two reviewed tools"
     )
-    assert len(paths) == 30 and not any(
+    assert len(paths) == 31 and not any(
         path.startswith("Scripts/Archived") for path in paths
     )
     for path, digest in BASE["menus"].items():
@@ -38,7 +38,7 @@ def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserv
 def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_remain():
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
     assert data["adaptations"][:12] == BASE["prior_adaptations"]
-    assert len(data["adaptations"]) == 14
+    assert len(data["adaptations"]) == 15
     assert (
         hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
         == BASE["rescue_index_sha256"]
@@ -48,7 +48,7 @@ def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_re
         and row["original_workflow_accepted"] is False
         for row in data["adaptations"]
     )
-    rows = data["adaptations"][12:]
+    rows = [row for row in data["adaptations"] if row.get("family", "").startswith("spacing-worksheet-")]
     assert {row["menu"] for row in rows} == NEW
     for row in rows:
         assert (

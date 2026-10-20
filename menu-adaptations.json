@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains30reviewed practical facades only; all historical runtime dispatchers are privately archived. The14adaptations remain native-pending and original_workflow_accepted=false; the480remaining identities remain migration backlog. No original body is executed/distributed.",
+  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains31reviewed practical facades only; all historical runtime dispatchers are privately archived. The15adaptations remain native-pending and original_workflow_accepted=false; the479remaining identities remain migration backlog. No original body is executed/distributed.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -192,6 +192,22 @@
       "family": "spacing-worksheet-part3",
       "license": "Apache-2.0 (owner D22); original BSD header and collection GPL metadata retained in NOTICE",
       "scope": "Complete four-by-two original styled numeric delegate workflow; integer defaults/native numeric headers/frameless/native size policy; complete ordered captured advances and four local candidates; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "assets": [],
+      "helper_executed": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Tools - Official regexp - 626fd0acec74fd91.py",
+      "menu": "Scripts/Tools/Glyph Name Pattern Lab.py",
+      "source": "rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py",
+      "source_sha256": "c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e",
+      "destination_sha256": "64899f2f23e576791fe5d134a68e15c166dab577aacabe80ce663593b0a2e219",
+      "entry_point": "show",
+      "api_module": "glyph_pattern",
+      "family": "glyph-pattern-lab-part2",
+      "license": "Apache-2.0 (owner D22 and original clean-room replacement grant); complete existing notices preserved",
+      "scope": "Complete editable pattern/input native histories, four QRegExp syntaxes, case/minimal policies, JSON escaped literal, UTF-16 position/length and all captures. Complete captured FontLab glyph-name vocabulary and batch match/capture inspection. No font writers.",
       "native_acceptance": "pending",
       "original_workflow_accepted": false,
       "assets": [],

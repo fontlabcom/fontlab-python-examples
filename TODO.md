@@ -43,7 +43,9 @@ this_file: TODO.md
 
 ## Issue120 curated active menu tree
 
-- [x] Keep the curated 28 reviewed practical facades and add only the two reviewed spacing worksheet menus (30 total); retain private archive recovery.
-- [ ] Complete480 remaining historical source identities with all intended original functionality/resources.
-- [ ] Native-qualify all 14 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
+- [x] Keep the curated 30 reviewed practical facades and add the complete Glyph Name Pattern Lab (31 total); retain private archive recovery.
+- [ ] Complete479 remaining historical source identities with all intended original functionality/resources.
+- [ ] Native-qualify all 15 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
 - [ ] Complete whole-branch, release and publication gates.
+
+- [ ] N56: review the frozen complete Glyph Name Pattern Lab source/artifact candidate, then qualify native PythonQt semantics/lifetime and complete font/getter/cache/history/dirty/save/reopen preservation before promotion.

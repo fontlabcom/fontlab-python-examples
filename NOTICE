@@ -103,3 +103,21 @@ Native acceptance and full preservation remain pending.
 
 
 Independent behavior implementation; original executable source is not bundled.
+
+
+Glyph Name Pattern Lab — issue120 N56
+-----------------------------------
+Independent adaptation of the complete clean-room Pattern Matching Inspector:
+rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
+SHA-256: c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e
+The preserved Apache-2.0 replacement follows clean-room specification
+626fd0acec74fd91, SHA-256 f5e9501abe8d7ed6086e8979f881c79c3370c350dfa97ea3d70e9028504407fc.
+Original source identity retained by the source catalogue: pyqt/examples
+83eed0514582c8deb60d9e9e6bff31ceffe4eaeb, src/pyqt-official/tools/regexp.py,
+SHA-256 b9494fc5955de0d49b14e964b2517490de20f0886bdd85fe70e75931db5e9d94.
+Owner D22 grants Apache-2.0 for the archived Python examples. The replacement
+source has no additional copyright or licence header; no authorship is inferred.
+The full Apache-2.0 terms are included in LICENSE-APACHE-2.0 (App) or
+LICENSE-APACHE-2.0 (Examples). No original body, source helper or asset is bundled
+or executed by this adaptation. There are no companion assets. Existing notices
+and all original metadata remain unchanged. Native acceptance is pending.
