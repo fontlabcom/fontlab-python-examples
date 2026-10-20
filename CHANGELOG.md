@@ -474,3 +474,26 @@ goal remain open. No new native API, writer or live installation is used.
 ## Unreleased — Issue120 Z17
 
 - Adapt the distinct complete part3 calendar to current-font dates via Fly and App. Preserve every locale, seven week starts, source ranges/styles and independent first-Friday/May1 rules; clear stale owned marks. Share mechanics and lifecycle while retaining the full part2 policy/public paths. Native qualification remains pending.
+
+
+## Issue120 Z20 — complete glyph-name completion pair
+
+Implement both distinct part2/part3 custom-completer workflows over the complete
+current-font glyph-name snapshot. Share injected Qt editor/model ownership in
+App; preserve each original key, focus, suffix and menu policy. Use Qt itself
+for case-insensitive sorting before completer binary search. Refresh keeps the
+draft and discards stale vocabulary on failure. About information appears in
+the modeless status area; Vocabulary names are escaped plain data. Disconnect
+faults retain ownership and refuse Close for retry. Every ordinary completion,
+parent destruction, setup failure and queued callback is owned and fenced.
+
+Requires reviewed unpublished App>=0.2.63.dev0 through Fly. Originals/resources
+remain read only, unexecuted and unbundled. No native font/selection/history/
+preferences/file/Output writer or live install is added. Full installed PythonQt
+behavior and complete font/cache/history/dirty/save/reopen preservation remain
+pending D25, as do every original issue120 integration/distribution/publication
+gate. Source and artifact checks do not constitute native acceptance.
+
+Z20 visual acceptance caught the preserved part2 one-pixel completion popup. A tests-first content-width repair now applies the existing Qt popup-size calculation to both variants; key/focus/insertion policies stay distinct. Retain the initial candidate/renders and repeat final full/source/ordinary-install/Qt5 gates with artifact v2. Native qualification remains pending.
+
+- Retain full reviewed MaterialX/Lunr MIT texts beside Apache-2.0; complete transitive frontend notice/publication review remains pending.

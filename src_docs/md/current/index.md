@@ -71,7 +71,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [configdialog-3f5f77c0358d9fef - 88acf60f](archived-official/configdialog-3f5f77c0358d9fef-88acf60f.md)
 - [controller-3cf5db95a691d200 - d0c04a8a](archived-official/controller-3cf5db95a691d200-d0c04a8a.md)
 - [counterlabel-1321540b04f33117 - 5df6ba00](archived-official/counterlabel-1321540b04f33117-5df6ba00.md)
-- [customcompleter-10ef4dacb4db4080 - 4e8b9f5d](archived-official/customcompleter-10ef4dacb4db4080-4e8b9f5d.md)
 - [customgeometry-34538a4e2600b918 - 992d5549](archived-official/customgeometry-34538a4e2600b918-992d5549.md)
 - [datetimeedit-7ba49e67588b1329 - c4d456d1](archived-official/datetimeedit-7ba49e67588b1329-c4d456d1.md)
 - [default-6417cdcf1bfd1752 - 97ee4639](archived-official/default-6417cdcf1bfd1752-97ee4639.md)
@@ -468,7 +467,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Threads - Official semaphores - b95b687bbc541207](archived-ui-l-z/threads-official-semaphores-b95b687bbc541207.md)
 - [Threads - Official waitconditions - 27709a02d37b9ba9](archived-ui-l-z/threads-official-waitconditions-27709a02d37b9ba9.md)
 - [Tools - Official codecs - 19571722ed96aa9c](archived-ui-l-z/tools-official-codecs-19571722ed96aa9c.md)
-- [Tools - Official customcompleter - 10ef4dacb4db4080](archived-ui-l-z/tools-official-customcompleter-10ef4dacb4db4080.md)
 - [Tools - Official i18n - eca1cd9ef1528607](archived-ui-l-z/tools-official-i18n-eca1cd9ef1528607.md)
 - [Tools - Official regexp - 626fd0acec74fd91](archived-ui-l-z/tools-official-regexp-626fd0acec74fd91.md)
 - [Tools - Official settingseditor - 9e41e71c41b116a8](archived-ui-l-z/tools-official-settingseditor-9e41e71c41b116a8.md)
@@ -539,6 +537,11 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Name Filter](models/glyph-name-filter.md)
 - [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
 - [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)
+
+## Tools
+
+- [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
+- [Glyph Name Completion](tools/glyph-name-completion.md)
 
 ## Widgets
 

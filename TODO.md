@@ -29,3 +29,8 @@ this_file: TODO.md
 - [ ] Z16: native-qualify the complete part2 modification calendar, every date/locale/format/error/lifecycle control and complete metadata/getter/font/cache/history/dirty/save/reopen preservation under D25; retain separate part3 and all original goal gates.
 
 - [ ] Z17: qualify both installed complete calendar policies in native PythonQt, all locales/week/date/format/interaction/lifecycle/error paths, both registry owners and complete getter/font/cache/history/dirty/save/reopen preservation under D25; retain all original goal gates.
+
+- [x] Z20: verify source/whole-module/ordinary artifact/consumer/Qt5/rendered menus/owner evidence; final real hook/ref verdicts are retained in workspace evidence.
+- [ ] Z20: native-qualify both complete custom-completer workflows, actual QString overload/virtual/event/focus/teardown and complete getter/font/cache/history/dirty/save/reopen preservation; retain every original goal gate.
+
+- [ ] Complete the full transitive frontend-notice inventory and publication licence review; the three-text local scan is not that acceptance.

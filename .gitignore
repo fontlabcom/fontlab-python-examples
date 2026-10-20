@@ -230,3 +230,4 @@ _reference/
 .local/
 .superpowers/
 .worktrees/
+.build/

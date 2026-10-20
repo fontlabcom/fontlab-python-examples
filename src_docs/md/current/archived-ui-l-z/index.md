@@ -37,7 +37,6 @@
 - [Threads - Official semaphores - b95b687bbc541207](threads-official-semaphores-b95b687bbc541207.md)
 - [Threads - Official waitconditions - 27709a02d37b9ba9](threads-official-waitconditions-27709a02d37b9ba9.md)
 - [Tools - Official codecs - 19571722ed96aa9c](tools-official-codecs-19571722ed96aa9c.md)
-- [Tools - Official customcompleter - 10ef4dacb4db4080](tools-official-customcompleter-10ef4dacb4db4080.md)
 - [Tools - Official i18n - eca1cd9ef1528607](tools-official-i18n-eca1cd9ef1528607.md)
 - [Tools - Official regexp - 626fd0acec74fd91](tools-official-regexp-626fd0acec74fd91.md)
 - [Tools - Official settingseditor - 9e41e71c41b116a8](tools-official-settingseditor-9e41e71c41b116a8.md)

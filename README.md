@@ -33,8 +33,9 @@ the audit. Providing this path does not authorize executing original bodies.
 
 ## Integration and acceptance
 
-The 22 practical facades include the three existing Forms/Models lessons,
-13 GetGo lessons and four complete part2/part3 sort/filter adaptations. The latter
+The 26 practical facades include three existing Forms/Models lessons,
+13 GetGo lessons and ten complete part2/part3 adaptations: sort/filter models,
+read-only trees, modification calendars and glyph-name completion editors. The latter
 replace their indexed wrappers through menu-adaptations.json; rescue-index.json
 and all494original source identities remain unchanged. Part3 variants keep typed Qt dates, native regexp matching and original
 locale/range/comparator rules; part2 keeps its separate string/Python semantics. Basic keeps Qt QRegExp; Custom keeps
@@ -82,6 +83,8 @@ render retained as evidence. No canonical owner path or live site was changed.
 
 The two read-only Simple Tree Model adaptations show full glyph/Unicode/local-date hierarchies. Part2 keeps selection status and File > Exit; part3 keeps its distinct data roles/columns. Both use shared App tree models and remain native-unqualified; separate editable-tree lessons stay pending.
 
-The part2 Calendar Controls adaptation is Glyph Modification Calendar. It keeps every original locale/date/format option and shows all glyphs modified on the chosen local day. It requires reviewed unpublished App>=0.2.60.dev0 through Fly. The distinct part3 calendar stays pending; native qualification is not implied.
+The part2 Calendar Controls adaptation is Glyph Modification Calendar. It keeps every original locale/date/format option and shows all glyphs modified on the chosen local day. It requires reviewed unpublished App>=0.2.60.dev0 through Fly. The distinct part3 calendar has its own complete policy below; both remain native-unqualified.
 
 Glyph Modification Calendar with Formats is the distinct complete part3 workflow: every Qt locale, seven week starts, font-style headers and independent first-Friday/May-1 rules. It shares generic date/ownership/report mechanics with part2 through reviewed unpublished App>=0.2.61.dev0 and Fly. Both remain native-unqualified.
+
+`glyph_completion.show/show_official` adapt both complete custom-completers to current-font glyph names. Distinct key/focus/menu rules share generic injected-Qt mechanics; Refresh keeps the local draft, removes stale completions and uses all names. Failed disconnections refuse Close for retry. Requires reviewed unpublished App>=0.2.63.dev0 through Fly. Native qualification remains pending.

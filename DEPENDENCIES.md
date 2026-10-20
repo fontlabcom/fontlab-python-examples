@@ -138,3 +138,22 @@ script, native font/selection/history/preferences/clipboard/file/Output writer,
 live install, canonical merge, release or publication is introduced. Actual
 PythonQt/native UI/getter/font/cache/history/dirty/save/reopen and all original
 issue120 source/integration/distribution/docs/publication gates remain pending D25.
+
+
+## Issue120 Z20 — complete glyph-name completion pair
+
+Implement both distinct part2/part3 custom-completer workflows over the complete
+current-font glyph-name snapshot. Share injected Qt editor/model ownership in
+App; preserve each original key, focus, suffix and menu policy. Use Qt itself
+for case-insensitive sorting before completer binary search. Refresh keeps the
+draft and discards stale vocabulary on failure. About information appears in
+the modeless status area; Vocabulary names are escaped plain data. Disconnect
+faults retain ownership and refuse Close for retry. Every ordinary completion,
+parent destruction, setup failure and queued callback is owned and fenced.
+
+Requires reviewed unpublished App>=0.2.63.dev0 through Fly. Originals/resources
+remain read only, unexecuted and unbundled. No native font/selection/history/
+preferences/file/Output writer or live install is added. Full installed PythonQt
+behavior and complete font/cache/history/dirty/save/reopen preservation remain
+pending D25, as do every original issue120 integration/distribution/publication
+gate. Source and artifact checks do not constitute native acceptance.

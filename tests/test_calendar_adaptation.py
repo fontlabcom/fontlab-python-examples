@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_route():
     manifest = json.loads((ROOT / "menu-adaptations.json").read_text())
     rows = [r for r in manifest["adaptations"] if r.get("family") == "calendar-part2"]
-    assert len(manifest["adaptations"]) == 8 and len(rows) == 1
+    assert len(manifest["adaptations"]) == 10 and len(rows) == 1
     row = rows[0]
     assert row["api_module"] == "glyph_calendar" and row["entry_point"] == "show"
     index = json.loads((ROOT / "rescue-index.json").read_text())
