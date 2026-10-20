@@ -32,12 +32,12 @@ The archive is retained for migration and recovery; it is not installed by this 
 ## Current practical scripts
 
 [Current Scripts](current/index.md) lists every active facade and includes its
-actual source. The 28 entries require their reviewed shared App, Fly and Lessons
+actual source. The 30 entries require their reviewed shared App, Fly and Lessons
 packages. Each entry states its setup, behavior and acceptance limits. A shared
 package or facade passing offline tests does not prove native FontLab acceptance.
 
-The 494 historical source identities remain in `rescue-index.json`; the 12
-hash-bound adaptations remain pending in `menu-adaptations.json`. The other 482
+The 494 historical source identities remain in `rescue-index.json`; the 14
+hash-bound adaptations remain pending in `menu-adaptations.json`. The other 480
 identities remain migration backlog. Their original bodies and resources stay
 unchanged under the local `rescued/` tree. Archived runtime wrappers are retained
 privately for recovery and are no longer advertised as working menu tools.

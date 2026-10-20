@@ -4,3 +4,5 @@
 - [Editable Glyph Tree](editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](glyph-name-completion.md)
+- [Glyph Spacing Worksheet - Frameless](glyph-spacing-worksheet-frameless.md)
+- [Glyph Spacing Worksheet](glyph-spacing-worksheet.md)

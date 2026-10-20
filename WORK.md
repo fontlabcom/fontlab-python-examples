@@ -3567,3 +3567,42 @@ Validation: 544 current menu/docs tests, 199 Lessons tests, actual canonical App
 and Lessons public dispatch for 28 facades / 56 launches, strict local documentation
 and 28 exact rendered menu source checks. Native PythonQt/font/history/lifecycle/
 save/reopen acceptance and release/publication remain separate gates.
+
+
+## 2026-10-21: N40 private curated spacing menu integration
+
+Base `197acd3a5c132cfd672e575959140911c4deb4df`; import only the two reviewed
+worksheet facade bodies, exact guide and complete NOTICE append from
+`6e83642639d2b0421b394374fd08b21c2be3deef`. Keep all 28 existing menu bodies,
+all Lessons/provenance/licences and the immutable 494-source index byte exact.
+The curated tree has 30 one-level menus, 14 mappings and 480 pending identities.
+Add preservation regressions before integration: baseline544 passed; the new
+pair identity tests failed2 before the new routes existed.
+
+Verification uses retained commands and logs in workspace evidence
+`verification/issue-120/spacing-menu-integration-z29/`. Every recorded command
+is invoked via `rtk proxy`; `run.py` retains exact argv, cwd, exit, elapsed time
+and log SHA-256. Final evidence:
+
+- `final-whole-module-gate`: unchanged `.metaswarm/quality.sh coverage` with
+  explicit Python3.11 arm64 runtime, Python3.12 locked docs and actual installed
+  App0.2.73 package: 199 Lessons, 549 root and 11 SDK tests; exit0. All61 changed
+  whole modules meet the existing80 statement/branch/aggregate floors with zero
+  exclusions; aggregate96.80. Both new facades100/100.
+- `locked-docs-first`: `bash build.sh --offline`, locked full strict local build;
+  exit0. `final-docs-audit`: all30 full rendered source bodies, privacy scan and
+  all84 retained notice source/built payloads; exit0. `final-browser`: all84
+  HTTP notice bodies plus12 real Chromium light/dark narrow/wide source/guide
+  views, no page exceptions or document overflow; exit0.
+- `installed-dispatch-app` and `installed-dispatch-lessons`: actual installed
+  App/Fly/Lessons public dispatch for all30 menus, including lazy inspection
+  and repeated execution; only presentation/native/GetGo run boundaries replaced;
+  exit0. `installed-audit`: isolated `-I` origins, all218 App payload files and
+  all135 Lessons runtime/resource files exact; exit0.
+- `install-final`: normal private wheel dependency installation including reviewed
+  CocoaGL1.0.8.dev30 and Fly; exit0. `pip-check`: compatible; exit0.
+
+Wait, but offline public dispatch does not establish PythonQt virtuals or native
+font/getter/cache/history/dirty/save/reopen preservation. Native acceptance is
+0/432 pending. No FontLab call, live install, canonical write, release, tag, push
+or publication is authorized by this private integration candidate.

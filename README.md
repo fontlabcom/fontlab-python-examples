@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 28 reviewed practical facades in one category level: Forms,
+`Scripts/` contains 30 reviewed practical facades in one category level: Forms,
 Models, Tools, Widgets and GetGo Fonts. Install their matching reviewed Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
@@ -24,8 +24,8 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 12 reviewed practical replacements, with original
-workflow acceptance still pending. The other 482 identities remain migration
+`menu-adaptations.json` maps 14 reviewed practical replacements, with original
+workflow acceptance still pending. The other 480 identities remain migration
 backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -46,3 +46,10 @@ command and environment in [`lessons/README.md`](lessons/README.md). Namespace
 checks require `EXAMPLES_LEGACY_API_SOURCE` pointing at the existing reviewed
 first-party API checkout; they permit only its API/launcher, never archived
 script bodies. Keep both documentation/menu and Lessons suites in acceptance.
+
+Glyph Spacing Worksheet and Glyph Spacing Worksheet - Frameless add the two
+reviewed numeric delegate profiles through Fly and App>=0.2.70.dev0 (combined
+App0.2.73.dev0 candidate). They show four local factor recipes against all
+captured selected-layer advances, without applying metrics. All 432 native
+artifact/scenario bindings remain pending. Read
+[the worksheet guide](src_docs/md/spacing-worksheets.md).

@@ -535,3 +535,17 @@ Validation: 544 current menu/docs tests, 199 Lessons tests, actual canonical App
 and Lessons public dispatch for 28 facades / 56 launches, strict local documentation
 and 28 exact rendered menu source checks. Native PythonQt/font/history/lifecycle/
 save/reopen acceptance and release/publication remain separate gates.
+
+
+## Issue120 N40 — spacing worksheet menus in the curated tree
+
+Add exactly the reviewed framed and frameless Glyph Spacing Worksheet facades to
+the curated 28: 30 current menus, 14 mapped adaptations and 480 historical source
+identities still awaiting implementation. Preserve the original 28 menu bytes,
+all Lessons sources and provenance, the 494-identity rescue index and existing
+licence bytes. Append the complete reviewed worksheet source attribution and
+licence; include the exact source guide and regenerated current source pages.
+
+These lazy Fly facades require App>=0.2.70.dev0 and are verified with the private
+combined App0.2.73.dev0 artifact. Native acceptance remains 0/432 pending; no
+FontLab execution, live installation, release or publication occurs here.

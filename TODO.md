@@ -43,7 +43,7 @@ this_file: TODO.md
 
 ## Issue120 curated active menu tree
 
-- [x] Ship 28 reviewed practical facades and retire482 remaining archive dispatchers from active Scripts with private recovery.
-- [ ] Complete482 remaining historical source identities with all intended original functionality/resources.
-- [ ] Native-qualify all 12 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
+- [x] Keep the curated 28 reviewed practical facades and add only the two reviewed spacing worksheet menus (30 total); retain private archive recovery.
+- [ ] Complete480 remaining historical source identities with all intended original functionality/resources.
+- [ ] Native-qualify all 14 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
 - [ ] Complete whole-branch, release and publication gates.

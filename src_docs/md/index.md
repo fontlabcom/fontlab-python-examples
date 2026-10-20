@@ -26,7 +26,7 @@ For the native APIs, use the
 catalogue have separate identities and acceptance histories. A documentation
 build does not rerun or qualify any native example.
 
-Browse the [28 current practical scripts](current/index.md) for Forms, Models,
+Browse the [30 current practical scripts](current/index.md) for Forms, Models,
 Tools, Widgets and packaged GetGo lessons. Archived dispatchers have been removed
 from the active Scripts tree. Their original sources and resources remain in the
 local rescue archive; removing a menu does not qualify or complete its workflow.
