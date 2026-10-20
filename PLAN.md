@@ -167,3 +167,11 @@ Implement both original editable-tree controllers over full local glyph metadata
 ## Issue120 Z24 frontend notices
 
 Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.
+
+
+## Issue120 curated active menu tree
+
+- [x] Ship 28 reviewed practical facades and retire482 remaining archive dispatchers from active Scripts with private recovery.
+- [ ] Complete482 remaining historical source identities with all intended original functionality/resources.
+- [ ] Native-qualify all 12 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
+- [ ] Complete whole-branch, release and publication gates.

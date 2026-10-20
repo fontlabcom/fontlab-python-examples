@@ -161,3 +161,12 @@ gate. Source and artifact checks do not constitute native acceptance.
 ## Issue120 Z24 frontend notices
 
 No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.
+
+
+## Curated practical menu tree
+
+The runtime package source remains in `lessons/` with 16 packaged menu entries,
+form resource, 99 licensed GetGo fonts and provenance. The active 28 facades require
+matching reviewed Fly/App/Lessons packages. Documentation keeps its separate
+locked project; see `lessons/DEPENDENCIES.md` for runtime requirements. Retired
+archive dispatchers add no active runtime dependency or acceptance claim.

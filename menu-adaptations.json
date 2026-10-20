@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Keep all494source identities and exact originals. Hash-bound current destinations replace legacy dispatch; no original body is executed/distributed and native acceptance stays pending.",
+  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains28reviewed practical facades only; all historical runtime dispatchers are privately archived. The12adaptations remain native-pending and original_workflow_accepted=false; the482remaining identities remain migration backlog. No original body is executed/distributed.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",

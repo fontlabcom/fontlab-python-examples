@@ -39,3 +39,11 @@ this_file: TODO.md
 - [ ] Z23: qualify actual installed native PythonQt editing/menu/shortcut/selection/refresh/lifecycle and complete font/getter/cache/history/dirty/save/reopen preservation under D25; retain every original issue120 gate.
 
 - [ ] Z24: complete transitive frontend provenance/notices/source availability and full publication qualification; named-component notices alone do not close this gate.
+
+
+## Issue120 curated active menu tree
+
+- [x] Ship 28 reviewed practical facades and retire482 remaining archive dispatchers from active Scripts with private recovery.
+- [ ] Complete482 remaining historical source identities with all intended original functionality/resources.
+- [ ] Native-qualify all 12 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
+- [ ] Complete whole-branch, release and publication gates.

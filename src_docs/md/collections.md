@@ -28,3 +28,22 @@ Current migrated menu scripts are documented in
 [Scriptmix](https://fontlabcom.github.io/fontlab-python-scriptmix/).
 Keep an archived example's resources beside its source when inspecting it.
 The archive is retained for migration and recovery; it is not installed by this site.
+
+## Current practical scripts
+
+[Current Scripts](current/index.md) lists every active facade and includes its
+actual source. The 28 entries require their reviewed shared App, Fly and Lessons
+packages. Each entry states its setup, behavior and acceptance limits. A shared
+package or facade passing offline tests does not prove native FontLab acceptance.
+
+The 494 historical source identities remain in `rescue-index.json`; the 12
+hash-bound adaptations remain pending in `menu-adaptations.json`. The other 482
+identities remain migration backlog. Their original bodies and resources stay
+unchanged under the local `rescued/` tree. Archived runtime wrappers are retained
+privately for recovery and are no longer advertised as working menu tools.
+
+The matching Lessons package source now lives in the repository's `lessons/`
+folder. It includes all sixteen packaged menu entries, the form resource and99
+licensed GetGo fonts with provenance. Root documentation dependencies remain
+separate from that Python3.11 runtime package. No live FontLab install is changed
+by building or verifying either project.

@@ -3551,3 +3551,19 @@ print-site plugin; rerun with each repository's existing locked docs environment
 passes. No dependency or configuration change. Exact nested argv/exits and
 failed attempts remain in the parent verification receipts. Independent review
 and later actual-hook before/after index/config/origin preservation are pending.
+
+
+## Issue120 curated practical menu delivery
+
+`Scripts/` now contains 28 reviewed practical facades in one category level;
+482 remaining archived dispatchers leave the active menu. All 494 historical source
+identities remain in the unchanged rescue index. Twelve mapped adaptations stay
+native-pending/original-workflow-unaccepted; 482 other identities remain backlog.
+Exact retired wrappers remain in private recovery. No archived body is executed
+or distributed. Complete reviewed Lessons source/resources already remain under
+`lessons/`, including 16 packaged menus and 99 licensed GetGo fonts.
+
+Validation: 544 current menu/docs tests, 199 Lessons tests, actual canonical App/Fly
+and Lessons public dispatch for 28 facades / 56 launches, strict local documentation
+and 28 exact rendered menu source checks. Native PythonQt/font/history/lifecycle/
+save/reopen acceptance and release/publication remain separate gates.
