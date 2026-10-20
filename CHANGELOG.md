@@ -400,3 +400,26 @@ The current 510-menu source catalogue is separate from the historical 42-page ex
 Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All199lesson tests (including four legacy/lesson namespace orders),1993current root tests and5SDK tests pass. EXAMPLES_LEGACY_API_SOURCE selects only the reviewed read-only first-party legacy API; it does not redirect the current suite. Audit controls reject historical script and native-module execution. D21 deletions remain intact.
 
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+
+## Issue120 Z10 — complete part2 glyph sorting/filtering candidates
+
+Adapt both basic/custom part2 source/proxy workflows to the complete current
+font's names, all Unicode assignments and local modification dates. Shared App
+Table/Query, Qt controls and owned model lifetime keep all three pattern modes,
+independent case switches, Basic key-column/native QRegExp, Custom first-two-
+column OR/inclusive dates/angle-tail ordering, both views and modeless Close.
+Raw demonstration records are replaced; initial dates are unrestricted and date
+limits explicit. Custom's ignored column control stays visible and disabled.
+Two immutable source-index identities now route to practical Models commands.
+Original bodies/resources and all other menus stay untouched. Distinct part3
+contracts remain pending. Qt5/Qt6 and metadata-shaped tests are offline evidence;
+native PythonQt callbacks/read/cache/font/history/save/reopen and publication/
+integration/release gates remain open under D25. No original numerator changes.
+
+
+Z10 documentation output: `./build.sh --offline` now renders into `.build/site`,
+separate from retained authored guides in `docs`. Two successive real clean
+builds preserve the guide bytes. The earlier default overwrote those guides in
+the isolated test checkout; their exact branch bytes were restored and the first
+render retained as evidence. No canonical owner path or live site was changed.

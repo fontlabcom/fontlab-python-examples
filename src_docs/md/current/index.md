@@ -416,11 +416,9 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [insights - worker-glyph-queue](archived-ui-a-i/insights-worker-glyph-queue.md)
 - [ipc - localfortuneclient-0ad3432ccdca7ac0](archived-ui-a-i/ipc-localfortuneclient-0ad3432ccdca7ac0.md)
 - [ipc - localfortuneserver-a14d08fe23965bec](archived-ui-a-i/ipc-localfortuneserver-a14d08fe23965bec.md)
-- [itemviews - basicsortfiltermodel-9dab02b61cebbdb7](archived-ui-a-i/itemviews-basicsortfiltermodel-9dab02b61cebbdb7.md)
 - [itemviews - chart-306c12d5cc1db46c](archived-ui-a-i/itemviews-chart-306c12d5cc1db46c.md)
 - [itemviews - coloreditorfactory-0a3b15766909bdc3](archived-ui-a-i/itemviews-coloreditorfactory-0a3b15766909bdc3.md)
 - [itemviews - combowidgetmapper-cc95f9719b8e4eda](archived-ui-a-i/itemviews-combowidgetmapper-cc95f9719b8e4eda.md)
-- [itemviews - customsortfiltermodel-029ea0dabe87ae57](archived-ui-a-i/itemviews-customsortfiltermodel-029ea0dabe87ae57.md)
 - [itemviews - dirview-4b8851287931abd0](archived-ui-a-i/itemviews-dirview-4b8851287931abd0.md)
 - [itemviews - editabletreemodel-227efef76ed4ac74](archived-ui-a-i/itemviews-editabletreemodel-227efef76ed4ac74.md)
 - [itemviews - fetchmore-67170c89593ad35e](archived-ui-a-i/itemviews-fetchmore-67170c89593ad35e.md)
@@ -541,3 +539,5 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 - [Glyph Metrics Model](models/glyph-metrics-model.md)
 - [Glyph Name Filter](models/glyph-name-filter.md)
+- [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
+- [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)

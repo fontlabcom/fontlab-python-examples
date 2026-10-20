@@ -1,0 +1,31 @@
+{
+  "this_file": "menu-adaptations.json",
+  "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
+  "policy": "Keep all494source identities and exact originals. Two current destinations replace legacy dispatch; no original body is executed/distributed and native acceptance stays pending.",
+  "adaptations": [
+    {
+      "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "menu": "Scripts/Models/Glyph Sorting and Filtering.py",
+      "source": "rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "source_sha256": "4c46c9af9db4321d45690cc5cb82e3c0d60454d0ed3123d0f9a8c5f002980d39",
+      "destination_sha256": "b259e8dbb7370df444abc59acbd983d61cea78cee11685ca6cd8d80bb8859a7e",
+      "entry_point": "show_basic",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part2 basic source/proxy workflow; real whole-font metadata; both case switches; three pattern modes; native QRegExp matching, selectable key column, native sorting",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/itemviews - customsortfiltermodel-029ea0dabe87ae57.py",
+      "menu": "Scripts/Models/Glyph Sorting and Filtering with Dates.py",
+      "source": "rescued/part2/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+      "source_sha256": "03d3339a55b0edc631e8cce1b3ddf09924fbe4b25ec7e6ca42be092f3788f199",
+      "destination_sha256": "21bcd10aee1554f10c23e50c0648dbb22109738d5cf9566f081ade12e5097be6",
+      "entry_point": "show_custom",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part2 custom source/proxy workflow; real whole-font metadata; both case switches; three pattern modes; both-column OR, inclusive optional dates, angle-token sorting",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    }
+  ]
+}

@@ -32,3 +32,19 @@ Done and archived in CHANGELOG.md: item 1 (fixtures, provenance, verification).
 
 - [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
+
+
+## Issue120 Z10 — complete part2 glyph sorting/filtering candidates
+
+Adapt both basic/custom part2 source/proxy workflows to the complete current
+font's names, all Unicode assignments and local modification dates. Shared App
+Table/Query, Qt controls and owned model lifetime keep all three pattern modes,
+independent case switches, Basic key-column/native QRegExp, Custom first-two-
+column OR/inclusive dates/angle-tail ordering, both views and modeless Close.
+Raw demonstration records are replaced; initial dates are unrestricted and date
+limits explicit. Custom's ignored column control stays visible and disabled.
+Two immutable source-index identities now route to practical Models commands.
+Original bodies/resources and all other menus stay untouched. Distinct part3
+contracts remain pending. Qt5/Qt6 and metadata-shaped tests are offline evidence;
+native PythonQt callbacks/read/cache/font/history/save/reopen and publication/
+integration/release gates remain open under D25. No original numerator changes.

@@ -4,13 +4,13 @@ this_file: README.md
 
 # FontLab Python examples
 
-This integration candidate combines 16 practical menu facades and 494
+This integration candidate combines 18 practical menu facades and 492
 preserved-source launchers. All entries use one category folder beneath
 `Scripts`. Each archived launcher is explicitly marked native compatibility
 pending. Counts describe source layout, not accepted native workflows.
 
 Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly, the reviewed App 0.2.40.dev0 candidate and the reviewed
+Python 3.11, Fly, the reviewed App 0.2.54.dev0 candidate and the reviewed
 `fontlab-python-lessons` 1.0.4.dev0 package. These are
 unpublished prerequisites; use their reviewed artifacts. Do not change a live
 FontLab environment as part of automated setup or test runs.
@@ -33,9 +33,13 @@ the audit. Providing this path does not authorize executing original bodies.
 
 ## Integration and acceptance
 
-The 16 practical lessons include the three existing Forms/Models lessons and
-13 GetGo lessons. Licensed GetGo fixtures, complete notices and runtime code
-remain in the `lessons` package. No fixture or runtime byte changed here.
+The 18 practical facades include the three existing Forms/Models lessons,
+13 GetGo lessons and two complete part2 sort/filter adaptations. The latter
+replace their indexed wrappers through menu-adaptations.json; rescue-index.json
+and all494original source identities remain unchanged. Different part3 official
+variants stay separate pending launchers. Basic keeps Qt QRegExp; Custom keeps
+Python re/fnmatch/substring, OR fields, inclusive dates and angle-tail sorting. Licensed GetGo fixtures, complete notices and runtime code
+remain in the `lessons` package. Existing packaged lesson and fixture bytes stay unchanged.
 
 Existing dirty checkouts were read only. The integration uses isolated worktrees.
 Native FontLab execution, complete font/history preservation, UI/Close and the
@@ -68,3 +72,10 @@ Set `EXAMPLES_LEGACY_API_SOURCE` to the reviewed read-only first-party API
 checkout for namespace compatibility tests. This input supplies only the old
 API metadata/launcher with owned doubles; it does not run historical scripts,
 restore deleted source or replace the current root test suite.
+
+
+Z10 documentation output: `./build.sh --offline` now renders into `.build/site`,
+separate from retained authored guides in `docs`. Two successive real clean
+builds preserve the guide bytes. The earlier default overwrote those guides in
+the isolated test checkout; their exact branch bytes were restored and the first
+render retained as evidence. No canonical owner path or live site was changed.

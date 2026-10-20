@@ -19,3 +19,5 @@ this_file: TODO.md
 
 - [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
+
+- [ ] Z10: native-qualify both complete part2 glyph sort/filter workflows, PythonQt virtual/model/signal lifecycle and complete font/cache/history/persistence preservation. Keep different part3 workflows pending.

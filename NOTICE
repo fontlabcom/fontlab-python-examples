@@ -1,0 +1,21 @@
+Archived part2 sort/filter model lessons
+=======================================
+
+Fresh first-party Python3.11/FontLab adaptation of the complete basic/custom
+mail_views workflow from the preserved first-party PythonQt examples. Archived
+Python source supplied under Apache-2.0 (owner clarification D22). Complete terms
+are in LICENSE-APACHE-2.0. The original bodies, demo runtime and resources are
+neither executed nor distributed. Generic table, matching, views and owned model
+lifetimes live in App; practical facades use Fly and real current-font metadata.
+Original source identities and SHA256 values:
+part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py:
+4c46c9af9db4321d45690cc5cb82e3c0d60454d0ed3123d0f9a8c5f002980d39
+part2/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py:
+03d3339a55b0edc631e8cce1b3ddf09924fbe4b25ec7e6ca42be092f3788f199
+part2/ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py:
+6fa0e1268b7c81dbf6c373ae9ebb98ef86ffa0d7c8207ab78a003e65fc49a00d
+Changes: replace synthetic mail with glyph metadata; unrestricted initial dates
+with explicit inclusive limits; disable the ignored Custom column selector; own
+read-only source/proxy views, complete refresh/refusal and signal/model cleanup.
+The different part3 official workflows are not silently treated as equivalent.
+Native PythonQt, full-font/cache/history/persistence qualification is pending.

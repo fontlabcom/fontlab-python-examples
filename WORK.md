@@ -3199,3 +3199,63 @@ Wait, but: local source/build/browser checks are not native FontLab execution or
 Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All199lesson tests (including four legacy/lesson namespace orders),1993current root tests and5SDK tests pass. EXAMPLES_LEGACY_API_SOURCE selects only the reviewed read-only first-party legacy API; it does not redirect the current suite. Audit controls reject historical script and native-module execution. D21 deletions remain intact.
 
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+
+## Issue120 Z10 — complete part2 glyph sorting/filtering candidates
+
+Adapt both basic/custom part2 source/proxy workflows to the complete current
+font's names, all Unicode assignments and local modification dates. Shared App
+Table/Query, Qt controls and owned model lifetime keep all three pattern modes,
+independent case switches, Basic key-column/native QRegExp, Custom first-two-
+column OR/inclusive dates/angle-tail ordering, both views and modeless Close.
+Raw demonstration records are replaced; initial dates are unrestricted and date
+limits explicit. Custom's ignored column control stays visible and disabled.
+Two immutable source-index identities now route to practical Models commands.
+Original bodies/resources and all other menus stay untouched. Distinct part3
+contracts remain pending. Qt5/Qt6 and metadata-shaped tests are offline evidence;
+native PythonQt callbacks/read/cache/font/history/save/reopen and publication/
+integration/release gates remain open under D25. No original numerator changes.
+
+
+Z10 documentation output: `./build.sh --offline` now renders into `.build/site`,
+separate from retained authored guides in `docs`. Two successive real clean
+builds preserve the guide bytes. The earlier default overwrote those guides in
+the isolated test checkout; their exact branch bytes were restored and the first
+render retained as evidence. No canonical owner path or live site was changed.
+
+
+## Z10 verified source/artifact checkpoint — 2026-10-20
+
+96new App controls; full source2201passed. All6whole new modules and both
+practical menu modules100%statements/branches,zero exclusions. Examples1996
+passed;6locked SDK tests. Actual standalone arm64 Qt5.15.19/PyQt5.15.11 tests
+pass42cases against the independently installed App0.2.54.dev0 wheel; four
+light/dark renders inspected. Standalone Qt5 and Qt6 are separate processes;
+neither is a native FontLab/PythonQt acceptance result.
+
+Normal independent wheel/source installs each pass App2199/2generated-shim
+skips,Glyport2997/3existing skips,Fontport4489/2existing skips with63known
+warnings,Lessons197,Scriptmix1074/1existing skip and Examples1996. All483
+runtime/resource pairs match all4packages/two installs;169priorApp files and
+668unchanged prior menu payloads are exact. Two indexed wrappers move to Models
+through a hash-bound overlay;all494originalsource identities/bytes remain.
+Two original part3 variants remain separate pending workflows.
+
+Retained first-red tests and the first Qt checkbox-accessor mismatch. The real
+clean docs build exposed deletion of8tracked historical guides in this isolated
+checkout. Their exact branch bytes were restored; site_dir now targets.build/site.
+A tests-first real clean-build regression reproduces the deletion then passes
+twice;two actual strict builds preserve all8guides. All510current sources render
+exactly and the full site passes the private-path/credential scan. Missingbs4in
+the docs environment is retained; the audit uses an isolated uv dependency.
+
+All11zone originals,7247source ledger,1111owner hashes and3canonical statuses
+remain unchanged. NativeTCPerrno61/fence retained;no native driver,canonical
+merge,live install,tag/release/site publication or accepted numerator change.
+Full goal/native/integration/distribution/publication remain open.
+
+Wait, but: native QObject virtual callbacks, actual metadata/getter/cache/font/
+history/dirty/save/reopen preservation and original/native workflows are still
+unproved. This is a complete source/artifact candidate,not98%project acceptance.
+Exact commands/exits and retained evidence are in the private workspace's
+verification/issue-120/sort-filter-z10/command-receipts.json and root WORK.md.
