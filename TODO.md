@@ -37,3 +37,5 @@ this_file: TODO.md
 
 - [x] Z23: source/whole-module/ordinary artifact/full consumer/installed Qt5/rendered-menu/owner verification for both editable glyph-tree facades; final real hook/ref verdicts are retained in the workspace evidence.
 - [ ] Z23: qualify actual installed native PythonQt editing/menu/shortcut/selection/refresh/lifecycle and complete font/getter/cache/history/dirty/save/reopen preservation under D25; retain every original issue120 gate.
+
+- [ ] Z24: complete transitive frontend provenance/notices/source availability and full publication qualification; named-component notices alone do not close this gate.

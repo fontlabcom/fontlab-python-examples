@@ -157,3 +157,7 @@ preferences/file/Output writer or live install is added. Full installed PythonQt
 behavior and complete font/cache/history/dirty/save/reopen preservation remain
 pending D25, as do every original issue120 integration/distribution/publication
 gate. Source and artifact checks do not constitute native acceptance.
+
+## Issue120 Z24 frontend notices
+
+No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.

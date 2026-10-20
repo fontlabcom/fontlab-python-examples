@@ -163,3 +163,7 @@ Z20 visual acceptance caught the preserved part2 one-pixel completion popup. A t
 ## Issue120 Z23 — complete editable glyph-tree pair
 
 Implement both original editable-tree controllers over full local glyph metadata. Retain distinct sibling/child/column positions, text/QVariant values, header/default labels, part3 key sequences/mnemonics/separators, selection action enablement/status and ordinary delegate editing. Shared App model/view/editor/signal mechanics stage complete replacement views before releasing the current draft. Refresh refuses edited-draft discard; Reset Draft explicitly requests reload; capture/setup faults preserve the prior draft. Failed disconnects retain exact owners. Close button retries control/editor failures; terminal failures retain the destruction tombstone and use window Close. Every ordinary completion, parent destruction, constructor fault and queued callback is fenced. No original body/resource is executed or bundled. Requires reviewed unpublished App>=0.2.66.dev0 through Fly. Native PythonQt and full font/getter/cache/history/dirty/save/reopen, integration/distribution/docs/release/publication gates remain pending D25.
+
+## Issue120 Z24 frontend notices
+
+Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.

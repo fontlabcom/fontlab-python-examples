@@ -23,3 +23,6 @@ The published MaterialX interface uses the
 search engine uses [Lunr MIT licence: full text](licenses/mit-lunr.txt). These
 notices apply to their named assets and do not change the licence of example
 source or of separately installed FontLab packages.
+
+The [browser asset notices](frontend-notices.md) retain full texts and source
+provenance for named frontend components. Their transitive review remains open.
