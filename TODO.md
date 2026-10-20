@@ -6,3 +6,7 @@ this_file: TODO.md
 - [ ] Re-sync the F1-fixed VFJs into testdata/getgo when the controller hands them over (new hashes, manifest, counts), re-run corpus and variable exports, record which failures disappear.
 - [x] Add practical original GetGo scripting examples with public font links (13, ac57342, a83f4a7).
 - [x] Regenerate docs-export with examples/getgo and run the full suite (54bf14d, 4e3f8aa; 1874 passed with fontTools).
+
+- [x] Verify the combined source layout, immutable release provenance and all existing tests.
+- [ ] Review feature-branch integration without changing canonical checkouts or live installs.
+- [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.

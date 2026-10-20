@@ -3170,10 +3170,16 @@ both uvpipchecks pass. CurrentREADME bytes match both packagearchives.
 Exact normalinstall arguments/logs, checks and hashes:verification/issue-120/getgo-docs-d3/.
 
 Commands: `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 EXAMPLES_APP_SOURCE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-vanilla-app/src/fontlabapp QT_QPA_PLATFORM=offscreen /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/vanilla-session/wheel-env/bin/python -m pytest -q lessons/candidate_tests/models_candidate`:exit0,199passed.
-Rootbuild: `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=1.0.4.dev0 uv build .worktrees/issue120-getgo-package/lessons --out-dir verification/issue-120/getgo-docs-d3/dist`:exit0.
+Rootbuild: `rtk proxy env PATH=<Homebrew-bin>:<local-bin>:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=1.0.4.dev0 uv build .worktrees/issue120-getgo-package/lessons --out-dir verification/issue-120/getgo-docs-d3/dist`:exit0.
 From/tmp, eachnewinstalledPython-I with pytestconfigdisabled runs retained
 D3installed-tests179cases(exit0) and artifact_probe.py(exit0); checksexactcommands
 retained in checks.json. ScopeRuff/whitespace run beforecommit.
 
 Wait, but: no rendered-site or native acceptance follows from packagedREADME
 and checker verification. Newfunctions/nativeUI/history/fullscope remainpending.
+
+Issue120 W1: integrate reviewed A3/A4 launcher bytes with D3/T1 menus in isolation. Index metadata reviewed for relative paths/no private absolute paths; source bodies remain external. Three Scriptmix comment-header moves use a strict overlay, retaining immutable migration rows, hashes and tag history. Verification results follow.
+
+W1 source verification (2026-10-20): full root suite3843passed/21workspace-private-evidence skips, lessons199passed.
+Commands: rtk proxy env PATH=<Homebrew-bin>:<local-bin>:/usr/bin:/bin PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLAB_WORKSPACE=<workspace> FONTLAB_PRESERVED_ROOT=<retained Examples tree> <reviewed T1 wheel-env>/bin/python -m pytest -q -rs tests:exit0. Lessons: QT_QPA_PLATFORM=offscreen EXAMPLES_APP_SOURCE=<reviewed T1 source>/fontlabapp, python -m pytest -q -rs lessons/candidate_tests/models_candidate --confcutdir lessons/candidate_tests/models_candidate:exit0.
+All494 archived wrapper bytes and all16 practical facade bytes retained exactly. Installed Fly/App rejects every absent archived source before native imports. No original copied/imported/executed; no native acceptance or archive cleanup. Initial system-Git/xcrun failures retained; explicit Homebrew PATH fixes invocation. Exact commands/logs and per-menu hashes live in parent verification/issue-120/menu-integration-w1/. Canonical/live installs/releases/publication unchanged.

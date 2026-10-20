@@ -1,0 +1,37 @@
+# this_file: Scripts/Archived UI L-Z/Widgets - Official shapedclock - 248e64416b9b218c.py
+# SPDX-License-Identifier: Apache-2.0
+# preserved-source-sha256: 26c546057fb504d9b9100cce022ffe77bdf32a47d32fa30869d726a29d2df87c
+"""Launch the preserved archive entry: Widgets - Official shapedclock - 248e64416b9b218c.
+
+Purpose: Run this entry's preserved implementation through Fly's shared App
+helper. The entry retains its original behavior; it is an archive launcher.
+
+Setup: Use FontLab 9 with Python 3.11, Fly and FontLab App available. Keep the
+complete rescued tree beside Scripts. Read the preserved source and its resource
+and dependency requirements before use:
+rescued/part2/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py
+Use an owned disposable font copy if the source requires a font.
+
+Run: Select Scripts > Archived UI L-Z > Widgets - Official shapedclock - 248e64416b9b218c.
+Result: The helper runs the preserved entry. Its source determines any window,
+output or font changes. Missing resources or unsupported APIs can raise errors.
+
+Compatibility: Native FontLab compatibility is pending. Preserved sources have
+not been certified by this launcher; Python syntax and route checks do not
+establish successful UI behavior or font results.
+"""
+
+from pathlib import Path
+
+
+def main() -> None:
+    """Dispatch this preserved entry once when explicitly launched."""
+    from fly.ap.rescued_examples import launch
+
+    launch(
+        Path(__file__).resolve().parents[2] / 'rescued/part2/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py'
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -69,3 +69,7 @@ callback behavior still requires the controller's native acceptance.
   FontLab's sys.path in a guarded call and restore it afterwards.
 - Development tools: pytest (`uv run --no-project --with pytest`), pytest-cov (optional)
   and ruff (`uvx ruff`). None of them run inside FontLab.
+
+W1 adds no runtime dependency. Pending archived launchers need the exact local/private
+rescued snapshot identified by rescue-index.json. FONTLAB_PRESERVED_ROOT is a test-only
+byte-audit input; the snapshot is not included in public artifacts.

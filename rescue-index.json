@@ -1,0 +1,2479 @@
+{
+  "this_file": "rescue-index.json",
+  "authority": "Owner D24, rescue before runtime improvement",
+  "preserved_source_root": "rescued",
+  "new_menu_count": 494,
+  "native_compatibility": "pending; relocated originals were not executed",
+  "menus": [
+    {
+      "menu": "Scripts/Archived Launcher/Archived Example Launcher.py",
+      "target": "rescued/part1/launcher.py",
+      "target_sha256": "915eb0d92ab3d33020d4824b151cb0c6066fd323702f9e1073b70fbd6cb20f6e"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Batch Tools Actions on Glyphs.py",
+      "target": "rescued/part2/examples/recipes/glyph_actions_batch/recipe.py",
+      "target_sha256": "5c0ccb08425e3b62fb823346a8a6e16d6d38f2898a4e598b20882c9be6a98675"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Path Problem Report (Glyphs Script via Glyport).py",
+      "target": "rescued/part2/examples/recipes/glyphs_path_report/recipe.py",
+      "target_sha256": "7e0de0f7d77af0ca7a33d178001f6c246847e438ec726334d263feb12a06ee2e"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Place Top and Bottom Anchors.py",
+      "target": "rescued/part2/examples/recipes/anchors_from_bounds/recipe.py",
+      "target_sha256": "77ed425e774fcf083348cc28eb07eadf5a9bc1a4d6c5e5e7af9616b44a87479e"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Tabular Figures.py",
+      "target": "rescued/part2/examples/recipes/glyphs_tabular_figures/tabular_figures.py",
+      "target_sha256": "ccd42bf36092bf74bdce47fb6075740aa6f4858bdb25b636f616db73d996856c"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Kerning Pairs from Text.py",
+      "target": "rescued/part2/examples/recipes/kerning_from_text/recipe.py",
+      "target_sha256": "84ef14fc8870c3a9eeee1ae8a12c1dc92cc893eae38a517fed8e782865a0f9f9"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Copy Sidebearings from Reference Glyph.py",
+      "target": "rescued/part2/examples/recipes/sidebearings_from_reference/recipe.py",
+      "target_sha256": "6aadc9ae8fb5fe615d58cba6b632b599083659c42b2a3f76c01b44814bc4ae42"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Round Coordinates to Grid.py",
+      "target": "rescued/part2/examples/recipes/round_coordinates/recipe.py",
+      "target_sha256": "0d8b04e4d93565d202239ad1df2514b150cf24a509b34de32ff08ec99f222b45"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Correct Contour Direction and Start Points.py",
+      "target": "rescued/part2/examples/recipes/contour_direction/recipe.py",
+      "target_sha256": "a429b53d76d7f78338b05fa05de2f904d19f794f15aafcee102be5fef5077278"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Tabular Figures (Glyphs Script via Glyport).py",
+      "target": "rescued/part2/examples/recipes/glyphs_tabular_figures/recipe.py",
+      "target_sha256": "0b689b4b62fe499d10a073c6b62f8eb6417ebbff8f7f261aae996da3ef1a5dcd"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Path Problem Report.py",
+      "target": "rescued/part2/examples/recipes/glyphs_path_report/path_report.py",
+      "target_sha256": "083be309facb9cfa00a3973785f59c728e3f5d6b506416d9499d4cd21698f98e"
+    },
+    {
+      "menu": "Scripts/Archived Recipes/Back Up Master Layers.py",
+      "target": "rescued/part2/examples/recipes/layer_backup/recipe.py",
+      "target_sha256": "468385b598a60b0dc936e359e989d4105092a1364fdd66cadea17672736c13a2"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/effects - lighting-b823a76f79197d84.py",
+      "target": "rescued/part2/ports/effects/pyqt-official/lighting-b823a76f79197d84.py",
+      "target_sha256": "a456bfc064bdbce5e773cda8bee36e3d714caced7175b6edb7473ad1df32b5a6"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - frozencolumn-c98ae8ac71886586.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py",
+      "target_sha256": "f46ccef26f7de99b69555ac0d503309726090a472bfb5360f466dcf02b302551"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer-ui - main-402068f40005cd66.py",
+      "target": "rescued/part2/ports/designer-ui/pyqt-examples/main-402068f40005cd66.py",
+      "target_sha256": "040266f6fd75e39a152e75da53d2e9a50ac6fedf8c9768f4b159f5f9d8daea39"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - animatedtiles-1cf57c0f2ac8880a.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+      "target_sha256": "e50504501e5e1fc30a379750eca8f2974677fe37331a04ede54e2a857ee3f7ec"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - bubbleswidget-9941e3c752b3a3b7.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py",
+      "target_sha256": "af5e03961a757f7dc0a92d94d4aee9567e1d816599437faa208053ffd756b0fe"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/ipc - localfortuneserver-a14d08fe23965bec.py",
+      "target": "rescued/part2/ports/ipc/pyqt-official/localfortuneserver-a14d08fe23965bec.py",
+      "target_sha256": "d322641e77e18333c3cd714ab4a4284e581f1a66bb4662e2dad9cb99fcc0f9e3"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - contour-canvas.py",
+      "target": "rescued/part2/ports/insights/contour-canvas.py",
+      "target_sha256": "9ec8bcc1c515d3352ef161a2eed90a5ac330f7f50aab2388c584bb82aa713fc7"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - dropsite-fa6823667fdb918f.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py",
+      "target_sha256": "d5c3b0355ca179aa4844bdf7358c6c7d14ec79f4cab709cce69f25a0c4bb9072"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - puzzle-c5b4e385cc921da4.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py",
+      "target_sha256": "40362a262ff7ce02c5635bfbefbb5536dba7506ccd03b65ab20d3327a59461ea"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - timer-batch.py",
+      "target": "rescued/part2/ports/insights/timer-batch.py",
+      "target_sha256": "9bede8e4486e03be3c182cd474084ab6a9200ca2419efb4ae3b2cc70ca78bfaa"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - tabdialog-dab5fd4c94ec518d.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py",
+      "target_sha256": "f0429bb770550780ba27dd2def628e0189a5665595501f32dfb1ebf9ef98c7c0"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/desktop - screenshot-65d15d1fbc1b15e9.py",
+      "target": "rescued/part2/ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py",
+      "target_sha256": "f4bbcc754fb715ac6febdb71b867af2f6f7c81e2f0ba1023fc1f39850e41ab3b"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - fridgemagnets-da76600eaea7a121.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py",
+      "target_sha256": "adab52920261650c3f9553e6cec9cf3ce1fdd9864c0cf55fcebcf9b514ec46de"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - polygonwidget-773db5c24ae98ffb.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py",
+      "target_sha256": "c96726078578bad1e6651507493d0a0914a98d35b54ed0553f215c01bdcd3b57"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - contour-scene.py",
+      "target": "rescued/part2/ports/insights/contour-scene.py",
+      "target_sha256": "39e6092d837e4c50f54d6aa8915d99e2546eb04de358a3ae1443940e41937e7e"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/ipc - localfortuneclient-0ad3432ccdca7ac0.py",
+      "target": "rescued/part2/ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py",
+      "target_sha256": "98083bf73c30f6dbf2fd96c1c38bcc19b391b72a9d237f462d5b65ddcdae0f1b"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - analogclock-4d24cd77c74a8801.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py",
+      "target_sha256": "666d6234599ab0576ad18cce7d6ed36423f9e487fa4c8a7a2b8ff7a1c5fb9d07"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "target_sha256": "f1faf59693b2054c207de5811e7d721260755e6a5675f199f3472e3d520204d2"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - classwizard-035f3fbd2b81479a.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py",
+      "target_sha256": "1d69f1113b8c0a1eb508ee108639dea5bd114fd384ae132c3dd767efa45909fb"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - glyph-list.py",
+      "target": "rescued/part2/ports/insights/glyph-list.py",
+      "target_sha256": "6cceb5202a9f4bdec96c993d7cf66d225d7b181e594cfa44d7478d095ff9ecbc"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - calculatorform-27bf65f8b059fd96.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py",
+      "target_sha256": "7e26c787c95ff06011c04cc4cbdc8c7a9906fb146bec085bd2168d01e2dffcd5"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - spreadsheet-bf3b39a8c2df8e94.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py",
+      "target_sha256": "b491650437d8faa9b59a6f4859bdb420c8507e4fde37fecc95ef87e7d0a2cd1d"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - signal-lifetime.py",
+      "target": "rescued/part2/ports/insights/signal-lifetime.py",
+      "target_sha256": "3fac71d6f9a70e89b14266dbcc8127d246cbaa3eb4bc69d94d433390b88bc4de"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - sandbox-settings.py",
+      "target": "rescued/part2/ports/insights/sandbox-settings.py",
+      "target_sha256": "a3dacffc45c2c5e1d1bc83b1a5b672c20db9a3873d0cc98166515ed96d1fd8bb"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - worker-glyph-queue.py",
+      "target": "rescued/part2/ports/insights/worker-glyph-queue.py",
+      "target_sha256": "b130173c877a6e69a33dc1bca3d6784d7f043a531b318e8314005dc63fb22731"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - fetchmore-67170c89593ad35e.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py",
+      "target_sha256": "1f3037ffce4fae5da788f548ad2ab1c30e9dc74b5137c989eb74afcdc9c31fae"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - appchooser-de30d23621025fe6.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py",
+      "target_sha256": "42248cab1676b4e4a1539df8af1ed10a26fbd193ebd4d327f9832b6d1dd609ae"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - standarddialogs-e1a0a829f8f2e311.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py",
+      "target_sha256": "4a705367140cd7600706cf7ab7522523ddc7c5cd3592309c78d316b67cfc0055"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - owned-key-filter.py",
+      "target": "rescued/part2/ports/insights/owned-key-filter.py",
+      "target_sha256": "0aa8c7ff06fb6df60726380356cb4282245e3d88188cfb86f65b8e576660ba34"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - loaded-glyph-form.py",
+      "target": "rescued/part2/ports/insights/loaded-glyph-form.py",
+      "target_sha256": "263c0c6715f4fe22418b6da27ee83cc2a39683e23bcdc58723ab7d60e34b1c87"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - editabletreemodel-227efef76ed4ac74.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py",
+      "target_sha256": "e2eeecb1ac3c93e603e98f49d9c56c0a967430d3021ae3255a2e3fad841e4c61"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - draggabletext-700e96dec485e7a8.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py",
+      "target_sha256": "875ea71ca5852f15e97ef998c32dd367050fb2a24279c18191eb004810243167"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - storageview-cf15c3e91cdd8ded.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py",
+      "target_sha256": "44542af06b29bd3eb86c69a0bd0d81ed1e86b0133e6779a324b6a6c0e3d730ae"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - delayedencoding-43c6c2f6f5f036d3.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py",
+      "target_sha256": "e2f83fc8e2a0ae2bf783f0f773fa0c088f01a20482a31d41adbb958f97ab4d34"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - glyph-properties.py",
+      "target": "rescued/part2/ports/insights/glyph-properties.py",
+      "target_sha256": "7d0b1454d9e2a66e871b398e26ca73a5a696d9a77b0c405cf5da5c8d8e228eab"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - pythonconsolewidget-5125860585e98b3a.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py",
+      "target_sha256": "50a5b70428d3bcf22ebac1ca83fef3d2f34b3c01be7175384b5ddc124d9ee87b"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - moveblocks-b7283d74afb78218.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py",
+      "target_sha256": "1ac9db7d122e92313f1e386190eb2c54ad9da2686820a81397759e9e3e1164ec"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - pydemo-bcfa5de0140286d5.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py",
+      "target_sha256": "68c4cdfed5d57a3264a41e9be851056a67577b7716ce745e8ed90e4c46062181"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - multipagewidget-de4979a99c6d0bed.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py",
+      "target_sha256": "6f2445cd62b1c21e2b439990b33c1ff4de90a50b6efdaa22eb3c4fdcdd136502"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - combowidgetmapper-cc95f9719b8e4eda.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py",
+      "target_sha256": "b6cda27a2fdd03bd8cbfe3604df3e2b4e7f89dbb378d331ba8465d57291902c7"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - metrics-table.py",
+      "target": "rescued/part2/ports/insights/metrics-table.py",
+      "target_sha256": "7966a62e0a1613e3f2f1b0e9ed279224b5a4ae9fe4f0bdca0dd96c10e1218667"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - simpletreemodel-321f8e535facafde.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py",
+      "target_sha256": "9bcb7068a5f3970a855c85d2922c043bf7bcfc196910e8814e7d93a84013751e"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "target_sha256": "4c46c9af9db4321d45690cc5cb82e3c0d60454d0ed3123d0f9a8c5f002980d39"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - padnavigator-a58650b5461c0f48.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py",
+      "target_sha256": "66f7c5169c23e0adb6a7cb76b9fdffbf33b27af79bc987cafb8534365d70632d"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - extension-a1c26dbf9f995edb.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/extension-a1c26dbf9f995edb.py",
+      "target_sha256": "96175cf7e19bcd1dc4f2e6664890436df05a791d47b8442411bd35bb3d32df32"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - counterlabel-1321540b04f33117.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/counterlabel-1321540b04f33117.py",
+      "target_sha256": "96f3d82f949777f1d582ac4921169db87ba3d6f7d8195fdaaddce18b0cf788d2"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - metrics-undo.py",
+      "target": "rescued/part2/ports/insights/metrics-undo.py",
+      "target_sha256": "aaf8d655ed841c54c307a08ae3aee0dfd80b53f976fc9f082fe9242d5f1257c3"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - puzzle-878fe9f714df3b5e.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py",
+      "target_sha256": "f118f4ca17619e41d7d940d1a49524d07a7e6bdae3bfa14dee4fd930ba5dfd8c"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - collidingmice-fcfaf9667206bbd6.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py",
+      "target_sha256": "1c67c4e4344a64ab16a0f0996f4e1fbb8dc23e343b4473ac0ee75bf07cd1b1c6"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - customsortfiltermodel-029ea0dabe87ae57.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+      "target_sha256": "03d3339a55b0edc631e8cce1b3ddf09924fbe4b25ec7e6ca42be092f3788f199"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - simplewidgetmapper-39de33366209402d.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py",
+      "target_sha256": "610a6d9f48c31599b43c8bd5eecf4686d6cfd5e2915c8cd76d91a65b3248f1a9"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - coloreditorfactory-0a3b15766909bdc3.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py",
+      "target_sha256": "06780068bb97fb0b0787dbc5fc5dc5d51b1c2c29cfd053fa0ba6be4be802ce58"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - configdialog-3f5f77c0358d9fef.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py",
+      "target_sha256": "a8723ff0df166a67c564237dbf0c11dfe87d4f649b2769c2de409efc1508c33f"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - elasticnodes-fff97a435b73d548.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+      "target_sha256": "d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - trivialwizard-c0d4a173b261a3e5.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py",
+      "target_sha256": "9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/draganddrop - draggableicons-5781fa4ba55c884f.py",
+      "target": "rescued/part2/ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py",
+      "target_sha256": "145542e3060ad317a88d1e5cdc24f99b86e9ccebb042f7f589aea906f7718a8c"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - pixelator-d50ad6638357e669.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py",
+      "target_sha256": "9b8e6b6e8c542817876e897eef2d9d5a503c40eea8486dc6ef975621e123444c"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - spinboxdelegate-ddb20b1b68b18a91.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py",
+      "target_sha256": "539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - simpledommodel-a59dae9770bfbefb.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py",
+      "target_sha256": "c17809b93a3fff1601c20e15f233edbf687f023430e86bf1986772e38bf712d6"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - stardelegate-dc59f268ee01e364.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py",
+      "target_sha256": "ab5c5904d2ca3688def0ad17a8a48ac63f507e7a77778a888f14e04a89b0c079"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - owned-dock.py",
+      "target": "rescued/part2/ports/insights/owned-dock.py",
+      "target_sha256": "cf9c0cdc8f06d74a7d518c8289aaad32991dd571d9630c2b19f03080c184690f"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/designer - datetimeedit-7ba49e67588b1329.py",
+      "target": "rescued/part2/ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py",
+      "target_sha256": "bd6e642bdd03c1dd484ad5afbdfdb3daff7ce459a6e364ec18c6520da7502c89"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - easing-bd6c8feb783ba845.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py",
+      "target_sha256": "d125a1afb91be58a87606d0e2d5ced5cdea2d06618eb9734d1f5245e4604ed10"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - dirview-4b8851287931abd0.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py",
+      "target_sha256": "f47c16d557d9156e14a572d55c774d794510b85929edbe5ceb63ddc876ac1202"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - metric-controls.py",
+      "target": "rescued/part2/ports/insights/metric-controls.py",
+      "target_sha256": "5d889151cfff9a22cf504b47b5f7185cf3203baccc34f096b0db8b7a0c686174"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - diagramscene-1ca857d797199ecf.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+      "target_sha256": "9a955af5875f27bba1baad27d5c508910c80a5ec6463d7cb00890e983322fe56"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/desktop - systray-c1b878b63f80e733.py",
+      "target": "rescued/part2/ports/desktop/pyqt-official/systray-c1b878b63f80e733.py",
+      "target_sha256": "c163db08336c460b55fdb6c202c7312b856ab49c56822e977e14a455f6b86dc7"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - chart-306c12d5cc1db46c.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py",
+      "target_sha256": "9e370ed256018c9b63db004c6693b85685a50169b7d7be45b9b5809d7ed37510"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - states-29f6a7d0a3bb6813.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py",
+      "target_sha256": "b57501fe1276a4b4a7af18ed12c5bcf87e3da67b7cf92f27117d307ce8facaee"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/animation - stickman-243ae486f9528e8c.py",
+      "target": "rescued/part2/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py",
+      "target_sha256": "08dba971d70b27e0cce4e62dc52e35b2d6dce185b3456948859acb802f44aed4"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - embeddeddialogs-0578c17977b471f1.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+      "target_sha256": "c08d4c310c70b3a0e129085b79f59493472859819fdf1c75e7024345724a83bc"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - callback-errors.py",
+      "target": "rescued/part2/ports/insights/callback-errors.py",
+      "target_sha256": "b5a363f9169456507ecc8d47fa5bf1e92007a6b7f533dca2c4aec5f86f4423d1"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - compiled-slot-exposure.py",
+      "target": "rescued/part2/ports/insights/compiled-slot-exposure.py",
+      "target_sha256": "e81955446fce469142051973c7c630cac6d44b88aa46ee1ea5aa8cd5e8805108"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - owned-repl.py",
+      "target": "rescued/part2/ports/insights/owned-repl.py",
+      "target_sha256": "3b5fb1184dd28f2caa23b1e90eb53308a0d77ead01f5a0bc4fd3cc62bf7d95df"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/dialogs - findfiles-63f2eeefd052f701.py",
+      "target": "rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py",
+      "target_sha256": "322658e86c233171b37cb1976ed9828afda860dcc5708ace099119f3e4e9cf83"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/graphicsview - anchorlayout-a96a7978c0b9f6ee.py",
+      "target": "rescued/part2/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py",
+      "target_sha256": "4de40f5bc168015793f3529ef70f2e69dc46be41b38d17afb29f7e34ef8d717f"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/itemviews - interview-090c76a87351e771.py",
+      "target": "rescued/part2/ports/itemviews/pyqt-official/interview-090c76a87351e771.py",
+      "target_sha256": "aceda19d325351dc76f32d36f66373e9cf84436838c7cf000b7f6a582d47acce"
+    },
+    {
+      "menu": "Scripts/Archived UI A-I/insights - plugin-tokens.py",
+      "target": "rescued/part2/ports/insights/plugin-tokens.py",
+      "target_sha256": "e4c04bf842585c9dd42bc884785f98bc21ce488ce76fa3c4c0ddc9661b98a169"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Font Info Mini Tool.py",
+      "target": "rescued/part2/examples/getgo/font_info_ui.py",
+      "target_sha256": "b2574dfef010e55be3ae347d2695c3c69f0137548a666902d3ce3221902b1c5f"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Export a TTF Geometry Subset.py",
+      "target": "rescued/part2/examples/getgo/export_ttf.py",
+      "target_sha256": "f06122a7a4d65a3d410057339fa5fc7c2b19312d69e355c0a225f4ca29446de0"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Compare Two Real Fonts.py",
+      "target": "rescued/part2/examples/getgo/compare_fonts.py",
+      "target_sha256": "9be0366c966c3d98dcae8b7c586e1f4860056e3da8aead09e44582710d8220fc"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Masters Axes and Instances.py",
+      "target": "rescued/part2/examples/getgo/designspace.py",
+      "target_sha256": "b66b704bc5d5fa09b1f8d15effa09ba119973672c3db755fff20095116d4394f"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Name a Disposable Derivative.py",
+      "target": "rescued/part2/examples/getgo/naming.py",
+      "target_sha256": "923c9109b994eed66c18e4056cc1ed2054748bcb1a3b53083097583f1f909d40"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Outline Pens and Intersections.py",
+      "target": "rescued/part2/examples/getgo/outline_pens.py",
+      "target_sha256": "b6084952d02dcad932da450f300bb20aa7fb470ab36ba389a3c9f1ea13ace0d7"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Kerning and Classes Report.py",
+      "target": "rescued/part2/examples/getgo/kerning_classes.py",
+      "target_sha256": "631262160a452b24c27b9b82239801cb6505b1cce03e2d378a371f54dddfebdd"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Compare Master Topology.py",
+      "target": "rescued/part2/examples/getgo/master_compatibility.py",
+      "target_sha256": "fcf75898a46cca80ed0f7e36627864c18a2a9c8e781793fcd70d43fd7a74015e"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Widen Two Glyphs.py",
+      "target": "rescued/part2/examples/getgo/batch_transform.py",
+      "target_sha256": "164a2dcac98ad71db4c7445207e3f1e479837c22ca8ce54b00a368af8cbd3cf1"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Sidebearings from H.py",
+      "target": "rescued/part2/examples/getgo/spacing.py",
+      "target_sha256": "46819ae9909a25291ca3b9558dbe2a1241e7f504fc1ea113a6679047adba3143"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Export an OTF Geometry Subset.py",
+      "target": "rescued/part2/examples/getgo/export_otf.py",
+      "target_sha256": "425f67f747c2e88bd752a514942d81d24e65ec5e85596095af333bbac67dfdae"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Arabic Text Coverage.py",
+      "target": "rescued/part2/examples/getgo/unicode_coverage.py",
+      "target_sha256": "2ffdbf0a1ac313760b84adf7c057335d918b66826c4172d92eaf401c1206f322"
+    },
+    {
+      "menu": "Scripts/Archived GetGo/GetGo - Audit a Real Font.py",
+      "target": "rescued/part2/examples/getgo/font_audit.py",
+      "target_sha256": "4636db49daac6e914403bb7efac795042c830ada8f81953be6af43053a8159e6"
+    },
+    {
+      "menu": "Scripts/Archived Official/calculator-356e4e807f1e789f - da2daf75.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py",
+      "target_sha256": "e598d62c5dd2e7d33560b03ddc41121da3afa6e6b6c86e1a74ff930f75b6fa2b"
+    },
+    {
+      "menu": "Scripts/Archived Official/adding-8847cbce50b72500 - b3713f5c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/adding-8847cbce50b72500.py",
+      "target_sha256": "c066dac22e9f3718b16a497ca4bbcfbaa846963d0b1f0a0e9c8cb0d46f976054"
+    },
+    {
+      "menu": "Scripts/Archived Official/dirview-4b8851287931abd0 - 22df9979.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py",
+      "target_sha256": "7f2ca3e23ed342864c2c8cc913dc64ba1c920c07e0ae68dcd29af7f0ae50be2a"
+    },
+    {
+      "menu": "Scripts/Archived Official/spinboxes-468179092748a72e - 5895d0ae.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "target_sha256": "e25b26cd135fd40ef1ed9316a402483d676ba7606da94007f00078993b5fa54b"
+    },
+    {
+      "menu": "Scripts/Archived Official/icons-505d60a757bbc177 - 5ef096aa.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/icons-505d60a757bbc177.py",
+      "target_sha256": "cc6a383aa61e4cd0cce357e12e275ff643bd866ad3e1695254d3216d9ed104b7"
+    },
+    {
+      "menu": "Scripts/Archived Official/listnames-ab719a6a5c3afe4a - 06a16588.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/listnames-ab719a6a5c3afe4a.py",
+      "target_sha256": "dfc7a27833a60e8cef81109daf6b939a9638b0554115ccb3a2e2a39c4e667634"
+    },
+    {
+      "menu": "Scripts/Archived Official/orderform-c997677a2bdb4f34 - 6442ee82.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py",
+      "target_sha256": "6c4b5c5a831c0b93c464dcc8897a6bbcfda4eb4a2289971acbb674c5b59d8724"
+    },
+    {
+      "menu": "Scripts/Archived Official/helloglwidget-5941e31267112c98 - ede65ffa.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/helloglwidget-5941e31267112c98.py",
+      "target_sha256": "a688b6a61b2a35fec1589a713341f1df8d228069589f7c302272f6eff1d77975"
+    },
+    {
+      "menu": "Scripts/Archived Official/localfortuneclient-0ad3432ccdca7ac0 - dba8ac39.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/ipc/pyqt-official/localfortuneclient-0ad3432ccdca7ac0.py",
+      "target_sha256": "bd363989b8bb46cfbee4ea83a28d8a8fdb34a9e784edd9794b773d40a2db79ca"
+    },
+    {
+      "menu": "Scripts/Archived Official/fancybrowser-f4000cf8ca288375 - 3a63cfde.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/fancybrowser-f4000cf8ca288375.py",
+      "target_sha256": "b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b"
+    },
+    {
+      "menu": "Scripts/Archived Official/sharedmemory-de35a965dfcfd678 - 2d3021ec.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/ipc/pyqt-official/sharedmemory-de35a965dfcfd678.py",
+      "target_sha256": "a94737070771a8b73be8b767b0c90e9c0cdeabcce742d53a6eba580624e58e0b"
+    },
+    {
+      "menu": "Scripts/Archived Official/standarddialogs-e1a0a829f8f2e311 - 1632ddd1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py",
+      "target_sha256": "80b66bcc88b46955f88d0b31040a2ea4cdf272aa6de1f825c9ff189abf21af22"
+    },
+    {
+      "menu": "Scripts/Archived Official/fortuneserver-aad57160cfd51894 - b352812f.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/fortuneserver-aad57160cfd51894.py",
+      "target_sha256": "b84aa04982b034daa49347676d1e3cbe68d2fec8c22bc60ac5ba0de91dffd537"
+    },
+    {
+      "menu": "Scripts/Archived Official/formextractor-6ed36280660df7ea - f64e75ff.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/formextractor-6ed36280660df7ea.py",
+      "target_sha256": "b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b"
+    },
+    {
+      "menu": "Scripts/Archived Official/recentfiles-09afeea11be83f4f - c9c2d5b1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py",
+      "target_sha256": "59a910de643a80f61e4a0478454f9dafaed319728746a14d8819d6ae0b2f9867"
+    },
+    {
+      "menu": "Scripts/Archived Official/trivialwizard-c0d4a173b261a3e5 - 154cadc3.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py",
+      "target_sha256": "8ad810ecf2897a079286ed7b7ede6a2259c30c0fe7e6b90dc4141af0912103b5"
+    },
+    {
+      "menu": "Scripts/Archived Official/simpletreemodel-321f8e535facafde - 8125b5f0.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py",
+      "target_sha256": "0eb40bcaded0341ad05f3891e54ee5f06e02616d3efa03b175742863d178fc86"
+    },
+    {
+      "menu": "Scripts/Archived Official/audiooutput-c391afd8516131e1 - dcbc20d4.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimedia/pyqt-official/audiooutput-c391afd8516131e1.py",
+      "target_sha256": "424dd56877df3ea8c2ed47bd9379b23ce1ae8d8f2334afe20b8bf863d91f6671"
+    },
+    {
+      "menu": "Scripts/Archived Official/basicsortfiltermodel-9dab02b61cebbdb7 - 61bd905e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "target_sha256": "cecf5221bfc7da755664069fb316696c5144e4437d97d325b32431bbf89c1621"
+    },
+    {
+      "menu": "Scripts/Archived Official/pythonconsolewidget-5125860585e98b3a - 993dc4a3.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py",
+      "target_sha256": "2f064d8a51ccc93671b2bfb39c05d9a2e4491fd62bb2615985e2f3ae0e89e73a"
+    },
+    {
+      "menu": "Scripts/Archived Official/sliders-36805750b888fba6 - 1be02662.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+      "target_sha256": "24312666a881173fd0a203fd1217ea8d13be8edc0e70b08628e3c4addc49cc5d"
+    },
+    {
+      "menu": "Scripts/Archived Official/chart-306c12d5cc1db46c - 92011e52.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py",
+      "target_sha256": "0bdf280e85649088518dfc0647ad99a46ab7f446eac7b52aed2eee1d25912956"
+    },
+    {
+      "menu": "Scripts/Archived Official/analogclock-4d24cd77c74a8801 - 6727f55b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py",
+      "target_sha256": "92a061a207d4d614f9aef3fc3a960d15160f6817a02808f6a081853117523a2c"
+    },
+    {
+      "menu": "Scripts/Archived Official/chapter2-methods-8d1557cbfed9c7a0 - 094b874a.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/chapter2-methods-8d1557cbfed9c7a0.py",
+      "target_sha256": "3730a3b39a987532372ad68d0d2253157e3270f025e67fec47a5715825439fd4"
+    },
+    {
+      "menu": "Scripts/Archived Official/openglwindow-b383fecf912548bb - a7698a2a.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py",
+      "target_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490"
+    },
+    {
+      "menu": "Scripts/Archived Official/schema-1e5d0f7289e1b36e - 8b763fde.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py",
+      "target_sha256": "153cb056b72e9b38e9374ac770236f26ab4ce821b26f43b262088f293672d920"
+    },
+    {
+      "menu": "Scripts/Archived Official/customgeometry-34538a4e2600b918 - 992d5549.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/customgeometry-34538a4e2600b918.py",
+      "target_sha256": "bb4d545d6ec4dc29a45617e8b45292caa9f3b809e16d9f4940527010960486ea"
+    },
+    {
+      "menu": "Scripts/Archived Official/abstractitemmodel-e1316fee99c63555 - 4079729e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/abstractitemmodel-e1316fee99c63555.py",
+      "target_sha256": "fb7dca9b8bf9d7807cf77bd16fada62a2a66128ea1a986c0ccc3f5257e91ee24"
+    },
+    {
+      "menu": "Scripts/Archived Official/puzzle-878fe9f714df3b5e - 0400970b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py",
+      "target_sha256": "0d2e4b9b8d16f99f226fd0392076bfead651520d9778c2291daa160b9f6378c5"
+    },
+    {
+      "menu": "Scripts/Archived Official/methods-75ca5ac77ecefd6d - dabd9d5b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/methods-75ca5ac77ecefd6d.py",
+      "target_sha256": "ac5da87b44ac518f746d9eb23d5086f70ba29c22d3e7aef33c760c577f89a596"
+    },
+    {
+      "menu": "Scripts/Archived Official/car-54c7440bdcdc3dfc - 3ec71ea0.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/car-54c7440bdcdc3dfc.py",
+      "target_sha256": "4e90d694226246707762fb4784007082305652169728d50a494c3d459dbffccd"
+    },
+    {
+      "menu": "Scripts/Archived Official/chat-38465a8f4b1a229f - a412aafd.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/chat-38465a8f4b1a229f.py",
+      "target_sha256": "1558e2d2bc4b55eeff0d0a13ad71708f0d590263f402985a972c4dac301945e4"
+    },
+    {
+      "menu": "Scripts/Archived Official/calendar-c56cf1699b07b350 - 1280f1ee.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py",
+      "target_sha256": "53ddaa8631caef2902c0285ac560dfb4508f8dce9d50f662e199bdbc28c739f3"
+    },
+    {
+      "menu": "Scripts/Archived Official/binding-eb7a89f07f63cca7 - da26f8bc.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/binding-eb7a89f07f63cca7.py",
+      "target_sha256": "92d28200fb31c2bc433069973ec8b38098257ed3d89cd07e34a59be6b3670489"
+    },
+    {
+      "menu": "Scripts/Archived Official/directconnectdynamicserver-2f1e2f679775d89e - 1e790829.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/directconnectdynamicserver-2f1e2f679775d89e.py",
+      "target_sha256": "b6f8ebd2cf13ee70407c0cdc18c9588af4ac9f84f77f6a98a932bf8bc8307e0b"
+    },
+    {
+      "menu": "Scripts/Archived Official/customcompleter-10ef4dacb4db4080 - 4e8b9f5d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py",
+      "target_sha256": "05e5a74c23f345163374d8b557dc116b93245f46e6557f1e78efb0a7a9150094"
+    },
+    {
+      "menu": "Scripts/Archived Official/dropsite-fa6823667fdb918f - 479f0e3b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py",
+      "target_sha256": "2e928d0fac33d59c47fae60a1142da51623f3fdcf3b310e46bd51f8af8c0e823"
+    },
+    {
+      "menu": "Scripts/Archived Official/multipagewidget-de4979a99c6d0bed - 7c2ed58d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py",
+      "target_sha256": "515d7e4a77c705e3b117e2701a1fed65ac17b6764cfbed5b0b95e40b509ffb84"
+    },
+    {
+      "menu": "Scripts/Archived Official/configdialog-3f5f77c0358d9fef - 88acf60f.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py",
+      "target_sha256": "5ddbb490939e6e767b7603a197b0ec14019611ff4447c04fff97293593cb571d"
+    },
+    {
+      "menu": "Scripts/Archived Official/wiggly-509e781f1267967f - 283aa138.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/wiggly-509e781f1267967f.py",
+      "target_sha256": "b75f1ae5b664998b0be94f3b5fe3a35b673499f3c72a827122639f9d3cab6f12"
+    },
+    {
+      "menu": "Scripts/Archived Official/camera-f6d352360ae9bdfb - 1eeb7223.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimediawidgets/pyqt-official/camera-f6d352360ae9bdfb.py",
+      "target_sha256": "301dc4123b766e7d68ba039dbda59a861df0d3c9676aea09c1eb079927868845"
+    },
+    {
+      "menu": "Scripts/Archived Official/embeddeddialogs-0578c17977b471f1 - 15ae7441.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+      "target_sha256": "b90e385b1cb4ea7f2f202545920844cba59a825fcdf3986878ebd25d3fce1876"
+    },
+    {
+      "menu": "Scripts/Archived Official/semaphores-b95b687bbc541207 - 88cd6a00.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/threads/pyqt-official/semaphores-b95b687bbc541207.py",
+      "target_sha256": "ea9b20dbcd502f442df0f5405411be7e40357d471868b3e322ab75937ee1bfb2"
+    },
+    {
+      "menu": "Scripts/Archived Official/shapedclock-248e64416b9b218c - b8d5a1b1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py",
+      "target_sha256": "93afa0ed4b632a251d8e42d0b049f0ed85da736b6f8db42aa874adc0d632f4b0"
+    },
+    {
+      "menu": "Scripts/Archived Official/appchooser-de30d23621025fe6 - 414a42dc.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py",
+      "target_sha256": "49cd103c29c9725e74ebff89fa30fa3e24502056577f625bf448cdf14c4f7c8c"
+    },
+    {
+      "menu": "Scripts/Archived Official/calendarwidget-b91effc45f81fbb0 - 2cd76d8c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+      "target_sha256": "feb734fd0e15a9b4217552e8823ee07beb8ce6d73bd27c21dfa36a537ecd1407"
+    },
+    {
+      "menu": "Scripts/Archived Official/http-409f3d46a9555f23 - e22282ae.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/http-409f3d46a9555f23.py",
+      "target_sha256": "f8599124fe34a81144709863e10bdeca76aa7c3872912c8daac44f89b626ba46"
+    },
+    {
+      "menu": "Scripts/Archived Official/default-6417cdcf1bfd1752 - 97ee4639.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/default-6417cdcf1bfd1752.py",
+      "target_sha256": "ac5da87b44ac518f746d9eb23d5086f70ba29c22d3e7aef33c760c577f89a596"
+    },
+    {
+      "menu": "Scripts/Archived Official/frozencolumn-c98ae8ac71886586 - bf6a2919.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py",
+      "target_sha256": "dd4dec5bb43cef949a75709a6b422646c8921fb6a9a724e7676e9aae96084626"
+    },
+    {
+      "menu": "Scripts/Archived Official/lightmaps-d8803c2afaabf3d5 - cafe1e5c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/lightmaps-d8803c2afaabf3d5.py",
+      "target_sha256": "46319a969cdd2fdcdcde519e19a4b3ffa088c499e08840b5c9ad81063a3dcc1e"
+    },
+    {
+      "menu": "Scripts/Archived Official/basiclayouts-2f94fe07de765888 - b0370fc1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py",
+      "target_sha256": "b53b4e5e158d8046220bde8de76c0af424ab90c8a96e362f29906349a5a19d35"
+    },
+    {
+      "menu": "Scripts/Archived Official/painterpaths-13a6bb9a9d2b9037 - 4d107a40.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+      "target_sha256": "ae79ea27f4bb5bb28912a0d9c5ceb8524f3f1c09ca7161bd408bc0e6ca88efb3"
+    },
+    {
+      "menu": "Scripts/Archived Official/findfiles-63f2eeefd052f701 - f98c2bcd.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py",
+      "target_sha256": "d53e4871dcd3e6e3a8c901b07ec99db769a65265e4e3539bc68ffb721bbe20d6"
+    },
+    {
+      "menu": "Scripts/Archived Official/chapter3-bindings-3cd3713a5dc9f6dc - 85ad9585.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/chapter3-bindings-3cd3713a5dc9f6dc.py",
+      "target_sha256": "3730a3b39a987532372ad68d0d2253157e3270f025e67fec47a5715825439fd4"
+    },
+    {
+      "menu": "Scripts/Archived Official/i18n-eca1cd9ef1528607 - dc0d3110.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py",
+      "target_sha256": "a60c542ce24e27441a1c022e8fc57630edf380676eda4904bebc50510eb03047"
+    },
+    {
+      "menu": "Scripts/Archived Official/draggableicons-5781fa4ba55c884f - 2762330e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py",
+      "target_sha256": "d21827d1a9dd55b5de6754c4ab9bf527b4f20a91de6836df16378d1da7912e8a"
+    },
+    {
+      "menu": "Scripts/Archived Official/diagramscene-1ca857d797199ecf - ca74e151.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+      "target_sha256": "2f1d99279f78a43459928e59388681eb4ded7a85f0bd7b3cb6a7593980d05f1e"
+    },
+    {
+      "menu": "Scripts/Archived Official/regexp-626fd0acec74fd91 - 28f99af4.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py",
+      "target_sha256": "d2323a19b8a05d0dcd8cdc26369176a5a258cf2bdea1081a80c2b5b2a8a4dfd3"
+    },
+    {
+      "menu": "Scripts/Archived Official/waitconditions-27709a02d37b9ba9 - 3b5f74e3.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/threads/pyqt-official/waitconditions-27709a02d37b9ba9.py",
+      "target_sha256": "faf31de1e729815bfdba3890f6e201c4c65c0f17336899e61393b0ebb91c331c"
+    },
+    {
+      "menu": "Scripts/Archived Official/sdi-eba98690c141a070 - 299988e1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/sdi-eba98690c141a070.py",
+      "target_sha256": "632685ff86fc4c510bd009d7a3c3471596ebbb5f8b7096026691a2ead5f7f022"
+    },
+    {
+      "menu": "Scripts/Archived Official/transformations-c12a2071adbab88b - 1b3fd3f7.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+      "target_sha256": "533857ee814a9428e094f1ad7dc9c13b4dbe8476c991effaced2f8486bec5abc"
+    },
+    {
+      "menu": "Scripts/Archived Official/basicdrawing-907f39d8bf387501 - ea433456.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py",
+      "target_sha256": "94c7a27d22a78955265a73c0d98383088c334d50d100eb330b242b84fbee0bab"
+    },
+    {
+      "menu": "Scripts/Archived Official/previewer-47298251b3c83ecf - 3b02d92e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/previewer-47298251b3c83ecf.py",
+      "target_sha256": "b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b"
+    },
+    {
+      "menu": "Scripts/Archived Official/editabletreemodel-227efef76ed4ac74 - 5e8b1615.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py",
+      "target_sha256": "5a5cbea2baea2987297c1d25d577b361e21cb164fe0860220ca9a94637b18031"
+    },
+    {
+      "menu": "Scripts/Archived Official/settingseditor-9e41e71c41b116a8 - 69009436.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py",
+      "target_sha256": "1a35d9d5b3989ba7728ce129fea1bcc98cce4b221f59cf8916788ffe0ab53475"
+    },
+    {
+      "menu": "Scripts/Archived Official/lineedits-84cb59e07adfae2c - 260e7da9.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py",
+      "target_sha256": "79277f27ddb0bbb959fe21aa8202e9ec831dc91bdc178d3b5a987bc50fe1f3ad"
+    },
+    {
+      "menu": "Scripts/Archived Official/pixelator-d50ad6638357e669 - e0e72487.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py",
+      "target_sha256": "dcffd1f6ddaf3cbbe1b72fa90816d42892ce5abccf5ff0098e7e5cc50c9270bb"
+    },
+    {
+      "menu": "Scripts/Archived Official/easing-bd6c8feb783ba845 - f3eacab2.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py",
+      "target_sha256": "085f44636bcc65544209dddd56c17fd8f76714e274804c73df8e72b0b1b69e47"
+    },
+    {
+      "menu": "Scripts/Archived Official/stickman-243ae486f9528e8c - 4d535b1c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py",
+      "target_sha256": "9684cefbfa0d7512e5101140a4fa113a40e948489021c2075898577cba810d44"
+    },
+    {
+      "menu": "Scripts/Archived Official/lighting-b823a76f79197d84 - ac4f5040.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/effects/pyqt-official/lighting-b823a76f79197d84.py",
+      "target_sha256": "e6c214da486d995c252a53d7f6f7d7cd51c9623296127905201eded6a24cf48d"
+    },
+    {
+      "menu": "Scripts/Archived Official/textobject-806fd814a2ea4d46 - 62985a90.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/textobject-806fd814a2ea4d46.py",
+      "target_sha256": "12d9a5ee6f2bc0e29da8cf6345c51694cbb8d1cadd0fbec33e28ab09df065497"
+    },
+    {
+      "menu": "Scripts/Archived Official/padnavigator-a58650b5461c0f48 - 49daacde.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py",
+      "target_sha256": "f6af280b00f13384566780930eb7aa33b57c5202a933315841d946fcf79cfe07"
+    },
+    {
+      "menu": "Scripts/Archived Official/domtraversal-8d5ea81a74e30222 - 96970bc9.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/domtraversal-8d5ea81a74e30222.py",
+      "target_sha256": "b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b"
+    },
+    {
+      "menu": "Scripts/Archived Official/compile-on-the-fly-5a8e48d2a1396cea - e2df986d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py",
+      "target_sha256": "861403a547af79bc8186b57b0b17ad05bd429de12f3085b950454c4fb0b1fcca"
+    },
+    {
+      "menu": "Scripts/Archived Official/stylesheet-876eab33b6a99e31 - 1cb34619.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py",
+      "target_sha256": "7f520972960792491bfb81a67a5a2553db1bd4f217ef896bccf4da61da76351f"
+    },
+    {
+      "menu": "Scripts/Archived Official/chapter5-listproperties-b88e7eb0fcb53264 - 89178a55.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/chapter5-listproperties-b88e7eb0fcb53264.py",
+      "target_sha256": "4fb0fc950f85967722ff58566b4e9f42b64423bb4e80c7ac24c7196d1628614a"
+    },
+    {
+      "menu": "Scripts/Archived Official/delayedencoding-43c6c2f6f5f036d3 - b3171285.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py",
+      "target_sha256": "f422be58b93475a25e7c2843f5e8e7271a8f31158afd21d261e6fdacd82b7af3"
+    },
+    {
+      "menu": "Scripts/Archived Official/objectlistmodel-68d664f95f48ce52 - d1039e80.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/objectlistmodel-68d664f95f48ce52.py",
+      "target_sha256": "fb7dca9b8bf9d7807cf77bd16fada62a2a66128ea1a986c0ccc3f5257e91ee24"
+    },
+    {
+      "menu": "Scripts/Archived Official/dragdroprobot-2cd6ffc2b2ed65bb - 81a228e1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "target_sha256": "c021aba5ca45ca9cf3b0fde77ceb654ff5077191380d83cef5d84c1aec9c8313"
+    },
+    {
+      "menu": "Scripts/Archived Official/broadcastreceiver-0bba8a80541ab04f - 28356b08.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/broadcastreceiver-0bba8a80541ab04f.py",
+      "target_sha256": "e2bf246db1f1259527f94660f89d72fe631c7a5d24372e7aa9b7738f8d3cd4f7"
+    },
+    {
+      "menu": "Scripts/Archived Official/fridgemagnets-da76600eaea7a121 - 5b02a0b5.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py",
+      "target_sha256": "b657e3128b0ad28f9576a502e00746424992ec1ad845fd6c2fbe2348399b93e0"
+    },
+    {
+      "menu": "Scripts/Archived Official/states-29f6a7d0a3bb6813 - 1d2321ab.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py",
+      "target_sha256": "85add73f044870978af99c4693ae4f0accc5ef89e4e183ac0da97171ec840f26"
+    },
+    {
+      "menu": "Scripts/Archived Official/stringlistmodel-b64d66dbce7274fe - d1a9a91f.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/stringlistmodel-b64d66dbce7274fe.py",
+      "target_sha256": "fb7dca9b8bf9d7807cf77bd16fada62a2a66128ea1a986c0ccc3f5257e91ee24"
+    },
+    {
+      "menu": "Scripts/Archived Official/extension-a1c26dbf9f995edb - e86dda6d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/extension-a1c26dbf9f995edb.py",
+      "target_sha256": "d662938fecf32e30d708c02bafce2e7468461be547ab33fd41c6405a6e4f94d9"
+    },
+    {
+      "menu": "Scripts/Archived Official/moveblocks-b7283d74afb78218 - f35bd388.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py",
+      "target_sha256": "e644d0b42d3821a7f4895d50e038ebca61313fb3ff29339289680dabbc2cd5a0"
+    },
+    {
+      "menu": "Scripts/Archived Official/overpainting-fcada4fff6524fcf - d32c3247.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py",
+      "target_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490"
+    },
+    {
+      "menu": "Scripts/Archived Official/pong-57a381bc8260c85d - acf20e7d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/pong-57a381bc8260c85d.py",
+      "target_sha256": "149d01b4e5bad67ffe3434a59d6697ee9282b7125fc069e6bd79952773db520d"
+    },
+    {
+      "menu": "Scripts/Archived Official/fortuneclient-fbb4e3c7288fed7c - faa966ba.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py",
+      "target_sha256": "7911898d499aa5b3efc71531c836bf7facd6c34678ff3b7e108da7ce91858508"
+    },
+    {
+      "menu": "Scripts/Archived Official/properties-d0a18273fa604bb6 - 738d335c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/properties-d0a18273fa604bb6.py",
+      "target_sha256": "ac5da87b44ac518f746d9eb23d5086f70ba29c22d3e7aef33c760c577f89a596"
+    },
+    {
+      "menu": "Scripts/Archived Official/elasticnodes-fff97a435b73d548 - 3045bdbe.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+      "target_sha256": "fa1dc74f37f29a33afd673b5e4a399838797d8cc355079d512769ec6d10e6a99"
+    },
+    {
+      "menu": "Scripts/Archived Official/textures-ed6d42d4faa7e0bb - 9e9f259d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py",
+      "target_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490"
+    },
+    {
+      "menu": "Scripts/Archived Official/borderlayout-f48955d43ed6196c - 6202cd51.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/borderlayout-f48955d43ed6196c.py",
+      "target_sha256": "658638cfc0891ae0a6ffabb4024cbe2aa63bec688958a28cfa46da47df90fd37"
+    },
+    {
+      "menu": "Scripts/Archived Official/polygonwidget-773db5c24ae98ffb - 0d82085e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py",
+      "target_sha256": "4d3016d00e140cfa1985aface43fd8f792dd4fff4b1cb015f9980ea56e0a3481"
+    },
+    {
+      "menu": "Scripts/Archived Official/mdi-1415facde30a25cf - 8c07d727.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py",
+      "target_sha256": "29271121483f2c5fabe6b0f0232602bcc32f9d0a0ccc69ad553149a5706d8199"
+    },
+    {
+      "menu": "Scripts/Archived Official/audiodevices-74af8d8d2d7774b8 - f4e77a0e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimedia/pyqt-official/audiodevices-74af8d8d2d7774b8.py",
+      "target_sha256": "b9e6800acf6b23f751e324271409a2c1fbbebb6762ebe27b40f34d9947c42a74"
+    },
+    {
+      "menu": "Scripts/Archived Official/part1-e1f313d96e43adff - eae8a41b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py",
+      "target_sha256": "9e55aefdb9d7e9318d5c78625a61b3b7433c065e05e4b7eeb783f34c64a76ec3"
+    },
+    {
+      "menu": "Scripts/Archived Official/simplewidgetmapper-39de33366209402d - 2dac449c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py",
+      "target_sha256": "fae480ee8369b1fd438007ad15563eacaa22313496ffff7bebd93cb574840ae9"
+    },
+    {
+      "menu": "Scripts/Archived Official/mandelbrot-0788354954c8e613 - 7418b84c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/threads/pyqt-official/mandelbrot-0788354954c8e613.py",
+      "target_sha256": "4d345d8c12bbc8f7325321f7a37d475707d3eb99cf06dfd9c5163ed8ade01517"
+    },
+    {
+      "menu": "Scripts/Archived Official/pydemo-bcfa5de0140286d5 - a36d0392.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py",
+      "target_sha256": "6e7bebaa969232585fd5a9ae8ae730d86609aaf01c8d40ace175ca0bc7094b4a"
+    },
+    {
+      "menu": "Scripts/Archived Official/coercion-ad499afe23726248 - 58ae730f.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/coercion-ad499afe23726248.py",
+      "target_sha256": "ac5da87b44ac518f746d9eb23d5086f70ba29c22d3e7aef33c760c577f89a596"
+    },
+    {
+      "menu": "Scripts/Archived Official/coloreditorfactory-0a3b15766909bdc3 - ec5d51cd.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py",
+      "target_sha256": "5b4aa3c5c7aaad2b40cb25c868c6aa41f828dbc884021db9fd2d630f5cd64534"
+    },
+    {
+      "menu": "Scripts/Archived Official/collidingmice-fcfaf9667206bbd6 - c12672da.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py",
+      "target_sha256": "5ab5eca135b2b64f36ae4e353e693ed0f1d357f76fb1f6d27c7bce163220f908"
+    },
+    {
+      "menu": "Scripts/Archived Official/modelviewserver-781a3a959215eb81 - 2a96b000.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/modelviewserver-781a3a959215eb81.py",
+      "target_sha256": "21b573f92776793422d2af4bcca441efc2aec48e3b94dc23f266e6bc9a9af6c2"
+    },
+    {
+      "menu": "Scripts/Archived Official/groupbox-f702b62aa47629ad - 6fbb50cb.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py",
+      "target_sha256": "e9e05eb140a7fa7fadfcaa6fdfee3ab938cde45069aed0386dcd82e101ca0db0"
+    },
+    {
+      "menu": "Scripts/Archived Official/calculatorform-27bf65f8b059fd96 - 49713bba.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py",
+      "target_sha256": "42d47b43e0880c9ba57cfd398ad2d8b86eac0a15f2c4f7fdea88fd914d1c71bb"
+    },
+    {
+      "menu": "Scripts/Archived Official/part5-94ab271d023d1ca3 - a8236a58.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py",
+      "target_sha256": "f9e7be0c6a886ef67ce31c46a39fe5cd612ca3877d15aa5a56d900849ce86ba7"
+    },
+    {
+      "menu": "Scripts/Archived Official/part2-55bcde890cd77ed7 - 819cf70f.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py",
+      "target_sha256": "490ac4f490f979500d01162453793a4f5481f668034c3ff7d29129bc763998ed"
+    },
+    {
+      "menu": "Scripts/Archived Official/application-7da7020aa7e2732b - 57f998ad.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py",
+      "target_sha256": "0b2bf313d85ad67cc32ca0df6a6a2e0a05a5a77b158524b91ff6f64a214e442a"
+    },
+    {
+      "menu": "Scripts/Archived Official/syntaxhighlighter-428c50abcef7adfe - 92bd2462.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py",
+      "target_sha256": "fa952ac943c746f6fe61a8dc95099e147c45a050bb96225e58035fe9b91d0e76"
+    },
+    {
+      "menu": "Scripts/Archived Official/classwizard-035f3fbd2b81479a - 3a59c388.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py",
+      "target_sha256": "93b55b89157b47b8676db5ce9e9a64641bf7d6290bc576f2c5af16079beef92d"
+    },
+    {
+      "menu": "Scripts/Archived Official/ping-30cfa75ad45b3447 - fd73cbec.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/ping-30cfa75ad45b3447.py",
+      "target_sha256": "4417c3601bbc07e6a684eba9d833879de4d7fc8827410896cb529903c14ca2f1"
+    },
+    {
+      "menu": "Scripts/Archived Official/videographicsitem-a57a89e523c75b7f - f02de915.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimediawidgets/pyqt-official/videographicsitem-a57a89e523c75b7f.py",
+      "target_sha256": "f5e1d6806285591e47890cd6d44c3a67961132a94bce31d6deda5b6ead51f9c9"
+    },
+    {
+      "menu": "Scripts/Archived Official/imageviewer-16456ba02f4b79cc - 24ab3aef.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py",
+      "target_sha256": "a56d05bd0de0204bb29e96995d043b9054104eb370fc80a36bc398db77a29bac"
+    },
+    {
+      "menu": "Scripts/Archived Official/querymodel-2c4c366f259d7d80 - 54b2fc0d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/sql/pyqt-official/querymodel-2c4c366f259d7d80.py",
+      "target_sha256": "ddc6283b5a5f6379fb10a24c3ba7508540c34584394c749176116fcd7ed5f8ac"
+    },
+    {
+      "menu": "Scripts/Archived Official/digitalclock-3040b9f6b267a196 - 46361bc7.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py",
+      "target_sha256": "05cd36c4fed99fb2fb4859c085da4511b2c4702879ba6766320ef1f352961345"
+    },
+    {
+      "menu": "Scripts/Archived Official/framecapture-ca47b83fbf3f31b9 - 75ddca2c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/framecapture-ca47b83fbf3f31b9.py",
+      "target_sha256": "a4a39af83910c72237ee28c89d9fed89b37016103784de6a9f9a08bb7b7c16d4"
+    },
+    {
+      "menu": "Scripts/Archived Official/2dpainting-c82d1af7d1a7b0cf - ce294cd2.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py",
+      "target_sha256": "61ca929ec547aabaa46105db6886b56880fd95d6fbc4626f0f7acd173f08c642"
+    },
+    {
+      "menu": "Scripts/Archived Official/draggabletext-700e96dec485e7a8 - ec422745.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py",
+      "target_sha256": "1f19f02956bad2c0356c76ef9a629d4eb451ccf6f97aa117042dc314301546f8"
+    },
+    {
+      "menu": "Scripts/Archived Official/broadcastsender-90721289b8108c4f - 1d5feddb.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/broadcastsender-90721289b8108c4f.py",
+      "target_sha256": "cfff739cb86415275d434df4f7a3d6bd2a59e3e5e267599feb63841c3fbae536"
+    },
+    {
+      "menu": "Scripts/Archived Official/puzzle-c5b4e385cc921da4 - 93188bd6.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py",
+      "target_sha256": "cc7fedd82e30ace1922903b78fde55439c508443c4e231503f9702dfd5165c62"
+    },
+    {
+      "menu": "Scripts/Archived Official/webbrowser-a1273c8940d43221 - af9f8cb8.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/activeqt/pyqt-official/webbrowser-a1273c8940d43221.py",
+      "target_sha256": "794d3101898dd5799fbbf6d96eeebfe0bb5b7f38ede5b5e51702ab2daf501d3a"
+    },
+    {
+      "menu": "Scripts/Archived Official/styles-9e21c6536fda7a23 - 9035cdba.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py",
+      "target_sha256": "80d61defa2ad1137e04ee1db8bb2b5e79876d64a034d4537e4c4f879402eaf3a"
+    },
+    {
+      "menu": "Scripts/Archived Official/systray-c1b878b63f80e733 - baa607b5.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/desktop/pyqt-official/systray-c1b878b63f80e733.py",
+      "target_sha256": "d4d7f6202af1e31ecb4a1992bc2951478131a4a0cb5dea6a83f8f0999676edf2"
+    },
+    {
+      "menu": "Scripts/Archived Official/anchorlayout-a96a7978c0b9f6ee - fabf052b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py",
+      "target_sha256": "60caa0dacfd8b8e41a4c8a5c83e5aced63a298e574433410c25e529452560ad2"
+    },
+    {
+      "menu": "Scripts/Archived Official/concentriccircles-912e5c751b20ce97 - bf7d0443.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+      "target_sha256": "03bb3127f4dfabc413625896f964436dd592f878d9fb483c37615582f6a1068a"
+    },
+    {
+      "menu": "Scripts/Archived Official/interview-090c76a87351e771 - 3819d7df.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/interview-090c76a87351e771.py",
+      "target_sha256": "3a7fe6366f52dbd7b4ab28b6a0cbdbb1124f2d1f9425daf1df97053d00f263e2"
+    },
+    {
+      "menu": "Scripts/Archived Official/canvas-36246fcbffecdeba - 0173dc35.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/canvas-36246fcbffecdeba.py",
+      "target_sha256": "fb7dca9b8bf9d7807cf77bd16fada62a2a66128ea1a986c0ccc3f5257e91ee24"
+    },
+    {
+      "menu": "Scripts/Archived Official/registryconnecteddynamicclient-333f0272885ca1b7 - c80ad8d0.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/registryconnecteddynamicclient-333f0272885ca1b7.py",
+      "target_sha256": "93a5261cbd68adbbe9ba54e27fd2d5035861e1536ca18564f1750f7852d24650"
+    },
+    {
+      "menu": "Scripts/Archived Official/chapter4-custompropertytypes-831ac8ea61da03f3 - 6398d9f1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/chapter4-custompropertytypes-831ac8ea61da03f3.py",
+      "target_sha256": "cbd25f2cde6efab037479ec38e939fb5ab0da67b119bc65ffb922e6da9d1ebc9"
+    },
+    {
+      "menu": "Scripts/Archived Official/part6-2719ebb336f3a29e - 92a4a296.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py",
+      "target_sha256": "621977e0c899a8df1e55c11c12660636942718a500f4a634c8a7e69f824b44bd"
+    },
+    {
+      "menu": "Scripts/Archived Official/modelviewclient-4dbe92cd1e720dce - 20d211c3.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/modelviewclient-4dbe92cd1e720dce.py",
+      "target_sha256": "93a5261cbd68adbbe9ba54e27fd2d5035861e1536ca18564f1750f7852d24650"
+    },
+    {
+      "menu": "Scripts/Archived Official/directconnectdynamicclient-54cbd9afababdf71 - 5b4fd9cf.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/directconnectdynamicclient-54cbd9afababdf71.py",
+      "target_sha256": "93a5261cbd68adbbe9ba54e27fd2d5035861e1536ca18564f1750f7852d24650"
+    },
+    {
+      "menu": "Scripts/Archived Official/combowidgetmapper-cc95f9719b8e4eda - fb430a43.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py",
+      "target_sha256": "741f446ef14303840be12852cc2b9383eb5ccd716c894ebff21dfc95aa6d44d9"
+    },
+    {
+      "menu": "Scripts/Archived Official/scribble-8e5aa13798c2763c - e0a8cc25.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py",
+      "target_sha256": "758bb2e898a2975343743f36ae11481cf14a3cee0094558998dcd70ccb1df640"
+    },
+    {
+      "menu": "Scripts/Archived Official/animation-835281a1ab864833 - 316f5db6.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/animation-835281a1ab864833.py",
+      "target_sha256": "fb7dca9b8bf9d7807cf77bd16fada62a2a66128ea1a986c0ccc3f5257e91ee24"
+    },
+    {
+      "menu": "Scripts/Archived Official/tetrix-e63bffc17abf2fde - d2045c91.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py",
+      "target_sha256": "e6ac9a6be3111f10e3901553f13b2e51aa5d75fbeffe1455875f311afcb4e5ad"
+    },
+    {
+      "menu": "Scripts/Archived Official/videowidget-481c128fba3a714b - cb73276d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimediawidgets/pyqt-official/videowidget-481c128fba3a714b.py",
+      "target_sha256": "50227f840de3315323255bae675e83ac557e2ab5bb6938a47fe965c0869ec795"
+    },
+    {
+      "menu": "Scripts/Archived Official/animatedtiles-1cf57c0f2ac8880a - abd2e40e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+      "target_sha256": "b6e3c4a0a1f6d66b75ce086fc2bfce13c5a72c498a71d960fc29a9e56fb2d8dd"
+    },
+    {
+      "menu": "Scripts/Archived Official/fetchmore-67170c89593ad35e - a97dceb1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py",
+      "target_sha256": "4c065e2db08b842393b55f14cb69e1ee8210f139cd110adf9860615a0128f9bd"
+    },
+    {
+      "menu": "Scripts/Archived Official/grouped-81a6f0d16c203608 - d29cc776.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/grouped-81a6f0d16c203608.py",
+      "target_sha256": "ac5da87b44ac518f746d9eb23d5086f70ba29c22d3e7aef33c760c577f89a596"
+    },
+    {
+      "menu": "Scripts/Archived Official/svgviewer-b2d717e4d43806d2 - 64d092b1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+      "target_sha256": "d2ccb421fa24dcc962e4abda1d081a7b5a0a4615a4aef6e1a4d2c8e4490c7665"
+    },
+    {
+      "menu": "Scripts/Archived Official/hellogl-1ad60855ca28f3cc - d171a8f8.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py",
+      "target_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490"
+    },
+    {
+      "menu": "Scripts/Archived Official/chapter1-basics-6b1f4f5590a5518a - c909b516.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/quick/pyqt-official/chapter1-basics-6b1f4f5590a5518a.py",
+      "target_sha256": "3730a3b39a987532372ad68d0d2253157e3270f025e67fec47a5715825439fd4"
+    },
+    {
+      "menu": "Scripts/Archived Official/dockwidgets-4efac54bae01fc62 - 9bbd821c.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py",
+      "target_sha256": "b14d351359ef448ca38eba7a8fcf66dbdf162dbd45f63f00718ac50096000cff"
+    },
+    {
+      "menu": "Scripts/Archived Official/spinboxdelegate-ddb20b1b68b18a91 - 6fcbc88a.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py",
+      "target_sha256": "3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084"
+    },
+    {
+      "menu": "Scripts/Archived Official/relationaltablemodel-9030a87a532b8d8f - bb5bbd01.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/sql/pyqt-official/relationaltablemodel-9030a87a532b8d8f.py",
+      "target_sha256": "fa0b65f1ae6d9709f7cb7f9347e5746b087804d5b0c7f041e2b58530b1f5d007"
+    },
+    {
+      "menu": "Scripts/Archived Official/tooltips-e62ce3eb648cfb4c - 63086205.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/tooltips-e62ce3eb648cfb4c.py",
+      "target_sha256": "8d50ef9c793862ff5f9d9a6ab488420e6560d33a2a7aa3a4a9f5969013069da4"
+    },
+    {
+      "menu": "Scripts/Archived Official/part3-f4d9e2927469223c - dfcb9438.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py",
+      "target_sha256": "10902474390e37e05036272cdf038648bfe81d1ae7ff5aa92e29121fa7c7e39c"
+    },
+    {
+      "menu": "Scripts/Archived Official/plugins-960c701fa6221ac5 - fab53597.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/plugins-960c701fa6221ac5.py",
+      "target_sha256": "58e339ce81be8eb05642f17e673d9a6d59178a104db02058cbe25adbba5057fb"
+    },
+    {
+      "menu": "Scripts/Archived Official/menus-60d40ce5671653cf - 23892b82.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py",
+      "target_sha256": "95fe3a5c2f8bb6eb3528403bcc0433ffac2550cc8cdbab52deaff372f17c4deb"
+    },
+    {
+      "menu": "Scripts/Archived Official/screenshot-65d15d1fbc1b15e9 - e7d9cb53.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py",
+      "target_sha256": "ccf007dd7401f196ee89893ff5ef61a82159473359591183adc9f58a142b1045"
+    },
+    {
+      "menu": "Scripts/Archived Official/attached-dd226ba9fbb7b330 - 2febdc1e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/attached-dd226ba9fbb7b330.py",
+      "target_sha256": "4d7ff622b8ddcc9d0050ae6a8d2d17809390adf6f46303e49bab62be08729a2c"
+    },
+    {
+      "menu": "Scripts/Archived Official/threadedfortuneserver-98f207907001ce47 - 542418fa.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py",
+      "target_sha256": "5366669ef1ec9f188248aee871b5bd9b58a492eab781d559342b98004b670b7e"
+    },
+    {
+      "menu": "Scripts/Archived Official/cachedtable-0b0d8d2fae153e5e - f0c5ee22.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/sql/pyqt-official/cachedtable-0b0d8d2fae153e5e.py",
+      "target_sha256": "983329e5248839393d3debd5ee96f588508c0293132094c7f99cb48bd84ddd66"
+    },
+    {
+      "menu": "Scripts/Archived Official/part4-4d19e62d93dd761c - 6472d43a.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py",
+      "target_sha256": "a9327f2e6fea9b64450f61fb021afd868beb20c92c376500a408a7e034531c52"
+    },
+    {
+      "menu": "Scripts/Archived Official/counterlabel-1321540b04f33117 - 5df6ba00.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/counterlabel-1321540b04f33117.py",
+      "target_sha256": "c1774ca6c35590a27b510bf3cfdd2e97dd88889f913c392166554343eaccb3ff"
+    },
+    {
+      "menu": "Scripts/Archived Official/load-ui1-b7db02f540cc7559 - 0be66cbb.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py",
+      "target_sha256": "71d988b0068fdd8f3d056a159f9009eaaf78fdd55caad4b81e6c613e1c1d1ffb"
+    },
+    {
+      "menu": "Scripts/Archived Official/codecs-19571722ed96aa9c - a2eca03d.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py",
+      "target_sha256": "c39fb1bab6762e4b2286af604794547e07de9f5a680b4c671e7882c9a6ac9470"
+    },
+    {
+      "menu": "Scripts/Archived Official/movie-a3b3cbe51c1506c6 - 6ec51b04.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py",
+      "target_sha256": "9c05a79ec3dcb20214e5b43b5d543c4cba665a31fabfe54d11c998c4397303ac"
+    },
+    {
+      "menu": "Scripts/Archived Official/part7-bb1c114d38fb756a - dc8bc7ba.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py",
+      "target_sha256": "aeba0c863b3b5ba27e8036c09088f7c728b758c5b7c5999129d4d631653457b6"
+    },
+    {
+      "menu": "Scripts/Archived Official/tabdialog-dab5fd4c94ec518d - 6f37f94b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py",
+      "target_sha256": "6fd6f74eddf5d3579fc8b46e70fab7de6444cd70d41a2776c1ca437b345fc2bf"
+    },
+    {
+      "menu": "Scripts/Archived Official/signal-0a13f60f5f0561db - 3240d755.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/signal-0a13f60f5f0561db.py",
+      "target_sha256": "4d7ff622b8ddcc9d0050ae6a8d2d17809390adf6f46303e49bab62be08729a2c"
+    },
+    {
+      "menu": "Scripts/Archived Official/controller-3cf5db95a691d200 - d0c04a8a.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/dbus/pyqt-official/controller-3cf5db95a691d200.py",
+      "target_sha256": "54924bf7f36c1d5f53a27934785703fdb9610a80d5f00d3a16173be7d5b59ee8"
+    },
+    {
+      "menu": "Scripts/Archived Official/customsortfiltermodel-029ea0dabe87ae57 - 07861e50.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+      "target_sha256": "a844adb5f7888373586f0e37f81025d991c19b96d5e205fdd376258a712c6e2d"
+    },
+    {
+      "menu": "Scripts/Archived Official/valuesource-738a22ef3062ed51 - 831d2178.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qml/pyqt-official/valuesource-738a22ef3062ed51.py",
+      "target_sha256": "92d28200fb31c2bc433069973ec8b38098257ed3d89cd07e34a59be6b3670489"
+    },
+    {
+      "menu": "Scripts/Archived Official/tablemodel-0677ebfd7fa2cc60 - b4800039.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/sql/pyqt-official/tablemodel-0677ebfd7fa2cc60.py",
+      "target_sha256": "983329e5248839393d3debd5ee96f588508c0293132094c7f99cb48bd84ddd66"
+    },
+    {
+      "menu": "Scripts/Archived Official/windowflags-136c45cc9f97c218 - 4c7ef32b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py",
+      "target_sha256": "481723b84c407a965f5b8cf226ec59e2f8a04e3b249067f859db6a0f61aee6bc"
+    },
+    {
+      "menu": "Scripts/Archived Official/localfortuneserver-a14d08fe23965bec - 388fb35e.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/ipc/pyqt-official/localfortuneserver-a14d08fe23965bec.py",
+      "target_sha256": "47abc6a76a26c6318bbd9db175b51a82422a69b7baad5b5904185e8b1536d93a"
+    },
+    {
+      "menu": "Scripts/Archived Official/qtdemo-85a56a1f3c25ccca - be4c6af0.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/qtdemo/pyqt-official/qtdemo-85a56a1f3c25ccca.py",
+      "target_sha256": "d5d4689ba9fb3647505034c9795e2980e74194385127c8a6049240e81c5aa707"
+    },
+    {
+      "menu": "Scripts/Archived Official/registryconnecteddynamicserver-b83377c9b48aec14 - ff1defab.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/remoteobjects/pyqt-official/registryconnecteddynamicserver-b83377c9b48aec14.py",
+      "target_sha256": "21b573f92776793422d2af4bcca441efc2aec48e3b94dc23f266e6bc9a9af6c2"
+    },
+    {
+      "menu": "Scripts/Archived Official/separations-2d36e0fe43f5d49a - 756d7d5b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py",
+      "target_sha256": "f5e1af92ebcf6d666477dc2b3f6d85cd324bc39ea1940982913b60b15c7285c6"
+    },
+    {
+      "menu": "Scripts/Archived Official/spreadsheet-bf3b39a8c2df8e94 - 678e36a4.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py",
+      "target_sha256": "09ded2c0d8220569aadaa24f61bc7adc08c771ec364b6a1c6ef7d47ef76fddf7"
+    },
+    {
+      "menu": "Scripts/Archived Official/storageview-cf15c3e91cdd8ded - 3f1ee5ae.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py",
+      "target_sha256": "a12471d83c190ca30ba3122d2e6cc0e9d9e8c2336d6ac30f57fa4b8282bbbe4f"
+    },
+    {
+      "menu": "Scripts/Archived Official/grabber-303ea3ee09c4677d - 263c1c32.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py",
+      "target_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490"
+    },
+    {
+      "menu": "Scripts/Archived Official/bubbleswidget-9941e3c752b3a3b7 - 96114aeb.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py",
+      "target_sha256": "b47b29427b10891338eba790c324094f4994753eeddf2d7cf54e0d45c2a154dd"
+    },
+    {
+      "menu": "Scripts/Archived Official/flowlayout-675c9f79650d7507 - 1ab07ccf.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/flowlayout-675c9f79650d7507.py",
+      "target_sha256": "ff39dd43ff5f952c02808fcfc57cc2b61db52468748f8ff024077dbeb5d35b65"
+    },
+    {
+      "menu": "Scripts/Archived Official/stardelegate-dc59f268ee01e364 - 4ba5ecec.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py",
+      "target_sha256": "d11286ceb3e9b813bbda21d1f820c224694722b2b3476c7b19a0791cd6fcc311"
+    },
+    {
+      "menu": "Scripts/Archived Official/simpleselector-ae16288fede27692 - 4861da3b.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/simpleselector-ae16288fede27692.py",
+      "target_sha256": "b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b"
+    },
+    {
+      "menu": "Scripts/Archived Official/datetimeedit-7ba49e67588b1329 - c4d456d1.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py",
+      "target_sha256": "465bd7c5044e1e51c19b62a764695a8d8d37350c06d831db8fee249c8a5d2de1"
+    },
+    {
+      "menu": "Scripts/Archived Official/simpledommodel-a59dae9770bfbefb - f1d9c486.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py",
+      "target_sha256": "50abde2890c2ca53384733ee94f77b54e3b4b7783efba2a965fc8b68a9becb42"
+    },
+    {
+      "menu": "Scripts/Archived Official/player-5eb4b9eaa2d5c9dc - 96a326ef.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/multimediawidgets/pyqt-official/player-5eb4b9eaa2d5c9dc.py",
+      "target_sha256": "22b24e002b250c6d767b9705a7efaca3be0a3b1e85421f89586691863a09e276"
+    },
+    {
+      "menu": "Scripts/Archived Official/analogclock-d6dc56a5318ffe71 - f0171bec.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py",
+      "target_sha256": "2587f9eecc25e8a36a1e57e0792c8fd923b8bb0f2385067adb6127f7a0b2f052"
+    },
+    {
+      "menu": "Scripts/Archived Official/textedit-b34b2f696a977e74 - 1ce53083.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py",
+      "target_sha256": "bb3b777a600d3ffc34298e240ad0225a4be0594e6b581846b1853361817dd940"
+    },
+    {
+      "menu": "Scripts/Archived Official/load-ui2-b9660f4ee653ca01 - 798d4c86.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py",
+      "target_sha256": "bac03619bb9e9872cba334aad42f9d5310db3f7a517b4e0fb42dd48448cebd90"
+    },
+    {
+      "menu": "Scripts/Archived Official/charactermap-499e965d86347920 - 9efd1f93.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+      "target_sha256": "e5300e2687fa734a95fc8aaae9b29ee382902f07e8cb5c170137e76600ab2d87"
+    },
+    {
+      "menu": "Scripts/Archived Official/blockingfortuneclient-79f3a23172968ad2 - cca8ee31.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/blockingfortuneclient-79f3a23172968ad2.py",
+      "target_sha256": "4067d4ed059520a71dbdbb7ffd80b6753182daeed7fee50fc51c43e844bc1085"
+    },
+    {
+      "menu": "Scripts/Archived Official/loopback-ebf87d5f5390b0fd - f81299ee.py",
+      "target": "rescued/part3/pyqt-official-ports/ports/network/pyqt-official/loopback-ebf87d5f5390b0fd.py",
+      "target_sha256": "ac195fe1f0e0e0fb1564a793bc80e248557451b173ab10fe3d1de943119c5f98"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Signals and Slots - 79cc15680bc2cebb.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-79cc15680bc2cebb.py",
+      "target_sha256": "12055c29c768be9a20ad8209eaa9433bad770beae088addbd9ec52c4728c5322"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official tooltips - e62ce3eb648cfb4c.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/tooltips-e62ce3eb648cfb4c.py",
+      "target_sha256": "698bd103c2938c32d97ee15e5243f50e708f5064e2fe6e9bb8d2684350bfdf01"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Xmlpatterns - Official schema - 1e5d0f7289e1b36e.py",
+      "target": "rescued/part2/ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py",
+      "target_sha256": "1070c8a653367f30da3a68b3454adafcafd8d620b0fd1140033c43b2b1b73830"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official digitalclock - 3040b9f6b267a196.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py",
+      "target_sha256": "d6c1f46efc951c302c279b04ea21a22589ee61c45254e37d7569d4f906b8b446"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Painting - Official svgviewer - b2d717e4d43806d2.py",
+      "target": "rescued/part2/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+      "target_sha256": "5e88ce4d8959a0e13df6478a7811d6f69bbaa217ecef4728bb1f3bcfd2a28105"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part1 - e1f313d96e43adff.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py",
+      "target_sha256": "9abe23d4a0af7ee2274bbbe0cef3a80dc550dd6c0d3ac186b0dc640c8d86a0a0"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official broadcastreceiver - 0bba8a80541ab04f.py",
+      "target": "rescued/part2/ports/network/pyqt-official/broadcastreceiver-0bba8a80541ab04f.py",
+      "target_sha256": "42ca8d5473c19dd7a6f52fb6f5e40446bbbf6c35e9be4c1df580b2033929975f"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official stylesheet - 876eab33b6a99e31.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py",
+      "target_sha256": "9ad804c861b30854e224744b49f597ece1fc2f27455db148ee18eff7408b85eb"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official application - 7da7020aa7e2732b.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py",
+      "target_sha256": "8a585813b989860e1b363d0f5b08ea02d89e8d3afca2df88578acf7eb32b52c1"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Layouts - Official basiclayouts - 2f94fe07de765888.py",
+      "target": "rescued/part2/ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py",
+      "target_sha256": "6fa0e1268b7c81dbf6c373ae9ebb98ef86ffa0d7c8207ab78a003e65fc49a00d"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official styles - 9e21c6536fda7a23.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py",
+      "target_sha256": "f609aa16c374278db565ccbac19409df42928b9515f5dc62ecea00929561c679"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official fortuneserver - aad57160cfd51894.py",
+      "target": "rescued/part2/ports/network/pyqt-official/fortuneserver-aad57160cfd51894.py",
+      "target_sha256": "c99314f9440fd178a7397108f7404747250e1290f0a05dccde962946d1db1eaa"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official charactermap - 499e965d86347920.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+      "target_sha256": "3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Richtext - Official syntaxhighlighter - 428c50abcef7adfe.py",
+      "target": "rescued/part2/ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py",
+      "target_sha256": "4dedd8950289ab0d9bd6f048d6c05bcfc846a26245c9b78db38ced676baff2ef"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - QLabel - ce3e17a7a2a03a02.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-ce3e17a7a2a03a02.py",
+      "target_sha256": "ad4c506e0d87288f4e43d92061f1d2890bc4fcfcc2af8994fe81c81dfe7fd860"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official movie - a3b3cbe51c1506c6.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py",
+      "target_sha256": "2e54c5e62a39611be5244888127c8a36bec8461a8f1af584aeb56b3e2ce05e39"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Multimedia - QPainter - 1151b1cb878f192a.py",
+      "target": "rescued/part2/ports/multimedia/pyqt-examples/main-1151b1cb878f192a.py",
+      "target_sha256": "1b1bb01481bf852d248c294262da0aa4b9d951612f54d67e3dc911ec2ce5f4a5"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official lightmaps - d8803c2afaabf3d5.py",
+      "target": "rescued/part2/ports/network/pyqt-official/lightmaps-d8803c2afaabf3d5.py",
+      "target_sha256": "01f0daa234beef21a9d149bf661f21fcafe2d47095547c1d7fdd7afb04f8491b"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official calculator - 356e4e807f1e789f.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py",
+      "target_sha256": "c85c69f307812c61f0108ad203a029d9513470b737af9c06c65d1d76e6befecc"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - QAbstractTableModel - 31fc7691c18d55f2.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-31fc7691c18d55f2.py",
+      "target_sha256": "14e8f37517dc30311d6a6c6419dd0c5e7d7850a200cf6ebd30aea06a0409074d"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Painting - Official basicdrawing - 907f39d8bf387501.py",
+      "target": "rescued/part2/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py",
+      "target_sha256": "ee842206b60ab167e4f45919a779a784e7154c2d201f1fad86b389d6436575b8"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Threads - Official semaphores - b95b687bbc541207.py",
+      "target": "rescued/part2/ports/threads/pyqt-official/semaphores-b95b687bbc541207.py",
+      "target_sha256": "1a82b277e5e459b1ab17380c23be1364399449be1db325f9cd0f0d7aa4161144"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official sliders - 36805750b888fba6.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+      "target_sha256": "aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part7 - bb1c114d38fb756a.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py",
+      "target_sha256": "76dfa4471b683cfa4b9c8f199fdda69033b367ff7758f88571bf65ea03eccb56"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official menus - 60d40ce5671653cf.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py",
+      "target_sha256": "5db7de5bb81c11df39be0c6e83c9a39d1f42463982413e62eb27253f0efb58a6"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official windowflags - 136c45cc9f97c218.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py",
+      "target_sha256": "acfe3a128c5c017bb4b0933c9ac78275bc755ac3ce5dd2171667fa061777583d"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official broadcastsender - 90721289b8108c4f.py",
+      "target": "rescued/part2/ports/network/pyqt-official/broadcastsender-90721289b8108c4f.py",
+      "target_sha256": "81fc0d312685559e33f55770c1c18712270650e596f2b95c0dc55621c5a83ca4"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official imageviewer - 16456ba02f4b79cc.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py",
+      "target_sha256": "03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Qt Text Editor - a601a41dc5a3c23a.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py",
+      "target_sha256": "b796aaf96533d3770f1ad52a2d2a1b9535f7c4f2bd21eb27fb82d74a2bf3f204"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - PyQt Widgets - 2d8e8e07a6469499.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-2d8e8e07a6469499.py",
+      "target_sha256": "9555034b87536005ea521dc9070c5359454aff7d408d63341e62b106e01ad980"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official tetrix - e63bffc17abf2fde.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py",
+      "target_sha256": "cd6093c00c98130ddb6b55491e1ce680cf168884adb704b4420f36b0419025c0"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Richtext - Official orderform - c997677a2bdb4f34.py",
+      "target": "rescued/part2/ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py",
+      "target_sha256": "05648294ef7afc8ec0778362266046e2af2d2c7b5072d2a8307b0a85882cce91"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official scribble - 8e5aa13798c2763c.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py",
+      "target_sha256": "190d94c10462c2d149efb79fa2f885bf62f55c44bb60addf45bf862f04f2c9a5"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official blockingfortuneclient - 79f3a23172968ad2.py",
+      "target": "rescued/part2/ports/network/pyqt-official/blockingfortuneclient-79f3a23172968ad2.py",
+      "target_sha256": "af03d261d537f43fd4dc1d95afcd955d8541a5d93319682ab9ef1101ae57b008"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part6 - 2719ebb336f3a29e.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py",
+      "target_sha256": "e581fc63789f3d249c462a28950643cf6f96d14ca386ac6c75f2d137474af0f7"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tools - Official settingseditor - 9e41e71c41b116a8.py",
+      "target": "rescued/part2/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py",
+      "target_sha256": "1433012d1ff11a45c6414df8c625c99fc9e17cd93a91d7bc4e518ebfac5dd890"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Qt dark theme - a33bb8c2dce4e115.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py",
+      "target_sha256": "f42a89468298fbbba6432ccc349fc4baf5b78e1988f10a11c5eb545cbb81d299"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Layouts - Official borderlayout - f48955d43ed6196c.py",
+      "target": "rescued/part2/ports/layouts/pyqt-official/borderlayout-f48955d43ed6196c.py",
+      "target_sha256": "61dce583b8707e5724dc6e28f4f86b2b32884dd9af5f4a25a3a145a54d146dd4"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official fortuneclient - fbb4e3c7288fed7c.py",
+      "target": "rescued/part2/ports/network/pyqt-official/fortuneclient-fbb4e3c7288fed7c.py",
+      "target_sha256": "44d8bdaa6054cc2fff97fea6105bff9676daa0ccbee09d40dd4d723e75445974"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official loopback - ebf87d5f5390b0fd.py",
+      "target": "rescued/part2/ports/network/pyqt-official/loopback-ebf87d5f5390b0fd.py",
+      "target_sha256": "3bedd6701165136b3a1fc0d865adf890d1c64862b9bc0f8386fd64e21ec3f633"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official shapedclock - 248e64416b9b218c.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py",
+      "target_sha256": "26c546057fb504d9b9100cce022ffe77bdf32a47d32fa30869d726a29d2df87c"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Richtext - Official textedit - b34b2f696a977e74.py",
+      "target": "rescued/part2/ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py",
+      "target_sha256": "74dad1c6c8dec850fbe1e21ceb88c0ac46f8dc61d6e7b1cd9cca4f1fd26f4efc"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Pyuic - Official compile-on-the-fly - 5a8e48d2a1396cea.py",
+      "target": "rescued/part2/ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py",
+      "target_sha256": "669943c28fe48b9339734d43a1d0113ad8c1029f7af359f33335686fb5f7dbb4"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Threads - Official mandelbrot - 0788354954c8e613.py",
+      "target": "rescued/part2/ports/threads/pyqt-official/mandelbrot-0788354954c8e613.py",
+      "target_sha256": "b58d3caa4e80202c5067b4e7b86eabc46b7dd92ae61a3da7f6be28bc28f43414"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tools - Official codecs - 19571722ed96aa9c.py",
+      "target": "rescued/part2/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py",
+      "target_sha256": "fe2257ea8123a18e3995ca919937fd16a02845c939d2ea695fd99cea327cd3a9"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tools - Official i18n - eca1cd9ef1528607.py",
+      "target": "rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py",
+      "target_sha256": "6253c957368cdf32b0a298001f6bb07cec0abc724e4f0918918facba0cde245f"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official recentfiles - 09afeea11be83f4f.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py",
+      "target_sha256": "94b77a8efda276c9f64222c2cc0d77b59aedc59f1731a309ab7ad7eb29f18465"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Painting - Official transformations - c12a2071adbab88b.py",
+      "target": "rescued/part2/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+      "target_sha256": "af4e3e14274a354fcc26514a063d8d9ba38d6f5930cf272fc4cb28543be1ebcc"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Richtext - Official calendar - c56cf1699b07b350.py",
+      "target": "rescued/part2/ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py",
+      "target_sha256": "f768c2abf7a3db17ebf11663d65b49bcee75ec46b4fcdb9c1e07ec89256334d7"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official threadedfortuneserver - 98f207907001ce47.py",
+      "target": "rescued/part2/ports/network/pyqt-official/threadedfortuneserver-98f207907001ce47.py",
+      "target_sha256": "1a2d92f70bfc95d27b54284863ec07891b3bce6285c257777888317e2b537af1"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official sdi - eba98690c141a070.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/sdi-eba98690c141a070.py",
+      "target_sha256": "35207954c9f927dff0c83e80d6d79e42a6597aab8b10b512a8fa0229a1be60ac"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official spinboxes - 468179092748a72e.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "target_sha256": "cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Opengl - Official 2dpainting - c82d1af7d1a7b0cf.py",
+      "target": "rescued/part2/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py",
+      "target_sha256": "f6d04cce9f39c1d796a987e2b3d5c1b24ca3ed5cba5c5d18b79a1909e47cd854"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part3 - f4d9e2927469223c.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py",
+      "target_sha256": "e3c896b0433c16483809b78d73285351474882d07a50211e873c1b312283e190"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part2 - 55bcde890cd77ed7.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py",
+      "target_sha256": "600a0df0cc3e3399148d55d787e311454f71ce3b82b223f4ed8c6c3369e276c4"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official calendarwidget - b91effc45f81fbb0.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+      "target_sha256": "5672f6757f558382ba7c7dce22a8e1effad9a707adcea7d2fa916a776a8e4bbb"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Pyuic - Official load_ui2 - b9660f4ee653ca01.py",
+      "target": "rescued/part2/ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py",
+      "target_sha256": "520f0e863b678913c68902e2b147375b4e81d9b34fa6db02b19bfc605dcec821"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official analogclock - d6dc56a5318ffe71.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py",
+      "target_sha256": "891e85eb482cdfb820920f4a13a618e0d997806b94951f9d236ae46e0b61d365"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official icons - 505d60a757bbc177.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/icons-505d60a757bbc177.py",
+      "target_sha256": "68749115c6766e274fc7114a18ab9ef26a1cd0434241b6abab5ddb6eeed00010"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official dockwidgets - 4efac54bae01fc62.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py",
+      "target_sha256": "20ab7a5fd5b64e7c3b0cf66bfb80fbca9f8301317b314bb95e66d76b4475fc8d"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tools - Official customcompleter - 10ef4dacb4db4080.py",
+      "target": "rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py",
+      "target_sha256": "63ef7a0c41c7c25fc66ebb8373ea523319ee9655b7995a9ed27956e30fd9b931"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Layouts - Official flowlayout - 675c9f79650d7507.py",
+      "target": "rescued/part2/ports/layouts/pyqt-official/flowlayout-675c9f79650d7507.py",
+      "target_sha256": "65849d6ff9ff5faa2463b6f6a055a549adb7f9ab4f2598271b38edcd08af9525"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official mdi - 1415facde30a25cf.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py",
+      "target_sha256": "4a7cab42d4c0c13dd09e5c098e6758007f81371fbb90b832d25c1f44e055609c"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Painting - Official painterpaths - 13a6bb9a9d2b9037.py",
+      "target": "rescued/part2/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+      "target_sha256": "daa00fe5bed6797d682cb3b219d56fc73d8a0ec8b094144281efa69939008db7"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - QVBoxLayout - f5ddfd0eaacbf845.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-f5ddfd0eaacbf845.py",
+      "target_sha256": "a65dbc82ca4327d2457d14889643dc754f1378a0878804c8a8fb7dd301c5eaea"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tools - Official regexp - 626fd0acec74fd91.py",
+      "target": "rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py",
+      "target_sha256": "c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official groupbox - f702b62aa47629ad.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py",
+      "target_sha256": "1a3228685ce42992156a888fad35efa8ce67f180aba6bb3727e413921e19d684"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Mainwindows - Official separations - 2d36e0fe43f5d49a.py",
+      "target": "rescued/part2/ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py",
+      "target_sha256": "fedecc268d265622812e43e61b3d80d9c4dbbb812411cc177a2f37d58ad1b039"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Network - Official http - 409f3d46a9555f23.py",
+      "target": "rescued/part2/ports/network/pyqt-official/http-409f3d46a9555f23.py",
+      "target_sha256": "b17195fea6d4c5a79ae545b65c50cd517d1a4895330a0a1141cdb4b6f1026985"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part5 - 94ab271d023d1ca3.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py",
+      "target_sha256": "7aa9166010582ceb9a77f4e71b5b8f64549734be8b3d9bac795ac443d56df337"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official wiggly - 509e781f1267967f.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/wiggly-509e781f1267967f.py",
+      "target_sha256": "495321c9ddd2c31e0cf6952428c685f39d7ee02dc162dbb224240ee79365f7c9"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Painting - Official concentriccircles - 912e5c751b20ce97.py",
+      "target": "rescued/part2/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+      "target_sha256": "6d2f8e76efde17106dd50a3c6823b20a8053823bd1629a297654ed6eaed02f98"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - Official lineedits - 84cb59e07adfae2c.py",
+      "target": "rescued/part2/ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py",
+      "target_sha256": "c4ea04fbb08f8b0cb681085d175f443b79207289a263447b31aaa503868d41c0"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - QListView - 1bf0ade33cd6bf12.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-1bf0ade33cd6bf12.py",
+      "target_sha256": "aa8dc3a9b86ae1d25d1fa860a0055b4463cd12db06914c02350206c017ee0b27"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Tutorials - Official addressbook part4 - 4d19e62d93dd761c.py",
+      "target": "rescued/part2/ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py",
+      "target_sha256": "83061e51b99957354185f6c9bd30f3142644dc269dc4d5b93cd67866a5e11739"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Widgets - QTreeView - f5bf995791f1e87b.py",
+      "target": "rescued/part2/ports/widgets/pyqt-examples/main-f5bf995791f1e87b.py",
+      "target_sha256": "b37d1c1f15683db25e62b9a720556353ea43fe412357b40cd95c1c49a09f1e99"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Threads - Official waitconditions - 27709a02d37b9ba9.py",
+      "target": "rescued/part2/ports/threads/pyqt-official/waitconditions-27709a02d37b9ba9.py",
+      "target_sha256": "a00f70fd1a22242b65a933fe20c0a7c2452403d545ad6db7ed9284c46a48fe6b"
+    },
+    {
+      "menu": "Scripts/Archived UI L-Z/Pyuic - Official load_ui1 - b7db02f540cc7559.py",
+      "target": "rescued/part2/ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py",
+      "target_sha256": "b91dc11bed202601b5da5e6fcc073dfe0a15258b10f559a1b773b9be23673578"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - indent2 -- 50bc59af4413.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/indent2.py",
+      "target_sha256": "0b6345e7036af693bbfb3d2fabd660c87302a3ecf09c3cc09ad0cebc63cd58bf"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasHealthPanel -- a8fc854a0efc.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasHealthPanel.py",
+      "target_sha256": "0e45770b8ae90e6c6f845abd384a093081a2e61b083ecc03bd526bfc58749e20"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - drakeViewer -- a3f42750154c.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/drakeViewer.py",
+      "target_sha256": "3ebb04983927132eccb8625a3804c4d221b92f79dec6a71b939fa176e534f71a"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Metrics -- dfe1a38c6a3a.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Metrics.py",
+      "target_sha256": "c1925f3c9e3816f35dc66b9c259af290489b963a503379a9de5c9291cf00c83d"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - LiveCoding - bytesong - bytesong -- a0bb7569538f.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/LiveCoding/bytesong/bytesong.py",
+      "target_sha256": "616e025143000ec66217eaf5cfc0d5f6d6b2a73fccc67cc45f2dc8e3d87c1696"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Bluscream_pyTSon_plugins - scripts - channelGroupManager - __init__ -- a53d1119bebc.py",
+      "target": "rescued/part3/sources/Bluscream_pyTSon_plugins/scripts/channelGroupManager/__init__.py",
+      "target_sha256": "f99c70b0e11c813defa7e12e0dcfe9084ac0a995431dfdc72da910caa55a8f85"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - eryar_PipeCAD - lib - pipecad - __init__ -- 126abde76ca2.py",
+      "target": "rescued/part3/sources/eryar_PipeCAD/lib/pipecad/__init__.py",
+      "target_sha256": "3ae7a3cc4f4ff364ff45e53a626dd142675647e2f853c3bf1689a4ad94c02cc8"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyScriptingConsole - example -- de08b4b212e5.py",
+      "target": "rescued/part3/sources/jcfr_PythonQt/examples/PyScriptingConsole/example.py",
+      "target_sha256": "47f8c26a441356be5b789d7a5682ce4a67d4cfb7230ed42dae54e120df9b08f2"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Utilities - Scripts - qrcc -- 6189ed746ae3.py",
+      "target": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Utilities/Scripts/qrcc.py",
+      "target_sha256": "ad8f64ff690e8145a8a0ab9f37e836007b1f12e87308a654aebd1d51fe7ee135"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Tutorial - 04_Using_Qt -- 414f62d07eb9.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Tutorial/04_Using_Qt.py",
+      "target_sha256": "1e2a200291b6832e6f858c7e4f033ec67e8b6073c90724ca07c766de7231b6d5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - typerig-toolbar -- b39f1b4ecdc9.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-toolbar.py",
+      "target_sha256": "8c6d91ae9c336232c746945b0d9f9bcc09821f4171a209da59721ff0981ef9f6"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testRosPlugin -- 5a6c79fe2da4.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testRosPlugin.py",
+      "target_sha256": "348613a416bf09d250b1639f8ce1d0f66f12e3b4bb8d2f8910478dacb51dbb8c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - CopyKerning -- 70cc5c11d65f.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/CopyKerning.py",
+      "target_sha256": "3cbbc54d13cedfc57a67195188955c93eeec4c762d7af3ada2331e1cabe193e9"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - user - custom_graphics_view -- c015a0126813.py",
+      "target": "rescued/part3/sources/knossos-project_knossos/python/user/custom_graphics_view.py",
+      "target_sha256": "ade1e6d73dbefc75edcd685f0ca2a4262a7f4c0b3d0889e4c1d5796807b290dd"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - CleanKerning -- d442d4eb0c43.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/CleanKerning.py",
+      "target_sha256": "406c81b9c485fc4be30c5bc9bbc185e0f031dfe90843d32d7005eb9279e839d4"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - localscene - loader -- 06dd307b4794.py",
+      "target": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/localscene/loader.py",
+      "target_sha256": "e315c0d1843b72b6337502d819b6bd14d7cd676b4964a0661074702a8ebee438"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - test -- defae7fe69f6.py",
+      "target": "rescued/part3/sources/carthurs_CRIMSONPythonModules/test.py",
+      "target_sha256": "a0481c1dabfcac2b971ba86d8088b1bc54bb801c9d4939cbb3f3f570498ffe84"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - consoleapp -- 073174dd7ad8.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/director/consoleapp.py",
+      "target_sha256": "f0b19aabaf8511cfb7e20968d55aca9af155334c72d620cc8f95866d89089115"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - localscene - loader -- ad7d2ad63a02.py",
+      "target": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/localscene/loader.py",
+      "target_sha256": "e315c0d1843b72b6337502d819b6bd14d7cd676b4964a0661074702a8ebee438"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - WIP - ftable_viewer -- 0a81cf0fdd35.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/WIP/ftable_viewer.py",
+      "target_sha256": "9a9939a6f34a8043cd007de32a849f9b3c149738e90359ef835f247b173a5da5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - DeltaNew -- 81ced3861fed.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/DeltaNew.py",
+      "target_sha256": "40e47ffddedae0583e3e9256d57c56dddc30790afb5994d627a7808bda45c7f4"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Anchor -- ae6ed28abf18.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Anchor.py",
+      "target_sha256": "ff215fef5eab87b6dde9a4f225a87a0cb70fbd1ae95dfad9154f3e086c8b0917"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - core - algo - matchmaker -- 71e93ee8c857.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/core/algo/matchmaker.py",
+      "target_sha256": "b606931e430b897c2970a85a6662ff7898690fb90f27dbe82b57f7ad486d92fd"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - examples - graphics_view -- 5e7aa976f62b.py",
+      "target": "rescued/part3/sources/knossos-project_knossos/python/examples/graphics_view.py",
+      "target_sha256": "052c07188fc22262b362d092d7cf85eb17cff0496651b28f609a2cca0963b67c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - invalue_chnget -- 3cf3c43ad8f9.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/invalue_chnget.py",
+      "target_sha256": "71daae5ad508f2d0e563153855528ef1ff5e0f6b8549311a62c48ef3e90c201b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testTaskQueue -- 26a64b770336.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testTaskQueue.py",
+      "target_sha256": "901e5c81c51e4a570c23e8b258f2dcb11fe795d787e95f0742515874c7145d8b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - proxy - fl - gui - dialogs -- 87c4bc59b698.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/dialogs.py",
+      "target_sha256": "46d4c83cd109605a6d89815cfbe450f34bff8987bf66fa7a82f3f8b025519556"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - upgradeScene -- 855bace19da3.py",
+      "target": "rescued/part3/sources/carthurs_CRIMSONPythonModules/upgradeScene.py",
+      "target_sha256": "0b8b1144d4db0f15ac122a58eaa451d15d22e1c182b8d2358139e8c82f034a6c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Explorer -- d8a031fd5c5d.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Explorer.py",
+      "target_sha256": "537e4542754d0d7d0fe34ed6c0e142d23e81eb5c757a7da97ffa592c9e85a03d"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - strset_list -- 87b8485f3ca0.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/strset_list.py",
+      "target_sha256": "ab94e3837566b26468ce9d0348df4bbad1a3eb58f90cd44b7871a333527af167"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-Comparator -- de9b8aadc700.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-Comparator.py",
+      "target_sha256": "cea5ae77d2f5e712c98329f651c97e2ca1022f81bb5fb3b886c060b06c00bb4d"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - app - WrapPythonQt -- e1f1724a6b9b.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/app/WrapPythonQt.py",
+      "target_sha256": "72938ac6f0df23b31b8b72cfa851c63649e496c5c84ee4bdfca3d61c4f38b00e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node -- df7e60bc2dad.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node.py",
+      "target_sha256": "c67e7957ce3894d1f4cfd3de1d06b1147424b50df75b020496532af316df22c9"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - mainwindowapp -- 34a44c939e9d.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/mainwindowapp.py",
+      "target_sha256": "842d3b0fcb201d3681ea0670a7f875ce830232b75f48b79b844b0c098ae9b91f"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testTaskQueue -- 7e3ae994f9c9.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testTaskQueue.py",
+      "target_sha256": "901e5c81c51e4a570c23e8b258f2dcb11fe795d787e95f0742515874c7145d8b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - robotposegui -- 9ac99f81fade.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/director/robotposegui.py",
+      "target_sha256": "87381577e34bf26e439894a306e1f2d5f885ea88f1da455a03c38672b853e281"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testAtlasCommand -- 8399d02036e6.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testAtlasCommand.py",
+      "target_sha256": "e9625843ddf39808e93862ee9ca9f35ca8f82b1d5a6193f8c1066769e233f7e5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node_align -- d156ed09fd46.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_align.py",
+      "target_sha256": "e83fb3e15bd7fbb3422506e0ab6032c7ac86609cc8edd77152199eb844d1e425"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - indent2 -- 0c02b8767224.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/indent2.py",
+      "target_sha256": "0b6345e7036af693bbfb3d2fabd660c87302a3ecf09c3cc09ad0cebc63cd58bf"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - proxy - fl - objects - sampler -- b36197a778e8.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/sampler.py",
+      "target_sha256": "0abf8fb676a055dd7b55e0d05a9536fc920040a438b6559b9049dd605ca2dbe8"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - mainwindowapp -- 6c9bc00d1527.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/director/mainwindowapp.py",
+      "target_sha256": "3305f0ffb7e6b6ef42bf5799c11e4f45076f6344c6ffb52c0754e2b93b53bb6e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - OpenGL - openGL -- 40fe7decaef1.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/OpenGL/openGL.py",
+      "target_sha256": "43e6c1cf0f1b650c0744351b7b265610858183809308462445ceb6f1294e7f4e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - LiveCoding - bytesong - bytesong -- f72906f79bc3.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/LiveCoding/bytesong/bytesong.py",
+      "target_sha256": "616e025143000ec66217eaf5cfc0d5f6d6b2a73fccc67cc45f2dc8e3d87c1696"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - cameraViewer -- f187483f71dc.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/cameraViewer.py",
+      "target_sha256": "545aea86789535e21d95299eff5273de1b12e771962815c801dc75329a5e8ac1"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testAtlasCommand -- a0dc0644e54c.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testAtlasCommand.py",
+      "target_sha256": "c334add3307728c762ec3a2dac270014881b1d4aef260f25836aab4ca2aa9d5e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasRecoveryPanel -- 83fa155cfeb6.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasRecoveryPanel.py",
+      "target_sha256": "7f006660de46abad41e3618db341bc61882c11643cad0d2bc969ed103cdef011"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Useful - UI_with_QtDesigner -- 77b62bb6235a.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Useful/UI_with_QtDesigner.py",
+      "target_sha256": "1b1e67db765f980ecce69ba9fb4fd153127a2f303c76d8b75888f24f0e1c57a6"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - examples - sreenshot -- 46c74d7d0cc1.py",
+      "target": "rescued/part3/sources/knossos-project_knossos/python/examples/sreenshot.py",
+      "target_sha256": "a8c1ea1061c600074f0dd47543da947969ba42441149512e694825e46eeede3b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - upgradeScene2 -- f0bd81f0d143.py",
+      "target": "rescued/part3/sources/carthurs_CRIMSONPythonModules/upgradeScene2.py",
+      "target_sha256": "702386cf7bd60d44e553f18fa75679e76f41fa54d2ef530c7117826e84f1ddef"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - drakevisualizer -- bd8f9cdd251c.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/director/drakevisualizer.py",
+      "target_sha256": "7701bf5e09e69a8b63aa0c6547cf9635ab7630cc838056b350b6319714d7395c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Guide -- c8df2cdad3da.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Guide.py",
+      "target_sha256": "148191f7064a60b9ba2fcd18bcc220ab42ceccb25b97869ba7a054a8fda46954"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Bluscream_pyTSon_plugins - scripts - serverBrowser - __init__ -- 325e21ccdad5.py",
+      "target": "rescued/part3/sources/Bluscream_pyTSon_plugins/scripts/serverBrowser/__init__.py",
+      "target_sha256": "ff044e0ec53e4e6a905fa9a45123f9d92a401f152f8235eb42ea271fcef21720"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Stats -- c3b183b4329e.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Stats.py",
+      "target_sha256": "097d10d3cab764f9f780f3404d1da11cabb2c32c8685ede80084b1c3ea08ee12"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Color Organ - color-controller -- 2ae1da313a2c.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Color Organ/color-controller.py",
+      "target_sha256": "ba44687a1a3d2a57bb7c2d5db0afa701ffec2b9c62616d7a16aaa2c13218c153"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Contour -- 435d90000757.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Contour.py",
+      "target_sha256": "0a457f0978019bc455c054e937dffbcf9795a500139e19773889c3933f165b86"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Layer -- cb6dc028f1b2.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Layer.py",
+      "target_sha256": "c9c6aa0893b5f8dc19ca9b1461a0914a553c3c8e680e29db3d0e3208b9fb52c8"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - videoPlayer -- 917795e42e41.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/videoPlayer.py",
+      "target_sha256": "4f1c2b5078d4eb1f710990c0d913915905bda6364d53c71748bb017b1757e4f0"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - bin - osx-package -- a2f2cc3bd1d0.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/bin/osx-package.py",
+      "target_sha256": "63af049a8a8b0558fe50e2e1ae7544c589a3d0505c1a428503d0faf0cb9f72aa"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - depthscanner -- 63584935d64a.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/depthscanner.py",
+      "target_sha256": "e407306988e425a3d48a1fc527fa8b5c4e25ccb91390add5be08feb80c507c86"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - apitest - chessview - chessviewcontrol -- 9fbe92a19797.py",
+      "target": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/apitest/chessview/chessviewcontrol.py",
+      "target_sha256": "c1d571a82330def421902d73f1f884e2dc62ecb8b10d7158a1d377d19453f256"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - WIP - ftable_viewer -- 87547c8db82d.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/WIP/ftable_viewer.py",
+      "target_sha256": "9a9939a6f34a8043cd007de32a849f9b3c149738e90359ef835f247b173a5da5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasHealthPanel -- deb0f5408f4d.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasHealthPanel.py",
+      "target_sha256": "0e45770b8ae90e6c6f845abd384a093081a2e61b083ecc03bd526bfc58749e20"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - rem_newline -- 610a1dd9c66c.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/rem_newline.py",
+      "target_sha256": "b8e8d63f9609c10043d7c92a2e0a8141a6deb24f8e400f41fa2134d51e72a057"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - drakeViewer -- 830e3145ecdc.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/drakeViewer.py",
+      "target_sha256": "3ebb04983927132eccb8625a3804c4d221b92f79dec6a71b939fa176e534f71a"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - apitest - chessview - chessviewcontrol -- 52c0ac3af3af.py",
+      "target": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/apitest/chessview/chessviewcontrol.py",
+      "target_sha256": "98bb14bcecd8ca1c8587b242984c6193a2d05994957e52f39297d829fce53a99"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Tutorial - 04_Using_Qt -- 11d64d7977aa.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Tutorial/04_Using_Qt.py",
+      "target_sha256": "1e2a200291b6832e6f858c7e4f033ec67e8b6073c90724ca07c766de7231b6d5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - app - WrapPythonQt -- 598a9dc27acb.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/app/WrapPythonQt.py",
+      "target_sha256": "b499249f3dfcf58b3a4c989fd18d66ac5e51d53a581950c3cad20d75e12e4504"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - invalues_for_widgets -- c17168f00f7e.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/invalues_for_widgets.py",
+      "target_sha256": "1cb7f611f7ccb5ab577a30992f867019cdb7197ea5e5a5f1e35d32c2f3e63db9"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - robotposegui -- c3d6a4012020.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/robotposegui.py",
+      "target_sha256": "ab3cb932dc1f54e02befd9884b06eacf033280ce3f0c8d77f0737d35da9319ce"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testFrameSync -- b51bb48a1648.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testFrameSync.py",
+      "target_sha256": "e1e48d989138c8db81781c2672338993186cab9933bddd05526633e11a764a77"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Node -- 039142512d25.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Node.py",
+      "target_sha256": "9bc60008420a1a73c6ae2ece46ec74f6dcd2d32dbf0b2bfb40ffc92a8ca7f6c5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Utilities - Scripts - genqrc -- d21c5122a083.py",
+      "target": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Utilities/Scripts/genqrc.py",
+      "target_sha256": "eaa8a0be0ff99ebb24ee9de1d0476c40672bbb90188571fb3dba712e975692b5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasControlPanel -- bc692cad05e1.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasControlPanel.py",
+      "target_sha256": "160ad911025dd17ff052b9088c62d7c562b48cfd88459d5eb3716ccb80dd72ff"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - localscene - dotscene -- b72fc92e8207.py",
+      "target": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/localscene/dotscene.py",
+      "target_sha256": "283255496c74afc4a98da927c372bf1187a699b0fd27fbf207a08899918e1bcd"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - strset_list -- 81da36a4000a.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/strset_list.py",
+      "target_sha256": "ab94e3837566b26468ce9d0348df4bbad1a3eb58f90cd44b7871a333527af167"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - consoleapp -- 1bee2af7b147.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/consoleapp.py",
+      "target_sha256": "819f468c91af52ea8873b481c73500cc14cba846cc072e8a74fb93cc26b7c115"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Useful - nanokontrol -- b47420cee429.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Useful/nanokontrol.py",
+      "target_sha256": "f493a14821f8ce40b75c53f04e25f8d8a9f6b3c4816b4ea7648ece2cf74c16be"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testPropertiesPanel -- c2fa6435b02f.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testPropertiesPanel.py",
+      "target_sha256": "7eeeffaecd6c901fc10aa465be15aa2f18dfbcfc43269a1c78cb693e4633f32e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testPythonConsole -- da8ce4485a20.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testPythonConsole.py",
+      "target_sha256": "dfb110eaa15d9a7a2271d752cb534db829ac9489fa6d62d26c29073eb8d7473c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Corner -- 82fe9af0c9c2.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Corner.py",
+      "target_sha256": "5ed8db3f161835191ff30b37703d0b1aa3bbd09212182173a9d77000b8e8f732"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Element -- c28e5cd9a19c.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Element.py",
+      "target_sha256": "2afb7719d9e823af92168fe0b7f25a3b7526c6194f50142c9d5821a881d11b2c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasControlPanel -- 806d8444d7ea.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasControlPanel.py",
+      "target_sha256": "160ad911025dd17ff052b9088c62d7c562b48cfd88459d5eb3716ccb80dd72ff"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Pairs -- 4055b7b40888.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Pairs.py",
+      "target_sha256": "2724ed38c94fe57880ebce9491f58175944cd26dbfe931097e1bf51f9ef53508"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - lcmlogplayer -- 40fed262c84a.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/lcmlogplayer.py",
+      "target_sha256": "580d9b5ec0887fcad17e50b75bc276a0bf567cac84309a2101c2bb0c1d665ac3"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Clipboard -- 65cb079cf070.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Clipboard.py",
+      "target_sha256": "9b4a7e0faa71d00b34e73df42d43258fe6c853c8d12d5c4333533f67075affe5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - FontMetrics -- 48e0ff818bea.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/FontMetrics.py",
+      "target_sha256": "238b24fa473a611284513bd1314d68503b1d6ccf3900f139da793f51df840281"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyGuiExample - example -- 3e4a6176d468.py",
+      "target": "rescued/part3/sources/jcfr_PythonQt/examples/PyGuiExample/example.py",
+      "target_sha256": "47f8c26a441356be5b789d7a5682ce4a67d4cfb7230ed42dae54e120df9b08f2"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ImportGlyph -- 7c31a75675c3.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ImportGlyph.py",
+      "target_sha256": "8dc65caa7b0f06ae94df33ccb80e7a4fe83db302b5d790735a506a37b7dc933d"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - rem_newline -- aa354346b2df.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/rem_newline.py",
+      "target_sha256": "58f77fed6d4f79e7b290ec55f35913f6a502332a20fc16e22adec4ee0cf65d30"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - Kerning -- 22caf9704dfe.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Kerning.py",
+      "target_sha256": "86612bf7e4900c1de64e47340454199af4fd00c2bbfba39eefe81a3c109af78e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Base - Python - tpycl - tpycl -- c5606d645ce6.py",
+      "target": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Base/Python/tpycl/tpycl.py",
+      "target_sha256": "8291bac79505f1fe2c53c9847c7e4027b35ddec1990895398a2e9d71d602e541"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - curve -- b63af96fa24c.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/curve.py",
+      "target_sha256": "b015cd70085834e942bcad09208adea3e275f52ddb593010707041a34d84d05b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - AutoMetrics -- 76834f5b6bcb.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/AutoMetrics.py",
+      "target_sha256": "889c6951667d393cbf3adeee46d472076a8d9b99977bf280b920868026a41a3d"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - localscene - dotscene -- d3944f3cb203.py",
+      "target": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/localscene/dotscene.py",
+      "target_sha256": "283255496c74afc4a98da927c372bf1187a699b0fd27fbf207a08899918e1bcd"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - localscene - loader -- 37078ac88917.py",
+      "target": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/localscene/loader.py",
+      "target_sha256": "7e3b073e4110ac5d2c5da201d2c9bd9d0189703a6a9529cc6677d7a7032bf7ca"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - videoPlayer -- f623d99f5e8d.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/videoPlayer.py",
+      "target_sha256": "4f1c2b5078d4eb1f710990c0d913915905bda6364d53c71748bb017b1757e4f0"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - imageviewapp -- 5203ecb953fd.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/director/imageviewapp.py",
+      "target_sha256": "181f82e7e9fec07784495304f93096f0a5e7e3e7c533fd801525437085902eec"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node_slope -- 0ce85ad8cd2e.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_slope.py",
+      "target_sha256": "326b843d396e54d64a5b648e68a733c683e8aa7d1061aabc242b3f9bcf45ee60"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - KernGroups -- 728800af602f.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/KernGroups.py",
+      "target_sha256": "17e63884a34d9bd046144bf84d45f4135e0e58e4e906edad8446ef1f4fef11a8"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - Impex -- 3441d9b25a7f.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Impex.py",
+      "target_sha256": "4778034daccb218e2d5979f9b2d0789261d788758c2d3f2f59aff29af0beb8c5"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testObjectModel -- acb32f96c687.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testObjectModel.py",
+      "target_sha256": "1cce58964d8df1c43208c0b1a5f15cd1e47c6a6638683a2694f02998a02486cc"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - director - scripts - VisualizationGUI -- d6f1336a7f6b.py",
+      "target": "rescued/part3/sources/DAIRLab_dairlib/director/scripts/VisualizationGUI.py",
+      "target_sha256": "b0989ff9dc680d346bf0630427757b5928ddac1aa30d92ef778fe299860527d1"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyGettingStarted - GettingStarted -- 8fb96012cf02.py",
+      "target": "rescued/part3/sources/jcfr_PythonQt/examples/PyGettingStarted/GettingStarted.py",
+      "target_sha256": "4fc610f527f167857b170115f69345a5c231cf1cc624614c9763340d49e07d30"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - contour -- 1a13bc3ad8da.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/contour.py",
+      "target_sha256": "0c68e20de45c604d5399165fa3a73ff38d098e7bec82b7d4255235214cef0a1c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Outline -- f2051688b026.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Outline.py",
+      "target_sha256": "70b82b583b6f25e7125d303785eedce7ed84fd92b3c839acbfe667e5ea4bddc0"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - localscene - dotscene -- 23229743bc55.py",
+      "target": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/localscene/dotscene.py",
+      "target_sha256": "214988c3b5338b12163a361b5dcf956de41ee434bd6057168dfaabde573d0af6"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Koenig-Essay - Koenig-Essay -- 63190a3ce39c.py",
+      "target": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Koenig-Essay/Koenig-Essay.py",
+      "target_sha256": "34d579e230f7f163cab616cd1f43652f8b834951e4f1273b37f9f3ab03641e5c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ExportGlyph -- 818710b88484.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportGlyph.py",
+      "target_sha256": "9078b2f4322c45c1922b8225e1aebebaa4b8525b29bf3ace83eee76d7572737b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testObjectModel -- 811954286396.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testObjectModel.py",
+      "target_sha256": "1cce58964d8df1c43208c0b1a5f15cd1e47c6a6638683a2694f02998a02486cc"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - docs - sphinx - tutorials - visualization - basicView1 -- d3658da79b7d.py",
+      "target": "rescued/part3/sources/openhumanoids_director/docs/sphinx/tutorials/visualization/basicView1.py",
+      "target_sha256": "04cedc83dd853e85db58e49812e10e45129f14fbf6fbc7ad5fb1f1c7bb975e79"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Delta -- a51573c1c4ae.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Delta.py",
+      "target_sha256": "d9f68f6e4a3698c21e16f59074c95e2d345ef9e8b95fa1dcbcd87f861052a476"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - docs - sphinx - tutorials - visualization - basicView1 -- 669818329a9d.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/docs/sphinx/tutorials/visualization/basicView1.py",
+      "target_sha256": "04cedc83dd853e85db58e49812e10e45129f14fbf6fbc7ad5fb1f1c7bb975e79"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testPythonConsole -- c1627d6b18a1.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testPythonConsole.py",
+      "target_sha256": "dfb110eaa15d9a7a2271d752cb534db829ac9489fa6d62d26c29073eb8d7473c"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Panel - Glyph -- 6a8ffd36ba89.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Glyph.py",
+      "target_sha256": "2e70ecb44861dc04db8a7a6a20ac64bce0d7b3bc4cb89b4e2c7ce2731537ff32"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasRecoveryPanel -- 5960c498ac0d.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasRecoveryPanel.py",
+      "target_sha256": "7f006660de46abad41e3618db341bc61882c11643cad0d2bc969ed103cdef011"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - depthscanner -- 207c7a11f7e4.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/director/depthscanner.py",
+      "target_sha256": "3c2e348c89a6102a4df5b0c265881da87382b66088f36a37e55972a329409985"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - invalue_chnget -- b934c1d9cea9.py",
+      "target": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/invalue_chnget.py",
+      "target_sha256": "71daae5ad508f2d0e563153855528ef1ff5e0f6b8549311a62c48ef3e90c201b"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testPropertiesPanel -- c28e4642fd82.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testPropertiesPanel.py",
+      "target_sha256": "7eeeffaecd6c901fc10aa465be15aa2f18dfbcfc43269a1c78cb693e4633f32e"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - cameraViewer -- b1ee14099988.py",
+      "target": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/cameraViewer.py",
+      "target_sha256": "545aea86789535e21d95299eff5273de1b12e771962815c801dc75329a5e8ac1"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - apitest - chessview - chessviewcontrol -- 4a1a74766b03.py",
+      "target": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/apitest/chessview/chessviewcontrol.py",
+      "target_sha256": "c1d571a82330def421902d73f1f884e2dc62ecb8b10d7158a1d377d19453f256"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - HopeFOAM_HopeFOAM - ThirdParty-0.1 - ParaView-5.0.1 - Plugins - PythonQtPlugin - WrapPythonQt -- 12a62820f848.py",
+      "target": "rescued/part3/sources/HopeFOAM_HopeFOAM/ThirdParty-0.1/ParaView-5.0.1/Plugins/PythonQtPlugin/WrapPythonQt.py",
+      "target_sha256": "891ae8b20cbf040e0422504a7e2cd11b1fec7e75cb8a6c073fa32488213408a8"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testFrameSync -- d63d4e55feab.py",
+      "target": "rescued/part3/sources/openhumanoids_director/src/python/tests/testFrameSync.py",
+      "target_sha256": "e1e48d989138c8db81781c2672338993186cab9933bddd05526633e11a764a77"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - examples - Cassie - director_scripts - pd_panel -- ec9c61763bc8.py",
+      "target": "rescued/part3/sources/DAIRLab_dairlib/examples/Cassie/director_scripts/pd_panel.py",
+      "target_sha256": "b682e3e6103617987947921d00da673669750a227f1168c871d945c445ab82db"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - examples - Cassie - director_scripts - cassie_operator -- 37ce566be152.py",
+      "target": "rescued/part3/sources/DAIRLab_dairlib/examples/Cassie/director_scripts/cassie_operator.py",
+      "target_sha256": "11efdbf9277f0db868617e1bb00f02c7d11de6ab72d50b7b365f7686d658fead"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ExportFont -- 79a3e5794c33.py",
+      "target": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportFont.py",
+      "target_sha256": "5a38276c29627e60a9c35afa012678bc3eb6a0b6afb2a2728901aa2a2fd14208"
+    },
+    {
+      "menu": "Scripts/Archived Reference/P3 Sources - StructuralNeurobiologyLab_SyConn - syconn - analysis - syconn_knossos_viewer -- d8a596964448.py",
+      "target": "rescued/part3/sources/StructuralNeurobiologyLab_SyConn/syconn/analysis/syconn_knossos_viewer.py",
+      "target_sha256": "8058393221072ab4304dc4a6e015fb1f99f63e9bdb5c78479c9d0e7cc455d6ac"
+    }
+  ]
+}
