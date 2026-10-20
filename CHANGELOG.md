@@ -466,3 +466,7 @@ tester/view/lifecycle checks and ordinary artifacts do not establish PythonQt
 virtual dispatch, native getter/font/cache/history/dirty/save/reopen acceptance.
 Native D25, integration/distribution/release/publication and the full original
 goal remain open. No new native API, writer or live installation is used.
+
+## Unreleased — Issue120 Z16
+
+- Adapt the complete part2 Calendar Controls workflow to current-font modification dates through Fly and shared App UI. Keep all original controls; synchronize defaults/limits and repair dark date-surface readability. Preserve the distinct part3 source and all original bytes. Native qualification remains pending.

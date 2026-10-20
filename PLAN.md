@@ -91,3 +91,27 @@ tester/view/lifecycle checks and ordinary artifacts do not establish PythonQt
 virtual dispatch, native getter/font/cache/history/dirty/save/reopen acceptance.
 Native D25, integration/distribution/release/publication and the full original
 goal remain open. No new native API, writer or live installation is used.
+
+
+## Issue120 Z16 — complete part2 modification calendar candidate
+
+The complete part2 calendar retains three locales, Monday/Sunday, single/no
+selection, grid/navigation, every horizontal/vertical heading mode, selected/
+minimum/maximum date editors, all weekday/weekend/header colours and first-Friday/
+January-1 markings. Selected days show all matching current-font glyph metadata
+in font order, all Unicode assignments, explicit unencoded values and exact local
+timestamps. Undated glyphs are counted. Refresh replaces the entire observation.
+
+Initial controls agree with the actual calendar; crossing limits synchronize all
+three date editors. A copied owned date-surface palette preserves explicit named
+colours on dark hosts, including readable headers/off-month dates; the surrounding
+UI retains its host palette. Generic UI takes injected Qt and caller-owned signals.
+Setup failures fence queued slots; all completion routes, parent destruction and
+late Close release callbacks/data. Reads and planning share a bounded deadline.
+
+Requires reviewed unpublished App>=0.2.60.dev0 via Fly. No font, selection, history,
+preferences, file, clipboard or Output writer is added. The distinct part3 calendar
+is not implemented by this entry. Originals/dependencies remain read-only and
+unexecuted. Actual PythonQt/FontLab/getter/cache/font/history/dirty/reopen/native
+workflow, release/integration/download/docs/publication and full issue120 gates
+remain pending D25. Standalone scalar/Qt tests do not accept those requirements.

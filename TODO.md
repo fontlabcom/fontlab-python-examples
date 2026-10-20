@@ -25,3 +25,5 @@ this_file: TODO.md
 - [ ] Z11: native-qualify both complete part3 workflows, exact timestamp capture/cell instants, locale/regexp/comparator policies and actual PythonQt/model/font/cache/history/dirty/save/reopen preservation.
 
 - [ ] Z13: native-qualify both complete read-only glyph tree workflows, actual PythonQt model/selection/lifecycle/default/error paths and full metadata/getter/font/cache/history/dirty/save/reopen preservation under D25. Keep separate editable-tree workflows and every original goal gate open.
+
+- [ ] Z16: native-qualify the complete part2 modification calendar, every date/locale/format/error/lifecycle control and complete metadata/getter/font/cache/history/dirty/save/reopen preservation under D25; retain separate part3 and all original goal gates.

@@ -80,6 +80,20 @@
       "native_acceptance": "pending",
       "original_workflow_accepted": false,
       "api_module": "glyph_tree"
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Widgets - Official calendarwidget - b91effc45f81fbb0.py",
+      "menu": "Scripts/Widgets/Glyph Modification Calendar.py",
+      "source": "rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py",
+      "source_sha256": "5672f6757f558382ba7c7dce22a8e1effad9a707adcea7d2fa916a776a8e4bbb",
+      "destination_sha256": "ef583dd007cfb80867b9c472d81bf59205a9f16c675f2b7e6fe788fbea774625",
+      "entry_point": "show",
+      "api_module": "glyph_calendar",
+      "family": "calendar-part2",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part2 read-only Calendar Controls workflow: 3 locales, Monday/Sunday, single/no selection, grid/navigation, all 4 horizontal and 2 vertical headings, selected/minimum/maximum dates, 3 choices for weekday/weekend/header colours, first Friday and January 1 highlighting; practical complete local-day glyph metadata report. Synchronize advertised initial defaults and crossing limits; preserve the distinct part3 workflow.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }

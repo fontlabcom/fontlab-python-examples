@@ -3380,3 +3380,59 @@ driver, restart, preference change, live install, canonical merge, tag, release
 or site publication occurred. All original workflow/package/integration/docs/
 distribution/release gates stay open. Exact commands/exits, failed attempts and
 receipts are in the workspace's private glyph-tree-z13 folder and root WORK.md.
+
+## Issue120 Z16 — implementation in progress
+
+Fresh inherited App 2,422 and Examples 2,002 suites pass. Added the complete part2 calendar/current-font local-day report, generic controls/formats, owned panel and one hash-bound Fly menu move. 95 focused App checks pass before final full/artifact/native gates; the separate part3 calendar remains pending. Original scripts are read only and never run. D25 remains pending with TCP errno61 and unchanged busy fence. Exact source/Qt/commands are retained in calendar-z16 and root WORK.md.
+
+## Issue120 Z16 — complete part2 calendar source/artifact checks
+
+App 2,517 and Examples 2,004 source tests pass; the locked documentation SDK adds
+six passes. The 95 new App checks cover every part2 calendar option, scalar local-
+day metadata, exact order/Unicode/epoch retention, undated/invalid/empty/DST cases,
+main-thread refusal, coherent bounds/defaults, format ownership, setup failures,
+readable light/dark date surfaces and all six completion routes/parent teardown.
+Every whole new module has 100% statements and branches except the complete owned
+panel at 100% statements/93.33% branches. Zero exclusions. The moved menu is
+100% statements/branches; all 494 indexed identities retain their assertions.
+
+Final App 0.2.60.dev0 (app-artifacts-v3) passes normal wheel/source installations
+and dependency checks. In each review-v2 install: App 2,515/two generated-shim
+skips, Glyport 3,054/three existing skips, Fontport 4,489/two skips/63 known
+warnings, Lessons 197, Scriptmix 1,074/one skip and Examples 2,004 pass. Cold Fly
+imports cover all new public APIs without bindings or reverse package imports.
+All 495 runtime/resource pairs and all 349 App contained source files match
+current source, archives and both installs. All 183 prior App and all 115 Glyport
+runtime files remain exact; only four App runtime modules are added.
+
+Installed standalone arm64 Qt5.15.19/PyQt5.15.11 passes all 95 focused checks.
+The actual public entrypoint renders in light and dark palettes; two installed
+renders match the candidate source pixel-for-pixel and were directly inspected.
+Only owned scalar data and widgets are used in the external preview. The first
+dark render exposed unreadable named black dates/headers; an owned copied palette
+repairs Base/AlternateBase/text roles and retains dim off-month dates, while the
+form/report keep their parent theme. The independent failing palette test and
+initial render are retained. No FontLab native outcome is inferred.
+
+Strict offline docs build, all 510 current source-rendered bodies, full-site
+privacy scan and all eight authored-guide hashes pass. One dispatcher moves to
+Widgets/Glyph Modification Calendar.py through a hash-bound overlay. All 669
+other menu bodies, 494 original source bodies, 11 zone originals, 7,247 ledger
+rows, 1,111 owner hashes and three canonical documentation statuses are unchanged.
+The separate part3 calendar (May 1 and bold/italic headers) is unchanged/pending.
+Current Examples layout: 23 candidate facades and 487 preserved-source dispatchers.
+
+Retain absent-module first red, from-package lazy-native import failures, the
+Ruff import rewrite correction, instance-vs-class Qt enum failures, initial dark
+readability failure, the missing destination folder attempt and fixture re-export
+lint repairs. Class-level enums and qualified imports now work in both external
+Qt bindings. Test-only import/style changes caused artifact v2/v3 rebuilds; no
+coverage/test threshold, native gate, frozen source or accepted numerator changed.
+
+Wait, but: these source/installed/standalone Qt/doc checks do not prove actual
+PythonQt callback/getter/cache/font/history/dirty/save/reopen preservation or any
+original native workflow. D25 is pending, TCP errno61 and the same busy fence;
+no native driver, restart, preference change, live install, canonical merge,
+tag/release or site publication occurred. Every original issue120 gate remains
+open. Goal ACTIVE; 98% unproved. Exact commands/exits and evidence are retained
+in calendar-z16 and root WORK.md. Feature push gates are recorded separately.

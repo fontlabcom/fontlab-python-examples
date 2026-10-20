@@ -153,7 +153,7 @@ def test_scripts_when_scanned_then_all_menu_leaves_use_one_level_and_python311()
 ):
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
     assert len(paths) == 510, (
-        "Retain all494original identities (488dispatch+6adapted) and all16practical lessons"
+        "Retain all494original identities (487dispatch+7adapted) and all16practical lessons"
     )
     for path in paths:
         assert len(path.relative_to(ROOT / "Scripts").parts) == 2, (

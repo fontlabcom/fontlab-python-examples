@@ -1,36 +1,33 @@
-# this_file: Scripts/Archived UI L-Z/Widgets - Official calendarwidget - b91effc45f81fbb0.py
+# this_file: Scripts/Widgets/Glyph Modification Calendar.py
 # SPDX-License-Identifier: Apache-2.0
 # preserved-source-sha256: 5672f6757f558382ba7c7dce22a8e1effad9a707adcea7d2fa916a776a8e4bbb
-"""Launch the preserved archive entry: Widgets - Official calendarwidget - b91effc45f81fbb0.
+"""Inspect current-font glyph modification dates with complete calendar controls.
 
-Purpose: Run this entry's preserved implementation through Fly's shared App
-helper. The entry retains its original behavior; it is an archive launcher.
-
-Setup: Use FontLab 9 with Python 3.11, Fly and FontLab App available. Keep the
-complete rescued tree beside Scripts. Read the preserved source and its resource
-and dependency requirements before use:
-rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
-Use an owned disposable font copy if the source requires a font.
-
-Run: Select Scripts > Archived UI L-Z > Widgets - Official calendarwidget - b91effc45f81fbb0.
-Result: The helper runs the preserved entry. Its source determines any window,
-output or font changes. Missing resources or unsupported APIs can raise errors.
-
-Compatibility: Native FontLab compatibility is pending. Preserved sources have
-not been certified by this launcher; Python syntax and route checks do not
-establish successful UI behavior or font results.
+Purpose: Adapt the complete part2 Calendar Controls workflow to FontLab.
+Choose a local calendar day. Read every matching glyph name, all its Unicode
+assignments and the exact captured modification timestamp in font order.
+Setup: FontLab 9, Python 3.11, fontlab-fly and reviewed unpublished App>=0.2.60.dev0.
+Run: Open a font and run this Widgets command. Set locale, week start, selection,
+grid, navigation, headings, date limits and weekday/weekend/header colours.
+The special switch marks the first Friday and January 1 of the displayed year.
+Refresh replaces the whole read-only snapshot. A failure clears all results.
+Result: Inspect which glyphs changed on a day without editing font data or
+native selection. Undated glyphs are counted explicitly. Close releases signals.
+Design: Use generic injected-Qt calendar controls and complete metadata capture
+in App, through Fly. Initial options and crossing date limits stay coherent.
+The distinct part3 calendar with May 1 and bold/italic headings stays separate.
+Compatibility: Native PythonQt/getter/font/cache/history/save/reopen acceptance
+is pending. This candidate neither changes preferences nor writes files/Output.
+Original: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
+Original source/resources stay preserved; this command does not execute them.
 """
-
-from pathlib import Path
 
 
 def main() -> None:
-    """Dispatch this preserved entry once when explicitly launched."""
-    from fly.ap.rescued_examples import launch
+    """Open the complete owned local-date glyph report through the lazy Fly alias."""
+    from fly.ap.glyph_calendar import show
 
-    launch(
-        Path(__file__).resolve().parents[2] / 'rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py'
-    )
+    show()
 
 
 if __name__ == "__main__":

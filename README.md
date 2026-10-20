@@ -81,3 +81,5 @@ the isolated test checkout; their exact branch bytes were restored and the first
 render retained as evidence. No canonical owner path or live site was changed.
 
 The two read-only Simple Tree Model adaptations show full glyph/Unicode/local-date hierarchies. Part2 keeps selection status and File > Exit; part3 keeps its distinct data roles/columns. Both use shared App tree models and remain native-unqualified; separate editable-tree lessons stay pending.
+
+The part2 Calendar Controls adaptation is Glyph Modification Calendar. It keeps every original locale/date/format option and shows all glyphs modified on the chosen local day. It requires reviewed unpublished App>=0.2.60.dev0 through Fly. The distinct part3 calendar stays pending; native qualification is not implied.

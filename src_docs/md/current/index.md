@@ -482,7 +482,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Tutorials - Official addressbook part7 - bb1c114d38fb756a](archived-ui-l-z/tutorials-official-addressbook-part7-bb1c114d38fb756a.md)
 - [Widgets - Official analogclock - d6dc56a5318ffe71](archived-ui-l-z/widgets-official-analogclock-d6dc56a5318ffe71.md)
 - [Widgets - Official calculator - 356e4e807f1e789f](archived-ui-l-z/widgets-official-calculator-356e4e807f1e789f.md)
-- [Widgets - Official calendarwidget - b91effc45f81fbb0](archived-ui-l-z/widgets-official-calendarwidget-b91effc45f81fbb0.md)
 - [Widgets - Official charactermap - 499e965d86347920](archived-ui-l-z/widgets-official-charactermap-499e965d86347920.md)
 - [Widgets - Official digitalclock - 3040b9f6b267a196](archived-ui-l-z/widgets-official-digitalclock-3040b9f6b267a196.md)
 - [Widgets - Official groupbox - f702b62aa47629ad](archived-ui-l-z/widgets-official-groupbox-f702b62aa47629ad.md)
@@ -541,3 +540,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Name Filter](models/glyph-name-filter.md)
 - [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
 - [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)
+
+## Widgets
+
+- [Glyph Modification Calendar](widgets/glyph-modification-calendar.md)

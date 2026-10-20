@@ -50,7 +50,6 @@
 - [Tutorials - Official addressbook part7 - bb1c114d38fb756a](tutorials-official-addressbook-part7-bb1c114d38fb756a.md)
 - [Widgets - Official analogclock - d6dc56a5318ffe71](widgets-official-analogclock-d6dc56a5318ffe71.md)
 - [Widgets - Official calculator - 356e4e807f1e789f](widgets-official-calculator-356e4e807f1e789f.md)
-- [Widgets - Official calendarwidget - b91effc45f81fbb0](widgets-official-calendarwidget-b91effc45f81fbb0.md)
 - [Widgets - Official charactermap - 499e965d86347920](widgets-official-charactermap-499e965d86347920.md)
 - [Widgets - Official digitalclock - 3040b9f6b267a196](widgets-official-digitalclock-3040b9f6b267a196.md)
 - [Widgets - Official groupbox - f702b62aa47629ad](widgets-official-groupbox-f702b62aa47629ad.md)
