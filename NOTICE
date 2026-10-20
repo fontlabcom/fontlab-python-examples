@@ -19,3 +19,22 @@ with explicit inclusive limits; disable the ignored Custom column selector; own
 read-only source/proxy views, complete refresh/refusal and signal/model cleanup.
 The different part3 official workflows are not silently treated as equivalent.
 Native PythonQt, full-font/cache/history/persistence qualification is pending.
+
+
+Archived part3 typed-date sort/filter workflows
+=============================================
+
+Fresh first-party behavior adaptation of the two preserved part3 official
+source/proxy workflows, supplied as Apache-2.0 under owner clarification D22.
+Complete terms remain in LICENSE-APACHE-2.0. Original identities and SHA256:
+part3/pyqt-official-ports/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py:
+cecf5221bfc7da755664069fb316696c5144e4437d97d325b32431bbf89c1621
+part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py:
+a844adb5f7888373586f0e37f81025d991c19b96d5e205fdd376258a712c6e2d
+Changes: complete current-font glyph metadata in place of synthetic mail;
+typed Qt dates, default-locale date matching, original native-regexp/date-range/
+case-sensitive comparator policies; explicit dates/default repairs, read-only
+views and owned lifetime. Native timestamps use a local copy with exact epoch
+fences; an optional scalar epoch channel prevents typed-cell precision loss.
+No original body/resource is executed or bundled. The existing part2 semantics
+remain separate. Native FontLab/PythonQt preservation qualification is pending.

@@ -39,7 +39,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [audiooutput-c391afd8516131e1 - dcbc20d4](archived-official/audiooutput-c391afd8516131e1-dcbc20d4.md)
 - [basicdrawing-907f39d8bf387501 - ea433456](archived-official/basicdrawing-907f39d8bf387501-ea433456.md)
 - [basiclayouts-2f94fe07de765888 - b0370fc1](archived-official/basiclayouts-2f94fe07de765888-b0370fc1.md)
-- [basicsortfiltermodel-9dab02b61cebbdb7 - 61bd905e](archived-official/basicsortfiltermodel-9dab02b61cebbdb7-61bd905e.md)
 - [binding-eb7a89f07f63cca7 - da26f8bc](archived-official/binding-eb7a89f07f63cca7-da26f8bc.md)
 - [blockingfortuneclient-79f3a23172968ad2 - cca8ee31](archived-official/blockingfortuneclient-79f3a23172968ad2-cca8ee31.md)
 - [borderlayout-f48955d43ed6196c - 6202cd51](archived-official/borderlayout-f48955d43ed6196c-6202cd51.md)
@@ -75,7 +74,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [counterlabel-1321540b04f33117 - 5df6ba00](archived-official/counterlabel-1321540b04f33117-5df6ba00.md)
 - [customcompleter-10ef4dacb4db4080 - 4e8b9f5d](archived-official/customcompleter-10ef4dacb4db4080-4e8b9f5d.md)
 - [customgeometry-34538a4e2600b918 - 992d5549](archived-official/customgeometry-34538a4e2600b918-992d5549.md)
-- [customsortfiltermodel-029ea0dabe87ae57 - 07861e50](archived-official/customsortfiltermodel-029ea0dabe87ae57-07861e50.md)
 - [datetimeedit-7ba49e67588b1329 - c4d456d1](archived-official/datetimeedit-7ba49e67588b1329-c4d456d1.md)
 - [default-6417cdcf1bfd1752 - 97ee4639](archived-official/default-6417cdcf1bfd1752-97ee4639.md)
 - [delayedencoding-43c6c2f6f5f036d3 - b3171285](archived-official/delayedencoding-43c6c2f6f5f036d3-b3171285.md)
@@ -537,6 +535,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Models
 
+- [Glyph Filter Model with Date Range](models/glyph-filter-model-with-date-range.md)
+- [Glyph Filter Model with Local Dates](models/glyph-filter-model-with-local-dates.md)
 - [Glyph Metrics Model](models/glyph-metrics-model.md)
 - [Glyph Name Filter](models/glyph-name-filter.md)
 - [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)

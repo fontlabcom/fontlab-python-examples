@@ -48,3 +48,22 @@ Original bodies/resources and all other menus stay untouched. Distinct part3
 contracts remain pending. Qt5/Qt6 and metadata-shaped tests are offline evidence;
 native PythonQt callbacks/read/cache/font/history/save/reopen and publication/
 integration/release gates remain open under D25. No original numerator changes.
+
+
+## Issue120 Z11 — complete part3 typed-date workflows
+
+Both official part3 Basic/Custom models now adapt complete current-font metadata
+through shared App controls. Typed QDateTime cells, locale short-date matching,
+native QRegExp syntaxes, inclusive calendar-day limits, case-sensitive email-token
+text comparison and original ISODate ordering remain distinct from part2. Data-
+specific demo filters become full-font snapshots with explicit optional limits.
+Read-only models, Refresh/refusal and all completion routes keep owned lifetime.
+
+Tests exposed two timestamp-reader defects: displayed local dates assumed an
+already-local stamp and the source fence lost within-second changes. A local
+copy and native epoch milliseconds now preserve the intended observations. An
+optional immutable epoch channel keeps exact typed-cell instants (including DST
+folds); Basic retains millisecond ordering, Custom retains its source comparator.
+No new native font API, writer, original-source execution or live install is used.
+Standalone tests do not establish actual PythonQt/font/cache/history/persistence
+acceptance. All original/native/integration/distribution/publication gates stay open.

@@ -26,6 +26,32 @@
       "scope": "Complete part2 custom source/proxy workflow; real whole-font metadata; both case switches; three pattern modes; both-column OR, inclusive optional dates, angle-token sorting",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/basicsortfiltermodel-9dab02b61cebbdb7 - 61bd905e.py",
+      "menu": "Scripts/Models/Glyph Filter Model with Local Dates.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py",
+      "source_sha256": "cecf5221bfc7da755664069fb316696c5144e4437d97d325b32431bbf89c1621",
+      "destination_sha256": "9a8053db6fd33f4e94ee8949803ffbea38a96c98cfab84c9a3dff63c18bef156",
+      "entry_point": "show_official_basic",
+      "family": "part3-official",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part3 basic native matching/case/column/sorting and default-locale short-date filtering over whole-font glyph metadata and typed QDateTime cells; complete source/proxy views and owned lifetime",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/customsortfiltermodel-029ea0dabe87ae57 - 07861e50.py",
+      "menu": "Scripts/Models/Glyph Filter Model with Date Range.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py",
+      "source_sha256": "a844adb5f7888373586f0e37f81025d991c19b96d5e205fdd376258a712c6e2d",
+      "destination_sha256": "70325813d66928414ac338566cd3db1fd7a416add8983d43c89bfa1b26d46f46",
+      "entry_point": "show_official_custom",
+      "family": "part3-official",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part3 custom native QRegExp OR, inclusive QDate/QDateTime bounds, case-sensitive email-token/ISO datetime ordering over whole-font glyph metadata and typed QDateTime cells; complete source/proxy views and owned lifetime",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }

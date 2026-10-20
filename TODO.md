@@ -21,3 +21,5 @@ this_file: TODO.md
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
 
 - [ ] Z10: native-qualify both complete part2 glyph sort/filter workflows, PythonQt virtual/model/signal lifecycle and complete font/cache/history/persistence preservation. Keep different part3 workflows pending.
+
+- [ ] Z11: native-qualify both complete part3 workflows, exact timestamp capture/cell instants, locale/regexp/comparator policies and actual PythonQt/model/font/cache/history/dirty/save/reopen preservation.

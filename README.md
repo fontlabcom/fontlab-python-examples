@@ -4,13 +4,13 @@ this_file: README.md
 
 # FontLab Python examples
 
-This integration candidate combines 18 practical menu facades and 492
+This integration candidate combines 20 practical menu facades and 490
 preserved-source launchers. All entries use one category folder beneath
 `Scripts`. Each archived launcher is explicitly marked native compatibility
 pending. Counts describe source layout, not accepted native workflows.
 
 Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly, the reviewed App 0.2.54.dev0 candidate and the reviewed
+Python 3.11, Fly, the reviewed App 0.2.55.dev0 candidate and the reviewed
 `fontlab-python-lessons` 1.0.4.dev0 package. These are
 unpublished prerequisites; use their reviewed artifacts. Do not change a live
 FontLab environment as part of automated setup or test runs.
@@ -33,11 +33,11 @@ the audit. Providing this path does not authorize executing original bodies.
 
 ## Integration and acceptance
 
-The 18 practical facades include the three existing Forms/Models lessons,
-13 GetGo lessons and two complete part2 sort/filter adaptations. The latter
+The 20 practical facades include the three existing Forms/Models lessons,
+13 GetGo lessons and four complete part2/part3 sort/filter adaptations. The latter
 replace their indexed wrappers through menu-adaptations.json; rescue-index.json
-and all494original source identities remain unchanged. Different part3 official
-variants stay separate pending launchers. Basic keeps Qt QRegExp; Custom keeps
+and all494original source identities remain unchanged. Part3 variants keep typed Qt dates, native regexp matching and original
+locale/range/comparator rules; part2 keeps its separate string/Python semantics. Basic keeps Qt QRegExp; Custom keeps
 Python re/fnmatch/substring, OR fields, inclusive dates and angle-tail sorting. Licensed GetGo fixtures, complete notices and runtime code
 remain in the `lessons` package. Existing packaged lesson and fixture bytes stay unchanged.
 

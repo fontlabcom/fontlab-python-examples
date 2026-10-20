@@ -3259,3 +3259,56 @@ history/dirty/save/reopen preservation and original/native workflows are still
 unproved. This is a complete source/artifact candidate,not98%project acceptance.
 Exact commands/exits and retained evidence are in the private workspace's
 verification/issue-120/sort-filter-z10/command-receipts.json and root WORK.md.
+
+
+## Issue120 Z11 — complete part3 typed-date workflows
+
+Both official part3 Basic/Custom models now adapt complete current-font metadata
+through shared App controls. Typed QDateTime cells, locale short-date matching,
+native QRegExp syntaxes, inclusive calendar-day limits, case-sensitive email-token
+text comparison and original ISODate ordering remain distinct from part2. Data-
+specific demo filters become full-font snapshots with explicit optional limits.
+Read-only models, Refresh/refusal and all completion routes keep owned lifetime.
+
+Tests exposed two timestamp-reader defects: displayed local dates assumed an
+already-local stamp and the source fence lost within-second changes. A local
+copy and native epoch milliseconds now preserve the intended observations. An
+optional immutable epoch channel keeps exact typed-cell instants (including DST
+folds); Basic retains millisecond ordering, Custom retains its source comparator.
+No new native font API, writer, original-source execution or live install is used.
+Standalone tests do not establish actual PythonQt/font/cache/history/persistence
+acceptance. All original/native/integration/distribution/publication gates stay open.
+
+
+## Z11 verified source/artifact checkpoint — 2026-10-20
+
+43 new App tests; full source 2244 passed. All seven changed whole production
+modules and both new menu facades have 100% statement/branch coverage, with zero
+exclusions. Examples 1999 passed plus six locked SDK tests. Independently installed
+App 0.2.55.dev0 passes 139 focused controls in standalone arm64 Qt 5.15.19 /
+PyQt 5.15.11; four light/dark public-entrypoint renders were inspected. These
+external processes are not native PythonQt acceptance.
+
+Normal wheel and source installs each pass App 2242/2 generated-shim skips,
+Glyport 2997/3 existing skips, Fontport 4489/2 existing skips (63 known warnings),
+Lessons 197, Scriptmix 1074/1 existing skip and Examples 1999. All 485 runtime/
+resource pairs match; the App source archive contains 326 audited files.
+170 prior App files and 668 prior menu payloads remain exact; five shared App
+modules intentionally change and two helpers are added. Both original part3
+source bodies and all 494 indexed identities remain byte exact, with two
+practical routing replacements. Examples now has 20 candidate facades and 490
+preserved-source dispatchers; the original accepted numerator does not change.
+
+The strict docs build, all 510 exact rendered source bodies, full-site privacy
+scan and eight authored-guide hashes pass. All 11 zone originals, the 7247-row
+ledger, 1111 owner hashes and three canonical Git statuses remain unchanged.
+Retained first-red controls cover metadata/local time, millisecond source fences,
+typed epoch cells, initial proxy reactivation and new menus. The corrected
+test-fixture date and formatting/import failures remain visible in evidence.
+
+Wait, but: actual PythonQt virtuals, metadata getter behavior, complete font/
+cache/history/dirty/save/reopen, original workflow, integration/distribution/
+release and publication acceptance remain open. D25 is pending and the busy
+fence remains held. No native driver, restart, canonical merge, live installation,
+tag, release or site publication was performed. Exact commands, exit codes and
+retained evidence are in the workspace's private typed-date-z11 directory.
