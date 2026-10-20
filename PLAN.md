@@ -167,3 +167,7 @@ Implement both original editable-tree controllers over full local glyph metadata
 ## Issue120 Z24 frontend notices
 
 Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.
+
+## Issue120 Z27 spacing worksheet pair
+
+Complete the two original numeric delegate policies as practical local candidate worksheets. Source, ordinary wheel/sdist, whole-module coverage, full installed consumers, exact provenance and locked rendered docs require retained evidence. Native virtual dispatch, all216scenarios per artifact, complete-font/getter/cache/history/dirty/reopen and controller review remain required before qualification or source promotion.

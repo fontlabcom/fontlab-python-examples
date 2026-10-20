@@ -174,7 +174,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [simpleselector-ae16288fede27692 - 4861da3b](archived-official/simpleselector-ae16288fede27692-4861da3b.md)
 - [simplewidgetmapper-39de33366209402d - 2dac449c](archived-official/simplewidgetmapper-39de33366209402d-2dac449c.md)
 - [sliders-36805750b888fba6 - 1be02662](archived-official/sliders-36805750b888fba6-1be02662.md)
-- [spinboxdelegate-ddb20b1b68b18a91 - 6fcbc88a](archived-official/spinboxdelegate-ddb20b1b68b18a91-6fcbc88a.md)
 - [spinboxes-468179092748a72e - 5895d0ae](archived-official/spinboxes-468179092748a72e-5895d0ae.md)
 - [spreadsheet-bf3b39a8c2df8e94 - 678e36a4](archived-official/spreadsheet-bf3b39a8c2df8e94-678e36a4.md)
 - [standarddialogs-e1a0a829f8f2e311 - 1632ddd1](archived-official/standarddialogs-e1a0a829f8f2e311-1632ddd1.md)
@@ -421,7 +420,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [itemviews - puzzle-878fe9f714df3b5e](archived-ui-a-i/itemviews-puzzle-878fe9f714df3b5e.md)
 - [itemviews - simpledommodel-a59dae9770bfbefb](archived-ui-a-i/itemviews-simpledommodel-a59dae9770bfbefb.md)
 - [itemviews - simplewidgetmapper-39de33366209402d](archived-ui-a-i/itemviews-simplewidgetmapper-39de33366209402d.md)
-- [itemviews - spinboxdelegate-ddb20b1b68b18a91](archived-ui-a-i/itemviews-spinboxdelegate-ddb20b1b68b18a91.md)
 - [itemviews - spreadsheet-bf3b39a8c2df8e94](archived-ui-a-i/itemviews-spreadsheet-bf3b39a8c2df8e94.md)
 - [itemviews - stardelegate-dc59f268ee01e364](archived-ui-a-i/itemviews-stardelegate-dc59f268ee01e364.md)
 - [itemviews - storageview-cf15c3e91cdd8ded](archived-ui-a-i/itemviews-storageview-cf15c3e91cdd8ded.md)
@@ -542,6 +540,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](tools/glyph-name-completion.md)
+- [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
+- [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 
 ## Widgets
 

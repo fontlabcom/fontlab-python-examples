@@ -40,3 +40,66 @@ No original body/resource is executed or bundled. The existing part2 semantics
 remain separate. Native FontLab/PythonQt preservation qualification is pending.
 
 Z13 adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0, owner D22). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes remain preserved and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. Native acceptance is pending.
+
+
+Glyph Spacing Worksheet — complete numeric delegate pair
+======================================================
+
+Independent behavior implementation of both archived spinboxdelegate workflows.
+Owner D22 supplies archived Python under Apache-2.0; complete terms remain in
+LICENSE-APACHE-2.0. Preserve Riverbank2017/Nokia2010 original BSD attribution
+and the collection-level GPL-3.0 metadata discrepancy; no original body, mixed
+helper, or resource is executed or bundled. There are no companion assets.
+Original preserved source identities and full SHA256:
+rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
+539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
+3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084
+Upstream corroboration: pyqt/examples commit83eed0514582c8deb60d9e9e6bff31ceffe4eaeb, src/pyqt-official/itemviews/spinboxdelegate.py, SHA25622cd4800fcdb690117ef895d4002a556e6cab65909b6971d667b1af622c94e2d.
+Native acceptance and full preservation remain pending.
+
+#!/usr/bin/env python
+
+
+#############################################################################
+##
+## Copyright (C) 2017 Riverbank Computing Limited.
+## Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+## All rights reserved.
+##
+## This file is part of the examples of PyQt.
+##
+## $QT_BEGIN_LICENSE:BSD$
+## You may use this file under the terms of the BSD license as follows:
+##
+## "Redistribution and use in source and binary forms, with or without
+## modification, are permitted provided that the following conditions are
+## met:
+##   * Redistributions of source code must retain the above copyright
+##     notice, this list of conditions and the following disclaimer.
+##   * Redistributions in binary form must reproduce the above copyright
+##     notice, this list of conditions and the following disclaimer in
+##     the documentation and/or other materials provided with the
+##     distribution.
+##   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+##     the names of its contributors may be used to endorse or promote
+##     products derived from this software without specific prior written
+##     permission.
+##
+## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+## "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+## A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+## OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+## LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+## DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+## $QT_END_LICENSE$
+##
+#############################################################################
+
+
+Independent behavior implementation; original executable source is not bundled.

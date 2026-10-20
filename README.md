@@ -4,13 +4,13 @@ this_file: README.md
 
 # FontLab Python examples
 
-This integration candidate combines 22 practical menu facades and 488
+This integration candidate combines 30 practical menu facades and 480
 preserved-source launchers. All entries use one category folder beneath
 `Scripts`. Each archived launcher is explicitly marked native compatibility
 pending. Counts describe source layout, not accepted native workflows.
 
 Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly, the reviewed App 0.2.57.dev0 candidate and the reviewed
+Python 3.11, Fly, the reviewed App 0.2.70.dev0 candidate and the reviewed
 `fontlab-python-lessons` 1.0.4.dev0 package. These are
 unpublished prerequisites; use their reviewed artifacts. Do not change a live
 FontLab environment as part of automated setup or test runs.
@@ -33,9 +33,10 @@ the audit. Providing this path does not authorize executing original bodies.
 
 ## Integration and acceptance
 
-The 26 practical facades include three existing Forms/Models lessons,
-13 GetGo lessons and ten complete part2/part3 adaptations: sort/filter models,
-read-only trees, modification calendars and glyph-name completion editors. The latter
+The 30 practical facades include three existing Forms/Models lessons,
+13 GetGo lessons and fourteen complete part2/part3 adaptations: sort/filter models,
+read-only and editable trees, modification calendars, glyph-name completion editors
+and numeric delegate spacing worksheets. The latter
 replace their indexed wrappers through menu-adaptations.json; rescue-index.json
 and all494original source identities remain unchanged. Part3 variants keep typed Qt dates, native regexp matching and original
 locale/range/comparator rules; part2 keeps its separate string/Python semantics. Basic keeps Qt QRegExp; Custom keeps
@@ -90,3 +91,5 @@ Glyph Modification Calendar with Formats is the distinct complete part3 workflow
 `glyph_completion.show/show_official` adapt both complete custom-completers to current-font glyph names. Distinct key/focus/menu rules share generic injected-Qt mechanics; Refresh keeps the local draft, removes stale completions and uses all names. Failed disconnections refuse Close for retry. Requires reviewed unpublished App>=0.2.63.dev0 through Fly. Native qualification remains pending.
 
 Editable Glyph Outline and Editable Glyph Tree adapt both complete editable-tree policies through Fly and reviewed unpublished App>=0.2.66.dev0. Local glyph/Unicode/date drafts retain all row/column/child/header editing, distinct menus/shortcuts/status and safe Close ownership. Refresh keeps edited drafts; Reset Draft explicitly reloads. No font data changes. Compiled PythonQt and full native preservation remain pending D25.
+
+Glyph Spacing Worksheet and Glyph Spacing Worksheet - Frameless retain both complete numeric delegate profiles. Edit all eight factors; A × B gives each of four font-unit increments. Refresh Selection captures every selected glyph-layer baseline. The selectable report compares all four candidates without applying metrics. Failed refresh keeps the prior report; Reset Factors restores the exact original values/types. Requires reviewed App>=0.2.70.dev0 through Fly. Native PythonQt, font/cache/history/reopen and publication qualification remain pending.

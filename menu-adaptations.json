@@ -164,6 +164,38 @@
       "scope": "Complete distinct part3 editable-tree row/column/child/header/menu/shortcut/selection policies over full local glyph metadata. Shared complete Qt model/view and retryable owned lifecycle; preserve drafts on failed capture/setup and require explicit Reset Draft for edited data. No native font mutation.",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/itemviews - spinboxdelegate-ddb20b1b68b18a91.py",
+      "menu": "Scripts/Tools/Glyph Spacing Worksheet.py",
+      "source": "rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py",
+      "source_sha256": "539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025",
+      "destination_sha256": "2582216ccfa5a5276aecde40a693e02a47f7546955fb8f59b09ffeef0c039e18",
+      "entry_point": "show",
+      "api_module": "spacing_worksheet",
+      "family": "spacing-worksheet-part2",
+      "license": "Apache-2.0 (owner D22); original BSD header and collection GPL metadata retained in NOTICE",
+      "scope": "Complete four-by-two original styled numeric delegate workflow; string defaults/Factor A and Factor B/framed/640x460; complete ordered captured advances and four local candidates; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "assets": [],
+      "helper_executed": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/spinboxdelegate-ddb20b1b68b18a91 - 6fcbc88a.py",
+      "menu": "Scripts/Tools/Glyph Spacing Worksheet - Frameless.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py",
+      "source_sha256": "3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084",
+      "destination_sha256": "4d7a6eea619b8eb1b17ebee27adc196a935042cd610adf93772d2fdbcf8a1bef",
+      "entry_point": "show_official",
+      "api_module": "spacing_worksheet",
+      "family": "spacing-worksheet-part3",
+      "license": "Apache-2.0 (owner D22); original BSD header and collection GPL metadata retained in NOTICE",
+      "scope": "Complete four-by-two original styled numeric delegate workflow; integer defaults/native numeric headers/frameless/native size policy; complete ordered captured advances and four local candidates; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "assets": [],
+      "helper_executed": false
     }
   ]
 }

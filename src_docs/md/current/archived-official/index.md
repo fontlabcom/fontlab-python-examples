@@ -150,7 +150,6 @@
 - [simpleselector-ae16288fede27692 - 4861da3b](simpleselector-ae16288fede27692-4861da3b.md)
 - [simplewidgetmapper-39de33366209402d - 2dac449c](simplewidgetmapper-39de33366209402d-2dac449c.md)
 - [sliders-36805750b888fba6 - 1be02662](sliders-36805750b888fba6-1be02662.md)
-- [spinboxdelegate-ddb20b1b68b18a91 - 6fcbc88a](spinboxdelegate-ddb20b1b68b18a91-6fcbc88a.md)
 - [spinboxes-468179092748a72e - 5895d0ae](spinboxes-468179092748a72e-5895d0ae.md)
 - [spreadsheet-bf3b39a8c2df8e94 - 678e36a4](spreadsheet-bf3b39a8c2df8e94-678e36a4.md)
 - [standarddialogs-e1a0a829f8f2e311 - 1632ddd1](standarddialogs-e1a0a829f8f2e311-1632ddd1.md)

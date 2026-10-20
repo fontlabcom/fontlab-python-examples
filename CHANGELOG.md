@@ -519,3 +519,9 @@ Preserve exact upstream notice bytes through Git filters, fresh checkout and arc
   and caller environment. Keep every notice/filter/checkout/archive assertion.
 - Preserve all upstream notice payloads and existing attributes/manifests.
   Source-only correction awaits fresh independent review; no new commit/push.
+
+## Issue120 Z27 — Glyph Spacing Worksheet pair (unreleased)
+
+Independently implement both complete spinboxdelegate profiles through lazy Fly/App entrypoints. Preserve all four rows/eight cells, profile-specific storage/headers/frame/sizing and native delegate events. Add complete selected-layer baseline/candidate reports, atomic Refresh Selection, exact Reset Factors and owned Close/error/destruction handling. No font writer or original body/helper execution. Native FontLab/PythonQt, complete getter/cache/history/save/reopen acceptance and publication remain pending.
+
+Tests and exact commands/exit receipts are recorded in WORK.md and the workspace spacing-worksheet-implementation-z27 evidence. Original identities/resources and other menus remain preserved. No canonical/live install, tag, commit or push is included.

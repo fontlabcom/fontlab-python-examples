@@ -70,7 +70,6 @@
 - [itemviews - puzzle-878fe9f714df3b5e](itemviews-puzzle-878fe9f714df3b5e.md)
 - [itemviews - simpledommodel-a59dae9770bfbefb](itemviews-simpledommodel-a59dae9770bfbefb.md)
 - [itemviews - simplewidgetmapper-39de33366209402d](itemviews-simplewidgetmapper-39de33366209402d.md)
-- [itemviews - spinboxdelegate-ddb20b1b68b18a91](itemviews-spinboxdelegate-ddb20b1b68b18a91.md)
 - [itemviews - spreadsheet-bf3b39a8c2df8e94](itemviews-spreadsheet-bf3b39a8c2df8e94.md)
 - [itemviews - stardelegate-dc59f268ee01e364](itemviews-stardelegate-dc59f268ee01e364.md)
 - [itemviews - storageview-cf15c3e91cdd8ded](itemviews-storageview-cf15c3e91cdd8ded.md)

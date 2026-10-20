@@ -161,3 +161,5 @@ gate. Source and artifact checks do not constitute native acceptance.
 ## Issue120 Z24 frontend notices
 
 No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.
+
+Z27 spacing worksheets add no runtime dependency. Use existing injected FontLab PythonQt, shared draft_signals/layer_selection/tabular_width mechanics and Fly. Standalone PyQt5 is test-only rehearsal; foreign Qt is never imported into FontLab. Normal wheel/sdist installs retain declared dependency resolution and pip check; host architecture is aarch64 Python3.11.
