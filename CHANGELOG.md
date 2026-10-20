@@ -393,3 +393,10 @@ Issue120 W1 integration candidate: 16 practical and 494 preserved-source menu fa
 ## Issue120 current documentation Z5
 
 The current 510-menu source catalogue is separate from the historical 42-page export. Retained manifests are validated before replacing accepted output, without running legacy exporters. Eighteen first-party Apache-2.0 insight listings are frozen inert text with hash/licence manifests. D21 intentional legacy deletions are preserved. Safe hash-named build snapshots prevent parenthesized filenames disappearing through codeinclude.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All199lesson tests (including four legacy/lesson namespace orders),1993current root tests and5SDK tests pass. EXAMPLES_LEGACY_API_SOURCE selects only the reviewed read-only first-party legacy API; it does not redirect the current suite. Audit controls reject historical script and native-module execution. D21 deletions remain intact.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.

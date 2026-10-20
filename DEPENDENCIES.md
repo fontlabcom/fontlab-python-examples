@@ -78,3 +78,10 @@ byte-audit input; the snapshot is not included in public artifacts.
 ## Issue120 current documentation Z5
 
 No runtime dependency added. Documentation uses locked ProperDocs/MaterialX, codeinclude and the already pinned PyMdown snippets extension; snapshots are inert data. Documentation-only plugin tests live under src_docs/tests and run in the locked docs environment.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All199lesson tests (including four legacy/lesson namespace orders),1993current root tests and5SDK tests pass. EXAMPLES_LEGACY_API_SOURCE selects only the reviewed read-only first-party legacy API; it does not redirect the current suite. Audit controls reject historical script and native-module execution. D21 deletions remain intact.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.

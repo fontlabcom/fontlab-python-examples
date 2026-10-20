@@ -59,3 +59,12 @@ code. If its bytes differ, supply a reviewed checkpoint with
 `FONTLAB_RETAINED_EXPORT=/path/to/reviewed-export ./build.sh --offline`. Stale
 hashes fail before the accepted export is replaced. Current menu source pages
 are separate from the historical retained catalogue; no native result is implied.
+
+
+Documentation-only SDK tests are in `tests_docs`; run them with
+`uv run --locked python -m pytest -q tests_docs`. Runtime and lesson suites
+remain separate Python3.11 processes, both required by the workspace push gate.
+Set `EXAMPLES_LEGACY_API_SOURCE` to the reviewed read-only first-party API
+checkout for namespace compatibility tests. This input supplies only the old
+API metadata/launcher with owned doubles; it does not run historical scripts,
+restore deleted source or replace the current root test suite.

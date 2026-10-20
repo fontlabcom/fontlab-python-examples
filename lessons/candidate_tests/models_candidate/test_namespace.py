@@ -9,7 +9,10 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
-LEGACY_ROOT = Path(os.environ.get("LEGACY_EXAMPLES_SOURCE", str(ROOT.parent))).resolve()
+LEGACY_ROOT = Path(
+    os.environ.get("EXAMPLES_LEGACY_API_SOURCE")
+    or os.environ.get("LEGACY_EXAMPLES_SOURCE", str(ROOT.parent))
+).resolve()
 
 
 @pytest.mark.parametrize("source_first", [False, True])
@@ -17,6 +20,10 @@ LEGACY_ROOT = Path(os.environ.get("LEGACY_EXAMPLES_SOURCE", str(ROOT.parent))).r
 def test_legacy_and_lessons_when_path_or_import_order_changes_then_both_apis_remain_distinct(
     source_first, lessons_first
 ):
+    assert (LEGACY_ROOT / "fontlab_python_examples/__init__.py").is_file(), (
+        "Set EXAMPLES_LEGACY_API_SOURCE to the reviewed read-only first-party API "
+        "checkout; do not restore the deleted legacy tree or redirect current tests."
+    )
     code = """
 import importlib
 import sys
@@ -24,6 +31,24 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 root = Path(ROOT_PATH)
 legacy_root = Path(LEGACY_PATH)
+def forbid_original_scripts(event, args):
+    if event == 'exec':
+        path = Path(args[0].co_filename).resolve()
+        if path.is_relative_to(legacy_root):
+            assert path in {
+                legacy_root / 'fontlab_python_examples/__init__.py',
+                legacy_root / 'fontlab_python_examples/launcher.py',
+            }, 'Namespace checks must not execute historical script bodies'
+    if event == 'import':
+        assert args[0].split('.')[0] not in {'PythonQt', 'fontlab'}, 'No native imports'
+sys.addaudithook(forbid_original_scripts)
+for forbidden in ('ports/owned-never-executed.py', 'rescued/owned-never-executed.py'):
+    try:
+        exec(compile('raise RuntimeError("body must not run")', str(legacy_root / forbidden), 'exec'))
+    except AssertionError as error:
+        assert 'must not execute historical script bodies' in str(error)
+    else:
+        raise AssertionError('The namespace audit must refuse original script execution')
 paths = [root / 'src', legacy_root] if SOURCE_FIRST else [legacy_root, root / 'src']
 sys.path[:0] = [str(path) for path in paths]
 order = ['fontlab_python_lessons', 'fontlab_python_examples'] if LESSONS_FIRST else ['fontlab_python_examples', 'fontlab_python_lessons']

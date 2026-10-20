@@ -3192,3 +3192,10 @@ The current 510-menu source catalogue is separate from the historical 42-page ex
 Full maintained suite:1,993 passed. Locked documentation suite:20 passed. Both changed production modules exceed 80% statement and branch coverage with zero exclusions. Strict self-contained offline build passes; all510 actual rendered menu bodies and all18 inert historical listings match source text exactly. Initial16-view accessibility check passed; final retained-page check is recorded in the parent Z5 evidence. Historical counts remain299/148/151, not current native acceptance.
 
 Wait, but: local source/build/browser checks are not native FontLab execution or whole issue120 acceptance. D25 native connectivity, complete branch/routes/archive/distribution/release and publication gates remain open. No canonical checkout, live install or remote site changed. Exact commands, retained failed attempts and receipts are in the parent workspace verification/issue-120/docs-z5/.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All199lesson tests (including four legacy/lesson namespace orders),1993current root tests and5SDK tests pass. EXAMPLES_LEGACY_API_SOURCE selects only the reviewed read-only first-party legacy API; it does not redirect the current suite. Audit controls reject historical script and native-module execution. D21 deletions remain intact.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.

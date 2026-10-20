@@ -1,9 +1,9 @@
-# this_file: src_docs/tests/test_retained_literals.py
+# this_file: tests_docs/test_retained_literals.py
 """Frozen first-party sources remain inert data with complete literal rendering."""
 import hashlib,json
 from pathlib import Path
 from markdown import markdown
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[1]
 
 
 def test_frozen_inputs_when_rendered_then_source_hashes_and_python_fences_preserved():
