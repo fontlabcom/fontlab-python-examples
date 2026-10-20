@@ -73,3 +73,8 @@ callback behavior still requires the controller's native acceptance.
 W1 adds no runtime dependency. Pending archived launchers need the exact local/private
 rescued snapshot identified by rescue-index.json. FONTLAB_PRESERVED_ROOT is a test-only
 byte-audit input; the snapshot is not included in public artifacts.
+
+
+## Issue120 current documentation Z5
+
+No runtime dependency added. Documentation uses locked ProperDocs/MaterialX, codeinclude and the already pinned PyMdown snippets extension; snapshots are inert data. Documentation-only plugin tests live under src_docs/tests and run in the locked docs environment.

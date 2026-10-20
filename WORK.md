@@ -3183,3 +3183,12 @@ Issue120 W1: integrate reviewed A3/A4 launcher bytes with D3/T1 menus in isolati
 W1 source verification (2026-10-20): full root suite3843passed/21workspace-private-evidence skips, lessons199passed.
 Commands: rtk proxy env PATH=<Homebrew-bin>:<local-bin>:/usr/bin:/bin PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLAB_WORKSPACE=<workspace> FONTLAB_PRESERVED_ROOT=<retained Examples tree> <reviewed T1 wheel-env>/bin/python -m pytest -q -rs tests:exit0. Lessons: QT_QPA_PLATFORM=offscreen EXAMPLES_APP_SOURCE=<reviewed T1 source>/fontlabapp, python -m pytest -q -rs lessons/candidate_tests/models_candidate --confcutdir lessons/candidate_tests/models_candidate:exit0.
 All494 archived wrapper bytes and all16 practical facade bytes retained exactly. Installed Fly/App rejects every absent archived source before native imports. No original copied/imported/executed; no native acceptance or archive cleanup. Initial system-Git/xcrun failures retained; explicit Homebrew PATH fixes invocation. Exact commands/logs and per-menu hashes live in parent verification/issue-120/menu-integration-w1/. Canonical/live installs/releases/publication unchanged.
+
+
+## Issue120 current documentation Z5
+
+The current 510-menu source catalogue is separate from the historical 42-page export. Retained manifests are validated before replacing accepted output, without running legacy exporters. Eighteen first-party Apache-2.0 insight listings are frozen inert text with hash/licence manifests. D21 intentional legacy deletions are preserved. Safe hash-named build snapshots prevent parenthesized filenames disappearing through codeinclude.
+
+Full maintained suite:1,993 passed. Locked documentation suite:20 passed. Both changed production modules exceed 80% statement and branch coverage with zero exclusions. Strict self-contained offline build passes; all510 actual rendered menu bodies and all18 inert historical listings match source text exactly. Initial16-view accessibility check passed; final retained-page check is recorded in the parent Z5 evidence. Historical counts remain299/148/151, not current native acceptance.
+
+Wait, but: local source/build/browser checks are not native FontLab execution or whole issue120 acceptance. D25 native connectivity, complete branch/routes/archive/distribution/release and publication gates remain open. No canonical checkout, live install or remote site changed. Exact commands, retained failed attempts and receipts are in the parent workspace verification/issue-120/docs-z5/.

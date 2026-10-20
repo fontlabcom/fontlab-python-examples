@@ -10,3 +10,9 @@ this_file: TODO.md
 - [x] Verify the combined source layout, immutable release provenance and all existing tests.
 - [ ] Review feature-branch integration without changing canonical checkouts or live installs.
 - [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.
+
+
+## Issue120 current documentation Z5
+
+- [x] Verify current source documentation locally (Z5 evidence).
+- [ ] Review and qualify the complete documentation branch and pending native/publication gates.

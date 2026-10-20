@@ -23,3 +23,9 @@ Done and archived in CHANGELOG.md: item 1 (fixtures, provenance, verification).
 - [x] Verify the combined source layout, immutable release provenance and all existing tests.
 - [ ] Review feature-branch integration without changing canonical checkouts or live installs.
 - [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.
+
+
+## Issue120 current documentation Z5
+
+- [x] Build current source documentation and verify rendered source plus local browser behavior.
+- [ ] Complete whole-branch review, original native acceptance and every remaining publication/distribution gate before promotion.

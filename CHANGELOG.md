@@ -388,3 +388,8 @@ No open tasks.
 - GetGo candidate: correct sixteen-menu guide, matching App prerequisite and distributed native-checker namespace. Native verification remains pending.
 
 Issue120 W1 integration candidate: 16 practical and 494 preserved-source menu facades consolidated without copying/executing archive bodies. Native and distribution acceptance remain pending.
+
+
+## Issue120 current documentation Z5
+
+The current 510-menu source catalogue is separate from the historical 42-page export. Retained manifests are validated before replacing accepted output, without running legacy exporters. Eighteen first-party Apache-2.0 insight listings are frozen inert text with hash/licence manifests. D21 intentional legacy deletions are preserved. Safe hash-named build snapshots prevent parenthesized filenames disappearing through codeinclude.

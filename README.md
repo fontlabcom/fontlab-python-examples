@@ -22,6 +22,8 @@ beside `Scripts`, as recorded in `rescue-index.json`. Those bodies are retained
 outside this feature branch and are not copied into public commits, packages
 or documentation. A fresh checkout alone cannot run these pending entries.
 Their purpose, source SHA and compatibility limit are stated in each launcher.
+The documentation also retains 18 first-party Apache-2.0 insight listings as inert
+text, with their licence and SHA manifest; these are not launcher dependencies.
 No archived body was executed during integration or verification.
 
 For an offline hash audit, set `FONTLAB_PRESERVED_ROOT` to the existing checkout
@@ -51,3 +53,9 @@ Run pytest with plugin autoload disabled and the preserved-source root supplied.
 Scriptmix also requires the reviewed installed App and `--original-source-root`
 for original-byte checks. Examples retains its repository tests and the `lessons`
 package suites. Exact commands, skips and limitations are recorded in WORK.md.
+
+The docs wrapper reads src_docs/retained-export without executing archived
+code. If its bytes differ, supply a reviewed checkpoint with
+`FONTLAB_RETAINED_EXPORT=/path/to/reviewed-export ./build.sh --offline`. Stale
+hashes fail before the accepted export is replaced. Current menu source pages
+are separate from the historical retained catalogue; no native result is implied.

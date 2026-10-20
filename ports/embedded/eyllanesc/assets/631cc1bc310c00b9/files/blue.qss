@@ -1,7 +1,0 @@
-/* Self-authored for fontlab-python-examples (Apache-2.0): cool blue panel. */
-QWidget { background: #1f4e79; color: #f2f6fa; }
-QPushButton { background: #2f6ea5; border: 1px solid #a9c7e3; border-radius: 4px; padding: 4px 10px; }
-QPushButton:pressed { background: #163b5c; }
-QSpinBox { background: #f2f6fa; color: #1f4e79; border: 1px solid #a9c7e3; padding-right: 18px; }
-QSpinBox::up-button { image: url(:/files/add.png); width: 16px; }
-QSpinBox::down-button { image: url(:/files/remove.png); width: 16px; }

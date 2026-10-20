@@ -1,0 +1,247 @@
+{
+  "format": "fontlab-python-examples.docs-export.v1",
+  "generator": "src_docs/build.py (retained catalogue with status notice)",
+  "source_base_url": "https://github.com/fontlabcom/fontlab-python-examples/blob/main/",
+  "inputs": {
+    "catalog/ports.json": "160840deb644e7547791cc85020dd0adf624fa3803afb8848ebe850d604303d0",
+    "catalog/sources.json": "94eb48171bcfedb0ae1642ddb1cb8ca407ea16bac8308269787a3d34f5776780",
+    "catalog/insights.json": "7940417f6e7932b8e0ee0056d6456fb8543a97d4afca291c899b61ad9811dc71",
+    "examples/recipes/README.md": "7faf167cd0da5c32a95977c8c5327f0c4c6633062dc5de9083ec8a24ccc83325",
+    "examples/recipes/anchors_from_bounds/README.md": "b2930d1a3212633793a4b697992fa383cecdd8f60a294ba08466f8f8fb019522",
+    "examples/recipes/contour_direction/README.md": "71bb2c68d97f92eeadc1d3a75402723205853d18e226281cf2b0b8f52f019565",
+    "examples/recipes/glyph_actions_batch/README.md": "8f6cbf45551fa242224fc44c7b18020f879ffc06e2c57e6cc976504620e19e4a",
+    "examples/recipes/glyphs_path_report/README.md": "7f95a92a17e036c0f31e82f11ebb26bfd1d4a378322d1fb329044c27dfcf82cc",
+    "examples/recipes/glyphs_tabular_figures/README.md": "a3454a6d141e9a9bf97488196d3d5eda9522ddc7960bee906f3ed285e5e3242f",
+    "examples/recipes/kerning_from_text/README.md": "45743b930ed87d284c4eeedc505e7a8bb7b2c9ed5b3534d89871abf5398959fb",
+    "examples/recipes/layer_backup/README.md": "35a9f72ee22c7d64956ff1b34e2c4d222c2cfbab1adf2b03d056591ce127dde7",
+    "examples/recipes/round_coordinates/README.md": "dff8c9976f28fdd8c05e963a847f7e6084b59be0c25ca0a1408fa3fb0bca4d02",
+    "examples/recipes/sidebearings_from_reference/README.md": "c4987a4e0cc5d1e7b8630a9156d5ce6a76b5cb09238d01a29e0506673214c2fe",
+    "examples/getgo/README.md": "4866c7c9fd6d3d805ad0a7cd208ec604dd4eb15c2b181e5a2591b6bf7a9ebcc7",
+    "examples/getgo/native_manifest.json": "392eead9c297bcd59b84641b5d9d19943742194321b76c7bbde6d3026190424f",
+    "examples/samples/README.md": "dd0661ebbdceb6277db9ca6efe553bd8db6e5a58de433824ab8cfec9e66a9bcd"
+  },
+  "counts": {
+    "records": 299,
+    "implemented": 148,
+    "blocked": 151,
+    "native_passed": 148,
+    "categories": 28,
+    "insights": 18,
+    "recipes": 9,
+    "getgo_examples": 13,
+    "samples": 106
+  },
+  "entry": "index.md",
+  "pages": [
+    {
+      "path": "categories/charts.md",
+      "title": "Examples: charts",
+      "sha256": "1094b88e79a2dfc6999ed845c95f580bfb15048807b17be99cff786db4251ada"
+    },
+    {
+      "path": "categories/corelib.md",
+      "title": "Examples: corelib",
+      "sha256": "2c541dcce9c2088c923bdbeda2fc1b558741934ab746c4425afb4b9c42a1b8d5"
+    },
+    {
+      "path": "categories/database.md",
+      "title": "Examples: database",
+      "sha256": "9947c4323846c2c1b7d747f0335aa3bf0c2f9288ea04194ead20b9bb519f075e"
+    },
+    {
+      "path": "categories/designer-ui.md",
+      "title": "Examples: designer-ui",
+      "sha256": "4a51b8964631d991b71be04f3da73f3a111e506ecd605f37b2c8030e86b8ae8d"
+    },
+    {
+      "path": "categories/designer.md",
+      "title": "Examples: designer",
+      "sha256": "b853e14e3cddad140905b136ebb7ed27fe566931875e0dd8d2c8acf6e31b65fb"
+    },
+    {
+      "path": "categories/desktop.md",
+      "title": "Examples: desktop",
+      "sha256": "6d1dfbc026da89e6ba0403f736502f1bc4602d3be78dfb32d60b7e097abd11b6"
+    },
+    {
+      "path": "categories/dialogs.md",
+      "title": "Examples: dialogs",
+      "sha256": "34ce820fcf5a5fa3cb1cd2ccfdc25cb7bf699d5cb18798ce48055d320d4f848a"
+    },
+    {
+      "path": "categories/draganddrop.md",
+      "title": "Examples: draganddrop",
+      "sha256": "68453edb5dee8547faca79c296252345664601350718d61c8d4e3e98193328f2"
+    },
+    {
+      "path": "categories/embedded.md",
+      "title": "Examples: embedded",
+      "sha256": "ab768cfcddbf8465a4e0a61fb97efe8d5182271988c5a56e24630823cc1b24c2"
+    },
+    {
+      "path": "categories/graphics-painting.md",
+      "title": "Examples: graphics-painting",
+      "sha256": "7ab1156baf70af43b55f8c1f839c2ee87ef45501914515549bca4904bdd106df"
+    },
+    {
+      "path": "categories/gstreamer.md",
+      "title": "Examples: gstreamer",
+      "sha256": "c6b2860a46368dc4488c6871d4eedd6fbc3fdda49a0f66cde0edd839238b7d29"
+    },
+    {
+      "path": "categories/itemviews.md",
+      "title": "Examples: itemviews",
+      "sha256": "caac9ca87f13ffcd7de2c34693b14f3c773235154d2006fa7cbeb4359179df1b"
+    },
+    {
+      "path": "categories/layouts.md",
+      "title": "Examples: layouts",
+      "sha256": "b9889cd21aa69120316a49e0ae3a2b9412054f0a0a269966d3b0f67ce2b8ce0d"
+    },
+    {
+      "path": "categories/mainwindows.md",
+      "title": "Examples: mainwindows",
+      "sha256": "7859e79b52bc9e15ee895b3622520e74f60ad0ce2f2b8dc685179fcde83d8e10"
+    },
+    {
+      "path": "categories/matplotlib.md",
+      "title": "Examples: matplotlib",
+      "sha256": "17c37040ea776826fd849926ca81501236f2240f85f5ecbe7eec10cc2ff547a4"
+    },
+    {
+      "path": "categories/multimedia.md",
+      "title": "Examples: multimedia",
+      "sha256": "9c0e606f280de611b218c0d1f66032087ea89097b0a04b0143b7adfa0a04b462"
+    },
+    {
+      "path": "categories/network.md",
+      "title": "Examples: network",
+      "sha256": "0371a76e533afb06ed30f07f5f4f5fcb2dda462057d28cbb0022982ce97c2470"
+    },
+    {
+      "path": "categories/platform.md",
+      "title": "Examples: platform",
+      "sha256": "298d3bde8f84ab03d91769ec4b486f7208c0ef0516b794eec335ee23cacca5a2"
+    },
+    {
+      "path": "categories/qml.md",
+      "title": "Examples: qml",
+      "sha256": "141d4a2a625f8d0ee7da40edf5cfb047dd7cd454f4ccda3fb98a04d60483d0b5"
+    },
+    {
+      "path": "categories/remoteobjects.md",
+      "title": "Examples: remoteobjects",
+      "sha256": "95612a665a1e73ba7c510caf72a56ff80c6d6d1c8641ca8a1c03c082f77a1d71"
+    },
+    {
+      "path": "categories/richtext.md",
+      "title": "Examples: richtext",
+      "sha256": "950169dea2093c590e25ac7df55a54730738f722072ced48597f63db06a4fffc"
+    },
+    {
+      "path": "categories/threads-processes.md",
+      "title": "Examples: threads-processes",
+      "sha256": "0484d17ccb58c7e4b29010c187e509cb03a5fe289b70fcc46cb47ee0aab13302"
+    },
+    {
+      "path": "categories/tools.md",
+      "title": "Examples: tools",
+      "sha256": "1052b488b98c03cb900fc650c68e1210a61ac2afadc277cd2399e09e5664c0b9"
+    },
+    {
+      "path": "categories/tutorials.md",
+      "title": "Examples: tutorials",
+      "sha256": "d63e91636df8957606386cf57e41fa4359dff26cb5f7a9e7d8a994cff5c4ffb9"
+    },
+    {
+      "path": "categories/video-overlay.md",
+      "title": "Examples: video-overlay",
+      "sha256": "678835d7741c930939e8e4634a52b6301f9265507f2702c646df463dec69b6d2"
+    },
+    {
+      "path": "categories/webengine.md",
+      "title": "Examples: webengine",
+      "sha256": "b6b928f5d3cecb0c2557d568ec3bea39c10c624b44ccb81a72e1745fb402c0b9"
+    },
+    {
+      "path": "categories/widgets.md",
+      "title": "Examples: widgets",
+      "sha256": "262b2a4aa1485e1348c8df779381585c141f1be86d8fc71617bdf8fc2f259131"
+    },
+    {
+      "path": "categories/xmlpatterns.md",
+      "title": "Examples: xmlpatterns",
+      "sha256": "c7a34e62af1f51db11520cdd114f854c1c515f9689d7ed3f09ea730eab272d81"
+    },
+    {
+      "path": "getgo.md",
+      "title": "Real GetGo fonts, disposable working copies",
+      "sha256": "b423895d29e9d91838a627170e8c706aa0e2361765eafba8981669dc375f0b1a"
+    },
+    {
+      "path": "index.md",
+      "title": "Python examples for FontLab",
+      "sha256": "2330425368b8312252ea59fcf978305473db607cdb743d5174f145ede59a34f6"
+    },
+    {
+      "path": "insights.md",
+      "title": "Insight examples",
+      "sha256": "daec5ea83ee505d8f6a8dd59e5dc21fead377427dbfe07ae16c999f528f08719"
+    },
+    {
+      "path": "recipes/anchors_from_bounds.md",
+      "title": "Place top and bottom anchors",
+      "sha256": "62da5df22e00767b9870d3ee74f2422b3c127377a89d443604da48c897cdbd79"
+    },
+    {
+      "path": "recipes/contour_direction.md",
+      "title": "Correct contour direction and start points",
+      "sha256": "04f48396294cba43be4ae9f9df388b8914bb4f6ba6bc2923346e07a541fcee00"
+    },
+    {
+      "path": "recipes/glyph_actions_batch.md",
+      "title": "Batch Tools > Actions on named glyphs",
+      "sha256": "5d7a709a734b2da06ae8b7af457e1114b32bbdecb047f86d218593e061f5a05d"
+    },
+    {
+      "path": "recipes/glyphs_path_report.md",
+      "title": "Path problem report (a Glyphs script run in FontLab)",
+      "sha256": "f72d70675b24a1e471643868f363e797b1774406776e8f605bfab2515cefec4d"
+    },
+    {
+      "path": "recipes/glyphs_tabular_figures.md",
+      "title": "Tabular figures (a Glyphs script run in FontLab)",
+      "sha256": "0cfb6f9a618954f8f591265fb2ea8b68211ecbbca36ae1a98c0fc33fc60aaeed"
+    },
+    {
+      "path": "recipes/index.md",
+      "title": "FontLab 9 recipes",
+      "sha256": "8566f6a22b078977fa23c8e38fc0100a3a6a6b0e9bf33d17b88372dd19ad14e3"
+    },
+    {
+      "path": "recipes/kerning_from_text.md",
+      "title": "Kerning pairs from text",
+      "sha256": "23b8fe9f3d0bd866416064e1bffbacd4007bf94e95af0dfc93c0bb6a0f2f3b90"
+    },
+    {
+      "path": "recipes/layer_backup.md",
+      "title": "Back up master layers",
+      "sha256": "08bf672b99a85b83e21b14fd0cc266d7a8a275924e865ce544a6ae95e0ce1094"
+    },
+    {
+      "path": "recipes/round_coordinates.md",
+      "title": "Round coordinates to grid",
+      "sha256": "d3450c79fba3437c23bb726d7b1d7fa7d8acf966a61a4ad356a559155bd57c65"
+    },
+    {
+      "path": "recipes/sidebearings_from_reference.md",
+      "title": "Copy sidebearings from a reference glyph",
+      "sha256": "3d57d966a5238357d5e7b30c685447e7f6cef410ed5b66cff371bf98e33dcf01"
+    },
+    {
+      "path": "samples.md",
+      "title": "Samples: GUI scripts for FontLab 9",
+      "sha256": "1d04573a82d723cbad4ca5d2c402642e8a4698928f9bc2e7324a5f3f249f0147"
+    }
+  ]
+}

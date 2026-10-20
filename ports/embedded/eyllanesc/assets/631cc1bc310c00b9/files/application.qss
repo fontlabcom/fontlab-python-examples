@@ -1,6 +1,0 @@
-/* Self-authored for fontlab-python-examples (Apache-2.0): shared defaults. */
-QWidget { font-size: 13px; }
-QPushButton { min-height: 22px; }
-QSpinBox { min-width: 64px; }
-QSlider::groove:horizontal { height: 4px; background: #9aa5ad; }
-QSlider::handle:horizontal { width: 12px; margin: -5px 0; background: #5b6670; border-radius: 6px; }

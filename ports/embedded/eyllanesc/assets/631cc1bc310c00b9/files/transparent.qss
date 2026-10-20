@@ -1,8 +1,0 @@
-/* Self-authored for fontlab-python-examples (Apache-2.0): see-through over a picture. */
-QWidget#StyleWidget { background-image: url(:/files/nature_1.png); }
-QWidget { background: transparent; color: #ffffff; }
-QPushButton { background: rgba(255, 255, 255, 60); border: 1px solid rgba(255, 255, 255, 160); border-radius: 4px; padding: 4px 10px; }
-QPushButton:pressed { background: rgba(0, 0, 0, 80); }
-QSpinBox { background: rgba(0, 0, 0, 70); border: 1px solid rgba(255, 255, 255, 160); padding-right: 18px; }
-QSpinBox::up-button { image: url(:/files/add.png); width: 16px; }
-QSpinBox::down-button { image: url(:/files/remove.png); width: 16px; }

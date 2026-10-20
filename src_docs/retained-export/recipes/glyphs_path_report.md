@@ -1,0 +1,33 @@
+# Path problem report (a Glyphs script run in FontLab)
+
+!!! note "Retained catalogue"
+
+    This page comes from the retained catalogue. Its launch instructions and native
+    results describe the earlier tree, now preserved under `rescued/part2`, rather than the current
+    launcher. The documentation build does not rerun these examples.
+
+**Purpose.** Find outline problems before export: open paths, closed paths with fewer
+than three on-curve points, repeated consecutive points and tiny paths (narrower or
+lower than 4 units). Read-only. `path_report.py` is written as an ordinary Glyphs 3
+script (in Glyphs it checks the selected glyphs, or all; its functions were run inside
+Glyphs 3.5.1 and 4.2 on an in-memory test font); `recipe.py` runs the same file unchanged in FontLab through glyport (`fontlab-glyport`).
+
+```python
+run()  # every glyph of the current font
+run(glyph_names=["a", "b"])["problems"]
+```
+
+**What glyport needs and provides here.** `font.glyphs` iteration, `glyph.layers[master.id]`,
+`layer.paths`, `path.closed`, `path.nodes` with `x`, `y` and `type`. Coordinates
+FontLab returns as `-0.0` are printed as `0`. It checks FontLab's current master (Glyphs' selected master inside Glyphs).
+
+**Native check** (`native.py`, owned font, glyport commit recorded in the evidence):
+exactly the three planted problems are reported (a repeated point, a 2 × 2 path, a
+two-point path) and nothing in a clean "O"; the outlines are unchanged afterwards.
+
+**Provenance.** Written from scratch for this repository. The behaviour follows the
+common "path problem finder" scripts for Glyphs, such as those in the public
+mekkablue Glyphs scripts (https://github.com/mekkablue/Glyphs-Scripts, Paths folder);
+their code was not read or copied.
+
+**Licence.** Apache-2.0, as the repository.

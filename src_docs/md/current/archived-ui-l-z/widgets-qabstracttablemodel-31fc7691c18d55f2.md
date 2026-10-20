@@ -1,0 +1,36 @@
+---
+this_file: src_docs/md/current/archived-ui-l-z/widgets-qabstracttablemodel-31fc7691c18d55f2.md
+tags: ["Archived UI L-Z"]
+categories: ["Archived UI L-Z"]
+---
+
+# Widgets - QAbstractTableModel - 31fc7691c18d55f2
+
+Launch the preserved archive entry: Widgets - QAbstractTableModel - 31fc7691c18d55f2.
+
+Purpose: Run this entry's preserved implementation through Fly's shared App
+helper. The entry retains its original behavior; it is an archive launcher.
+
+Setup: Use FontLab 9 with Python 3.11, Fly and FontLab App available. Keep the
+complete rescued tree beside Scripts. Read the preserved source and its resource
+and dependency requirements before use:
+rescued/part2/ports/widgets/pyqt-examples/main-31fc7691c18d55f2.py
+Use an owned disposable font copy if the source requires a font.
+
+Run: Select Scripts > Archived UI L-Z > Widgets - QAbstractTableModel - 31fc7691c18d55f2.
+Result: The helper runs the preserved entry. Its source determines any window,
+output or font changes. Missing resources or unsupported APIs can raise errors.
+
+Compatibility: Native FontLab compatibility is pending. Preserved sources have
+not been certified by this launcher; Python syntax and route checks do not
+establish successful UI behavior or font results.
+
+Run **Archived UI L-Z > Widgets - QAbstractTableModel - 31fc7691c18d55f2** from FontLab's Scripts menu.
+
+Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
+
+## Source
+
+<!--codeinclude-->
+[Python source](../../../../.build/menu-sources/6f8642dbaf38ec2a2f9a10b5658a3d3db7f8e040a62c55c55a00a03796e0553a.py)
+<!--/codeinclude-->
