@@ -3312,3 +3312,71 @@ release and publication acceptance remain open. D25 is pending and the busy
 fence remains held. No native driver, restart, canonical merge, live installation,
 tag, release or site publication was performed. Exact commands, exit codes and
 retained evidence are in the workspace's private typed-date-z11 directory.
+
+
+## Issue120 Z13 — complete read-only Simple Tree Model pair
+
+Both archived part2/part3 read-only tree entrypoints now show complete current-
+font glyph metadata through a generic immutable App tree and injected Qt model.
+Each glyph keeps font order, every Unicode assignment and its local modification
+date; missing values stay explicit. Expand/collapse and cell selection are
+read-only. Part2 retains fixed columns, noneditable EditRole text, row/column
+status and File > Exit; part3 retains DisplayRole-only text and parent-item
+column counts. Their separate editable-tree entrypoints remain outside this pair.
+
+Source-specific synthetic outline/default.txt loading becomes structured native
+metadata input, using the existing source-fenced reader. Capture and model
+construction share one deadline. Refresh replaces the entire model and selection
+owner; failure removes all results. Model virtual failures are contained and
+obsolete callbacks become inert. All completion routes release owned resources.
+The raw sources/resources are preserved and never executed or packaged here.
+
+Requires reviewed unpublished App>=0.2.57.dev0 through Fly. Standalone Qt model
+tester/view/lifecycle checks and ordinary artifacts do not establish PythonQt
+virtual dispatch, native getter/font/cache/history/dirty/save/reopen acceptance.
+Native D25, integration/distribution/release/publication and the full original
+goal remain open. No new native API, writer or live installation is used.
+
+
+## Z13 verified source/artifact checkpoint — 2026-10-20
+
+66 new App controls; full source 2341 passed. All four complete new production
+modules exceed 80% statements and branches with zero exclusions: three are
+100%/100%; the owned panel is 95.97%/95.00%. Both new menus have 100%/100%.
+Examples 2002 passed plus six locked SDK tests. Independently installed arm64
+Qt5.15.19/PyQt5.15.11 passes all 66 focused controls, including Qt's actual model
+tester, ragged/deep hierarchy, duplicate occurrences, stale/foreign indices,
+roles/flags, expansion, selection, deadline/failure/worker-thread refusals and
+all six completion routes plus File > Exit and parent destruction. Four final
+installed public-entrypoint light/dark renders were directly inspected.
+
+Final App0.2.57.dev0 normal wheel/source installs each pass App2339/two generated-
+shim skips, Glyport3017/three existing skips, Fontport4489/two existing skips
+with63known warnings, Lessons197, Scriptmix1074/one existing skip and Examples
+2002. Cold Fly imports include the new tree APIs. All489runtime/resource pairs
+and335App source-archive files match current source; licensing/privacy/Python3.11
+audits pass. Every177priorApp runtime file and all other package payloads remain
+exact; only four App helpers are added.
+
+Strict docs build, all510exact rendered menu bodies, full-site privacy scan and
+eight authored-guide hashes pass. All494original identities/bodies, the original
+part3default.txt asset,668prior menu payloads,11zone originals,7247-row ledger,
+1111owner hashes and three canonical Git statuses remain unchanged. Two wrapper
+routes intentionally replace prior dispatchers; total menus remain670. Examples
+has22candidate facades/488preserved-source dispatchers. No native numerator changes.
+
+Retained first-red data/menu/thread controls, stdlib optional-Jython import-probe
+test-harness correction, complete-suite cwd failure and hardcoded old-dispatcher
+harness failures. Tests now preserve every original indexed assertion while
+using each adaptation's explicit shared API module. Added the missing Result
+docstring section, retained original part2 File > Exit and tightened view-detach/
+exception fencing before the final build. Existing editable-tree entrypoints
+remain separate and pending. No source body or original asset was executed.
+
+Wait, but: standalone Qt5/Qt6 and immutable scalar tests are not FontLab/PythonQt
+virtual/getter/font/cache/history/dirty/save/reopen or original native acceptance.
+D25 remains pending, TCPerrno61 and the busy fence hash unchanged. No native
+driver, restart, preference change, live install, canonical merge, tag, release
+or site publication occurred. All original workflow/package/integration/docs/
+distribution/release gates stay open. Exact commands/exits, failed attempts and
+receipts are in the workspace's private glyph-tree-z13 folder and root WORK.md.

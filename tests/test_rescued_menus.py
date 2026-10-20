@@ -26,6 +26,8 @@ ROWS = [
             {
                 "menu": ADAPTED[row["menu"]]["menu"],
                 "adapted_entry": ADAPTED[row["menu"]]["entry_point"],
+                "adapted_module": "fly.ap."
+                + ADAPTED[row["menu"]].get("api_module", "glyph_catalog"),
             }
             if row["menu"] in ADAPTED
             else {}
@@ -71,7 +73,7 @@ def test_menu_when_launched_then_dispatches_exact_target_once(
     row: dict[str, str], mode: str, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     entry = row.get("adapted_entry")
-    module_name = "fly.ap.glyph_catalog" if entry else "fly.ap.rescued_examples"
+    module_name = row["adapted_module"] if entry else "fly.ap.rescued_examples"
     calls: list[tuple] = []
     module = ModuleType(module_name)
 
@@ -124,7 +126,7 @@ def test_menu_when_inspected_then_preserves_layout_docs_typing_and_source_hash(
         if isinstance(node, ast.ImportFrom)
         and node.module
         == (
-            "fly.ap.glyph_catalog"
+            row["adapted_module"]
             if row.get("adapted_entry")
             else "fly.ap.rescued_examples"
         )
@@ -151,7 +153,7 @@ def test_scripts_when_scanned_then_all_menu_leaves_use_one_level_and_python311()
 ):
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
     assert len(paths) == 510, (
-        "Retain all494original identities (492dispatch+2adapted) and all16practical lessons"
+        "Retain all494original identities (488dispatch+6adapted) and all16practical lessons"
     )
     for path in paths:
         assert len(path.relative_to(ROOT / "Scripts").parts) == 2, (

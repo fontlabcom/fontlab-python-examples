@@ -89,3 +89,5 @@ These local gates do not establish native/font/history/reopen or site-publicatio
 Z10 adds no runtime dependency. App uses stdlib and FontLab PythonQt; menus require the reviewed unpublished App>=0.2.54.dev0. Standalone PyQt5==5.15.11/Qt5 and PySide6 checks run in separate private test processes and are never loaded into FontLab. Archived first-party Python source attribution is in NOTICE.
 
 Z11 adds no runtime dependency. Typed Qt date policies use existing FontLab PythonQt. Optional Table.epochs is plain immutable integer data; old string-table callers retain their behavior. Menus require reviewed unpublished App>=0.2.55.dev0. Standalone Qt5/Qt6 remain separate private test processes.
+
+Z13 adds no third-party dependency. Immutable topology/model helpers use stdlib and injected existing Qt. The two practical tree menus require reviewed unpublished App>=0.2.57.dev0 and Fly; actual native acceptance remains pending.

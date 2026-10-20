@@ -25,7 +25,7 @@ def test_adaptations_when_loaded_then_two_full_part2_workflows_preserve_frozen_i
         data["source_index_sha256"]
         == hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
     )
-    rows = [row for row in data["adaptations"] if row.get("family") != "part3-official"]
+    rows = [row for row in data["adaptations"] if row.get("family") is None]
     assert len(rows) == 2 and len({r["menu"] for r in rows}) == 2
     original = {
         r["menu"]: r

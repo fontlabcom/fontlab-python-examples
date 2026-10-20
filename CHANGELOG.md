@@ -442,3 +442,27 @@ folds); Basic retains millisecond ordering, Custom retains its source comparator
 No new native font API, writer, original-source execution or live install is used.
 Standalone tests do not establish actual PythonQt/font/cache/history/persistence
 acceptance. All original/native/integration/distribution/publication gates stay open.
+
+
+## Issue120 Z13 — complete read-only Simple Tree Model pair
+
+Both archived part2/part3 read-only tree entrypoints now show complete current-
+font glyph metadata through a generic immutable App tree and injected Qt model.
+Each glyph keeps font order, every Unicode assignment and its local modification
+date; missing values stay explicit. Expand/collapse and cell selection are
+read-only. Part2 retains fixed columns, noneditable EditRole text, row/column
+status and File > Exit; part3 retains DisplayRole-only text and parent-item
+column counts. Their separate editable-tree entrypoints remain outside this pair.
+
+Source-specific synthetic outline/default.txt loading becomes structured native
+metadata input, using the existing source-fenced reader. Capture and model
+construction share one deadline. Refresh replaces the entire model and selection
+owner; failure removes all results. Model virtual failures are contained and
+obsolete callbacks become inert. All completion routes release owned resources.
+The raw sources/resources are preserved and never executed or packaged here.
+
+Requires reviewed unpublished App>=0.2.57.dev0 through Fly. Standalone Qt model
+tester/view/lifecycle checks and ordinary artifacts do not establish PythonQt
+virtual dispatch, native getter/font/cache/history/dirty/save/reopen acceptance.
+Native D25, integration/distribution/release/publication and the full original
+goal remain open. No new native API, writer or live installation is used.

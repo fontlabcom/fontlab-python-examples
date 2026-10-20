@@ -151,7 +151,6 @@
 - [signal-0a13f60f5f0561db - 3240d755](signal-0a13f60f5f0561db-3240d755.md)
 - [simpledommodel-a59dae9770bfbefb - f1d9c486](simpledommodel-a59dae9770bfbefb-f1d9c486.md)
 - [simpleselector-ae16288fede27692 - 4861da3b](simpleselector-ae16288fede27692-4861da3b.md)
-- [simpletreemodel-321f8e535facafde - 8125b5f0](simpletreemodel-321f8e535facafde-8125b5f0.md)
 - [simplewidgetmapper-39de33366209402d - 2dac449c](simplewidgetmapper-39de33366209402d-2dac449c.md)
 - [sliders-36805750b888fba6 - 1be02662](sliders-36805750b888fba6-1be02662.md)
 - [spinboxdelegate-ddb20b1b68b18a91 - 6fcbc88a](spinboxdelegate-ddb20b1b68b18a91-6fcbc88a.md)

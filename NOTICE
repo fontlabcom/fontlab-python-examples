@@ -38,3 +38,5 @@ views and owned lifetime. Native timestamps use a local copy with exact epoch
 fences; an optional scalar epoch channel prevents typed-cell precision loss.
 No original body/resource is executed or bundled. The existing part2 semantics
 remain separate. Native FontLab/PythonQt preservation qualification is pending.
+
+Z13 adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0, owner D22). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes remain preserved and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. Native acceptance is pending.

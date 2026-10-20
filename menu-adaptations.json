@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Keep all494source identities and exact originals. Two current destinations replace legacy dispatch; no original body is executed/distributed and native acceptance stays pending.",
+  "policy": "Keep all494source identities and exact originals. Hash-bound current destinations replace legacy dispatch; no original body is executed/distributed and native acceptance stays pending.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -52,6 +52,34 @@
       "scope": "Complete part3 custom native QRegExp OR, inclusive QDate/QDateTime bounds, case-sensitive email-token/ISO datetime ordering over whole-font glyph metadata and typed QDateTime cells; complete source/proxy views and owned lifetime",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/itemviews - simpletreemodel-321f8e535facafde.py",
+      "menu": "Scripts/Models/Glyph Metadata Outline.py",
+      "source": "rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py",
+      "source_sha256": "9bcb7068a5f3970a855c85d2922c043bf7bcfc196910e8814e7d93a84013751e",
+      "destination_sha256": "834e1e00ee0dfe8b4b00ad6dc1ea8bde1bbbd5ce4d39cfb3000c1699031c9c60",
+      "entry_point": "show_outline",
+      "family": "simple-tree",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part2 read-only hierarchical model/index/parent/data/header/flags/selection/expand workflow over all captured glyph metadata. Keep fixed columns, noneditable EditRole text, selected row/column status and File > Exit.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "api_module": "glyph_tree"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/simpletreemodel-321f8e535facafde - 8125b5f0.py",
+      "menu": "Scripts/Models/Glyph Metadata Tree.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py",
+      "source_sha256": "0eb40bcaded0341ad05f3891e54ee5f06e02616d3efa03b175742863d178fc86",
+      "destination_sha256": "6cb68b1d0e60c68dc049ab89f116c6ecf4d9dadd4235967c1743abfb1a6227a1",
+      "entry_point": "show_tree",
+      "family": "simple-tree",
+      "license": "Apache-2.0 (owner D22)",
+      "scope": "Complete part3 read-only hierarchical model/index/parent/data/header/flags/selection/expand workflow over all captured glyph metadata. Keep DisplayRole-only text and parent-item column counts; no original selection-status control is added.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "api_module": "glyph_tree"
     }
   ]
 }

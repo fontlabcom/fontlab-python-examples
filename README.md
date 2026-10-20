@@ -4,13 +4,13 @@ this_file: README.md
 
 # FontLab Python examples
 
-This integration candidate combines 20 practical menu facades and 490
+This integration candidate combines 22 practical menu facades and 488
 preserved-source launchers. All entries use one category folder beneath
 `Scripts`. Each archived launcher is explicitly marked native compatibility
 pending. Counts describe source layout, not accepted native workflows.
 
 Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly, the reviewed App 0.2.55.dev0 candidate and the reviewed
+Python 3.11, Fly, the reviewed App 0.2.57.dev0 candidate and the reviewed
 `fontlab-python-lessons` 1.0.4.dev0 package. These are
 unpublished prerequisites; use their reviewed artifacts. Do not change a live
 FontLab environment as part of automated setup or test runs.
@@ -33,7 +33,7 @@ the audit. Providing this path does not authorize executing original bodies.
 
 ## Integration and acceptance
 
-The 20 practical facades include the three existing Forms/Models lessons,
+The 22 practical facades include the three existing Forms/Models lessons,
 13 GetGo lessons and four complete part2/part3 sort/filter adaptations. The latter
 replace their indexed wrappers through menu-adaptations.json; rescue-index.json
 and all494original source identities remain unchanged. Part3 variants keep typed Qt dates, native regexp matching and original
@@ -79,3 +79,5 @@ separate from retained authored guides in `docs`. Two successive real clean
 builds preserve the guide bytes. The earlier default overwrote those guides in
 the isolated test checkout; their exact branch bytes were restored and the first
 render retained as evidence. No canonical owner path or live site was changed.
+
+The two read-only Simple Tree Model adaptations show full glyph/Unicode/local-date hierarchies. Part2 keeps selection status and File > Exit; part3 keeps its distinct data roles/columns. Both use shared App tree models and remain native-unqualified; separate editable-tree lessons stay pending.
