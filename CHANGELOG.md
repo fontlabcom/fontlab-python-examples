@@ -554,3 +554,20 @@ FontLab execution, live installation, release or publication occurs here.
 ## Issue120 N56 — complete glyph-name pattern laboratory candidate
 
 Retain the complete clean-room Pattern Matching Inspector as a useful modeless glyph-name rule authoring tool: editable native histories, four QRegExp syntaxes, case/minimal matching, escaped literals, UTF-16 positions/lengths and all captures. Add complete captured glyph names and ordered batch capture inspection through existing owned capture mechanics. Share only injected native Qt evaluation, controls and owned lifetime in App. Drafts remain local; no font/selection/history/preferences/file/Output writer or live install is added. Source/artifact/standalone checks are distinct from native PythonQt/getter/cache/history/dirty/save/reopen acceptance, which remains pending.
+
+
+## N79: both elastic-node component dependency graphs (.83 candidate)
+
+Retain the distinct part2/part3 force laws, fixed nine-node graphs, node/edge
+geometry/paint, keyboard/wheel controls and timer policies. Current-font mode
+reads all current-master glyph component names twice; repeated/cyclic/missing
+references and isolated/unencoded glyphs remain in source order. Drag/shuffle
+change only local coordinates. Refresh clears stale captures, Stop Motion stops
+both timer forms, and actual drag state guards Close. No font writer runs.
+
+Focused tests first failed with the missing new module; subsequent pure-model,
+SDK-shaped rejection and actual standalone Qt widget tests pass. Exact expanded
+commands/results and final ordinary artifact/whole-module evidence are retained
+in workspace verification/issue-120/elastic-component-graphs-z32. Existing source
+bytes and both original hashes remain preserved. Native FontLab acceptance is
+pending; no canonical write, live install, push, tag, release or publication.

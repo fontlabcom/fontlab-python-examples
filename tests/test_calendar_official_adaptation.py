@@ -17,7 +17,7 @@ def test_official_calendar_keeps_frozen_source_and_all_distinct_options():
     row = next(
         r for r in manifest["adaptations"] if r.get("family") == "calendar-part3"
     )
-    assert len(manifest["adaptations"]) == 15
+    assert len(manifest["adaptations"]) == 17
     original = next(
         r
         for r in json.loads((ROOT / "rescue-index.json").read_text())["menus"]

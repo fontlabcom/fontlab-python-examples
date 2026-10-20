@@ -26,7 +26,10 @@ For the native APIs, use the
 catalogue have separate identities and acceptance histories. A documentation
 build does not rerun or qualify any native example.
 
-Browse the [31 current practical scripts](current/index.md) for Forms, Models,
+Browse the [33 current practical scripts](current/index.md) for Forms, Models,
 Tools, Widgets and packaged GetGo lessons. Archived dispatchers have been removed
 from the active Scripts tree. Their original sources and resources remain in the
 local rescue archive; removing a menu does not qualify or complete its workflow.
+
+Explore both [component dependency graph profiles](elastic-component-graphs.md),
+with complete original elastic controls and an immutable font snapshot.
