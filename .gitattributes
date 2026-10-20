@@ -1,3 +1,6 @@
 ports/**/assets/** -text
 # GetGo fixtures are up to 64 MB of JSON: never diff them.
 *.vfj -diff
+
+# Preserve complete upstream notice bytes, including original CRLF endings.
+/src_docs/md/licenses/** -text
