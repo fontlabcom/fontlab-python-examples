@@ -4,6 +4,33 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-21 - Models, Widgets, Graphics, Drawing and Windows tools
+
+- Models: seven tools (encoding chart, mark colours, review form, coverage
+  grid, XML inventory, proof worksheet, review priorities). Mark Colours and
+  Review Form save native glyph metadata; each Apply is recorded as one Undo
+  step. Unsupported notes stay visible as named read-only rows. Review
+  Priorities paints clickable stars and imports or exports bounded JSON queues.
+  Replaces 26 earlier identities and retires both storageview identities.
+- Widgets: five tools (font units calculator, proof groups, icon browser,
+  palette roles, sketch pad). Palette Roles reads the panel's own palette,
+  continues past missing named roles and gives role-based usage code. Sketch
+  Pad follows the live Base and Text colours. Replaces 18 identities and
+  retires 21 (clocks, games, animations, tutorials and the line-edit name check).
+- Graphics (new category): five tools (proof layout, variant feature graph,
+  review cards, proof pad, mark colour board). The board sets glyph marks by
+  drag and drop; each changed drop is recorded as one Undo step. Replaces 10
+  identities and retires both colliding-mice identities.
+- Drawing (new category): Glyph Outline SVG exports the current-master outline
+  with a font-unit frame; Glyph SVG Reference compares a static SVG with the
+  current glyph. basicdrawing and transformations fold into Glyph Outline SVG.
+  Replaces 8 identities and retires 23 (animation, effects, OpenGL).
+- Windows (new category): Unicode Issues Dock and Glyph Snapshot Diff.
+  Replaces 18 identities and retires 6 (screenshot, systray, recentfiles).
+- Active menus 60 -> 81; adaptations 73 -> 153; retirements 3 -> 57; backlog
+  418 -> 284. NOTICE gains one provenance section per category; generated pages
+  under `src_docs/md/current/` cover the 21 new tools.
+
 ## 2026-10-21 - Public App helpers and plain wording
 
 - The ten Dialogs and Text tools that read the glyph catalogue now import the
