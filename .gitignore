@@ -231,3 +231,6 @@ _reference/
 .superpowers/
 .worktrees/
 .build/
+
+# External owned documentation build link
+.build

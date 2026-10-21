@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 39 practical facades in one category level: Forms,
+`Scripts/` contains 43 practical facades in one category level: Forms,
 Models, Tools, Widgets and GetGo Fonts. Install their matching reviewed Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
@@ -24,8 +24,8 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 23 practical replacements, with original
-workflow acceptance still pending. The other 471 identities remain migration
+`menu-adaptations.json` maps 27 practical replacements, with original
+workflow acceptance still pending. The other 467 identities remain migration
 backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 

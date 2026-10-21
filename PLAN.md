@@ -186,3 +186,5 @@ Verify the frozen four-syntax source, native Qt5 semantics, full local authoring
 Complete original reference-font controls and real-font coverage are implemented privately. Ordinary wheel/sdist, all seven current consumer suites and original-baseline170App/70Examples whole-module gates pass. Independent source/artifact controls pass; qualify installed artifacts in owned FontLab workflows before any native acceptance claim.
 
 Paired Find Files: retain actual PythonQt, file-dialog preferences, desktop opener and complete lifecycle qualification.
+
+N270 private .159 combines complete independently reviewed .157 Raise Ascender, .154 Perpendicular Guides and .156 paired Image Viewers on exact delivered .153. Preserve all 308 prior App runtime files and 162 menus; .158 excluded. Run ordinary artifacts, all seven consumers, full original module coverage, strict documentation and complete workflow controls. Native writer/font/history/reopen/printer/OS and retained Character Map domains remain pending; inherited .153 native evidence is not .159 qualification.
