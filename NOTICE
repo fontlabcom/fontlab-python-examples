@@ -878,3 +878,83 @@ Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_
 rescued/part2/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py
 SHA256 6d2f8e76efde17106dd50a3c6823b20a8053823bd1629a297654ed6eaed02f98
 Reason: Animated integer/float antialiasing circles provide no distinct glyph action or consumable font output.
+
+
+Windows tools
+-------------
+The two new scripts in Scripts/Windows are FontLab tools written from
+scratch. Their ideas come from the Qt main window, layout and desktop
+examples (Qt examples (Riverbank/Nokia): Copyright (C) 2013 Riverbank
+Computing Limited; Copyright (C) 2010 Nokia Corporation and/or its
+subsidiary(-ies)). No upstream source code, helper or asset is included.
+Each tool lists the earlier sources it replaces, with their SHA256 values.
+
+Scripts/Windows/Glyph Snapshot Diff.py
+Independent rewrite of the Qt mdi example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
+SHA256 4a7cab42d4c0c13dd09e5c098e6758007f81371fbb90b832d25c1f44e055609c
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
+SHA256 29271121483f2c5fabe6b0f0232602bcc32f9d0a0ccc69ad553149a5706d8199
+
+Scripts/Windows/Unicode Issues Dock.py
+Independent rewrite of the Qt basiclayouts, borderlayout, dockwidgets, menus and separations example ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py
+SHA256 6fa0e1268b7c81dbf6c373ae9ebb98ef86ffa0d7c8207ab78a003e65fc49a00d
+rescued/part2/ports/layouts/pyqt-official/borderlayout-f48955d43ed6196c.py
+SHA256 61dce583b8707e5724dc6e28f4f86b2b32884dd9af5f4a25a3a145a54d146dd4
+rescued/part2/ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py
+SHA256 20ab7a5fd5b64e7c3b0cf66bfb80fbca9f8301317b314bb95e66d76b4475fc8d
+rescued/part2/ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py
+SHA256 5db7de5bb81c11df39be0c6e83c9a39d1f42463982413e62eb27253f0efb58a6
+rescued/part2/ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py
+SHA256 fedecc268d265622812e43e61b3d80d9c4dbbb812411cc177a2f37d58ad1b039
+rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/basiclayouts-2f94fe07de765888.py
+SHA256 b53b4e5e158d8046220bde8de76c0af424ab90c8a96e362f29906349a5a19d35
+rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/borderlayout-f48955d43ed6196c.py
+SHA256 658638cfc0891ae0a6ffabb4024cbe2aa63bec688958a28cfa46da47df90fd37
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/dockwidgets-4efac54bae01fc62.py
+SHA256 b14d351359ef448ca38eba7a8fcf66dbdf162dbd45f63f00718ac50096000cff
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/menus-60d40ce5671653cf.py
+SHA256 95fe3a5c2f8bb6eb3528403bcc0433ffac2550cc8cdbab52deaff372f17c4deb
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py
+SHA256 f5e1af92ebcf6d666477dc2b3f6d85cd324bc39ea1940982913b60b15c7285c6
+
+Mapped to existing tools (no new code or resources):
+Scripts/Drag And Drop/Draggable Glyph Names.py (from flowlayout)
+rescued/part2/ports/layouts/pyqt-official/flowlayout-675c9f79650d7507.py
+SHA256 65849d6ff9ff5faa2463b6f6a055a549adb7f9ab4f2598271b38edcd08af9525
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from application)
+rescued/part2/ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py
+SHA256 8a585813b989860e1b363d0f5b08ea02d89e8d3afca2df88578acf7eb32b52c1
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from sdi)
+rescued/part2/ports/mainwindows/pyqt-official/sdi-eba98690c141a070.py
+SHA256 35207954c9f927dff0c83e80d6d79e42a6597aab8b10b512a8fa0229a1be60ac
+Scripts/Drag And Drop/Draggable Glyph Names.py (from flowlayout)
+rescued/part3/pyqt-official-ports/ports/layouts/pyqt-official/flowlayout-675c9f79650d7507.py
+SHA256 ff39dd43ff5f952c02808fcfc57cc2b61db52468748f8ff024077dbeb5d35b65
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from application)
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/application-7da7020aa7e2732b.py
+SHA256 0b2bf313d85ad67cc32ca0df6a6a2e0a05a5a77b158524b91ff6f64a214e442a
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from sdi)
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/sdi-eba98690c141a070.py
+SHA256 632685ff86fc4c510bd009d7a3c3471596ebbb5f8b7096026691a2ead5f7f022
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py
+SHA256 f4bbcc754fb715ac6febdb71b867af2f6f7c81e2f0ba1023fc1f39850e41ab3b
+Reason: Covered by fontlab-grablab Grab.grabWidget / grabFontWindows, which handle the hidden macOS main window and the OpenGL rendering preferences.
+rescued/part2/ports/desktop/pyqt-official/systray-c1b878b63f80e733.py
+SHA256 c163db08336c460b55fdb6c202c7312b856ab49c56822e977e14a455f6b86dc7
+Reason: Tray notifications add no demonstrated font operation or workflow artifact.
+rescued/part2/ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py
+SHA256 94b77a8efda276c9f64222c2cc0d77b59aedc59f1731a309ab7ad7eb29f18465
+Reason: No FontLab action; FontLab File > Open Recent covers fonts and a session-only report history has no consumer.
+rescued/part3/pyqt-official-ports/ports/desktop/pyqt-official/screenshot-65d15d1fbc1b15e9.py
+SHA256 ccf007dd7401f196ee89893ff5ef61a82159473359591183adc9f58a142b1045
+Reason: Covered by fontlab-grablab Grab.grabWidget / grabFontWindows, which handle the hidden macOS main window and the OpenGL rendering preferences.
+rescued/part3/pyqt-official-ports/ports/desktop/pyqt-official/systray-c1b878b63f80e733.py
+SHA256 d4d7f6202af1e31ecb4a1992bc2951478131a4a0cb5dea6a83f8f0999676edf2
+Reason: Tray notifications add no demonstrated font operation or workflow artifact.
+rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py
+SHA256 59a910de643a80f61e4a0478454f9dafaed319728746a14d8819d6ae0b2f9867
+Reason: No FontLab action; FontLab File > Open Recent covers fonts and a session-only report history has no consumer.

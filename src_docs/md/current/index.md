@@ -110,3 +110,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Spacing Offset](widgets/glyph-spacing-offset.md)
 - [Script Icon Browser](widgets/script-icon-browser.md)
 - [Script Palette Roles](widgets/script-palette-roles.md)
+
+## Windows
+
+- [Glyph Snapshot Diff](windows/glyph-snapshot-diff.md)
+- [Unicode Issues Dock](windows/unicode-issues-dock.md)

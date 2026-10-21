@@ -4,8 +4,9 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 79 practical facades in one category level: Dialogs,
-Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text, Tools and Widgets. Install their matching Fly, App
+`Scripts/` contains 81 practical facades in one category level: Dialogs,
+Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text, Tools,
+Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
 dedicated no-document session. Do not modify a live installation during setup.
@@ -24,9 +25,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 135 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 51 identities
-retired without a replacement, each with its reason. The other 308 identities
+`menu-adaptations.json` maps 153 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 57 identities
+retired without a replacement, each with its reason. The other 284 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -121,3 +122,9 @@ outline with an origin, advance, ascender, descender and ink frame in font
 units, for an external vector editor. Glyph SVG Reference places a static SVG
 over the current glyph with live opacity, either as a normalized silhouette or
 in its own user coordinates. Use FontLab's Transform panel to transform glyphs.
+
+Windows adds two tools. Unicode Issues Dock attaches a FontLab dock that lists
+unencoded and shared-Unicode glyphs, with counts, paging and guarded glyph
+selection. Glyph Snapshot Diff compares the first and newest snapshots of the
+current font and lists added, removed, re-encoded and modified glyphs. Use
+fontlab-grablab for screenshots of FontLab windows.

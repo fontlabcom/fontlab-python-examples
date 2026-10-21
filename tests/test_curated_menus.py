@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_active_scripts_when_scanned_then_only_curated_practical_one_level_menus():
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
-    assert len(paths) == 79, "Ship the 79 practical facades with native acceptance pending"
+    assert len(paths) == 81, "Ship the 81 practical facades with native acceptance pending"
     assert {p.parent.name for p in paths} == {
         "Dialogs",
         "Drag And Drop",
@@ -26,6 +26,7 @@ def test_active_scripts_when_scanned_then_only_curated_practical_one_level_menus
         "Text",
         "Tools",
         "Widgets",
+        "Windows",
     }
     for path in paths:
         source = path.read_text()

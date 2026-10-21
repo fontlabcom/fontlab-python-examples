@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_manifest_when_official_pair_adapted_then_frozen_source_and_distinct_semantics():
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
-    assert len(data["adaptations"]) == 135
+    assert len(data["adaptations"]) == 153
     rows = [r for r in data["adaptations"] if r.get("family") == "part3-official"]
     assert len(rows) == 2
     assert {r["entry_point"] for r in rows} == {
