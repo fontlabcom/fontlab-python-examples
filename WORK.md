@@ -3816,3 +3816,9 @@ Native PythonQt and full-font/history preservation acceptance are still pending.
 Final hashes/commands/results are sealed in the workspace's character-map-z37
 candidate.json; WORK/PLAN are excluded from the archives and this results-only
 commit changes no production, test, menu, resource, notice or archive bytes.
+
+N163: tests first, paired real-file/Unicode/symlink/cancellation and Qt lifecycle controls. Exact commands and retained failures in private verification. Native acceptance remains pending.
+
+N163 verification: `rtk proxy .../ui-integration-z43/wheel-env/bin/python -m pytest -q tests` App4355PASS; Examples562PASS before3new facade tests; paired Qt5/Qt6 focused36PASS each. New transient TMPDIR is owned external find-files-z45/tmp. Retained initial missing-module, layout-height, missing corpus/import-root and keyword-only test failures in private evidence. No native calls.
+
+N176 coherent .126 integration candidate: complete accepted Duplicate Unicodes .121, paired Find Files .123, Character Map sizing .124 and literal IME .125 on immutable reviewed .122 ancestry. All donor behaviors/notices and prior menus retained; .119 NUL prevention excluded. Full gates and exact donor/source/artifact bindings are retained in workspace verification/issue-120/complete-union-z47; native acceptance remains root-owned and pending.

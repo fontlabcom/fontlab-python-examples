@@ -4,6 +4,8 @@
 - [Component Dependency Graph](component-dependency-graph.md)
 - [Editable Glyph Outline](editable-glyph-outline.md)
 - [Editable Glyph Tree](editable-glyph-tree.md)
+- [Find Font Source Files - Bytes](find-font-source-files-bytes.md)
+- [Find Font Source Files](find-font-source-files.md)
 - [Glyph Name Completion with Focus](glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](glyph-name-completion.md)
 - [Glyph Name Pattern Lab](glyph-name-pattern-lab.md)

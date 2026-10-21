@@ -51,3 +51,5 @@ this_file: TODO.md
 - [ ] N56: review the frozen complete Glyph Name Pattern Lab source/artifact candidate, then qualify native PythonQt semantics/lifetime and complete font/getter/cache/history/dirty/save/reopen preservation before promotion.
 
 - [ ] Qualify both Glyph Character Map profiles on installed FontLab artifacts, including native drawing/copy boundary/lifetime and complete font preservation.
+
+- [ ] Qualify both complete Find Files profiles in the installed native host.

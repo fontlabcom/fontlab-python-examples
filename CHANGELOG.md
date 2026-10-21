@@ -600,3 +600,5 @@ matches its label. No font writer; native acceptance remains pending.
 - Add both original reference-font character picker profiles with complete controls, drawing, insertion and explicit copy actions.
 - Report full current-FontLab Unicode coverage, duplicate assignments and ordered proof occurrences; refresh clears stale results.
 - Refuse isolated surrogate insertion/copy explicitly and retain owned signal/painter cleanup. Native qualification remains pending.
+
+Added complete paired Find Files practical workflows; bounded read-only streaming searches and owned nonmodal UI.
