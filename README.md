@@ -26,8 +26,8 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
 `menu-adaptations.json` maps 175 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 79 identities
-retired without a replacement, each with its reason. The other 240 identities
+workflow acceptance still pending. Its `retirements` array records 151 identities
+retired without a replacement, each with its reason. The other 168 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
