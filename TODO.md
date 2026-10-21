@@ -53,3 +53,5 @@ this_file: TODO.md
 - [ ] Qualify both Glyph Character Map profiles on installed FontLab artifacts, including native drawing/copy boundary/lifetime and complete font preservation.
 
 - [ ] Qualify both complete Find Files profiles in the installed native host.
+
+- [ ] Native-qualify both complete reference Image Viewers, original printer/PDF and error/Close/parent-destruction workflows on final artifacts; preserve all original migration/native/publication scope.

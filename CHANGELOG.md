@@ -602,3 +602,6 @@ matches its label. No font writer; native acceptance remains pending.
 - Refuse isolated surrogate insertion/copy explicitly and retain owned signal/painter cleanup. Native qualification remains pending.
 
 Added complete paired Find Files practical workflows; bounded read-only streaming searches and owned nonmodal UI.
+
+
+- Add both complete font reference Image Viewers: original Open/zoom/Fit/normal/printing and owned asynchronous dialogs through App/Fly. Native acceptance remains pending.
