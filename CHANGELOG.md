@@ -554,3 +554,11 @@ FontLab execution, live installation, release or publication occurs here.
 ## Issue120 N56 — complete glyph-name pattern laboratory candidate
 
 Retain the complete clean-room Pattern Matching Inspector as a useful modeless glyph-name rule authoring tool: editable native histories, four QRegExp syntaxes, case/minimal matching, escaped literals, UTF-16 positions/lengths and all captures. Add complete captured glyph names and ordered batch capture inspection through existing owned capture mechanics. Share only injected native Qt evaluation, controls and owned lifetime in App. Drafts remain local; no font/selection/history/preferences/file/Output writer or live install is added. Source/artifact/standalone checks are distinct from native PythonQt/getter/cache/history/dirty/save/reopen acceptance, which remains pending.
+
+## Unreleased — spinbox family candidate
+
+Add both complete retained spinbox profiles as selected-layer metric/proof-cost
+and whole-font revision worksheets. Keep all numeric/date/time/format controls,
+precision and distinct special-value/stepping semantics. Local drafts only.
+Source, actual Qt5, package and coverage verification recorded in WORK.md;
+native FontLab acceptance remains pending. App0.2.88.dev0 is reserved.

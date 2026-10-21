@@ -55,3 +55,9 @@ artifact/scenario bindings remain pending. Read
 [the worksheet guide](src_docs/md/spacing-worksheets.md).
 
 Glyph Name Pattern Lab authors complete native Qt5 QRegExp rules against captured whole-font glyph names. Editable pattern/input histories, all four syntaxes, case/minimal matching and complete native captures remain. Refresh keeps drafts; no font writer is used. Requires reviewed App0.2.76.dev0 via Fly; native qualification pending.
+
+Glyph Metrics and Revisions (including Detailed) compares captured selected-layer
+advances, 12pt proof widths, proof-cost estimates and whole-font revision cutoffs.
+The two complete historical spinbox profiles retain their own numeric/date/time
+contracts. Local drafts only; use reviewed App>=0.2.88.dev0 through Fly. Native
+PythonQt and whole-font preservation qualification remain pending.
