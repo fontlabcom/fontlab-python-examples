@@ -3738,3 +3738,30 @@ branch>=80percent; zero exclusions. Original repair source matchesf29d401.
 Finalcommit/artifact/runtime manifests are in spinbox-integration-z34/final-freeze.json.
 N99independent combined review, root canonical guards/delivery and native
 FontLab acceptance remain separate. No canonical/native/live/push call ran here.
+
+
+## N108 paired sliders source candidate
+
+Private .90-based candidate; no canonical/native/push/live-install operations.
+Both exact original profiles mapped to local selected-layer geometric spacing
+offsets; immutable twice-read facts, original clamp/cycle/inversion/range rules,
+complete native key/wheel actions and separate owned lifetimes retained. Part2
+initial Horizontal label now matches actual controls (explicit root approval).
+No geometric bounds means both margins unavailable; no fabricated zero margins.
+
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/sliders-z35/run.py qt5`:exit0,41 tests.
+Initial App full source suite:3826 pass; six added failure/lifetime tests also
+pass in Qt5. Final installed artifact suites and complete160/68module gates
+are recorded in sliders-z35 evidence before any acceptance claim.
+Examples full suite559pass, Lessons199pass, SDK11pass; exact new menu/provenance
+counts updated additively without changing prior source rows or archive hashes.
+Independent N109 original oracle:157part2+302part3 actualQt5states pass.
+Preserved expected initialRED import test, corrected test-only native scrollbar
+inversion assumption, pre-addition menu count failures, and initial environment
+Git/config failure in evidence. Whole-font/cache/native qualification remains
+pending; native bounds read can populate FontLab caches.
+
+
+N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
+combined with delivered .90. Every prior menu/resource retained; native .98
+acceptance remains pending. Original source contracts and historical records retained.

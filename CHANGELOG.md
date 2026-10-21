@@ -586,3 +586,11 @@ Add both complete spinbox worksheets to the reviewed.89graph/kerning/pattern
 union. Preserve all238prior App runtime files,33prior Examples menus and
 106Scriptmix menus. Carry the independently reviewed N95time-editor hidden-date
 repair from original.88commitf29d401. Native qualification remains pending.
+
+
+## Paired slider spacing-offset previews (.95 source candidate)
+
+Both original slider workflows now preview left+offset/right-offset against
+immutable selected-layer geometric margins with unchanged advance. Complete
+controls and distinct native feedback remain; part2 initial orientation now
+matches its label. No font writer; native acceptance remains pending.

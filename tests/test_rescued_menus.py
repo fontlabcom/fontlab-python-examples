@@ -25,7 +25,7 @@ def test_index_when_loaded_then_complete_unique_source_scope_remains_pending():
         == ADAPTATIONS["source_index_sha256"]
     )
     adapted = {row["source_menu"] for row in ADAPTATIONS["adaptations"]}
-    assert len(adapted) == 19 and len(ROWS) - len(adapted) == 475
+    assert len(adapted) == 21 and len(ROWS) - len(adapted) == 473
     assert adapted <= {row["menu"] for row in ROWS}
     for row in ADAPTATIONS["adaptations"]:
         assert (ROOT / row["menu"]).is_file(), (
