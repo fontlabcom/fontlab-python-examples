@@ -40,6 +40,14 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [GetGo - Sidebearings from H](getgo-fonts/getgo-sidebearings-from-h.md)
 - [GetGo - Widen Two Glyphs](getgo-fonts/getgo-widen-two-glyphs.md)
 
+## Graphics
+
+- [Glyph Mark Colour Board](graphics/glyph-mark-colour-board.md)
+- [Glyph Proof Layout](graphics/glyph-proof-layout.md)
+- [Glyph Proof Pad](graphics/glyph-proof-pad.md)
+- [Glyph Review Cards](graphics/glyph-review-cards.md)
+- [Glyph Variant Feature Graph](graphics/glyph-variant-feature-graph.md)
+
 ## Models
 
 - [Glyph Coverage Grid](models/glyph-coverage-grid.md)

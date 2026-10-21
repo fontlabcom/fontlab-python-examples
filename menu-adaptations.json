@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 72 practical facades; 117 adaptations remain native pending, 26 identities are retired with a recorded reason and 351 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 77 practical facades; 127 adaptations remain native pending, 28 identities are retired with a recorded reason and 339 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -1754,6 +1754,146 @@
       "scope": "Independent FontLab workflow; consolidated variants, no original feature-parity claim.",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - anchorlayout-a96a7978c0b9f6ee.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py",
+      "source_sha256": "4de40f5bc168015793f3529ef70f2e69dc46be41b38d17afb29f7e34ef8d717f",
+      "menu": "Scripts/Graphics/Glyph Proof Layout.py",
+      "destination_sha256": "963d1905b0808d778e1dfe19d41ba1e3f17341d7a2ac77f138427031f6c04f1a",
+      "entry_point": "main",
+      "family": "glyph-proof-layout-part2",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Current-master proportional advance strip with geometric side bearings; exact slash-name copy; read-only.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/anchorlayout-a96a7978c0b9f6ee - fabf052b.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py",
+      "source_sha256": "60caa0dacfd8b8e41a4c8a5c83e5aced63a298e574433410c25e529452560ad2",
+      "menu": "Scripts/Graphics/Glyph Proof Layout.py",
+      "destination_sha256": "963d1905b0808d778e1dfe19d41ba1e3f17341d7a2ac77f138427031f6c04f1a",
+      "entry_point": "main",
+      "family": "glyph-proof-layout-part3",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Current-master proportional advance strip with geometric side bearings; exact slash-name copy; read-only.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - diagramscene-1ca857d797199ecf.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+      "source_sha256": "9a955af5875f27bba1baad27d5c508910c80a5ec6463d7cb00890e983322fe56",
+      "menu": "Scripts/Graphics/Glyph Variant Feature Graph.py",
+      "destination_sha256": "4d74f523a0ecadfafb5ca056bf8bd66a8457d2d151a86fc59dd8ac1b7dae305c",
+      "entry_point": "main",
+      "family": "glyph-variant-feature-graph-part2",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Exact suffix relationships; complete escaped substitution draft; first 100 pairs drawn; read-only.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/diagramscene-1ca857d797199ecf - ca74e151.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py",
+      "source_sha256": "2f1d99279f78a43459928e59388681eb4ded7a85f0bd7b3cb6a7593980d05f1e",
+      "menu": "Scripts/Graphics/Glyph Variant Feature Graph.py",
+      "destination_sha256": "4d74f523a0ecadfafb5ca056bf8bd66a8457d2d151a86fc59dd8ac1b7dae305c",
+      "entry_point": "main",
+      "family": "glyph-variant-feature-graph-part3",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Exact suffix relationships; complete escaped substitution draft; first 100 pairs drawn; read-only.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "source_sha256": "f1faf59693b2054c207de5811e7d721260755e6a5675f199f3472e3d520204d2",
+      "menu": "Scripts/Graphics/Glyph Mark Colour Board.py",
+      "destination_sha256": "fc0e2de7e4c87222eb2ba5e9fb4906abb2677072eb1f28441e772d22c2243acd",
+      "entry_point": "main",
+      "family": "glyph-mark-colour-board-part2",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Native colour swatches dropped onto prefix-matched glyph tiles; one App metadata commit per changed drop; auto-layer refusal and invariant read-back; read-back accepts the old or the new mark on layers that shared the old glyph mark.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/dragdroprobot-2cd6ffc2b2ed65bb - 81a228e1.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py",
+      "source_sha256": "c021aba5ca45ca9cf3b0fde77ceb654ff5077191380d83cef5d84c1aec9c8313",
+      "menu": "Scripts/Graphics/Glyph Mark Colour Board.py",
+      "destination_sha256": "fc0e2de7e4c87222eb2ba5e9fb4906abb2677072eb1f28441e772d22c2243acd",
+      "entry_point": "main",
+      "family": "glyph-mark-colour-board-part3",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Native colour swatches dropped onto prefix-matched glyph tiles; one App metadata commit per changed drop; auto-layer refusal and invariant read-back; read-back accepts the old or the new mark on layers that shared the old glyph mark.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - embeddeddialogs-0578c17977b471f1.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+      "source_sha256": "c08d4c310c70b3a0e129085b79f59493472859819fdf1c75e7024345724a83bc",
+      "menu": "Scripts/Graphics/Glyph Review Cards.py",
+      "destination_sha256": "e8a55e253720d1813189b72058561b6193bb7a5013f67daf808f04a66fb583d7",
+      "entry_point": "main",
+      "family": "glyph-review-cards-part2",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Embedded local review forms; complete plain-text report; unsaved-note protection and safe explicit discard; no font writes.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/embeddeddialogs-0578c17977b471f1 - 15ae7441.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py",
+      "source_sha256": "b90e385b1cb4ea7f2f202545920844cba59a825fcdf3986878ebd25d3fce1876",
+      "menu": "Scripts/Graphics/Glyph Review Cards.py",
+      "destination_sha256": "e8a55e253720d1813189b72058561b6193bb7a5013f67daf808f04a66fb583d7",
+      "entry_point": "main",
+      "family": "glyph-review-cards-part3",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Embedded local review forms; complete plain-text report; unsaved-note protection and safe explicit discard; no font writes.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - padnavigator-a58650b5461c0f48.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py",
+      "source_sha256": "66f7c5169c23e0adb6a7cb76b9fdffbf33b27af79bc987cafb8534365d70632d",
+      "menu": "Scripts/Graphics/Glyph Proof Pad.py",
+      "destination_sha256": "e5448a879e610afdae23ebad5c4d7b5e5572fcb34fcb0232625866ac3c94cbc8",
+      "entry_point": "main",
+      "family": "glyph-proof-pad-part2",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Prefix-filtered nine-cell pages; explicit QKeySequence navigation; exact slash-name copy; no selection or font writes.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/padnavigator-a58650b5461c0f48 - 49daacde.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py",
+      "source_sha256": "f6af280b00f13384566780930eb7aa33b57c5202a933315841d946fcf79cfe07",
+      "menu": "Scripts/Graphics/Glyph Proof Pad.py",
+      "destination_sha256": "e5448a879e610afdae23ebad5c4d7b5e5572fcb34fcb0232625866ac3c94cbc8",
+      "entry_point": "main",
+      "family": "glyph-proof-pad-part3",
+      "license": "Apache-2.0 (independent rewrite of the author's own FontLab sample)",
+      "scope": "Prefix-filtered nine-cell pages; explicit QKeySequence navigation; exact slash-name copy; no selection or font writes.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "disposition": "ported"
     }
   ],
   "retirements": [
@@ -1964,6 +2104,22 @@
       "license": "MIT",
       "disposition": "retired",
       "reason": "fixed dark-theme tutorial; use live palette roles in script panels"
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - collidingmice-fcfaf9667206bbd6.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py",
+      "source_sha256": "1c67c4e4344a64ab16a0f0996f4e1fbb8dc23e343b4473ac0ee75bf07cd1b1c6",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated toy produces no FontLab result; graphics-scene collisions do not establish glyph-outline collisions."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/collidingmice-fcfaf9667206bbd6 - c12672da.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py",
+      "source_sha256": "5ab5eca135b2b64f36ae4e353e693ed0f1d357f76fb1f6d27c7bce163220f908",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated toy produces no FontLab result; graphics-scene collisions do not establish glyph-outline collisions."
     }
   ]
 }
