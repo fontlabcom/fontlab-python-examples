@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_tree_pair_keeps_frozen_identities_and_complete_readonly_contracts():
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
-    assert len(data["adaptations"]) == 39
+    assert len(data["adaptations"]) == 51
     rows = [r for r in data["adaptations"] if r.get("family") == "simple-tree"]
     assert len(rows) == 2 and {r["entry_point"] for r in rows} == {
         "show_outline",

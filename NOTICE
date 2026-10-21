@@ -346,3 +346,56 @@ rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256 9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac
 rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256 8ad810ecf2897a079286ed7b7ede6a2259c30c0fe7e6b90dc4141af0912103b5
+
+
+Drag And Drop tools
+-------------------
+The six scripts in Scripts/Drag And Drop are new FontLab tools written
+from scratch. Their ideas come from the Qt drag-and-drop examples (BSD,
+Qt examples (Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing
+Limited; Copyright (C) 2010 Nokia Corporation and/or its
+subsidiary(-ies)). The delayedencoding and dropsite examples also name
+Hans-Peter Jansen (2010).
+The earlier archived Python ports under rescued/part2 are Apache-2.0, own
+earlier work. The copies under rescued/part3 keep the upstream headers, and
+the upstream example collection also lists GPL-3.0-only; how far that
+applies is not resolved, so these tools include no original code, helper
+or asset.
+The new tools are Apache-2.0. Each tool replaces the archived variants
+listed under it:
+
+Scripts/Drag And Drop/Deferred Glyph Report Drag.py (from delayedencoding)
+rescued/part2/ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py
+SHA256 e2f83fc8e2a0ae2bf783f0f773fa0c088f01a20482a31d41adbb958f97ab4d34
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/delayedencoding-43c6c2f6f5f036d3.py
+SHA256 f422be58b93475a25e7c2843f5e8e7271a8f31158afd21d261e6fdacd82b7af3
+
+Scripts/Drag And Drop/Font File Drop Shelf.py (from draggableicons)
+rescued/part2/ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py
+SHA256 145542e3060ad317a88d1e5cdc24f99b86e9ccebb042f7f589aea906f7718a8c
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/draggableicons-5781fa4ba55c884f.py
+SHA256 d21827d1a9dd55b5de6754c4ab9bf527b4f20a91de6836df16378d1da7912e8a
+
+Scripts/Drag And Drop/Draggable Glyph Names.py (from draggabletext)
+rescued/part2/ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py
+SHA256 875ea71ca5852f15e97ef998c32dd367050fb2a24279c18191eb004810243167
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/draggabletext-700e96dec485e7a8.py
+SHA256 1f19f02956bad2c0356c76ef9a629d4eb451ccf6f97aa117042dc314301546f8
+
+Scripts/Drag And Drop/Font Drop Inspector.py (from dropsite)
+rescued/part2/ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py
+SHA256 d5c3b0355ca179aa4844bdf7358c6c7d14ec79f4cab709cce69f25a0c4bb9072
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/dropsite-fa6823667fdb918f.py
+SHA256 2e928d0fac33d59c47fae60a1142da51623f3fdcf3b310e46bd51f8af8c0e823
+
+Scripts/Drag And Drop/Proof Word Magnets.py (from fridgemagnets)
+rescued/part2/ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py
+SHA256 adab52920261650c3f9553e6cec9cf3ce1fdd9864c0cf55fcebcf9b514ec46de
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/fridgemagnets-da76600eaea7a121.py
+SHA256 b657e3128b0ad28f9576a502e00746424992ec1ad845fd6c2fbe2348399b93e0
+
+Scripts/Drag And Drop/Glyph Pair Board.py (from puzzle)
+rescued/part2/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py
+SHA256 40362a262ff7ce02c5635bfbefbb5536dba7506ccd03b65ab20d3327a59461ea
+rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py
+SHA256 cc7fedd82e30ace1922903b78fde55439c508443c4e231503f9702dfd5165c62
