@@ -4,6 +4,25 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Path Problem Report and Import Kerning Pair List
+
+- Tools: Path Problem Report scans the current master in small, cancellable
+  steps and lists open contours, closed contours with fewer than three
+  on-curve nodes, repeated nodes and small node extents. It selects the
+  glyphs with findings and exports the complete checklist as JSON. It does
+  not change the font.
+- Tools: Import Kerning Pair List previews pasted `left right value` lines,
+  validates glyph and existing @class names, rounds values to whole units
+  and applies the list to the current master as one kerning batch and one
+  Undo step, with read-back. Any invalid row blocks the batch.
+- Eight other recipe identities map to existing Scriptmix tools: Remove
+  Overlap, Place From Bounds, Tabular Width (two), Copy Metrics From
+  Reference, Round Coordinates, Correct Contour Direction and Duplicate
+  Current Layer. Each row states its scope and any behaviour difference.
+- Active menus 88 -> 90; adaptations 191 -> 202; retirements 153;
+  backlog 150 -> 139. NOTICE gains the Recipe tools section; generated
+  pages under `src_docs/md/current/` cover the 2 new tools.
+
 ## 2026-10-21 - Designer, font naming and scripting tools; thread, network and media retirements
 
 - Designer (new category): Em Star Polygon previews a star or regular polygon

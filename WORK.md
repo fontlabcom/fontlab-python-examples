@@ -14,6 +14,78 @@ this_file: WORK.md
 - Notes: `uv run --locked` created the project venv inside the worktree (git status stays clean, venv ignored). Only `tests/` was run; `tests_docs`, `lessons` suites are outside the T0 command.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 examples integration wave 4: recipe tools (E16)
+
+- Base c136980. Commits: 4534158 (E16), then this CHANGELOG/WORK commit.
+  Not pushed. Untracked files of other running batches (Scripts/*,
+  tests/test_issue122_R*.py, docs/issue122-R2-dispositions.json) were not
+  staged, edited or deleted.
+- Scripts: `Scripts/Tools/Path Problem Report.py` and `Scripts/Tools/Import
+  Kerning Pair List.py`; test `tests/test_issue122_E16.py` unchanged
+  (cc95d911). The only script change is the Setup line, now "Fly and
+  App>=0.2.150.dev0" in both (the single App floor). New hashes: Path
+  Problem Report 04fd01b7 (fragment 5eb88a4b), Import Kerning Pair List
+  b392ca95 (fragment 56eff835).
+- Rows: 11 adaptations parsed from the fragment JSON (3 ported, 8
+  duplicate-of scriptmix tools), no retirements. Checked against
+  `rescue-index.json` (source_menu exists, source == target, source_sha256
+  == target_sha256), the preserved bytes under `FONTLAB_PRESERVED_ROOT` and
+  all earlier rows by `source_menu` and `source`. `rescue-index.json`
+  unchanged (frozen, hash-tested).
+- Cross-repo hashes from scriptmix commit 0e836a7 (`git show 0e836a7:<path>
+  | shasum -a 256`; each path present in `git ls-tree 0e836a7`, worktree
+  bytes equal): stale and corrected: Contours/Remove Overlap 00438e0a ->
+  3c0f94e8, Contours/Round Coordinates b1036f2c -> e6fb0321,
+  Contours/Correct Contour Direction 4027275a -> c63921af; current: Anchors/
+  Place From Bounds, Metrics/Tabular Width (2 rows), Metrics/Copy Metrics
+  From Reference, Masters/Duplicate Current Layer. No target moved or was
+  retired. Supporting destinations (NOTICE only, no JSON field): Anchors/Round
+  To Grid 78cf58b3 and Metrics/Round Advances c29d951d current; Contours/
+  Optimize Start Points cde2e71d -> 86a23509. The E15 row Metrics/Scale
+  Advances is still bbc62f22 at 0e836a7. The scope texts of the changed
+  targets still match their docstrings.
+- Wording: the row texts and both scripts carry no issue numbers, batch ids,
+  D-numbers, archived/unresolved/unverified/pending wording (the historical
+  `source_menu` ids stay verbatim). NOTICE uses the wave-3 layout, appended
+  (prior bytes unchanged, 101477 -> 104594 bytes).
+- Counts (menus / adaptations / retired / not adapted / backlog): c136980
+  88/191/153/303/150; 4534158 90/202/153/292/139. Updated: the 14 shared
+  count tests (test_spacing_menu_integration also gains both paths in
+  EXAMPLE_BATCHES), the `policy` text, README and
+  `src_docs/md/collections.md`. The `test_rescued_menus` scriptmix lookup was
+  already present and was not changed.
+- Docs catalogue: the staged tree f5547c2 was exported with `git archive`
+  and `src_docs/current_menus.catalogue()` run there with
+  `/opt/homebrew/bin/python3.11 -I`; only the two new Tools pages and both
+  index files changed and were staged by explicit path.
+- Bytecode: `tests/__pycache__/test_issue122_E16.cpython-31{1,2}-*.pyc`
+  deleted (ignored files); no bytecode under `Scripts/`.
+- Verification on clean `git archive` exports under
+  `$TMPDIR/integ4-verify/<label>/fontlab-python-examples`, siblings
+  `fontlab-fontlabapp` (archive of App 2937e3a) and
+  `fontlab-python-scriptmix` (archive of scriptmix 0e836a7); env of
+  `verification/issue-122/sdd/cmd/ex.sh` plus `PYTHONDONTWRITEBYTECODE=1`;
+  command `rtk proxy uv run --locked python -m pytest -q -p no:cacheprovider
+  tests`:
+  - c136980 (baseline, App 2937e3a): exit 0, 1704 passed.
+  - tree f5547c2 (= 4534158^{tree}): `tests/test_issue122_E16.py` alone exit
+    0, 50 passed; full suite exit 0, 1754 passed (+50).
+- Same 4534158 export, with `EXAMPLES_LEGACY_API_SOURCE=
+  /Volumes/Falstaff4T/fontlab-scripting-data/issue122/legacy-api-28bc505`:
+  - `rtk proxy uv run --locked python -m pytest -q -p no:cacheprovider
+    tests_docs`: exit 0, 11 passed.
+  - Lessons (`cd lessons`, `QT_QPA_PLATFORM=offscreen
+    EXAMPLES_APP_SOURCE=<App 2937e3a archive>/src/fontlabapp`, command from
+    `lessons/README.md`): exit 0, 199 passed, coverage 96.18%.
+  - `./build.sh`: exit 0, "Documentation built", 0 warnings; generated
+    pages identical to the commit.
+- Ruff (check only): `rtk proxy uvx ruff check --no-cache --target-version
+  py311` on both scripts and the E16 test: exit 0, all checks passed.
+- Native holds (none run here): the stepped scan, Cancel and guarded glyph
+  selection with a Font window active; kerning batch write, Undo/Redo and
+  read-back, class-side checks and auto-layer refusals in FontLab.
+- Scope: offline tests only. Native FontLab acceptance remains pending.
+
 ## Issue 122 examples integration wave 3: Designer (E7), font naming (E10), thread/SQL retirements (E11), network/IPC/declarative/media/web retirements (E12), scripting insights (E15)
 
 - Base 608c888. Commits: c03bdf0 (E7), 203fabe (E10), b27144e (E11),
