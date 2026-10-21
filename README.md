@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 33 practical facades in one category level: Forms,
+`Scripts/` contains 37 practical facades in one category level: Forms,
 Models, Tools, Widgets and GetGo Fonts. Install their matching reviewed Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
@@ -24,8 +24,8 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 17 practical replacements, with original
-workflow acceptance still pending. The other 477 identities remain migration
+`menu-adaptations.json` maps 21 practical replacements, with original
+workflow acceptance still pending. The other 473 identities remain migration
 backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -65,3 +65,7 @@ advances, 12pt proof widths, proof-cost estimates and whole-font revision cutoff
 The two complete historical spinbox profiles retain their own numeric/date/time
 contracts. Local drafts only; use reviewed App>=0.2.88.dev0 through Fly. Native
 PythonQt and whole-font preservation qualification remain pending.
+
+Glyph Spacing Offset and Glyph Spacing Offset - Stacked preserve both complete
+slider control profiles and preview selected-layer geometric margins without
+font writes. Read [the slider guide](src_docs/md/slider-spacing-offsets.md).

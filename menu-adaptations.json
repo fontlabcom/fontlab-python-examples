@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains33reviewed practical facades only; all historical runtime dispatchers are privately archived. The17adaptations remain native-pending and original_workflow_accepted=false; the477remaining identities remain migration backlog. No original body is executed/distributed. Two full spinbox profiles additionally preserved and adapted; both remain native pending.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains37 practical facades;21 adaptations remain native pending and473 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both sliders profiles remain distinct; part2 initial Horizontal-label mismatch intentionally repaired.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -270,6 +270,36 @@
       "license": "Apache-2.0 (owner D22)",
       "assets": [],
       "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Widgets - Official sliders - 36805750b888fba6.py",
+      "menu": "Scripts/Widgets/Glyph Spacing Offset.py",
+      "source": "rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+      "source_sha256": "aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56",
+      "destination_sha256": "362dc3bbcfd28d9fa5a88b9900f9046fd8986a52e96e434086c6d9c3580b438d",
+      "entry_point": "show",
+      "api_module": "slider_spacing",
+      "family": "sliders-part2",
+      "license": "Apache-2.0 (owner D22); upstream BSD notice preserved",
+      "assets": [],
+      "scope": "Complete original slider controls with local selected-layer geometric spacing-offset preview; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/sliders-36805750b888fba6 - 1be02662.py",
+      "menu": "Scripts/Widgets/Glyph Spacing Offset - Stacked.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/sliders-36805750b888fba6.py",
+      "source_sha256": "24312666a881173fd0a203fd1217ea8d13be8edc0e70b08628e3c4addc49cc5d",
+      "destination_sha256": "9380b1ee9e1d6e2cca73eb58c16cb28f2bad6bfc0f9686c9b99e833737763d8f",
+      "entry_point": "show_stacked",
+      "api_module": "slider_spacing",
+      "family": "sliders-part3",
+      "license": "Apache-2.0 (owner D22); upstream BSD notice preserved",
+      "assets": [],
+      "scope": "Complete original slider controls with local selected-layer geometric spacing-offset preview; no font writers",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
     }

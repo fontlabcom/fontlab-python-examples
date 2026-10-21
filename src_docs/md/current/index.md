@@ -51,3 +51,5 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Metrics and Revisions](widgets/glyph-metrics-and-revisions.md)
 - [Glyph Modification Calendar with Formats](widgets/glyph-modification-calendar-with-formats.md)
 - [Glyph Modification Calendar](widgets/glyph-modification-calendar.md)
+- [Glyph Spacing Offset - Stacked](widgets/glyph-spacing-offset-stacked.md)
+- [Glyph Spacing Offset](widgets/glyph-spacing-offset.md)
