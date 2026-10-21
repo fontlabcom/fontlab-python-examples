@@ -54,3 +54,5 @@ def test_exact_lazy_public_Fly_menu_dispatch(monkeypatch, name, entry):
     assert calls == []
     scope["main"]()
     assert calls == [entry]
+    runpy.run_path(str(menu), run_name="__main__")
+    assert calls == [entry, entry]
