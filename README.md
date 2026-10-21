@@ -74,3 +74,5 @@ Glyph Character Map and Glyph Character Map - Styles preserve both complete
 reference-font pickers and report the current FontLab font’s full Unicode
 coverage. Read [the character-map guide](src_docs/md/glyph-character-map.md).
 Native acceptance remains pending.
+
+Paired Find Font Source Files tools search actual one-directory font/script sources, preserving decoded/progressive and byte/final profiles. Browse, Cancel, sizes, histories and explicit desktop result activation are included.

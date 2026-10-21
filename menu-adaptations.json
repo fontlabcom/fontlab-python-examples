@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains37 practical facades;21 adaptations remain native pending and473 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both sliders profiles remain distinct; part2 initial Horizontal-label mismatch intentionally repaired.",
+  "policy": "Preserve all494 historical identities and exact original bodies. Active Scripts contains41 practical facades;25 adaptations remain native pending and469 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Find Files profiles retain complete distinct search/publication/history/symlink policies; candidate collection is stepped for responsiveness.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -332,6 +332,32 @@
       "scope": "Complete original reference-font controls/drawing/selection/copy with genuine full current-FontLab Unicode coverage and ordered proof; explicit surrogate refusal; no font writers",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/dialogs - findfiles-63f2eeefd052f701.py",
+      "menu": "Scripts/Tools/Find Font Source Files.py",
+      "source": "rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py",
+      "source_sha256": "322658e86c233171b37cb1976ed9828afda860dcc5708ace099119f3e4e9cf83",
+      "destination_sha256": "5102826100c6bd60c0173df09381f3bbaae7e04341ca8abddea34a042cf4aa13",
+      "entry_point": "show",
+      "license": "Apache-2.0 (owner D22); original Qt notices retained",
+      "scope": "Decoded UTF8 replacement text; live filename glob; file symlinks included; progressively visible results and numeric KiB sizes; no Find-click history insertion. Complete Browse/Find/progress/Cancel/sizes/open-result/window lifecycle; actual user files, no sample fabrication.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "family": "find-files-text"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/findfiles-63f2eeefd052f701 - f98c2bcd.py",
+      "menu": "Scripts/Tools/Find Font Source Files - Bytes.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py",
+      "source_sha256": "d53e4871dcd3e6e3a8c901b07ec99db769a65265e4e3539bc68ffb721bbe20d6",
+      "destination_sha256": "1e34726503ab31dea6a709817abdcba7359057f3ebf73d1f49f38a370209d8bc",
+      "entry_point": "show_bytes",
+      "license": "Apache-2.0 (owner D22); original Qt notices retained",
+      "scope": "Exact UTF8 byte matching; captured blank-or-glob; file symlinks excluded; final table only; unique Find-click histories; literal KB sizes. Complete Browse/Find/progress/Cancel/sizes/open-result/window lifecycle; actual user files, no sample fabrication.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "family": "find-files-bytes"
     }
   ]
 }

@@ -39,6 +39,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Component Dependency Graph](tools/component-dependency-graph.md)
 - [Editable Glyph Outline](tools/editable-glyph-outline.md)
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
+- [Find Font Source Files - Bytes](tools/find-font-source-files-bytes.md)
+- [Find Font Source Files](tools/find-font-source-files.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](tools/glyph-name-completion.md)
 - [Glyph Name Pattern Lab](tools/glyph-name-pattern-lab.md)

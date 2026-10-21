@@ -184,3 +184,5 @@ Verify the frozen four-syntax source, native Qt5 semantics, full local authoring
 ### Glyph Character Map pair
 
 Complete original reference-font controls and real-font coverage are implemented privately. Ordinary wheel/sdist, all seven current consumer suites and original-baseline170App/70Examples whole-module gates pass. Independent source/artifact controls pass; qualify installed artifacts in owned FontLab workflows before any native acceptance claim.
+
+Paired Find Files: retain actual PythonQt, file-dialog preferences, desktop opener and complete lifecycle qualification.
