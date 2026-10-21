@@ -3789,3 +3789,30 @@ Original 80% statement AND branch whole-module baselines remain unchanged;
 ordinary wheel/sdist, complete current consumers and independent final review
 follow. Native PythonQt and whole-font preservation remain pending. No canonical
 checkout, live install, FontLab state, preference, Output or user clipboard changed.
+
+### Final ordinary .103 artifact validation
+
+Both ordinary wheel and sdist lanes pass the same complete consumer graph:
+App4086, Glyport3182/1 existing skip, Fontport4490/1 existing skip, Examples562,
+current .98 Scriptmix989/1 existing skip, Lessons199 and Fly17:13525passed/3skips
+per artifact. Both also pass49 focused actual Qt5 controls; full App includes
+Qt6. Strict Examples documentation and11SDK tests pass.
+
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/character-map-z37/build_install.py` exit0; `run_consumers.py` exit0; `qt5_installed.py` exit0; `docs.py` exit0; `audit_artifacts.py` exit0.
+`rtk proxy env PYTHONDONTWRITEBYTECODE=1 verification/issue-120/character-map-z37/wheel-env/bin/python verification/issue-120/character-map-z37/coverage_report.py` exit0.
+
+Every changed whole module meets80% statement AND80% branch with zero excluded
+lines and unchanged original milestone baselines:170App modules98.572386% and
+70Examples modules96.962233%, both archive lanes. All258App runtime bytes match
+source/wheel/sdist/two ordinary installs, preserving251prior runtime files; all
+37prior menus/21adaptations remain exact before the new2/2. RECORD8209/8210 and
+licence/privacy/Python3.11 audits pass. Shared .89 dependency environments remain
+read-only; no Qt copies, canonical/live edits, native calls, push or publication.
+
+N122 independent source/archive review additionally exercises262144 selection
+cases,20 real-shaped metadata controls and31 actual Qt5 controls per artifact,
+including public menu→Fly→App→real panel with an injected clipboard sink.
+Native PythonQt and full-font/history preservation acceptance are still pending.
+Final hashes/commands/results are sealed in the workspace's character-map-z37
+candidate.json; WORK/PLAN are excluded from the archives and this results-only
+commit changes no production, test, menu, resource, notice or archive bytes.
