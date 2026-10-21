@@ -132,3 +132,13 @@ Both sources are elasticnodes-fff97a435b73d548.py in their preserved part2/part3
 collections. Owner D22 grants Apache-2.0 for all archived Python examples.
 No external assets. Existing upstream collection notices remain unchanged above.
 Full Apache terms: LICENSE-APACHE-2.0. Native workflow acceptance remains pending.
+
+Spinboxes part2: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
+SHA-256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db
+Independent FontLab worksheet adaptation, Apache-2.0 under owner D22.
+Original retained unmodified; no archived body/helper is executed or packaged.
+
+Spinboxes part3: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
+SHA-256: e25b26cd135fd40ef1ed9316a402483d676ba7606da94007f00078993b5fa54b
+Independent FontLab worksheet adaptation, Apache-2.0 under owner D22.
+Original retained unmodified; no archived body/helper is executed or packaged.

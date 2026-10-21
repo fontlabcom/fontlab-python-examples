@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains33reviewed practical facades only; all historical runtime dispatchers are privately archived. The17adaptations remain native-pending and original_workflow_accepted=false; the477remaining identities remain migration backlog. No original body is executed/distributed.",
+  "policy": "Keep all494source identities and exact originals in rescue-index.json. Active Scripts contains33reviewed practical facades only; all historical runtime dispatchers are privately archived. The17adaptations remain native-pending and original_workflow_accepted=false; the477remaining identities remain migration backlog. No original body is executed/distributed. Two full spinbox profiles additionally preserved and adapted; both remain native pending.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -244,6 +244,34 @@
       "original_workflow_accepted": false,
       "assets": [],
       "helper_executed": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Widgets - Official spinboxes - 468179092748a72e.py",
+      "menu": "Scripts/Widgets/Glyph Metrics and Revisions.py",
+      "source": "rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "source_sha256": "cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db",
+      "destination_sha256": "9fab562c5f423bb102eaf66df01dfd3964630b8481edd1fed06f06926b26daeb",
+      "entry_point": "show",
+      "family": "spinboxes-part2",
+      "license": "Apache-2.0 (owner D22)",
+      "assets": [],
+      "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/spinboxes-468179092748a72e - 5895d0ae.py",
+      "menu": "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "source_sha256": "e25b26cd135fd40ef1ed9316a402483d676ba7606da94007f00078993b5fa54b",
+      "destination_sha256": "8fbba1341844c492bcbb8ca2aaa0df56c001c581cfcd59c063d97d53206cd4f9",
+      "entry_point": "show_detailed",
+      "family": "spinboxes-part3",
+      "license": "Apache-2.0 (owner D22)",
+      "assets": [],
+      "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }

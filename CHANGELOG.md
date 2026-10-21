@@ -571,3 +571,18 @@ commands/results and final ordinary artifact/whole-module evidence are retained
 in workspace verification/issue-120/elastic-component-graphs-z32. Existing source
 bytes and both original hashes remain preserved. Native FontLab acceptance is
 pending; no canonical write, live install, push, tag, release or publication.
+
+## Unreleased — spinbox family candidate
+
+Add both complete retained spinbox profiles as selected-layer metric/proof-cost
+and whole-font revision worksheets. Keep all numeric/date/time/format controls,
+precision and distinct special-value/stepping semantics. Local drafts only.
+Source, actual Qt5, package and coverage verification recorded in WORK.md;
+native FontLab acceptance remains pending. App0.2.88.dev0 is reserved.
+
+## Unreleased — combined spinbox integration0.2.90.dev0
+
+Add both complete spinbox worksheets to the reviewed.89graph/kerning/pattern
+union. Preserve all238prior App runtime files,33prior Examples menus and
+106Scriptmix menus. Carry the independently reviewed N95time-editor hidden-date
+repair from original.88commitf29d401. Native qualification remains pending.

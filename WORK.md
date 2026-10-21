@@ -3678,3 +3678,44 @@ with the complete reviewed .84 App (including .80 Close/report helpers and
 kerning proof), preserving every prior runtime and all 31 prior Examples menus.
 Both original physics/controls/painting contracts remain distinct. Native
 acceptance, live installation and canonical promotion remain separate gates.
+
+## N89 — complete spinbox family candidate
+
+Implement both distinct retained spinbox contracts in shared injected App Qt
+controls and two thin Fly facades. Preserve historical date/time ranges and all
+format choices. Capture selected advances/UPM and whole-font modification dates
+as immutable values; no font writer is used. Test/artifact evidence is retained
+by the controller in verification/issue-120/spinboxes-z33. Native pending.
+
+### N89 verification receipts
+
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinboxes-z33/run.py app-coverage`: exit0,3671full App tests.
+- Same runner `examples`, `lessons`, `docs`: exit0,553current menu/hash tests,199packaged lessons,11documentation tests.
+- Same runner `qt5`: exit0,57actual Qt5 original-contract/math/capture/lifecycle tests.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinboxes-z33/final_checks.py wheel` and `sdist`: both archives pass3671installed App tests,985Scriptmix consumers plus1optional skip,57installed Qt5 cases. A concurrent shared documentation export initially raced; the wheel consumer was rerun sequentially via `final_checks.py wheel scriptmix qt5`,exit0.
+- Unchanged `.metaswarm/milestone_scope.py --finish` over exhaustive baseline scopes: App146modules98.5915percent; Examples64modules96.8537percent. Every module meets80percent aggregate,statement and branch floors; zero exclusions. Full App source coverage is combined with exact-byte installed Scriptmix consumer coverage for prior shared editor modules.
+- Ordinary `uv build --wheel --sdist` with explicit reserved version0.2.88.dev0; strict wheel/sdist installs into own Python3.11 environments and `uv pip check`,all exit0. Existing test dependencies are read only; no existing environment is synced or uninstalled.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinboxes-z33/audit_artifacts.py`: exit0;234runtime files source/wheel/sdist/two installed roots exact,229prior App runtime files and186prior Examples runtime/resource files exact. All31prior menus and15prior provenance records are preserved; only two new facades are added. Original/support hashes remain exact; WORK/private evidence/archive bodies are excluded from artifacts.
+- `rtk proxy /Users/adam/.local/bin/uvx ruff check` on allfive new production modules: exit0. Production syntax parses as Python3.11.
+- ActualQt5.15.14 externally renders both profiles with Vize CC0VFJ values; both wheel screenshots were visually inspected after fixing the literal `'ms'` format. The complete fixture and corresponding sdist views are retained in evidence.
+
+Retained failed attempts include the tests-first missing-module receipt, initial arithmetic test expectation error, a Qt6midnight constructor mismatch, old fixed menu-count assertions, missing external archive-root configuration, the source-only old-editor coverage gap, the escaped-format correction and the concurrent documentation export race. Final successes do not erase those attempts. The unversioned exploratory build is separate from the reserved final.88artifacts.
+
+Native FontLab calls/live installs/pushes:0. Native PythonQt overload/lifecycle, complete font/workspace/history/dirty/cache preservation, saved/reopened acceptance and final combined integration remain controller gates. No original-workflow acceptance is asserted.
+
+## N96 — reviewed-base spinbox integration
+
+Private App base:d7aab2a8aeefbe6f2756173116cc03eed7e66b7f. Examplesbase was
+rebound fromed2d511 toN94reviewed6e3e47e8001d73d057b162adffdb2fc2dab5f170
+(README duplicate removal only). The complete five-module spinbox source matches
+N95repairf29d401; both profiles retain all11controls and the original hidden-date
+semantics. No old failure is silently forked into this candidate.
+
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinbox-integration-z34/run.py app-coverage`:exit0,3791tests. `examples`:exit0,556tests;
+`lessons`:199tests; standalone Qt5source57tests. Ordinary.90wheel/sdist and
+separate strict Python3.11 installs are checked with exact runtime/origin guards.
+Full seven-consumer and unchanged155App/66Examples module gates, payload
+preservation and final hashes are recorded in the same evidence folder.
+Read-only dependency roots are used as thin test dependencies; no existing
+environment is synced, installed into or uninstalled from. No canonical/native/
+push/liveinstall or fresh canonicalguard mutation is performed by this lane.

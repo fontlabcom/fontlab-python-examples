@@ -59,3 +59,9 @@ Glyph Name Pattern Lab authors complete native Qt5 QRegExp rules against capture
 Both complete elastic-node variants are available as current-font dependency
 graphs, retaining separate physics and controls plus fixed-graph oracles. Read
 [the graph guide](src_docs/md/elastic-component-graphs.md). Native pending.
+
+Glyph Metrics and Revisions (including Detailed) compares captured selected-layer
+advances, 12pt proof widths, proof-cost estimates and whole-font revision cutoffs.
+The two complete historical spinbox profiles retain their own numeric/date/time
+contracts. Local drafts only; use reviewed App>=0.2.88.dev0 through Fly. Native
+PythonQt and whole-font preservation qualification remain pending.
