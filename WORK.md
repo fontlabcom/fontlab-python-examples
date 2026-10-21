@@ -2,6 +2,18 @@
 this_file: WORK.md
 ---
 
+## Issue 122 T0 baseline
+
+- Suite EX; pre-change worktree HEAD recorded below; branch `issue-122` confirmed.
+- Common env: `I=/Volumes/Falstaff4T/fontlab-scripting-data/issue122; export UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`
+- Command (working form): `FONTLAB_PRESERVED_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-python-examples; cd $I/fontlab-python-examples && rtk proxy uv run --locked python -m pytest -q tests`
+- Result: **exit 0; 568 passed, 0 failed, 0 skipped, 0 errors (1.3 s)**
+- Pre-existing failing test ids (working form): none
+- Attempts (including failed invocations):
+  - First attempt of the designed command with FONTLAB_PRESERVED_ROOT set to the canonical checkout passed; no failures to record.
+- Notes: `uv run --locked` created the project venv inside the worktree (git status stays clean, venv ignored). Only `tests/` was run; `tests_docs`, `lessons` suites are outside the T0 command.
+- Scope: offline tests only. This is not native FontLab proof.
+
 # 2026-10-15: Independent clean-room receipt integration and native driver
 
 Integrated the three merged batches on `issue-101-pythonqt-examples` at base
