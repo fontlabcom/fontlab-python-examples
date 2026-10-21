@@ -3719,3 +3719,22 @@ preservation and final hashes are recorded in the same evidence folder.
 Read-only dependency roots are used as thin test dependencies; no existing
 environment is synced, installed into or uninstalled from. No canonical/native/
 push/liveinstall or fresh canonicalguard mutation is performed by this lane.
+
+### N96 final artifact receipts
+
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinbox-integration-z34/final_checks.py wheel` and the same command with`sdist`:both exit0.
+Each final archive:3791App,988Scriptmix+1optional skip,556Examples,199Lessons,
+3182Glyport+1optional skip,4489Fontport+2optional skips,17Fly and57actualQt5
+family tests pass. Two full matrices use exact own App installation origins;
+other test dependencies remain in the frozen read-only.84root.
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/spinbox-integration-z34/run.py docs`:exit0,11tests. Ruff newproduction modules:exit0.
+Ordinary final build/strict twoartifact installs and uvpipcheck:all exit0.
+`audit_artifacts.py`:exit0,243runtime files and441sdist source pairs exact;
+all238priorApp,188priorExamplesruntime/resources,33priorExamplesmenus,
+106Scriptmixmenus and17priorprovenancerecords preserved.
+Unchanged full milestone gates:155Appmodules98.5626435504percent and
+66Examplesmodules96.8907563025percent; every module aggregate,statement and
+branch>=80percent; zero exclusions. Original repair source matchesf29d401.
+Finalcommit/artifact/runtime manifests are in spinbox-integration-z34/final-freeze.json.
+N99independent combined review, root canonical guards/delivery and native
+FontLab acceptance remain separate. No canonical/native/live/push call ran here.
