@@ -4,6 +4,35 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-21 - Designer, font naming and scripting tools; thread, network and media retirements
+
+- Designer (new category): Em Star Polygon previews a star or regular polygon
+  in font units and draws it into the current layer as one closed contour,
+  recorded as one Undo step. Coordinates are rounded to whole units; the
+  contour is centred on half the advance and half the associated master's cap
+  height. SVG output is secondary. The Qt Designer and pyuic form lessons map
+  to Glyph Metrics Form. Replaces 15 identities and retires 12 (clock,
+  bubbles, counter, OpenGL, plugin, rich-text and console demos).
+- Tools: three font naming tools for the current master. Font Name Encoding
+  Audit checks 14 naming and credit fields against ASCII, cp1252 and Mac
+  Roman and requires ASCII PostScript names. Localized Font Names exports
+  escaped name IDs 16 and 17 for AFDKO makeotf or fontmake feature files.
+  Font Info Snapshot exports, reloads and compares JSON snapshots and refuses
+  comparisons across masters. Replaces 7 identities.
+- Tools: three scripting aids. Glyph Snapshot Console runs trusted Python
+  queries on detached glyph records under a time limit. Saved Proof Sample
+  keeps one proof string and reports its Unicode coverage in the current
+  font. FontLab Qt Slot Reference lists widget signals and slots with
+  practical PythonQt rules. Replaces 16 identities (one maps to scriptmix
+  Metrics/Scale Advances) and retires 2.
+- Retired without a new menu: 10 thread and SQL identities (fractal and
+  synthetic transfer demos; the SQL sources report QtSql as unavailable) and
+  72 network, IPC, declarative, media, web and launcher identities (no font
+  action, or the Qt module is not exported by PythonQt).
+- Active menus 81 -> 88; adaptations 153 -> 191; retirements 57 -> 153;
+  backlog 284 -> 150. NOTICE gains one provenance section per batch;
+  generated pages under `src_docs/md/current/` cover the 7 new tools.
+
 ## 2026-10-21 - Models, Widgets, Graphics, Drawing and Windows tools
 
 - Models: seven tools (encoding chart, mark colours, review form, coverage

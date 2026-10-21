@@ -14,6 +14,92 @@ this_file: WORK.md
 - Notes: `uv run --locked` created the project venv inside the worktree (git status stays clean, venv ignored). Only `tests/` was run; `tests_docs`, `lessons` suites are outside the T0 command.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 examples integration wave 3: Designer (E7), font naming (E10), thread/SQL retirements (E11), network/IPC/declarative/media/web retirements (E12), scripting insights (E15)
+
+- Base 608c888. Commits: c03bdf0 (E7), 203fabe (E10), b27144e (E11),
+  ee33dd0 (E12), 42863a7 (E15), then this CHANGELOG/WORK commit. Not pushed.
+  E16 (`Scripts/Tools/Path Problem Report.py`, `Scripts/Tools/Import Kerning
+  Pair List.py`, `tests/test_issue122_E16.py`) stays untracked and untouched;
+  no commit contains it.
+- Batch scripts and batch tests integrated unchanged; their staged hashes
+  equal the fragment hashes (E7 script fb8ee1b3, test 4fb404fd; E10 scripts
+  5ce1bac9, ec313369, 510ab07a, test baa6e2d0; E15 scripts 0c19f3a5,
+  8f0e5473, 7d090158).
+- Rows taken from the fragment JSON (parsed, not copied by hand), then checked
+  against `rescue-index.json` (source_menu exists, source == target,
+  source_sha256 == target_sha256), against the preserved bytes under
+  `FONTLAB_PRESERVED_ROOT`, and against all earlier rows by `source_menu` and
+  `source` (no identity mapped twice). All 38 rows and 96 retirements match.
+  Every `destination_sha256` was recomputed: examples targets from disk, the
+  scriptmix target `Scripts/Metrics/Scale Advances.py` from scriptmix commit
+  e87c2e3 (clean). No fragment hash was stale. `rescue-index.json` unchanged.
+- Wording fixes in the JSON (E11 retirement `scope`): "Archived first-party
+  implementation; no source redistributed" -> "First-party FontLab sample,
+  Apache-2.0; no source redistributed." (6); "Archived first-party capability
+  refusal; no source redistributed" -> "First-party FontLab sample that
+  reports QtSql as unavailable, Apache-2.0; no source redistributed." (4).
+  The E12 objects carry no `scope`; their only "Archived" text is the
+  historical `source_menu` ids, kept verbatim.
+- NOTICE: one section per batch, appended (prior bytes unchanged): Designer
+  tools, Font naming tools, Retired thread and SQL examples, Retired network,
+  IPC, declarative, media and web examples, Scripting insight tools. Each new
+  tool has the line "Independent rewrite of the ... idea. Based on the
+  author's own FontLab sample, Apache-2.0." and its source paths/SHA256;
+  mapped-to-existing identities and retirements (with reasons) follow.
+- Counts (menus / adaptations / retired / not adapted / backlog): 608c888
+  81/153/57/341/284; E7 82/168/69/326/257; E10 85/175/69/319/250; E11
+  85/175/79/319/240; E12 85/175/151/319/168; E15 88/191/153/303/150. Updated
+  per commit: test_curated_menus (count; category Designer),
+  test_elastic_adaptations, test_spacing_menu_integration (counts;
+  EXAMPLE_BATCHES 38 -> 45 paths), test_rescued_menus (counts; E15 adds
+  `fontlab-python-scriptmix/` destination resolution through
+  `FONTLAB_SCRIPTMIX_ROOT`, default the sibling checkout), the adaptation
+  counts in the ten other shared tests, the `policy` text, README and
+  `src_docs/md/collections.md`.
+- Docs catalogue: per batch with scripts (E7, E10, E15), the staged tree was
+  exported with `git archive` and `src_docs/current_menus.catalogue()` run
+  there with `/opt/homebrew/bin/python3.11 -I`; `src_docs/md/current/` was
+  copied back and staged. No E16 page is staged.
+- Bytecode: `Scripts/Designer/__pycache__/Em Star Polygon.cpython-312.pyc`
+  deleted before staging; no bytecode committed.
+- Verification, all on clean `git archive` exports under
+  `$TMPDIR/integ3-verify/<label>/fontlab-python-examples`, with siblings
+  `fontlab-fontlabapp` (archive of App 74737a0, the clean issue122 App head)
+  and `fontlab-python-scriptmix` (archive of scriptmix e87c2e3); env of
+  `verification/issue-122/sdd/cmd/ex.sh` (`FONTLAB_PRESERVED_ROOT` = canonical
+  examples checkout) plus `PYTHONDONTWRITEBYTECODE=1`; command `rtk proxy uv
+  run --locked python -m pytest -q -p no:cacheprovider tests` (Python 3.12.12):
+  - 608c888 (baseline, App 74737a0): exit 0, 1416 passed.
+  - E7 tree 9670f08 (= c03bdf0^{tree}): exit 0, 1482 passed (+66).
+  - E10 tree 227fe97 (= 203fabe^{tree}): exit 0, 1517 passed (+35).
+  - E11 tree 9be2e14 (= b27144e^{tree}): exit 0, 1545 passed (+28).
+  - E12 tree 9b70e99 (= ee33dd0^{tree}): exit 0, 1631 passed (+86).
+  - E15 tree 2e78a83 (= 42863a7^{tree}): exit 0, 1704 passed (+73).
+- Final checks on the 42863a7 export (this commit adds only CHANGELOG.md and
+  WORK.md, which no test reads), with `EXAMPLES_LEGACY_API_SOURCE=
+  /Volumes/Falstaff4T/fontlab-scripting-data/issue122/legacy-api-28bc505`:
+  - `./build.sh`: exit 0, "Documentation built", 0 warnings; generated pages
+    identical to the commit; the not-in-nav list gains only
+    `topics/designer.md`, like the other category topic pages.
+  - `rtk proxy uv run --locked python -m pytest -q tests_docs`: exit 0, 11 passed.
+  - Lessons (`cd lessons`, `QT_QPA_PLATFORM=offscreen
+    EXAMPLES_APP_SOURCE=<App 74737a0 archive>/src/fontlabapp`, command from
+    `lessons/README.md`): exit 0, 199 passed, coverage 96.18%.
+- Ruff (check only): `rtk proxy uvx ruff check --target-version py311` on the
+  7 scripts and 5 batch tests: exit 0, all checks passed.
+- Jargon/hedge grep on the 7 scripts (issue numbers, batch ids, D-numbers,
+  "reviewed App", archived, unresolved, unverified, pending): no match.
+  Saved Proof Sample names fl#8567/fl#8568, the allowed public-issue caveat.
+- Native holds (from the batch reports; none run here): E7 drawing, Undo/Redo
+  and reopened geometry; E10 whether `package.info` follows `package.master`,
+  the `QLineEdit.text` getter through `qt_properties.value`, `destroyed` ->
+  release when the parent closes; E11/E12 module availability is taken from
+  the preserved sources, catalogue and PythonQt stubs, not remeasured in
+  FontLab; E15 C-level tracer visibility to `sys.gettrace()` in panel slots,
+  scan timing, widget lifetimes and metadata, QSettings persistence and types,
+  large output and text transfer.
+- Scope: offline tests only. Native FontLab acceptance remains pending.
+
 ## Issue 122 examples integration wave 2: Models (E1), Widgets (E2), Graphics (E4), Drawing (E5), Windows (E6)
 
 - Base 49f5371. Commits: f1a6eb0 (E1), eb00784 (E2), 7db1b35 (E4), 073fb7a
