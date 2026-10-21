@@ -58,4 +58,4 @@ def test_all_prior_runtime_and_provenance_rows_remain_exact():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     assert rows[:17] == baseline["prior_adaptations"]
-    assert len(rows) == 27
+    assert len(rows) == 39

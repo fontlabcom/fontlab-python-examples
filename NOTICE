@@ -295,3 +295,54 @@ SHA256 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
 rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 SHA256 a56d05bd0de0204bb29e96995d043b9054104eb370fc80a36bc398db77a29bac
 Shared source contracts: part2 Session and part3 Demo; both originals/helpers remain preserved, never imported or bundled.
+
+
+Dialogs tools
+-------------
+The six scripts in Scripts/Dialogs are new FontLab tools written from
+scratch. Their ideas come from the Qt dialog examples (BSD, Qt examples
+(Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing Limited;
+Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)).
+The earlier archived Python ports under rescued/part2 are Apache-2.0, own
+earlier work. The copies under rescued/part3 keep the upstream headers, and
+the upstream example collection also lists GPL-3.0-only; how far that
+applies is not resolved, so these tools include no original code, helper
+or asset.
+The new tools are Apache-2.0. Each tool replaces the archived variants
+listed under it:
+
+Scripts/Dialogs/FontLab Script Scaffold Wizard.py (from classwizard)
+rescued/part2/ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py
+SHA256 1d69f1113b8c0a1eb508ee108639dea5bd114fd384ae132c3dd767efa45909fb
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/classwizard-035f3fbd2b81479a.py
+SHA256 93b55b89157b47b8676db5ce9e9a64641bf7d6290bc576f2c5af16079beef92d
+
+Scripts/Dialogs/Glyph Batch Recipe Settings.py (from configdialog)
+rescued/part2/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
+SHA256 a8723ff0df166a67c564237dbf0c11dfe87d4f649b2769c2de409efc1508c33f
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
+SHA256 5ddbb490939e6e767b7603a197b0ec14019611ff4447c04fff97293593cb571d
+
+Scripts/Dialogs/Expandable Glyph Search.py (from extension)
+rescued/part2/ports/dialogs/pyqt-official/extension-a1c26dbf9f995edb.py
+SHA256 96175cf7e19bcd1dc4f2e6664890436df05a791d47b8442411bd35bb3d32df32
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/extension-a1c26dbf9f995edb.py
+SHA256 d662938fecf32e30d708c02bafce2e7468461be547ab33fd41c6405a6e4f94d9
+
+Scripts/Dialogs/Proof Text Coverage Dialog.py (from standarddialogs)
+rescued/part2/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
+SHA256 4a705367140cd7600706cf7ab7522523ddc7c5cd3592309c78d316b67cfc0055
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
+SHA256 80b66bcc88b46955f88d0b31040a2ea4cdf272aa6de1f825c9ff189abf21af22
+
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from tabdialog)
+rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+SHA256 f0429bb770550780ba27dd2def628e0189a5665595501f32dfb1ebf9ef98c7c0
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+SHA256 6fd6f74eddf5d3579fc8b46e70fab7de6444cd70d41a2776c1ca437b345fc2bf
+
+Scripts/Dialogs/Glyph Proof Batch Wizard.py (from trivialwizard)
+rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
+SHA256 9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac
+rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
+SHA256 8ad810ecf2897a079286ed7b7ede6a2259c30c0fe7e6b90dc4141af0912103b5

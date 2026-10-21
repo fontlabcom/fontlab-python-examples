@@ -18,4 +18,4 @@ def test_distinct_image_viewer_source_and_real_lazy_fly_contract(monkeypatch,par
 def test_all41_prior_menus_and25_adaptation_rows_remain_exact():
  old=json.loads((ROOT/'tests/image-viewer-prior-baseline.json').read_text());assert len(old['prior_runtime'])==41 and len(old['prior_adaptations'])==25
  for name,digest in old['prior_runtime'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
- rows=json.loads((ROOT/'menu-adaptations.json').read_text())['adaptations'];assert rows[:25]==old['prior_adaptations'] and len(rows)==27
+ rows=json.loads((ROOT/'menu-adaptations.json').read_text())['adaptations'];assert rows[:25]==old['prior_adaptations'] and len(rows)==39

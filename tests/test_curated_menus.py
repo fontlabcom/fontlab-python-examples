@@ -14,8 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_active_scripts_when_scanned_then_only_curated_practical_one_level_menus():
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
-    assert len(paths) == 43, "Ship the 43 practical facades with native acceptance pending"
+    assert len(paths) == 49, "Ship the 49 practical facades with native acceptance pending"
     assert {p.parent.name for p in paths} == {
+        "Dialogs",
         "Forms",
         "GetGo Fonts",
         "Models",
