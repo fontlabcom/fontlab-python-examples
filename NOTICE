@@ -1058,3 +1058,39 @@ Reason: Generic rich-text viewer has no font input or reusable font output; auth
 rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py
 SHA256 2f064d8a51ccc93671b2bfb39c05d9a2e4491fd62bb2615985e2f3ae0e89e73a
 Reason: Embedded interpreter duplicates FontLab's built-in Python scripting panel; a Designer console adds no distinct font action.
+
+
+Font naming tools
+-----------------
+The three new font naming scripts in Scripts/Tools are FontLab tools
+written from scratch. Their ideas come from the Qt tools examples in
+the pyqt/examples collection (Riverbank Computing Limited; Nokia
+Corporation and/or its subsidiary(-ies)). No upstream source code,
+helper or asset is included. Each tool lists the earlier sources it
+replaces, with their SHA256 values.
+
+Scripts/Tools/Font Name Encoding Audit.py
+Independent rewrite of the Qt codecs example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
+SHA256 c39fb1bab6762e4b2286af604794547e07de9f5a680b4c671e7882c9a6ac9470
+rescued/part2/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
+SHA256 fe2257ea8123a18e3995ca919937fd16a02845c939d2ea695fd99cea327cd3a9
+
+Scripts/Tools/Localized Font Names.py
+Independent rewrite of the Qt i18n example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+SHA256 a60c542ce24e27441a1c022e8fc57630edf380676eda4904bebc50510eb03047
+rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+SHA256 6253c957368cdf32b0a298001f6bb07cec0abc724e4f0918918facba0cde245f
+
+Scripts/Tools/Font Info Snapshot.py
+Independent rewrite of the Qt settingseditor example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
+SHA256 1a35d9d5b3989ba7728ce129fea1bcc98cce4b221f59cf8916788ffe0ab53475
+rescued/part2/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
+SHA256 1433012d1ff11a45c6414df8c625c99fc9e17cd93a91d7bc4e518ebfac5dd890
+
+Mapped to existing tools (no new code or resources):
+Scripts/Tools/Glyph Name Pattern Lab.py (from regexp)
+rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
+SHA256 d2323a19b8a05d0dcd8cdc26369176a5a258cf2bdea1081a80c2b5b2a8a4dfd3

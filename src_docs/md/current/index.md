@@ -91,6 +91,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Find Font Source Files - Bytes](tools/find-font-source-files-bytes.md)
 - [Find Font Source Files](tools/find-font-source-files.md)
+- [Font Info Snapshot](tools/font-info-snapshot.md)
+- [Font Name Encoding Audit](tools/font-name-encoding-audit.md)
 - [Font Reference Image Viewer - Bounded Zoom](tools/font-reference-image-viewer-bounded-zoom.md)
 - [Font Reference Image Viewer](tools/font-reference-image-viewer.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
@@ -98,6 +100,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Name Pattern Lab](tools/glyph-name-pattern-lab.md)
 - [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
+- [Localized Font Names](tools/localized-font-names.md)
 
 ## Widgets
 

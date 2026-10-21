@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 82 practical facades in one category level: Designer,
+`Scripts/` contains 85 practical facades in one category level: Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -25,9 +25,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 168 practical replacements, with original
+`menu-adaptations.json` maps 175 practical replacements, with original
 workflow acceptance still pending. Its `retirements` array records 69 identities
-retired without a replacement, each with its reason. The other 257 identities
+retired without a replacement, each with its reason. The other 250 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -135,3 +135,12 @@ one Undo step. The contour is centred on half the advance and half the
 associated master's cap height. SVG output is secondary, for an external
 vector editor. The Qt Designer and pyuic form lessons map to the existing
 Glyph Metrics Form, which loads its packaged form with QUiLoader.
+
+Tools adds three font naming tools for the current master. Font Name Encoding
+Audit checks 14 naming and credit fields against ASCII, cp1252 and Mac Roman,
+flags non-ASCII PostScript names and exports the findings with UTF-16-BE
+bytes. Localized Font Names prefills the current names, asks for a target
+language and exports escaped name IDs 16 and 17 for AFDKO makeotf or fontmake
+feature files. Font Info Snapshot exports and reloads JSON snapshots of the
+same 14 fields and compares a snapshot with the current master. None of them
+changes the font.

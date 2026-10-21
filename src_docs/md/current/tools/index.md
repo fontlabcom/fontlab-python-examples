@@ -6,6 +6,8 @@
 - [Editable Glyph Tree](editable-glyph-tree.md)
 - [Find Font Source Files - Bytes](find-font-source-files-bytes.md)
 - [Find Font Source Files](find-font-source-files.md)
+- [Font Info Snapshot](font-info-snapshot.md)
+- [Font Name Encoding Audit](font-name-encoding-audit.md)
 - [Font Reference Image Viewer - Bounded Zoom](font-reference-image-viewer-bounded-zoom.md)
 - [Font Reference Image Viewer](font-reference-image-viewer.md)
 - [Glyph Name Completion with Focus](glyph-name-completion-with-focus.md)
@@ -13,3 +15,4 @@
 - [Glyph Name Pattern Lab](glyph-name-pattern-lab.md)
 - [Glyph Spacing Worksheet - Frameless](glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](glyph-spacing-worksheet.md)
+- [Localized Font Names](localized-font-names.md)
