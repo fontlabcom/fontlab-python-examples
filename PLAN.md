@@ -180,3 +180,7 @@ Complete the full transitive asset/component inventory, Wordcut dictionary/modul
 ## Issue120 N56 — complete pattern authoring
 
 Verify the frozen four-syntax source, native Qt5 semantics, full local authoring workflow, complete captured vocabulary, all source/ordinary artifacts/installed consumers, whole-module80/80 without exclusions and rendered documentation. Controller review precedes any push. Qualify actual PythonQt and complete font/getter/cache/history/dirty/reopen behavior separately.
+
+### Glyph Character Map pair
+
+Complete original reference-font controls and real-font coverage are implemented privately. Finish ordinary artifact/consumer/full-scope gates and independent review; then qualify installed artifacts in owned FontLab workflows before any native acceptance claim.

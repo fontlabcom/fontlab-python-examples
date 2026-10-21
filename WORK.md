@@ -3765,3 +3765,27 @@ pending; native bounds read can populate FontLab caches.
 N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
 combined with delivered .90. Every prior menu/resource retained; native .98
 acceptance remains pending. Original source contracts and historical records retained.
+
+## N121 — complete paired Glyph Character Map (.103 candidate)
+
+Read both exact rescued originals, shared lifetime/context APIs, official Qt5
+reference docs and captured PythonQt declarations. Both full original UI profiles
+remain separate; genuine full current-font Unicode coverage adds markers,
+tooltips and ordered proof. Rendering is labelled Reference Font. Part3 scalar
+surrogate refusal is explicit. All clipboard verification uses an owned sink.
+
+Test-first missing-module RED retained. Native slot collisions size/style/scroll
+and part2 pre-metrics category ordering were corrected before artifact freeze.
+Qt5 and Qt6 each49 focused tests pass; complete initial App4081 and Examples562
+pass (App precedes the five latest focused controls). Prior expected menu-count
+failures and PySide6 lone-surrogate conversion calibration remain in evidence.
+
+Commands: `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/character-map-z37/run.py app-coverage` (exit0); same runner `examples` (initialexit1 expectedcount updates, finalexit0), `qt5` (exit0). Latest49 tests use
+readonly .89 wheel-env Python3.11, offscreen Qt and this private App source.
+Strict locked examples-docs SDK `python -m src_docs.build` exit0.
+Exact argv, origins, exits and retained logs are in workspace verification/issue-120/character-map-z37.
+
+Original 80% statement AND branch whole-module baselines remain unchanged;
+ordinary wheel/sdist, complete current consumers and independent final review
+follow. Native PythonQt and whole-font preservation remain pending. No canonical
+checkout, live install, FontLab state, preference, Output or user clipboard changed.

@@ -594,3 +594,9 @@ Both original slider workflows now preview left+offset/right-offset against
 immutable selected-layer geometric margins with unchanged advance. Complete
 controls and distinct native feedback remain; part2 initial orientation now
 matches its label. No font writer; native acceptance remains pending.
+
+## Unreleased — Glyph Character Map pair
+
+- Add both original reference-font character picker profiles with complete controls, drawing, insertion and explicit copy actions.
+- Report full current-FontLab Unicode coverage, duplicate assignments and ordered proof occurrences; refresh clears stale results.
+- Refuse isolated surrogate insertion/copy explicitly and retain owned signal/painter cleanup. Native qualification remains pending.

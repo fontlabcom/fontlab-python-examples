@@ -302,6 +302,36 @@
       "scope": "Complete original slider controls with local selected-layer geometric spacing-offset preview; no font writers",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Widgets - Official charactermap - 499e965d86347920.py",
+      "menu": "Scripts/Widgets/Glyph Character Map.py",
+      "source": "rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+      "source_sha256": "3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285",
+      "destination_sha256": "1380dcdcc67ca1c35848c8200aeb37af6ebc12b3d0a04460a57300567ce1dbb2",
+      "entry_point": "show",
+      "api_module": "character_map",
+      "family": "character-map-part2",
+      "license": "Apache-2.0 (owner D22); complete upstream BSD/GPL collection notices retained",
+      "assets": [],
+      "scope": "Complete original reference-font controls/drawing/selection/copy with genuine full current-FontLab Unicode coverage and ordered proof; explicit surrogate refusal; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/charactermap-499e965d86347920 - 9efd1f93.py",
+      "menu": "Scripts/Widgets/Glyph Character Map - Styles.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py",
+      "source_sha256": "e5300e2687fa734a95fc8aaae9b29ee382902f07e8cb5c170137e76600ab2d87",
+      "destination_sha256": "5bf954ca957258a8bce4c9b30e248078122e13af887ca5a422cdb71e7677e0c6",
+      "entry_point": "show_official",
+      "api_module": "character_map",
+      "family": "character-map-part3",
+      "license": "Apache-2.0 (owner D22); complete upstream BSD/GPL collection notices retained",
+      "assets": [],
+      "scope": "Complete original reference-font controls/drawing/selection/copy with genuine full current-FontLab Unicode coverage and ordered proof; explicit surrogate refusal; no font writers",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }
