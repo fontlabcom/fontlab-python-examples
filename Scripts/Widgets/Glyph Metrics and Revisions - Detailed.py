@@ -6,7 +6,7 @@ Purpose:
     Estimate advance offsets and scaled widths for every selected glyph layer.
     Inspect whole-font modification-date cutoffs and a per-glyph proof quote.
 Setup:
-    Use FontLab 9, Python 3.11, Fly and reviewed App>=0.2.90.dev0.
+    Use FontLab 9, Python 3.11, Fly and App>=0.2.90.dev0.
     Open a font and select glyph layers. This script installs nothing.
 Run:
     Edit the integer/decimal offsets, proof zoom, scale and currency estimates.

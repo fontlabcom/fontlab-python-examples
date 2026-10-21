@@ -212,7 +212,7 @@ def show(qt: Any, parent: Any) -> Any:
 
 def capture_codes() -> frozenset[int]:
     """Read Unicode coverage from the snapshot's Unicode column, not glyph names."""
-    from fly.ap._glyph_catalog_native import capture
+    from fly.ap.glyph_catalog import capture
 
     return frozenset(
         int(code.removeprefix("U+"), 16)

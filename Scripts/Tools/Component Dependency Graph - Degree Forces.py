@@ -5,7 +5,7 @@
 Purpose:
     Retain the complete part3 elastic-node lesson as a FontLab dependency view.
 Setup:
-    FontLab 9, Python 3.11, Fly and reviewed App>=0.2.83.dev0. Install matching
+    FontLab 9, Python 3.11, Fly and App>=0.2.83.dev0. Install matching
     prerequisites yourself; this script installs nothing.
 Run:
     Refresh captures all current-font glyphs in font order, including unencoded

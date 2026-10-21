@@ -13,7 +13,7 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank standarddialogs dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0 owner grant. Upstream BSD headers and
+Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
@@ -33,7 +33,7 @@ def glyph_rows() -> tuple[tuple[str, tuple[int, ...]], ...]:
     The existing App helper owns native double reads and package/font/master
     fences. Convert its Unicode display column under the same deadline only.
     """
-    from fly.ap._glyph_catalog_native import capture
+    from fly.ap.glyph_catalog import capture
 
     deadline = monotonic() + 2.0
     table = capture(deadline=deadline)

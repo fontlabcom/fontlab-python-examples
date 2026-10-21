@@ -11,7 +11,7 @@ Inspect and filter whole-font glyph metadata with typed Qt dates.
 Purpose: Adapt the complete part3 official custom source/proxy model lesson.
 Show every glyph name, all Unicode assignments and local modification datetimes.
 Both read-only views share one captured model with native QDateTime cells.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.55.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.55.dev0.
 Run: Open a font and run this Models command. Use regular expressions, wildcards
 or fixed strings, and click result headers to sort.
 Match either name or Unicode with Qt QRegExp, then optionally limit inclusive calendar days. Text sorting stays case-sensitive; email-shaped values use the original extracted-token comparator.
@@ -37,5 +37,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/70325813d66928414ac338566cd3db1fd7a416add8983d43c89bfa1b26d46f46.py)
+[Python source](../../../../.build/menu-sources/34f40cd69be7c538ef4e9bc04da5bd3b6443e924d8a49625b02f4700deec96f7.py)
 <!--/codeinclude-->

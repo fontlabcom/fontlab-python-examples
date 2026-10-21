@@ -6,7 +6,7 @@
 Purpose: Adapt the complete part3 official custom source/proxy model lesson.
 Show every glyph name, all Unicode assignments and local modification datetimes.
 Both read-only views share one captured model with native QDateTime cells.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.55.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.55.dev0.
 Run: Open a font and run this Models command. Use regular expressions, wildcards
 or fixed strings, and click result headers to sort.
 Match either name or Unicode with Qt QRegExp, then optionally limit inclusive calendar days. Text sorting stays case-sensitive; email-shaped values use the original extracted-token comparator.

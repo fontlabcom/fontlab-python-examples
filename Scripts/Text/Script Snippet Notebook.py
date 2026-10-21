@@ -31,7 +31,7 @@ _PANELS: list[Any] = []
 
 def capture_names() -> tuple[str, ...]:
     """Read the current font's glyph names. Refuse missing or unstable font context."""
-    from fly.ap._glyph_catalog_native import capture
+    from fly.ap.glyph_catalog import capture
 
     return tuple(row[0] for row in capture().rows)
 

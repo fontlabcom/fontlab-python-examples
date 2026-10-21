@@ -5,7 +5,7 @@ this_file: README.md
 # FontLab Python examples
 
 `Scripts/` contains 60 practical facades in one category level: Dialogs,
-Drag And Drop, Forms, GetGo Fonts, Models, Text, Tools and Widgets. Install their matching reviewed Fly, App
+Drag And Drop, Forms, GetGo Fonts, Models, Text, Tools and Widgets. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
 dedicated no-document session. Do not modify a live installation during setup.
@@ -15,7 +15,7 @@ Run `uv build lessons` from this repository to build it; its sixteen packaged
 menus, form resource, 99 licensed GetGo fixtures and provenance are included.
 The root `pyproject.toml` remains the separate documentation project.
 
-The canonical source now includes the reviewed issue120 facade and package work. Offline
+The canonical source now includes the facades and the package work behind them. Offline
 verification does not establish native FontLab compatibility. Original workflow,
 lifecycle, whole-font/history and save/reopen acceptance remain pending where
 stated; nothing was accepted merely by removing an archived menu wrapper.
@@ -55,7 +55,7 @@ captured selected-layer advances, without applying metrics. All 432 native
 artifact/scenario bindings remain pending. Read
 [the worksheet guide](src_docs/md/spacing-worksheets.md).
 
-Glyph Name Pattern Lab authors complete native Qt5 QRegExp rules against captured whole-font glyph names. Editable pattern/input histories, all four syntaxes, case/minimal matching and complete native captures remain. Refresh keeps drafts; no font writer is used. Requires reviewed App0.2.76.dev0 via Fly; native qualification pending.
+Glyph Name Pattern Lab authors complete native Qt5 QRegExp rules against captured whole-font glyph names. Editable pattern/input histories, all four syntaxes, case/minimal matching and complete native captures remain. Refresh keeps drafts; no font writer is used. Requires App>=0.2.76.dev0 via Fly; native qualification pending.
 
 Both complete elastic-node variants are available as current-font dependency
 graphs, retaining separate physics and controls plus fixed-graph oracles. Read
@@ -64,7 +64,7 @@ graphs, retaining separate physics and controls plus fixed-graph oracles. Read
 Glyph Metrics and Revisions (including Detailed) compares captured selected-layer
 advances, 12pt proof widths, proof-cost estimates and whole-font revision cutoffs.
 The two complete historical spinbox profiles retain their own numeric/date/time
-contracts. Local drafts only; use reviewed App>=0.2.88.dev0 through Fly. Native
+contracts. Local drafts only; use App>=0.2.88.dev0 through Fly. Native
 PythonQt and whole-font preservation qualification remain pending.
 
 Glyph Spacing Offset and Glyph Spacing Offset - Stacked preserve both complete

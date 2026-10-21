@@ -11,7 +11,7 @@ Inspect all current-font glyph metadata in an expandable read-only hierarchy.
 Purpose: Adapt the complete part2 Simple Tree Model workflow to FontLab.
 Show glyphs in font order. Expand each glyph to inspect all Unicode assignments
 and its local modification date. Missing values remain explicit.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.57.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
 Run: Open a font and run this Models command. Expand or collapse rows; select a
 cell to inspect it. Keep fixed columns, noneditable EditRole text, selected row/column status and File > Exit.
 Use Refresh to read the current font again. Reads and rendering share a bounded
@@ -34,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/834e1e00ee0dfe8b4b00ad6dc1ea8bde1bbbd5ce4d39cfb3000c1699031c9c60.py)
+[Python source](../../../../.build/menu-sources/10fda6df7c2c3abe739ee4534643e83fcb7321f0fba67c445f6effa35ae4596b.py)
 <!--/codeinclude-->

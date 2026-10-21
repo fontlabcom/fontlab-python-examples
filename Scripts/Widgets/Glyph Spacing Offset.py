@@ -5,7 +5,7 @@
 Purpose:
     Compare left+offset and right-offset sidebearings at unchanged advance.
 Setup:
-    FontLab 9, Python3.11, Fly and reviewed App>=0.2.95.dev0. Open a font
+    FontLab 9, Python3.11, Fly and App>=0.2.95.dev0. Open a font
     and select glyph layers in a Font or Glyph window. Installs nothing.
 Run:
     Edit offset/minimum/maximum (-100..100), drag the slider, scrollbar or dial,

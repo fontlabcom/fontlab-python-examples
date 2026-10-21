@@ -12,8 +12,8 @@ Purpose:
     Keep the complete preserved part2 Spin Box Delegate lesson useful in FontLab.
     A is a font-unit increment. B is its repeat count. Edit all eight cells.
 Setup:
-    Use FontLab 9, Python 3.11, Fly and reviewed App>=0.2.70.dev0.
-    Use reviewed artifacts. No automatic installation is performed.
+    Use FontLab 9, Python 3.11, Fly and App>=0.2.70.dev0.
+    Use matching artifacts. No automatic installation is performed.
 Run:
     Select glyph layers, then open this modeless worksheet from Tools.
     Edit factors even without a font. Refresh Selection reads a complete snapshot.
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2582216ccfa5a5276aecde40a693e02a47f7546955fb8f59b09ffeef0c039e18.py)
+[Python source](../../../../.build/menu-sources/32e2e392aaa17de6a28c9e0de1541b5b6ff7df0c473c942edca3d6534de48702.py)
 <!--/codeinclude-->

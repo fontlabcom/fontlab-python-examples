@@ -11,7 +11,7 @@ Inspect complete current-master component dependencies in a moving local graph.
 Purpose:
     Retain the complete part3 elastic-node lesson as a FontLab dependency view.
 Setup:
-    FontLab 9, Python 3.11, Fly and reviewed App>=0.2.83.dev0. Install matching
+    FontLab 9, Python 3.11, Fly and App>=0.2.83.dev0. Install matching
     prerequisites yourself; this script installs nothing.
 Run:
     Refresh captures all current-font glyphs in font order, including unencoded
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4f6bd173fbb68426700b8f41a6693cf33c9ce6c7e9fd0fadd820feb915a6c900.py)
+[Python source](../../../../.build/menu-sources/9ad6ccf75df23b78788d3b490ea9a2c57f149ac7bdad640d64db706192502b3b.py)
 <!--/codeinclude-->

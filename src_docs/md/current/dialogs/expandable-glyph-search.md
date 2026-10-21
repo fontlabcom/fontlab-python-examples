@@ -19,7 +19,7 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank extension dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0 owner grant. Upstream BSD headers and
+Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/57d0e0cb639c95e49e2eff64049cffc402ea68841528e0e1df3a27e567c8b823.py)
+[Python source](../../../../.build/menu-sources/c3197d60242f490efa955cbbcab340362cca6cc11895cac7dc630000636a683f.py)
 <!--/codeinclude-->

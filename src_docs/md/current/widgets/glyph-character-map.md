@@ -11,7 +11,7 @@ Choose reference-font characters and check the current FontLab font's coverage.
 Purpose:
     Compose a Unicode proof while seeing covered and missing FontLab characters.
 Setup:
-    FontLab 9, Python3.11, Fly and reviewed App>=0.2.103.dev0. Open a font
+    FontLab 9, Python3.11, Fly and App>=0.2.103.dev0. Open a font
     for coverage. The grid renders an installed Reference Font, not unsaved
     FontLab outlines. Installs nothing and changes no font.
 Run:
@@ -40,5 +40,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1380dcdcc67ca1c35848c8200aeb37af6ebc12b3d0a04460a57300567ce1dbb2.py)
+[Python source](../../../../.build/menu-sources/e09ca7d8c02384fe8cb01013ad78daed2cccc832f5f4a0568695cf558c04a5b9.py)
 <!--/codeinclude-->

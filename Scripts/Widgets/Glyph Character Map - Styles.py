@@ -5,7 +5,7 @@
 Purpose:
     Compose a Unicode proof while seeing covered and missing FontLab characters.
 Setup:
-    FontLab 9, Python3.11, Fly and reviewed App>=0.2.103.dev0. Open a font
+    FontLab 9, Python3.11, Fly and App>=0.2.103.dev0. Open a font
     for coverage. The grid renders an installed Reference Font, not unsaved
     FontLab outlines. Installs nothing and changes no font.
 Run:

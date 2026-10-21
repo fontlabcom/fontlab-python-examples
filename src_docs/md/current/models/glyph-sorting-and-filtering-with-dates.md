@@ -10,7 +10,7 @@ Sort and filter a complete real-font glyph metadata snapshot.
 
 Purpose: Adapt the complete part2 custom source/proxy model lesson to
 current-font glyph names, all Unicode assignments and local modification dates.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.54.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
 Run: Open a font, then run this Models command. Both read-only views share one
 captured model. Enter a regular expression, wildcard or fixed string. Toggle
 filter and sorting case independently; click a result header to sort.
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/21bcd10aee1554f10c23e50c0648dbb22109738d5cf9566f081ade12e5097be6.py)
+[Python source](../../../../.build/menu-sources/87bb3fa1f47a0a80ad217ac9e3047c05e2eb11100b23ef714f1278b4b6ec5e14.py)
 <!--/codeinclude-->

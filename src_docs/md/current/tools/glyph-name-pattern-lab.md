@@ -12,8 +12,8 @@ Purpose:
     Keep the complete Pattern Matching Inspector useful for glyph-name rules.
     Test captures, positions and lengths before using a pattern in another tool.
 Setup:
-    Use FontLab 9, Python 3.11, Fly and reviewed App>=0.2.76.dev0.
-    Install reviewed prerequisites yourself. This script installs nothing.
+    Use FontLab 9, Python 3.11, Fly and App>=0.2.76.dev0.
+    Install the prerequisites yourself. This script installs nothing.
 Run:
     Open this modeless lab from Tools. Edit the pattern and test-text histories.
     Choose Regular expression, Regular expression 2, Wildcard or Fixed string.
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/64899f2f23e576791fe5d134a68e15c166dab577aacabe80ce663593b0a2e219.py)
+[Python source](../../../../.build/menu-sources/b7f966b9251b68b735648be2b03b8c759631503ae1f1023a2c28227838bb5829.py)
 <!--/codeinclude-->

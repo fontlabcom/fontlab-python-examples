@@ -266,7 +266,7 @@ def app_module(monkeypatch: Any) -> Any:
     if not APP_SOURCE.is_dir():
         pytest.fail(f"The App source checkout is required: {APP_SOURCE}")
     monkeypatch.syspath_prepend(str(APP_SOURCE))
-    module = importlib.import_module("fontlabapp._glyph_catalog_native")
+    module = importlib.import_module("fontlabapp.glyph_catalog")
     assert Path(module.__file__).resolve().is_relative_to(APP_SOURCE.resolve())
     assert callable(module.capture), "The real capture import must exist"
     return module
@@ -274,7 +274,7 @@ def app_module(monkeypatch: Any) -> Any:
 
 def test_capture_symbol_exists_in_real_app(app_module: Any) -> None:
     """Catch an import mismatch even when UI tests use detached snapshots."""
-    assert app_module.capture.__module__ == "fontlabapp._glyph_catalog_native"
+    assert app_module.capture.__module__ == "fontlabapp.glyph_catalog"
 
 
 @pytest.mark.parametrize("title", TITLES)
@@ -294,7 +294,7 @@ def host(monkeypatch: Any) -> Any:
         "fly",
         "fly.ap",
         "fly.ap.qt_properties",
-        "fly.ap._glyph_catalog_native",
+        "fly.ap.glyph_catalog",
     ):
         monkeypatch.setitem(sys.modules, name, ModuleType(name))
 
@@ -303,7 +303,7 @@ def host(monkeypatch: Any) -> Any:
         return item() if callable(item) else item
 
     sys.modules["fly.ap.qt_properties"].value = value
-    sys.modules["fly.ap._glyph_catalog_native"].capture = lambda: SimpleNamespace(
+    sys.modules["fly.ap.glyph_catalog"].capture = lambda: SimpleNamespace(
         rows=[(n, "", "") for n in names]
     )
     clipboard = SimpleNamespace(text="")
@@ -393,8 +393,9 @@ def test_real_font_action_and_no_font_error_keep_draft(
     before = panel.editor.toPlainText()
     panel.dirty = False
 
+    native = importlib.import_module("fontlabapp._glyph_catalog_native")
     monkeypatch.setattr(
-        app_module,
+        native,
         "_native",
         lambda name: SimpleNamespace(
             flWorkspace=SimpleNamespace(
@@ -402,7 +403,7 @@ def test_real_font_action_and_no_font_error_keep_draft(
             )
         ),
     )
-    monkeypatch.setitem(sys.modules, "fly.ap._glyph_catalog_native", app_module)
+    monkeypatch.setitem(sys.modules, "fly.ap.glyph_catalog", app_module)
     click(panel, button)
     assert "Open a font" in panel.status.text
     assert panel.editor.toPlainText() == before
@@ -588,7 +589,7 @@ def test_highlighter_formats_utf16_and_detaches_before_close(host: Any) -> None:
 
 def test_unicode_digit_coverage_ignores_glyph_names(host: Any) -> None:
     """Read exact Unicode cells even when no glyph has a traditional digit name."""
-    capture = sys.modules["fly.ap._glyph_catalog_native"]
+    capture = sys.modules["fly.ap.glyph_catalog"]
     rows = [(f"uni{code:04X}", f"U+{code:04X}", "") for code in range(48, 58)]
     rows.append(("space", "U+0020", ""))
     capture.capture = lambda: SimpleNamespace(rows=rows)
@@ -819,7 +820,7 @@ def test_capture_timeout_keeps_draft_and_reports_error(
     def timeout() -> None:
         raise TimeoutError("Font metadata scan expired; try again.")
 
-    monkeypatch.setattr(sys.modules["fly.ap._glyph_catalog_native"], "capture", timeout)
+    monkeypatch.setattr(sys.modules["fly.ap.glyph_catalog"], "capture", timeout)
     click(panel, button)
     assert panel.editor.text == "Keep this unsaved draft.\n" and panel.dirty
     assert panel.status is status_widget
@@ -841,3 +842,11 @@ def test_calendar_has_no_dead_capture_helper_and_keeps_local_date() -> None:
     source = (ROOT / "Scripts/Text/Calendar Proof Builder.py").read_text()
     assert "def capture_names(" not in source
     assert "datetime.now().astimezone().date()" in source
+
+
+@pytest.mark.parametrize("title", TITLES)
+def test_script_uses_only_the_public_catalog_capture(title: str) -> None:
+    """Scripts import the public App capture and no private App module."""
+    text = (ROOT / "Scripts/Text" / f"{title}.py").read_text()
+    assert "_glyph_catalog_native" not in text
+    assert "fly.ap._" not in text

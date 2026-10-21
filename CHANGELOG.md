@@ -4,6 +4,20 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-21 - Public App helpers and plain wording
+
+- The ten Dialogs and Text tools that read the glyph catalogue now import the
+  public `fly.ap.glyph_catalog.capture` instead of a private App module. Same
+  arguments, same result.
+- Script docstrings no longer carry process wording ("reviewed App", "pending
+  D25", "owner grant"). Archived replacements are described as Apache-2.0 own
+  earlier work, as in NOTICE. 36 scripts changed; their hashes in
+  `menu-adaptations.json` and the prior-baseline fixtures were recomputed.
+  Behaviour is unchanged.
+- `src_docs/md/collections.md` states the real counts: 60 menus, 73 adaptations,
+  3 retirements, 418 backlog. A new test keeps the page in step with the data.
+- Generated pages under `src_docs/md/current/` were rebuilt with `./build.sh`.
+
 ## 2026-10-21 - Dialogs, Drag And Drop and Text tools
 
 - Dialogs: six modeless tools (scaffold wizard, batch recipe settings, expandable

@@ -11,7 +11,7 @@ Inspect current-font modification dates with the complete part3 calendar.
 Purpose: Adapt the distinct full part3 Calendar Widget workflow to FontLab.
 Retain every Qt locale in native order, all seven week starts, both selection
 modes, grid/navigation, all headings, date limits and four weekday/weekend colours.
-Setup: FontLab 9, Python 3.11, fontlab-fly and reviewed unpublished App>=0.2.61.dev0.
+Setup: FontLab 9, Python 3.11, fontlab-fly and App>=0.2.61.dev0.
 Run: Open a font and run this Widgets command. Choose a date to inspect complete
 captured glyph names, Unicode assignments and local modification times in order.
 Set Bold/Italic/Plain headers. Toggle first Friday in blue and May 1 in red
@@ -34,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/743c610ca7ade4bc68a82f914e8a010170b710838064bbf168ba4faeaf852fd6.py)
+[Python source](../../../../.build/menu-sources/4ba800207d96fa5b4dbba548ac6ef68269501baeb9c00ee46d1b80759fa27761.py)
 <!--/codeinclude-->

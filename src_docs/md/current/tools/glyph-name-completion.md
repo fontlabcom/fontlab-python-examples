@@ -9,7 +9,7 @@ categories: ["Tools"]
 Draft text with current-font glyph-name completions.
 
 Purpose: Adapt the complete part2 custom-completer workflow to FontLab.
-Setup: FontLab 9, Python 3.11, Fly and reviewed unpublished App>=0.2.63.dev0.
+Setup: FontLab 9, Python 3.11, Fly and App>=0.2.63.dev0.
 Run: Open a font, run this Tools command, and type at least three characters.
 Ctrl+E also offers shorter prefixes. Use Refresh after font changes.
 Result: Keep every exact glyph name in the vocabulary, including unencoded and
@@ -22,7 +22,7 @@ Refresh errors remove old completions but keep the draft. About information is
 shown in the modeless status area. A failed disconnect refuses Close for retry.
 Close releases owned callbacks and models; no original body is executed.
 Compatibility: Actual PythonQt/font/cache/history/dirty/save/reopen acceptance
-is pending D25. This command edits no font, selection, preference, file or Output.
+is pending. This command edits no font, selection, preference, file or Output.
 Original: rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
 Original source/resources stay preserved and are not bundled by this facade.
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/40f7ab9954301cbab07468aad2cc6db2328c3d40100b5df55aa0d75d3b5bebd4.py)
+[Python source](../../../../.build/menu-sources/a48476bc1d90a730e40213ae1b4e127e00a6c4d57992433ed2331af7b253e242.py)
 <!--/codeinclude-->

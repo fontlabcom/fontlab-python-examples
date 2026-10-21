@@ -5,7 +5,7 @@
 
 Purpose: Adapt the complete part2 custom source/proxy model lesson to
 current-font glyph names, all Unicode assignments and local modification dates.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.54.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
 Run: Open a font, then run this Models command. Both read-only views share one
 captured model. Enter a regular expression, wildcard or fixed string. Toggle
 filter and sorting case independently; click a result header to sort.

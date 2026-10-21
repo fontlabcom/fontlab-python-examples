@@ -386,6 +386,7 @@ def host(monkeypatch: Any) -> Any:
     # Exercise the real App capture, not an imitation of its fences or scans.
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
     native_capture = importlib.import_module("fontlabapp._glyph_catalog_native")
+    public_catalog = importlib.import_module("fontlabapp.glyph_catalog")
     state = SimpleNamespace(
         font=True,
         panels=[],
@@ -485,7 +486,7 @@ def host(monkeypatch: Any) -> Any:
         ("fly", fly),
         ("fly.ap", ModuleType("fly.ap")),
         ("fly.ap.scripting", scripting),
-        ("fly.ap._glyph_catalog_native", native_capture),
+        ("fly.ap.glyph_catalog", public_catalog),
     ):
         monkeypatch.setitem(sys.modules, name, module)
     return state
@@ -727,3 +728,11 @@ def test_scripts_explain_why_and_benefit_and_avoid_shadowing() -> None:
                         assert target.attr not in RESERVED, (
                             f"{title}: shadows {target.attr}"
                         )
+
+
+@pytest.mark.parametrize("title", TITLES)
+def test_script_uses_only_the_public_catalog_capture(title: str) -> None:
+    """Scripts import the public App capture and no private App module."""
+    text = (ROOT / "Scripts/Dialogs" / f"{title}.py").read_text()
+    assert "_glyph_catalog_native" not in text
+    assert "fly.ap._" not in text

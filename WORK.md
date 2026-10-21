@@ -68,6 +68,25 @@ this_file: WORK.md
 - Not run: `tests_docs/` and `lessons/` suites (outside ex.sh).
 - Scope: offline tests only. Native FontLab acceptance remains pending.
 
+## Issue 122 T16-ex: consumers, wording, counts
+
+Base `5d67e9d`. App head `033e0f2`. Env: `I=/Volumes/Falstaff4T/fontlab-scripting-data/issue122`, UV cache and TMPDIR on the external volume, `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`, `FONTLAB_PRESERVED_ROOT` as in T0.
+
+- Re-point: ten scripts (5 Dialogs, 5 Text) import `fly.ap.glyph_catalog.capture`. The E3 and E9 tests plant the real `fontlabapp.glyph_catalog` under `fly.ap.glyph_catalog` and gained a source-scan guard (no `_glyph_catalog_native`, no `fly.ap._`).
+- RED: (`pytest -q tests/test_issue122_E3.py tests/test_issue122_E9.py`) failed the new guards and the E3 panel tests before the scripts changed.
+- Wording sweep over `Scripts/**`: "reviewed App", "reviewed unpublished App", "pending D25", "Apache-2.0 owner grant", "Use reviewed artifacts", "Install reviewed prerequisites" removed. 36 scripts. Left unchanged: `Source: rescued/...` and SHA256 provenance lines (tests require them), "Native acceptance ... pending", "Refuse the whole batch".
+- Hashes: `rehash.py` (scratch) replaced the old SHA256 of each changed script with the new one in `menu-adaptations.json` and six `tests/*-baseline.json` files (273 occurrences, 36 hashes). A `git grep` for each old hash then found no leftovers. The prior-baseline fixtures were changed on purpose: they pin script bytes.
+- App floors in docstrings are unchanged (each script keeps the floor it needs). The single-floor rule (0.2.150.dev0) concerns the scriptmix rows (T16-mix).
+- README and `src_docs/md/collections.md`: "reviewed" removed from setup sentences; collections page now 60/73/3/418 (was 31/15/479). New `tests/test_collections_counts.py` compares the page with `menu-adaptations.json`, `rescue-index.json` and `Scripts/`.
+- Acceptance `rg` (brief row) over `Scripts tests`: empty. Private-name sweep `rg "fly\.ap\.(\w+\.)*_\w" Scripts`: empty.
+- `uvx ruff check --target-version py311 Scripts tests/test_collections_counts.py tests/test_issue122_E3.py tests/test_issue122_E9.py`: exit 0.
+- `bash verification/issue-122/sdd/cmd/ex.sh`: **EXIT=0, 947 passed** (935 + 11 guards + 1 counts test).
+- `./build.sh` (background, log in TMPDIR): exit 0, "Documentation built". It rewrote 36 pages under `src_docs/md/current/`; those are committed.
+- `uv run --locked python -m pytest -q tests_docs`: 11 passed.
+- Lessons: `cd lessons && QT_QPA_PLATFORM=offscreen EXAMPLES_APP_SOURCE=$I/fontlab-fontlabapp/src/fontlabapp uv run --no-project --python cpython-3.11-macos-aarch64-none --with PySide6-Essentials --with pytest --with pytest-cov --with fonttools python -m pytest -p pytest_cov --confcutdir candidate_tests/models_candidate -q candidate_tests/models_candidate --cov=src/fontlab_python_lessons --cov-branch --cov-fail-under=80`: 195 passed, 4 failed, coverage 96%. The 4 failures are `test_namespace.py` (all four parametrisations): they need `EXAMPLES_LEGACY_API_SOURCE`, a first-party legacy API checkout that does not exist on this machine. Without `EXAMPLES_APP_SOURCE` pointing at the package directory, 17 more tests error; with it they pass. Not related to this task (no lessons file changed).
+- Scope: offline tests only. Native FontLab acceptance remains pending.
+
+
 # 2026-10-15: Independent clean-room receipt integration and native driver
 
 Integrated the three merged batches on `issue-101-pythonqt-examples` at base

@@ -12,7 +12,7 @@ Purpose:
     Examine scans, lettering samples and other local reference artwork while
     designing a font. Zoom, scroll, fit and print the image without editing it.
 Setup:
-    FontLab9, Python3.11, Fly and reviewed App>=0.2.156.dev0. No open font is
+    FontLab9, Python3.11, Fly and App>=0.2.156.dev0. No open font is
     required. Use FontLab's existing Qt runtime; install no alternate Qt binding.
 Run:
     Open chooses a readable image. Cancel keeps the current view. Invalid files
@@ -32,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a11ac1ee6145c9128eb9aeb763d7d5b87d56f577ca715fb38faad2c9def82ec8.py)
+[Python source](../../../../.build/menu-sources/89c9abe4a78f7be36eec4a7b2f90d080ddbda465ed54983352ddc3a25e457371.py)
 <!--/codeinclude-->

@@ -19,7 +19,7 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank classwizard dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0 owner grant. Upstream BSD headers and
+Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8047911f29a337940008a1fc4988ad4a8b90454d0c218a0e664219ad78f47365.py)
+[Python source](../../../../.build/menu-sources/7e3d26bfc8e6e1a90f638ef17375eb6a14b9be7cd6d0698aa00a2aad0f1f477b.py)
 <!--/codeinclude-->

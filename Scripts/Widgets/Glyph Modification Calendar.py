@@ -6,7 +6,7 @@
 Purpose: Adapt the complete part2 Calendar Controls workflow to FontLab.
 Choose a local calendar day. Read every matching glyph name, all its Unicode
 assignments and the exact captured modification timestamp in font order.
-Setup: FontLab 9, Python 3.11, fontlab-fly and reviewed unpublished App>=0.2.60.dev0.
+Setup: FontLab 9, Python 3.11, fontlab-fly and App>=0.2.60.dev0.
 Run: Open a font and run this Widgets command. Set locale, week start, selection,
 grid, navigation, headings, date limits and weekday/weekend/header colours.
 The special switch marks the first Friday and January 1 of the displayed year.

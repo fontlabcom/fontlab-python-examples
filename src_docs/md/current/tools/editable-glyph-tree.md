@@ -9,7 +9,7 @@ categories: ["Tools"]
 Edit a complete local glyph-metadata tree.
 
 Purpose: Adapt the complete distinct part3 editable-tree workflow to FontLab.
-Setup: FontLab 9, Python 3.11, Fly and reviewed unpublished App>=0.2.66.dev0.
+Setup: FontLab 9, Python 3.11, Fly and App>=0.2.66.dev0.
 Run: Open a font and run this Tools command. Edit local cells, rows and columns.
 Result: Explore every glyph, Unicode assignment and local modification date.
 Part2 adds siblings before the selection, appends children/columns and keeps
@@ -22,7 +22,7 @@ Capture/setup failures retain the old draft. Failed disconnections keep exact
 owners and refuse deletion for Close retry; terminal faults use window Close.
 Close releases owned views, models, selection and callbacks. No original is run.
 Compatibility: Actual installed PythonQt/font/cache/history/dirty/save/reopen
-acceptance remains pending D25. No font, selection, preference, file or Output
+acceptance remains pending. No font, selection, preference, file or Output
 writer is used. Original source/resources remain preserved and unbundled.
 Original: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4cbe866f7598868e15004cf6c831ef2df46a38572b4ece7dad1d293f6bdadea7.py)
+[Python source](../../../../.build/menu-sources/034128ebfc875d3fd4eea314e72eb85435b2d9c6045de1b80937f3a48130a8c3.py)
 <!--/codeinclude-->

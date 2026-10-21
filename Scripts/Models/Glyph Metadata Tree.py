@@ -6,7 +6,7 @@
 Purpose: Adapt the complete part3 Simple Tree Model workflow to FontLab.
 Show glyphs in font order. Expand each glyph to inspect all Unicode assignments
 and its local modification date. Missing values remain explicit.
-Setup: FontLab9 Python3.11, fontlab-fly and reviewed unpublished App>=0.2.57.dev0.
+Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
 Run: Open a font and run this Models command. Expand or collapse rows; select a
 cell to inspect it. Keep DisplayRole-only text and parent-item column counts; no original selection-status control is added.
 Use Refresh to read the current font again. Reads and rendering share a bounded

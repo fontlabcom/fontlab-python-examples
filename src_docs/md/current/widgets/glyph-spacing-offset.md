@@ -11,7 +11,7 @@ Preview a horizontal ink offset across captured selected glyph layers.
 Purpose:
     Compare left+offset and right-offset sidebearings at unchanged advance.
 Setup:
-    FontLab 9, Python3.11, Fly and reviewed App>=0.2.95.dev0. Open a font
+    FontLab 9, Python3.11, Fly and App>=0.2.95.dev0. Open a font
     and select glyph layers in a Font or Glyph window. Installs nothing.
 Run:
     Edit offset/minimum/maximum (-100..100), drag the slider, scrollbar or dial,
@@ -37,5 +37,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/362dc3bbcfd28d9fa5a88b9900f9046fd8986a52e96e434086c6d9c3580b438d.py)
+[Python source](../../../../.build/menu-sources/299b6d8f25e89593d83248f3c8628faae00174f84d99f524ba328cfbb88b3ff6.py)
 <!--/codeinclude-->
