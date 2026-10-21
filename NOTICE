@@ -399,3 +399,84 @@ rescued/part2/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py
 SHA256 40362a262ff7ce02c5635bfbefbb5536dba7506ccd03b65ab20d3327a59461ea
 rescued/part3/pyqt-official-ports/ports/draganddrop/pyqt-official/puzzle-c5b4e385cc921da4.py
 SHA256 cc7fedd82e30ace1922903b78fde55439c508443c4e231503f9702dfd5165c62
+
+
+Text tools
+----------
+The five scripts in Scripts/Text are new FontLab tools written from
+scratch. Their ideas come from the Qt rich-text examples and the address
+book tutorial (BSD, Qt examples (Riverbank/Nokia): Copyright (C) 2013
+Riverbank Computing Limited; Copyright (C) 2010 Nokia Corporation and/or
+its subsidiary(-ies)).
+The earlier archived Python ports under rescued/part2 are Apache-2.0, own
+earlier work. The copies under rescued/part3 keep the upstream headers, and
+the upstream example collection also lists GPL-3.0-only; how far that
+applies is not resolved, so these tools include no original code, helper
+or asset.
+The new tools are Apache-2.0. Each tool replaces the archived variants
+listed under it:
+
+Scripts/Text/Font Handoff Letter.py (from orderform)
+rescued/part2/ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py
+SHA256 05648294ef7afc8ec0778362266046e2af2d2c7b5072d2a8307b0a85882cce91
+rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/orderform-c997677a2bdb4f34.py
+SHA256 6c4b5c5a831c0b93c464dcc8897a6bbcfda4eb4a2289971acbb674c5b59d8724
+
+Scripts/Text/Calendar Proof Builder.py (from calendar)
+rescued/part2/ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py
+SHA256 f768c2abf7a3db17ebf11663d65b49bcee75ec46b4fcdb9c1e07ec89256334d7
+rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/calendar-c56cf1699b07b350.py
+SHA256 53ddaa8631caef2902c0285ac560dfb4508f8dce9d50f662e199bdbc28c739f3
+
+Scripts/Text/Script Snippet Notebook.py (from the address book tutorial, stages 1 to 7)
+rescued/part2/ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py
+SHA256 9abe23d4a0af7ee2274bbbe0cef3a80dc550dd6c0d3ac186b0dc640c8d86a0a0
+rescued/part2/ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py
+SHA256 600a0df0cc3e3399148d55d787e311454f71ce3b82b223f4ed8c6c3369e276c4
+rescued/part2/ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py
+SHA256 e3c896b0433c16483809b78d73285351474882d07a50211e873c1b312283e190
+rescued/part2/ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py
+SHA256 83061e51b99957354185f6c9bd30f3142644dc269dc4d5b93cd67866a5e11739
+rescued/part2/ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py
+SHA256 7aa9166010582ceb9a77f4e71b5b8f64549734be8b3d9bac795ac443d56df337
+rescued/part2/ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py
+SHA256 e581fc63789f3d249c462a28950643cf6f96d14ca386ac6c75f2d137474af0f7
+rescued/part2/ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py
+SHA256 76dfa4471b683cfa4b9c8f199fdda69033b367ff7758f88571bf65ea03eccb56
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part1-e1f313d96e43adff.py
+SHA256 9e55aefdb9d7e9318d5c78625a61b3b7433c065e05e4b7eeb783f34c64a76ec3
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part2-55bcde890cd77ed7.py
+SHA256 490ac4f490f979500d01162453793a4f5481f668034c3ff7d29129bc763998ed
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part3-f4d9e2927469223c.py
+SHA256 10902474390e37e05036272cdf038648bfe81d1ae7ff5aa92e29121fa7c7e39c
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part4-4d19e62d93dd761c.py
+SHA256 a9327f2e6fea9b64450f61fb021afd868beb20c92c376500a408a7e034531c52
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part5-94ab271d023d1ca3.py
+SHA256 f9e7be0c6a886ef67ce31c46a39fe5cd612ca3877d15aa5a56d900849ce86ba7
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part6-2719ebb336f3a29e.py
+SHA256 621977e0c899a8df1e55c11c12660636942718a500f4a634c8a7e69f824b44bd
+rescued/part3/pyqt-official-ports/ports/tutorials/pyqt-official/part7-bb1c114d38fb756a.py
+SHA256 aeba0c863b3b5ba27e8036c09088f7c728b758c5b7c5999129d4d631653457b6
+
+Scripts/Text/Feature Code Draft.py (from syntaxhighlighter)
+rescued/part2/ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py
+SHA256 4dedd8950289ab0d9bd6f048d6c05bcfc846a26245c9b78db38ced676baff2ef
+rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/syntaxhighlighter-428c50abcef7adfe.py
+SHA256 fa952ac943c746f6fe61a8dc95099e147c45a050bb96225e58035fe9b91d0e76
+
+Scripts/Text/Font Review Notes.py (from textedit)
+rescued/part2/ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py
+SHA256 74dad1c6c8dec850fbe1e21ceb88c0ac46f8dc61d6e7b1cd9cca4f1fd26f4efc
+rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/textedit-b34b2f696a977e74.py
+SHA256 bb3b777a600d3ffc34298e240ad0225a4be0594e6b581846b1853361817dd940
+
+Retired without a replacement (no code or resources included):
+rescued/part3/pyqt-official-ports/ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py
+SHA256 153cb056b72e9b38e9374ac770236f26ab4ce821b26f43b262088f293672d920
+Reason: no FontLab workflow consumes the XML; validation was circular.
+rescued/part3/pyqt-official-ports/ports/richtext/pyqt-official/textobject-806fd814a2ea4d46.py
+SHA256 12d9a5ee6f2bc0e29da8cf6345c51694cbb8d1cadd0fbec33e28ab09df065497
+Reason: QTextObjectInterface is absent from the captured FontLab PythonQt binding.
+rescued/part2/ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py
+SHA256 1070c8a653367f30da3a68b3454adafcafd8d620b0fd1140033c43b2b1b73830
+Reason: no FontLab workflow consumes the XML; validation was circular.
