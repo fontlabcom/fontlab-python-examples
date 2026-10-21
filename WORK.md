@@ -50,6 +50,22 @@ this_file: WORK.md
 - Internal-jargon grep on the 17 scripts (issue numbers, batch ids, D-numbers,
   "reviewed App", part2/part3 prose): clean. E3 docstrings keep `Source:
   rescued/part2/...` path and SHA256 lines, as 27 earlier scripts do.
+- Real-App dependency check: in the archive tree of 67045b6 with the
+  `fontlab-fontlabapp` symlink removed, `rtk proxy uv run --locked python -m
+  pytest -q tests/test_issue122_E3.py tests/test_issue122_E8.py
+  tests/test_issue122_E9.py` -> 1 failed, 331 passed, 35 errors
+  (ModuleNotFoundError: fontlabapp). E3: 29 errors (e.g.
+  test_shared_capture_refuses_changed_context, test_each_panel_runs_refresh_
+  refuses_and_disconnects); E8: test_real_app_names_used_by_scripts_are_callable
+  failed; E9: 6 errors (test_capture_symbol_exists_in_real_app,
+  test_real_font_action_and_no_font_error_keep_draft[*]). Every batch exercises
+  the real App names.
+- NOTICE fix: the first wording said the rescued/part3 copies "keep the upstream
+  headers"; a read-only check of three part3 sources showed no headers, so the
+  three new sections now state only the part2 Apache-2.0 grant and the
+  unresolved upstream BSD-3-Clause / GPL-3.0-only scope. Suite rerun after the
+  fix: ex.sh exit 0, 935 passed.
+- Not run: `tests_docs/` and `lessons/` suites (outside ex.sh).
 - Scope: offline tests only. Native FontLab acceptance remains pending.
 
 # 2026-10-15: Independent clean-room receipt integration and native driver

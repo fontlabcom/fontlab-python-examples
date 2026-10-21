@@ -303,11 +303,11 @@ The six scripts in Scripts/Dialogs are new FontLab tools written from
 scratch. Their ideas come from the Qt dialog examples (BSD, Qt examples
 (Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing Limited;
 Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)).
-The earlier archived Python ports under rescued/part2 are Apache-2.0, own
-earlier work. The copies under rescued/part3 keep the upstream headers, and
-the upstream example collection also lists GPL-3.0-only; how far that
-applies is not resolved, so these tools include no original code, helper
-or asset.
+The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
+earlier work. The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only. How far those terms
+reach, including the archived copies in rescued/part3/, is not resolved, so
+these tools include no original code, helper or asset.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 
@@ -356,11 +356,11 @@ Qt examples (Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing
 Limited; Copyright (C) 2010 Nokia Corporation and/or its
 subsidiary(-ies)). The delayedencoding and dropsite examples also name
 Hans-Peter Jansen (2010).
-The earlier archived Python ports under rescued/part2 are Apache-2.0, own
-earlier work. The copies under rescued/part3 keep the upstream headers, and
-the upstream example collection also lists GPL-3.0-only; how far that
-applies is not resolved, so these tools include no original code, helper
-or asset.
+The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
+earlier work. The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only. How far those terms
+reach, including the archived copies in rescued/part3/, is not resolved, so
+these tools include no original code, helper or asset.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 
@@ -408,11 +408,11 @@ scratch. Their ideas come from the Qt rich-text examples and the address
 book tutorial (BSD, Qt examples (Riverbank/Nokia): Copyright (C) 2013
 Riverbank Computing Limited; Copyright (C) 2010 Nokia Corporation and/or
 its subsidiary(-ies)).
-The earlier archived Python ports under rescued/part2 are Apache-2.0, own
-earlier work. The copies under rescued/part3 keep the upstream headers, and
-the upstream example collection also lists GPL-3.0-only; how far that
-applies is not resolved, so these tools include no original code, helper
-or asset.
+The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
+earlier work. The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only. How far those terms
+reach, including the archived copies in rescued/part3/, is not resolved, so
+these tools include no original code, helper or asset.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 
