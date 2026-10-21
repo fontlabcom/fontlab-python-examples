@@ -69,4 +69,4 @@ def test_all_31_prior_menu_bytes_and_15_provenance_rows_unchanged():
         hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
         == baseline["source_index_sha256"]
     )
-    assert len(list((ROOT / "Scripts").rglob("*.py"))) == 67
+    assert len(list((ROOT / "Scripts").rglob("*.py"))) == 72

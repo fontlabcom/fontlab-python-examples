@@ -583,3 +583,141 @@ Reason: No FontLab action; OS disk utilities cover it.
 rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py
 SHA256 a12471d83c190ca30ba3122d2e6cc0e9d9e8c2336d6ac30f57fa4b8282bbbe4f
 Reason: No FontLab action; OS disk utilities cover it.
+
+
+Widgets tools
+-------------
+The five new scripts in Scripts/Widgets are FontLab tools written from
+scratch. Their ideas come from the Qt widget examples (Qt examples
+(Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing Limited;
+Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)). No
+upstream source code, helper or asset is included. Each tool lists the
+earlier sources it replaces, with their SHA256 values.
+
+Scripts/Widgets/Font Units Calculator.py
+Independent rewrite of the Qt calculator example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
+SHA256 c85c69f307812c61f0108ad203a029d9513470b737af9c06c65d1d76e6befecc
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
+SHA256 e598d62c5dd2e7d33560b03ddc41121da3afa6e6b6c86e1a74ff930f75b6fa2b
+
+Scripts/Widgets/Glyph Proof Groups.py
+Independent rewrite of the Qt groupbox example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
+SHA256 1a3228685ce42992156a888fad35efa8ce67f180aba6bb3727e413921e19d684
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
+SHA256 e9e05eb140a7fa7fadfcaa6fdfee3ab938cde45069aed0386dcd82e101ca0db0
+
+Scripts/Widgets/Glyph Sketch Pad.py
+Independent rewrite of the Qt scribble example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
+SHA256 190d94c10462c2d149efb79fa2f885bf62f55c44bb60addf45bf862f04f2c9a5
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
+SHA256 758bb2e898a2975343743f36ae11481cf14a3cee0094558998dcd70ccb1df640
+
+Scripts/Widgets/Script Icon Browser.py
+Independent rewrite of the Qt icons example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
+SHA256 68749115c6766e274fc7114a18ab9ef26a1cd0434241b6abab5ddb6eeed00010
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
+SHA256 cc6a383aa61e4cd0cce357e12e275ff643bd866ad3e1695254d3216d9ed104b7
+
+Scripts/Widgets/Script Palette Roles.py
+Independent rewrite of the Qt styles and stylesheet example ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
+SHA256 f609aa16c374278db565ccbac19409df42928b9515f5dc62ecea00929561c679
+rescued/part2/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
+SHA256 9ad804c861b30854e224744b49f597ece1fc2f27455db148ee18eff7408b85eb
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
+SHA256 80d61defa2ad1137e04ee1db8bb2b5e79876d64a034d4537e4c4f879402eaf3a
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
+SHA256 7f520972960792491bfb81a67a5a2553db1bd4f217ef896bccf4da61da76351f
+
+Mapped to existing tools (no new code or resources):
+Scripts/Models/Glyph Sorting and Filtering.py (from tooltips)
+rescued/part2/ports/widgets/pyqt-official/tooltips-e62ce3eb648cfb4c.py
+SHA256 698bd103c2938c32d97ee15e5243f50e708f5064e2fe6e9bb8d2684350bfdf01
+Scripts/Models/Glyph Sorting and Filtering.py (from tooltips)
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/tooltips-e62ce3eb648cfb4c.py
+SHA256 8d50ef9c793862ff5f9d9a6ab488420e6560d33a2a7aa3a4a9f5969013069da4
+Scripts/Models/Glyph Metrics Model.py (from QAbstractTableModel)
+rescued/part2/ports/widgets/pyqt-examples/main-31fc7691c18d55f2.py
+SHA256 14e8f37517dc30311d6a6c6419dd0c5e7d7850a200cf6ebd30aea06a0409074d
+Scripts/Text/Script Snippet Notebook.py (from Qt Text Editor)
+rescued/part2/ports/widgets/pyqt-examples/main-a601a41dc5a3c23a.py
+SHA256 b796aaf96533d3770f1ad52a2d2a1b9535f7c4f2bd21eb27fb82d74a2bf3f204
+Scripts/Models/Glyph Name Filter.py (from QListView)
+rescued/part2/ports/widgets/pyqt-examples/main-1bf0ade33cd6bf12.py
+SHA256 aa8dc3a9b86ae1d25d1fa860a0055b4463cd12db06914c02350206c017ee0b27
+Scripts/Tools/Find Font Source Files.py (from QTreeView)
+rescued/part2/ports/widgets/pyqt-examples/main-f5bf995791f1e87b.py
+SHA256 b37d1c1f15683db25e62b9a720556353ea43fe412357b40cd95c1c49a09f1e99
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py
+SHA256 891e85eb482cdfb820920f4a13a618e0d997806b94951f9d236ae46e0b61d365
+Reason: Wall-clock painting has no font or scripting task.
+rescued/part2/ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py
+SHA256 d6c1f46efc951c302c279b04ea21a22589ee61c45254e37d7569d4f906b8b446
+Reason: LCD wall clock has no font or scripting task.
+rescued/part2/ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py
+SHA256 c4ea04fbb08f8b0cb681085d175f443b79207289a263447b31aaa503868d41c0
+Reason: Name check is covered by Names > Suffix Tool and Batch Rename previews in the scriptmix collection.
+rescued/part2/ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py
+SHA256 2e54c5e62a39611be5244888127c8a36bec8461a8f1af584aeb56b3e2ce05e39
+Reason: Animated-image playback has no font task; static references already have an image viewer.
+rescued/part2/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py
+SHA256 26c546057fb504d9b9100cce022ffe77bdf32a47d32fa30869d726a29d2df87c
+Reason: A masked draggable wall clock adds no font or scripting task.
+rescued/part2/ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py
+SHA256 cd6093c00c98130ddb6b55491e1ce680cf168884adb704b4420f36b0419025c0
+Reason: Falling-block game mechanics do not support font work.
+rescued/part2/ports/widgets/pyqt-official/wiggly-509e781f1267967f.py
+SHA256 495321c9ddd2c31e0cf6952428c685f39d7ee02dc162dbb224240ee79365f7c9
+Reason: Animated system-font text does not proof the edited FontLab font.
+rescued/part2/ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py
+SHA256 acfe3a128c5c017bb4b0933c9ac78275bc755ac3ce5dd2171667fa061777583d
+Reason: Window-flag demo; house script panels already fix the window type.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/analogclock-d6dc56a5318ffe71.py
+SHA256 2587f9eecc25e8a36a1e57e0792c8fd923b8bb0f2385067adb6127f7a0b2f052
+Reason: Wall-clock painting has no font or scripting task.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/digitalclock-3040b9f6b267a196.py
+SHA256 05cd36c4fed99fb2fb4859c085da4511b2c4702879ba6766320ef1f352961345
+Reason: LCD wall clock has no font or scripting task.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/lineedits-84cb59e07adfae2c.py
+SHA256 79277f27ddb0bbb959fe21aa8202e9ec831dc91bdc178d3b5a987bc50fe1f3ad
+Reason: Name check is covered by Names > Suffix Tool and Batch Rename previews in the scriptmix collection.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/movie-a3b3cbe51c1506c6.py
+SHA256 9c05a79ec3dcb20214e5b43b5d543c4cba665a31fabfe54d11c998c4397303ac
+Reason: Animated-image playback has no font task; static references already have an image viewer.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/shapedclock-248e64416b9b218c.py
+SHA256 93afa0ed4b632a251d8e42d0b049f0ed85da736b6f8db42aa874adc0d632f4b0
+Reason: A masked draggable wall clock adds no font or scripting task.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/tetrix-e63bffc17abf2fde.py
+SHA256 e6ac9a6be3111f10e3901553f13b2e51aa5d75fbeffe1455875f311afcb4e5ad
+Reason: Falling-block game mechanics do not support font work.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/wiggly-509e781f1267967f.py
+SHA256 b75f1ae5b664998b0be94f3b5fe3a35b673499f3c72a827122639f9d3cab6f12
+Reason: Animated system-font text does not proof the edited FontLab font.
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/windowflags-136c45cc9f97c218.py
+SHA256 481723b84c407a965f5b8cf226ec59e2f8a04e3b249067f859db6a0f61aee6bc
+Reason: Window-flag demo; house script panels already fix the window type.
+rescued/part2/ports/widgets/pyqt-examples/main-79cc15680bc2cebb.py
+SHA256 12055c29c768be9a20ad8209eaa9433bad770beae088addbd9ec52c4728c5322
+Reason: Hello-world widget tutorial; no font task.
+rescued/part2/ports/widgets/pyqt-examples/main-ce3e17a7a2a03a02.py
+SHA256 ad4c506e0d87288f4e43d92061f1d2890bc4fcfcc2af8994fe81c81dfe7fd860
+Reason: Hello-world widget tutorial; no font task.
+rescued/part2/ports/widgets/pyqt-examples/main-f5ddfd0eaacbf845.py
+SHA256 a65dbc82ca4327d2457d14889643dc754f1378a0878804c8a8fb7dd301c5eaea
+Reason: Hello-world widget tutorial; no font task.
+rescued/part2/ports/widgets/pyqt-examples/main-2d8e8e07a6469499.py
+SHA256 9555034b87536005ea521dc9070c5359454aff7d408d63341e62b106e01ad980
+Reason: Widget gallery tutorial; no font task.
+rescued/part2/ports/widgets/pyqt-examples/main-a33bb8c2dce4e115.py
+SHA256 f42a89468298fbbba6432ccc349fc4baf5b78e1988f10a11c5eb545cbb81d299
+Reason: Fixed dark-theme tutorial; use live palette roles in script panels.
+
+The pyqt-examples sources above credit Michael Herrmann, pyqt/examples
+(MIT). The widget gallery source carries BSD-3-Clause Riverbank/Nokia
+notices. Only their ideas are used; no code or assets are included.

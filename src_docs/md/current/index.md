@@ -84,11 +84,16 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Widgets
 
+- [Font Units Calculator](widgets/font-units-calculator.md)
 - [Glyph Character Map - Styles](widgets/glyph-character-map-styles.md)
 - [Glyph Character Map](widgets/glyph-character-map.md)
 - [Glyph Metrics and Revisions - Detailed](widgets/glyph-metrics-and-revisions-detailed.md)
 - [Glyph Metrics and Revisions](widgets/glyph-metrics-and-revisions.md)
 - [Glyph Modification Calendar with Formats](widgets/glyph-modification-calendar-with-formats.md)
 - [Glyph Modification Calendar](widgets/glyph-modification-calendar.md)
+- [Glyph Proof Groups](widgets/glyph-proof-groups.md)
+- [Glyph Sketch Pad](widgets/glyph-sketch-pad.md)
 - [Glyph Spacing Offset - Stacked](widgets/glyph-spacing-offset-stacked.md)
 - [Glyph Spacing Offset](widgets/glyph-spacing-offset.md)
+- [Script Icon Browser](widgets/script-icon-browser.md)
+- [Script Palette Roles](widgets/script-palette-roles.md)

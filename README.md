@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 67 practical facades in one category level: Dialogs,
+`Scripts/` contains 72 practical facades in one category level: Dialogs,
 Drag And Drop, Forms, GetGo Fonts, Models, Text, Tools and Widgets. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
@@ -24,9 +24,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 99 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 5 identities
-retired without a replacement, each with its reason. The other 390 identities
+`menu-adaptations.json` maps 117 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 26 identities
+retired without a replacement, each with its reason. The other 351 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -102,3 +102,9 @@ Apply is recorded as one Undo step. Unsupported notes stay visible as named
 read-only rows. Review Priorities paints clickable stars and imports or exports
 resumable JSON queues. The other tools give encoding reports, an XML inventory
 and FontLab proof text.
+
+Widgets adds five tools: Font Units Calculator, Glyph Proof Groups, Script Icon
+Browser, Script Palette Roles and Glyph Sketch Pad. Palette Roles reads the
+panel's own palette, reports missing named roles and gives role-based usage
+code. Sketch Pad paints with the live Base and Text colours and exports strokes
+as SVG.
