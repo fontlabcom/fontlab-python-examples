@@ -1,5 +1,7 @@
 # Tools
 
+- [Component Dependency Graph - Degree Forces](component-dependency-graph-degree-forces.md)
+- [Component Dependency Graph](component-dependency-graph.md)
 - [Editable Glyph Outline](editable-glyph-outline.md)
 - [Editable Glyph Tree](editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](glyph-name-completion-with-focus.md)

@@ -121,3 +121,14 @@ The full Apache-2.0 terms are included in LICENSE-APACHE-2.0 (App) or
 LICENSE-APACHE-2.0 (Examples). No original body, source helper or asset is bundled
 or executed by this adaptation. There are no companion assets. Existing notices
 and all original metadata remain unchanged. Native acceptance is pending.
+
+Elastic node dependency graphs (both distinct preserved variants)
+Independent Apache-2.0 implementations in App elastic_physics/elastic_items/
+elastic_view/elastic_panel/component_graph and _component_graph_native; lazy
+public Fly facades in Scripts/Tools. No archived body/helper is imported.
+Part2 source SHA256 d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef
+Part3 source SHA256 fa1dc74f37f29a33afd673b5e4a399838797d8cc355079d512769ec6d10e6a99
+Both sources are elasticnodes-fff97a435b73d548.py in their preserved part2/part3
+collections. Owner D22 grants Apache-2.0 for all archived Python examples.
+No external assets. Existing upstream collection notices remain unchanged above.
+Full Apache terms: LICENSE-APACHE-2.0. Native workflow acceptance remains pending.

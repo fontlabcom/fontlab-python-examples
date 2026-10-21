@@ -3631,3 +3631,50 @@ and the new actualQt5 editor with144native oracle cases per artifact lane.
 
 Wait, but native acceptance remains pending. No FontLab invocation, owner/live
 install, canonical write, push, tag, release or publication occurred.
+
+
+## N79: both elastic-node component dependency graphs (.83 candidate)
+
+Retain the distinct part2/part3 force laws, fixed nine-node graphs, node/edge
+geometry/paint, keyboard/wheel controls and timer policies. Current-font mode
+reads all current-master glyph component names twice; repeated/cyclic/missing
+references and isolated/unencoded glyphs remain in source order. Drag/shuffle
+change only local coordinates. Refresh clears stale captures, Stop Motion stops
+both timer forms, and actual drag state guards Close. No font writer runs.
+
+Focused tests first failed with the missing new module; subsequent pure-model,
+SDK-shaped rejection and actual standalone Qt widget tests pass. Exact expanded
+commands/results and final ordinary artifact/whole-module evidence are retained
+in workspace verification/issue-120/elastic-component-graphs-z32. Existing source
+bytes and both original hashes remain preserved. Native FontLab acceptance is
+pending; no canonical write, live install, push, tag, release or publication.
+
+Final direct commands (workspace `rtk proxy` prefix; exact expanded argv/exits in
+new private receipts): `build_frozen.py` exit0 builds App0.2.83.dev0 normally and
+installs wheel/sdist in separate ordinary40-package environments; both pip-checks
+exit0. `quality.py app` exit0:142whole modules98.5696%,3606App+983Scriptmix/1skip.
+`quality.py examples` exit0:64whole modules96.8537%,199Lessons+553menus+11SDK.
+Separate statement/branch floors remain80, zero exclusions, original baselines.
+`consumers.py wheel|sdist` plus final App refresh: each13030pass/3existing skips
+across seven complete suites with installed-module origin guards, current
+Fontport7a4490/1. `frozen-qt5-*` each61pass includes200independent force frames,
+real scene drag/key/wheel/paint/timer/lifecycle and all source fences. Public
+installed Fly/menu/registry Qt5 checks each2pass; strict offline docs build exit0.
+`audit_artifacts.py` exit0 binds230runtime/resource files,224prior files and31prior
+menus exact; all source/archive/install/RECORD/licence/privacy checks pass.
+
+Retained failures include shared ENOSPC, incomplete consumer fixture copies,
+offscreen QTest move missing the held-button mask, and a test-only lazy App
+from-import ordering fault. Fixture/environment/event/import repairs preserve
+all assertions; no gate/test suppression or scope exclusions. Part2 repairs bind
+real drag state and keep the held node fixed; part3 retains source behavior.
+Native PythonQt and full font/cache/history/dirty/reopen acceptance remain open.
+
+
+## Issue120 N91 reviewed elastic integration
+
+The .89 private integration combines the exact reviewed N79/N85 elastic pair
+with the complete reviewed .84 App (including .80 Close/report helpers and
+kerning proof), preserving every prior runtime and all 31 prior Examples menus.
+Both original physics/controls/painting contracts remain distinct. Native
+acceptance, live installation and canonical promotion remain separate gates.

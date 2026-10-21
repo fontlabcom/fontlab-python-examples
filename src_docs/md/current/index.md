@@ -35,6 +35,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Tools
 
+- [Component Dependency Graph - Degree Forces](tools/component-dependency-graph-degree-forces.md)
+- [Component Dependency Graph](tools/component-dependency-graph.md)
 - [Editable Glyph Outline](tools/editable-glyph-outline.md)
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
