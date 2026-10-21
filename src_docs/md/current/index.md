@@ -42,12 +42,19 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Models
 
+- [Glyph Coverage Grid](models/glyph-coverage-grid.md)
+- [Glyph Encoding Chart](models/glyph-encoding-chart.md)
 - [Glyph Filter Model with Date Range](models/glyph-filter-model-with-date-range.md)
 - [Glyph Filter Model with Local Dates](models/glyph-filter-model-with-local-dates.md)
+- [Glyph Inventory XML](models/glyph-inventory-xml.md)
+- [Glyph Mark Colours](models/glyph-mark-colours.md)
 - [Glyph Metadata Outline](models/glyph-metadata-outline.md)
 - [Glyph Metadata Tree](models/glyph-metadata-tree.md)
 - [Glyph Metrics Model](models/glyph-metrics-model.md)
 - [Glyph Name Filter](models/glyph-name-filter.md)
+- [Glyph Proof Worksheet](models/glyph-proof-worksheet.md)
+- [Glyph Review Form](models/glyph-review-form.md)
+- [Glyph Review Priorities](models/glyph-review-priorities.md)
 - [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
 - [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)
 

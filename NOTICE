@@ -480,3 +480,106 @@ Reason: QTextObjectInterface is absent from the captured FontLab PythonQt bindin
 rescued/part2/ports/xmlpatterns/pyqt-official/schema-1e5d0f7289e1b36e.py
 SHA256 1070c8a653367f30da3a68b3454adafcafd8d620b0fd1140033c43b2b1b73830
 Reason: no FontLab workflow consumes the XML; validation was circular.
+
+
+Models tools
+------------
+The seven new scripts in Scripts/Models are FontLab tools written from
+scratch. Their ideas come from the Qt item view examples (Qt examples
+(Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing Limited;
+Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)). No
+upstream source code, helper or asset is included. Each tool lists the
+earlier sources it replaces, with their SHA256 values.
+
+Scripts/Models/Glyph Coverage Grid.py
+Independent rewrite of the Qt pixelator example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
+SHA256 9b8e6b6e8c542817876e897eef2d9d5a503c40eea8486dc6ef975621e123444c
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
+SHA256 dcffd1f6ddaf3cbbe1b72fa90816d42892ce5abccf5ff0098e7e5cc50c9270bb
+
+Scripts/Models/Glyph Encoding Chart.py
+Independent rewrite of the Qt chart example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
+SHA256 9e370ed256018c9b63db004c6693b85685a50169b7d7be45b9b5809d7ed37510
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
+SHA256 0bdf280e85649088518dfc0647ad99a46ab7f446eac7b52aed2eee1d25912956
+
+Scripts/Models/Glyph Inventory XML.py
+Independent rewrite of the Qt simpledommodel example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
+SHA256 c17809b93a3fff1601c20e15f233edbf687f023430e86bf1986772e38bf712d6
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
+SHA256 50abde2890c2ca53384733ee94f77b54e3b4b7783efba2a965fc8b68a9becb42
+
+Scripts/Models/Glyph Mark Colours.py
+Independent rewrite of the Qt coloreditorfactory example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py
+SHA256 06780068bb97fb0b0787dbc5fc5dc5d51b1c2c29cfd053fa0ba6be4be802ce58
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py
+SHA256 5b4aa3c5c7aaad2b40cb25c868c6aa41f828dbc884021db9fd2d630f5cd64534
+
+Scripts/Models/Glyph Proof Worksheet.py
+Independent rewrite of the Qt spreadsheet example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py
+SHA256 b491650437d8faa9b59a6f4859bdb420c8507e4fde37fecc95ef87e7d0a2cd1d
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spreadsheet-bf3b39a8c2df8e94.py
+SHA256 09ded2c0d8220569aadaa24f61bc7adc08c771ec364b6a1c6ef7d47ef76fddf7
+
+Scripts/Models/Glyph Review Form.py
+Independent rewrite of the Qt combowidgetmapper and simplewidgetmapper example ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
+SHA256 b6cda27a2fdd03bd8cbfe3604df3e2b4e7f89dbb378d331ba8465d57291902c7
+rescued/part2/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
+SHA256 610a6d9f48c31599b43c8bd5eecf4686d6cfd5e2915c8cd76d91a65b3248f1a9
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
+SHA256 fae480ee8369b1fd438007ad15563eacaa22313496ffff7bebd93cb574840ae9
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
+SHA256 741f446ef14303840be12852cc2b9383eb5ccd716c894ebff21dfc95aa6d44d9
+
+Scripts/Models/Glyph Review Priorities.py
+Independent rewrite of the Qt stardelegate example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+SHA256 ab5c5904d2ca3688def0ad17a8a48ac63f507e7a77778a888f14e04a89b0c079
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+SHA256 d11286ceb3e9b813bbda21d1f820c224694722b2b3476c7b19a0791cd6fcc311
+
+Mapped to existing tools (no new code or resources):
+Scripts/Models/Glyph Sorting and Filtering.py (from frozencolumn)
+rescued/part2/ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py
+SHA256 f46ccef26f7de99b69555ac0d503309726090a472bfb5360f466dcf02b302551
+Scripts/Models/Glyph Sorting and Filtering.py (from fetchmore)
+rescued/part2/ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py
+SHA256 1f3037ffce4fae5da788f548ad2ab1c30e9dc74b5137c989eb74afcdc9c31fae
+Scripts/Drag And Drop/Glyph Pair Board.py (from puzzle)
+rescued/part2/ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py
+SHA256 f118f4ca17619e41d7d940d1a49524d07a7e6bdae3bfa14dee4fd930ba5dfd8c
+Scripts/Tools/Find Font Source Files.py (from dirview)
+rescued/part2/ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py
+SHA256 f47c16d557d9156e14a572d55c774d794510b85929edbe5ceb63ddc876ac1202
+Scripts/Models/Glyph Sorting and Filtering.py (from interview)
+rescued/part2/ports/itemviews/pyqt-official/interview-090c76a87351e771.py
+SHA256 aceda19d325351dc76f32d36f66373e9cf84436838c7cf000b7f6a582d47acce
+Scripts/Tools/Find Font Source Files.py (from dirview)
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/dirview-4b8851287931abd0.py
+SHA256 7f2ca3e23ed342864c2c8cc913dc64ba1c920c07e0ae68dcd29af7f0ae50be2a
+Scripts/Drag And Drop/Glyph Pair Board.py (from puzzle)
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/puzzle-878fe9f714df3b5e.py
+SHA256 0d2e4b9b8d16f99f226fd0392076bfead651520d9778c2291daa160b9f6378c5
+Scripts/Models/Glyph Sorting and Filtering.py (from frozencolumn)
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/frozencolumn-c98ae8ac71886586.py
+SHA256 dd4dec5bb43cef949a75709a6b422646c8921fb6a9a724e7676e9aae96084626
+Scripts/Models/Glyph Sorting and Filtering.py (from interview)
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/interview-090c76a87351e771.py
+SHA256 3a7fe6366f52dbd7b4ab28b6a0cbdbb1124f2d1f9425daf1df97053d00f263e2
+Scripts/Models/Glyph Sorting and Filtering.py (from fetchmore)
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/fetchmore-67170c89593ad35e.py
+SHA256 4c065e2db08b842393b55f14cb69e1ee8210f139cd110adf9860615a0128f9bd
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py
+SHA256 44542af06b29bd3eb86c69a0bd0d81ed1e86b0133e6779a324b6a6c0e3d730ae
+Reason: No FontLab action; OS disk utilities cover it.
+rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/storageview-cf15c3e91cdd8ded.py
+SHA256 a12471d83c190ca30ba3122d2e6cc0e9d9e8c2336d6ac30f57fa4b8282bbbe4f
+Reason: No FontLab action; OS disk utilities cover it.

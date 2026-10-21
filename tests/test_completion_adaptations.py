@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 @pytest.mark.parametrize("part,entry", [("part2", "show"), ("part3", "show_official")])
 def test_completion_pair_is_source_bound_and_native_pending(part, entry, monkeypatch):
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
-    assert len(data["adaptations"]) == 73
+    assert len(data["adaptations"]) == 99
     row = next(r for r in data["adaptations"] if r.get("family") == "completion-" + part)
     source = next(r for r in json.loads((ROOT / "rescue-index.json").read_text())["menus"] if r["menu"] == row["source_menu"])
     assert row["source"] == source["target"] and row["source_sha256"] == source["target_sha256"]
