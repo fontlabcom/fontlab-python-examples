@@ -1439,3 +1439,49 @@ Reason: Synthetic threaded name-score processing provides no font operation or w
 rescued/part2/ports/insights/plugin-tokens.py
 SHA256 e4c04bf842585c9dd42bc884785f98bc21ce488ce76fa3c4c0ddc9661b98a169
 Reason: Synthetic menu-token accounting adds no independent FontLab action or consumed artifact. Owned actionable menus and callback cleanup are covered by Unicode Issues Dock.
+
+
+Recipe tools
+------------
+The two new recipe scripts in Scripts/Tools are FontLab tools written
+from scratch. Their ideas come from the author's own FontLab recipe
+samples. No earlier source code or asset is included. Each tool lists
+the earlier sources it replaces, with their SHA256 values.
+
+Scripts/Tools/Path Problem Report.py
+Independent rewrite of the path report recipe ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/examples/recipes/glyphs_path_report/recipe.py
+SHA256 7e0de0f7d77af0ca7a33d178001f6c246847e438ec726334d263feb12a06ee2e
+rescued/part2/examples/recipes/glyphs_path_report/path_report.py
+SHA256 083be309facb9cfa00a3973785f59c728e3f5d6b506416d9499d4cd21698f98e
+
+Scripts/Tools/Import Kerning Pair List.py
+Independent rewrite of the kerning-from-text recipe idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/examples/recipes/kerning_from_text/recipe.py
+SHA256 84ef14fc8870c3a9eeee1ae8a12c1dc92cc893eae38a517fed8e782865a0f9f9
+
+Mapped to existing tools (no new code or resources):
+fontlab-python-scriptmix/Scripts/Contours/Remove Overlap.py (from glyph_actions_batch recipe)
+rescued/part2/examples/recipes/glyph_actions_batch/recipe.py
+SHA256 5c0ccb08425e3b62fb823346a8a6e16d6d38f2898a4e598b20882c9be6a98675
+fontlab-python-scriptmix/Scripts/Anchors/Place From Bounds.py (from anchors_from_bounds recipe)
+rescued/part2/examples/recipes/anchors_from_bounds/recipe.py
+SHA256 77ed425e774fcf083348cc28eb07eadf5a9bc1a4d6c5e5e7af9616b44a87479e
+fontlab-python-scriptmix/Scripts/Metrics/Tabular Width.py (from glyphs_tabular_figures tabular_figures)
+rescued/part2/examples/recipes/glyphs_tabular_figures/tabular_figures.py
+SHA256 ccd42bf36092bf74bdce47fb6075740aa6f4858bdb25b636f616db73d996856c
+fontlab-python-scriptmix/Scripts/Metrics/Copy Metrics From Reference.py (from sidebearings_from_reference recipe)
+rescued/part2/examples/recipes/sidebearings_from_reference/recipe.py
+SHA256 6aadc9ae8fb5fe615d58cba6b632b599083659c42b2a3f76c01b44814bc4ae42
+fontlab-python-scriptmix/Scripts/Contours/Round Coordinates.py and fontlab-python-scriptmix/Scripts/Anchors/Round To Grid.py and fontlab-python-scriptmix/Scripts/Metrics/Round Advances.py (from round_coordinates recipe)
+rescued/part2/examples/recipes/round_coordinates/recipe.py
+SHA256 0d8b04e4d93565d202239ad1df2514b150cf24a509b34de32ff08ec99f222b45
+fontlab-python-scriptmix/Scripts/Contours/Correct Contour Direction.py and fontlab-python-scriptmix/Scripts/Contours/Optimize Start Points.py (from contour_direction recipe)
+rescued/part2/examples/recipes/contour_direction/recipe.py
+SHA256 a429b53d76d7f78338b05fa05de2f904d19f794f15aafcee102be5fef5077278
+fontlab-python-scriptmix/Scripts/Metrics/Tabular Width.py (from glyphs_tabular_figures recipe)
+rescued/part2/examples/recipes/glyphs_tabular_figures/recipe.py
+SHA256 0b689b4b62fe499d10a073c6b62f8eb6417ebbff8f7f261aae996da3ef1a5dcd
+fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py (from layer_backup recipe)
+rescued/part2/examples/recipes/layer_backup/recipe.py
+SHA256 468385b598a60b0dc936e359e989d4105092a1364fdd66cadea17672736c13a2

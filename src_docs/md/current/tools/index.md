@@ -17,5 +17,7 @@
 - [Glyph Snapshot Console](glyph-snapshot-console.md)
 - [Glyph Spacing Worksheet - Frameless](glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](glyph-spacing-worksheet.md)
+- [Import Kerning Pair List](import-kerning-pair-list.md)
 - [Localized Font Names](localized-font-names.md)
+- [Path Problem Report](path-problem-report.md)
 - [Saved Proof Sample](saved-proof-sample.md)

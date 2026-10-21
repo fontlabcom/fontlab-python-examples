@@ -102,7 +102,9 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Snapshot Console](tools/glyph-snapshot-console.md)
 - [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
+- [Import Kerning Pair List](tools/import-kerning-pair-list.md)
 - [Localized Font Names](tools/localized-font-names.md)
+- [Path Problem Report](tools/path-problem-report.md)
 - [Saved Proof Sample](tools/saved-proof-sample.md)
 
 ## Widgets
