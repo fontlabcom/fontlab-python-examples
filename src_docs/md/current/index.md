@@ -2,6 +2,24 @@
 
 Choose a category, then a script. Each page includes its actual menu source.
 
+## Dialogs
+
+- [Expandable Glyph Search](dialogs/expandable-glyph-search.md)
+- [Font Glyph Inventory Tabs](dialogs/font-glyph-inventory-tabs.md)
+- [FontLab Script Scaffold Wizard](dialogs/fontlab-script-scaffold-wizard.md)
+- [Glyph Batch Recipe Settings](dialogs/glyph-batch-recipe-settings.md)
+- [Glyph Proof Batch Wizard](dialogs/glyph-proof-batch-wizard.md)
+- [Proof Text Coverage Dialog](dialogs/proof-text-coverage-dialog.md)
+
+## Drag And Drop
+
+- [Deferred Glyph Report Drag](drag-and-drop/deferred-glyph-report-drag.md)
+- [Draggable Glyph Names](drag-and-drop/draggable-glyph-names.md)
+- [Font Drop Inspector](drag-and-drop/font-drop-inspector.md)
+- [Font File Drop Shelf](drag-and-drop/font-file-drop-shelf.md)
+- [Glyph Pair Board](drag-and-drop/glyph-pair-board.md)
+- [Proof Word Magnets](drag-and-drop/proof-word-magnets.md)
+
 ## Forms
 
 - [Glyph Metrics Form](forms/glyph-metrics-form.md)
@@ -32,6 +50,14 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Name Filter](models/glyph-name-filter.md)
 - [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
 - [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)
+
+## Text
+
+- [Calendar Proof Builder](text/calendar-proof-builder.md)
+- [Feature Code Draft](text/feature-code-draft.md)
+- [Font Handoff Letter](text/font-handoff-letter.md)
+- [Font Review Notes](text/font-review-notes.md)
+- [Script Snippet Notebook](text/script-snippet-notebook.md)
 
 ## Tools
 

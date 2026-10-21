@@ -14,6 +14,44 @@ this_file: WORK.md
 - Notes: `uv run --locked` created the project venv inside the worktree (git status stays clean, venv ignored). Only `tests/` was run; `tests_docs`, `lessons` suites are outside the T0 command.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 examples integration: Dialogs (E3), Drag And Drop (E8), Text (E9)
+
+- Batch scripts and batch tests integrated unchanged (no script byte edits).
+  Commits: 2741f66 (E3), e496d96 (E8), 67045b6 (E9), then the shared docs commit.
+- Shared rows built from the batch fragments, then checked against
+  `rescue-index.json` (source_menu exists; source == target; source_sha256 ==
+  target_sha256) and against the preserved source bytes under
+  `FONTLAB_PRESERVED_ROOT`. All 46 rows plus 3 retirements match. Destination
+  hashes recomputed from disk: all 6 E3 and all 5 E9 fragment hashes were stale
+  (later fix rounds); E8 hashes matched. E3/E8 rows gained `family` (required:
+  `test_sort_filter_adaptations` allows only two family-less rows); E8 rows
+  gained `scope`. `rescue-index.json` unchanged.
+- Count deltas (E3+E8+E9): menus 43 -> 49 -> 55 -> 60; adaptations 27 -> 39 ->
+  51 -> 73; not adapted 467 -> 455 -> 443 -> 421 (= 3 retired + 418 backlog).
+  Updated: test_curated_menus (count + Dialogs/Drag And Drop/Text categories),
+  test_elastic_adaptations, test_spacing_menu_integration (count, adaptations,
+  new EXAMPLE_BATCHES set of 17 paths), test_rescued_menus, and the `== 27`
+  checks in test_calendar_adaptation, test_calendar_official_adaptation,
+  test_character_map_adaptations, test_completion_adaptations,
+  test_editable_tree_adaptations, test_image_viewer_adaptations,
+  test_official_filter_adaptations, test_slider_adaptations,
+  test_spinbox_adaptations, test_tree_adaptations.
+- Each batch commit verified alone: `git archive <sha>` into
+  `$TMPDIR/integ-verify/<sha>` with `fontlab-fontlabapp` symlinked to the
+  issue122 App worktree (312e308, clean), then `rtk proxy uv run --locked python
+  -m pytest -q tests`: 2741f66 exit 0, 746 passed; e496d96 exit 0, 833 passed;
+  67045b6 exit 0, 935 passed.
+- Full suite on the worktree: `bash verification/issue-122/sdd/cmd/ex.sh` (from
+  the workspace root) -> exit 0, 935 passed, 0 failed, 0 skipped (T0 568 + E3 178
+  + E8 87 + E9 102). Before integration the same command gave exit 1: 3 failed
+  (menu-count tests), 932 passed.
+- Ruff (check only, no fix/format): `rtk proxy uvx ruff check --target-version
+  py311` on the 17 scripts and 3 batch tests -> exit 0, all checks passed.
+- Internal-jargon grep on the 17 scripts (issue numbers, batch ids, D-numbers,
+  "reviewed App", part2/part3 prose): clean. E3 docstrings keep `Source:
+  rescued/part2/...` path and SHA256 lines, as 27 earlier scripts do.
+- Scope: offline tests only. Native FontLab acceptance remains pending.
+
 # 2026-10-15: Independent clean-room receipt integration and native driver
 
 Integrated the three merged batches on `issue-101-pythonqt-examples` at base

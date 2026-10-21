@@ -4,6 +4,26 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-21 - Dialogs, Drag And Drop and Text tools
+
+- Dialogs: six modeless tools (scaffold wizard, batch recipe settings, expandable
+  glyph search, proof text coverage, glyph inventory tabs, proof batch wizard).
+  Batch recipes from the settings tool feed the proof wizard. Replaces 12
+  archived identities; reuses App's fenced glyph capture.
+- Drag And Drop: six modeless panels (deferred glyph report drag, font file drop
+  shelf with workspace-confirmed opening, draggable glyph names, font drop
+  inspector, proof word magnets, glyph pair board). Replaces 12 archived
+  identities.
+- Text: five drafting tools (calendar proof builder with Unicode digit coverage,
+  font handoff letter, feature code draft, font review notes, script snippet
+  notebook). Replaces 22 archived identities and retires 3 with a recorded
+  reason (both XML schema variants; textobject, whose interface FontLab's
+  PythonQt lacks).
+- Active menus 43 -> 60; adaptations 27 -> 73; new `retirements` array in
+  `menu-adaptations.json`; 418 identities remain backlog. NOTICE gains
+  plain-language provenance for all 46 replaced and 3 retired identities.
+- Native FontLab acceptance remains pending for all seventeen tools.
+
 ## v1.0.2 (2026-10-16)
 
 Samples: 106 FontLab 9 GUI scripts under examples/samples (copied from Scripts/Samples with tools/sync_samples.py) and a Samples page in docs-export.
