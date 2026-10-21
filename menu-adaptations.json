@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 77 practical facades; 127 adaptations remain native pending, 28 identities are retired with a recorded reason and 339 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 79 practical facades; 135 adaptations remain native pending, 51 identities are retired with a recorded reason and 308 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -1894,6 +1894,118 @@
       "native_acceptance": "pending",
       "original_workflow_accepted": false,
       "disposition": "ported"
+    },
+    {
+      "source_menu": "Scripts/Archived Official/painterpaths-13a6bb9a9d2b9037 - 4d107a40.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+      "source_sha256": "ae79ea27f4bb5bb28912a0d9c5ceb8524f3f1c09ca7161bd408bc0e6ca88efb3",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "painterpaths",
+      "disposition": "duplicate-of",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/transformations-c12a2071adbab88b - 1b3fd3f7.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+      "source_sha256": "533857ee814a9428e094f1ad7dc9c13b4dbe8476c991effaced2f8486bec5abc",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "transformations",
+      "disposition": "duplicate-of",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/basicdrawing-907f39d8bf387501 - ea433456.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py",
+      "source_sha256": "94c7a27d22a78955265a73c0d98383088c334d50d100eb330b242b84fbee0bab",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "basicdrawing",
+      "disposition": "duplicate-of",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/svgviewer-b2d717e4d43806d2 - 64d092b1.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+      "source_sha256": "d2ccb421fa24dcc962e4abda1d081a7b5a0a4615a4aef6e1a4d2c8e4490c7665",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph SVG Reference.py",
+      "destination_sha256": "41d5f3224ee0ea6138e3dfbb0682927669a656b1560377d0cadff3526a0f7098",
+      "entry_point": "main",
+      "family": "svgviewer",
+      "disposition": "duplicate-of",
+      "scope": "Static vector SVG comparison with the current glyph; live opacity; normalized silhouette or original SVG user coordinates in font units; source file unchanged.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Painting - Official svgviewer - b2d717e4d43806d2.py",
+      "source": "rescued/part2/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py",
+      "source_sha256": "5e88ce4d8959a0e13df6478a7811d6f69bbaa217ecef4728bb1f3bcfd2a28105",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph SVG Reference.py",
+      "destination_sha256": "41d5f3224ee0ea6138e3dfbb0682927669a656b1560377d0cadff3526a0f7098",
+      "entry_point": "main",
+      "family": "svgviewer",
+      "disposition": "ported",
+      "scope": "Static vector SVG comparison with the current glyph; live opacity; normalized silhouette or original SVG user coordinates in font units; source file unchanged.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Painting - Official basicdrawing - 907f39d8bf387501.py",
+      "source": "rescued/part2/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py",
+      "source_sha256": "ee842206b60ab167e4f45919a779a784e7154c2d201f1fad86b389d6436575b8",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "basicdrawing",
+      "disposition": "duplicate-of",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Painting - Official transformations - c12a2071adbab88b.py",
+      "source": "rescued/part2/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py",
+      "source_sha256": "af4e3e14274a354fcc26514a063d8d9ba38d6f5930cf272fc4cb28543be1ebcc",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "transformations",
+      "disposition": "duplicate-of",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Painting - Official painterpaths - 13a6bb9a9d2b9037.py",
+      "source": "rescued/part2/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py",
+      "source_sha256": "daa00fe5bed6797d682cb3b219d56fc73d8a0ec8b094144281efa69939008db7",
+      "license": "Apache-2.0",
+      "menu": "Scripts/Drawing/Glyph Outline SVG.py",
+      "destination_sha256": "e56de766bfea614e3cf55139bab466fab34f25114d8b146602e97a1a9ee0c338",
+      "entry_point": "main",
+      "family": "painterpaths",
+      "disposition": "ported",
+      "scope": "Current-master rendered outline, fill-rule comparison, origin/advance/ascender/descender/ink frame in font units, preview and SVG export for an external vector editor.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ],
   "retirements": [
@@ -2120,6 +2232,190 @@
       "license": "Apache-2.0",
       "disposition": "retired",
       "reason": "Animated toy produces no FontLab result; graphics-scene collisions do not establish glyph-outline collisions."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/effects - lighting-b823a76f79197d84.py",
+      "source": "rescued/part2/ports/effects/pyqt-official/lighting-b823a76f79197d84.py",
+      "source_sha256": "a456bfc064bdbce5e773cda8bee36e3d714caced7175b6edb7473ad1df32b5a6",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated lighting and shadows provide no outline edit or font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - animatedtiles-1cf57c0f2ac8880a.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+      "source_sha256": "e50504501e5e1fc30a379750eca8f2974677fe37331a04ede54e2a857ee3f7ec",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated raster-tile layouts provide no glyph action or persistent font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - appchooser-de30d23621025fe6.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py",
+      "source_sha256": "42248cab1676b4e4a1539df8af1ed10a26fbd193ebd4d327f9832b6d1dd609ae",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Application-icon chooser animation provides no current-font action or font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - moveblocks-b7283d74afb78218.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py",
+      "source_sha256": "1ac9db7d122e92313f1e386190eb2c54ad9da2686820a81397759e9e3e1164ec",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Looping block motion has no glyph-outline or master-interpolation result and exports no font input."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - easing-bd6c8feb783ba845.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py",
+      "source_sha256": "d125a1afb91be58a87606d0e2d5ced5cdea2d06618eb9734d1f5245e4604ed10",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Time easing of a moving pixmap is not master or axis interpolation and produces no usable font data."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - states-29f6a7d0a3bb6813.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py",
+      "source_sha256": "b57501fe1276a4b4a7af18ed12c5bcf87e3da67b7cf92f27117d307ce8facaee",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated pixmap states provide no glyph action or persistent font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/animation - stickman-243ae486f9528e8c.py",
+      "source": "rescued/part2/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py",
+      "source_sha256": "08dba971d70b27e0cce4e62dc52e35b2d6dce185b3456948859acb802f44aed4",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Skeletal keyframe editing and ragdoll physics have no glyph-contour mapping or font export."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/openglwindow-b383fecf912548bb - a7698a2a.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py",
+      "source_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/appchooser-de30d23621025fe6 - 414a42dc.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py",
+      "source_sha256": "49cd103c29c9725e74ebff89fa30fa3e24502056577f625bf448cdf14c4f7c8c",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Application-icon chooser animation provides no current-font action or font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/easing-bd6c8feb783ba845 - f3eacab2.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py",
+      "source_sha256": "085f44636bcc65544209dddd56c17fd8f76714e274804c73df8e72b0b1b69e47",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Time easing of a moving pixmap is not master or axis interpolation and produces no usable font data."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/stickman-243ae486f9528e8c - 4d535b1c.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py",
+      "source_sha256": "9684cefbfa0d7512e5101140a4fa113a40e948489021c2075898577cba810d44",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Skeletal keyframe editing and ragdoll physics have no glyph-contour mapping or font export."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/lighting-b823a76f79197d84 - ac4f5040.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/effects/pyqt-official/lighting-b823a76f79197d84.py",
+      "source_sha256": "e6c214da486d995c252a53d7f6f7d7cd51c9623296127905201eded6a24cf48d",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated lighting and shadows provide no outline edit or font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/states-29f6a7d0a3bb6813 - 1d2321ab.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py",
+      "source_sha256": "85add73f044870978af99c4693ae4f0accc5ef89e4e183ac0da97171ec840f26",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated pixmap states provide no glyph action or persistent font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/moveblocks-b7283d74afb78218 - f35bd388.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py",
+      "source_sha256": "e644d0b42d3821a7f4895d50e038ebca61313fb3ff29339289680dabbc2cd5a0",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Looping block motion has no glyph-outline or master-interpolation result and exports no font input."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/overpainting-fcada4fff6524fcf - d32c3247.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py",
+      "source_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/textures-ed6d42d4faa7e0bb - 9e9f259d.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py",
+      "source_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/2dpainting-c82d1af7d1a7b0cf - ce294cd2.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py",
+      "source_sha256": "61ca929ec547aabaa46105db6886b56880fd95d6fbc4626f0f7acd173f08c642",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/concentriccircles-912e5c751b20ce97 - bf7d0443.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+      "source_sha256": "03bb3127f4dfabc413625896f964436dd592f878d9fb483c37615582f6a1068a",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated integer/float antialiasing circles provide no distinct glyph action or consumable font output."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/animatedtiles-1cf57c0f2ac8880a - abd2e40e.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py",
+      "source_sha256": "b6e3c4a0a1f6d66b75ce086fc2bfce13c5a72c498a71d960fc29a9e56fb2d8dd",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated raster-tile layouts provide no glyph action or persistent font-workflow output."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/hellogl-1ad60855ca28f3cc - d171a8f8.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py",
+      "source_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived Official/grabber-303ea3ee09c4677d - 263c1c32.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py",
+      "source_sha256": "5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Opengl - Official 2dpainting - c82d1af7d1a7b0cf.py",
+      "source": "rescued/part2/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py",
+      "source_sha256": "f6d04cce9f39c1d796a987e2b3d5c1b24ca3ed5cba5c5d18b79a1909e47cd854",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them."
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Painting - Official concentriccircles - 912e5c751b20ce97.py",
+      "source": "rescued/part2/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py",
+      "source_sha256": "6d2f8e76efde17106dd50a3c6823b20a8053823bd1629a297654ed6eaed02f98",
+      "license": "Apache-2.0",
+      "disposition": "retired",
+      "reason": "Animated integer/float antialiasing circles provide no distinct glyph action or consumable font output."
     }
   ]
 }

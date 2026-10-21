@@ -20,6 +20,11 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Pair Board](drag-and-drop/glyph-pair-board.md)
 - [Proof Word Magnets](drag-and-drop/proof-word-magnets.md)
 
+## Drawing
+
+- [Glyph Outline SVG](drawing/glyph-outline-svg.md)
+- [Glyph SVG Reference](drawing/glyph-svg-reference.md)
+
 ## Forms
 
 - [Glyph Metrics Form](forms/glyph-metrics-form.md)

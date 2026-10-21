@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 77 practical facades in one category level: Dialogs,
-Drag And Drop, Forms, GetGo Fonts, Graphics, Models, Text, Tools and Widgets. Install their matching Fly, App
+`Scripts/` contains 79 practical facades in one category level: Dialogs,
+Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text, Tools and Widgets. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
 dedicated no-document session. Do not modify a live installation during setup.
@@ -24,9 +24,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 127 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 28 identities
-retired without a replacement, each with its reason. The other 339 identities
+`menu-adaptations.json` maps 135 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 51 identities
+retired without a replacement, each with its reason. The other 308 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -115,3 +115,9 @@ substitution draft), Glyph Review Cards, Glyph Proof Pad (filtered nine-cell
 proof pages) and Glyph Mark Colour Board. On the board, drop a colour swatch
 onto a glyph tile to set its mark; each changed drop is recorded as one Undo
 step. The other four tools do not change the font.
+
+Drawing adds two tools. Glyph Outline SVG exports the rendered current-master
+outline with an origin, advance, ascender, descender and ink frame in font
+units, for an external vector editor. Glyph SVG Reference places a static SVG
+over the current glyph with live opacity, either as a normalized silhouette or
+in its own user coordinates. Use FontLab's Transform panel to transform glyphs.

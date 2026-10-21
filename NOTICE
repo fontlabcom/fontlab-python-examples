@@ -774,3 +774,107 @@ Reason: Animated toy produces no FontLab result; graphics-scene collisions do no
 rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/collidingmice-fcfaf9667206bbd6.py
 SHA256 5ab5eca135b2b64f36ae4e353e693ed0f1d357f76fb1f6d27c7bce163220f908
 Reason: Animated toy produces no FontLab result; graphics-scene collisions do not establish glyph-outline collisions.
+
+
+Drawing tools
+-------------
+The two new scripts in Scripts/Drawing are FontLab tools written from
+scratch. Their ideas come from the Qt painting, animation, effects and
+OpenGL examples (Qt examples (Riverbank/Nokia): Copyright (C) 2013
+Riverbank Computing Limited; Copyright (C) 2010 Nokia Corporation and/or
+its subsidiary(-ies)). No upstream source code, helper or asset is
+included. Each tool lists the earlier sources it replaces, with their
+SHA256 values.
+
+Scripts/Drawing/Glyph Outline SVG.py
+Independent rewrite of the Qt painterpaths, transformations and basicdrawing example ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
+SHA256 ae79ea27f4bb5bb28912a0d9c5ceb8524f3f1c09ca7161bd408bc0e6ca88efb3
+rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
+SHA256 533857ee814a9428e094f1ad7dc9c13b4dbe8476c991effaced2f8486bec5abc
+rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
+SHA256 94c7a27d22a78955265a73c0d98383088c334d50d100eb330b242b84fbee0bab
+rescued/part2/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
+SHA256 ee842206b60ab167e4f45919a779a784e7154c2d201f1fad86b389d6436575b8
+rescued/part2/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
+SHA256 af4e3e14274a354fcc26514a063d8d9ba38d6f5930cf272fc4cb28543be1ebcc
+rescued/part2/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
+SHA256 daa00fe5bed6797d682cb3b219d56fc73d8a0ec8b094144281efa69939008db7
+
+Scripts/Drawing/Glyph SVG Reference.py
+Independent rewrite of the Qt svgviewer example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
+SHA256 d2ccb421fa24dcc962e4abda1d081a7b5a0a4615a4aef6e1a4d2c8e4490c7665
+rescued/part2/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
+SHA256 5e88ce4d8959a0e13df6478a7811d6f69bbaa217ecef4728bb1f3bcfd2a28105
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/effects/pyqt-official/lighting-b823a76f79197d84.py
+SHA256 a456bfc064bdbce5e773cda8bee36e3d714caced7175b6edb7473ad1df32b5a6
+Reason: Animated lighting and shadows provide no outline edit or font-workflow output.
+rescued/part2/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py
+SHA256 e50504501e5e1fc30a379750eca8f2974677fe37331a04ede54e2a857ee3f7ec
+Reason: Animated raster-tile layouts provide no glyph action or persistent font-workflow output.
+rescued/part2/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py
+SHA256 42248cab1676b4e4a1539df8af1ed10a26fbd193ebd4d327f9832b6d1dd609ae
+Reason: Application-icon chooser animation provides no current-font action or font-workflow output.
+rescued/part2/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py
+SHA256 1ac9db7d122e92313f1e386190eb2c54ad9da2686820a81397759e9e3e1164ec
+Reason: Looping block motion has no glyph-outline or master-interpolation result and exports no font input.
+rescued/part2/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py
+SHA256 d125a1afb91be58a87606d0e2d5ced5cdea2d06618eb9734d1f5245e4604ed10
+Reason: Time easing of a moving pixmap is not master or axis interpolation and produces no usable font data.
+rescued/part2/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py
+SHA256 b57501fe1276a4b4a7af18ed12c5bcf87e3da67b7cf92f27117d307ce8facaee
+Reason: Animated pixmap states provide no glyph action or persistent font-workflow output.
+rescued/part2/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py
+SHA256 08dba971d70b27e0cce4e62dc52e35b2d6dce185b3456948859acb802f44aed4
+Reason: Skeletal keyframe editing and ragdoll physics have no glyph-contour mapping or font export.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/openglwindow-b383fecf912548bb.py
+SHA256 5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/appchooser-de30d23621025fe6.py
+SHA256 49cd103c29c9725e74ebff89fa30fa3e24502056577f625bf448cdf14c4f7c8c
+Reason: Application-icon chooser animation provides no current-font action or font-workflow output.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/easing-bd6c8feb783ba845.py
+SHA256 085f44636bcc65544209dddd56c17fd8f76714e274804c73df8e72b0b1b69e47
+Reason: Time easing of a moving pixmap is not master or axis interpolation and produces no usable font data.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/stickman-243ae486f9528e8c.py
+SHA256 9684cefbfa0d7512e5101140a4fa113a40e948489021c2075898577cba810d44
+Reason: Skeletal keyframe editing and ragdoll physics have no glyph-contour mapping or font export.
+rescued/part3/pyqt-official-ports/ports/effects/pyqt-official/lighting-b823a76f79197d84.py
+SHA256 e6c214da486d995c252a53d7f6f7d7cd51c9623296127905201eded6a24cf48d
+Reason: Animated lighting and shadows provide no outline edit or font-workflow output.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/states-29f6a7d0a3bb6813.py
+SHA256 85add73f044870978af99c4693ae4f0accc5ef89e4e183ac0da97171ec840f26
+Reason: Animated pixmap states provide no glyph action or persistent font-workflow output.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/moveblocks-b7283d74afb78218.py
+SHA256 e644d0b42d3821a7f4895d50e038ebca61313fb3ff29339289680dabbc2cd5a0
+Reason: Looping block motion has no glyph-outline or master-interpolation result and exports no font input.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/overpainting-fcada4fff6524fcf.py
+SHA256 5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/textures-ed6d42d4faa7e0bb.py
+SHA256 5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py
+SHA256 61ca929ec547aabaa46105db6886b56880fd95d6fbc4626f0f7acd173f08c642
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py
+SHA256 03bb3127f4dfabc413625896f964436dd592f878d9fb483c37615582f6a1068a
+Reason: Animated integer/float antialiasing circles provide no distinct glyph action or consumable font output.
+rescued/part3/pyqt-official-ports/ports/animation/pyqt-official/animatedtiles-1cf57c0f2ac8880a.py
+SHA256 b6e3c4a0a1f6d66b75ce086fc2bfce13c5a72c498a71d960fc29a9e56fb2d8dd
+Reason: Animated raster-tile layouts provide no glyph action or persistent font-workflow output.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/hellogl-1ad60855ca28f3cc.py
+SHA256 5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part3/pyqt-official-ports/ports/opengl/pyqt-official/grabber-303ea3ee09c4677d.py
+SHA256 5c65be4bdb28b434c36f778ca8d296baf09521c45b76bcc6fa527b7a25ff6490
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part2/ports/opengl/pyqt-official/2dpainting-c82d1af7d1a7b0cf.py
+SHA256 f6d04cce9f39c1d796a987e2b3d5c1b24ca3ed5cba5c5d18b79a1909e47cd854
+Reason: The source needs QOpenGLContext.versionFunctions() and QOpenGLFunctions_* wrappers. FontLab PythonQt does not export them.
+rescued/part2/ports/painting/pyqt-official/concentriccircles-912e5c751b20ce97.py
+SHA256 6d2f8e76efde17106dd50a3c6823b20a8053823bd1629a297654ed6eaed02f98
+Reason: Animated integer/float antialiasing circles provide no distinct glyph action or consumable font output.

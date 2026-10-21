@@ -24,6 +24,8 @@ EXAMPLE_BATCHES = {
     "Scripts/Drag And Drop/Font File Drop Shelf.py",
     "Scripts/Drag And Drop/Glyph Pair Board.py",
     "Scripts/Drag And Drop/Proof Word Magnets.py",
+    "Scripts/Drawing/Glyph Outline SVG.py",
+    "Scripts/Drawing/Glyph SVG Reference.py",
     "Scripts/Graphics/Glyph Mark Colour Board.py",
     "Scripts/Graphics/Glyph Proof Layout.py",
     "Scripts/Graphics/Glyph Proof Pad.py",
@@ -54,7 +56,7 @@ def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
     assert paths == set(BASE["menus"]) | NEW | {"Scripts/Tools/Glyph Name Pattern Lab.py", "Scripts/Tools/Component Dependency Graph.py", "Scripts/Tools/Component Dependency Graph - Degree Forces.py", "Scripts/Widgets/Glyph Metrics and Revisions.py", "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py", "Scripts/Widgets/Glyph Spacing Offset.py", "Scripts/Widgets/Glyph Spacing Offset - Stacked.py", "Scripts/Widgets/Glyph Character Map.py", "Scripts/Widgets/Glyph Character Map - Styles.py", "Scripts/Tools/Find Font Source Files.py", "Scripts/Tools/Find Font Source Files - Bytes.py", "Scripts/Tools/Font Reference Image Viewer.py", "Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py"} | EXAMPLE_BATCHES, (
         "Keep every curated menu and add exactly the two reviewed tools"
     )
-    assert len(paths) == 77 and not any(
+    assert len(paths) == 79 and not any(
         path.startswith("Scripts/Archived") for path in paths
     )
     for path, digest in BASE["menus"].items():
@@ -74,7 +76,7 @@ def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserv
 def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_remain():
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
     assert data["adaptations"][:12] == BASE["prior_adaptations"]
-    assert len(data["adaptations"]) == 127
+    assert len(data["adaptations"]) == 135
     assert (
         hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
         == BASE["rescue_index_sha256"]
