@@ -4,9 +4,9 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 81 practical facades in one category level: Dialogs,
-Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text, Tools,
-Widgets and Windows. Install their matching Fly, App
+`Scripts/` contains 82 practical facades in one category level: Designer,
+Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
+Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
 its setup and limitations. GetGo mutation lessons require an owned font and a
 dedicated no-document session. Do not modify a live installation during setup.
@@ -25,9 +25,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 153 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 57 identities
-retired without a replacement, each with its reason. The other 284 identities
+`menu-adaptations.json` maps 168 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 69 identities
+retired without a replacement, each with its reason. The other 257 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -128,3 +128,10 @@ unencoded and shared-Unicode glyphs, with counts, paging and guarded glyph
 selection. Glyph Snapshot Diff compares the first and newest snapshots of the
 current font and lists added, removed, re-encoded and modified glyphs. Use
 fontlab-grablab for screenshots of FontLab windows.
+
+Designer adds Em Star Polygon. It previews a star or regular polygon in font
+units and draws it into the current layer as one closed contour, recorded as
+one Undo step. The contour is centred on half the advance and half the
+associated master's cap height. SVG output is secondary, for an external
+vector editor. The Qt Designer and pyuic form lessons map to the existing
+Glyph Metrics Form, which loads its packaged form with QUiLoader.

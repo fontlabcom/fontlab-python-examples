@@ -2,6 +2,10 @@
 
 Choose a category, then a script. Each page includes its actual menu source.
 
+## Designer
+
+- [Em Star Polygon](designer/em-star-polygon.md)
+
 ## Dialogs
 
 - [Expandable Glyph Search](dialogs/expandable-glyph-search.md)

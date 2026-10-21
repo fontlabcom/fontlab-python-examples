@@ -958,3 +958,103 @@ Reason: Tray notifications add no demonstrated font operation or workflow artifa
 rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/recentfiles-09afeea11be83f4f.py
 SHA256 59a910de643a80f61e4a0478454f9dafaed319728746a14d8819d6ae0b2f9867
 Reason: No FontLab action; FontLab File > Open Recent covers fonts and a session-only report history has no consumer.
+
+
+Designer tools
+--------------
+The new script in Scripts/Designer is a FontLab tool written from
+scratch. Its idea comes from the Qt Designer polygonwidget example
+(Copyright (C) 2006 David Boddie; Copyright (C) 2005-2006 Trolltech
+ASA). The Designer and pyuic source dispositions below refer to the
+pyqt/examples collection, commit 83eed0514582c8deb60d9e9e6bff31ceffe4eaeb
+(Riverbank Computing Limited; Nokia Corporation and/or its
+subsidiary(-ies); David Boddie and Trolltech ASA; Denviso GmbH and
+Ulrich Berning; Michael Herrmann). No upstream source code, helper or
+asset is included. Each tool lists the earlier sources it replaces,
+with their SHA256 values.
+
+Scripts/Designer/Em Star Polygon.py
+Independent rewrite of the Qt polygonwidget example idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
+SHA256 c96726078578bad1e6651507493d0a0914a98d35b54ed0553f215c01bdcd3b57
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
+SHA256 4d3016d00e140cfa1985aface43fd8f792dd4fff4b1cb015f9980ea56e0a3481
+
+Mapped to existing tools (no new code or resources):
+Scripts/Forms/Glyph Metrics Form.py (from the designer-ui main tutorial)
+rescued/part2/ports/designer-ui/pyqt-examples/main-402068f40005cd66.py
+SHA256 040266f6fd75e39a152e75da53d2e9a50ac6fedf8c9768f4b159f5f9d8daea39
+Scripts/Widgets/Font Units Calculator.py (from calculatorform)
+rescued/part2/ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py
+SHA256 7e26c787c95ff06011c04cc4cbdc8c7a9906fb146bec085bd2168d01e2dffcd5
+Scripts/Widgets/Glyph Modification Calendar with Formats.py (from datetimeedit)
+rescued/part2/ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py
+SHA256 bd6e642bdd03c1dd484ad5afbdfdb3daff7ce459a6e364ec18c6520da7502c89
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from multipagewidget)
+rescued/part2/ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py
+SHA256 6f2445cd62b1c21e2b439990b33c1ff4de90a50b6efdaa22eb3c4fdcdd136502
+Scripts/Forms/Glyph Metrics Form.py (from compile-on-the-fly)
+rescued/part2/ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py
+SHA256 669943c28fe48b9339734d43a1d0113ad8c1029f7af359f33335686fb5f7dbb4
+Scripts/Forms/Glyph Metrics Form.py (from load-ui1)
+rescued/part2/ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py
+SHA256 b91dc11bed202601b5da5e6fcc073dfe0a15258b10f559a1b773b9be23673578
+Scripts/Forms/Glyph Metrics Form.py (from load-ui2)
+rescued/part2/ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py
+SHA256 520f0e863b678913c68902e2b147375b4e81d9b34fa6db02b19bfc605dcec821
+Scripts/Widgets/Font Units Calculator.py (from calculatorform)
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/calculatorform-27bf65f8b059fd96.py
+SHA256 42d47b43e0880c9ba57cfd398ad2d8b86eac0a15f2c4f7fdea88fd914d1c71bb
+Scripts/Widgets/Glyph Modification Calendar with Formats.py (from datetimeedit)
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/datetimeedit-7ba49e67588b1329.py
+SHA256 465bd7c5044e1e51c19b62a764695a8d8d37350c06d831db8fee249c8a5d2de1
+Scripts/Dialogs/Font Glyph Inventory Tabs.py (from multipagewidget)
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/multipagewidget-de4979a99c6d0bed.py
+SHA256 515d7e4a77c705e3b117e2701a1fed65ac17b6764cfbed5b0b95e40b509ffb84
+Scripts/Forms/Glyph Metrics Form.py (from compile-on-the-fly)
+rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/compile-on-the-fly-5a8e48d2a1396cea.py
+SHA256 861403a547af79bc8186b57b0b17ad05bd429de12f3085b950454c4fb0b1fcca
+Scripts/Forms/Glyph Metrics Form.py (from load-ui1)
+rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/load-ui1-b7db02f540cc7559.py
+SHA256 71d988b0068fdd8f3d056a159f9009eaaf78fdd55caad4b81e6c613e1c1d1ffb
+Scripts/Forms/Glyph Metrics Form.py (from load-ui2)
+rescued/part3/pyqt-official-ports/ports/pyuic/pyqt-official/load-ui2-b9660f4ee653ca01.py
+SHA256 bac03619bb9e9872cba334aad42f9d5310db3f7a517b4e0fb42dd48448cebd90
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py
+SHA256 666d6234599ab0576ad18cce7d6ed36423f9e487fa4c8a7a2b8ff7a1c5fb9d07
+Reason: Wall-clock decoration has no font action or reusable FontLab output.
+rescued/part2/ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py
+SHA256 af5e03961a757f7dc0a92d94d4aee9567e1d816599437faa208053ffd756b0fe
+Reason: Animated bubble decoration has no font action or reusable FontLab output.
+rescued/part2/ports/designer/pyqt-official/counterlabel-1321540b04f33117.py
+SHA256 96f3d82f949777f1d582ac4921169db87ba3d6f7d8195fdaaddce18b0cf788d2
+Reason: Decorative numeric counter display; no font input or reusable FontLab output.
+rescued/part2/ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py
+SHA256 68c4cdfed5d57a3264a41e9be851056a67577b7716ce745e8ed90e4c46062181
+Reason: Generic rich-text viewer has no font input or reusable font output; author and zoom controls add no distinct FontLab action.
+rescued/part2/ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py
+SHA256 50a5b70428d3bcf22ebac1ca83fef3d2f34b3c01be7175384b5ddc124d9ee87b
+Reason: Embedded interpreter duplicates FontLab's built-in Python scripting panel; a Designer console adds no distinct font action.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/analogclock-4d24cd77c74a8801.py
+SHA256 92a061a207d4d614f9aef3fc3a960d15160f6817a02808f6a081853117523a2c
+Reason: Wall-clock decoration has no font action or reusable FontLab output.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/bubbleswidget-9941e3c752b3a3b7.py
+SHA256 b47b29427b10891338eba790c324094f4994753eeddf2d7cf54e0d45c2a154dd
+Reason: Animated bubble decoration has no font action or reusable FontLab output.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/counterlabel-1321540b04f33117.py
+SHA256 c1774ca6c35590a27b510bf3cfdd2e97dd88889f913c392166554343eaccb3ff
+Reason: Decorative numeric counter display; no font input or reusable FontLab output.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/helloglwidget-5941e31267112c98.py
+SHA256 a688b6a61b2a35fec1589a713341f1df8d228069589f7c302272f6eff1d77975
+Reason: QOpenGLContext.versionFunctions and version-specific OpenGL function wrappers are absent from FontLab PythonQt; the example also has no font purpose.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/plugins-960c701fa6221ac5.py
+SHA256 58e339ce81be8eb05642f17e673d9a6d59178a104db02058cbe25adbba5057fb
+Reason: QtDesigner custom-widget interfaces and the PyQt Designer plugin loader are absent from FontLab PythonQt.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/pydemo-bcfa5de0140286d5.py
+SHA256 6e7bebaa969232585fd5a9ae8ae730d86609aaf01c8d40ace175ca0bc7094b4a
+Reason: Generic rich-text viewer has no font input or reusable font output; author and zoom controls add no distinct FontLab action.
+rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/pythonconsolewidget-5125860585e98b3a.py
+SHA256 2f064d8a51ccc93671b2bfb39c05d9a2e4491fd62bb2615985e2f3ae0e89e73a
+Reason: Embedded interpreter duplicates FontLab's built-in Python scripting panel; a Designer console adds no distinct font action.
