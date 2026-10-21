@@ -1367,3 +1367,75 @@ Reason: QtWebKit and QtWebKitWidgets are absent from the PythonQt export stubs; 
 rescued/part3/pyqt-official-ports/ports/webkit/pyqt-official/simpleselector-ae16288fede27692.py
 SHA256 b7c787401ac12c06fc6e0d955b6bc9bcca00eae2a37ca94b9f0da914f056b10b
 Reason: QtWebKit and QtWebKitWidgets are absent from the PythonQt export stubs; browser/DOM demos cannot run and provide no font-specific import or proof output.
+
+
+Scripting insight tools
+-----------------------
+The three new scripting insight scripts in Scripts/Tools are FontLab
+tools written from scratch. Their ideas come from the author's own
+FontLab insight samples. No earlier source code or asset is included.
+Each tool lists the earlier sources it replaces, with their SHA256
+values.
+
+Scripts/Tools/Glyph Snapshot Console.py
+Independent rewrite of the timer-batch and owned-repl sample ideas. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/insights/timer-batch.py
+SHA256 9bede8e4486e03be3c182cd474084ab6a9200ca2419efb4ae3b2cc70ca78bfaa
+rescued/part2/ports/insights/owned-repl.py
+SHA256 3b5fb1184dd28f2caa23b1e90eb53308a0d77ead01f5a0bc4fd3cc62bf7d95df
+
+Scripts/Tools/Saved Proof Sample.py
+Independent rewrite of the sandbox-settings sample idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/insights/sandbox-settings.py
+SHA256 a3dacffc45c2c5e1d1bc83b1a5b672c20db9a3873d0cc98166515ed96d1fd8bb
+
+Scripts/Tools/FontLab Qt Slot Reference.py
+Independent rewrite of the compiled-slot-exposure sample idea. Based on the author's own FontLab sample, Apache-2.0.
+rescued/part2/ports/insights/compiled-slot-exposure.py
+SHA256 e81955446fce469142051973c7c630cac6d44b88aa46ee1ea5aa8cd5e8805108
+
+Mapped to existing tools (no new code or resources):
+Scripts/Drawing/Glyph Outline SVG.py (from contour-canvas)
+rescued/part2/ports/insights/contour-canvas.py
+SHA256 9ec8bcc1c515d3352ef161a2eed90a5ac330f7f50aab2388c584bb82aa713fc7
+Scripts/Drawing/Glyph Outline SVG.py (from contour-scene)
+rescued/part2/ports/insights/contour-scene.py
+SHA256 39e6092d837e4c50f54d6aa8915d99e2546eb04de358a3ae1443940e41937e7e
+Scripts/Models/Glyph Name Filter.py (from glyph-list)
+rescued/part2/ports/insights/glyph-list.py
+SHA256 6cceb5202a9f4bdec96c993d7cf66d225d7b181e594cfa44d7478d095ff9ecbc
+Scripts/Forms/Glyph Metrics Form.py (from signal-lifetime)
+rescued/part2/ports/insights/signal-lifetime.py
+SHA256 3fac71d6f9a70e89b14266dbcc8127d246cbaa3eb4bc69d94d433390b88bc4de
+Scripts/Tools/Glyph Name Completion with Focus.py (from owned-key-filter)
+rescued/part2/ports/insights/owned-key-filter.py
+SHA256 0aa8c7ff06fb6df60726380356cb4282245e3d88188cfb86f65b8e576660ba34
+Scripts/Forms/Glyph Metrics Form.py (from loaded-glyph-form)
+rescued/part2/ports/insights/loaded-glyph-form.py
+SHA256 263c0c6715f4fe22418b6da27ee83cc2a39683e23bcdc58723ab7d60e34b1c87
+Scripts/Models/Glyph Review Form.py (from glyph-properties)
+rescued/part2/ports/insights/glyph-properties.py
+SHA256 7d0b1454d9e2a66e871b398e26ca73a5a696d9a77b0c405cf5da5c8d8e228eab
+Scripts/Models/Glyph Metrics Model.py (from metrics-table)
+rescued/part2/ports/insights/metrics-table.py
+SHA256 7966a62e0a1613e3f2f1b0e9ed279224b5a4ae9fe4f0bdca0dd96c10e1218667
+fontlab-python-scriptmix/Scripts/Metrics/Scale Advances.py (from metrics-undo)
+rescued/part2/ports/insights/metrics-undo.py
+SHA256 aaf8d655ed841c54c307a08ae3aee0dfd80b53f976fc9f082fe9242d5f1257c3
+Scripts/Windows/Unicode Issues Dock.py (from owned-dock)
+rescued/part2/ports/insights/owned-dock.py
+SHA256 cf9c0cdc8f06d74a7d518c8289aaad32991dd571d9630c2b19f03080c184690f
+Scripts/Widgets/Glyph Spacing Offset.py (from metric-controls)
+rescued/part2/ports/insights/metric-controls.py
+SHA256 5d889151cfff9a22cf504b47b5f7185cf3203baccc34f096b0db8b7a0c686174
+Scripts/Forms/Glyph Metrics Form.py (from callback-errors)
+rescued/part2/ports/insights/callback-errors.py
+SHA256 b5a363f9169456507ecc8d47fa5bf1e92007a6b7f533dca2c4aec5f86f4423d1
+
+Retired without a replacement (no code or resources included):
+rescued/part2/ports/insights/worker-glyph-queue.py
+SHA256 b130173c877a6e69a33dc1bca3d6784d7f043a531b318e8314005dc63fb22731
+Reason: Synthetic threaded name-score processing provides no font operation or workflow artifact. Glyph Snapshot Console captures and queries real font data on the main thread.
+rescued/part2/ports/insights/plugin-tokens.py
+SHA256 e4c04bf842585c9dd42bc884785f98bc21ce488ce76fa3c4c0ddc9661b98a169
+Reason: Synthetic menu-token accounting adds no independent FontLab action or consumed artifact. Owned actionable menus and callback cleanup are covered by Unicode Issues Dock.

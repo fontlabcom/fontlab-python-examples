@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 85 practical facades in one category level: Designer,
+`Scripts/` contains 88 practical facades in one category level: Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -25,9 +25,9 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 175 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 151 identities
-retired without a replacement, each with its reason. The other 168 identities
+`menu-adaptations.json` maps 191 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 153 identities
+retired without a replacement, each with its reason. The other 150 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -144,3 +144,11 @@ language and exports escaped name IDs 16 and 17 for AFDKO makeotf or fontmake
 feature files. Font Info Snapshot exports and reloads JSON snapshots of the
 same 14 fields and compares a snapshot with the current master. None of them
 changes the font.
+
+Tools also adds three scripting aids. Glyph Snapshot Console captures the
+current font's glyph names, Unicode values and modification dates once, then
+runs trusted Python queries on those detached records under a time limit.
+Saved Proof Sample keeps one proof string in its own settings, copies it and
+reports the current font's Unicode coverage of it as JSON. FontLab Qt Slot
+Reference lists the signals and slots of the main window, the focused widget
+or a direct child, with practical PythonQt rules. No tool changes the font.

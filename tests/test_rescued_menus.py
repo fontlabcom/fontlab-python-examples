@@ -25,10 +25,22 @@ def test_index_when_loaded_then_complete_unique_source_scope_remains_pending():
         == ADAPTATIONS["source_index_sha256"]
     )
     adapted = {row["source_menu"] for row in ADAPTATIONS["adaptations"]}
-    assert len(adapted) == 175 and len(ROWS) - len(adapted) == 319
+    assert len(adapted) == 191 and len(ROWS) - len(adapted) == 303
     assert adapted <= {row["menu"] for row in ROWS}
+    scriptmix_root = Path(
+        os.environ.get(
+            "FONTLAB_SCRIPTMIX_ROOT", str(ROOT.parent / "fontlab-python-scriptmix")
+        )
+    )
     for row in ADAPTATIONS["adaptations"]:
-        assert (ROOT / row["menu"]).is_file(), (
+        menu = row["menu"]
+        prefix = "fontlab-python-scriptmix/"
+        destination = (
+            scriptmix_root / menu.removeprefix(prefix)
+            if menu.startswith(prefix)
+            else ROOT / menu
+        )
+        assert destination.is_file(), (
             "Keep each reviewed practical destination active"
         )
         assert (

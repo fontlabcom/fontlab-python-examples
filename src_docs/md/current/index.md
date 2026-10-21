@@ -95,12 +95,15 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Font Name Encoding Audit](tools/font-name-encoding-audit.md)
 - [Font Reference Image Viewer - Bounded Zoom](tools/font-reference-image-viewer-bounded-zoom.md)
 - [Font Reference Image Viewer](tools/font-reference-image-viewer.md)
+- [FontLab Qt Slot Reference](tools/fontlab-qt-slot-reference.md)
 - [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
 - [Glyph Name Completion](tools/glyph-name-completion.md)
 - [Glyph Name Pattern Lab](tools/glyph-name-pattern-lab.md)
+- [Glyph Snapshot Console](tools/glyph-snapshot-console.md)
 - [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 - [Localized Font Names](tools/localized-font-names.md)
+- [Saved Proof Sample](tools/saved-proof-sample.md)
 
 ## Widgets
 
