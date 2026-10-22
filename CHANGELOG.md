@@ -4,6 +4,49 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - TypeRig-inspired tools and the rest of the rescued backlog
+
+- Tools: Kerning Copy Rules expands current-master copy rules such as
+  `A|V A|W = T|o @ -5` into a pair list and copies it for Import Kerning
+  Pair List. It never changes the font.
+- Drawing: Stem Blend blends two layers of the current glyph with stem
+  compensation on each axis into a new active layer named like
+  `Stem 75x60 (Light)`, recorded as one Undo step. Names with @, # or
+  `|temp|`, master names and existing layer names are refused.
+- Tools: Symbol Tag Search, Pair Proof Generator and Layer Metric
+  Comparison search names and native tags, build pair proofs and compare
+  selected-layer measurements. None of them changes the font.
+- Contours (new category): Node Table edits X and Y of all own nodes of the
+  current layer with two-way selection sync. Node Slope And Handles sets
+  node slopes and cubic handle lengths as proportions or Hobby tensions.
+  Each Apply that changes coordinates is recorded as one Undo step.
+- Tools: Copy Layers From Font copies mapped layers from another open font
+  into the selected glyphs and never writes to the source font. Apply
+  Unicode Map adds Unicode values from a pasted JSON name map. Drawing:
+  Scale With Stem Compensation makes new scaled layers on checked masters
+  with per-master stem targets. Each write is one Undo step.
+- Other TypeRig panels, toolbars and tools map to existing Scriptmix tools
+  or native FontLab commands; TypeRig library, launcher and `.trglyph`
+  exchange code is retired. Ninety rescued third-party references
+  (robotics, virtual worlds, medical simulation, audio editors, build
+  utilities, generic widgets) are retired with their reasons.
+- `menu-adaptations.json`: a retirement whose job a FontLab command does
+  keeps disposition `retired`, and its reason starts with
+  "duplicate-of native" and names the command. The App floor moved out of
+  the records into each script's Setup line. Records for rescued files that
+  never had a menu identity have no `source_menu` key.
+  `tests/test_adaptation_records.py` pins these rules.
+- Destination hashes recomputed from committed files, including the Scriptmix
+  targets of the `round_coordinates` and `layer_backup` recipe rows and the
+  TypeRig Layer panel row.
+- The TypeRig tool tests now run in their own Python 3.11 process with the
+  installed App and Fly; README gives both test commands.
+- Active menus 90 -> 100; menu-identity adaptations 202 -> 222; retirements
+  153 -> 259; backlog 139 -> 13; 42 more source-only records (9 adaptations,
+  33 retirements). NOTICE gains the TypeRig and third-party reference
+  sections; generated pages under `src_docs/md/current/` cover the 10 new
+  tools.
+
 ## 2026-10-22 - Path Problem Report and Import Kerning Pair List
 
 - Tools: Path Problem Report scans the current master in small, cancellable

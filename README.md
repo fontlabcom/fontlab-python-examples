@@ -43,7 +43,12 @@ exporter reads reviewed static catalogue pages without running preserved code.
 Run `./build.sh` to build locally, or `--serve` for a preview. Site publication has
 separate whole-branch, route, accessibility and deployment gates.
 
-Run `uv run --locked python -m pytest -q tests`. Hash checks read the local
+Run `uv run --locked python -m pytest -q tests --ignore-glob
+'tests/test_issue122_R*.py'`. The TypeRig tool tests (`tests/test_issue122_R*.py`)
+import the installed App and the real Fly, so run them in their own Python 3.11
+process: `PYTHONPATH=<fontlab-fly>/src uv run --no-project --python 3.11 --with
+pytest --with <fontlab-fontlabapp> python -m pytest -q tests/test_issue122_R*.py`.
+Hash checks read the local
 preserved sources without importing or executing them. When testing an isolated
 checkout, set `FONTLAB_PRESERVED_ROOT` to the existing matching archive root.
 

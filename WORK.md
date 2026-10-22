@@ -14,6 +14,67 @@ this_file: WORK.md
 - Notes: `uv run --locked` created the project venv inside the worktree (git status stays clean, venv ignored). Only `tests/` was run; `tests_docs`, `lessons` suites are outside the T0 command.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 examples integration wave 5: TypeRig and third-party batches (R1a, R1b, R1c, R2, R3)
+
+- Base acb1798. Commits: 96208a7 (R1a), cf96160 (R1b), fae7429 (R1c),
+  b483592 (R2), 689c456 (R3), then this CHANGELOG/WORK/README commit. Not
+  pushed. Each commit staged explicit paths only.
+- Record rules (M9): native duplicates stay `retirements` with disposition
+  `retired`; their reason starts "duplicate-of native" and names the command
+  (14 rows: 10 menu identities, 4 source-only). `app_minimum` is dropped from
+  all rows; the floor is in each script's Setup line (Node Slope And Handles
+  gained "Setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0.", hash
+  94a16023 -> 91b91a61). Adaptation licences read "Apache-2.0 (independent
+  rewrite; source MPL-2.0)"; TypeRig retirements "MPL-2.0". The 42 R3 files
+  without a menu identity have records without `source_menu`. R3's Pairs and
+  Stats rows were dropped (R1b owns them). `tests/test_adaptation_records.py`
+  pins the schema and the README counts.
+- Manifests folded and removed (moved to the external discard folder):
+  `tests/data/issue122_R1a.json`, `tests/issue122_R1c_dispositions.json`. The
+  R1a, R1b, R1c, R2 and R3 tests now read `menu-adaptations.json` (R3 also the
+  preserved TypeRig tree); the temporary Stem Blend hash pin is gone.
+- Hashes recomputed from committed files (examples) and scriptmix 21d5788:
+  Stem Blend f7159e15 -> 7cdfda96 (2 rows), recipes round_coordinates
+  e6fb0321 -> 26221318 and layer_backup 82d80347 -> a093aac9, TypeRig
+  Layer.py f5e293da -> a093aac9. All 231 destination hashes match the
+  committed blobs at 689c456 / scriptmix 21d5788.
+- Counts (menus / menu-identity adaptations / retirements / backlog):
+  acb1798 90/202/153/139; 96208a7 92/208/157/129; cf96160 96/217/157/120
+  (new Contours category); fae7429 97/222/169/103; b483592 97/222/259/13;
+  689c456 100/222/259/13 plus 42 source-only records (9 adaptations, 33
+  retirements); array sizes 231/292.
+- Docs catalogue: each staged tree was exported with `git archive` and
+  `src_docs/current_menus.catalogue()` run there with
+  `/opt/homebrew/bin/python3.11 -B`; the 10 new pages, the Contours index and
+  the changed index files were staged by explicit path.
+- Test environments. The E tests import App from the sibling `src`; the R
+  tests require the installed App and real Fly. Both cannot share one
+  process (the first import wins), so the suite runs as two processes:
+  - EX: env of `verification/issue-122/sdd/cmd/ex.sh` plus
+    `PYTHONDONTWRITEBYTECODE=1`; `rtk proxy uv run --locked python -m pytest
+    -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'`.
+  - R: same env plus `SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0
+    PYTHONPATH=<fly archive>/src`; `rtk proxy uv run --no-project --python
+    /opt/homebrew/bin/python3.11 --with pytest --with <App 2937e3a archive>
+    python -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py`.
+  - Exports: `$TMPDIR/w5/<label>/fontlab-python-examples` with siblings App
+    2937e3a, scriptmix 21d5788 and Fly 61805af archives. Each export tree
+    equals its commit tree.
+- Results (exit 0 for every run): R1a EX 1758 passed, R 86; R1b EX 1758,
+  R 151; R1c EX 1758, R 204; R2 EX 1758, R 395; R3 EX 1759, R 497.
+- 689c456 export with `EXAMPLES_LEGACY_API_SOURCE=
+  /Volumes/Falstaff4T/fontlab-scripting-data/issue122/legacy-api-28bc505`:
+  `tests_docs` exit 0, 11 passed; Lessons (command from `lessons/README.md`,
+  `QT_QPA_PLATFORM=offscreen`, `EXAMPLES_APP_SOURCE=<App archive>/src/fontlabapp`)
+  exit 0, 199 passed, coverage 96.18%.
+- Ruff (`rtk proxy uvx ruff check --no-cache --target-version py311`) on the
+  10 new scripts and the 7 new or changed test files: exit 0 per commit.
+- Native holds (none run here): every new tool's Apply/Undo/Redo and
+  save/reopen; Stem Blend and Scale With Stem Compensation read-back under
+  the coordinate-rounding preference and the new layer staying non-master,
+  non-auto after Redo and reopen; Node Table `__smart_selected` writes; Copy
+  Layers From Font cross-font Undo/Redo with the source font unchanged.
+
 ## Issue 122 examples integration wave 4: recipe tools (E16)
 
 - Base c136980. Commits: 4534158 (E16), then this CHANGELOG/WORK commit.
