@@ -17,17 +17,14 @@ Fly. The root Python project builds documentation; it is not the runtime package
 ## Requirements and installation
 
 Use FontLab 9 with its embedded **Python 3.11 arm64** and supplied PythonQt.
-Use matching reviewed Fly, App and Lessons packages. Each menu's Setup line
-states its App minimum; the minimum in the Lessons package metadata does not
-cover every menu in this repository. FontTools is needed for pen and export
-lessons. TypeRig is not a runtime dependency of the rewritten TypeRig tools.
+Install `fontlab-fly`, `fontlab-fontlabapp` and `fontlab-python-lessons` in
+FontLab's embedded Python environment. Each menu's Setup line states its App
+minimum; the Lessons package minimum does not cover every menu. Install the
+Lessons `fonttools` extra for pen and export lessons. TypeRig is not required
+for the rewritten TypeRig tools. See [DEPENDENCIES.md](DEPENDENCIES.md) for
+package versions and documentation dependencies.
 
-The owner manages editable installs into FontLab. Do not install, uninstall or
-replace packages in FontLab's live Python directory. Canonical editable sources
-can affect a running FontLab session as soon as their files change.
-
-After the owner prepares the matching packages, put the required category
-folders from `Scripts/` in a FontLab Scripts location. Keep the category names
+Put the required category folders from `Scripts/` in a FontLab Scripts location. Keep the category names
 and one-level layout. The Lessons wheel also supplies its sixteen entrypoints
 under `share/fontlab-python-lessons/Scripts`; use one copy of each menu.
 FontLab loads the package code when a menu runs. Never add a QApplication,
@@ -47,9 +44,9 @@ snapshot can refuse Apply. Close the panel when finished.
   are refused.
 - **Tools > Kerning Copy Rules:** `A|V A|W = T|o @ -5` builds two pairs from the
   current-master T/o value minus five units. Copy the result into Import Kerning
-  Pair List, inspect the preview, then Apply as one Undo step.
+  Pair List, inspect the preview, then Apply. The edit is recorded as one Undo step.
 - **Contours > Node Table:** inspect the current layer's own nodes and edit X/Y.
-  Apply writes the coordinates as one Undo step. Stem Blend and Scale With Stem
+  The coordinate edit is recorded as one Undo step. Stem Blend and Scale With Stem
   Compensation instead create named layers; inspect those layers before saving.
 - **GetGo Fonts > GetGo - Audit a Real Font:** inspect a detached report from a
   packaged, hash-checked fixture. GetGo lessons use temporary copies, not the
@@ -179,11 +176,11 @@ licence and deployment checks. Build the separate runtime distribution with
 The 494 historical menu identities remain in `rescue-index.json`.
 `menu-adaptations.json` records 222 adaptations and 259 retirements. For 10 of them,
 the retirement reason names the native FontLab command that does the job.
-The remaining thirteen are GetGo workflows awaiting packaged native acceptance.
+The remaining thirteen are packaged GetGo workflows.
 Another 42 rescued TypeRig files never had a menu identity. Their records have
 no `source_menu` key: 9 adaptations and 33
 retirements, 4 of which name a native FontLab command.
-These records do not mean all workflows are natively accepted.
+These records describe source ancestry and workflow disposition.
 
 `rescued/...` paths identify an external archive, not files shipped here:
 `fontlab-python-examples-rescued.tar.gz`, SHA256

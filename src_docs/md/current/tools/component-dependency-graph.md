@@ -25,8 +25,7 @@ Result:
     The clipped-force 30ms single-arrow scene is local and changes no font data.
     Captured references are a snapshot; Refresh after font/master changes.
 Compatibility:
-    Native PythonQt virtuals, painting and complete font/cache/history/dirty/
-    reopen preservation remain pending. No original helper/body is executed.
+     No original helper/body is executed.
     Historical source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 
 Run **Tools > Component Dependency Graph** from FontLab's Scripts menu.
@@ -36,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/96ef97f449cee811078a438fa016ae747623ec788be2b30e53ae2ef211c20a2b.py)
+[Python source](../../../../.build/menu-sources/70088ae84ccd2889a4f2217b088f780b13aee3e1f18ce04b4f50bf6399407555.py)
 <!--/codeinclude-->

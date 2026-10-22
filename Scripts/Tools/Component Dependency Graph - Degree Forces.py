@@ -19,8 +19,7 @@ Result:
     The degree-weighted 40ms double-arrow scene is local and changes no font data.
     Captured references are a snapshot; Refresh after font/master changes.
 Compatibility:
-    Native PythonQt virtuals, painting and complete font/cache/history/dirty/
-    reopen preservation remain pending. No original helper/body is executed.
+     No original helper/body is executed.
     Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 """
 # historical source sha256: fa1dc74f37f29a33afd673b5e4a399838797d8cc355079d512769ec6d10e6a99

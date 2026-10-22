@@ -25,7 +25,6 @@ Result:
     Inspect all matching captured glyph names and their individual captures.
     Positions and lengths use Qt UTF-16 units. The lab changes no font data.
 Compatibility:
-    Native PythonQt, complete getter/cache/history/dirty/reopen acceptance pending.
     Independent implementation; no original body or source helper is executed.
     Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
 
@@ -36,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b87e36a21ad56c768f03e3379bfedba27457df556720a8347bd63beeab174871.py)
+[Python source](../../../../.build/menu-sources/2df5bae4ef27ebc86571a689253144d890b8cf6645d2a41056727e11a786d892.py)
 <!--/codeinclude-->

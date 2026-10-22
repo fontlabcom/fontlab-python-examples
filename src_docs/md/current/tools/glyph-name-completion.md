@@ -21,8 +21,7 @@ separate punctuation/modifier, focus, suffix, popup width and About/Exit policy.
 Refresh errors remove old completions but keep the draft. About information is
 shown in the modeless status area. A failed disconnect refuses Close for retry.
 Close releases owned callbacks and models; no original body is executed.
-Compatibility: Actual PythonQt/font/cache/history/dirty/save/reopen acceptance
-is pending. This command edits no font, selection, preference, file or Output.
+Compatibility: Uses FontLab's supplied PythonQt. This command edits no font, selection, preference, file or Output.
 Historical source: rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
 Original source/resources are archived outside this repository and are not bundled by this facade.
 
@@ -33,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bd556b3fca6983a6c0052bfc842c59e65baa75436075a99ac069b59cc19cab0d.py)
+[Python source](../../../../.build/menu-sources/5c04ce204cfb374918459cb135a89be0b19a9ed201488703cff453c97f157d92.py)
 <!--/codeinclude-->

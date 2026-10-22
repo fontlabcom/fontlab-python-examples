@@ -17,8 +17,7 @@ Design: Share generic date fields, signal/lifetime mechanics and reports in App,
 through Fly. Preserve part3's 1900–3000 limits and MMM d yyyy editor format.
 Clear only owned date marks after page/year/switch changes; keep named colours
 readable on an owned light date surface inside either host theme.
-Compatibility: Native PythonQt/font/getter/cache/history/save/reopen qualification
-is pending. The separate part2 calendar keeps its own controls and defaults.
+Compatibility: Uses FontLab's supplied PythonQt. The separate part2 calendar keeps its own controls and defaults.
 Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
 Original source/resources are archived outside this repository; this command does not execute them.
 """

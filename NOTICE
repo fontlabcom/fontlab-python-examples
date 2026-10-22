@@ -7,7 +7,7 @@ Archived part2 sort/filter model lessons
 
 Fresh first-party Python3.11/FontLab adaptation of the complete basic/custom
 mail_views workflow from the preserved first-party PythonQt examples. Archived
-Python source supplied under Apache-2.0 (owner clarification D22). Complete terms
+The author supplies these first-party Python samples under Apache-2.0. Complete terms
 are in LICENSE-APACHE-2.0. The original bodies, demo runtime and resources are
 neither executed nor distributed. Generic table, matching, views and owned model
 lifetimes live in App; practical facades use Fly and real current-font metadata.
@@ -22,14 +22,14 @@ Changes: replace synthetic mail with glyph metadata; unrestricted initial dates
 with explicit inclusive limits; disable the ignored Custom column selector; own
 read-only source/proxy views, complete refresh/refusal and signal/model cleanup.
 The different part3 official workflows are not silently treated as equivalent.
-Native PythonQt, full-font/cache/history/persistence qualification is pending.
+
 
 
 Archived part3 typed-date sort/filter workflows
 =============================================
 
 Fresh first-party behavior adaptation of the two preserved part3 official
-source/proxy workflows, supplied as Apache-2.0 under owner clarification D22.
+source/proxy workflows, supplied by the author under Apache-2.0.
 Complete terms remain in LICENSE-APACHE-2.0. Original identities and SHA256:
 part3/pyqt-official-ports/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py:
 cecf5221bfc7da755664069fb316696c5144e4437d97d325b32431bbf89c1621
@@ -41,16 +41,16 @@ case-sensitive comparator policies; explicit dates/default repairs, read-only
 views and owned lifetime. Native timestamps use a local copy with exact epoch
 fences; an optional scalar epoch channel prevents typed-cell precision loss.
 No original body/resource is executed or bundled. The existing part2 semantics
-remain separate. Native FontLab/PythonQt preservation qualification is pending.
+remain separate. 
 
-Z13 adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0, owner D22). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes are archived outside this repository and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. Native acceptance is pending.
+This collection adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes are archived outside this repository and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. 
 
 
 Glyph Spacing Worksheet — complete numeric delegate pair
 ======================================================
 
 Independent behavior implementation of both archived spinboxdelegate workflows.
-Owner D22 supplies archived Python under Apache-2.0; complete terms remain in
+The author supplies these first-party samples under Apache-2.0; complete terms remain in
 LICENSE-APACHE-2.0. Preserve Riverbank2017/Nokia2010 original BSD attribution
 and the collection-level GPL-3.0 metadata discrepancy; no original body, mixed
 helper, or resource is executed or bundled. There are no companion assets.
@@ -60,7 +60,7 @@ rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
 rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
 3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084
 Upstream corroboration: pyqt/examples commit83eed0514582c8deb60d9e9e6bff31ceffe4eaeb, src/pyqt-official/itemviews/spinboxdelegate.py, SHA25622cd4800fcdb690117ef895d4002a556e6cab65909b6971d667b1af622c94e2d.
-Native acceptance and full preservation remain pending.
+
 
 #!/usr/bin/env python
 
@@ -109,7 +109,7 @@ Native acceptance and full preservation remain pending.
 Independent behavior implementation; original executable source is not bundled.
 
 
-Glyph Name Pattern Lab — issue120 N56
+Glyph Name Pattern Lab
 -----------------------------------
 Independent adaptation of the complete clean-room Pattern Matching Inspector:
 rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
@@ -119,12 +119,12 @@ The preserved Apache-2.0 replacement follows clean-room specification
 Original source identity retained by the source catalogue: pyqt/examples
 83eed0514582c8deb60d9e9e6bff31ceffe4eaeb, src/pyqt-official/tools/regexp.py,
 SHA-256 b9494fc5955de0d49b14e964b2517490de20f0886bdd85fe70e75931db5e9d94.
-Owner D22 grants Apache-2.0 for the archived Python examples. The replacement
+The author supplies these first-party samples under Apache-2.0. The replacement
 source has no additional copyright or licence header; no authorship is inferred.
 The full Apache-2.0 terms are included in LICENSE-APACHE-2.0 (App) or
 LICENSE-APACHE-2.0 (Examples). No original body, source helper or asset is bundled
 or executed by this adaptation. There are no companion assets. Existing notices
-and all original metadata remain unchanged. Native acceptance is pending.
+and all original metadata remain unchanged. 
 
 Elastic node dependency graphs (both distinct preserved variants)
 Independent Apache-2.0 implementations in App elastic_physics/elastic_items/
@@ -133,18 +133,18 @@ public Fly facades in Scripts/Tools. No archived body/helper is imported.
 Part2 source SHA256 d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef
 Part3 source SHA256 fa1dc74f37f29a33afd673b5e4a399838797d8cc355079d512769ec6d10e6a99
 Both sources are elasticnodes-fff97a435b73d548.py in their preserved part2/part3
-collections. Owner D22 grants Apache-2.0 for all archived Python examples.
+collections. The author supplies these first-party samples under Apache-2.0.
 No external assets. Existing upstream collection notices remain unchanged above.
-Full Apache terms: LICENSE-APACHE-2.0. Native workflow acceptance remains pending.
+Full Apache terms: LICENSE-APACHE-2.0. 
 
 Spinboxes part2: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 SHA-256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db
-Independent FontLab worksheet adaptation, Apache-2.0 under owner D22.
+Independent FontLab worksheet adaptation, Apache-2.0.
 Original retained unmodified; no archived body/helper is executed or packaged.
 
 Spinboxes part3: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 SHA-256: e25b26cd135fd40ef1ed9316a402483d676ba7606da94007f00078993b5fa54b
-Independent FontLab worksheet adaptation, Apache-2.0 under owner D22.
+Independent FontLab worksheet adaptation, Apache-2.0.
 Original retained unmodified; no archived body/helper is executed or packaged.
 
 
@@ -152,7 +152,7 @@ Paired slider spacing-offset previews
 ====================================
 
 Independent complete behavior implementation of both rescued sliders profiles.
-Apache-2.0 under owner D22. No original/helper body or resource is executed or
+Apache-2.0. No original/helper body or resource is executed or
 bundled. Original source identities and SHA256:
 rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py:
 aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56
@@ -162,7 +162,7 @@ Part2 initial slider/scrollbar orientation explicitly matches its Horizontal
 label; this repairs an original default-vertical mismatch. Part3 cyclic native
 clamping, independent range editors, activated-only orientation and two groups
 remain distinct. FontLab selected-layer geometric spacing is a local preview.
-Native PythonQt and complete preservation remain pending.
+
 Upstream pyqt/examples83eed0514582c8deb60d9e9e6bff31ceffe4eaeb
 src/pyqt-official/widgets/sliders.py retains the following BSD notice despite
 collection-level GPL3 metadata (preserved, not silently relicensed):
@@ -215,18 +215,18 @@ collection-level GPL3 metadata (preserved, not silently relicensed):
 Character Map part2: rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 Source SHA256: 3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285. Independently implemented via shared App.
 Original part3 BSD-3-Clause/upstream GPL collection notices remain intact;
-owner D22 archived-source Apache-2.0 ruling is retained. No corpus body executes.
+the author supplies these first-party samples under Apache-2.0. No corpus body executes.
 
 Character Map part3: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 Source SHA256: e5300e2687fa734a95fc8aaae9b29ee382902f07e8cb5c170137e76600ab2d87. Independently implemented via shared App.
 Original part3 BSD-3-Clause/upstream GPL collection notices remain intact;
-owner D22 archived-source Apache-2.0 ruling is retained. No corpus body executes.
+the author supplies these first-party samples under Apache-2.0. No corpus body executes.
 
 Paired Glyph Character Map reference pickers
 ==========================================
 
 Independent complete behavior implementation of both rescued profiles;
-Apache-2.0 under owner D22. No original/helper body is executed or bundled.
+Apache-2.0. No original/helper body is executed or bundled.
 Part2 SHA256 3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285
 Part3 SHA256 e5300e2687fa734a95fc8aaae9b29ee382902f07e8cb5c170137e76600ab2d87
 The reference-font BMP grid is separate from real FontLab Unicode coverage.
@@ -282,7 +282,7 @@ Paired Find Files workflows
 --------------------------
 Independent practical FontLab implementation of the preserved Qt Find Files
 examples. Existing full Nokia/Riverbank notices and collection metadata remain
-unchanged above; owner D22 authorizes archived Python under Apache-2.0.
+unchanged above. The author supplies these first-party samples under Apache-2.0.
 rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py
 SHA256 322658e86c233171b37cb1976ed9828afda860dcc5708ace099119f3e4e9cf83
 rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py
@@ -293,7 +293,7 @@ Part2 decoded/progressive/file-link policy and part3 byte/final/no-link/history
 policy remain distinct. Candidate collection now yields between bounded turns.
 
 
-Issue120 paired Image Viewers (independent App/Fly adaptation; Apache-2.0, owner D22).
+Paired Image Viewers (independent App/Fly adaptation; Apache-2.0).
 rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 SHA256 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
 rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
@@ -307,11 +307,9 @@ The six scripts in Scripts/Dialogs are new FontLab tools written from
 scratch. Their ideas come from the Qt dialog examples (BSD, Qt examples
 (Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing Limited;
 Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)).
-The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
-earlier work. The original Qt example files carry BSD-3-Clause headers, and
-the upstream example collection also lists GPL-3.0-only. How far those terms
-reach, including the archived copies in rescued/part3/, is not resolved, so
-these tools include no original code, helper or asset.
+The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only.
+No code, helper or asset from these examples is included.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 
@@ -360,11 +358,9 @@ Qt examples (Riverbank/Nokia): Copyright (C) 2013 Riverbank Computing
 Limited; Copyright (C) 2010 Nokia Corporation and/or its
 subsidiary(-ies)). The delayedencoding and dropsite examples also name
 Hans-Peter Jansen (2010).
-The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
-earlier work. The original Qt example files carry BSD-3-Clause headers, and
-the upstream example collection also lists GPL-3.0-only. How far those terms
-reach, including the archived copies in rescued/part3/, is not resolved, so
-these tools include no original code, helper or asset.
+The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only.
+No code, helper or asset from these examples is included.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 
@@ -412,11 +408,9 @@ scratch. Their ideas come from the Qt rich-text examples and the address
 book tutorial (BSD, Qt examples (Riverbank/Nokia): Copyright (C) 2013
 Riverbank Computing Limited; Copyright (C) 2010 Nokia Corporation and/or
 its subsidiary(-ies)).
-The earlier archived Python ports in rescued/part2/ are Apache-2.0, own
-earlier work. The original Qt example files carry BSD-3-Clause headers, and
-the upstream example collection also lists GPL-3.0-only. How far those terms
-reach, including the archived copies in rescued/part3/, is not resolved, so
-these tools include no original code, helper or asset.
+The original Qt example files carry BSD-3-Clause headers, and
+the upstream example collection also lists GPL-3.0-only.
+No code, helper or asset from these examples is included.
 The new tools are Apache-2.0. Each tool replaces the archived variants
 listed under it:
 

@@ -19,7 +19,6 @@ Result:
     Inspect all matching captured glyph names and their individual captures.
     Positions and lengths use Qt UTF-16 units. The lab changes no font data.
 Compatibility:
-    Native PythonQt, complete getter/cache/history/dirty/reopen acceptance pending.
     Independent implementation; no original body or source helper is executed.
     Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
 """

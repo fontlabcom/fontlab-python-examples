@@ -4216,3 +4216,567 @@ N270 .159 admitted complete .156 revision3 paired Image Viewers only after exact
 N270 complete private source gates: App5684PASS, Scriptmix1016PASS+1existing skip, Examples568PASS. Initial isolated Scriptmix launcher omitted its repository import path; retained collection failure, corrected launcher only, complete suite passed. All308 prior App files/162menus exact; final322App/166menus. Ordinary artifact and full installed gates pending.
 
 N270 final ordinary .159 source/artifact checkpoint: each seven-consumer graph15586PASS+3existing skips; four actualQt/archive new-family lanes170PASS each (680 total). Both strict sites and15+11doc testsPASS;166exact source routesPASS. Original whole scopes234App/24GL/74Examples/58Scriptmix all80statement+80branch per module,zero exclusions,both lanes. Ordinary wheel/sdist322App+unchanged115GL runtime exact; all308priorApp/162prior menus exact;17291borrowed dependency bytes retained including13previouslyqualifiedN204cache additions. Original CharacterMap Qt5 36/36 each; Qt6 retains34/36 with2known copy failures, colddefaultsPASS this round; no waiver or native claim. Failed own test-launcher/interaction-fixture/auditor attempts retained in external evidence. Full original writer/font/history/reopen/printer/OS and inherited native holds remain open. Evidence verification/issue-120/complete-union-z60.
+
+
+## Public wording update — 2026-10-22
+
+- Updated 46 menu module docstrings, README installation instructions, NOTICE,
+  dependency tables, manifest licence prose and authored guides. Regenerated
+  current menu pages with `./build.sh`; all 100 match their source docstrings.
+- Executable ASTs, Mark Colour Board bytes, manifest structure/counts/paths/hash
+  pins and every NOTICE copyright credit/full licence block remain unchanged.
+- Three wording assertions changed: plain Apache-2.0 label, independent spacing
+  implementation description and a complete revised NOTICE hash in place of
+  the obsolete prefix hash. Existing licence-presence assertions remain.
+- Requested uv cache is unwritable in the sandbox: initial core command exit 2
+  before collection. Gates used /private/tmp/examples-wording-uv-cache and
+  /private/tmp for cache and TMPDIR, retaining both requested source roots.
+- Baseline core: exit 0, 1747 passed, 92 skipped. Final core: exit 1, 1717 passed,
+  30 failed, 92 skipped. Failures are exact-byte hashes/frozen manifest prose
+  affected by the requested wording edits. Pins and historical snapshots were
+  preserved; permission to refresh affected destination pins is outstanding.
+- TypeRig: exit 0, 496 passed, 7 skipped. Docs: exit 0, 11 passed. Build: exit 0.
+- Final requested wording scan: no matches (rg exit 1). No native result claimed.
+- Logs: /private/tmp/examples-wording-{core-final,typerig,docs-final,build-final}.log.
+
+
+## Delivered-byte pin refresh — 2026-10-22
+The public-wording pin hold above is resolved by the user ruling: destination pins identify delivered bytes. Refreshed only pins naming the 46 scripts edited in this round. Source-side hashes, unedited-script pins, paths, counts and assertions remain intact. Expected licence prose in six frozen row snapshots now matches the plain public wording (109 fields).
+Fresh gates with both requested source roots and the writable `/private/tmp` cache/temp substitution:
+- Core: exit 0; 1747 passed, 0 failed, 92 skipped.
+- R: exit 0; 496 passed, 0 failed, 7 skipped.
+- tests_docs: exit 0; 11 passed, 0 failed.
+- `./build.sh`: exit 0.
+- Final forbidden-wording scan: no hits, rg exit 1.
+Wait, but a green offline gate does not establish native host behaviour. No native run or result is claimed. The executable AST of every script is unchanged. No test assertion was removed; the NOTICE test has one additional explicit Apache grant assertion.
+### Changed test modules across this wording round
+- `tests/test_sort_filter_adaptations.py`: expected licence label is `Apache-2.0`.
+- `tests/test_spacing_worksheet_adaptations.py`: expected module-docstring phrase is `Independent behavior implementation` in place of the removed process-status word.
+- `tests/test_spacing_menu_integration.py`: old NOTICE-prefix assertion is now an exact complete-NOTICE hash assertion plus an explicit Apache grant check; all existing licence-file hashes remain.
+No Python test module needed a further change for the pin refresh: their exact comparisons read the six JSON fixtures listed below.
+### Script digest values
+Every pin location below uses this exact old-to-new mapping.
+| Edited script | Previous SHA256 | Delivered SHA256 |
+| --- | --- | --- |
+| `Scripts/Dialogs/Expandable Glyph Search.py` | `e6147f77e19c62a639ce14a32819e946dd9108441c86c7a8ea86d9886372843b` | `9a4ff1b05f30320005c281b7010b9171ba48c3c70e763b1f779480d4714e6268` |
+| `Scripts/Dialogs/Font Glyph Inventory Tabs.py` | `25dd3d75fe1628b9c86c7a84dfe00a688b4a61ecd5e736cb532b7db79b9bff9b` | `797162a922d56b56cf76d3e53c69b43cee37d361fa68462a189a7bb0be437c7d` |
+| `Scripts/Dialogs/FontLab Script Scaffold Wizard.py` | `842606c55822c188b4b8d13191f2482d76e31bf12c8510277a8283114dac06f9` | `918e2e1c55fe88516fafada3315a460917d67de27d8dda1d747fdc61c560eaef` |
+| `Scripts/Dialogs/Glyph Batch Recipe Settings.py` | `ad097feee6787d84b339702960e097720fb4609e80cd5bc11d241ad5bb48241e` | `4c813f2fe58c3efd6ba797ff205fe4433a94c8f7f969dcebf94477cd5ad6dae1` |
+| `Scripts/Dialogs/Glyph Proof Batch Wizard.py` | `0a1cfd94073b4a026e2b6faa1afcd910c2baf0ea7b32044eb1f52794bb0ec2a1` | `8bf0b936cf5f16c698d516e3a96da999955a2ad260269ae08a7ad142640f420e` |
+| `Scripts/Dialogs/Proof Text Coverage Dialog.py` | `dc6393a47da104ae698c9df5186808ac962d30195ebd4627f19c4a170bebc71e` | `5d1b332cbf9e712f13e2064d8b0de95be609fb33315acd2c97b0df3931d28009` |
+| `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` | `a25a5f916829c8b62a6403acf1b0ee8c6a5d63c73e1703e8023c1e3524f6b8df` | `3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476` |
+| `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` | `b9944c3f3c2574c9d79cbe74899a29635a81c32da55d39b93b25fd600649c4b7` | `cad7eeef1119a1c0a3ea924c29bb26b6a87b62b189c287ee1b1891ec68c8d743` |
+| `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` | `93deab797e09ed5d519aeb0f73a9323b8404a513e0a2b0a29b1b7aed159b6448` | `e14e2953a78a67de7787b83d98751b1365cdb27cbcf0b5dac9dce8299e3640e0` |
+| `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` | `1a8ac018fe073a75dd42c9c85d30260e16eaeca66f1bf75ce4359f22bd18cedf` | `abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec` |
+| `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` | `1a06dcf1a4655b7b980ed4487d931f697a33a74e80300f771dcd8d4e0037ca7f` | `c29ad6050c068858297109992daa71256c280995c67b06cad55f932993a7d076` |
+| `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` | `dcde843f49f5e1cf7ed159deb0a86594ecfac8c29866f7c3b056ae4e9d939b0e` | `ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794` |
+| `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` | `24496b51e2c3344d3057c49551e055203106b4f44757b9db26ee405ab06e4f0b` | `1764def4d2c07a39a4038ac4510d300b63ea9a18b34d59bf369f3a0e0871b53a` |
+| `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` | `01bb214bcf8bbf85a8836dc3ce54d9ddfcdcb99da2f16067c858d29896c7c723` | `952f3f4ae658259702e06928d0dfe19c184d2828986679ecf3e6cbb59f73eba2` |
+| `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` | `d26a6f88afcf940ff074877c44ca204739e07a8048cf87f38933441ee257e576` | `3300f5b1c76e89cce4d8ae4672eb7ff5965ba5062ff8e2212a09a5d35d1f7d98` |
+| `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` | `399d267c693a43e1854cecb31fe02633b86554bdfff5850adc8ff1828d9c4e7f` | `9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675` |
+| `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` | `6a73beedbdc2adf8b1d4d0d8dc6527453cb8bffa3afdade404331fb2d1ccd0ca` | `4e1496a86ad04d98a1a5e813587ab49e1615d75e888889b43a13c3a00a771cde` |
+| `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` | `91d1fc019b6936e4cd329f7abd654320c7277229696190beef4b90b140bf3d36` | `989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1` |
+| `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` | `ba0f5f8fd04904dc18e5097974ce1066632a5b548fb52b1c67b82617c21e7ed5` | `1ddd0fe74439a5d73e558c61a4dd428bd3ab12d1fc155c48bf5b73a1e871c519` |
+| `Scripts/Models/Glyph Filter Model with Date Range.py` | `41f6f8a9af273c568b2190321d56fb7b41b96d50c069df5e37024be12ffa734e` | `ba0c7bf250aacb6c953808651aadc61a97d72093d795203e6022498351aa2901` |
+| `Scripts/Models/Glyph Filter Model with Local Dates.py` | `9e0a2d4677233c80473705c39a0c1417628eb3ca9650253eb41c3fe4809ca1bf` | `ac37f47f50f74bdfa1713e2d1326a3794047bfdc8c5f49c8e0b6b736a674b0aa` |
+| `Scripts/Models/Glyph Metadata Outline.py` | `0a2c7cb46bc2ef0f90cd721b0a612541b435ed9984e2f249888d2a889d3b24ca` | `96fe704f5e47a73b3c68185030d32028d670c1c136bbf83c5e91e1218f427e01` |
+| `Scripts/Models/Glyph Metadata Tree.py` | `c39b745bfe36f90a5d3fb11fb82f27780eea79fd083a91bed56cf134b56d8c3f` | `77b3fe830e2d6bb7dc015c477c0a66464232ebe6d705aa7a5743d13066d8a376` |
+| `Scripts/Models/Glyph Sorting and Filtering with Dates.py` | `553d42d12c8809686aaa2c76b4b0b0995f28b1af59109ad98a7a1f59b5822127` | `dcd71d55cd5b386fec96d0c0be81b3c696e5b76c0042092128ee4c472210f2d9` |
+| `Scripts/Models/Glyph Sorting and Filtering.py` | `ae52266fa47673e9b9bc34fdbed65e5c95b49922536b840a02335dd5e2fe8943` | `299a8ca285fbc8ad7db15ca96f5c003b0339523d28c61a92d22e85f305a43155` |
+| `Scripts/Tools/Component Dependency Graph - Degree Forces.py` | `f9b8b9196961188ac2f4f6b2d6e230e043bb54fcf0f90df534973259a6bbc403` | `8e06e964ee865fa2e67cf00c85085b6ca69a01a56a216718732b29308ffab017` |
+| `Scripts/Tools/Component Dependency Graph.py` | `96ef97f449cee811078a438fa016ae747623ec788be2b30e53ae2ef211c20a2b` | `70088ae84ccd2889a4f2217b088f780b13aee3e1f18ce04b4f50bf6399407555` |
+| `Scripts/Tools/Editable Glyph Outline.py` | `d7e150f4ea743b1f18ad39de8df5d28e06166a9ad871e77ede2d2fa719e66260` | `be44932d5b698104de5f0f6b9ccaed920fb57a231e302d7eedd87e75b2acbcba` |
+| `Scripts/Tools/Editable Glyph Tree.py` | `4142e8b8d99551ec1ac986a4de439188f65f4749ceec0c65ee3729cdcd5849ff` | `2dbe33a040df7bbe1de8034ccd3e98023140491a61b53758db649f5c04a4d7c5` |
+| `Scripts/Tools/Find Font Source Files - Bytes.py` | `ee79fc2c17cae5eede6ebdbd3f9b40170d4a19c7702a031824482b7d5e95090c` | `fef9046e07f776c89e0114d314d0e5ae0cbb2651c217b965d3dd73ff654d4474` |
+| `Scripts/Tools/Find Font Source Files.py` | `76ee7dd33db419a14f81d2bf78771b47edbb1b7b391d6069a6d4108d772f7f54` | `29d6ba975155183d8219d045f71f921ae9c2a30be28817504853489d21c424b2` |
+| `Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py` | `c5c06951b975c0c03ad1ff0de89bcf5aaddeb3fbd0e23af15a66a7e691fb5708` | `ddb30a5f5f77996db0c5756b241c2b21b583ed0fb00379cfaea5bafefeb17f6a` |
+| `Scripts/Tools/Font Reference Image Viewer.py` | `73e770f7e4f6e448e43564fb73f452eb0a6d4417716f01636905bfa084ea9e46` | `e83511b02e33d1c71c2c52d553c19eb0f36e6b3cc5748e353c07a5e33cc5b927` |
+| `Scripts/Tools/Glyph Name Completion with Focus.py` | `9435daba1184f234c2635375021e30b24ef97697f138296696dbbf91ba85e575` | `366616b0f3471f68e30db27b789cd57a4fc5a79174114348cd08cc0f5821c7e9` |
+| `Scripts/Tools/Glyph Name Completion.py` | `bd556b3fca6983a6c0052bfc842c59e65baa75436075a99ac069b59cc19cab0d` | `5c04ce204cfb374918459cb135a89be0b19a9ed201488703cff453c97f157d92` |
+| `Scripts/Tools/Glyph Name Pattern Lab.py` | `b87e36a21ad56c768f03e3379bfedba27457df556720a8347bd63beeab174871` | `2df5bae4ef27ebc86571a689253144d890b8cf6645d2a41056727e11a786d892` |
+| `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` | `7ea24956c4a6d8c3ab89badcc3bb9eeaaf636f496adaa7171559bf75b07de7e0` | `a644529c410dd69c13d2ac8f1d405671889fc65a7d917b4234c8cc1bddcea5e8` |
+| `Scripts/Tools/Glyph Spacing Worksheet.py` | `354fa6c78e1297a601af54cf3e719da700345b15565d4cd866ec49f907d427b7` | `0dc838637bc47003de74a243c900c39bb52630fee8bd8e73c87d71bfb3bb394e` |
+| `Scripts/Widgets/Glyph Character Map - Styles.py` | `37e86445fbd4ac20830d9c763f8a1f9de642a3be91e6021ed713597815cb0dcc` | `36d8099dddc4237aa19e893fa4b4a7306a587d3352a38d4e578744aca94098d6` |
+| `Scripts/Widgets/Glyph Character Map.py` | `8ee528c8b453d4f1814dc46f28f0e7eb1e937e4f09b1030f9de13562fbc18f1b` | `7e19652d32e68509d8180ea0e66d889d4908fa61761ebc312ddba72f610844b6` |
+| `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` | `28346ef945a8502c6d47667fba1a1f18b13c00f335b7d249de0f36ea106c6e15` | `d03bc005262397d6f56b210906120c17145bab42dd67dd8e0bf197c417e19f77` |
+| `Scripts/Widgets/Glyph Metrics and Revisions.py` | `bca1d62526695abce0c4cbeeb7e6ee33070a8453a8ac64c094712848f5392af9` | `b0a3fe65b0c8d968743a405f95f6e978e6541a1a0f31aea2aebb06afa70018fa` |
+| `Scripts/Widgets/Glyph Modification Calendar with Formats.py` | `f32938d8f56834e4cd9d7c3b87cedb2008687f666d2c01ed0dea48065d98ddbf` | `2b4be40ee762236f25ab2ef6b0decfb86539e31a9dbc5a18c5a8ca6cf7f78b42` |
+| `Scripts/Widgets/Glyph Modification Calendar.py` | `989ee48a51d1cb127df6581b43f2c1ec32e427a515a1b10b686dbd3fbdb49930` | `709d9bf9403bd14bb840ddb635d951150e3703603a3f6e3f30ead8a35054ab9c` |
+| `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` | `dfb26bae727bb30ba63ea10e704365ba88296f0d68b30d17039353317f5fae65` | `3dae428ffd72cfba0ca4d1f1640f8021c4371309354b62c4f3bcbcf28f63bdb6` |
+| `Scripts/Widgets/Glyph Spacing Offset.py` | `b802b2101aea677e478a041324a577f662482b97d31210a72893d246675e49bf` | `ac699844bff777d9d38c8cf364db5695f0109cb303c6a8bd8ba185e8eac9e1bb` |
+
+### Every refreshed destination pin
+Locations use JSON Pointer syntax (`~1` means `/` in a dictionary key). Each row retains the existing pin and comparison; only its expected digest changed.
+| File | JSON Pointer | Edited destination |
+| --- | --- | --- |
+| `menu-adaptations.json` | `/adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `menu-adaptations.json` | `/adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `menu-adaptations.json` | `/adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `menu-adaptations.json` | `/adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `menu-adaptations.json` | `/adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `menu-adaptations.json` | `/adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `menu-adaptations.json` | `/adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `menu-adaptations.json` | `/adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `menu-adaptations.json` | `/adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `menu-adaptations.json` | `/adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `menu-adaptations.json` | `/adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `menu-adaptations.json` | `/adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `menu-adaptations.json` | `/adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `menu-adaptations.json` | `/adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `menu-adaptations.json` | `/adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `menu-adaptations.json` | `/adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `menu-adaptations.json` | `/adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `menu-adaptations.json` | `/adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `menu-adaptations.json` | `/adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `menu-adaptations.json` | `/adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `menu-adaptations.json` | `/adaptations/21/destination_sha256` | `Scripts/Widgets/Glyph Character Map.py` |
+| `menu-adaptations.json` | `/adaptations/22/destination_sha256` | `Scripts/Widgets/Glyph Character Map - Styles.py` |
+| `menu-adaptations.json` | `/adaptations/23/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/24/destination_sha256` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `menu-adaptations.json` | `/adaptations/25/destination_sha256` | `Scripts/Tools/Font Reference Image Viewer.py` |
+| `menu-adaptations.json` | `/adaptations/26/destination_sha256` | `Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py` |
+| `menu-adaptations.json` | `/adaptations/27/destination_sha256` | `Scripts/Dialogs/FontLab Script Scaffold Wizard.py` |
+| `menu-adaptations.json` | `/adaptations/28/destination_sha256` | `Scripts/Dialogs/FontLab Script Scaffold Wizard.py` |
+| `menu-adaptations.json` | `/adaptations/29/destination_sha256` | `Scripts/Dialogs/Glyph Batch Recipe Settings.py` |
+| `menu-adaptations.json` | `/adaptations/30/destination_sha256` | `Scripts/Dialogs/Glyph Batch Recipe Settings.py` |
+| `menu-adaptations.json` | `/adaptations/31/destination_sha256` | `Scripts/Dialogs/Expandable Glyph Search.py` |
+| `menu-adaptations.json` | `/adaptations/32/destination_sha256` | `Scripts/Dialogs/Expandable Glyph Search.py` |
+| `menu-adaptations.json` | `/adaptations/33/destination_sha256` | `Scripts/Dialogs/Proof Text Coverage Dialog.py` |
+| `menu-adaptations.json` | `/adaptations/34/destination_sha256` | `Scripts/Dialogs/Proof Text Coverage Dialog.py` |
+| `menu-adaptations.json` | `/adaptations/35/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/36/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/37/destination_sha256` | `Scripts/Dialogs/Glyph Proof Batch Wizard.py` |
+| `menu-adaptations.json` | `/adaptations/38/destination_sha256` | `Scripts/Dialogs/Glyph Proof Batch Wizard.py` |
+| `menu-adaptations.json` | `/adaptations/73/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/75/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/83/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/85/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/86/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/89/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/93/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/95/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/105/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/112/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `menu-adaptations.json` | `/adaptations/116/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/138/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/142/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/147/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/151/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/155/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `menu-adaptations.json` | `/adaptations/156/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/162/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `menu-adaptations.json` | `/adaptations/163/destination_sha256` | `Scripts/Dialogs/Font Glyph Inventory Tabs.py` |
+| `menu-adaptations.json` | `/adaptations/169/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `menu-adaptations.json` | `/adaptations/181/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `menu-adaptations.json` | `/adaptations/187/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet.py` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet - Frameless.py` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Pattern Lab.py` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset.py` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset - Stacked.py` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Glyph Name Pattern Lab.py` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Glyph Spacing Worksheet - Frameless.py` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Tools~1Glyph Spacing Worksheet.py` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/elastic-baseline.json` | `/menus/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/elastic-baseline.json` | `/adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/elastic-baseline.json` | `/adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/elastic-baseline.json` | `/adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/elastic-baseline.json` | `/adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/elastic-baseline.json` | `/adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/elastic-baseline.json` | `/adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/elastic-baseline.json` | `/adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/elastic-baseline.json` | `/adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/elastic-baseline.json` | `/adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/elastic-baseline.json` | `/adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/elastic-baseline.json` | `/adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/elastic-baseline.json` | `/adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/elastic-baseline.json` | `/adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/elastic-baseline.json` | `/adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/elastic-baseline.json` | `/adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet.py` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Find Font Source Files.py` | `Scripts/Tools/Find Font Source Files.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Find Font Source Files - Bytes.py` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet - Frameless.py` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Pattern Lab.py` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Character Map.py` | `Scripts/Widgets/Glyph Character Map.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset.py` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Character Map - Styles.py` | `Scripts/Widgets/Glyph Character Map - Styles.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset - Stacked.py` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/21/destination_sha256` | `Scripts/Widgets/Glyph Character Map.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/22/destination_sha256` | `Scripts/Widgets/Glyph Character Map - Styles.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/23/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/24/destination_sha256` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet.py` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet - Frameless.py` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Pattern Lab.py` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/spacing-curated-baseline.json` | `/menus/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/0/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/1/destination_sha256` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/2/destination_sha256` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/3/destination_sha256` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/4/destination_sha256` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/5/destination_sha256` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/6/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/7/destination_sha256` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/8/destination_sha256` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/9/destination_sha256` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/10/destination_sha256` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/11/destination_sha256` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/12/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/13/destination_sha256` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/14/destination_sha256` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Arabic Text Coverage.py` | `Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Audit a Real Font.py` | `Scripts/GetGo Fonts/GetGo - Audit a Real Font.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Master Topology.py` | `Scripts/GetGo Fonts/GetGo - Compare Master Topology.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Compare Two Real Fonts.py` | `Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export a TTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Export an OTF Geometry Subset.py` | `Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Font Info Mini Tool.py` | `Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Kerning and Classes Report.py` | `Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Masters Axes and Instances.py` | `Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Name a Disposable Derivative.py` | `Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Outline Pens and Intersections.py` | `Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Sidebearings from H.py` | `Scripts/GetGo Fonts/GetGo - Sidebearings from H.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1GetGo Fonts~1GetGo - Widen Two Glyphs.py` | `Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Date Range.py` | `Scripts/Models/Glyph Filter Model with Date Range.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Filter Model with Local Dates.py` | `Scripts/Models/Glyph Filter Model with Local Dates.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Outline.py` | `Scripts/Models/Glyph Metadata Outline.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Metadata Tree.py` | `Scripts/Models/Glyph Metadata Tree.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering with Dates.py` | `Scripts/Models/Glyph Sorting and Filtering with Dates.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Models~1Glyph Sorting and Filtering.py` | `Scripts/Models/Glyph Sorting and Filtering.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Outline.py` | `Scripts/Tools/Editable Glyph Outline.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Editable Glyph Tree.py` | `Scripts/Tools/Editable Glyph Tree.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion with Focus.py` | `Scripts/Tools/Glyph Name Completion with Focus.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Completion.py` | `Scripts/Tools/Glyph Name Completion.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Name Pattern Lab.py` | `Scripts/Tools/Glyph Name Pattern Lab.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet - Frameless.py` | `Scripts/Tools/Glyph Spacing Worksheet - Frameless.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Glyph Spacing Worksheet.py` | `Scripts/Tools/Glyph Spacing Worksheet.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar with Formats.py` | `Scripts/Widgets/Glyph Modification Calendar with Formats.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Modification Calendar.py` | `Scripts/Widgets/Glyph Modification Calendar.py` |
+
+### Expected licence text locations
+These snapshot values changed to the same plain licence text as the delivered manifest; no source hash or licence-presence check changed.
+| Fixture | JSON Pointer | Expected licence text |
+| --- | --- | --- |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/0/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/1/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/2/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/3/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/4/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/5/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/6/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/7/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/8/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/9/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/10/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/11/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/12/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/13/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/14/license` | Apache-2.0; complete existing notices preserved |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/15/license` | Apache-2.0; complete existing notices preserved |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/16/license` | Apache-2.0; complete existing notices preserved |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/17/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/18/license` | Apache-2.0 |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/19/license` | Apache-2.0; upstream BSD notice preserved |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/20/license` | Apache-2.0; upstream BSD notice preserved |
+| `tests/elastic-baseline.json` | `/adaptations/0/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/1/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/2/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/3/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/4/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/5/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/6/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/7/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/8/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/9/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/10/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/11/license` | Apache-2.0 |
+| `tests/elastic-baseline.json` | `/adaptations/12/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/elastic-baseline.json` | `/adaptations/13/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/elastic-baseline.json` | `/adaptations/14/license` | Apache-2.0; complete existing notices preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/0/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/1/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/2/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/3/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/4/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/5/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/6/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/7/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/8/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/9/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/10/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/11/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/12/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/13/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/14/license` | Apache-2.0; complete existing notices preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/15/license` | Apache-2.0; complete existing notices preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/16/license` | Apache-2.0; complete existing notices preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/17/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/18/license` | Apache-2.0 |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/19/license` | Apache-2.0; upstream BSD notice preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/20/license` | Apache-2.0; upstream BSD notice preserved |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/21/license` | Apache-2.0; complete upstream BSD/GPL collection notices retained |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/22/license` | Apache-2.0; complete upstream BSD/GPL collection notices retained |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/23/license` | Apache-2.0; original Qt notices retained |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/24/license` | Apache-2.0; original Qt notices retained |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/0/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/1/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/2/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/3/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/4/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/5/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/6/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/7/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/8/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/9/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/10/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/11/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/12/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/13/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/14/license` | Apache-2.0; complete existing notices preserved |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/15/license` | Apache-2.0; complete existing notices preserved |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/16/license` | Apache-2.0; complete existing notices preserved |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/17/license` | Apache-2.0 |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/18/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/0/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/1/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/2/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/3/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/4/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/5/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/6/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/7/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/8/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/9/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/10/license` | Apache-2.0 |
+| `tests/spacing-curated-baseline.json` | `/prior_adaptations/11/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/0/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/1/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/2/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/3/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/4/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/5/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/6/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/7/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/8/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/9/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/10/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/11/license` | Apache-2.0 |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/12/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/13/license` | Apache-2.0; original BSD header and collection GPL metadata retained in NOTICE |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/14/license` | Apache-2.0; complete existing notices preserved |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/15/license` | Apache-2.0; complete existing notices preserved |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/16/license` | Apache-2.0; complete existing notices preserved |

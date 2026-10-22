@@ -12,7 +12,7 @@ The nonmodal owned window releases streams, iterators and timers on every close.
 Practical font patterns replace the original generated sample directory.
 Candidate collection is stepped to keep Cancel responsive; source iteration and
 matching policy remain distinct. No application-wide event loop is started.
-Native PythonQt and desktop/file-dialog lifecycle qualification remain pending.
+
 Historical source identifier: rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py; both original notices remain in NOTICE.
 """
 

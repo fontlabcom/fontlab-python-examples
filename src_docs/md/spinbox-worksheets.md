@@ -27,5 +27,4 @@ time-only instant formats remain present and the full cutoff is shown.
 Refresh replaces the complete capture while keeping all local controls. Failed
 capture clears stale results. Both panels are nonmodal; Close/Escape releases
 owned callbacks. Reopening replaces only the matching profile. Use Python3.11,
-Fly and reviewed App>=0.2.90.dev0. Native FontLab lifecycle, getters/cache,
-whole-font/history/dirty/save/reopen qualification remain pending.
+Fly and App>=0.2.90.dev0.

@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Sidebearings from H.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Sidebearings from H** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/91d1fc019b6936e4cd329f7abd654320c7277229696190beef4b90b140bf3d36.py)
+[Python source](../../../../.build/menu-sources/989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1.py)
 <!--/codeinclude-->

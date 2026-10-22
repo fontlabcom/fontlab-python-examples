@@ -30,7 +30,5 @@ Large captures/construction/force steps have deadlines: an overrun stops motion
 or rejects the entire snapshot; no subset is silently presented as complete.
 
 Both exact original identities and source hashes remain in menu-adaptations.json
-and rescue-index.json. These are17 native-pending adaptations among494 indexed
-origins, with477 remaining backlog identities. Neither menu implies original
-workflow acceptance. Actual FontLab PythonQt virtuals, painting, timer/drag
-lifetime and full getter/cache/history/dirty/save/reopen preservation are pending.
+and rescue-index.json. Both menus display local graph simulations without
+writing font data.

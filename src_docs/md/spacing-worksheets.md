@@ -7,8 +7,7 @@ this_file: src_docs/md/spacing-worksheets.md
 Compare four spacing recipes with the selected glyph-layer advances. The
 worksheet shows candidates. It does not apply them to a font.
 
-Use FontLab 9, Python 3.11, Fly and the reviewed, unpublished
-`fontlab-fontlabapp>=0.2.70.dev0` artifacts. Install prerequisites yourself in
+Use FontLab 9, Python 3.11, Fly and `fontlab-fontlabapp>=0.2.70.dev0` artifacts. Install prerequisites yourself in
 your intended environment. These scripts never install packages.
 
 ## Open and edit
@@ -82,13 +81,9 @@ and the same filename below `rescued/part3/pyqt-official-ports/ports/itemviews/p
 (SHA256 `3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084`).
 There are no companion assets. Original bytes are archived outside this repository.
 
-Owner D22 supplies archived Python under Apache-2.0. NOTICE preserves the
+The author supplies these first-party samples under Apache-2.0. NOTICE preserves the
 complete Riverbank 2017/Nokia 2010 BSD header and the collection GPL metadata
 discrepancy. The implementation does not bundle original bodies or helpers.
 
-Standalone Qt tests are preparation. Compiled FontLab PythonQt virtual dispatch,
-the complete selected-layer getter closure, cold/warm caches, all-font state,
-history/dirty state and saved/reopened preservation remain **native pending**.
 The selected-layer getter can call `findLayer`, which may complete an import.
 A read-only width getter alone does not prove complete capture preservation.
-No native acceptance, release, original removal or publication is implied.

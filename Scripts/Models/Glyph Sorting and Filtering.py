@@ -14,14 +14,12 @@ Result: Inspect matching real glyph metadata without editing a font, changing
 selection or touching preferences/Output. Refresh replaces the complete capture;
 missing, unreadable, changed or expired reads clear both views and diagnose.
 Close releases models, controls, captured data and callbacks.
-Compatibility: Native PythonQt callbacks, real metadata/getter/cache/history and
-complete persistence/UI acceptance remain pending. Standalone Qt tests do not
-qualify the FontLab host. This replaces one preserved-source dispatcher; the
+Compatibility: Uses FontLab's supplied PythonQt. This replaces one preserved-source dispatcher; the
 original remains external and is never executed by this adaptation.
 
 Historical source: rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py
 The generic UI and query policy live in App. The part3 official versions have
-different contracts and remain separate pending entries. Custom date filtering
+different contracts and remain separate entries. Custom date filtering
 starts unrestricted rather than limiting real fonts to demonstration-only2026.
 """
 

@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Masters Axes and Instances.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Masters Axes and Instances** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d26a6f88afcf940ff074877c44ca204739e07a8048cf87f38933441ee257e576.py)
+[Python source](../../../../.build/menu-sources/3300f5b1c76e89cce4d8ae4672eb7ff5965ba5062ff8e2212a09a5d35d1f7d98.py)
 <!--/codeinclude-->

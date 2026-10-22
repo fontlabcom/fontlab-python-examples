@@ -18,7 +18,7 @@ The nonmodal owned window releases streams, iterators and timers on every close.
 Practical font patterns replace the original generated sample directory.
 Candidate collection is stepped to keep Cancel responsive; source iteration and
 matching policy remain distinct. No application-wide event loop is started.
-Native PythonQt and desktop/file-dialog lifecycle qualification remain pending.
+
 Historical source identifier: rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py; both original notices remain in NOTICE.
 
 Run **Tools > Find Font Source Files** from FontLab's Scripts menu.
@@ -28,5 +28,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/76ee7dd33db419a14f81d2bf78771b47edbb1b7b391d6069a6d4108d772f7f54.py)
+[Python source](../../../../.build/menu-sources/29d6ba975155183d8219d045f71f921ae9c2a30be28817504853489d21c424b2.py)
 <!--/codeinclude-->

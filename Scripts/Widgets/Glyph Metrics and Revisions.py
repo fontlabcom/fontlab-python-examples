@@ -23,7 +23,7 @@ Compatibility:
     semantics remain where the original defines them. Date/time controls
     filter local captured revision instants; they never change font dates.
     All numeric inputs are local estimates. No font/history/selection writer
-    is used. Native PythonQt and complete-font preservation remain pending.
+    is used. 
     Historical source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 """
 # historical source sha256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db

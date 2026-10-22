@@ -19,10 +19,10 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank standarddialogs dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
-collection GPL metadata have unresolved scope. No upstream code or assets copied.
-The two archived variants consolidate into this FontLab-specific workflow;
-original sample controls are not a claim of feature parity. Native acceptance pending.
+The author supplies these first-party samples under Apache-2.0.
+The Qt examples carry BSD headers and collection-level GPL metadata.
+No code, helper or asset from these examples is included.
+The two archived variants consolidate into this FontLab-specific workflow.
 Historical source: rescued/part2/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
 SHA256: 4a705367140cd7600706cf7ab7522523ddc7c5cd3592309c78d316b67cfc0055
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dc6393a47da104ae698c9df5186808ac962d30195ebd4627f19c4a170bebc71e.py)
+[Python source](../../../../.build/menu-sources/5d1b332cbf9e712f13e2064d8b0de95be609fb33315acd2c97b0df3931d28009.py)
 <!--/codeinclude-->

@@ -1,5 +1,5 @@
 {
-  "note": "Frozen first-party documentation inputs only; do not import or execute. Original runtime tree remains deleted per D21. No third-party reference/corpus body is included.",
+  "note": "Frozen first-party documentation inputs only; do not import or execute. The original runtime tree is not included. No third-party reference/corpus body is included.",
   "files": {
     "src_docs/retained-insights/contour-canvas.py.txt": {
       "original": "fontlab-python-examples/rescued/part2/ports/insights/contour-canvas.py",

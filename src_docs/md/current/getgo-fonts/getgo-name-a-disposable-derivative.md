@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Name a Disposable Derivative.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Name a Disposable Derivative** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/399d267c693a43e1854cecb31fe02633b86554bdfff5850adc8ff1828d9c4e7f.py)
+[Python source](../../../../.build/menu-sources/9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675.py)
 <!--/codeinclude-->

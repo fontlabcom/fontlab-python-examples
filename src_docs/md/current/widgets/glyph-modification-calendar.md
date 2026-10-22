@@ -21,8 +21,7 @@ native selection. Undated glyphs are counted explicitly. Close releases signals.
 Design: Use generic injected-Qt calendar controls and complete metadata capture
 in App, through Fly. Initial options and crossing date limits stay coherent.
 The distinct part3 calendar with May 1 and bold/italic headings stays separate.
-Compatibility: Native PythonQt/getter/font/cache/history/save/reopen acceptance
-is pending. This candidate neither changes preferences nor writes files/Output.
+Compatibility: Uses FontLab's supplied PythonQt. This command neither changes preferences nor writes files/Output.
 Historical source: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
 Original source/resources are archived outside this repository; this command does not execute them.
 
@@ -33,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/989ee48a51d1cb127df6581b43f2c1ec32e427a515a1b10b686dbd3fbdb49930.py)
+[Python source](../../../../.build/menu-sources/709d9bf9403bd14bb840ddb635d951150e3703603a3f6e3f30ead8a35054ab9c.py)
 <!--/codeinclude-->

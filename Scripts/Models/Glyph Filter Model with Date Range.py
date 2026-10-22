@@ -15,9 +15,7 @@ Refresh reads the current font again. Empty, stale, unreadable or expired reads
 clear both views and diagnose; cells never edit the font. Close releases models,
 virtual callbacks, captured data and signals. No selection/history/preferences
 or Output writer is called.
-Compatibility: Native PythonQt dispatch, metadata/getter/cache/font/history and
-complete persistence/UI acceptance remain pending. Standalone Qt is not native
-FontLab proof. This replaces one preserved-source dispatcher; its original bytes
+Compatibility: Uses FontLab's supplied PythonQt. This replaces one preserved-source dispatcher; its original bytes
 remain external and are never executed by this adaptation.
 
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py

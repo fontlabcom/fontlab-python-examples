@@ -42,7 +42,7 @@ def test_adaptations_when_loaded_then_two_full_part2_workflows_preserve_frozen_i
             row["native_acceptance"] == "pending"
             and row["original_workflow_accepted"] is False
         )
-        assert row["license"] == "Apache-2.0 (owner D22)"
+        assert row["license"] == "Apache-2.0"
         assert (
             row["destination_sha256"]
             == hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()

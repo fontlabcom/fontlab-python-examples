@@ -22,8 +22,7 @@ Result:
     Zoom actions use the original thresholds and Fit exit resets to Normal. Printing fits the aspect ratio to the printer viewport. This profile writes only a PDF inside its owned temporary directory; closing removes that temporary output.
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
-    data are unchanged. Native PythonQt/printer and whole-font acceptance remain
-    pending. Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    data are unchanged.  Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 
 Run **Tools > Font Reference Image Viewer - Bounded Zoom** from FontLab's Scripts menu.
 
@@ -32,5 +31,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c5c06951b975c0c03ad1ff0de89bcf5aaddeb3fbd0e23af15a66a7e691fb5708.py)
+[Python source](../../../../.build/menu-sources/ddb30a5f5f77996db0c5756b241c2b21b583ed0fb00379cfaea5bafefeb17f6a.py)
 <!--/codeinclude-->

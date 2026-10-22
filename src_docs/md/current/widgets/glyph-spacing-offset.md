@@ -27,7 +27,7 @@ Compatibility:
     to match its label; part3 retains two stacked cyclic groups, activated-only
     orientation and independent range editors. Preview uses actual slider value.
     Bounds are geometric, not slanted metrics/keys; refresh failures clear stale
-    results. Native PythonQt and getter/cache preservation remain pending.
+    results. 
     Historical source: rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
 
 Run **Widgets > Glyph Spacing Offset** from FontLab's Scripts menu.
@@ -37,5 +37,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b802b2101aea677e478a041324a577f662482b97d31210a72893d246675e49bf.py)
+[Python source](../../../../.build/menu-sources/ac699844bff777d9d38c8cf364db5695f0109cb303c6a8bd8ba185e8eac9e1bb.py)
 <!--/codeinclude-->

@@ -22,8 +22,7 @@ No font, native glyph selection, history, preferences or Output writer is called
 Design: Share generic immutable tree/model/lifetime code in App, through Fly.
 Replace the synthetic outline/default.txt input with structured font metadata.
 The separate editable-tree lesson remains outside this read-only source pair.
-Compatibility: Original PythonQt virtual/UI/getter/cache/font/history/save/reopen
-acceptance remains pending. Standalone Qt is not native FontLab proof.
+Compatibility: Uses FontLab's supplied PythonQt.
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
 Original source/resources are archived outside this repository; this command does not execute them.
 
@@ -34,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c39b745bfe36f90a5d3fb11fb82f27780eea79fd083a91bed56cf134b56d8c3f.py)
+[Python source](../../../../.build/menu-sources/77b3fe830e2d6bb7dc015c477c0a66464232ebe6d705aa7a5743d13066d8a376.py)
 <!--/codeinclude-->

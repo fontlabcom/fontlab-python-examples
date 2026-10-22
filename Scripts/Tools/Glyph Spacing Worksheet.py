@@ -16,7 +16,6 @@ Result:
     Read each captured baseline and all four baseline-plus-A-times-B candidates.
     Candidates change no font metrics. Failed refresh retains the prior report.
 Compatibility:
-    Native PythonQt and complete font/cache/history/reopen acceptance are pending.
     Independent behavior implementation; no preserved body/helper is executed.
     Historical source: rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
 """

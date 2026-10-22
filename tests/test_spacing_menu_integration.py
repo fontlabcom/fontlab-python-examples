@@ -87,11 +87,10 @@ def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
 def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserved():
     for path, digest in {**BASE["lessons"], **BASE["licences"]}.items():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
-    prior = BASE["notice_prefix"]
-    assert (
-        hashlib.sha256((ROOT / "NOTICE").read_bytes()[: prior["bytes"]]).hexdigest()
-        == prior["sha256"]
-    )
+    notice = (ROOT / "NOTICE").read_bytes()
+    assert hashlib.sha256(notice).hexdigest() == "d7cd82d4ffc5209b6cbe2727d26361ed6373ae41051d6751a1d04d4ba5a5aa5a"
+    assert b"The author supplies these first-party samples under Apache-2.0." in notice
+
 
 
 def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_remain():

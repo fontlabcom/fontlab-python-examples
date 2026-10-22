@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Export an OTF Geometry Subset.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Export an OTF Geometry Subset** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dcde843f49f5e1cf7ed159deb0a86594ecfac8c29866f7c3b056ae4e9d939b0e.py)
+[Python source](../../../../.build/menu-sources/ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794.py)
 <!--/codeinclude-->

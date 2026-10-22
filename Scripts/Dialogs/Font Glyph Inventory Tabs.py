@@ -13,10 +13,10 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank tabdialog dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
-collection GPL metadata have unresolved scope. No upstream code or assets copied.
-The two archived variants consolidate into this FontLab-specific workflow;
-original sample controls are not a claim of feature parity. Native acceptance pending.
+The author supplies these first-party samples under Apache-2.0.
+The Qt examples carry BSD headers and collection-level GPL metadata.
+No code, helper or asset from these examples is included.
+The two archived variants consolidate into this FontLab-specific workflow.
 Historical source: rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
 SHA256: f0429bb770550780ba27dd2def628e0189a5665595501f32dfb1ebf9ef98c7c0
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py

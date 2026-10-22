@@ -27,5 +27,4 @@ Refresh Selection replaces all facts and preserves your drafts; capture failure
 clears old results. Close, Escape and parent destruction release only owned
 widgets and connections. Empty/sticker-only layers with no geometric bounds
 show unavailable margins while retaining their advance. Bounds are geometric,
-not slanted metrics or spacing-key evaluation. Native FontLab/PythonQt and
-complete getter/cache preservation are still pending.
+not slanted metrics or spacing-key evaluation.

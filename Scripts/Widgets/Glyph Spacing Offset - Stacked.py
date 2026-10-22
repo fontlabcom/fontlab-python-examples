@@ -21,7 +21,7 @@ Compatibility:
     to match its label; part3 retains two stacked cyclic groups, activated-only
     orientation and independent range editors. Preview uses actual slider value.
     Bounds are geometric, not slanted metrics/keys; refresh failures clear stale
-    results. Native PythonQt and getter/cache preservation remain pending.
+    results. 
     Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
 """
 # historical source sha256: 24312666a881173fd0a203fd1217ea8d13be8edc0e70b08628e3c4addc49cc5d

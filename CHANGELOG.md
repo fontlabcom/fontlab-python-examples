@@ -4,6 +4,17 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Public wording
+
+- Replaced internal review terminology with plain installation, dependency and
+  source-credit wording. Removed generic qualification status from menu help
+  and guides; retained the mark-propagation behaviour note.
+- Regenerated current menu documentation and retained third-party licence texts,
+  copyright credits and historical source identifiers.
+- Refreshed 357 destination-pin occurrences for edited menu documentation and
+  aligned expected licence text snapshots. Historical source hashes and pins
+  for unedited menus remain unchanged. All four offline gates pass.
+
 ## 2026-10-22 - Current-font tools and archived-source checks
 
 - The collection now contains 100 practical menus. New panels cover models,

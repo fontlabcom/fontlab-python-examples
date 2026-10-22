@@ -30,7 +30,6 @@ Compatibility:
     activated font/style changes and native cursor/selection insertion.
     Part3 isolated surrogate insertion is explicitly refused. Incomplete text
     cannot be copied; no replacement characters or silent sequence rewriting.
-    Native PythonQt and complete font-preservation acceptance remain pending.
     Historical source: rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 
 Run **Widgets > Glyph Character Map** from FontLab's Scripts menu.
@@ -40,5 +39,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8ee528c8b453d4f1814dc46f28f0e7eb1e937e4f09b1030f9de13562fbc18f1b.py)
+[Python source](../../../../.build/menu-sources/7e19652d32e68509d8180ea0e66d889d4908fa61761ebc312ddba72f610844b6.py)
 <!--/codeinclude-->

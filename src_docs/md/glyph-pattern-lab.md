@@ -8,7 +8,7 @@ Author a Qt 5 pattern and inspect its captures against the current font's comple
 glyph-name vocabulary. Use the results to prepare rules for another naming or
 filtering tool. The laboratory edits local drafts. It applies no font changes.
 
-Use FontLab 9, Python 3.11, Fly and reviewed unpublished App>=0.2.76.dev0. Install
+Use FontLab 9, Python 3.11, Fly and App>=0.2.76.dev0. Install
 matching prerequisites yourself. [The complete current source](current/tools/glyph-name-pattern-lab.md)
 imports its owned App panel through Fly only when it runs.
 
@@ -65,7 +65,7 @@ releases captured names and results. A failed disconnect retains the exact owner
 and refuses destruction so Close can be retried. Parent destruction releases the
 remaining owners without dereferencing destroyed widgets.
 
-## Source and acceptance
+## Source and licence
 
 The source identity is
 `rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py`, SHA256
@@ -77,8 +77,3 @@ There are no companion assets. NOTICE retains that complete attribution; the
 existing full licences and archived metadata stay unchanged. No original body
 or source helper is imported or executed.
 
-Compiled PythonQt QRegExp return types/semantics, native signals and lifetime,
-complete getter/font/cache/history/dirty/save/reopen preservation remain **native
-pending**. Earlier acceptance of the archived port does not accept this new
-adaptation. No native acceptance, live installation, release or publication is
-implied.

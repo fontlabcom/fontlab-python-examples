@@ -45,7 +45,7 @@ def test_complete_spacing_pair_identity_lazy_fly_and_notices(part, entry, monkey
         "Run:",
         "Result:",
         "Compatibility:",
-        "pending",
+        "Independent behavior implementation",
         "preserved",
     ):
         assert word in doc

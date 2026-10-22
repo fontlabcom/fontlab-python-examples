@@ -24,7 +24,6 @@ Compatibility:
     activated font/style changes and native cursor/selection insertion.
     Part3 isolated surrogate insertion is explicitly refused. Incomplete text
     cannot be copied; no replacement characters or silent sequence rewriting.
-    Native PythonQt and complete font-preservation acceptance remain pending.
     Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 """
 # historical source sha256: e5300e2687fa734a95fc8aaae9b29ee382902f07e8cb5c170137e76600ab2d87

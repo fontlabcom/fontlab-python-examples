@@ -29,7 +29,7 @@ Compatibility:
     semantics remain where the original defines them. Date/time controls
     filter local captured revision instants; they never change font dates.
     All numeric inputs are local estimates. No font/history/selection writer
-    is used. Native PythonQt and complete-font preservation remain pending.
+    is used. 
     Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 
 Run **Widgets > Glyph Metrics and Revisions - Detailed** from FontLab's Scripts menu.
@@ -39,5 +39,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/28346ef945a8502c6d47667fba1a1f18b13c00f335b7d249de0f36ea106c6e15.py)
+[Python source](../../../../.build/menu-sources/d03bc005262397d6f56b210906120c17145bab42dd67dd8e0bf197c417e19f77.py)
 <!--/codeinclude-->

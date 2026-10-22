@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Kerning and Classes Report.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Kerning and Classes Report** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/01bb214bcf8bbf85a8836dc3ce54d9ddfcdcb99da2f16067c858d29896c7c723.py)
+[Python source](../../../../.build/menu-sources/952f3f4ae658259702e06928d0dfe19c184d2828986679ecf3e6cbb59f73eba2.py)
 <!--/codeinclude-->

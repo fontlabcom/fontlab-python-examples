@@ -19,10 +19,10 @@ The App Names panel owns signals, Escape and Close. UI imports are lazy.
 
 Independent behaviour rewrite of the Qt/Riverbank trivialwizard dialog family.
 Original idea: Qt examples / Riverbank Computing Limited; Nokia Corporation.
-Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
-collection GPL metadata have unresolved scope. No upstream code or assets copied.
-The two archived variants consolidate into this FontLab-specific workflow;
-original sample controls are not a claim of feature parity. Native acceptance pending.
+The author supplies these first-party samples under Apache-2.0.
+The Qt examples carry BSD headers and collection-level GPL metadata.
+No code, helper or asset from these examples is included.
+The two archived variants consolidate into this FontLab-specific workflow.
 Historical source: rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256: 9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0a1cfd94073b4a026e2b6faa1afcd910c2baf0ea7b32044eb1f52794bb0ec2a1.py)
+[Python source](../../../../.build/menu-sources/8bf0b936cf5f16c698d516e3a96da999955a2ad260269ae08a7ad142640f420e.py)
 <!--/codeinclude-->

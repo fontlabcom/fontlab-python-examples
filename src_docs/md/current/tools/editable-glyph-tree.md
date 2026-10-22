@@ -21,8 +21,7 @@ Refresh keeps edited drafts; Reset Draft explicitly reloads the current font.
 Capture/setup failures retain the old draft. Failed disconnections keep exact
 owners and refuse deletion for Close retry; terminal faults use window Close.
 Close releases owned views, models, selection and callbacks. No original is run.
-Compatibility: Actual installed PythonQt/font/cache/history/dirty/save/reopen
-acceptance remains pending. No font, selection, preference, file or Output
+Compatibility: Uses FontLab's supplied PythonQt. No font, selection, preference, file or Output
 writer is used. Original source/resources are archived outside this repository and unbundled.
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
 
@@ -33,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4142e8b8d99551ec1ac986a4de439188f65f4749ceec0c65ee3729cdcd5849ff.py)
+[Python source](../../../../.build/menu-sources/2dbe33a040df7bbe1de8034ccd3e98023140491a61b53758db649f5c04a4d7c5.py)
 <!--/codeinclude-->

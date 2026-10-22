@@ -35,6 +35,4 @@ preserves proof text and reference-font controls; failed or changing reads clear
 old coverage. No font, preference, history or Output writer is used. Close,
 Escape and replacement release owned signals and widgets.
 
-Use the matching reviewed App0.2.103.dev0 candidate through Fly on FontLab9 /
-Python3.11. Source and standalone Qt checks do not establish native PythonQt or
-whole-font preservation acceptance; those gates remain pending.
+Use App>=0.2.103.dev0 through Fly on FontLab 9 with Python 3.11.

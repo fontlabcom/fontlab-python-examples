@@ -16,7 +16,7 @@ session. Source fonts remain unchanged; owned temporary copies close in finally.
 Run: Choose Scripts > GetGo Fonts > GetGo - Font Info Mini Tool.
 Result: A detached, nonmodal read-only report shows the source and computed
 values; exports also retain a new geometry subset at the reported path.
-Compatibility: Native acceptance of this packaged adaptation is pending.
+Compatibility: Uses FontLab's supplied PythonQt.
 See the installed GetGo README for this entry's defaults, limits and outputs.
 
 Run **GetGo Fonts > GetGo - Font Info Mini Tool** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/24496b51e2c3344d3057c49551e055203106b4f44757b9db26ee405ab06e4f0b.py)
+[Python source](../../../../.build/menu-sources/1764def4d2c07a39a4038ac4510d300b63ea9a18b34d59bf369f3a0e0871b53a.py)
 <!--/codeinclude-->

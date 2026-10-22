@@ -22,8 +22,7 @@ Result:
     Free zoom preserves the current scale when Fit is switched off. Printing draws the original image at the printer origin.
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
-    data are unchanged. Native PythonQt/printer and whole-font acceptance remain
-    pending. Historical source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    data are unchanged.  Historical source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 
 Run **Tools > Font Reference Image Viewer** from FontLab's Scripts menu.
 
@@ -32,5 +31,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/73e770f7e4f6e448e43564fb73f452eb0a6d4417716f01636905bfa084ea9e46.py)
+[Python source](../../../../.build/menu-sources/e83511b02e33d1c71c2c52d553c19eb0f36e6b3cc5748e353c07a5e33cc5b927.py)
 <!--/codeinclude-->
