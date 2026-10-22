@@ -1536,3 +1536,46 @@ SHA256 5ed8db3f161835191ff30b37703d0b1aa3bbd09212182173a9d77000b8e8f732
 Element > Reference > Add Reference and Replace Reference (from Element.py)
 rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Element.py
 SHA256 2afb7719d9e823af92168fe0b7f25a3b7526c6194f50142c9d5821a881d11b2c
+
+More TypeRig panels:
+
+Scripts/Tools/Symbol Tag Search.py
+Independent behaviour rewrite of the Explorer panel: AND search of name
+and tag terms with an ordered slash proof.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Explorer.py
+SHA256 537e4542754d0d7d0fe34ed6c0e142d23e81eb5c757a7da97ffa592c9e85a03d
+
+Scripts/Contours/Node Table.py
+Independent behaviour rewrite of the Outline panel: an editable table
+of the current layer's own nodes.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Outline.py
+SHA256 70b82b583b6f25e7125d303785eedce7ed84fd92b3c839acbfe667e5ea4bddc0
+
+Scripts/Tools/Pair Proof Generator.py
+Independent behaviour rewrite of the Pairs panel: Cartesian or zipped
+name pairs with suffixes and fillers.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Pairs.py
+SHA256 2724ed38c94fe57880ebce9491f58175944cd26dbfe931097e1bf51f9ef53508
+
+Scripts/Tools/Layer Metric Comparison.py
+Independent behaviour rewrite of the Stats panel: selected-layer
+measurements against a named reference.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Stats.py
+SHA256 097d10d3cab764f9f780f3404d1da11cabb2c32c8685ede80084b1c3ea08ee12
+
+Mapped to existing tools (no new code or resources):
+fontlab-python-scriptmix/Scripts/Names/Batch Rename.py (from Glyph.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Glyph.py
+SHA256 2e70ecb44861dc04db8a7a6a20ac64bce0d7b3bc4cb89b4e2c7ce2731537ff32
+fontlab-python-scriptmix/Scripts/Guides/Guide List Editor.py (from Guide.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Guide.py
+SHA256 148191f7064a60b9ba2fcd18bcc220ab42ceccb25b97869ba7a054a8fda46954
+fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py (from Layer.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Layer.py
+SHA256 c9c6aa0893b5f8dc19ca9b1461a0914a553c3c8e680e29db3d0e3208b9fb52c8
+fontlab-python-scriptmix/Scripts/Metrics/Copy Metrics From Reference.py (from Metrics.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Metrics.py
+SHA256 c1925f3c9e3816f35dc66b9c259af290489b963a503379a9de5c9291cf00c83d
+fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py (from Node.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Node.py
+SHA256 9bc60008420a1a73c6ae2ece46ec74f6dcd2d32dbf0b2bfb40ffc92a8ca7f6c5

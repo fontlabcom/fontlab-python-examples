@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 92 practical facades in one category level: Designer,
+`Scripts/` contains 96 practical facades in one category level: Contours, Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -25,11 +25,11 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 208 practical replacements, with original
+`menu-adaptations.json` maps 217 practical replacements, with original
 workflow acceptance still pending. Its `retirements` array records 157 identities
 that have no script in this collection, each with its reason. For 4 of them
 the reason starts with "duplicate-of native" and names the FontLab command
-that does the job; the others are retired. The other 129 identities
+that does the job; the others are retired. The other 120 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -173,3 +173,14 @@ Blend, after TypeRig's Delta panels. It blends two layers of the current glyph
 with stem compensation on each axis and creates the result as a new active
 layer, recorded as one Undo step. Seven other TypeRig panels map to existing
 Scriptmix tools or native FontLab commands, such as Font > Metrics > Autospace.
+
+Tools adds three more panels after TypeRig. Symbol Tag Search lists glyphs whose
+names and native tags match all typed terms and copies them as a slash proof.
+Pair Proof Generator combines or zips two name lists, with suffixes and
+fillers, into a pair proof. Layer Metric Comparison compares the advance,
+bounds or sidebearings of the selected layers with one reference, as
+differences or percentages, and copies the table. None of them changes the
+font. Contours adds Node Table, an editable table of all own nodes of the
+current layer with two-way selection sync; an Apply that changes coordinates
+is recorded as one Undo step. Five other TypeRig panels map to existing
+Scriptmix tools.

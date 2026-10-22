@@ -2,6 +2,10 @@
 
 Choose a category, then a script. Each page includes its actual menu source.
 
+## Contours
+
+- [Node Table](contours/node-table.md)
+
 ## Designer
 
 - [Em Star Polygon](designer/em-star-polygon.md)
@@ -105,9 +109,12 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 - [Import Kerning Pair List](tools/import-kerning-pair-list.md)
 - [Kerning Copy Rules](tools/kerning-copy-rules.md)
+- [Layer Metric Comparison](tools/layer-metric-comparison.md)
 - [Localized Font Names](tools/localized-font-names.md)
+- [Pair Proof Generator](tools/pair-proof-generator.md)
 - [Path Problem Report](tools/path-problem-report.md)
 - [Saved Proof Sample](tools/saved-proof-sample.md)
+- [Symbol Tag Search](tools/symbol-tag-search.md)
 
 ## Widgets
 
