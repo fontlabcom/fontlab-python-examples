@@ -67,7 +67,8 @@ def env(monkeypatch: Any) -> NS:
 def test_capture_tags_when_native_omitted_then_reads_fly_fl(module: dict[str, Any], env: NS) -> None:
     env.fly.root.fl = Native([Glyph("arrow", ["a"]), Glyph("dot")])
     rows, skipped = module["capture_tags"](deadline=FAR)
-    assert rows == (("arrow", ("a",)), ("dot", ())) and skipped == ()
+    assert rows == (("arrow", ("a",)), ("dot", ())), "rows keep name and tag tuple"
+    assert skipped == (), "nothing skipped for usable glyphs"
 
 
 def test_capture_tags_when_off_main_thread_then_refuses(
@@ -108,9 +109,12 @@ def test_capture_tags_when_names_or_tags_unusable_then_skipped_with_reason(
     ])
     rows, skipped = module["capture_tags"](native, deadline=FAR)
     assert rows == (("good", ()), ("tagged", ("t",))), "None tags read as empty"
-    assert len(skipped) == 6 and all(line.startswith("Skipped ") for line in skipped)
-    assert "name cannot form a slash proof" in skipped[0] and "7" in skipped[0]
-    assert "NUL" in skipped[4] and "unreadable tags" in skipped[5]
+    assert len(skipped) == 6, "six unusable glyphs are skipped"
+    assert all(line.startswith("Skipped ") for line in skipped), "each skip is a Skipped line"
+    assert "name cannot form a slash proof" in skipped[0], "non-string name gives the slash-proof reason"
+    assert "7" in skipped[0], "the offending name is quoted"
+    assert "NUL" in skipped[4], "NUL names are named as such"
+    assert "unreadable tags" in skipped[5], "non-string tags are unreadable"
 
 
 def test_capture_tags_when_deadline_passes_after_walk_then_no_partial_result(
@@ -145,14 +149,15 @@ def test_search_result_when_terms_given_then_all_must_match_name_or_tags(
     monkeypatch.setitem(module["search_result"].__globals__, "capture_tags",
                         lambda: (rows, ("Skipped 'x': y",)))
     text, skipped = module["search_result"](("ARROW  direction",))
-    assert text == "/arrow_left" and skipped == ("Skipped 'x': y",)
-    assert module["search_result"](("shape circle",))[0] == "/circle"
-    assert module["build_output"](("arrow",)) == "/arrow_left/arrow"
-    assert module["search_result"](("nothing",))[0] == ""
+    assert text == "/arrow_left", "terms match case-insensitively across name and tags"
+    assert skipped == ("Skipped 'x': y",), "scan skips pass through"
+    assert module["search_result"](("shape circle",))[0] == "/circle", "a term may hit the tag, another the name"
+    assert module["build_output"](("arrow",)) == "/arrow_left/arrow", "a lone term matches every name containing it"
+    assert module["search_result"](("nothing",))[0] == "", "no match gives empty output"
 
 
 def test_checked_when_text_has_forbidden_character_then_refuses(module: dict[str, Any]) -> None:
-    assert module["checked"]("fine é") == "fine é"
+    assert module["checked"]("fine é") == "fine é", "ordinary text passes unchanged"
     for bad in ("\0", " ", " ", " ", "\r"):
         with pytest.raises(ValueError, match="NUL, NBSP"):
             module["checked"]("a" + bad)
@@ -174,17 +179,18 @@ def test_show_when_built_then_refreshes_once_and_registers_panel(
     module: dict[str, Any], env: NS
 ) -> None:
     panel = build(module, env, ("/A", ("Skipped 'q': r",)))
-    assert module["_PANELS"] == [panel] and panel.shown == 1
-    assert panel.output_box.plainText() == "/A"
-    assert panel.status_line.text().endswith("Skipped 'q': r")
+    assert module["_PANELS"] == [panel], "panel is registered"
+    assert panel.shown == 1, "panel is shown once"
+    assert panel.output_box.plainText() == "/A", "first refresh fills the output"
+    assert panel.status_line.text().endswith("Skipped 'q': r"), "skip notes end the status"
 
 
 def test_refresh_output_when_search_refused_then_output_cleared_and_message_shown(
     module: dict[str, Any], env: NS
 ) -> None:
     panel = build(module, env, TimeoutError("Font tag scan expired; no partial result."))
-    assert panel.output_box.plainText() == ""
-    assert panel.status_line.text() == "Font tag scan expired; no partial result."
+    assert panel.output_box.plainText() == "", "output is cleared when the search is refused"
+    assert panel.status_line.text() == "Font tag scan expired; no partial result.", "refusal text reaches the status"
 
 
 def test_copy_output_when_matches_then_clipboard_and_status_updated(
@@ -192,8 +198,8 @@ def test_copy_output_when_matches_then_clipboard_and_status_updated(
 ) -> None:
     panel = build(module, env, ("/A/B", ("Skipped 'q': r",)))
     panel.signal_scope.pairs[1][0].emit()
-    assert env.qt.clipboard.text() == "/A/B"
-    assert panel.status_line.text() == "Fresh result copied.\nSkipped 'q': r"
+    assert env.qt.clipboard.text() == "/A/B", "result is copied to the clipboard"
+    assert panel.status_line.text() == "Fresh result copied.\nSkipped 'q': r", "status confirms copy and keeps skip notes"
 
 
 def test_copy_output_when_nothing_matches_then_clipboard_untouched(
@@ -202,16 +208,16 @@ def test_copy_output_when_nothing_matches_then_clipboard_untouched(
     panel = build(module, env, ("", ()))
     env.qt.clipboard.setText("keep")
     panel.copy_output()
-    assert env.qt.clipboard.text() == "keep"
-    assert panel.status_line.text() == "No matching output to copy."
-    assert panel.output_box.plainText() == ""
+    assert env.qt.clipboard.text() == "keep", "empty result must not overwrite the clipboard"
+    assert panel.status_line.text() == "No matching output to copy.", "status explains the refusal"
+    assert panel.output_box.plainText() == "", "output stays empty"
 
 
 def test_refresh_button_when_clicked_then_output_replaced(module: dict[str, Any], env: NS) -> None:
     panel = build(module, env, ("/A", ()))
     panel.output_box.setPlainText("stale")
     panel.signal_scope.pairs[0][0].emit()
-    assert panel.output_box.plainText() == "/A"
+    assert panel.output_box.plainText() == "/A", "Refresh replaces stale output"
 
 
 def test_show_when_choice_field_configured_then_combo_value_is_searched(
@@ -228,7 +234,7 @@ def test_show_when_choice_field_configured_then_combo_value_is_searched(
     panel = module["show"](env.qt, None)
     panel.input_boxes[0].setCurrentIndex(1)
     panel.refresh_output()
-    assert seen == [("",), ("alpha",)]
+    assert seen == [("",), ("alpha",)], "initial search uses the empty choice, then the selected one"
 
 
 def test_destroyed_signal_when_emitted_then_panel_unregistered(
@@ -236,9 +242,9 @@ def test_destroyed_signal_when_emitted_then_panel_unregistered(
 ) -> None:
     panel = build(module, env)
     panel.signal_scope.pairs[2][0].emit()
-    assert module["_PANELS"] == []
+    assert module["_PANELS"] == [], "destroyed panel is unregistered"
     panel.release_owner()
-    assert module["_PANELS"] == []
+    assert module["_PANELS"] == [], "second release is harmless"
 
 
 def test_close_event_when_disconnect_refused_then_kept_until_retry(
@@ -248,13 +254,19 @@ def test_close_event_when_disconnect_refused_then_kept_until_retry(
     panel.signal_scope.refuse = True
     event = Event()
     panel.closeEvent(event)
-    assert event.ignored and not panel.deleted and module["_PANELS"] == [panel]
+    assert event.ignored, "close is ignored while disconnect is refused"
+    assert not panel.deleted, "panel is not deleted after a refused close"
+    assert module["_PANELS"] == [panel], "panel stays registered for a retry"
     panel.signal_scope.refuse = False
     event = Event()
     panel.closeEvent(event)
-    assert event.accepted and panel.deleted and module["_PANELS"] == []
-    panel.closeEvent(Event())  # already unregistered: still accepted
-    assert module["_PANELS"] == []
+    assert event.accepted, "retry close is accepted"
+    assert panel.deleted, "panel is deleted after a clean close"
+    assert module["_PANELS"] == [], "panel is unregistered"
+    again = Event()
+    panel.closeEvent(again)  # already unregistered: still accepted
+    assert again.accepted, "closing an unregistered panel is still accepted"
+    assert module["_PANELS"] == [], "registry stays empty"
 
 
 def test_show_when_panel_show_fails_then_removed_when_clean_and_kept_when_refused(
@@ -276,7 +288,7 @@ def test_show_when_panel_show_fails_then_removed_when_clean_and_kept_when_refuse
 
 def test_main_when_window_available_then_panel_opens(module: dict[str, Any], env: NS) -> None:
     module["main"]()
-    assert len(module["_PANELS"]) == 1
+    assert len(module["_PANELS"]) == 1, "main opens exactly one panel"
 
 
 @pytest.mark.parametrize("error", [ValueError("no window"), RuntimeError("busy"),
@@ -289,10 +301,10 @@ def test_main_when_show_refused_then_message_printed(
 
     env.fly.root.fl = NS(MainWindow=fail)
     module["main"]()
-    assert capsys.readouterr().out == f"Symbol Tag Search: {error}\n"
+    assert capsys.readouterr().out == f"Symbol Tag Search: {error}\n", "refusal is printed with the script name"
 
 
 def test_script_when_run_as_main_then_main_executes(env: NS, capsys: Any) -> None:
     env.fly.root.fl = NS(MainWindow=lambda: (_ for _ in ()).throw(ValueError("no window")))
     runpy.run_path(str(SCRIPT), run_name="__main__")
-    assert "Symbol Tag Search: no window" in capsys.readouterr().out
+    assert "Symbol Tag Search: no window" in capsys.readouterr().out, "__main__ run reaches main()"

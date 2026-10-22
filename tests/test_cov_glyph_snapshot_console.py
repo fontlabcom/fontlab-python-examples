@@ -54,7 +54,8 @@ def grab_guard(module: dict[str, Any], seconds: float, previous: Any) -> Any:
     original = sys.gettrace()
     sys.settrace(previous)
     try:
-        assert module["evaluate"]("grab()", namespace(module, grab=grab), seconds) == "1"
+        result = module["evaluate"]("grab()", namespace(module, grab=grab), seconds)
+        assert result == "1", "the probe query ran and returned its value"
     finally:
         sys.settrace(original)
     return seen["guard"]
@@ -103,7 +104,7 @@ def test_evaluate_when_call_stalls_without_line_events_then_final_check_raises(
 
 
 def test_evaluate_when_print_expression_then_output_is_result(module: dict[str, Any]) -> None:
-    assert module["evaluate"]("print('hi')", namespace(module)) == "hi\n"
+    assert module["evaluate"]("print('hi')", namespace(module)) == "hi\n", "printed text is the result"
 
 
 def test_evaluate_when_deadline_out_of_range_then_refuses(module: dict[str, Any]) -> None:
@@ -132,9 +133,9 @@ def test_guard_when_frame_unwatched_then_chains_previous_and_leaves_opcodes_alon
     previous.events.clear()
     other = frame("host.py")
     local = guard(other, "call", None)
-    assert previous.events == ["call"]
-    assert local(other, "line", None) is local
-    assert previous.events == ["call", "line"]
+    assert previous.events == ["call"], "call event is chained to the earlier trace"
+    assert local(other, "line", None) is local, "the local trace keeps tracing"
+    assert previous.events == ["call", "line"], "line event is chained too"
     assert other.f_trace_opcodes is False, "unwatched frames keep their opcode flag"
 
 
@@ -150,7 +151,7 @@ def test_guard_when_frame_watched_then_enables_opcodes_and_filters_opcode_events
     local(query, "opcode", None)
     assert previous.events == ["call"], "earlier trace did not ask for opcodes"
     local(query, "line", None)
-    assert previous.events == ["call", "line"]
+    assert previous.events == ["call", "line"], "line events pass through to the earlier trace"
     asked = frame("<glyph-snapshot>", opcodes=True)
     local = guard(asked, "call", None)
     local(asked, "opcode", None)
@@ -163,7 +164,8 @@ def test_guard_when_no_previous_trace_then_only_deadline_is_enforced(
     guard = grab_guard(module, 5.0, None)
     query = frame("<glyph-snapshot>")
     local = guard(query, "call", None)
-    assert local(query, "line", None) is local and query.f_trace_opcodes is True
+    assert local(query, "line", None) is local, "the guard keeps tracing without an earlier trace"
+    assert query.f_trace_opcodes is True, "watched frames still get opcode events"
 
 
 def test_guard_when_deadline_passed_then_call_event_raises(module: dict[str, Any]) -> None:
@@ -171,7 +173,8 @@ def test_guard_when_deadline_passed_then_call_event_raises(module: dict[str, Any
     time.sleep(0.1)
     with pytest.raises(TimeoutError, match="Query exceeded 0.05 seconds"):
         guard(frame("<glyph-snapshot>"), "call", None)
-    guard(frame("host.py"), "call", None)  # unwatched frames never time out
+    unwatched = guard(frame("host.py"), "call", None)  # unwatched frames never time out
+    assert callable(unwatched), "unwatched frames still get a local trace after the deadline"
 
 
 def test_local_trace_when_deadline_passes_mid_frame_then_next_event_raises(
@@ -202,7 +205,8 @@ def test_capture_current_when_scaled_then_status_shows_budget_and_deadline_passe
     status = Widget()
     start = time.monotonic()
     module["capture_current"](status)
-    assert f"budget {label} s" in status.text() and f"{count:,}" in status.text()
+    assert f"budget {label} s" in status.text(), "status names the scaled budget"
+    assert f"{count:,}" in status.text(), "status names the glyph count"
     assert abs(seen["deadline"] - start - float(label)) < 1.0, "deadline = now + budget"
 
 
@@ -216,9 +220,11 @@ def click(panel: Any, index: int) -> None:
 
 def test_show_when_built_then_panel_registered_with_defaults(module: dict[str, Any], env: NS) -> None:
     panel = build(module, env)
-    assert module["_PANELS"] == [panel] and panel.shown == 1
-    assert panel.query_namespace is None and panel.query_entry.text() == "len(glyphs)"
-    assert panel.deadline_control.value() == 5.0
+    assert module["_PANELS"] == [panel], "panel is registered"
+    assert panel.shown == 1, "panel is shown once"
+    assert panel.query_namespace is None, "no snapshot before Capture"
+    assert panel.query_entry.text() == "len(glyphs)", "default query is offered"
+    assert panel.deadline_control.value() == 5.0, "default deadline is five seconds"
 
 
 def test_run_query_when_not_captured_then_output_reports_capture_first(
@@ -226,8 +232,8 @@ def test_run_query_when_not_captured_then_output_reports_capture_first(
 ) -> None:
     panel = build(module, env)
     click(panel, 3)
-    assert panel.output_box.plainText() == "ValueError: Capture before Run."
-    assert panel.status_line.text().startswith("Query failed.")
+    assert panel.output_box.plainText() == "ValueError: Capture before Run.", "Run before Capture is refused"
+    assert panel.status_line.text().startswith("Query failed."), "status reports the failure"
 
 
 def test_capture_then_run_when_enter_pressed_then_result_shown(
@@ -237,10 +243,10 @@ def test_capture_then_run_when_enter_pressed_then_result_shown(
                         lambda status: NS(rows=ROWS))
     panel = build(module, env)
     click(panel, 2)
-    assert panel.status_line.text() == "Ready: 2 glyphs. Capture resets variables."
+    assert panel.status_line.text() == "Ready: 2 glyphs. Capture resets variables.", "Capture reports the glyph count"
     panel.query_entry.returnPressed.emit()
-    assert panel.output_box.plainText() == "2"
-    assert panel.status_line.text().startswith("Result from the captured snapshot")
+    assert panel.output_box.plainText() == "2", "Enter runs the default query"
+    assert panel.status_line.text().startswith("Result from the captured snapshot"), "status names the snapshot as source"
 
 
 def test_run_query_when_code_fails_or_deadline_invalid_then_error_text_and_hint(
@@ -252,12 +258,12 @@ def test_run_query_when_code_fails_or_deadline_invalid_then_error_text_and_hint(
     click(panel, 2)
     panel.query_entry.setText("1 / 0")
     panel.run_query()
-    assert panel.output_box.plainText() == "ZeroDivisionError: division by zero"
+    assert panel.output_box.plainText() == "ZeroDivisionError: division by zero", "query errors are shown as text"
     panel.query_entry.setText("1")
     panel.deadline_control.setValue(0)
     panel.run_query()
-    assert panel.output_box.plainText().startswith("ValueError: Choose a query deadline")
-    assert panel.status_line.text().startswith("Query failed.")
+    assert panel.output_box.plainText().startswith("ValueError: Choose a query deadline"), "a zero deadline is refused with a hint"
+    assert panel.status_line.text().startswith("Query failed."), "status reports the failure"
 
 
 def test_clear_snapshot_when_clicked_then_namespace_dropped_and_run_refused(
@@ -269,8 +275,9 @@ def test_clear_snapshot_when_clicked_then_namespace_dropped_and_run_refused(
     click(panel, 2)
     panel.output_box.setPlainText("old")
     click(panel, 4)
-    assert panel.query_namespace is None and panel.output_box.plainText() == ""
-    assert panel.status_line.text() == "Snapshot cleared. Capture again before Run."
+    assert panel.query_namespace is None, "the snapshot namespace is dropped"
+    assert panel.output_box.plainText() == "", "output is cleared"
+    assert panel.status_line.text() == "Snapshot cleared. Capture again before Run.", "status asks for a new Capture"
 
 
 def test_capture_rows_when_scan_fails_then_status_gets_error_via_scope(
@@ -282,8 +289,8 @@ def test_capture_rows_when_scan_fails_then_status_gets_error_via_scope(
     monkeypatch.setitem(module["show"].__globals__, "capture_current", refuse)
     panel = build(module, env)
     click(panel, 2)
-    assert panel.status_line.text() == "Open a font before scanning."
-    assert panel.query_namespace is None
+    assert panel.status_line.text() == "Open a font before scanning.", "scan refusal reaches the status"
+    assert panel.query_namespace is None, "a failed scan leaves no snapshot"
 
 
 def test_destroyed_signal_when_emitted_then_panel_unregistered(
@@ -291,9 +298,9 @@ def test_destroyed_signal_when_emitted_then_panel_unregistered(
 ) -> None:
     panel = build(module, env)
     panel.destroyed.emit()
-    assert module["_PANELS"] == []
+    assert module["_PANELS"] == [], "destroyed panel is unregistered"
     panel.release_owner()  # second release stays harmless
-    assert module["_PANELS"] == []
+    assert module["_PANELS"] == [], "second release is harmless"
 
 
 def test_close_event_when_disconnect_refused_then_ignored_and_kept(
@@ -303,12 +310,16 @@ def test_close_event_when_disconnect_refused_then_ignored_and_kept(
     panel.scope.refuse = True
     event = Event()
     panel.closeEvent(event)
-    assert event.ignored and not event.accepted and not panel.deleted
-    assert module["_PANELS"] == [panel]
+    assert event.ignored, "close is ignored while disconnect is refused"
+    assert not event.accepted, "a refused close is not accepted"
+    assert not panel.deleted, "the panel is not deleted"
+    assert module["_PANELS"] == [panel], "panel stays registered for a retry"
     panel.scope.refuse = False
     event = Event()
     panel.closeEvent(event)
-    assert event.accepted and panel.deleted and module["_PANELS"] == []
+    assert event.accepted, "retry close is accepted"
+    assert panel.deleted, "panel is deleted after a clean close"
+    assert module["_PANELS"] == [], "panel is unregistered"
 
 
 def test_show_when_panel_show_fails_then_clean_panel_removed_and_error_raised(
@@ -335,12 +346,12 @@ def test_show_when_panel_show_fails_and_disconnect_refused_then_panel_kept(
         module["show"](qt, None)
     (panel,) = module["_PANELS"]
     assert panel.shown == 2, "a panel that cannot be torn down is shown again for a Close retry"
-    assert panel.query_namespace is None
+    assert panel.query_namespace is None, "no snapshot on the retained panel"
 
 
 def test_main_when_window_available_then_panel_opens(module: dict[str, Any], env: NS) -> None:
     module["main"]()
-    assert len(module["_PANELS"]) == 1
+    assert len(module["_PANELS"]) == 1, "main opens exactly one panel"
 
 
 @pytest.mark.parametrize("error", [ValueError("no window"), AttributeError("no MainWindow")])
@@ -352,11 +363,11 @@ def test_main_when_window_lookup_fails_then_message_printed(
 
     env.fly.root.fl = NS(MainWindow=fail)
     module["main"]()
-    assert capsys.readouterr().out == f"Glyph Snapshot Console: {error}\n"
-    assert module["_PANELS"] == []
+    assert capsys.readouterr().out == f"Glyph Snapshot Console: {error}\n", "lookup failure is printed with the script name"
+    assert module["_PANELS"] == [], "no panel is opened"
 
 
 def test_script_when_run_as_main_then_main_executes(env: NS, capsys: Any) -> None:
     env.fly.root.fl = NS(MainWindow=lambda: (_ for _ in ()).throw(ValueError("no window")))
     runpy.run_path(str(SCRIPT), run_name="__main__")
-    assert "Glyph Snapshot Console: no window" in capsys.readouterr().out
+    assert "Glyph Snapshot Console: no window" in capsys.readouterr().out, "__main__ run reaches main()"

@@ -4,6 +4,11 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Coverage tests for three scripts
+
+- `tests/test_cov_*.py` cover Font Drop Inspector, Glyph Snapshot Console and Symbol Tag Search (99-100% branch coverage). Script bytes and pins are unchanged.
+- The workspace coverage gate runs this suite with `COVERAGE_CORE=pytrace`: coverage's C tracer re-installs itself when the console chains `sys.gettrace()` and so dropped the console deadline.
+
 ## 2026-10-22 - Complete queued-update disclosure
 
 - Disclose queued ids and date caveats in contour, drawing and metadata tools.
