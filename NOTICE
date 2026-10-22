@@ -1579,3 +1579,59 @@ SHA256 c1925f3c9e3816f35dc66b9c259af290489b963a503379a9de5c9291cf00c83d
 fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py (from Node.py)
 rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Node.py
 SHA256 9bc60008420a1a73c6ae2ece46ec74f6dcd2d32dbf0b2bfb40ffc92a8ca7f6c5
+
+TypeRig manager, toolbar and tool scripts:
+
+Scripts/Contours/Node Slope And Handles.py
+Independent behaviour rewrite of the curve and node_slope toolbars:
+numeric node slopes, handle proportions and Hobby tensions.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/curve.py
+SHA256 b015cd70085834e942bcad09208adea3e275f52ddb593010707041a34d84d05b
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_slope.py
+SHA256 326b843d396e54d64a5b648e68a733c683e8aa7d1061aabc242b3f9bcf45ee60
+
+Mapped to existing tools (no new code or resources):
+fontlab-python-scriptmix/Scripts/Font Info/Master Metrics Table.py (from FontMetrics.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/FontMetrics.py
+SHA256 238b24fa473a611284513bd1314d68503b1d6ccf3900f139da793f51df840281
+fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py (from node_align.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_align.py
+SHA256 e83fb3e15bd7fbb3422506e0ab6032c7ac86609cc8edd77152199eb844d1e425
+fontlab-python-scriptmix/Scripts/Reports/Compare Open Font Revisions.py (from TR-Comparator.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-Comparator.py
+SHA256 cea5ae77d2f5e712c98329f651c97e2ca1022f81bb5fb3b886c060b06c00bb4d
+
+Covered by native FontLab commands (no new code or resources):
+File > Import and File > Export (Metrics, Artwork, Classes) (from Impex.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Impex.py
+SHA256 4778034daccb218e2d5979f9b2d0789261d788758c2d3f2f59aff29af0beb8c5
+Window > Panels > Classes (from KernGroups.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/KernGroups.py
+SHA256 17e63884a34d9bd046144bf84d45f4135e0e58e4e906edad8446ef1f4fef11a8
+Window > Panels > Kerning (from Kerning.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Kerning.py
+SHA256 86612bf7e4900c1de64e47340454199af4fd00c2bbfba39eefe81a3c109af78e
+Contour > Join, Contour > Remove Overlap and related contour commands (from contour.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/contour.py
+SHA256 0c68e20de45c604d5399165fa3a73ff38d098e7bec82b7d4255235214cef0a1c
+Contour > Nodes > Loop Corner, Ink Trap and Add Smart Corner (from node.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node.py
+SHA256 c67e7957ce3894d1f4cfd3de1d06b1147424b50df75b020496532af316df22c9
+File > Save Font As and File > Open Fonts (from TR-ExportFont.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportFont.py
+SHA256 5a38276c29627e60a9c35afa012678bc3eb6a0b6afb2a2728901aa2a2fd14208
+
+Retired without a script (library, launcher or format-specific code;
+reasons in menu-adaptations.json):
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/core/algo/matchmaker.py
+SHA256 b606931e430b897c2970a85a6662ff7898690fb90f27dbe82b57f7ad486d92fd
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/dialogs.py
+SHA256 46d4c83cd109605a6d89815cfbe450f34bff8987bf66fa7a82f3f8b025519556
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/sampler.py
+SHA256 0abf8fb676a055dd7b55e0d05a9536fc920040a438b6559b9049dd605ca2dbe8
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-toolbar.py
+SHA256 8c6d91ae9c336232c746945b0d9f9bcc09821f4171a209da59721ff0981ef9f6
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportGlyph.py
+SHA256 9078b2f4322c45c1922b8225e1aebebaa4b8525b29bf3ace83eee76d7572737b
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ImportGlyph.py
+SHA256 8dc65caa7b0f06ae94df33ccb80e7a4fe83db302b5d790735a506a37b7dc933d

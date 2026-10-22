@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 96 practical facades in one category level: Contours, Designer,
+`Scripts/` contains 97 practical facades in one category level: Contours, Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -25,11 +25,11 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 217 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 157 identities
-that have no script in this collection, each with its reason. For 4 of them
+`menu-adaptations.json` maps 222 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 169 identities
+that have no script in this collection, each with its reason. For 10 of them
 the reason starts with "duplicate-of native" and names the FontLab command
-that does the job; the others are retired. The other 120 identities
+that does the job; the others are retired. The other 103 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -184,3 +184,10 @@ font. Contours adds Node Table, an editable table of all own nodes of the
 current layer with two-way selection sync; an Apply that changes coordinates
 is recorded as one Undo step. Five other TypeRig panels map to existing
 Scriptmix tools.
+
+Contours also adds Node Slope And Handles, after the TypeRig curve and node
+slope toolbars. It sets the slope of selected nodes (copied, typed or from
+each master's italic angle) and cubic handle lengths as proportions or Hobby
+tensions; each Apply is recorded as one Undo step. Other TypeRig manager,
+toolbar and tool scripts map to Scriptmix tools or native FontLab commands;
+TypeRig library, launcher and .trglyph exchange code is retired.

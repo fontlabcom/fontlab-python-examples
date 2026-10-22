@@ -4,6 +4,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Contours
 
+- [Node Slope And Handles](contours/node-slope-and-handles.md)
 - [Node Table](contours/node-table.md)
 
 ## Designer

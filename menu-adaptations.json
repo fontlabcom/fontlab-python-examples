@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 96 practical facades; 217 adaptations remain native pending, 157 identities have no script here, each with a recorded reason (4 of these name the native FontLab command that does the job), and 120 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 97 practical facades; 222 adaptations remain native pending, 169 identities have no script here, each with a recorded reason (10 of these name the native FontLab command that does the job), and 103 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -3332,6 +3332,86 @@
       "source_body_redistributed": false,
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - FontMetrics -- 48e0ff818bea.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/FontMetrics.py",
+      "source_sha256": "238b24fa473a611284513bd1314d68503b1d6ccf3900f139da793f51df840281",
+      "menu": "fontlab-python-scriptmix/Scripts/Font Info/Master Metrics Table.py",
+      "destination_sha256": "4455e14f52b4db43cd372c2d5218af04e5f4afcf7c925f7f5a75de61402b8be1",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "scope": "duplicate-of fontlab-python-scriptmix:Scripts/Font Info/Master Metrics Table.py; edits the four numeric metrics across masters. Alignment zones remain in native Font Info. TypeRig metric-expression JSON and zone JSON are not imported.",
+      "assets": [],
+      "disposition": "duplicate-of",
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - curve -- b63af96fa24c.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/curve.py",
+      "source_sha256": "b015cd70085834e942bcad09208adea3e275f52ddb593010707041a34d84d05b",
+      "menu": "Scripts/Contours/Node Slope And Handles.py",
+      "destination_sha256": "91b91a61c9708afaa69704535483c2b613ce03add85b39e625d61ddaa1a07079",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "scope": "Independent numeric handle panel: chord-relative proportions, copy proportions and two Hobby tensions; exact coordinate previews and one geometry Undo step over selected glyphs and masters. Smooth/Corner, To Curve/To Line, Tunni editing and retraction remain native; Retract Handles in scriptmix also handles batch retraction. Copied proportions are numeric values, not an automatic correspondence map across masters.",
+      "assets": [],
+      "disposition": "ported",
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node_align -- d156ed09fd46.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_align.py",
+      "source_sha256": "e83fb3e15bd7fbb3422506e0ab6032c7ac86609cc8edd77152199eb844d1e425",
+      "menu": "fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py",
+      "destination_sha256": "43b86780dd5c80484cf556cb3398aea2684fba718bf508deac9bac8398be54bc",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "scope": "duplicate-of fontlab-python-scriptmix:Scripts/Contours/Align And Distribute.py; selected-node alignment and distribution, explicit target coordinates and multi-master preview. Native Contour > Align Points supplies collapse. TypeRig picked-node state, neighbour-midpoint, measurement-line and metric shortcut buttons are not reproduced.",
+      "assets": [],
+      "disposition": "duplicate-of",
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node_slope -- 0ce85ad8cd2e.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node_slope.py",
+      "source_sha256": "326b843d396e54d64a5b648e68a733c683e8aa7d1061aabc242b3f9bcf45ee60",
+      "menu": "Scripts/Contours/Node Slope And Handles.py",
+      "destination_sha256": "91b91a61c9708afaa69704535483c2b613ce03add85b39e625d61ddaa1a07079",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "scope": "Independent selected-node dx/dy slope panel: copy selection slope, use each master's italic angle, highest/lowest pivot and horizontal flip. Exact coordinate previews and one geometry Undo step; per-master native selections are read separately. Moved on-curve nodes carry their adjacent unselected handles, including the closed-contour wrap; selected handles keep their own slope targets.",
+      "assets": [],
+      "disposition": "ported",
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-Comparator -- de9b8aadc700.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-Comparator.py",
+      "source_sha256": "cea5ae77d2f5e712c98329f651c97e2ca1022f81bb5fb3b886c060b06c00bb4d",
+      "menu": "fontlab-python-scriptmix/Scripts/Reports/Compare Open Font Revisions.py",
+      "destination_sha256": "33efba2b81e38c7e4c5e5d4a892bed9dbd557f304be7b85ab2a02451e81d6fdb",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "scope": "duplicate-of fontlab-python-scriptmix:Scripts/Reports/Compare Open Font Revisions.py; compares explicit open fonts and masters for geometry, advances, anchors, components and raw flags. Native Font > Compare Fonts... also compares fonts. No TypeRig raster difference preview, timestamp filter or audit-tree text format is reproduced.",
+      "assets": [],
+      "disposition": "duplicate-of",
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ],
   "retirements": [
@@ -4692,6 +4772,102 @@
       "assets": [],
       "source_body_redistributed": false,
       "reason": "duplicate-of native Element > Reference > Add Reference and Replace Reference. Unlink Reference, Element grouping/order controls, native Transform panel, and Scriptmix Components/Replace Reference.py, Decompose.py, Masters/Reorder Shapes.py and Contours/Align And Distribute.py cover reference replacement, unlinking, order and placement. Difference: focused native/script panels replace the combined element-expression editor, saved recipe syntax and captured-key nudge interface."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - core - algo - matchmaker -- 71e93ee8c857.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/core/algo/matchmaker.py",
+      "source_sha256": "b606931e430b897c2970a85a6662ff7898690fb90f27dbe82b57f7ad486d92fd",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by fontlabapp.layer_compatibility and fontlab-python-scriptmix:Scripts/Contours/Make Compatible.py for compatibility checks and line-to-cubic repair, with start/order tools for preparation. The library-only Sederberg-Greenwood dynamic-programming point-insertion matcher has no standalone menu action and is not implemented by those tools."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - proxy - fl - gui - dialogs -- 87c4bc59b698.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/dialogs.py",
+      "source_sha256": "46d4c83cd109605a6d89815cfbe450f34bff8987bf66fa7a82f3f8b025519556",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by fontlabapp.qt_dialogs, fontlabapp.controls and fontlabapp.outline_panel for owned dialogs, numeric controls and master-scoped previews. TypeRig-specific font-lib matrix persistence is not a standalone font action and is not transferred."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Lib - typerig - proxy - fl - objects - sampler -- b36197a778e8.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/sampler.py",
+      "source_sha256": "0abf8fb676a055dd7b55e0d05a9536fc920040a438b6559b9049dd605ca2dbe8",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by fontlabapp.masters polygon and ink_area sampling and fontlab-python-scriptmix:Scripts/Masters/Glyph Weight Chart.py for sampled ink-area reports. Band-pass optical-margin sampling remains a library service, not a standalone menu tool; these tools do not reproduce its sampler algorithm."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - Impex -- 3441d9b25a7f.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Impex.py",
+      "source_sha256": "4778034daccb218e2d5979f9b2d0789261d788758c2d3f2f59aff29af0beb8c5",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native File > Import > Metrics..., File > Export > Metrics..., File > Import > Artwork... and File > Import > Classes... and File > Export > Classes.... These cover AFM metrics/kerning, SVG artwork and class exchange; component and anchor transfer is covered by scriptmix Components and Anchors tools. The TypeRig-specific CSV schemas and per-layer import routing are not reproduced."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - KernGroups -- 728800af602f.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/KernGroups.py",
+      "source_sha256": "17e63884a34d9bd046144bf84d45f4135e0e58e4e906edad8446ef1f4fef11a8",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native Window > Panels > Classes and Font > Kerning > Import Kerning Classes.... Native class editing and class import/export cover the font action; fontlab-python-scriptmix:Scripts/Kerning/Classes Browser.py supplies read-only inspection. TypeRig JSON, bulk prefix/suffix rewrites and composite-based group inference are not reproduced."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Manager - Kerning -- 22caf9704dfe.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/Kerning.py",
+      "source_sha256": "86612bf7e4900c1de64e47340454199af4fd00c2bbfba39eefe81a3c109af78e",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native Window > Panels > Kerning. Native pair editing is complemented by fontlab-python-scriptmix:Scripts/Kerning/Pair Editor.py and Scripts/Kerning/Pair List Browser.py for multi-master edits and CSV export. TypeRig conditional-colour expressions, regex hiding and DTL export menus are not reproduced."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - contour -- 1a13bc3ad8da.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/contour.py",
+      "source_sha256": "0c68e20de45c604d5399165fa3a73ff38d098e7bec82b7d4255235214cef0a1c",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native Contour > Join (select both ends of one open contour to close it); Contour > Remove Overlap (boolean Add), Contour > Overlap > Subtract, Contour > Overlap > Intersect and Contour > Overlap > Exclude; Element > Fusion shape operations; Glyph > Set PS Direction and Contour > Reverse Contour for winding; Contour > Set Start Point and Element > Contours > Sort Horizontally/Sort Vertically. scriptmix Remove Overlap, Correct Contour Direction and Optimize Start Points add batch previews. Explicit clockwise/counterclockwise toolbar buttons, four-corner start presets and reversed spatial sort buttons are not reproduced; use the native direction and order controls."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - Toolbar - node -- df7e60bc2dad.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Toolbar/node.py",
+      "source_sha256": "c67e7957ce3894d1f4cfd3de1d06b1147424b50df75b020496532af316df22c9",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native Contour > Nodes > Loop Corner, Contour > Nodes > Ink Trap..., Contour > Nodes > Add Smart Corner and Contour > Coordinates > Round Selection. Native Contour-tool point insertion/removal and corner actions cover the font action; scriptmix Add Extremes and Round Coordinates add batch previews. TypeRig ceil/floor modifier shortcuts and its corner parameter presets are not reproduced."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig GUI - typerig-toolbar -- b39f1b4ecdc9.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-toolbar.py",
+      "source_sha256": "8c6d91ae9c336232c746945b0d9f9bcc09821f4171a209da59721ff0981ef9f6",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "Toolbar launcher and scope controller, not a menu font tool. Its only job is to load TypeRig toolbar modules and distribute their global mode and layer state. Independent panels use fontlabapp.outline_panel for their own scope and lifecycle; no dynamic TypeRig launcher is needed."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ExportFont -- 79a3e5794c33.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportFont.py",
+      "source_sha256": "5a38276c29627e60a9c35afa012678bc3eb6a0b6afb2a2728901aa2a2fd14208",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native File > Save Font As... and File > Open Fonts.... Native VFJ/UFO source persistence covers font transfer. The .trfont directory is a TypeRig-core interchange format, not a native FontLab format; its partial component switches and TypeRig serialization bridge are not reproduced."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ExportGlyph -- 818710b88484.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportGlyph.py",
+      "source_sha256": "9078b2f4322c45c1922b8225e1aebebaa4b8525b29bf3ace83eee76d7572737b",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "TypeRig-core .trglyph XML exchange is retired as a format-specific bridge: FontLab has no native .trglyph reader, and the maintained collection has no consumer for that XML object schema. Native VFJ/UFO source persistence retains multi-layer glyph source; Scripts/Drawing/Glyph Outline SVG.py covers single-layer vector export. Neither is claimed to produce .trglyph XML."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - kateliev_TypeRig - Scripts - TypeRig Tools - TR-ImportGlyph -- 7c31a75675c3.py",
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ImportGlyph.py",
+      "source_sha256": "8dc65caa7b0f06ae94df33ccb80e7a4fe83db302b5d790735a506a37b7dc933d",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "TypeRig-core .trglyph XML exchange is retired with its matching exporter: FontLab has no native .trglyph reader, and no maintained collection tool produces that XML object schema. Use native File > Open Fonts... for VFJ/UFO sources or File > Import > Artwork... for SVG outlines. These alternatives do not read .trglyph or perform its named-layer XML merge."
     }
   ]
 }
