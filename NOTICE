@@ -1635,3 +1635,22 @@ rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportGlyph.py
 SHA256 9078b2f4322c45c1922b8225e1aebebaa4b8525b29bf3ace83eee76d7572737b
 rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ImportGlyph.py
 SHA256 8dc65caa7b0f06ae94df33ccb80e7a4fe83db302b5d790735a506a37b7dc933d
+
+
+Third-party reference dispositions
+----------------------------------
+Ninety rescued files from the projects below have no script in this
+collection. No source code or asset from them is included. Their paths,
+SHA256 values, licences and reasons are in menu-adaptations.json.
+Robot Locomotion Group, RobotLocomotion/director and openhumanoids/director: BSD-3-Clause.
+Naali contributors, Belsepubi/naali, jonnenauha/naali and cvetan5/naali: Apache-2.0.
+Michael Posa and contributors, DAIRLab/dairlib: MIT.
+3D Slicer contributors, Slicer/SlicerGitSVNArchive: Slicer Contribution and Software License Agreement 1.0.
+CsoundQt contributors, hlolli/CsoundQt and CsoundQt/CsoundQt: LGPL-2.1.
+PythonQt contributors, jcfr/PythonQt: LGPL-2.1.
+Bluscream and contributors, Bluscream/pyTSon_plugins: GPL-3.0.
+KNOSSOS contributors, knossos-project/knossos: GPL-2.0.
+Philipp Schubert, Joergen Kornfeld and contributors, StructuralNeurobiologyLab/SyConn: GPL-2.0.
+HopeFOAM contributors, HopeFOAM/HopeFOAM: GPL-3.0.
+CRIMSON contributors, carthurs/CRIMSONPythonModules: AGPL-3.0.
+eryar/PipeCAD: proprietary.

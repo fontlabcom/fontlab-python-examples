@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 97 practical facades; 222 adaptations remain native pending, 169 identities have no script here, each with a recorded reason (10 of these name the native FontLab command that does the job), and 103 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 97 practical facades; 222 adaptations remain native pending, 259 identities have no script here, each with a recorded reason (10 of these name the native FontLab command that does the job), and 13 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -4868,6 +4868,726 @@
       "license": "MPL-2.0",
       "disposition": "retired",
       "reason": "TypeRig-core .trglyph XML exchange is retired with its matching exporter: FontLab has no native .trglyph reader, and no maintained collection tool produces that XML object schema. Use native File > Open Fonts... for VFJ/UFO sources or File > Import > Artwork... for SVG outlines. These alternatives do not read .trglyph or perform its named-layer XML merge."
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - indent2 -- 50bc59af4413.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/indent2.py",
+      "source_sha256": "0b6345e7036af693bbfb3d2fabd660c87302a3ecf09c3cc09ad0cebc63cd58bf",
+      "disposition": "retired",
+      "reason": "Aligns Csound orchestra opcodes using the CsoundQt opcode catalogue; FontLab feature syntax has different rules.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasHealthPanel -- a8fc854a0efc.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasHealthPanel.py",
+      "source_sha256": "0e45770b8ae90e6c6f845abd384a093081a2e61b083ecc03bd526bfc58749e20",
+      "disposition": "retired",
+      "reason": "Atlas battery, hydraulic pressure and controller telemetry need Director/LCM robot state; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - drakeViewer -- a3f42750154c.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/drakeViewer.py",
+      "source_sha256": "3ebb04983927132eccb8625a3804c4d221b92f79dec6a71b939fa176e534f71a",
+      "disposition": "retired",
+      "reason": "Drake robot-scene viewer needs Director VTK/LCM geometry messages; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - LiveCoding - bytesong - bytesong -- a0bb7569538f.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/LiveCoding/bytesong/bytesong.py",
+      "source_sha256": "616e025143000ec66217eaf5cfc0d5f6d6b2a73fccc67cc45f2dc8e3d87c1696",
+      "disposition": "retired",
+      "reason": "Starts and stops Csound bytebeat songs through CsoundQt documents; no FontLab workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Bluscream_pyTSon_plugins - scripts - channelGroupManager - __init__ -- a53d1119bebc.py",
+      "source": "rescued/part3/sources/Bluscream_pyTSon_plugins/scripts/channelGroupManager/__init__.py",
+      "source_sha256": "f99c70b0e11c813defa7e12e0dcfe9084ac0a995431dfdc72da910caa55a8f85",
+      "disposition": "retired",
+      "reason": "TeamSpeak channel-group administration needs pyTSon, ts3lib and its client database; no FontLab workflow.",
+      "license": "GPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - eryar_PipeCAD - lib - pipecad - __init__ -- 126abde76ca2.py",
+      "source": "rescued/part3/sources/eryar_PipeCAD/lib/pipecad/__init__.py",
+      "source_sha256": "3ae7a3cc4f4ff364ff45e53a626dd142675647e2f853c3bf1689a4ad94c02cc8",
+      "disposition": "retired",
+      "reason": "PipeCAD is proprietary; piping-CAD package initialization has no FontLab workflow and must not be reproduced.",
+      "license": "LicenseRef-Proprietary"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyScriptingConsole - example -- de08b4b212e5.py",
+      "source": "rescued/part3/sources/jcfr_PythonQt/examples/PyScriptingConsole/example.py",
+      "source_sha256": "47f8c26a441356be5b789d7a5682ce4a67d4cfb7230ed42dae54e120df9b08f2",
+      "disposition": "retired",
+      "reason": "Two buttons and a checkbox demonstrate PythonQt properties without a current-font action or FontLab-consumed output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Utilities - Scripts - qrcc -- 6189ed746ae3.py",
+      "source": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Utilities/Scripts/qrcc.py",
+      "source_sha256": "ad8f64ff690e8145a8a0ab9f37e836007b1f12e87308a654aebd1d51fe7ee135",
+      "disposition": "retired",
+      "reason": "Build-time Qt resource compiler registers binary resources with slicer.app; no FontLab font or proof output.",
+      "license": "LicenseRef-Slicer-1.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Tutorial - 04_Using_Qt -- 414f62d07eb9.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Tutorial/04_Using_Qt.py",
+      "source_sha256": "1e2a200291b6832e6f858c7e4f033ec67e8b6073c90724ca07c766de7231b6d5",
+      "disposition": "retired",
+      "reason": "CsoundQt welcome message and button tutorial has no current-font action or FontLab-consumed output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testRosPlugin -- 5a6c79fe2da4.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testRosPlugin.py",
+      "source_sha256": "348613a416bf09d250b1639f8ce1d0f66f12e3b4bb8d2f8910478dacb51dbb8c",
+      "disposition": "retired",
+      "reason": "Director ROS subscriber and VTK plugin test needs rospy and robot messages; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - user - custom_graphics_view -- c015a0126813.py",
+      "source": "rescued/part3/sources/knossos-project_knossos/python/user/custom_graphics_view.py",
+      "source_sha256": "ade1e6d73dbefc75edcd685f0ca2a4262a7f4c0b3d0889e4c1d5796807b290dd",
+      "disposition": "retired",
+      "reason": "KNOSSOS custom graphics scene and texture-item experiment has no current-font action or FontLab-consumed output.",
+      "license": "GPL-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - localscene - loader -- 06dd307b4794.py",
+      "source": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/localscene/loader.py",
+      "source_sha256": "e315c0d1843b72b6337502d819b6bd14d7cd676b4964a0661074702a8ebee438",
+      "disposition": "retired",
+      "reason": "Library code for Naali/Ogre scene loading; creates game-world mesh entities, with no FontLab scene consumer.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - test -- defae7fe69f6.py",
+      "source": "rescued/part3/sources/carthurs_CRIMSONPythonModules/test.py",
+      "source_sha256": "a0481c1dabfcac2b971ba86d8088b1bc54bb801c9d4939cbb3f3f570498ffe84",
+      "disposition": "retired",
+      "reason": "CRIMSON PHASTA solver-I/O unit tests need solver configuration and numeric simulation data; no FontLab workflow.",
+      "license": "AGPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - consoleapp -- 073174dd7ad8.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/director/consoleapp.py",
+      "source_sha256": "f0b19aabaf8511cfb7e20968d55aca9af155334c72d620cc8f95866d89089115",
+      "disposition": "retired",
+      "reason": "Library code; FontLab panel ownership is covered by fly.ap.scripting; the Director VTK application host has no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - localscene - loader -- ad7d2ad63a02.py",
+      "source": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/localscene/loader.py",
+      "source_sha256": "e315c0d1843b72b6337502d819b6bd14d7cd676b4964a0661074702a8ebee438",
+      "disposition": "retired",
+      "reason": "Library code for Naali/Ogre scene loading; creates game-world mesh entities, with no FontLab scene consumer.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - WIP - ftable_viewer -- 0a81cf0fdd35.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/WIP/ftable_viewer.py",
+      "source_sha256": "9a9939a6f34a8043cd007de32a849f9b3c149738e90359ef835f247b173a5da5",
+      "disposition": "retired",
+      "reason": "Compiles selected Csound score text and plots an audio function table through csnd; no FontLab workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - examples - graphics_view -- 5e7aa976f62b.py",
+      "source": "rescued/part3/sources/knossos-project_knossos/python/examples/graphics_view.py",
+      "source_sha256": "052c07188fc22262b362d092d7cf85eb17cff0496651b28f609a2cca0963b67c",
+      "disposition": "retired",
+      "reason": "KNOSSOS graphics-view demonstration displays example raster images; no current-font action or FontLab-consumed output.",
+      "license": "GPL-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - invalue_chnget -- 3cf3c43ad8f9.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/invalue_chnget.py",
+      "source_sha256": "71daae5ad508f2d0e563153855528ef1ff5e0f6b8549311a62c48ef3e90c201b",
+      "disposition": "retired",
+      "reason": "Rewrites Csound channel opcodes and declarations in orchestra text; these audio channels have no FontLab feature equivalent.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testTaskQueue -- 26a64b770336.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testTaskQueue.py",
+      "source_sha256": "901e5c81c51e4a570c23e8b258f2dcb11fe795d787e95f0742515874c7145d8b",
+      "disposition": "retired",
+      "reason": "Director asynchronous-task-queue demonstration runs timed console tasks; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - upgradeScene -- 855bace19da3.py",
+      "source": "rescued/part3/sources/carthurs_CRIMSONPythonModules/upgradeScene.py",
+      "source_sha256": "0b8b1144d4db0f15ac122a58eaa451d15d22e1c182b8d2358139e8c82f034a6c",
+      "disposition": "retired",
+      "reason": "Migrates CRIMSON medical-simulation scenes and boundary-condition solver data; FontLab cannot consume these scenes.",
+      "license": "AGPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - strset_list -- 87b8485f3ca0.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/strset_list.py",
+      "source_sha256": "ab94e3837566b26468ce9d0348df4bbad1a3eb58f90cd44b7871a333527af167",
+      "disposition": "retired",
+      "reason": "Inserts numbered Csound strset declarations for selected sound files; FontLab does not consume this audio format.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - app - WrapPythonQt -- e1f1724a6b9b.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/app/WrapPythonQt.py",
+      "source_sha256": "72938ac6f0df23b31b8b72cfa851c63649e496c5c84ee4bdfca3d61c4f38b00e",
+      "disposition": "retired",
+      "reason": "Build-time C++ PythonQt decorator generator; FontLab supplies its compiled bindings, so this adds no current-font action.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - mainwindowapp -- 34a44c939e9d.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/mainwindowapp.py",
+      "source_sha256": "842d3b0fcb201d3681ea0670a7f875ce830232b75f48b79b844b0c098ae9b91f",
+      "disposition": "retired",
+      "reason": "Library code; FontLab panel lifecycle is covered by fly.ap.scripting; Director VTK host assembly has no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testTaskQueue -- 7e3ae994f9c9.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testTaskQueue.py",
+      "source_sha256": "901e5c81c51e4a570c23e8b258f2dcb11fe795d787e95f0742515874c7145d8b",
+      "disposition": "retired",
+      "reason": "Director asynchronous-task-queue demonstration runs timed console tasks; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - robotposegui -- 9ac99f81fade.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/director/robotposegui.py",
+      "source_sha256": "87381577e34bf26e439894a306e1f2d5f885ea88f1da455a03c38672b853e281",
+      "disposition": "retired",
+      "reason": "Library code for Director LCM robot-pose capture and playback; no FontLab pose-message consumer or font operation.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testAtlasCommand -- 8399d02036e6.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testAtlasCommand.py",
+      "source_sha256": "e9625843ddf39808e93862ee9ca9f35ca8f82b1d5a6193f8c1066769e233f7e5",
+      "disposition": "retired",
+      "reason": "Atlas robot command and plan-playback test needs Director robot models and LCM messages; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - indent2 -- 0c02b8767224.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/indent2.py",
+      "source_sha256": "0b6345e7036af693bbfb3d2fabd660c87302a3ecf09c3cc09ad0cebc63cd58bf",
+      "disposition": "retired",
+      "reason": "Aligns Csound orchestra opcodes using the CsoundQt opcode catalogue; FontLab feature syntax has different rules.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - mainwindowapp -- 6c9bc00d1527.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/director/mainwindowapp.py",
+      "source_sha256": "3305f0ffb7e6b6ef42bf5799c11e4f45076f6344c6ffb52c0754e2b93b53bb6e",
+      "disposition": "retired",
+      "reason": "Library code; FontLab panel lifecycle is covered by fly.ap.scripting; Director VTK host assembly has no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - OpenGL - openGL -- 40fe7decaef1.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/OpenGL/openGL.py",
+      "source_sha256": "43e6c1cf0f1b650c0744351b7b265610858183809308462445ceb6f1294e7f4e",
+      "disposition": "retired",
+      "reason": "Animated OpenGL spiral demonstration has no glyph geometry, current-font action or FontLab-consumed proof output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - LiveCoding - bytesong - bytesong -- f72906f79bc3.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/LiveCoding/bytesong/bytesong.py",
+      "source_sha256": "616e025143000ec66217eaf5cfc0d5f6d6b2a73fccc67cc45f2dc8e3d87c1696",
+      "disposition": "retired",
+      "reason": "Starts and stops Csound bytebeat songs through CsoundQt documents; no FontLab workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - cameraViewer -- f187483f71dc.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/cameraViewer.py",
+      "source_sha256": "545aea86789535e21d95299eff5273de1b12e771962815c801dc75329a5e8ac1",
+      "disposition": "retired",
+      "reason": "Director robot-camera viewer needs camera streams and VTK; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testAtlasCommand -- a0dc0644e54c.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testAtlasCommand.py",
+      "source_sha256": "c334add3307728c762ec3a2dac270014881b1d4aef260f25836aab4ca2aa9d5e",
+      "disposition": "retired",
+      "reason": "Atlas robot command and plan-playback test needs Director robot models and LCM messages; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasRecoveryPanel -- 83fa155cfeb6.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasRecoveryPanel.py",
+      "source_sha256": "7f006660de46abad41e3618db341bc61882c11643cad0d2bc969ed103cdef011",
+      "disposition": "retired",
+      "reason": "Sends an Atlas reactive-recovery trigger through Director atlasdriver; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Useful - UI_with_QtDesigner -- 77b62bb6235a.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Useful/UI_with_QtDesigner.py",
+      "source_sha256": "1b1e67db765f980ecce69ba9fb4fd153127a2f303c76d8b75888f24f0e1c57a6",
+      "disposition": "retired",
+      "reason": "Converts PyQt4 Designer code for CsoundQt pyrun callbacks; FontLab forms use App-backed QUiLoader instead.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - knossos-project_knossos - python - examples - sreenshot -- 46c74d7d0cc1.py",
+      "source": "rescued/part3/sources/knossos-project_knossos/python/examples/sreenshot.py",
+      "source_sha256": "a8c1ea1061c600074f0dd47543da947969ba42441149512e694825e46eeede3b",
+      "disposition": "retired",
+      "reason": "KNOSSOS viewport screenshot example depends on its host widgets; FontLab window capture is covered by fontlab-grablab.",
+      "license": "GPL-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - carthurs_CRIMSONPythonModules - upgradeScene2 -- f0bd81f0d143.py",
+      "source": "rescued/part3/sources/carthurs_CRIMSONPythonModules/upgradeScene2.py",
+      "source_sha256": "702386cf7bd60d44e553f18fa75679e76f41fa54d2ef530c7117826e84f1ddef",
+      "disposition": "retired",
+      "reason": "Repackages CRIMSON medical-scene ZIP entries for a scene-version migration; no FontLab scene consumer.",
+      "license": "AGPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - drakevisualizer -- bd8f9cdd251c.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/director/drakevisualizer.py",
+      "source_sha256": "7701bf5e09e69a8b63aa0c6547cf9635ab7630cc838056b350b6319714d7395c",
+      "disposition": "retired",
+      "reason": "Library code for rendering Drake LCM robot meshes with Director VTK; no FontLab robot-geometry consumer.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Bluscream_pyTSon_plugins - scripts - serverBrowser - __init__ -- 325e21ccdad5.py",
+      "source": "rescued/part3/sources/Bluscream_pyTSon_plugins/scripts/serverBrowser/__init__.py",
+      "source_sha256": "ff044e0ec53e4e6a905fa9a45123f9d92a401f152f8235eb42ea271fcef21720",
+      "disposition": "retired",
+      "reason": "TeamSpeak server browser needs pyTSon client APIs and server-list networking; no FontLab workflow.",
+      "license": "GPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Color Organ - color-controller -- 2ae1da313a2c.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Color Organ/color-controller.py",
+      "source_sha256": "ba44687a1a3d2a57bb7c2d5db0afa701ffec2b9c62616d7a16aaa2c13218c153",
+      "disposition": "retired",
+      "reason": "Csound color-organ controller generates audio-control values from RGB controls; no FontLab glyph-mark action.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - videoPlayer -- 917795e42e41.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/videoPlayer.py",
+      "source_sha256": "4f1c2b5078d4eb1f710990c0d913915905bda6364d53c71748bb017b1757e4f0",
+      "disposition": "retired",
+      "reason": "Director video player replays robot-camera logs and LCM image data; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - bin - osx-package -- a2f2cc3bd1d0.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/bin/osx-package.py",
+      "source_sha256": "63af049a8a8b0558fe50e2e1ae7544c589a3d0505c1a428503d0faf0cb9f72aa",
+      "disposition": "retired",
+      "reason": "Build-time CsoundQt macOS bundler rewrites dylib paths and packages frameworks; no FontLab font workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - depthscanner -- 63584935d64a.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/depthscanner.py",
+      "source_sha256": "e407306988e425a3d48a1fc527fa8b5c4e25ccb91390add5be08feb80c507c86",
+      "disposition": "retired",
+      "reason": "Library code for Director VTK depth-buffer and point-cloud scanning; no FontLab depth-camera consumer.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - apitest - chessview - chessviewcontrol -- 9fbe92a19797.py",
+      "source": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/apitest/chessview/chessviewcontrol.py",
+      "source_sha256": "c1d571a82330def421902d73f1f884e2dc62ecb8b10d7158a1d377d19453f256",
+      "disposition": "retired",
+      "reason": "Naali chess controller maps chess-engine moves to game-world mesh entities; no FontLab workflow.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - WIP - ftable_viewer -- 87547c8db82d.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/WIP/ftable_viewer.py",
+      "source_sha256": "9a9939a6f34a8043cd007de32a849f9b3c149738e90359ef835f247b173a5da5",
+      "disposition": "retired",
+      "reason": "Compiles selected Csound score text and plots an audio function table through csnd; no FontLab workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasHealthPanel -- deb0f5408f4d.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasHealthPanel.py",
+      "source_sha256": "0e45770b8ae90e6c6f845abd384a093081a2e61b083ecc03bd526bfc58749e20",
+      "disposition": "retired",
+      "reason": "Atlas battery, hydraulic pressure and controller telemetry need Director/LCM robot state; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - rem_newline -- 610a1dd9c66c.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/rem_newline.py",
+      "source_sha256": "b8e8d63f9609c10043d7c92a2e0a8141a6deb24f8e400f41fa2134d51e72a057",
+      "disposition": "retired",
+      "reason": "Joins selected CsoundQt editor lines; this generic text edit adds no distinct current-font action or FontLab proof workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - drakeViewer -- 830e3145ecdc.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/drakeViewer.py",
+      "source_sha256": "3ebb04983927132eccb8625a3804c4d221b92f79dec6a71b939fa176e534f71a",
+      "disposition": "retired",
+      "reason": "Drake robot-scene viewer needs Director VTK/LCM geometry messages; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - apitest - chessview - chessviewcontrol -- 52c0ac3af3af.py",
+      "source": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/apitest/chessview/chessviewcontrol.py",
+      "source_sha256": "98bb14bcecd8ca1c8587b242984c6193a2d05994957e52f39297d829fce53a99",
+      "disposition": "retired",
+      "reason": "Naali chess controller maps chess-engine moves to game-world mesh entities; no FontLab workflow.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Tutorial - 04_Using_Qt -- 11d64d7977aa.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Tutorial/04_Using_Qt.py",
+      "source_sha256": "1e2a200291b6832e6f858c7e4f033ec67e8b6073c90724ca07c766de7231b6d5",
+      "disposition": "retired",
+      "reason": "CsoundQt welcome message and button tutorial has no current-font action or FontLab-consumed output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - app - WrapPythonQt -- 598a9dc27acb.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/app/WrapPythonQt.py",
+      "source_sha256": "b499249f3dfcf58b3a4c989fd18d66ac5e51d53a581950c3cad20d75e12e4504",
+      "disposition": "retired",
+      "reason": "Build-time C++ PythonQt decorator generator; FontLab supplies its compiled bindings, so this adds no current-font action.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - invalues_for_widgets -- c17168f00f7e.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/invalues_for_widgets.py",
+      "source_sha256": "1cb7f611f7ccb5ab577a30992f867019cdb7197ea5e5a5f1e35d32c2f3e63db9",
+      "disposition": "retired",
+      "reason": "Generates Csound invalue statements from selected bsbObject widget XML; FontLab has no Csound channel consumer.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - robotposegui -- c3d6a4012020.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/robotposegui.py",
+      "source_sha256": "ab3cb932dc1f54e02befd9884b06eacf033280ce3f0c8d77f0737d35da9319ce",
+      "disposition": "retired",
+      "reason": "Library code for Director LCM robot-pose capture and playback; no FontLab pose-message consumer or font operation.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testFrameSync -- b51bb48a1648.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testFrameSync.py",
+      "source_sha256": "e1e48d989138c8db81781c2672338993186cab9933bddd05526633e11a764a77",
+      "disposition": "retired",
+      "reason": "Director VTK frame-synchronization test moves linked 3D frames; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Utilities - Scripts - genqrc -- d21c5122a083.py",
+      "source": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Utilities/Scripts/genqrc.py",
+      "source_sha256": "eaa8a0be0ff99ebb24ee9de1d0476c40672bbb90188571fb3dba712e975692b5",
+      "disposition": "retired",
+      "reason": "Build-time resource-list generator emits Qt qrc XML for Slicer assets; no current-font action or FontLab proof output.",
+      "license": "LicenseRef-Slicer-1.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasControlPanel -- bc692cad05e1.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasControlPanel.py",
+      "source_sha256": "160ad911025dd17ff052b9088c62d7c562b48cfd88459d5eb3716ccb80dd72ff",
+      "disposition": "retired",
+      "reason": "Sends Atlas freeze, stop and reactive-recovery commands through atlasdriver; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jonnenauha_naali - bin - pymodules - localscene - dotscene -- b72fc92e8207.py",
+      "source": "rescued/part3/sources/jonnenauha_naali/bin/pymodules/localscene/dotscene.py",
+      "source_sha256": "283255496c74afc4a98da927c372bf1187a699b0fd27fbf207a08899918e1bcd",
+      "disposition": "retired",
+      "reason": "Library code for Ogre dot-scene XML and Naali scene nodes; no FontLab scene consumer or font operation.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Editor - strset_list -- 81da36a4000a.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Editor/strset_list.py",
+      "source_sha256": "ab94e3837566b26468ce9d0348df4bbad1a3eb58f90cd44b7871a333527af167",
+      "disposition": "retired",
+      "reason": "Inserts numbered Csound strset declarations for selected sound files; FontLab does not consume this audio format.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - consoleapp -- 1bee2af7b147.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/consoleapp.py",
+      "source_sha256": "819f468c91af52ea8873b481c73500cc14cba846cc072e8a74fb93cc26b7c115",
+      "disposition": "retired",
+      "reason": "Library code; FontLab panel ownership is covered by fly.ap.scripting; the Director VTK application host has no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Useful - nanokontrol -- b47420cee429.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Useful/nanokontrol.py",
+      "source_sha256": "f493a14821f8ce40b75c53f04e25f8d8a9f6b3c4816b4ea7648ece2cf74c16be",
+      "disposition": "retired",
+      "reason": "Maps Korg nanoKONTROL MIDI controls to CsoundQt audio widgets; no FontLab MIDI-control workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testPropertiesPanel -- c2fa6435b02f.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testPropertiesPanel.py",
+      "source_sha256": "7eeeffaecd6c901fc10aa465be15aa2f18dfbcfc43269a1c78cb693e4633f32e",
+      "disposition": "retired",
+      "reason": "Director object-model property-panel test edits synthetic objects; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testPythonConsole -- da8ce4485a20.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testPythonConsole.py",
+      "source_sha256": "dfb110eaa15d9a7a2271d752cb534db829ac9489fa6d62d26c29073eb8d7473c",
+      "disposition": "retired",
+      "reason": "Director console smoke test shows its supplied console and runs the application event loop; no FontLab font action.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - scripts - atlasControlPanel -- 806d8444d7ea.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/scripts/atlasControlPanel.py",
+      "source_sha256": "160ad911025dd17ff052b9088c62d7c562b48cfd88459d5eb3716ccb80dd72ff",
+      "disposition": "retired",
+      "reason": "Sends Atlas freeze, stop and reactive-recovery commands through atlasdriver; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - lcmlogplayer -- 40fed262c84a.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/lcmlogplayer.py",
+      "source_sha256": "580d9b5ec0887fcad17e50b75bc276a0bf567cac84309a2101c2bb0c1d665ac3",
+      "disposition": "retired",
+      "reason": "Library code for playback and scrubbing of robot LCM event logs; FontLab has no LCM-log consumer.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyGuiExample - example -- 3e4a6176d468.py",
+      "source": "rescued/part3/sources/jcfr_PythonQt/examples/PyGuiExample/example.py",
+      "source_sha256": "47f8c26a441356be5b789d7a5682ce4a67d4cfb7230ed42dae54e120df9b08f2",
+      "disposition": "retired",
+      "reason": "Two buttons and a checkbox demonstrate PythonQt properties without a current-font action or FontLab-consumed output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - rem_newline -- aa354346b2df.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/rem_newline.py",
+      "source_sha256": "58f77fed6d4f79e7b290ec55f35913f6a502332a20fc16e22adec4ee0cf65d30",
+      "disposition": "retired",
+      "reason": "Joins selected CsoundQt editor lines; this generic text edit adds no distinct current-font action or FontLab proof workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Slicer_SlicerGitSVNArchive - Base - Python - tpycl - tpycl -- c5606d645ce6.py",
+      "source": "rescued/part3/sources/Slicer_SlicerGitSVNArchive/Base/Python/tpycl/tpycl.py",
+      "source_sha256": "8291bac79505f1fe2c53c9847c7e4027b35ddec1990895398a2e9d71d602e541",
+      "disposition": "retired",
+      "reason": "Library code bridging Tcl commands to Slicer VTK objects; FontLab has no Tcl/VTK scene consumer.",
+      "license": "LicenseRef-Slicer-1.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - localscene - dotscene -- d3944f3cb203.py",
+      "source": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/localscene/dotscene.py",
+      "source_sha256": "283255496c74afc4a98da927c372bf1187a699b0fd27fbf207a08899918e1bcd",
+      "disposition": "retired",
+      "reason": "Library code for Ogre dot-scene XML and Naali scene nodes; no FontLab scene consumer or font operation.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - localscene - loader -- 37078ac88917.py",
+      "source": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/localscene/loader.py",
+      "source_sha256": "7e3b073e4110ac5d2c5da201d2c9bd9d0189703a6a9529cc6677d7a7032bf7ca",
+      "disposition": "retired",
+      "reason": "Library code for Naali/Ogre scene loading; creates game-world mesh entities, with no FontLab scene consumer.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - videoPlayer -- f623d99f5e8d.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/videoPlayer.py",
+      "source_sha256": "4f1c2b5078d4eb1f710990c0d913915905bda6364d53c71748bb017b1757e4f0",
+      "disposition": "retired",
+      "reason": "Director video player replays robot-camera logs and LCM image data; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - director - imageviewapp -- 5203ecb953fd.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/director/imageviewapp.py",
+      "source_sha256": "181f82e7e9fec07784495304f93096f0a5e7e3e7c533fd801525437085902eec",
+      "disposition": "retired",
+      "reason": "Library code for a Director VTK/LCM image-view application; no FontLab robot-image consumer or font action.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testObjectModel -- acb32f96c687.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testObjectModel.py",
+      "source_sha256": "1cce58964d8df1c43208c0b1a5f15cd1e47c6a6638683a2694f02998a02486cc",
+      "disposition": "retired",
+      "reason": "Director object-tree test creates synthetic parent and child objects; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - director - scripts - VisualizationGUI -- d6f1336a7f6b.py",
+      "source": "rescued/part3/sources/DAIRLab_dairlib/director/scripts/VisualizationGUI.py",
+      "source_sha256": "b0989ff9dc680d346bf0630427757b5928ddac1aa30d92ef778fe299860527d1",
+      "disposition": "retired",
+      "reason": "DAIRLab robot visualization needs pydrake, dairlib, Meshcat and LCM messages; no FontLab workflow.",
+      "license": "MIT"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - jcfr_PythonQt - examples - PyGettingStarted - GettingStarted -- 8fb96012cf02.py",
+      "source": "rescued/part3/sources/jcfr_PythonQt/examples/PyGettingStarted/GettingStarted.py",
+      "source_sha256": "4fc610f527f167857b170115f69345a5c231cf1cc624614c9763340d49e07d30",
+      "disposition": "retired",
+      "reason": "Appends arbitrary line-edit text to a supplied PythonQt browser widget; no current-font action or FontLab-consumed output.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - cvetan5_naali - src - Application - PythonScriptModule - pymodules_old - localscene - dotscene -- 23229743bc55.py",
+      "source": "rescued/part3/sources/cvetan5_naali/src/Application/PythonScriptModule/pymodules_old/localscene/dotscene.py",
+      "source_sha256": "214988c3b5338b12163a361b5dcf956de41ee434bd6057168dfaabde573d0af6",
+      "disposition": "retired",
+      "reason": "Library code for Ogre dot-scene XML and Naali scene nodes; no FontLab scene consumer or font operation.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - CsoundQt_CsoundQt - src - Scripts - Koenig-Essay - Koenig-Essay -- 63190a3ce39c.py",
+      "source": "rescued/part3/sources/CsoundQt_CsoundQt/src/Scripts/Koenig-Essay/Koenig-Essay.py",
+      "source_sha256": "34d579e230f7f163cab616cd1f43652f8b834951e4f1273b37f9f3ab03641e5c",
+      "disposition": "retired",
+      "reason": "Renders sections of a Csound musical composition and edits its score files; no FontLab workflow.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testObjectModel -- 811954286396.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testObjectModel.py",
+      "source_sha256": "1cce58964d8df1c43208c0b1a5f15cd1e47c6a6638683a2694f02998a02486cc",
+      "disposition": "retired",
+      "reason": "Director object-tree test creates synthetic parent and child objects; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - docs - sphinx - tutorials - visualization - basicView1 -- d3658da79b7d.py",
+      "source": "rescued/part3/sources/openhumanoids_director/docs/sphinx/tutorials/visualization/basicView1.py",
+      "source_sha256": "04cedc83dd853e85db58e49812e10e45129f14fbf6fbc7ad5fb1f1c7bb975e79",
+      "disposition": "retired",
+      "reason": "Director ddQVTKWidgetView display tutorial shows a VTK camera view; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - docs - sphinx - tutorials - visualization - basicView1 -- 669818329a9d.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/docs/sphinx/tutorials/visualization/basicView1.py",
+      "source_sha256": "04cedc83dd853e85db58e49812e10e45129f14fbf6fbc7ad5fb1f1c7bb975e79",
+      "disposition": "retired",
+      "reason": "Director ddQVTKWidgetView display tutorial shows a VTK camera view; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testPythonConsole -- c1627d6b18a1.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testPythonConsole.py",
+      "source_sha256": "dfb110eaa15d9a7a2271d752cb534db829ac9489fa6d62d26c29073eb8d7473c",
+      "disposition": "retired",
+      "reason": "Director console smoke test shows its supplied console and runs the application event loop; no FontLab font action.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - atlasRecoveryPanel -- 5960c498ac0d.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/atlasRecoveryPanel.py",
+      "source_sha256": "7f006660de46abad41e3618db341bc61882c11643cad0d2bc969ed103cdef011",
+      "disposition": "retired",
+      "reason": "Sends an Atlas reactive-recovery trigger through Director atlasdriver; no FontLab workflow.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - director - depthscanner -- 207c7a11f7e4.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/director/depthscanner.py",
+      "source_sha256": "3c2e348c89a6102a4df5b0c265881da87382b66088f36a37e55972a329409985",
+      "disposition": "retired",
+      "reason": "Library code for Director VTK depth-buffer and point-cloud scanning; no FontLab depth-camera consumer.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - invalue_chnget -- b934c1d9cea9.py",
+      "source": "rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/invalue_chnget.py",
+      "source_sha256": "71daae5ad508f2d0e563153855528ef1ff5e0f6b8549311a62c48ef3e90c201b",
+      "disposition": "retired",
+      "reason": "Rewrites Csound channel opcodes and declarations in orchestra text; these audio channels have no FontLab feature equivalent.",
+      "license": "LGPL-2.1"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - tests - testPropertiesPanel -- c28e4642fd82.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/tests/testPropertiesPanel.py",
+      "source_sha256": "7eeeffaecd6c901fc10aa465be15aa2f18dfbcfc43269a1c78cb693e4633f32e",
+      "disposition": "retired",
+      "reason": "Director object-model property-panel test edits synthetic objects; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - RobotLocomotion_director - src - python - scripts - cameraViewer -- b1ee14099988.py",
+      "source": "rescued/part3/sources/RobotLocomotion_director/src/python/scripts/cameraViewer.py",
+      "source_sha256": "545aea86789535e21d95299eff5273de1b12e771962815c801dc75329a5e8ac1",
+      "disposition": "retired",
+      "reason": "Director robot-camera viewer needs camera streams and VTK; no FontLab font or proof output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - Belsepubi_naali - bin - pymodules - apitest - chessview - chessviewcontrol -- 4a1a74766b03.py",
+      "source": "rescued/part3/sources/Belsepubi_naali/bin/pymodules/apitest/chessview/chessviewcontrol.py",
+      "source_sha256": "c1d571a82330def421902d73f1f884e2dc62ecb8b10d7158a1d377d19453f256",
+      "disposition": "retired",
+      "reason": "Naali chess controller maps chess-engine moves to game-world mesh entities; no FontLab workflow.",
+      "license": "Apache-2.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - HopeFOAM_HopeFOAM - ThirdParty-0.1 - ParaView-5.0.1 - Plugins - PythonQtPlugin - WrapPythonQt -- 12a62820f848.py",
+      "source": "rescued/part3/sources/HopeFOAM_HopeFOAM/ThirdParty-0.1/ParaView-5.0.1/Plugins/PythonQtPlugin/WrapPythonQt.py",
+      "source_sha256": "891ae8b20cbf040e0422504a7e2cd11b1fec7e75cb8a6c073fa32488213408a8",
+      "disposition": "retired",
+      "reason": "Build-time C++ PythonQt decorator generator; FontLab supplies its compiled bindings, so this adds no current-font action.",
+      "license": "GPL-3.0"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - openhumanoids_director - src - python - tests - testFrameSync -- d63d4e55feab.py",
+      "source": "rescued/part3/sources/openhumanoids_director/src/python/tests/testFrameSync.py",
+      "source_sha256": "e1e48d989138c8db81781c2672338993186cab9933bddd05526633e11a764a77",
+      "disposition": "retired",
+      "reason": "Director VTK frame-synchronization test moves linked 3D frames; no FontLab font action or consumed output.",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - examples - Cassie - director_scripts - pd_panel -- ec9c61763bc8.py",
+      "source": "rescued/part3/sources/DAIRLab_dairlib/examples/Cassie/director_scripts/pd_panel.py",
+      "source_sha256": "b682e3e6103617987947921d00da673669750a227f1168c871d945c445ab82db",
+      "disposition": "retired",
+      "reason": "Cassie robot PD-controller panel sends LCM gain and target configurations; no FontLab workflow.",
+      "license": "MIT"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - DAIRLab_dairlib - examples - Cassie - director_scripts - cassie_operator -- 37ce566be152.py",
+      "source": "rescued/part3/sources/DAIRLab_dairlib/examples/Cassie/director_scripts/cassie_operator.py",
+      "source_sha256": "11efdbf9277f0db868617e1bb00f02c7d11de6ab72d50b7b365f7686d658fead",
+      "disposition": "retired",
+      "reason": "Cassie operator panel sends robot joint and controller commands through LCM; no FontLab workflow.",
+      "license": "MIT"
+    },
+    {
+      "source_menu": "Scripts/Archived Reference/P3 Sources - StructuralNeurobiologyLab_SyConn - syconn - analysis - syconn_knossos_viewer -- d8a596964448.py",
+      "source": "rescued/part3/sources/StructuralNeurobiologyLab_SyConn/syconn/analysis/syconn_knossos_viewer.py",
+      "source_sha256": "8058393221072ab4304dc4a6e015fb1f99f63e9bdb5c78479c9d0e7cc455d6ac",
+      "disposition": "retired",
+      "reason": "SyConn/KNOSSOS neuron and synapse viewer needs segmentation datasets and a SyConn service; no FontLab workflow.",
+      "license": "GPL-2.0"
     }
   ]
 }

@@ -26,10 +26,10 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
 `menu-adaptations.json` maps 222 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 169 identities
+workflow acceptance still pending. Its `retirements` array records 259 identities
 that have no script in this collection, each with its reason. For 10 of them
 the reason starts with "duplicate-of native" and names the FontLab command
-that does the job; the others are retired. The other 103 identities
+that does the job; the others are retired. The other 13 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -191,3 +191,7 @@ each master's italic angle) and cubic handle lengths as proportions or Hobby
 tensions; each Apply is recorded as one Undo step. Other TypeRig manager,
 toolbar and tool scripts map to Scriptmix tools or native FontLab commands;
 TypeRig library, launcher and .trglyph exchange code is retired.
+
+Ninety more rescued third-party references are retired, each with its own
+reason: robotics, virtual-world and medical-simulation viewers, audio editor
+macros, build utilities and generic widget examples.
