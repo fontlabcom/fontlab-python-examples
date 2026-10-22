@@ -16,7 +16,8 @@ Result:
     Free zoom preserves the current scale when Fit is switched off. Printing draws the original image at the printer origin.
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
-    data are unchanged.  Historical source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    data are unchanged.
+    Historical source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 """
 # historical source sha256: 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
 

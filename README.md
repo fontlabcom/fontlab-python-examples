@@ -107,10 +107,10 @@ access App through `fly.ap`; do not copy shared UI code into each menu.
 ## Tests and lint
 
 Run from this repository root. Prerequisites: uv; an available CPython 3.11
-arm64 interpreter; reviewed sibling checkouts `../fontlab-fontlabapp`,
+arm64 interpreter; sibling checkouts `../fontlab-fontlabapp`,
 `../fontlab-fly` and `../fontlab-python-scriptmix`. uv needs a writable cache
 and access to the required packages, or a populated cache for offline use.
-Set `FONTLAB_REFERENCE_ROOT` to the reviewed workspace containing the Echopy Qt
+Set `FONTLAB_REFERENCE_ROOT` to the workspace containing the Echopy Qt
 stub and API documentation repositories. This is independent of the archive root.
 
 Core tests use App source from the sibling checkout. Run them separately from
@@ -127,7 +127,7 @@ The version override supplies build metadata for the isolated App test install;
 it does not select an App release. The script lint command checks `Scripts/`
 only. It is not a lint result for the whole repository.
 
-Lessons tests also need the reviewed first-party legacy API checkout at
+Lessons tests also need the first-party legacy API checkout at
 `../legacy-api-28bc505`. Namespace checks read only its API and launcher; they
 must never execute archived script bodies. Run separately with offscreen Qt:
 

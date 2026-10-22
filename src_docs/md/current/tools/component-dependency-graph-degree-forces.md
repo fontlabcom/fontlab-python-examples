@@ -25,7 +25,7 @@ Result:
     The degree-weighted 40ms double-arrow scene is local and changes no font data.
     Captured references are a snapshot; Refresh after font/master changes.
 Compatibility:
-     No original helper/body is executed.
+    No original helper/body is executed.
     Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 
 Run **Tools > Component Dependency Graph - Degree Forces** from FontLab's Scripts menu.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8e06e964ee865fa2e67cf00c85085b6ca69a01a56a216718732b29308ffab017.py)
+[Python source](../../../../.build/menu-sources/95c7bc137ba4452656b4bed653354d90bc096023c42cb5a51105a4163734629e.py)
 <!--/codeinclude-->

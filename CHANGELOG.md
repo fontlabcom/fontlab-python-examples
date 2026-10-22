@@ -4,6 +4,15 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Destination pins and documentation cleanup
+
+- Updated 17 Scriptmix destination-pin occurrences to sibling script bytes and
+  54 examples destination-pin occurrences after docstring whitespace cleanup.
+- Removed unused NOTICE-prefix metadata, refreshed the complete NOTICE hash,
+  fixed notice spacing and replaced remaining README review terminology.
+- Regenerated menu pages. Core, TypeRig, documentation tests and site build pass;
+  source-side pins, licence credits and script behaviour are unchanged.
+
 ## 2026-10-22 - Public wording
 
 - Replaced internal review terminology with plain installation, dependency and

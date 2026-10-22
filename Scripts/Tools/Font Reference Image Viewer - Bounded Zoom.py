@@ -16,7 +16,8 @@ Result:
     Zoom actions use the original thresholds and Fit exit resets to Normal. Printing fits the aspect ratio to the printer viewport. This profile writes only a PDF inside its owned temporary directory; closing removes that temporary output.
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
-    data are unchanged.  Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    data are unchanged.
+    Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 """
 # historical source sha256: a56d05bd0de0204bb29e96995d043b9054104eb370fc80a36bc398db77a29bac
 

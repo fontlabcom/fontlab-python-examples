@@ -19,7 +19,7 @@ Result:
     The clipped-force 30ms single-arrow scene is local and changes no font data.
     Captured references are a snapshot; Refresh after font/master changes.
 Compatibility:
-     No original helper/body is executed.
+    No original helper/body is executed.
     Historical source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 """
 # historical source sha256: d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef

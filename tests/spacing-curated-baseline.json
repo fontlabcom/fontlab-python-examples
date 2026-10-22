@@ -203,10 +203,6 @@
     "lessons/src/fontlab_python_lessons/resources/glyph-metrics-form.ui": "466290b9bd4929e5bfdd1d245a9849b077fbf4f837983f08a54796457130d6f7",
     "lessons/src/fontlab_python_lessons/ui.py": "74f5130bd5d84758b5016d907076df55c4e7d50959bcb889d7a57f12e7fa18a9"
   },
-  "notice_prefix": {
-    "bytes": 3645,
-    "sha256": "23c4aa47aa15e9a8a7d69ab6c85dabb6a070816ca5ea5a78bad25d54a88049b1"
-  },
   "licences": {
     "LICENSE-APACHE-2.0": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "src_docs/md/licenses/0bsd-tslib.txt": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751",

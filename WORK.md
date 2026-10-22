@@ -4780,3 +4780,120 @@ These snapshot values changed to the same plain licence text as the delivered ma
 | `tests/spinbox-prior-baseline.json` | `/prior_adaptations/14/license` | Apache-2.0; complete existing notices preserved |
 | `tests/spinbox-prior-baseline.json` | `/prior_adaptations/15/license` | Apache-2.0; complete existing notices preserved |
 | `tests/spinbox-prior-baseline.json` | `/prior_adaptations/16/license` | Apache-2.0; complete existing notices preserved |
+
+
+## Round C2 — sibling destination pins and whitespace — 2026-10-22
+- Read the clean sibling Scriptmix files directly as authorized; 24 manifest rows cover 18 distinct files. Refreshed 17 rows for 13 changed files; the other seven rows were already current and remain unchanged.
+- Fixed whitespace in ten previously edited example module docstrings. Every edit is whitespace-only; all 100 executable script ASTs remain identical. Refreshed 54 local destination-pin occurrences. The combined destination-pin count is 71.
+- Removed unused `notice_prefix` metadata from `tests/spacing-curated-baseline.json`, as explicitly permitted. Kept the complete-NOTICE hash assertion and Apache grant assertion; reformatted the long hash line. No assertion was removed or weakened.
+- Removed dangling Archived, trailing spaces and redundant blank lines from NOTICE without changing any upstream licence block, credit-marker count or source digest. Replaced the three remaining README reviewed-checkout phrases with plain wording.
+- R baseline: exit 1, 492 passed, 4 failed, 7 skipped. Final core: exit 0, 1747 passed, 0 failed, 92 skipped. Final R: exit 0, 496 passed, 0 failed, 7 skipped. Docs: exit 0, 11 passed. Build: exit 0.
+- All 231 manifest destination pins match delivered files; all 100 generated source-page descriptions match current module docstrings. Every source-side pin and every unrelated destination pin is unchanged.
+- Gates retain the requested FONTLAB_REFERENCE_ROOT and FONTLAB_PRESERVED_ROOT. UV_CACHE_DIR=/private/tmp/examples-wording-uv-cache and TMPDIR=/private/tmp avoid the previously established sandbox write restriction. Logs: `/private/tmp/examples-c2-{core,r,docs,build}.log`.
+- Wait, but offline gates do not establish native host behaviour. No native result is claimed.
+### Every changed script digest
+| Destination | Previous SHA256 | Delivered SHA256 |
+| --- | --- | --- |
+| `Scripts/Tools/Component Dependency Graph - Degree Forces.py` | `8e06e964ee865fa2e67cf00c85085b6ca69a01a56a216718732b29308ffab017` | `95c7bc137ba4452656b4bed653354d90bc096023c42cb5a51105a4163734629e` |
+| `Scripts/Tools/Component Dependency Graph.py` | `70088ae84ccd2889a4f2217b088f780b13aee3e1f18ce04b4f50bf6399407555` | `01c8a7cec3a2f791e539c0ba149a745280e34ac3213594daa7371b895c12306a` |
+| `Scripts/Tools/Find Font Source Files - Bytes.py` | `fef9046e07f776c89e0114d314d0e5ae0cbb2651c217b965d3dd73ff654d4474` | `d71118bffbf523644131ce19cc21f3cdc8544cc67ae46be7c4efd7600becec67` |
+| `Scripts/Tools/Find Font Source Files.py` | `29d6ba975155183d8219d045f71f921ae9c2a30be28817504853489d21c424b2` | `7abb57ddfa749a13cba042dbda8f4abd95c2c7288674799b7a87ce12183804e4` |
+| `Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py` | `ddb30a5f5f77996db0c5756b241c2b21b583ed0fb00379cfaea5bafefeb17f6a` | `d7c1faef3bbb32b96d0b18312343aa3c8d7d91d18c5a709565cb0a8a30b905ae` |
+| `Scripts/Tools/Font Reference Image Viewer.py` | `e83511b02e33d1c71c2c52d553c19eb0f36e6b3cc5748e353c07a5e33cc5b927` | `e7ac70eb1510f52f4b57f214464a7a5d573f1d175692f9717371e57b7bc6909e` |
+| `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` | `d03bc005262397d6f56b210906120c17145bab42dd67dd8e0bf197c417e19f77` | `16b6de900a6c13db6ec0b357d517a16c2939911370ed4b5097a0647fabc9eb75` |
+| `Scripts/Widgets/Glyph Metrics and Revisions.py` | `b0a3fe65b0c8d968743a405f95f6e978e6541a1a0f31aea2aebb06afa70018fa` | `69ecee6a18fe45340dd34af78c8a8855107a1d6435ec9109cbf5225bc0c55ae0` |
+| `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` | `3dae428ffd72cfba0ca4d1f1640f8021c4371309354b62c4f3bcbcf28f63bdb6` | `245041a889a0ab50a97d7d40f1c1114b0cd17693ebd139082a42fedeafde3a5d` |
+| `Scripts/Widgets/Glyph Spacing Offset.py` | `ac699844bff777d9d38c8cf364db5695f0109cb303c6a8bd8ba185e8eac9e1bb` | `c2869719d98c22c0155b7111e1dec3e76ee2e036e42638d3a1915fc2d4c22b54` |
+| `fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors Between Fonts.py` | `40e5a29d8b1b55225a6a4f90e09077b85c046d689ea36114c202e30b4951a3fb` | `a8ffa04402e1bf42b4c6bd2fedc23b589cfe7ec3464eb04f6e3ccee9139da5be` |
+| `fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors From Glyph.py` | `046dbf5a680c87aa722a527da700231dcdf126d0c4a4c95e4d24f21259397f89` | `3ab1b1965bc3c2a78632b8114e41ff8975070c449df096c51402c0ef44068877` |
+| `fontlab-python-scriptmix/Scripts/Anchors/Place From Bounds.py` | `cb948ce7a413b50ef09065067b328e4e8c6768f0f4e43b11841759e4a8cb07a7` | `6f8ab4ddf8311c401a86e8bb8566d27b8e665fd1b96fbeee08b994ef17202f5c` |
+| `fontlab-python-scriptmix/Scripts/Anchors/Rename Bulk.py` | `88a65a46fb92d0121677d441e43a5a4e794395e205a8b3da57e1194c9e579dce` | `f6182f69a7f055b8139f0cff1c0925686e7c5dd7a28fd748a381dcfe8fe72e35` |
+| `fontlab-python-scriptmix/Scripts/Font Info/Master Metrics Table.py` | `4455e14f52b4db43cd372c2d5218af04e5f4afcf7c925f7f5a75de61402b8be1` | `9e0c582b5d576c0bb9ac1203c613a803ca6c2343331fec24b9481fb43b040233` |
+| `fontlab-python-scriptmix/Scripts/Guides/Guide List Editor.py` | `fdf1c8c18c9675a8895305d80a78435bb2f8b0681d97b4a4e531c5cf9222d984` | `71a4acbb10222ed881983d7aaa9b28bccd4280f8fc320fa54f7acb35b4020fbb` |
+| `fontlab-python-scriptmix/Scripts/Kerning/Exceptions Finder.py` | `adfbdc13fe2f9e09f1a990c67c303a909bd313183d0922a45f82d1918ba7a5e6` | `045bfa9f313846ef16da78db9dd4b5580fb5e8ab971f058a27eedc289d6d92b0` |
+| `fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py` | `a093aac9b69afe8534a34213828db557c62c6cfca9d62fdbeaca5cb9935f4ba9` | `26e8db13bd05021e1c6b4912a0017ec8c49aecaf8913ded895a1361d65c29316` |
+| `fontlab-python-scriptmix/Scripts/Metrics/Copy Metrics From Reference.py` | `b1fb92ef0f35446d55601b92d79374d3db472e3b45a0507d7b3b932b6d38d845` | `212ab42d323539a1c1c811baf328a5dd18599098e4800bc858a39caa10bb786e` |
+| `fontlab-python-scriptmix/Scripts/Metrics/Scale Advances.py` | `bbc62f225a328d671e13c5ef7ec52f689e49628fbdc7f159227b6050bbeb9561` | `e0bdbc3a04e6e7fb7be64b5dc621a62125a60675ff19966b20eae1b70cd344ab` |
+| `fontlab-python-scriptmix/Scripts/Metrics/Tabular Width.py` | `1fa694eef6bdb79b421622879be2b8669ca496af56f0a06ec0dec96b6fdfa5b0` | `b07285c016bc6ee77e8bf90fa691a5665b99eda7fd1cf46262276549cce8f755` |
+| `fontlab-python-scriptmix/Scripts/Names/Batch Rename.py` | `c65860e9b8e6f6c5fd643ebc73e072dccddeb125aa6c790b78258936baa07fc2` | `91f8c59445b9450ce64104052a687f5107f72f08595c869f2dc3ce53783a0ccb` |
+| `fontlab-python-scriptmix/Scripts/Reports/Compare Open Font Revisions.py` | `33efba2b81e38c7e4c5e5d4a892bed9dbd557f304be7b85ab2a02451e81d6fdb` | `ca119bf8c8abe99248f02b77efd33e1c9eb8640f323ef0f3afd98dc953fb79ed` |
+
+### Every refreshed destination pin location
+JSON Pointer syntax identifies each retained field; digest values are listed by destination above.
+| File | JSON Pointer | Destination |
+| --- | --- | --- |
+| `menu-adaptations.json` | `/adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `menu-adaptations.json` | `/adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `menu-adaptations.json` | `/adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `menu-adaptations.json` | `/adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `menu-adaptations.json` | `/adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `menu-adaptations.json` | `/adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `menu-adaptations.json` | `/adaptations/23/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/24/destination_sha256` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `menu-adaptations.json` | `/adaptations/25/destination_sha256` | `Scripts/Tools/Font Reference Image Viewer.py` |
+| `menu-adaptations.json` | `/adaptations/26/destination_sha256` | `Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py` |
+| `menu-adaptations.json` | `/adaptations/83/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/86/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/116/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `menu-adaptations.json` | `/adaptations/185/destination_sha256` | `fontlab-python-scriptmix/Scripts/Metrics/Scale Advances.py` |
+| `menu-adaptations.json` | `/adaptations/187/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `menu-adaptations.json` | `/adaptations/193/destination_sha256` | `fontlab-python-scriptmix/Scripts/Anchors/Place From Bounds.py` |
+| `menu-adaptations.json` | `/adaptations/194/destination_sha256` | `fontlab-python-scriptmix/Scripts/Metrics/Tabular Width.py` |
+| `menu-adaptations.json` | `/adaptations/196/destination_sha256` | `fontlab-python-scriptmix/Scripts/Metrics/Copy Metrics From Reference.py` |
+| `menu-adaptations.json` | `/adaptations/199/destination_sha256` | `fontlab-python-scriptmix/Scripts/Metrics/Tabular Width.py` |
+| `menu-adaptations.json` | `/adaptations/201/destination_sha256` | `fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py` |
+| `menu-adaptations.json` | `/adaptations/202/destination_sha256` | `fontlab-python-scriptmix/Scripts/Anchors/Place From Bounds.py` |
+| `menu-adaptations.json` | `/adaptations/203/destination_sha256` | `fontlab-python-scriptmix/Scripts/Kerning/Exceptions Finder.py` |
+| `menu-adaptations.json` | `/adaptations/209/destination_sha256` | `fontlab-python-scriptmix/Scripts/Names/Batch Rename.py` |
+| `menu-adaptations.json` | `/adaptations/210/destination_sha256` | `fontlab-python-scriptmix/Scripts/Guides/Guide List Editor.py` |
+| `menu-adaptations.json` | `/adaptations/211/destination_sha256` | `fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py` |
+| `menu-adaptations.json` | `/adaptations/212/destination_sha256` | `fontlab-python-scriptmix/Scripts/Metrics/Copy Metrics From Reference.py` |
+| `menu-adaptations.json` | `/adaptations/217/destination_sha256` | `fontlab-python-scriptmix/Scripts/Font Info/Master Metrics Table.py` |
+| `menu-adaptations.json` | `/adaptations/221/destination_sha256` | `fontlab-python-scriptmix/Scripts/Reports/Compare Open Font Revisions.py` |
+| `menu-adaptations.json` | `/adaptations/225/destination_sha256` | `fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors Between Fonts.py` |
+| `menu-adaptations.json` | `/adaptations/229/destination_sha256` | `fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors From Glyph.py` |
+| `menu-adaptations.json` | `/adaptations/230/destination_sha256` | `fontlab-python-scriptmix/Scripts/Anchors/Rename Bulk.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset.py` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset - Stacked.py` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/character-map-prior-baseline.json` | `/prior_adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Find Font Source Files.py` | `Scripts/Tools/Find Font Source Files.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Find Font Source Files - Bytes.py` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset.py` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Spacing Offset - Stacked.py` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/19/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/20/destination_sha256` | `Scripts/Widgets/Glyph Spacing Offset - Stacked.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/23/destination_sha256` | `Scripts/Tools/Find Font Source Files.py` |
+| `tests/image-viewer-prior-baseline.json` | `/prior_adaptations/24/destination_sha256` | `Scripts/Tools/Find Font Source Files - Bytes.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/17/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_adaptations/18/destination_sha256` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions.py` | `Scripts/Widgets/Glyph Metrics and Revisions.py` |
+| `tests/sliders-prior-baseline.json` | `/prior_runtime/Scripts~1Widgets~1Glyph Metrics and Revisions - Detailed.py` | `Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/15/destination_sha256` | `Scripts/Tools/Component Dependency Graph.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_adaptations/16/destination_sha256` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph - Degree Forces.py` | `Scripts/Tools/Component Dependency Graph - Degree Forces.py` |
+| `tests/spinbox-prior-baseline.json` | `/prior_runtime/Scripts~1Tools~1Component Dependency Graph.py` | `Scripts/Tools/Component Dependency Graph.py` |
+
+### NOTICE expectation and retired metadata
+- `tests/test_spacing_menu_integration.py`, complete NOTICE SHA256 expectation: `d7cd82d4ffc5209b6cbe2727d26361ed6373ae41051d6751a1d04d4ba5a5aa5a` → `7e9571a2d816af6eb7cee3f0527ad2d58f4751af5db10131de1b7569aac7230d`.
+- `tests/spacing-curated-baseline.json`, `/notice_prefix`: removed the unused object (bytes 3645, obsolete prefix SHA256 `23c4aa47aa15e9a8a7d69ab6c85dabb6a070816ca5ea5a78bad25d54a88049b1`). The test continues to compare the complete current NOTICE digest.
