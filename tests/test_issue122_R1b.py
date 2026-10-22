@@ -727,7 +727,9 @@ def node_world(monkeypatch: Any) -> Any:
         return glyph
 
     package.findFgId = find
-    canvas = NS(isNull=False, refreshAll=lambda: events.append("canvas"))
+    # The Glyph window shows A (fl#8573: commit checks the canvas glyphs).
+    block = NS(glyphsCount=lambda: 1, getGlyphAt=lambda index: NS(glyph=glyph))
+    canvas = NS(isNull=False, refreshAll=lambda: events.append("canvas"), textBlocks=lambda: [block])
     workspace = NS(currentPackage=package, getActiveCanvas=lambda: canvas)
     notifications: list[Any] = []
     native = NS(
