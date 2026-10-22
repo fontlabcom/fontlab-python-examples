@@ -9,7 +9,6 @@ import importlib.util
 import inspect
 import json
 import math
-import os
 import sys
 from collections.abc import Callable
 from pathlib import Path
@@ -19,6 +18,8 @@ from typing import Any
 
 import pytest
 from fontlabapp.layer_selection import LayerSelection
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Contours/Node Slope And Handles.py"
@@ -382,7 +383,7 @@ def test_writer_when_batch_has_auto_glyph_then_keep_it_and_commit_others_once(
     plan = writer.collect(
         glyphs,
         ["Regular"],
-        lambda g, m, l: module.changes(l, "Proportions", 0.4, 0.4, False, False),
+        lambda g, m, layer: module.changes(layer, "Proportions", 0.4, 0.4, False, False),
         facts,
     )
     assert plan.refused == ["auto"]
@@ -710,13 +711,12 @@ def test_dispositions_when_loaded_then_all_17_frozen_identities_have_exact_rows(
     assert len(records) == len({r["source_menu"] for r in records}) == 17
     assert len(data["adaptations"]) == 5 and len(data["retirements"]) == 12
     assert sum(r["disposition"] == "ported" for r in records) == 2
-    preserved = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
     for row in records:
         frozen = identities[row["source_menu"]]
         assert row["source"] == frozen["target"]
         assert row["source_sha256"] == frozen["target_sha256"]
         assert (
-            hashlib.sha256((preserved / row["source"]).read_bytes()).hexdigest()
+            recorded_sha256(row['source'])
             == row["source_sha256"]
         )
         assert not row.get("source_body_redistributed", False)

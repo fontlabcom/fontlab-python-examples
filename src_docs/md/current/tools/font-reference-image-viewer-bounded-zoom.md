@@ -23,7 +23,7 @@ Result:
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
     data are unchanged. Native PythonQt/printer and whole-font acceptance remain
-    pending. Original source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    pending. Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 
 Run **Tools > Font Reference Image Viewer - Bounded Zoom** from FontLab's Scripts menu.
 
@@ -32,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/89c9abe4a78f7be36eec4a7b2f90d080ddbda465ed54983352ddc3a25e457371.py)
+[Python source](../../../../.build/menu-sources/c5c06951b975c0c03ad1ff0de89bcf5aaddeb3fbd0e23af15a66a7e691fb5708.py)
 <!--/codeinclude-->

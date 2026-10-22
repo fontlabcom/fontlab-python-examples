@@ -23,9 +23,9 @@ Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
-Source: rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
+Historical source: rescued/part2/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256: 9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac
-Source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
+Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256: 8ad810ecf2897a079286ed7b7ede6a2259c30c0fe7e6b90dc4141af0912103b5
 
 Run **Dialogs > Glyph Proof Batch Wizard** from FontLab's Scripts menu.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/76d5bb504d76c87ea3041aaf4b0d13ca56f709fee187a1a22f1baa5ff1a5abe5.py)
+[Python source](../../../../.build/menu-sources/0a1cfd94073b4a026e2b6faa1afcd910c2baf0ea7b32044eb1f52794bb0ec2a1.py)
 <!--/codeinclude-->

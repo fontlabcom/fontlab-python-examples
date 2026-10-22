@@ -6,7 +6,6 @@ import hashlib
 import importlib
 import json
 import math
-import os
 import runpy
 import sys
 from pathlib import Path
@@ -14,6 +13,8 @@ from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
+
+from historical_sources import archived_source, recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
@@ -840,16 +841,6 @@ MAINS = {
 }
 
 
-def preserved_source_root() -> Path:
-    """Explain the archive configuration before attempting a source-byte read."""
-    root = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
-    if not (root / "rescued").is_dir():
-        pytest.fail(
-            "Set FONTLAB_PRESERVED_ROOT to the preserved fontlab-python-examples archive root (containing rescued/)."
-        )
-    return root
-
-
 def source_dispositions() -> dict[str, tuple[str, str]]:
     """Expand the exact census mapping without executing any preserved source."""
     dispositions: dict[str, tuple[str, str]] = {}
@@ -912,8 +903,8 @@ def integration_rows() -> dict[str, list[dict[str, Any]]]:
     return result
 
 
-def test_complete_source_dispositions_and_preserved_hashes() -> None:
-    """Read source bytes only; never import or execute a rescued example."""
+def test_complete_source_dispositions_and_recorded_hashes() -> None:
+    """Check historical path and hash records; never execute an original example."""
     dispositions = source_dispositions()
     assert len(dispositions) == 39
     assert sum(kind == "retired" for kind, _ in dispositions.values()) == 21
@@ -921,12 +912,11 @@ def test_complete_source_dispositions_and_preserved_hashes() -> None:
     assert sum(kind == "duplicate-of" for kind, _ in dispositions.values()) == 8
     rows = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     indexed = {row["target"]: row for row in rows}
-    preserved = preserved_source_root()
     for source, (kind, target) in dispositions.items():
         assert source in indexed, f"Missing census identity: {source}"
-        actual = hashlib.sha256((preserved / source).read_bytes()).hexdigest()
+        actual = recorded_sha256(source)
         assert actual == indexed[source]["target_sha256"], (
-            f"Source bytes changed: {source}"
+            f"Historical hash differs: {source}"
         )
         if kind == "retired":
             assert len(target) > 30, "Each retirement needs a concrete reason"
@@ -1020,8 +1010,12 @@ def test_missing_archive_has_explicit_configuration_message(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
     monkeypatch.setenv("FONTLAB_PRESERVED_ROOT", str(tmp_path))
-    with pytest.raises(pytest.fail.Exception, match="Set FONTLAB_PRESERVED_ROOT"):
-        preserved_source_root()
+    monkeypatch.setenv("FONTLAB_AUDIT_ARCHIVED_SOURCES", "1")
+    with pytest.raises(pytest.skip.Exception, match="External historical source absent"):
+        archived_source("rescued/missing.py")
+    (tmp_path / "rescued").mkdir()
+    with pytest.raises(AssertionError, match="Missing historical source: rescued/missing.py"):
+        archived_source("rescued/missing.py")
 
 
 def test_completion_status_is_set_only_after_result_build(host: Any) -> None:
@@ -1045,13 +1039,13 @@ def test_preserved_source_headers_match_index() -> None:
     for title in TITLES:
         lines = (ROOT / "Scripts" / "Widgets" / f"{title}.py").read_text().splitlines()
         sources = [
-            (i, line.removeprefix("# preserved-source: "))
+            (i, line.removeprefix("# historical source: "))
             for i, line in enumerate(lines)
-            if line.startswith("# preserved-source: ")
+            if line.startswith("# historical source: ")
         ]
         assert sources, f"Missing source provenance in {title}"
         for line, source in sources:
-            assert lines[line + 1] == "# preserved-source-sha256: " + indexed[source]
+            assert lines[line + 1] == "# historical source sha256: " + indexed[source]
 
 
 def test_integration_rows_are_complete_hash_bound_and_disjoint() -> None:

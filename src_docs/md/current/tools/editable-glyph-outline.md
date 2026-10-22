@@ -23,8 +23,8 @@ owners and refuse deletion for Close retry; terminal faults use window Close.
 Close releases owned views, models, selection and callbacks. No original is run.
 Compatibility: Actual installed PythonQt/font/cache/history/dirty/save/reopen
 acceptance remains pending. No font, selection, preference, file or Output
-writer is used. Original source/resources remain preserved and unbundled.
-Original: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
+writer is used. Original source/resources are archived outside this repository and unbundled.
+Historical source: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
 
 Run **Tools > Editable Glyph Outline** from FontLab's Scripts menu.
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/186355bb82964290e33d3361effebacea84e78a4a611d17912b8704aff74ac2d.py)
+[Python source](../../../../.build/menu-sources/d7e150f4ea743b1f18ad39de8df5d28e06166a9ad871e77ede2d2fa719e66260.py)
 <!--/codeinclude-->

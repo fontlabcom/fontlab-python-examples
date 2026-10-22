@@ -19,7 +19,7 @@ Practical font patterns replace the original generated sample directory.
 Candidate collection is stepped to keep Cancel responsive; source iteration and
 matching policy remain distinct. No application-wide event loop is started.
 Native PythonQt and desktop/file-dialog lifecycle qualification remain pending.
-Original source retained at rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py; both original notices remain in NOTICE.
+Historical source identifier: rescued/part2/ports/dialogs/pyqt-official/findfiles-63f2eeefd052f701.py; both original notices remain in NOTICE.
 
 Run **Tools > Find Font Source Files** from FontLab's Scripts menu.
 
@@ -28,5 +28,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5102826100c6bd60c0173df09381f3bbaae7e04341ca8abddea34a042cf4aa13.py)
+[Python source](../../../../.build/menu-sources/76ee7dd33db419a14f81d2bf78771b47edbb1b7b391d6069a6d4108d772f7f54.py)
 <!--/codeinclude-->

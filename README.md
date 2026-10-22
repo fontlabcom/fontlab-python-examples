@@ -21,9 +21,9 @@ verification does not establish native FontLab compatibility. Original workflow,
 lifecycle, whole-font/history and save/reopen acceptance remain pending where
 stated; nothing was accepted merely by removing an archived menu wrapper.
 
-## Preserved sources
+## Historical sources
 
-The local `rescued/` tree retains all original bodies, resources and attribution.
+`rescued/...` paths identify historical sources archived outside this repository in `fontlab-python-examples-rescued.tar.gz` (sha256 `f49848d39bdac1a6a973864500afe56af635871e5001ae94ee36cd95370a8266`); they do not name files in this repository.
 The frozen `rescue-index.json` retains all 494 historical source identities.
 `menu-adaptations.json` maps 222 practical replacements, with original
 workflow acceptance still pending. Its `retirements` array records 259 identities
@@ -48,9 +48,14 @@ Run `uv run --locked python -m pytest -q tests --ignore-glob
 import the installed App and the real Fly, so run them in their own Python 3.11
 process: `PYTHONPATH=<fontlab-fly>/src uv run --no-project --python 3.11 --with
 pytest --with <fontlab-fontlabapp> python -m pytest -q tests/test_issue122_R*.py`.
-Hash checks read the local
-preserved sources without importing or executing them. When testing an isolated
-checkout, set `FONTLAB_PRESERVED_ROOT` to the existing matching archive root.
+Default provenance checks use the recorded historical paths and SHA256 values.
+External source-byte audits are opt-in: set `FONTLAB_AUDIT_ARCHIVED_SOURCES=1`
+and `FONTLAB_PRESERVED_ROOT` to an extracted archive root containing `rescued/`;
+an absent archive skips with an explicit reason. Once `rescued/` exists, missing
+or mismatched originals fail. The full-archive audit collects every missing,
+unreadable or mismatched file before failing. No historical source is executed.
+Retirement capability checks use `FONTLAB_REFERENCE_ROOT` for the reviewed sibling
+Qt stub and API documentation repositories, independently of the archive root.
 
 The Lessons tests run separately using the documented Python3.11 candidate
 command and environment in [`lessons/README.md`](lessons/README.md). Namespace

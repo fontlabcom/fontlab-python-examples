@@ -21,9 +21,9 @@ Result:
 Compatibility:
     Native PythonQt virtuals, painting and complete font/cache/history/dirty/
     reopen preservation remain pending. No original helper/body is executed.
-    Preserved source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
+    Historical source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 """
-# preserved-source-sha256: d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef
+# historical source sha256: d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef
 
 
 def main() -> None:

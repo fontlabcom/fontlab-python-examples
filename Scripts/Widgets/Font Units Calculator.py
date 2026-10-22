@@ -1,9 +1,9 @@
 # this_file: Scripts/Widgets/Font Units Calculator.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
-# preserved-source-sha256: e598d62c5dd2e7d33560b03ddc41121da3afa6e6b6c86e1a74ff930f75b6fa2b
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
-# preserved-source-sha256: c85c69f307812c61f0108ad203a029d9513470b737af9c06c65d1d76e6befecc
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
+# historical source sha256: e598d62c5dd2e7d33560b03ddc41121da3afa6e6b6c86e1a74ff930f75b6fa2b
+# historical source: rescued/part2/ports/widgets/pyqt-official/calculator-356e4e807f1e789f.py
+# historical source sha256: c85c69f307812c61f0108ad203a029d9513470b737af9c06c65d1d76e6befecc
 """What: Calculate font-unit values and their em and point equivalents.
 How: Read the current font UPM on each Calculate. Apply one explicit operation.
 Why: Keep unit arithmetic separate from stored glyph metrics.

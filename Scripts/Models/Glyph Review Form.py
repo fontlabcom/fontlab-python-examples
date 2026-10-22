@@ -14,13 +14,13 @@ and qt_properties. Native read-back failures show the Edit > Undo recovery.
 
 Independent rewrite of the Qt simplewidgetmapper and combowidgetmapper example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
 SHA256: b6cda27a2fdd03bd8cbfe3604df3e2b4e7f89dbb378d331ba8465d57291902c7
-Source: rescued/part2/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
 SHA256: 610a6d9f48c31599b43c8bd5eecf4686d6cfd5e2915c8cd76d91a65b3248f1a9
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simplewidgetmapper-39de33366209402d.py
 SHA256: fae480ee8369b1fd438007ad15563eacaa22313496ffff7bebd93cb574840ae9
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
 SHA256: 741f446ef14303840be12852cc2b9383eb5ccd716c894ebff21dfc95aa6d44d9
 """
 

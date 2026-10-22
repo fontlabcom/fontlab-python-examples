@@ -12,6 +12,8 @@ from typing import Any, ClassVar
 
 import pytest
 
+from historical_sources import recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Glyph Snapshot Console", "Saved Proof Sample", "FontLab Qt Slot Reference")
 ROWS = (("A", "U+0041", ""), ("space", "U+0020", ""), ("A.alt", "", ""))
@@ -388,15 +390,12 @@ SOURCE_HASHES = {'contour-canvas': '9ec8bcc1c515d3352ef161a2eed90a5ac330f7f50aab
 
 @pytest.mark.parametrize("stem,digest", SOURCE_HASHES.items())
 def test_source_identity_bytes_and_first_party_provenance(stem: str, digest: str) -> None:
-    import hashlib
-    import os
 
     source = "rescued/part2/ports/insights/" + stem + ".py"
     index = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     record = next(row for row in index if row["target"] == source)
-    archive = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
     assert record["target_sha256"] == digest
-    assert hashlib.sha256((archive / source).read_bytes()).hexdigest() == digest
+    assert recorded_sha256(source) == digest
     assert not (ROOT / record["menu"]).exists(), "Never restore a preserved dispatcher"
 
 

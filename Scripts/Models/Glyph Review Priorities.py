@@ -15,9 +15,9 @@ qt_properties. Invalid imports keep the visible queue and current scores.
 
 Independent rewrite of the Qt stardelegate example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
 SHA256: ab5c5904d2ca3688def0ad17a8a48ac63f507e7a77778a888f14e04a89b0c079
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
 SHA256: d11286ceb3e9b813bbda21d1f820c224694722b2b3476c7b19a0791cd6fcc311
 """
 

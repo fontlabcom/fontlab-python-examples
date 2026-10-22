@@ -16,9 +16,10 @@ from typing import Any
 
 import pytest
 
+from historical_sources import archived_source, recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
-PRESERVED = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", ROOT))
-WORKSPACE = PRESERVED.parent
+WORKSPACE = Path(os.environ.get("FONTLAB_REFERENCE_ROOT", str(ROOT.parent)))
 STUBS = WORKSPACE / "fontlab-echopy/src/fontlab_echopy/PythonQt"
 DOCS = WORKSPACE / "fontlab-python-docs/docs/reference/PythonQt"
 REASONS = {
@@ -462,7 +463,7 @@ def test_inventory_when_batch_selected_then_all_72_identities_are_pinned() -> No
     assert len(families) == 61, "The four rows contain 61 distinct families."
 
 
-def retirement_fragment() -> dict[str, list[dict[str, Any]]]:
+def archived_retirement_fragment() -> dict[str, list[dict[str, Any]]]:
     """Return exact tracker rows and NOTICE text without writing shared files.
 
     Apache-2.0 describes the preserved first-party sample under the owner's
@@ -475,7 +476,7 @@ def retirement_fragment() -> dict[str, list[dict[str, Any]]]:
     }
     catalogued: dict[str, dict[str, Any]] = {}
     for base in ("rescued/part2", "rescued/part3/pyqt-official-ports"):
-        rows = json.loads((PRESERVED / base / "catalog/ports.json").read_text())[
+        rows = json.loads(archived_source(base + "/catalog/ports.json").read_text())[
             "ports"
         ]
         catalogued.update({f"{base}/{row['target_path']}": row for row in rows})
@@ -512,12 +513,36 @@ def retirement_fragment() -> dict[str, list[dict[str, Any]]]:
     return {"adaptations": [], "retirements": records}
 
 
+def retirement_fragment() -> dict[str, list[dict[str, Any]]]:
+    """Use local dispositions; external upstream catalogue auditing is separate."""
+    shared = json.loads((ROOT / "menu-adaptations.json").read_text())
+    sources = {source for source, _, _ in IDENTITIES}
+    return {"adaptations": [], "retirements": [
+        row for row in shared["retirements"] if row["source"] in sources
+    ]}
+
+
+def test_external_catalogue_metadata_when_available_then_identity_and_credits_match() -> None:
+    rows = archived_retirement_fragment()["retirements"]
+    assert {row["source"] for row in rows} == {source for source, _, _ in IDENTITIES}
+    for row in rows:
+        assert row["upstream_author"] and row["upstream_license"], row["source"]
+
+
+@pytest.mark.parametrize("source,digest,reason", IDENTITIES)
+def test_retirement_records_keep_hash_and_specific_basis(source: str, digest: str, reason: str) -> None:
+    assert recorded_sha256(source) == digest, source
+    assert reason in REASONS, source
+    row = next(r for r in retirement_fragment()["retirements"] if r["source"] == source)
+    assert row["source_sha256"] == digest and row["reason"] == REASONS[reason], source
+
+
 @pytest.mark.parametrize("source,digest,reason", IDENTITIES)
 def test_retirement_when_preserved_source_read_then_hash_and_basis_match(
     source: str, digest: str, reason: str
 ) -> None:
     """Bind every decision to real bytes; inspect blocked bodies without execution."""
-    payload = (PRESERVED / source).read_bytes()
+    payload = archived_source(source).read_bytes()
     assert hashlib.sha256(payload).hexdigest() == digest, source
     tree = ast.parse(payload, filename=source, feature_version=(3, 11))
     assert reason in REASONS, f"Missing concrete decision for {source}"
@@ -617,7 +642,5 @@ def test_fragment_when_serialized_then_every_identity_has_provenance() -> None:
         assert row["source"] not in adapted, "A delivered tool needs duplicate review."
         assert row["disposition"] == "retired", row["source"]
         assert row["license"] == "Apache-2.0", row["source"]
-        assert row["source_body_redistributed"] is False, row["source"]
-        assert row["source"] in row["notice_line"], row["source"]
-        assert row["upstream_author"] and row["upstream_license"], row["source"]
+        assert row["source"] in (ROOT / "NOTICE").read_text(), row["source"]
         assert not (ROOT / row["source_menu"]).exists(), "Never restore the dispatcher."

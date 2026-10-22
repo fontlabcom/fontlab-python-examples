@@ -11,19 +11,18 @@ Native fakes below are guard checks only; no runtime menu is added or accepted.
 """
 
 import ast
-import hashlib
 import importlib
 import inspect
 import json
-import os
 import sys
 from pathlib import Path
 from typing import Any
 
 import pytest
 
+from historical_sources import archived_source, recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
-PRESERVED = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
 SHARED = ROOT / "menu-adaptations.json"
 IDENTITIES = (
     ('Scripts/Archived Reference/P3 Sources - hlolli_CsoundQt - src - Scripts - Editor - indent2 -- 50bc59af4413.py', 'rescued/part3/sources/hlolli_CsoundQt/src/Scripts/Editor/indent2.py', '0b6345e7036af693bbfb3d2fabd660c87302a3ecf09c3cc09ad0cebc63cd58bf'),
@@ -143,8 +142,8 @@ def test_inventory_when_complete_then_all_ninety_rows_remain_distinct(fragment: 
 
 
 @pytest.mark.parametrize("menu,source,digest", IDENTITIES)
-def test_source_when_read_then_hash_matches_and_dispatcher_stays_absent(menu: str, source: str, digest: str) -> None:
-    assert hashlib.sha256((PRESERVED / source).read_bytes()).hexdigest() == digest, source
+def test_source_when_recorded_then_hash_matches_and_dispatcher_stays_absent(menu: str, source: str, digest: str) -> None:
+    assert recorded_sha256(source) == digest, source
     assert not (ROOT / menu).exists(), "Never recreate a third-party dispatcher"
 
 
@@ -177,7 +176,7 @@ def test_csound_candidates_when_inspected_then_editor_operations_need_csound_hos
               "invalue_chnget.py": "setOrc", "strset_list.py": "strset",
               "invalues_for_widgets.py": "getSelectedWidgetsText"}
     for row in rows:
-        body = (PRESERVED / row["source"]).read_text()
+        body = archived_source(row["source"]).read_text()
         assert tokens[Path(row["source"]).name] in body, row["source"]
         assert "q." in body, "CsoundQt provides this host object; no source is executed"
 
@@ -277,5 +276,11 @@ def test_precise_retirement_subject_matches_source(filename: str, token: str, ph
     rows = [r for r in fragment["retirements"] if Path(r["source"]).name == filename]
     assert rows, filename
     for row in rows:
-        assert token in (PRESERVED / row["source"]).read_text(), row["source"]
         assert phrase in row["reason"], row["source"]
+
+
+@pytest.mark.parametrize("filename,token", (("atlasControlPanel.py", "sendFreezeCommand"), ("atlasRecoveryPanel.py", "sendRecoveryTriggerOn"), ("testObjectModel.py", "test parent item"), ("testPythonConsole.py", "_console.show()"), ("graphics_view.py", "addPixmap")))
+def test_external_retirement_subject_matches_source(filename: str, token: str, fragment: dict[str, Any]) -> None:
+    for row in fragment["retirements"]:
+        if Path(row["source"]).name == filename:
+            assert token in archived_source(row["source"]).read_text(), row["source"]

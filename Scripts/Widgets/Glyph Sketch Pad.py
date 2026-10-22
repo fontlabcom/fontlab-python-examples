@@ -1,9 +1,9 @@
 # this_file: Scripts/Widgets/Glyph Sketch Pad.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
-# preserved-source-sha256: 758bb2e898a2975343743f36ae11481cf14a3cee0094558998dcd70ccb1df640
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
-# preserved-source-sha256: 190d94c10462c2d149efb79fa2f885bf62f55c44bb60addf45bf862f04f2c9a5
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
+# historical source sha256: 758bb2e898a2975343743f36ae11481cf14a3cee0094558998dcd70ccb1df640
+# historical source: rescued/part2/ports/widgets/pyqt-official/scribble-8e5aa13798c2763c.py
+# historical source sha256: 190d94c10462c2d149efb79fa2f885bf62f55c44bb60addf45bf862f04f2c9a5
 """What: Sketch construction ideas over a detached current-glyph outline.
 How: Capture the current glyph in the current master. Fit its complete Qt path
 into an owned canvas. Use its Base and Text palette roles for painting. Store

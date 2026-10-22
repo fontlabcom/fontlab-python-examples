@@ -12,7 +12,7 @@ These examples show PythonQt patterns used inside FontLab: owned windows,
 signals, item models, drawing and small font operations.
 
 This checkout is being reorganized. The previous example catalogue and its
-source files are retained under `rescued/part2`. Their recorded native results
+source files are archived externally with historical prefix `rescued/part2`. Their recorded native results
 describe those earlier implementations. Building this documentation does not
 rerun them or install the previous launcher.
 
@@ -29,7 +29,7 @@ build does not rerun or qualify any native example.
 Browse the [33 current practical scripts](current/index.md) for Forms, Models,
 Tools, Widgets and packaged GetGo lessons. Archived dispatchers have been removed
 from the active Scripts tree. Their original sources and resources remain in the
-local rescue archive; removing a menu does not qualify or complete its workflow.
+external rescue archive; removing a menu does not qualify or complete its workflow.
 
 Explore both [component dependency graph profiles](elastic-component-graphs.md),
 with complete original elastic controls and an immutable font snapshot.

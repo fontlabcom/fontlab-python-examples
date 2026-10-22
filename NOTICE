@@ -1,3 +1,7 @@
+Historical source archives
+--------------------------
+rescued/... paths identify historical sources archived outside this repository, not files in it: fontlab-python-examples-rescued.tar.gz sha256 f49848d39bdac1a6a973864500afe56af635871e5001ae94ee36cd95370a8266; fontlab-python-scriptmix-rescued.tar.gz sha256 ffa611cfec3f2550400989abff51cea1a391d714a91ea4863ca0610711dd4b32.
+
 Archived part2 sort/filter model lessons
 =======================================
 
@@ -39,7 +43,7 @@ fences; an optional scalar epoch channel prevents typed-cell precision loss.
 No original body/resource is executed or bundled. The existing part2 semantics
 remain separate. Native FontLab/PythonQt preservation qualification is pending.
 
-Z13 adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0, owner D22). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes remain preserved and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. Native acceptance is pending.
+Z13 adapts the complete read-only Simple Tree Model part2/part3 behavior from rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py and rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py (Apache-2.0, owner D22). Generic immutable text trees and Qt model/lifetime mechanisms are shared in App. Synthetic text parsing/assets become complete structured glyph metadata. Original source/resource bytes are archived outside this repository and are not executed or bundled by these facades. Separate editable tree entrypoints are unchanged. Native acceptance is pending.
 
 
 Glyph Spacing Worksheet — complete numeric delegate pair
@@ -50,7 +54,7 @@ Owner D22 supplies archived Python under Apache-2.0; complete terms remain in
 LICENSE-APACHE-2.0. Preserve Riverbank2017/Nokia2010 original BSD attribution
 and the collection-level GPL-3.0 metadata discrepancy; no original body, mixed
 helper, or resource is executed or bundled. There are no companion assets.
-Original preserved source identities and full SHA256:
+Historical source identities and full SHA256:
 rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
 539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025
 rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py:
@@ -294,7 +298,7 @@ rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 SHA256 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
 rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 SHA256 a56d05bd0de0204bb29e96995d043b9054104eb370fc80a36bc398db77a29bac
-Shared source contracts: part2 Session and part3 Demo; both originals/helpers remain preserved, never imported or bundled.
+Shared source contracts: part2 Session and part3 Demo; both originals/helpers are archived outside this repository, never imported or bundled.
 
 
 Dialogs tools

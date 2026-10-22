@@ -17,9 +17,9 @@ qt_properties. Close disconnects callbacks; Refresh failures keep prior results.
 
 Independent rewrite of the Qt chart example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
 SHA256: 9e370ed256018c9b63db004c6693b85685a50169b7d7be45b9b5809d7ed37510
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
 SHA256: 0bdf280e85649088518dfc0647ad99a46ab7f446eac7b52aed2eee1d25912956
 
 Run **Models > Glyph Encoding Chart** from FontLab's Scripts menu.
@@ -29,5 +29,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4976e0a841fd15b7abfb05ac09285bda0f9f397ee08d321bc18c57b1a359f868.py)
+[Python source](../../../../.build/menu-sources/76318216ef05fc617a325d8417708e4b9b09d2733b37fdd8bac751e5980a1540.py)
 <!--/codeinclude-->

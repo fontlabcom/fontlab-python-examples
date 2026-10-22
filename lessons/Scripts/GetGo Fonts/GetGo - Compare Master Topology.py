@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Compare Master Topology
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Compare Master Topology.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: fcf75898a46cca80ed0f7e36627864c18a2a9c8e781793fcd70d43fd7a74015e
+# historical source sha256: fcf75898a46cca80ed0f7e36627864c18a2a9c8e781793fcd70d43fd7a74015e
 """GetGo - Compare Master Topology: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

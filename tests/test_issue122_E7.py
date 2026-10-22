@@ -8,7 +8,6 @@ import importlib
 import importlib.util
 import json
 import math
-import os
 import re
 import sys
 from pathlib import Path
@@ -17,6 +16,8 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Designer/Em Star Polygon.py"
@@ -616,20 +617,18 @@ def test_export_failures_and_invalid_ui_values(
     assert not (tmp_path / "new.svg").exists()
 
 
-def test_declared_preserved_sources_match_exact_bytes(script: Any) -> None:
-    preserved = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", ROOT))
+def test_declared_historical_sources_match_recorded_hashes(script: Any) -> None:
     matches = re.findall(
-        r"# preserved-source: (.+)\n# preserved-source-sha256: ([a-f0-9]{64})",
+        r"# historical source: (.+)\n# historical source sha256: ([a-f0-9]{64})",
         SCRIPT.read_text(),
     )
     assert len(matches) == 2, "both polygon identities need exact provenance"
     for path, digest in matches:
-        assert hashlib.sha256((preserved / path).read_bytes()).hexdigest() == digest
+        assert recorded_sha256(path) == digest
 
 
 def test_complete_source_denominator_and_duplicate_destinations() -> None:
     """Verify all identities read-only, including families that add no menu."""
-    preserved = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", ROOT))
     rows = [
         row
         for row in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
@@ -642,7 +641,7 @@ def test_complete_source_denominator_and_duplicate_destinations() -> None:
     assert {Path(row["target"]).stem.rsplit("-", 1)[0] for row in rows} == FAMILIES
     for row in rows:
         assert (
-            hashlib.sha256((preserved / row["target"]).read_bytes()).hexdigest()
+            recorded_sha256(row['target'])
             == (row["target_sha256"])
         ), row["menu"]
     for destination in (

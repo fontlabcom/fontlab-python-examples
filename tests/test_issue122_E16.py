@@ -2,10 +2,8 @@
 """Verify recipe identities, contour diagnostics and durable report output."""
 
 import ast
-import hashlib
 import importlib
 import json
-import os
 import runpy
 import sys
 from pathlib import Path
@@ -15,9 +13,10 @@ from typing import Any, ClassVar
 
 import pytest
 
+from historical_sources import recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Tools/Path Problem Report.py"
-PRESERVED = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
 SOURCES = {
     "glyph_actions_batch/recipe.py": "5c0ccb08425e3b62fb823346a8a6e16d6d38f2898a4e598b20882c9be6a98675",
     "glyphs_path_report/recipe.py": "7e0de0f7d77af0ca7a33d178001f6c246847e438ec726334d263feb12a06ee2e",
@@ -112,7 +111,7 @@ def test_all_recipe_identities_and_duplicate_targets() -> None:
     } == SOURCES
     for row in rows:
         assert (
-            hashlib.sha256((PRESERVED / row["target"]).read_bytes()).hexdigest()
+            recorded_sha256(row['target'])
             == row["target_sha256"]
         )
     mix = ROOT.parent / "fontlab-python-scriptmix/Scripts"

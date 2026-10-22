@@ -21,9 +21,9 @@ Result:
 Compatibility:
     Native PythonQt, complete getter/cache/history/dirty/reopen acceptance pending.
     Independent implementation; no original body or source helper is executed.
-    Preserved source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
+    Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
 """
-# preserved-source-sha256: c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e
+# historical source sha256: c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e
 
 
 def main() -> None:

@@ -16,6 +16,8 @@ from typing import Any
 import pytest
 from fontlabapp.names_edit import Facts
 
+from historical_sources import archived_source, recorded_sha256, recorded_sources
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Tools/Apply Unicode Map.py"
 COPY = ROOT / "Scripts/Tools/Copy Layers From Font.py"
@@ -281,12 +283,7 @@ def typerig_records() -> list[dict[str, Any]]:
 
 
 def test_dispositions_when_loaded_then_cover_exact_source_identities() -> None:
-    preserved = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
-    files = {
-        path.relative_to(preserved).as_posix()
-        for path in (preserved / TYPERIG).rglob("*.py")
-        if path.is_file()
-    }
+    files = {source for source in recorded_sources() if source.startswith(TYPERIG)}
     rows = typerig_records()
     sources = [row["source"] for row in rows]
     assert len(sources) == len(set(sources)) == len(files) == 78, (
@@ -300,7 +297,7 @@ def test_dispositions_when_loaded_then_cover_exact_source_identities() -> None:
         assert row["menu"] == menu and row["disposition"] == "ported"
     for row in rows:
         assert (
-            hashlib.sha256((preserved / row["source"]).read_bytes()).hexdigest()
+            recorded_sha256(row['source'])
             == row["source_sha256"]
         ), row["source"]
         if row.get("menu"):
@@ -767,7 +764,7 @@ class HostGlyph(Owned):
             layer.owner = self
 
     def findLayer(self, name: str) -> Any:
-        return next((l for l in self.layers if l.name == name), None)
+        return next((layer for layer in self.layers if layer.name == name), None)
 
     def addLayer(self, layer: HostLayer, *, back: bool = False) -> None:
         layer.owner = self
@@ -843,11 +840,12 @@ def host(monkeypatch: Any) -> Any:
     source.findName("A").layers[0].shapes[0].contours[0].nodes()[0].name = "source node"
     source.findName("A").layers[0].shapes[0].contours[0].nodes()[0].nodeState = 0x91
     calls = []
-    font_records = lambda p: NS(
-        id=p.fgId,
-        path=f"Font-{p.fgId}.vfj",
-        glyphs=[NS(name=n, unicodes=[]) for n in p.glyphs],
-    )
+    def font_records(p):
+        return NS(
+            id=p.fgId,
+            path=f"Font-{p.fgId}.vfj",
+            glyphs=[NS(name=n, unicodes=[]) for n in p.glyphs],
+        )
     workspace = NS(currentPackage=destination, packages=lambda: [source, destination])
     native = NS(
         flWorkspace=NS(instance=lambda: workspace),
@@ -968,7 +966,7 @@ def test_batch_scale_when_applied_then_checked_masters_and_kept_glyphs_one_undo(
                 for node in contour.nodes():
                     if not node.isOn():
                         node.record.kind = "curve"
-    before = [tool.read_contours(l, float("inf")) for l in glyph.layers]
+    before = [tool.read_contours(layer, float("inf")) for layer in glyph.layers]
     plan = tool.make_plan(
         22, ["A", "B"], [scale_config(), scale_config("Bold")], ".scaled"
     )
@@ -982,7 +980,7 @@ def test_batch_scale_when_applied_then_checked_masters_and_kept_glyphs_one_undo(
         glyph,
     ]
     assert glyph.histories == [0]
-    assert [tool.read_contours(l, float("inf")) for l in glyph.layers[:2]] == before
+    assert [tool.read_contours(layer, float("inf")) for layer in glyph.layers[:2]] == before
     for name in ("Regular.scaled", "Bold.scaled"):
         layer = glyph.findLayer(name)
         contour = layer.shapes[0].contours[0]
@@ -1479,3 +1477,10 @@ def test_scale_readback_refuses_advance_changed_after_staging(host: Any, monkeyp
     with pytest.raises(RuntimeError, match="Undo"):
         tool.apply_plan(plan, True)
     assert len(host.calls) == 1, "Attached layer remains enrolled for Undo"
+
+
+def test_external_typerig_inventory_when_available_then_matches_records() -> None:
+    archived_source(next(iter(R1B_PORTS)))
+    root = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
+    files = {path.relative_to(root).as_posix() for path in (root / TYPERIG).rglob("*.py") if path.is_file()}
+    assert files == {row["source"] for row in typerig_records()}

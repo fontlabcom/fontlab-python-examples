@@ -24,7 +24,7 @@ Result:
 Compatibility:
     Native PythonQt and complete font/cache/history/reopen acceptance are pending.
     Independent behavior implementation; no preserved body/helper is executed.
-    Preserved source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
+    Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
 
 Run **Tools > Glyph Spacing Worksheet - Frameless** from FontLab's Scripts menu.
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/886340b36ea4e19308ea1a06ef461a88ece7a381e1ccb4429286a72d2d9928af.py)
+[Python source](../../../../.build/menu-sources/7ea24956c4a6d8c3ab89badcc3bb9eeaaf636f496adaa7171559bf75b07de7e0.py)
 <!--/codeinclude-->

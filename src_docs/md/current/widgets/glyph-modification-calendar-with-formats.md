@@ -24,8 +24,8 @@ Clear only owned date marks after page/year/switch changes; keep named colours
 readable on an owned light date surface inside either host theme.
 Compatibility: Native PythonQt/font/getter/cache/history/save/reopen qualification
 is pending. The separate part2 calendar keeps its own controls and defaults.
-Original: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
+Original source/resources are archived outside this repository; this command does not execute them.
 
 Run **Widgets > Glyph Modification Calendar with Formats** from FontLab's Scripts menu.
 
@@ -34,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4ba800207d96fa5b4dbba548ac6ef68269501baeb9c00ee46d1b80759fa27761.py)
+[Python source](../../../../.build/menu-sources/f32938d8f56834e4cd9d7c3b87cedb2008687f666d2c01ed0dea48065d98ddbf.py)
 <!--/codeinclude-->

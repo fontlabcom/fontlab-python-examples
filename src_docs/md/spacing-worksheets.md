@@ -80,7 +80,7 @@ The independent implementation follows the original behavior contracts for
 (SHA256 `539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025`)
 and the same filename below `rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/`
 (SHA256 `3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084`).
-There are no companion assets. Original bytes remain preserved.
+There are no companion assets. Original bytes are archived outside this repository.
 
 Owner D22 supplies archived Python under Apache-2.0. NOTICE preserves the
 complete Riverbank 2017/Nokia 2010 BSD header and the collection GPL metadata

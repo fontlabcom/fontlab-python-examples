@@ -36,212 +36,212 @@
     {
       "path": "categories/charts.md",
       "title": "Examples: charts",
-      "sha256": "1094b88e79a2dfc6999ed845c95f580bfb15048807b17be99cff786db4251ada"
+      "sha256": "8b60275178aab8853c74e4682f09d5c7e7aaca712c47233cf7b5af7e50b47a2a"
     },
     {
       "path": "categories/corelib.md",
       "title": "Examples: corelib",
-      "sha256": "2c541dcce9c2088c923bdbeda2fc1b558741934ab746c4425afb4b9c42a1b8d5"
+      "sha256": "19701463a118baacba7aaf45ca50d3ecbe66bf4104406aec598554c1fa08018e"
     },
     {
       "path": "categories/database.md",
       "title": "Examples: database",
-      "sha256": "9947c4323846c2c1b7d747f0335aa3bf0c2f9288ea04194ead20b9bb519f075e"
+      "sha256": "a5cee654c34973d2356ad9340009efa9b4c04415ab5b380da9dee65c840feb9a"
     },
     {
       "path": "categories/designer-ui.md",
       "title": "Examples: designer-ui",
-      "sha256": "4a51b8964631d991b71be04f3da73f3a111e506ecd605f37b2c8030e86b8ae8d"
+      "sha256": "dc883a4c1c0901abc5d17e166d7b43931c25958ea6ad1dada8dc45802112fddb"
     },
     {
       "path": "categories/designer.md",
       "title": "Examples: designer",
-      "sha256": "b853e14e3cddad140905b136ebb7ed27fe566931875e0dd8d2c8acf6e31b65fb"
+      "sha256": "9e3d1248f4fc881a2025075c9a0d6c7305d6502ac069d4b0621701062cdcd7fc"
     },
     {
       "path": "categories/desktop.md",
       "title": "Examples: desktop",
-      "sha256": "6d1dfbc026da89e6ba0403f736502f1bc4602d3be78dfb32d60b7e097abd11b6"
+      "sha256": "380e7a10f9d9f78ae773bf80023d7e79582c45700bd1c8121e31ef7e45d26924"
     },
     {
       "path": "categories/dialogs.md",
       "title": "Examples: dialogs",
-      "sha256": "34ce820fcf5a5fa3cb1cd2ccfdc25cb7bf699d5cb18798ce48055d320d4f848a"
+      "sha256": "6d5457c3910d849979d25178453a904e88c45920b4345afe2f97d25a55058156"
     },
     {
       "path": "categories/draganddrop.md",
       "title": "Examples: draganddrop",
-      "sha256": "68453edb5dee8547faca79c296252345664601350718d61c8d4e3e98193328f2"
+      "sha256": "5a7c3aabbfd867fd115a41937a0e8e2185fd018e9e56887422d074a5733c12db"
     },
     {
       "path": "categories/embedded.md",
       "title": "Examples: embedded",
-      "sha256": "ab768cfcddbf8465a4e0a61fb97efe8d5182271988c5a56e24630823cc1b24c2"
+      "sha256": "e9b9274af58640a516b64d7a5789c0c5256fe0db43f49996c69998d06bee49c1"
     },
     {
       "path": "categories/graphics-painting.md",
       "title": "Examples: graphics-painting",
-      "sha256": "7ab1156baf70af43b55f8c1f839c2ee87ef45501914515549bca4904bdd106df"
+      "sha256": "73c86c569e508b5e9bcb22247d58535c8bc3c675960f86165948093084608d0a"
     },
     {
       "path": "categories/gstreamer.md",
       "title": "Examples: gstreamer",
-      "sha256": "c6b2860a46368dc4488c6871d4eedd6fbc3fdda49a0f66cde0edd839238b7d29"
+      "sha256": "a3b397a14a755b71512585f9536560a1fc8e46dc61ca51f14d1abe52a5536c58"
     },
     {
       "path": "categories/itemviews.md",
       "title": "Examples: itemviews",
-      "sha256": "caac9ca87f13ffcd7de2c34693b14f3c773235154d2006fa7cbeb4359179df1b"
+      "sha256": "6afe5663ef52d6d893d3952bab1e6253c1f7ded6f6a63239887d66a07d3b20e4"
     },
     {
       "path": "categories/layouts.md",
       "title": "Examples: layouts",
-      "sha256": "b9889cd21aa69120316a49e0ae3a2b9412054f0a0a269966d3b0f67ce2b8ce0d"
+      "sha256": "9d9f166a61ff3e0e81bc7c6cbe6f68a99d01d830402caca1b6b98d1bd04b00bf"
     },
     {
       "path": "categories/mainwindows.md",
       "title": "Examples: mainwindows",
-      "sha256": "7859e79b52bc9e15ee895b3622520e74f60ad0ce2f2b8dc685179fcde83d8e10"
+      "sha256": "7b6337caaf6536a5a91c251d942ea30f82414733f7cdb2617b26dee1851e04b7"
     },
     {
       "path": "categories/matplotlib.md",
       "title": "Examples: matplotlib",
-      "sha256": "17c37040ea776826fd849926ca81501236f2240f85f5ecbe7eec10cc2ff547a4"
+      "sha256": "fc675ce356d8e3f528865de87326736c94685a48b10a7867f3ec93687ff8317b"
     },
     {
       "path": "categories/multimedia.md",
       "title": "Examples: multimedia",
-      "sha256": "9c0e606f280de611b218c0d1f66032087ea89097b0a04b0143b7adfa0a04b462"
+      "sha256": "bc6f4d86ae287459f82ed9a5734908b4a8c980e4843ae2e9066da7aec8de88d4"
     },
     {
       "path": "categories/network.md",
       "title": "Examples: network",
-      "sha256": "0371a76e533afb06ed30f07f5f4f5fcb2dda462057d28cbb0022982ce97c2470"
+      "sha256": "b0f87e03f1ceefb04e2d097deea7879afb535f9b263ea72415a4b36823561925"
     },
     {
       "path": "categories/platform.md",
       "title": "Examples: platform",
-      "sha256": "298d3bde8f84ab03d91769ec4b486f7208c0ef0516b794eec335ee23cacca5a2"
+      "sha256": "6ce52eaaad9dfee7aec8437d0e4d224992a62f026bda6ccd1edb3701e585b7f6"
     },
     {
       "path": "categories/qml.md",
       "title": "Examples: qml",
-      "sha256": "141d4a2a625f8d0ee7da40edf5cfb047dd7cd454f4ccda3fb98a04d60483d0b5"
+      "sha256": "41cb10a42a0957dc7817c6023e311a31a30c662ddfe44e4a30fbeb2c56e140ee"
     },
     {
       "path": "categories/remoteobjects.md",
       "title": "Examples: remoteobjects",
-      "sha256": "95612a665a1e73ba7c510caf72a56ff80c6d6d1c8641ca8a1c03c082f77a1d71"
+      "sha256": "5cd290a44b1895514e2cdc925cdf235ad16322c44ae29f29f11375e8e68b9b73"
     },
     {
       "path": "categories/richtext.md",
       "title": "Examples: richtext",
-      "sha256": "950169dea2093c590e25ac7df55a54730738f722072ced48597f63db06a4fffc"
+      "sha256": "a78a7d22be98d9559907d42d5ed23b0d94e06f5ea23081902235b3383b38d2e8"
     },
     {
       "path": "categories/threads-processes.md",
       "title": "Examples: threads-processes",
-      "sha256": "0484d17ccb58c7e4b29010c187e509cb03a5fe289b70fcc46cb47ee0aab13302"
+      "sha256": "cccb05d760b97bb621daaa70f3cdab9223dfd4dde096988b794ded85c13164a5"
     },
     {
       "path": "categories/tools.md",
       "title": "Examples: tools",
-      "sha256": "1052b488b98c03cb900fc650c68e1210a61ac2afadc277cd2399e09e5664c0b9"
+      "sha256": "d4b6983514618fb240fc19ba05f57fc767943cdce00e5f843a94074c6549c1f6"
     },
     {
       "path": "categories/tutorials.md",
       "title": "Examples: tutorials",
-      "sha256": "d63e91636df8957606386cf57e41fa4359dff26cb5f7a9e7d8a994cff5c4ffb9"
+      "sha256": "dedc0e300afbd6a8cf8a2f578c3a34ebdce063fb9ab10766fd33a864371dc14c"
     },
     {
       "path": "categories/video-overlay.md",
       "title": "Examples: video-overlay",
-      "sha256": "678835d7741c930939e8e4634a52b6301f9265507f2702c646df463dec69b6d2"
+      "sha256": "993e45489e8caf8a20c28bbdedc7a33e3c3f31b4ff5a75b6475a990a4233eaac"
     },
     {
       "path": "categories/webengine.md",
       "title": "Examples: webengine",
-      "sha256": "b6b928f5d3cecb0c2557d568ec3bea39c10c624b44ccb81a72e1745fb402c0b9"
+      "sha256": "e0a89c3ed4a5560eb50f26fc8f27a8d0df9d86f490a8bc07bef314f358cd7397"
     },
     {
       "path": "categories/widgets.md",
       "title": "Examples: widgets",
-      "sha256": "262b2a4aa1485e1348c8df779381585c141f1be86d8fc71617bdf8fc2f259131"
+      "sha256": "55a6b07f44aadb1546b3de3bca680db605ae3566e87ff944fcb59a1bcfa65d32"
     },
     {
       "path": "categories/xmlpatterns.md",
       "title": "Examples: xmlpatterns",
-      "sha256": "c7a34e62af1f51db11520cdd114f854c1c515f9689d7ed3f09ea730eab272d81"
+      "sha256": "3bc9d59da7f49ee21b42ee6bcf027209d225566e135f0664b048c4540c89254f"
     },
     {
       "path": "getgo.md",
       "title": "Real GetGo fonts, disposable working copies",
-      "sha256": "b423895d29e9d91838a627170e8c706aa0e2361765eafba8981669dc375f0b1a"
+      "sha256": "d60f0260f40c9f892d5ca1637560af8c625c97c1922aa7177ff95da2b1a014bd"
     },
     {
       "path": "index.md",
       "title": "Python examples for FontLab",
-      "sha256": "2330425368b8312252ea59fcf978305473db607cdb743d5174f145ede59a34f6"
+      "sha256": "92e9de16c0505c12842ea540a7a0847a58dde51dc14262039953d7348cf480d6"
     },
     {
       "path": "insights.md",
       "title": "Insight examples",
-      "sha256": "daec5ea83ee505d8f6a8dd59e5dc21fead377427dbfe07ae16c999f528f08719"
+      "sha256": "1f06800bfdfa078c9e8342920030c1e810b4f6ca7cb4f1b4314d7bf4d37d30e4"
     },
     {
       "path": "recipes/anchors_from_bounds.md",
       "title": "Place top and bottom anchors",
-      "sha256": "62da5df22e00767b9870d3ee74f2422b3c127377a89d443604da48c897cdbd79"
+      "sha256": "5d340333c5a6900df43e3bc7d5a95669504c816b5e22e7bb30a8d154faf10c15"
     },
     {
       "path": "recipes/contour_direction.md",
       "title": "Correct contour direction and start points",
-      "sha256": "04f48396294cba43be4ae9f9df388b8914bb4f6ba6bc2923346e07a541fcee00"
+      "sha256": "528a8f76195baae1bfd07ac64fc785510f446fdfd7ae2e20933b48cae09c230c"
     },
     {
       "path": "recipes/glyph_actions_batch.md",
       "title": "Batch Tools > Actions on named glyphs",
-      "sha256": "5d7a709a734b2da06ae8b7af457e1114b32bbdecb047f86d218593e061f5a05d"
+      "sha256": "61916147d436d0d28bda2f0c27db560682848703adf829d6f8d667605b1590f3"
     },
     {
       "path": "recipes/glyphs_path_report.md",
       "title": "Path problem report (a Glyphs script run in FontLab)",
-      "sha256": "f72d70675b24a1e471643868f363e797b1774406776e8f605bfab2515cefec4d"
+      "sha256": "c9200c531cf33af533ba55829ed28c082f6722a57b1baecbc23ae318625864d4"
     },
     {
       "path": "recipes/glyphs_tabular_figures.md",
       "title": "Tabular figures (a Glyphs script run in FontLab)",
-      "sha256": "0cfb6f9a618954f8f591265fb2ea8b68211ecbbca36ae1a98c0fc33fc60aaeed"
+      "sha256": "931f7b6757179673429f2f5c2016964b2eef11cd1c8b815bfcfb714d1ceaf110"
     },
     {
       "path": "recipes/index.md",
       "title": "FontLab 9 recipes",
-      "sha256": "8566f6a22b078977fa23c8e38fc0100a3a6a6b0e9bf33d17b88372dd19ad14e3"
+      "sha256": "dce7fdc4676886c4b929a2c7fa48941fe8bb959e38125d220bf9cd721c139584"
     },
     {
       "path": "recipes/kerning_from_text.md",
       "title": "Kerning pairs from text",
-      "sha256": "23b8fe9f3d0bd866416064e1bffbacd4007bf94e95af0dfc93c0bb6a0f2f3b90"
+      "sha256": "04c4470890f7d6729c9a1329eb25d9aaba0bcc0df2996540e64fa4461ae2df27"
     },
     {
       "path": "recipes/layer_backup.md",
       "title": "Back up master layers",
-      "sha256": "08bf672b99a85b83e21b14fd0cc266d7a8a275924e865ce544a6ae95e0ce1094"
+      "sha256": "518b53bed2a7b13fa10034d406c4c2b6db2fa9824712dceed912e3f7b472430d"
     },
     {
       "path": "recipes/round_coordinates.md",
       "title": "Round coordinates to grid",
-      "sha256": "d3450c79fba3437c23bb726d7b1d7fa7d8acf966a61a4ad356a559155bd57c65"
+      "sha256": "399a3a29232bdeb6307a0353ea5cbc6161fd4dd5e9bcee9822ef58a800f0605a"
     },
     {
       "path": "recipes/sidebearings_from_reference.md",
       "title": "Copy sidebearings from a reference glyph",
-      "sha256": "3d57d966a5238357d5e7b30c685447e7f6cef410ed5b66cff371bf98e33dcf01"
+      "sha256": "288be86dd083e8243358e943834ea3457fe6929e6de48cdd680f49758fc247e1"
     },
     {
       "path": "samples.md",
       "title": "Samples: GUI scripts for FontLab 9",
-      "sha256": "1d04573a82d723cbad4ca5d2c402642e8a4698928f9bc2e7324a5f3f249f0147"
+      "sha256": "1fff3256cd27aaca1097d1a69b5447ed9469d916be68d09a893060ba9ba740e3"
     }
   ]
 }

@@ -25,7 +25,7 @@ complete persistence/UI acceptance remain pending. Standalone Qt is not native
 FontLab proof. This replaces one preserved-source dispatcher; its original bytes
 remain external and are never executed by this adaptation.
 
-Original: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py
 The two part2 workflows retain their separate Python matching/string-date rules.
 Demo-specific text and2006/2007date defaults become a complete font snapshot with
 empty initial pattern and optional observed date limits. Shared policy lives in App.
@@ -37,5 +37,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/34f40cd69be7c538ef4e9bc04da5bd3b6443e924d8a49625b02f4700deec96f7.py)
+[Python source](../../../../.build/menu-sources/41f6f8a9af273c568b2190321d56fb7b41b96d50c069df5e37024be12ffa734e.py)
 <!--/codeinclude-->

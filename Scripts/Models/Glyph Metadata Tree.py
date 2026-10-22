@@ -1,6 +1,6 @@
 # this_file: Scripts/Models/Glyph Metadata Tree.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 0eb40bcaded0341ad05f3891e54ee5f06e02616d3efa03b175742863d178fc86
+# historical source sha256: 0eb40bcaded0341ad05f3891e54ee5f06e02616d3efa03b175742863d178fc86
 """Inspect all current-font glyph metadata in an expandable read-only hierarchy.
 
 Purpose: Adapt the complete part3 Simple Tree Model workflow to FontLab.
@@ -19,8 +19,8 @@ Replace the synthetic outline/default.txt input with structured font metadata.
 The separate editable-tree lesson remains outside this read-only source pair.
 Compatibility: Original PythonQt virtual/UI/getter/cache/font/history/save/reopen
 acceptance remains pending. Standalone Qt is not native FontLab proof.
-Original: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
+Original source/resources are archived outside this repository; this command does not execute them.
 """
 
 

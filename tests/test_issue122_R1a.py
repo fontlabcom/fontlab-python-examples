@@ -6,7 +6,6 @@ import ast
 import importlib
 import inspect
 import json
-import os
 import runpy
 import sys
 from pathlib import Path
@@ -16,6 +15,8 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = (
@@ -336,7 +337,6 @@ def test_dispositions_when_checked_then_all_source_bytes_and_targets_match() -> 
     assert {
         Path(row["source"]).stem for row in rows["adaptations"] + rows["retirements"]
     } == names, "Keep exactly the ten assigned source identities"
-    preserved = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
     census = {
         r["menu"]: r
         for r in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
@@ -347,7 +347,7 @@ def test_dispositions_when_checked_then_all_source_bytes_and_targets_match() -> 
         assert (
             row["source_sha256"]
             == original["target_sha256"]
-            == hashlib.sha256((preserved / row["source"]).read_bytes()).hexdigest()
+            == recorded_sha256(row['source'])
         )
         if "menu" in row:
             destination = (

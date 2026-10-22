@@ -1,17 +1,17 @@
 # this_file: Scripts/Drawing/Glyph Outline SVG.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
-# preserved-source-sha256: ae79ea27f4bb5bb28912a0d9c5ceb8524f3f1c09ca7161bd408bc0e6ca88efb3
-# preserved-source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
-# preserved-source-sha256: 533857ee814a9428e094f1ad7dc9c13b4dbe8476c991effaced2f8486bec5abc
-# preserved-source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
-# preserved-source-sha256: 94c7a27d22a78955265a73c0d98383088c334d50d100eb330b242b84fbee0bab
-# preserved-source: rescued/part2/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
-# preserved-source-sha256: ee842206b60ab167e4f45919a779a784e7154c2d201f1fad86b389d6436575b8
-# preserved-source: rescued/part2/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
-# preserved-source-sha256: af4e3e14274a354fcc26514a063d8d9ba38d6f5930cf272fc4cb28543be1ebcc
-# preserved-source: rescued/part2/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
-# preserved-source-sha256: daa00fe5bed6797d682cb3b219d56fc73d8a0ec8b094144281efa69939008db7
+# historical source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
+# historical source sha256: ae79ea27f4bb5bb28912a0d9c5ceb8524f3f1c09ca7161bd408bc0e6ca88efb3
+# historical source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
+# historical source sha256: 533857ee814a9428e094f1ad7dc9c13b4dbe8476c991effaced2f8486bec5abc
+# historical source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
+# historical source sha256: 94c7a27d22a78955265a73c0d98383088c334d50d100eb330b242b84fbee0bab
+# historical source: rescued/part2/ports/painting/pyqt-official/basicdrawing-907f39d8bf387501.py
+# historical source sha256: ee842206b60ab167e4f45919a779a784e7154c2d201f1fad86b389d6436575b8
+# historical source: rescued/part2/ports/painting/pyqt-official/transformations-c12a2071adbab88b.py
+# historical source sha256: af4e3e14274a354fcc26514a063d8d9ba38d6f5930cf272fc4cb28543be1ebcc
+# historical source: rescued/part2/ports/painting/pyqt-official/painterpaths-13a6bb9a9d2b9037.py
+# historical source sha256: daa00fe5bed6797d682cb3b219d56fc73d8a0ec8b094144281efa69939008db7
 """What: Export the current glyph outline as reusable SVG artwork.
 How: Capture its current-master Qt path, including transformed components.
 Choose winding or odd-even fill to diagnose counters and overlaps.

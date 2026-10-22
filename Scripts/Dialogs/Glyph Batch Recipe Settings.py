@@ -17,9 +17,9 @@ Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
-Source: rescued/part2/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
+Historical source: rescued/part2/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
 SHA256: a8723ff0df166a67c564237dbf0c11dfe87d4f649b2769c2de409efc1508c33f
-Source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
+Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
 SHA256: 5ddbb490939e6e767b7603a197b0ec14019611ff4447c04fff97293593cb571d
 """
 

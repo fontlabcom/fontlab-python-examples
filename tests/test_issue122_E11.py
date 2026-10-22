@@ -10,22 +10,25 @@ native Qt capabilities. No runtime tool, font writer or App helper is added.
 from __future__ import annotations
 
 import ast
-import hashlib
 import json
-import os
 from pathlib import Path
 from typing import Any
 
 import pytest
 
+from historical_sources import archived_source, recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
 INDEX = json.loads((ROOT / "rescue-index.json").read_text(encoding="utf-8"))["menus"]
-CATALOGUE = json.loads(
-    (ARCHIVE / "rescued/part3/pyqt-official-ports/catalog/ports.json").read_text(
-        encoding="utf-8"
-    )
-)["ports"]
+
+
+@pytest.fixture
+def catalogue() -> list[dict[str, Any]]:
+    return json.loads(archived_source(
+        "rescued/part3/pyqt-official-ports/catalog/ports.json"
+    ).read_text())["ports"]
+
+
 # Freeze all identities, including the two byte-identical SQL refusals.
 IDENTITIES: tuple[tuple[str, str, str], ...] = (
     ('Scripts/Archived UI L-Z/Threads - Official mandelbrot - 0788354954c8e613.py',
@@ -64,6 +67,12 @@ SQL = tuple(row for row in IDENTITIES if "/sql/" in row[1])
 FAMILIES = {Path(row[1]).stem.split("-")[0] for row in IDENTITIES}
 
 
+def test_each_retired_source_when_archive_available_then_parses() -> None:
+    """Retain the original parse check for every retired source, opt-in."""
+    for _, source, _ in IDENTITIES:
+        ast.parse(archived_source(source).read_bytes(), filename=source, feature_version=(3, 11))
+
+
 def test_inventory_when_selected_then_all_ten_identities_and_seven_families() -> None:
     """Fail on missing variants, accidental scope growth or merged SQL identities."""
     actual = {
@@ -80,22 +89,20 @@ def test_inventory_when_selected_then_all_ten_identities_and_seven_families() ->
 
 
 @pytest.mark.parametrize("menu,source,digest", IDENTITIES)
-def test_identity_when_retired_then_exact_bytes_and_no_archived_dispatcher(
+def test_identity_when_retired_then_recorded_hash_and_no_archived_dispatcher(
     menu: str, source: str, digest: str
 ) -> None:
-    """Read preserved bytes only; do not import a demo or start workers."""
-    payload = (ARCHIVE / source).read_bytes()
-    assert hashlib.sha256(payload).hexdigest() == digest, source
+    """Check recorded historical hashes; do not import a demo or start workers."""
+    assert recorded_sha256(source) == digest, source
     assert not (ROOT / menu).exists(), "Never restore the archived menu dispatcher"
-    ast.parse(payload, filename=source, feature_version=(3, 11))
 
 
 @pytest.mark.parametrize("menu,source,digest", SQL)
 def test_sql_when_inspected_then_explicit_qtsql_capability_refusal(
-    menu: str, source: str, digest: str
+    menu: str, source: str, digest: str, catalogue: list[dict[str, Any]]
 ) -> None:
     """Confirm the actual static refusal and its precise catalogue explanation."""
-    tree = ast.parse((ARCHIVE / source).read_text(encoding="utf-8"))
+    tree = ast.parse(archived_source(source).read_text(encoding="utf-8"))
     build = next(node for node in tree.body if isinstance(node, ast.FunctionDef))
     assert build.name == "build", source
     refusal = build.body[-1]
@@ -106,7 +113,7 @@ def test_sql_when_inspected_then_explicit_qtsql_capability_refusal(
         node.value for node in ast.walk(build)
         if isinstance(node, ast.Constant) and isinstance(node.value, str)
     ]
-    record = next(row for row in CATALOGUE if source.endswith(row["target_path"]))
+    record = next(row for row in catalogue if source.endswith(row["target_path"]))
     assert record["implementation"] == "blocked", source
     assert record["blocked_reason"] in messages, source
     assert "PythonQt does not export QtSql" in record["blocked_reason"]
@@ -124,7 +131,7 @@ def test_threads_when_inspected_then_synthetic_workers_without_font_inputs(
     menu: str, source: str, digest: str
 ) -> None:
     """Bind retirement reasons to scalar demo workloads, without running them."""
-    tree = ast.parse((ARCHIVE / source).read_text(encoding="utf-8"))
+    tree = ast.parse(archived_source(source).read_text(encoding="utf-8"))
     imports = {
         node.module if isinstance(node, ast.ImportFrom) else alias.name
         for node in ast.walk(tree) if isinstance(node, (ast.Import, ast.ImportFrom))
@@ -150,11 +157,11 @@ def test_threads_when_inspected_then_synthetic_workers_without_font_inputs(
 
 @pytest.mark.parametrize("family", sorted(FAMILIES))
 def test_provenance_when_read_then_exact_upstream_identity_and_bsd_notice(
-    family: str,
+    family: str, catalogue: list[dict[str, Any]],
 ) -> None:
     """Retain author and licence facts; no upstream code is redistributed."""
     record = next(
-        row for row in CATALOGUE
+        row for row in catalogue
         if Path(row["target_path"]).stem.split("-")[0] == family
     )
     assert record["source"]["repository"] == "pyqt/examples"

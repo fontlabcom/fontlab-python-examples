@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Outline Pens and Intersections
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: b6084952d02dcad932da450f300bb20aa7fb470ab36ba389a3c9f1ea13ace0d7
+# historical source sha256: b6084952d02dcad932da450f300bb20aa7fb470ab36ba389a3c9f1ea13ace0d7
 """GetGo - Outline Pens and Intersections: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

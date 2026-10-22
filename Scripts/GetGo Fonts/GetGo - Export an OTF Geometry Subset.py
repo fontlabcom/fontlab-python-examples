@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Export an OTF Geometry Subset
 # this_file: Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 425f67f747c2e88bd752a514942d81d24e65ec5e85596095af333bbac67dfdae
+# historical source sha256: 425f67f747c2e88bd752a514942d81d24e65ec5e85596095af333bbac67dfdae
 """GetGo - Export an OTF Geometry Subset: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

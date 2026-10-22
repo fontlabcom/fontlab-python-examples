@@ -25,9 +25,9 @@ Compatibility:
     Part3 isolated surrogate insertion is explicitly refused. Incomplete text
     cannot be copied; no replacement characters or silent sequence rewriting.
     Native PythonQt and complete font-preservation acceptance remain pending.
-    Source: rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
+    Historical source: rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 """
-# preserved-source-sha256: 3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285
+# historical source sha256: 3320979640264c11b88456cdadb40d8276086cf61f324315c3583c5ce9f2b285
 
 
 def main() -> None:

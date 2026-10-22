@@ -15,9 +15,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits one
 Independent rewrite of the Qt dragdroprobot example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py
 SHA256: f1faf59693b2054c207de5811e7d721260755e6a5675f199f3472e3d520204d2
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py
 SHA256: c021aba5ca45ca9cf3b0fde77ceb654ff5077191380d83cef5d84c1aec9c8313
 """
 

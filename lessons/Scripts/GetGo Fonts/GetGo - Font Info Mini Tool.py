@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Font Info Mini Tool
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: b2574dfef010e55be3ae347d2695c3c69f0137548a666902d3ce3221902b1c5f
+# historical source sha256: b2574dfef010e55be3ae347d2695c3c69f0137548a666902d3ce3221902b1c5f
 """GetGo - Font Info Mini Tool: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

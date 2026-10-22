@@ -1,7 +1,7 @@
 # this_file: Scripts/Tools/FontLab Qt Slot Reference.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part2/ports/insights/compiled-slot-exposure.py
-# preserved-source-sha256: e81955446fce469142051973c7c630cac6d44b88aa46ee1ea5aa8cd5e8805108
+# historical source: rescued/part2/ports/insights/compiled-slot-exposure.py
+# historical source sha256: e81955446fce469142051973c7c630cac6d44b88aa46ee1ea5aa8cd5e8805108
 """Read live FontLab widget signals and slots for a scripting reference.
 
 What: Select the main window, the focused widget captured when this panel opens,

@@ -1,6 +1,6 @@
 # this_file: Scripts/Models/Glyph Filter Model with Date Range.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: a844adb5f7888373586f0e37f81025d991c19b96d5e205fdd376258a712c6e2d
+# historical source sha256: a844adb5f7888373586f0e37f81025d991c19b96d5e205fdd376258a712c6e2d
 """Inspect and filter whole-font glyph metadata with typed Qt dates.
 
 Purpose: Adapt the complete part3 official custom source/proxy model lesson.
@@ -20,7 +20,7 @@ complete persistence/UI acceptance remain pending. Standalone Qt is not native
 FontLab proof. This replaces one preserved-source dispatcher; its original bytes
 remain external and are never executed by this adaptation.
 
-Original: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/customsortfiltermodel-029ea0dabe87ae57.py
 The two part2 workflows retain their separate Python matching/string-date rules.
 Demo-specific text and2006/2007date defaults become a complete font snapshot with
 empty initial pattern and optional observed date limits. Shared policy lives in App.

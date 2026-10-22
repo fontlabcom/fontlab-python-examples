@@ -1,9 +1,9 @@
 # this_file: Scripts/Widgets/Script Icon Browser.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
-# preserved-source-sha256: cc6a383aa61e4cd0cce357e12e275ff643bd866ad3e1695254d3216d9ed104b7
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
-# preserved-source-sha256: 68749115c6766e274fc7114a18ab9ef26a1cd0434241b6abab5ddb6eeed00010
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
+# historical source sha256: cc6a383aa61e4cd0cce357e12e275ff643bd866ad3e1695254d3216d9ed104b7
+# historical source: rescued/part2/ports/widgets/pyqt-official/icons-505d60a757bbc177.py
+# historical source sha256: 68749115c6766e274fc7114a18ab9ef26a1cd0434241b6abab5ddb6eeed00010
 """What: Browse the standard icons supplied by FontLab's current Qt style.
 How: Enumerate QStyle SP_ constants, filter their names and show each icon
 beside its enum name. A selected row produces pasteable PythonQt code.

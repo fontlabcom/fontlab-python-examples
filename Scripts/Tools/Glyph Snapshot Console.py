@@ -1,9 +1,9 @@
 # this_file: Scripts/Tools/Glyph Snapshot Console.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part2/ports/insights/timer-batch.py
-# preserved-source-sha256: 9bede8e4486e03be3c182cd474084ab6a9200ca2419efb4ae3b2cc70ca78bfaa
-# preserved-source: rescued/part2/ports/insights/owned-repl.py
-# preserved-source-sha256: 3b5fb1184dd28f2caa23b1e90eb53308a0d77ead01f5a0bc4fd3cc62bf7d95df
+# historical source: rescued/part2/ports/insights/timer-batch.py
+# historical source sha256: 9bede8e4486e03be3c182cd474084ab6a9200ca2419efb4ae3b2cc70ca78bfaa
+# historical source: rescued/part2/ports/insights/owned-repl.py
+# historical source sha256: 3b5fb1184dd28f2caa23b1e90eb53308a0d77ead01f5a0bc4fd3cc62bf7d95df
 """Query current-font name, Unicode and modification data with trusted Python.
 
 What: Evaluate short expressions or statements on detached glyph records.

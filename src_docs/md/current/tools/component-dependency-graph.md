@@ -27,7 +27,7 @@ Result:
 Compatibility:
     Native PythonQt virtuals, painting and complete font/cache/history/dirty/
     reopen preservation remain pending. No original helper/body is executed.
-    Preserved source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
+    Historical source: rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py
 
 Run **Tools > Component Dependency Graph** from FontLab's Scripts menu.
 
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2cb374326cd8aecdb04db8c60a6f3e386b3538790e42518621f9a1090ecc6053.py)
+[Python source](../../../../.build/menu-sources/96ef97f449cee811078a438fa016ae747623ec788be2b30e53ae2ef211c20a2b.py)
 <!--/codeinclude-->

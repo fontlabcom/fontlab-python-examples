@@ -20,9 +20,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt diagramscene example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
 SHA256: 9a955af5875f27bba1baad27d5c508910c80a5ec6463d7cb00890e983322fe56
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
 SHA256: 2f1d99279f78a43459928e59388681eb4ded7a85f0bd7b3cb6a7593980d05f1e
 
 Run **Graphics > Glyph Variant Feature Graph** from FontLab's Scripts menu.
@@ -32,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4d74f523a0ecadfafb5ca056bf8bd66a8457d2d151a86fc59dd8ac1b7dae305c.py)
+[Python source](../../../../.build/menu-sources/b7703e166d18a06a6bc4254f5e7899d1ded054c80f97e3950dfe8e2e1428a60a.py)
 <!--/codeinclude-->

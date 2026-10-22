@@ -17,9 +17,9 @@ Result:
 Compatibility:
     Close/Escape releases owned dialogs, painters and callbacks. Inputs and font
     data are unchanged. Native PythonQt/printer and whole-font acceptance remain
-    pending. Original source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+    pending. Historical source: rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
 """
-# preserved-source-sha256: 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
+# historical source sha256: 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
 
 
 def main() -> None:

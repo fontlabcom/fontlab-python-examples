@@ -17,9 +17,9 @@ Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
-Source: rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+Historical source: rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
 SHA256: f0429bb770550780ba27dd2def628e0189a5665595501f32dfb1ebf9ef98c7c0
-Source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
 SHA256: 6fd6f74eddf5d3579fc8b46e70fab7de6444cd70d41a2776c1ca437b345fc2bf
 """
 

@@ -1,6 +1,6 @@
 # this_file: Scripts/Widgets/Glyph Modification Calendar.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 5672f6757f558382ba7c7dce22a8e1effad9a707adcea7d2fa916a776a8e4bbb
+# historical source sha256: 5672f6757f558382ba7c7dce22a8e1effad9a707adcea7d2fa916a776a8e4bbb
 """Inspect current-font glyph modification dates with complete calendar controls.
 
 Purpose: Adapt the complete part2 Calendar Controls workflow to FontLab.
@@ -18,8 +18,8 @@ in App, through Fly. Initial options and crossing date limits stay coherent.
 The distinct part3 calendar with May 1 and bold/italic headings stays separate.
 Compatibility: Native PythonQt/getter/font/cache/history/save/reopen acceptance
 is pending. This candidate neither changes preferences nor writes files/Output.
-Original: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
+Original source/resources are archived outside this repository; this command does not execute them.
 """
 
 

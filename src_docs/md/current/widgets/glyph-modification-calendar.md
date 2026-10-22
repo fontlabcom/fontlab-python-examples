@@ -23,8 +23,8 @@ in App, through Fly. Initial options and crossing date limits stay coherent.
 The distinct part3 calendar with May 1 and bold/italic headings stays separate.
 Compatibility: Native PythonQt/getter/font/cache/history/save/reopen acceptance
 is pending. This candidate neither changes preferences nor writes files/Output.
-Original: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part2/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
+Original source/resources are archived outside this repository; this command does not execute them.
 
 Run **Widgets > Glyph Modification Calendar** from FontLab's Scripts menu.
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/db889e25dec0bf541507400d6ee1db016391bfce0f9f48fefc183b541d69ab93.py)
+[Python source](../../../../.build/menu-sources/989ee48a51d1cb127df6581b43f2c1ec32e427a515a1b10b686dbd3fbdb49930.py)
 <!--/codeinclude-->

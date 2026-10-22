@@ -20,9 +20,9 @@ Modeless panel; font data, selection and application preferences stay unchanged.
 
 Independent rewrite of the Qt codecs example idea (Qt/Riverbank Computing;
 Nokia Corporation). Based on the author's own FontLab sample, Apache-2.0.
-Source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
+Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
 SHA256: c39fb1bab6762e4b2286af604794547e07de9f5a680b4c671e7882c9a6ac9470
-Source: rescued/part2/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
+Historical source: rescued/part2/ports/tools/pyqt-official/codecs-19571722ed96aa9c.py
 SHA256: fe2257ea8123a18e3995ca919937fd16a02845c939d2ea695fd99cea327cd3a9
 
 Run **Tools > Font Name Encoding Audit** from FontLab's Scripts menu.
@@ -32,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5ce1bac9d91fe74cb9c526f36cd334a9a171cb5cdbd4a30001cb5a19e5c25d37.py)
+[Python source](../../../../.build/menu-sources/8ac57b4be81a7af88e639a4db5b4330d198e765d4d388538d780e77b2e77083d.py)
 <!--/codeinclude-->

@@ -1,13 +1,13 @@
 # this_file: Scripts/Widgets/Script Palette Roles.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
-# preserved-source-sha256: 7f520972960792491bfb81a67a5a2553db1bd4f217ef896bccf4da61da76351f
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
-# preserved-source-sha256: 80d61defa2ad1137e04ee1db8bb2b5e79876d64a034d4537e4c4f879402eaf3a
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
-# preserved-source-sha256: 9ad804c861b30854e224744b49f597ece1fc2f27455db148ee18eff7408b85eb
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
-# preserved-source-sha256: f609aa16c374278db565ccbac19409df42928b9515f5dc62ecea00929561c679
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
+# historical source sha256: 7f520972960792491bfb81a67a5a2553db1bd4f217ef896bccf4da61da76351f
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
+# historical source sha256: 80d61defa2ad1137e04ee1db8bb2b5e79876d64a034d4537e4c4f879402eaf3a
+# historical source: rescued/part2/ports/widgets/pyqt-official/stylesheet-876eab33b6a99e31.py
+# historical source sha256: 9ad804c861b30854e224744b49f597ece1fc2f27455db148ee18eff7408b85eb
+# historical source: rescued/part2/ports/widgets/pyqt-official/styles-9e21c6536fda7a23.py
+# historical source sha256: f609aa16c374278db565ccbac19409df42928b9515f5dc62ecea00929561c679
 """What: Inspect the live FontLab theme palette for script-panel colours.
 How: Read this panel's own palette on Refresh. List all twenty colour roles
 for Active, Inactive and Disabled, plus six text/background contrast pairs.

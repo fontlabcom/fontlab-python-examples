@@ -23,9 +23,9 @@ Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
-Source: rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+Historical source: rescued/part2/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
 SHA256: f0429bb770550780ba27dd2def628e0189a5665595501f32dfb1ebf9ef98c7c0
-Source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
+Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/tabdialog-dab5fd4c94ec518d.py
 SHA256: 6fd6f74eddf5d3579fc8b46e70fab7de6444cd70d41a2776c1ca437b345fc2bf
 
 Run **Dialogs > Font Glyph Inventory Tabs** from FontLab's Scripts menu.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e2308db7fd6187b1cc9facde1396c0ca1f16deebbc9c46c3cc51fd1fdfb60aff.py)
+[Python source](../../../../.build/menu-sources/25dd3d75fe1628b9c86c7a84dfe00a688b4a61ecd5e736cb532b7db79b9bff9b.py)
 <!--/codeinclude-->

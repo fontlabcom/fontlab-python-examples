@@ -18,9 +18,9 @@ qt_properties. Refresh stages results before replacing the visible grid.
 
 Independent rewrite of the Qt pixelator example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
 SHA256: 9b8e6b6e8c542817876e897eef2d9d5a503c40eea8486dc6ef975621e123444c
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/pixelator-d50ad6638357e669.py
 SHA256: dcffd1f6ddaf3cbbe1b72fa90816d42892ce5abccf5ff0098e7e5cc50c9270bb
 
 Run **Models > Glyph Coverage Grid** from FontLab's Scripts menu.
@@ -30,5 +30,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/18721a6d8dd149cbe3896cf195050797211633bf476061d1436b6699ee445e2a.py)
+[Python source](../../../../.build/menu-sources/47d32b422a4768f6a533854f33dffc10044493aad74b1196ceedbabcd1db9692.py)
 <!--/codeinclude-->

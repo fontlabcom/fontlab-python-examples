@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Masters Axes and Instances
 # this_file: Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: b66b704bc5d5fa09b1f8d15effa09ba119973672c3db755fff20095116d4394f
+# historical source sha256: b66b704bc5d5fa09b1f8d15effa09ba119973672c3db755fff20095116d4394f
 """GetGo - Masters Axes and Instances: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

@@ -6,7 +6,6 @@ import hashlib
 import importlib
 import json
 import math
-import os
 import re
 import runpy
 import sys
@@ -16,6 +15,8 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Glyph Outline SVG",)
@@ -735,8 +736,7 @@ def test_each_source_identity_is_preserved_not_executed(
     index = json.loads((ROOT / "rescue-index.json").read_text())
     found = [row for row in index["menus"] if row["target"] == source]
     assert len(found) == 1 and found[0]["target_sha256"] == digest
-    archive = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
-    assert hashlib.sha256((archive / source).read_bytes()).hexdigest() == digest
+    assert recorded_sha256(source) == digest
 
 
 def test_source_inventory_covers_exact_batch() -> None:
@@ -914,8 +914,8 @@ def test_source_paths_are_header_comments_and_consolidation_is_complete() -> Non
         source = (ROOT / "Scripts/Drawing" / f"{title}.py").read_text()
         doc = ast.get_docstring(ast.parse(source))
         assert "Source:" not in doc and "SHA256:" not in doc
-        assert "# preserved-source:" in source
-    assert len(re.findall(r"^# preserved-source:", outline, re.MULTILINE)) == 6
+        assert "# historical source:" in source
+    assert len(re.findall(r"^# historical source:", outline, re.MULTILINE)) == 6
     assert "FontLab artwork importer" not in outline and "artwork import" not in outline
 
 
@@ -953,7 +953,6 @@ OPENGL_REASON = "The source needs QOpenGLContext.versionFunctions() and QOpenGLF
 
 def integration_records() -> dict[str, list[dict[str, Any]]]:
     """Build complete source-bound records for the controller's shared manifest."""
-    archive = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
     indexed = {
         row["target"]: row
         for row in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
@@ -980,7 +979,7 @@ def integration_records() -> dict[str, list[dict[str, Any]]]:
         assert (
             original["target_sha256"]
             == digest
-            == hashlib.sha256((archive / source).read_bytes()).hexdigest()
+            == recorded_sha256(source)
         )
         family = Path(source).stem.rsplit("-", 1)[0]
         row = {

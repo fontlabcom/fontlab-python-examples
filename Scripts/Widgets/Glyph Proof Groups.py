@@ -1,9 +1,9 @@
 # this_file: Scripts/Widgets/Glyph Proof Groups.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
-# preserved-source-sha256: e9e05eb140a7fa7fadfcaa6fdfee3ab938cde45069aed0386dcd82e101ca0db0
-# preserved-source: rescued/part2/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
-# preserved-source-sha256: 1a3228685ce42992156a888fad35efa8ce67f180aba6bb3727e413921e19d684
+# historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
+# historical source sha256: e9e05eb140a7fa7fadfcaa6fdfee3ab938cde45069aed0386dcd82e101ca0db0
+# historical source: rescued/part2/ports/widgets/pyqt-official/groupbox-f702b62aa47629ad.py
+# historical source sha256: 1a3228685ce42992156a888fad35efa8ce67f180aba6bb3727e413921e19d684
 """What: Build a glyph-name proof from useful current-font groups.
 How: Read a fresh App catalog. Combine encoded and unencoded glyphs in font
 order, optionally omit suffix names, then wrap slash names into short lines.

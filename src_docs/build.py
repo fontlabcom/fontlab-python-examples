@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTICE = (
     '!!! note "Retained catalogue"\n\n'
     "    This page comes from the retained catalogue. Its launch instructions and native\n"
-    "    results describe the earlier tree, now preserved under `rescued/part2`, rather than the current\n"
+    "    results describe the earlier tree, archived externally with historical prefix `rescued/part2`, rather than the current\n"
     "    launcher. The documentation build does not rerun these examples.\n\n"
 )
 

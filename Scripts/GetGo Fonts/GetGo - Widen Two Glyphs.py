@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Widen Two Glyphs
 # this_file: Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 164a2dcac98ad71db4c7445207e3f1e479837c22ca8ce54b00a368af8cbd3cf1
+# historical source sha256: 164a2dcac98ad71db4c7445207e3f1e479837c22ca8ce54b00a368af8cbd3cf1
 """GetGo - Widen Two Glyphs: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

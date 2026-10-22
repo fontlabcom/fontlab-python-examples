@@ -25,9 +25,9 @@ Modeless panel; font data, selection and application preferences stay unchanged.
 
 Independent rewrite of the Qt i18n example idea (Qt/Riverbank Computing;
 Nokia Corporation). Based on the author's own FontLab sample, Apache-2.0.
-Source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
 SHA256: a60c542ce24e27441a1c022e8fc57630edf380676eda4904bebc50510eb03047
-Source: rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+Historical source: rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
 SHA256: 6253c957368cdf32b0a298001f6bb07cec0abc724e4f0918918facba0cde245f
 
 Run **Tools > Localized Font Names** from FontLab's Scripts menu.
@@ -37,5 +37,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ec313369624f9aba4ac87efb86c9b1e2c833a360fb80ffa48492c7b51c8c7ada.py)
+[Python source](../../../../.build/menu-sources/f132accdb93b50c569e812be4e43676292a9457cb9df2716a0c5cb1a3f1b6ae0.py)
 <!--/codeinclude-->

@@ -23,8 +23,8 @@ shown in the modeless status area. A failed disconnect refuses Close for retry.
 Close releases owned callbacks and models; no original body is executed.
 Compatibility: Actual PythonQt/font/cache/history/dirty/save/reopen acceptance
 is pending. This command edits no font, selection, preference, file or Output.
-Original: rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
-Original source/resources stay preserved and are not bundled by this facade.
+Historical source: rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
+Original source/resources are archived outside this repository and are not bundled by this facade.
 
 Run **Tools > Glyph Name Completion** from FontLab's Scripts menu.
 
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a48476bc1d90a730e40213ae1b4e127e00a6c4d57992433ed2331af7b253e242.py)
+[Python source](../../../../.build/menu-sources/bd556b3fca6983a6c0052bfc842c59e65baa75436075a99ac069b59cc19cab0d.py)
 <!--/codeinclude-->

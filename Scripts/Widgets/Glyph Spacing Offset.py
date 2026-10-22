@@ -22,9 +22,9 @@ Compatibility:
     orientation and independent range editors. Preview uses actual slider value.
     Bounds are geometric, not slanted metrics/keys; refresh failures clear stale
     results. Native PythonQt and getter/cache preservation remain pending.
-    Source: rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
+    Historical source: rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
 """
-# preserved-source-sha256: aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56
+# historical source sha256: aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56
 
 
 def main() -> None:

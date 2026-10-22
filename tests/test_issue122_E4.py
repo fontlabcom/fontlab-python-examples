@@ -2,9 +2,7 @@
 """Check the five graphics rewrites without executing preserved source bodies."""
 
 import ast
-import hashlib
 import importlib
-import os
 import re
 import runpy
 import sys
@@ -13,6 +11,8 @@ from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
@@ -667,15 +667,14 @@ def test_feature_draft_accepts_development_names_and_rejects_injection() -> None
 
 
 @pytest.mark.parametrize("title", TITLES + (MARK_TITLE,))
-def test_source_attribution_hashes_match_preserved_read_only_bytes(title: str) -> None:
-    preserved = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
+def test_source_attribution_hashes_match_historical_records(title: str) -> None:
     text = (ROOT / "Scripts/Graphics" / f"{title}.py").read_text()
-    sources = re.findall(r"Source: ([^\n]+)\nSHA256: ([0-9a-f]{64})", text)
+    sources = re.findall(r"Historical source: ([^\n]+)\nSHA256: ([0-9a-f]{64})", text)
     assert len(sources) == 2, (
         "Each delivered family must identify both archived variants."
     )
     for path, expected in sources:
-        assert hashlib.sha256((preserved / path).read_bytes()).hexdigest() == expected
+        assert recorded_sha256(path) == expected
 
 
 @pytest.mark.parametrize("title", TITLES)

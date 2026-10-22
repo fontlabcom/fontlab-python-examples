@@ -19,9 +19,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt embeddeddialogs example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
 SHA256: c08d4c310c70b3a0e129085b79f59493472859819fdf1c75e7024345724a83bc
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
 SHA256: b90e385b1cb4ea7f2f202545920844cba59a825fcdf3986878ebd25d3fce1876
 
 Run **Graphics > Glyph Review Cards** from FontLab's Scripts menu.
@@ -31,5 +31,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e8a55e253720d1813189b72058561b6193bb7a5013f67daf808f04a66fb583d7.py)
+[Python source](../../../../.build/menu-sources/6771c67b4da34546650c89199d2a2b7613a1393538ae7fd6997059b11ca83e9c.py)
 <!--/codeinclude-->

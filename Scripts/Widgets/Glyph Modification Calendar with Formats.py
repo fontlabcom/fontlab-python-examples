@@ -1,6 +1,6 @@
 # this_file: Scripts/Widgets/Glyph Modification Calendar with Formats.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: feb734fd0e15a9b4217552e8823ee07beb8ce6d73bd27c21dfa36a537ecd1407
+# historical source sha256: feb734fd0e15a9b4217552e8823ee07beb8ce6d73bd27c21dfa36a537ecd1407
 """Inspect current-font modification dates with the complete part3 calendar.
 
 Purpose: Adapt the distinct full part3 Calendar Widget workflow to FontLab.
@@ -19,8 +19,8 @@ Clear only owned date marks after page/year/switch changes; keep named colours
 readable on an owned light date surface inside either host theme.
 Compatibility: Native PythonQt/font/getter/cache/history/save/reopen qualification
 is pending. The separate part2 calendar keeps its own controls and defaults.
-Original: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
+Original source/resources are archived outside this repository; this command does not execute them.
 """
 
 

@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Arabic Text Coverage
 # this_file: Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 2ffdbf0a1ac313760b84adf7c057335d918b66826c4172d92eaf401c1206f322
+# historical source sha256: 2ffdbf0a1ac313760b84adf7c057335d918b66826c4172d92eaf401c1206f322
 """GetGo - Arabic Text Coverage: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

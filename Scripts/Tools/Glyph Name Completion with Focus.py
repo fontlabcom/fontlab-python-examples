@@ -1,6 +1,6 @@
 # this_file: Scripts/Tools/Glyph Name Completion with Focus.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 05e5a74c23f345163374d8b557dc116b93245f46e6557f1e78efb0a7a9150094
+# historical source sha256: 05e5a74c23f345163374d8b557dc116b93245f46e6557f1e78efb0a7a9150094
 """Draft text with current-font glyph-name completions.
 
 Purpose: Adapt the complete part3 custom-completer workflow to FontLab.
@@ -18,8 +18,8 @@ shown in the modeless status area. A failed disconnect refuses Close for retry.
 Close releases owned callbacks and models; no original body is executed.
 Compatibility: Actual PythonQt/font/cache/history/dirty/save/reopen acceptance
 is pending. This command edits no font, selection, preference, file or Output.
-Original: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
-Original source/resources stay preserved and are not bundled by this facade.
+Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
+Original source/resources are archived outside this repository and are not bundled by this facade.
 """
 
 

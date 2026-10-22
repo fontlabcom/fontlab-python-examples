@@ -14,9 +14,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt padnavigator example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py
 SHA256: 66f7c5169c23e0adb6a7cb76b9fdffbf33b27af79bc987cafb8534365d70632d
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/padnavigator-a58650b5461c0f48.py
 SHA256: f6af280b00f13384566780930eb7aa33b57c5202a933315841d946fcf79cfe07
 """
 

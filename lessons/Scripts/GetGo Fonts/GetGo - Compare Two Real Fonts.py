@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Compare Two Real Fonts
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 9be0366c966c3d98dcae8b7c586e1f4860056e3da8aead09e44582710d8220fc
+# historical source sha256: 9be0366c966c3d98dcae8b7c586e1f4860056e3da8aead09e44582710d8220fc
 """GetGo - Compare Two Real Fonts: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

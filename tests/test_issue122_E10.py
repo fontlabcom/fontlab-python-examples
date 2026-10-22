@@ -12,6 +12,8 @@ from typing import Any, ClassVar
 
 import pytest
 
+from historical_sources import recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Font Name Encoding Audit", "Localized Font Names", "Font Info Snapshot")
 FIELDS = (
@@ -497,9 +499,7 @@ def test_entry_uses_existing_host_application(title: str, monkeypatch: Any) -> N
 
 
 def test_regexp_duplicate_target_and_all_seven_source_identities() -> None:
-    """Bind the duplicate to its existing entry and every source to its bytes."""
-    import hashlib
-    import os
+    """Bind the duplicate to its current entry and each source to its recorded hash."""
 
     target = ROOT / "Scripts/Tools/Glyph Name Pattern Lab.py"
     assert "glyph_pattern" in target.read_text()
@@ -515,10 +515,9 @@ def test_regexp_duplicate_target_and_all_seven_source_identities() -> None:
         and not ("/part2/" in r["target"] and "/regexp-" in r["target"])
     ]
     assert len(rows) == 7 and target.is_file()
-    preserved = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
     for row in rows:
         assert (
-            hashlib.sha256((preserved / row["target"]).read_bytes()).hexdigest()
+            recorded_sha256(row['target'])
             == row["target_sha256"]
         )
 

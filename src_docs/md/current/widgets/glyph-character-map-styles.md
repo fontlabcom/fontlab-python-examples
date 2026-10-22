@@ -31,7 +31,7 @@ Compatibility:
     Part3 isolated surrogate insertion is explicitly refused. Incomplete text
     cannot be copied; no replacement characters or silent sequence rewriting.
     Native PythonQt and complete font-preservation acceptance remain pending.
-    Source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
+    Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 
 Run **Widgets > Glyph Character Map - Styles** from FontLab's Scripts menu.
 
@@ -40,5 +40,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4c25ea0d4301c50b4f01a2cd2cf9d41d4580bde1d225e64eecc2a73cbd29af4a.py)
+[Python source](../../../../.build/menu-sources/37e86445fbd4ac20830d9c763f8a1f9de642a3be91e6021ed713597815cb0dcc.py)
 <!--/codeinclude-->

@@ -18,9 +18,9 @@ Independent rewrite of the Qt mdi example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
 
-Source: rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
+Historical source: rescued/part3/pyqt-official-ports/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
 SHA256: 29271121483f2c5fabe6b0f0232602bcc32f9d0a0ccc69ad553149a5706d8199
-Source: rescued/part2/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
+Historical source: rescued/part2/ports/mainwindows/pyqt-official/mdi-1415facde30a25cf.py
 SHA256: 4a7cab42d4c0c13dd09e5c098e6758007f81371fbb90b832d25c1f44e055609c
 """
 

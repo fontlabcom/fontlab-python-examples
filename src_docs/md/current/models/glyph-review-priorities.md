@@ -21,9 +21,9 @@ qt_properties. Invalid imports keep the visible queue and current scores.
 
 Independent rewrite of the Qt stardelegate example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
 SHA256: ab5c5904d2ca3688def0ad17a8a48ac63f507e7a77778a888f14e04a89b0c079
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
 SHA256: d11286ceb3e9b813bbda21d1f820c224694722b2b3476c7b19a0791cd6fcc311
 
 Run **Models > Glyph Review Priorities** from FontLab's Scripts menu.
@@ -33,5 +33,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b06651fb1c3b85d494feeb31954a2495d629f17a9cc92498337e131acc23c572.py)
+[Python source](../../../../.build/menu-sources/3f9abf43f232abe97eff14deed0587514acfcb8d4c9e975e92efad0800c2f756.py)
 <!--/codeinclude-->

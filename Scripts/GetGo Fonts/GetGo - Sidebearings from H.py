@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Sidebearings from H
 # this_file: Scripts/GetGo Fonts/GetGo - Sidebearings from H.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 46819ae9909a25291ca3b9558dbe2a1241e7f504fc1ea113a6679047adba3143
+# historical source sha256: 46819ae9909a25291ca3b9558dbe2a1241e7f504fc1ea113a6679047adba3143
 """GetGo - Sidebearings from H: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Name a Disposable Derivative
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 923c9109b994eed66c18e4056cc1ed2054748bcb1a3b53083097583f1f909d40
+# historical source sha256: 923c9109b994eed66c18e4056cc1ed2054748bcb1a3b53083097583f1f909d40
 """GetGo - Name a Disposable Derivative: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

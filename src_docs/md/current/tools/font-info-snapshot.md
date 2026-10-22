@@ -22,9 +22,9 @@ Modeless panel; font data, selection and application preferences stay unchanged.
 
 Independent rewrite of the Qt settingseditor example idea (Qt/Riverbank Computing;
 Nokia Corporation). Based on the author's own FontLab sample, Apache-2.0.
-Source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
+Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
 SHA256: 1a35d9d5b3989ba7728ce129fea1bcc98cce4b221f59cf8916788ffe0ab53475
-Source: rescued/part2/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
+Historical source: rescued/part2/ports/tools/pyqt-official/settingseditor-9e41e71c41b116a8.py
 SHA256: 1433012d1ff11a45c6414df8c625c99fc9e17cd93a91d7bc4e518ebfac5dd890
 
 Run **Tools > Font Info Snapshot** from FontLab's Scripts menu.
@@ -34,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/510ab07a97c5dd5f51bb8086c61968a0e1561c476bced33df242ee5f08f3e842.py)
+[Python source](../../../../.build/menu-sources/e71cb8d310b61e9c01b6c2882777508cb16c28e13011fda4c052d2811e4fc8b8.py)
 <!--/codeinclude-->

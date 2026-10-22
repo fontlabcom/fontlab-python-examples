@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Kerning and Classes Report
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 631262160a452b24c27b9b82239801cb6505b1cce03e2d378a371f54dddfebdd
+# historical source sha256: 631262160a452b24c27b9b82239801cb6505b1cce03e2d378a371f54dddfebdd
 """GetGo - Kerning and Classes Report: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

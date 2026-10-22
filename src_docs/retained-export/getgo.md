@@ -3,7 +3,7 @@
 !!! note "Retained catalogue"
 
     This page comes from the retained catalogue. Its launch instructions and native
-    results describe the earlier tree, now preserved under `rescued/part2`, rather than the current
+    results describe the earlier tree, archived externally with historical prefix `rescued/part2`, rather than the current
     launcher. The documentation build does not rerun these examples.
 
 Thirteen original Apache-2.0 examples for FontLab 9. Each entry verifies a

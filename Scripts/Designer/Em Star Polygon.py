@@ -1,9 +1,9 @@
 # this_file: Scripts/Designer/Em Star Polygon.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part2/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
-# preserved-source-sha256: c96726078578bad1e6651507493d0a0914a98d35b54ed0553f215c01bdcd3b57
-# preserved-source: rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
-# preserved-source-sha256: 4d3016d00e140cfa1985aface43fd8f792dd4fff4b1cb015f9980ea56e0a3481
+# historical source: rescued/part2/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
+# historical source sha256: c96726078578bad1e6651507493d0a0914a98d35b54ed0553f215c01bdcd3b57
+# historical source: rescued/part3/pyqt-official-ports/ports/designer/pyqt-official/polygonwidget-773db5c24ae98ffb.py
+# historical source sha256: 4d3016d00e140cfa1985aface43fd8f792dd4fff4b1cb015f9980ea56e0a3481
 """What: Draw a star polygon in the current FontLab layer as one Undo step.
 How: Alternate radii in font units, with Y up. Centre the contour on half the
 active layer advance and half its associated master's FontMetrics cap height.

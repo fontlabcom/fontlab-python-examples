@@ -5,7 +5,7 @@ this_file: docs/superpowers/plans/inventory-execution-scope.md
 
 Authority: complete pythonqt-example-collection.md and two deferred Minor findings
 in the accepted first-native batch. This task improves the complete source catalog;
-it does not port or execute either collection. Original source bytes/IDs remain
+it does not port or execute either collection. Original source bytes are archived outside the repositories; IDs remain
 binding, including every helper/resource and both case-colliding matplotlib names.
 
 ## Global Constraints

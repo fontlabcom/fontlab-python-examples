@@ -1,7 +1,7 @@
 # this_file: Scripts/Tools/Saved Proof Sample.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part2/ports/insights/sandbox-settings.py
-# preserved-source-sha256: a3dacffc45c2c5e1d1bc83b1a5b672c20db9a3873d0cc98166515ed96d1fd8bb
+# historical source: rescued/part2/ports/insights/sandbox-settings.py
+# historical source sha256: a3dacffc45c2c5e1d1bc83b1a5b672c20db9a3873d0cc98166515ed96d1fd8bb
 """Keep a reusable proof sample and check it against the current font.
 
 What: Save one proof string in an isolated example settings namespace.

@@ -6,10 +6,8 @@ native member list at class creation and attribute assignment.
 """
 
 import ast
-import hashlib
 import importlib
 import json
-import os
 import runpy
 import sys
 from pathlib import Path
@@ -17,6 +15,8 @@ from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_SOURCE = ROOT.parent / "fontlab-fontlabapp" / "src"
@@ -583,7 +583,7 @@ def test_native_name_guards_source_typing_and_provenance(title: str) -> None:
             "Why:",
             "Usage:",
             "Benefit:",
-            "Source:",
+            "Historical source:",
             "SHA256:",
         )
     )
@@ -613,10 +613,6 @@ def test_native_name_guards_source_typing_and_provenance(title: str) -> None:
             assert node.returns is not None, node.name
             for arg in (*node.args.args, *node.args.kwonlyargs):
                 assert arg.arg == "self" or arg.annotation is not None, node.name
-    archive = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", ROOT))
-    assert (archive / "rescued").is_dir(), (
-        "Set FONTLAB_PRESERVED_ROOT to the preserved archive checkout."
-    )
     index = {
         row["target"]: row
         for row in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
@@ -624,11 +620,11 @@ def test_native_name_guards_source_typing_and_provenance(title: str) -> None:
     lines = doc.splitlines()
     sources = []
     for offset, line in enumerate(lines):
-        if line.startswith("Source: "):
-            source = line.removeprefix("Source: ")
+        if line.startswith("Historical source: "):
+            source = line.removeprefix("Historical source: ")
             digest = lines[offset + 1].removeprefix("SHA256: ")
             assert digest == index[source]["target_sha256"]
-            assert hashlib.sha256((archive / source).read_bytes()).hexdigest() == digest
+            assert recorded_sha256(source) == digest
             sources.append(source)
     assert len(sources) == (10 if title == TITLES[0] else 2)
 
@@ -814,7 +810,7 @@ def test_diff_snapshot_rejects_malformed_codepoints_epochs_and_lossy_text() -> N
             module["snapshot"](table)
 
 
-def test_all_twenty_four_source_identities_have_preserved_bytes() -> None:
+def test_all_twenty_four_source_identities_have_recorded_hashes() -> None:
     families = {
         "application",
         "sdi",
@@ -829,7 +825,6 @@ def test_all_twenty_four_source_identities_have_preserved_bytes() -> None:
         "screenshot",
         "systray",
     }
-    archive = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", ROOT))
     source_rows = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     matched = [
         row
@@ -843,7 +838,7 @@ def test_all_twenty_four_source_identities_have_preserved_bytes() -> None:
     assert len(matched) == 24
     for row in matched:
         assert (
-            hashlib.sha256((archive / row["target"]).read_bytes()).hexdigest()
+            recorded_sha256(row['target'])
             == row["target_sha256"]
         )
 

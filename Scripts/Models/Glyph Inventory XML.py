@@ -11,9 +11,9 @@ qt_properties. Export requires a new absolute path and never overwrites a file.
 
 Independent rewrite of the Qt simpledommodel example idea. Based on the author's own FontLab sample,
 Apache-2.0.
-Source: rescued/part2/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
 SHA256: c17809b93a3fff1601c20e15f233edbf687f023430e86bf1986772e38bf712d6
-Source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
+Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpledommodel-a59dae9770bfbefb.py
 SHA256: 50abde2890c2ca53384733ee94f77b54e3b4b7783efba2a965fc8b68a9becb42
 """
 

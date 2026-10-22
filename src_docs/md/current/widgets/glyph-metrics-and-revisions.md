@@ -30,7 +30,7 @@ Compatibility:
     filter local captured revision instants; they never change font dates.
     All numeric inputs are local estimates. No font/history/selection writer
     is used. Native PythonQt and complete-font preservation remain pending.
-    Source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
+    Historical source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 
 Run **Widgets > Glyph Metrics and Revisions** from FontLab's Scripts menu.
 
@@ -39,5 +39,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4a2a672431eb18bb43dd90b9bf110b6100feebd03e7591397443eb1b186087da.py)
+[Python source](../../../../.build/menu-sources/bca1d62526695abce0c4cbeeb7e6ee33070a8453a8ac64c094712848f5392af9.py)
 <!--/codeinclude-->

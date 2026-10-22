@@ -5,7 +5,6 @@ Preserved sources are read only as data. Native acceptance belongs to integratio
 """
 
 import ast
-import hashlib
 import importlib
 import json
 import os
@@ -16,6 +15,8 @@ from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_SOURCE = ROOT.parent / "fontlab-fontlabapp" / "src"
@@ -528,10 +529,11 @@ def open_panel(title: str, host: Any) -> tuple[dict[str, Any], Any]:
     capture = host.capture
     if title in WRITERS:
         value = 0 if title == TITLES[1] else "Existing\nmultiline note"
-        capture = lambda: (
-            17,
-            {row[0]: (index + 1, value) for index, row in enumerate(ROWS)},
-        )
+        def capture():
+            return (
+                17,
+                {row[0]: (index + 1, value) for index, row in enumerate(ROWS)},
+            )
     return module, module["show"](host.qt, None, capture)
 
 
@@ -547,7 +549,6 @@ def click(panel: Any, title: str) -> None:
 
 
 def test_all_28_source_identities_and_rulings() -> None:
-    archive = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
     rows = [
         row
         for row in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
@@ -559,7 +560,7 @@ def test_all_28_source_identities_and_rulings() -> None:
         family = Path(row["target"]).name.split("-")[0]
         disposition, destination = DISPOSITIONS[family]
         assert (
-            hashlib.sha256((archive / row["target"]).read_bytes()).hexdigest()
+            recorded_sha256(row['target'])
             == row["target_sha256"]
         )
         if disposition != "retired":

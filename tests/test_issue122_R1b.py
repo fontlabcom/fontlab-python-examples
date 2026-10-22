@@ -8,13 +8,14 @@ import importlib.util
 import inspect
 import json
 import math
-import os
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
 from fontlabapp.layer_selection import LayerSelection
+
+from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Symbol Tag Search", "Pair Proof Generator", "Layer Metric Comparison")
@@ -626,7 +627,6 @@ def test_every_source_has_a_hash_checked_complete_disposition() -> None:
     records = fragment_records()
     assert len(records["adaptations"]) == 9
     assert sum(row["disposition"] == "ported" for row in records["adaptations"]) == 4
-    archive = Path(os.environ["FONTLAB_PRESERVED_ROOT"])
     shared = json.loads((ROOT / "menu-adaptations.json").read_text())
     folded = [
         row
@@ -640,7 +640,7 @@ def test_every_source_has_a_hash_checked_complete_disposition() -> None:
     )
     for row in records["adaptations"]:
         assert (
-            hashlib.sha256((archive / row["source"]).read_bytes()).hexdigest()
+            recorded_sha256(row['source'])
             == row["source_sha256"]
         )
         if row["disposition"] == "ported":

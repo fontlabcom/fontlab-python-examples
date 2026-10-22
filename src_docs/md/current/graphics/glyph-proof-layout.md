@@ -20,9 +20,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt anchorlayout example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py
 SHA256: 4de40f5bc168015793f3529ef70f2e69dc46be41b38d17afb29f7e34ef8d717f
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py
 SHA256: 60caa0dacfd8b8e41a4c8a5c83e5aced63a298e574433410c25e529452560ad2
 
 Run **Graphics > Glyph Proof Layout** from FontLab's Scripts menu.
@@ -32,5 +32,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/963d1905b0808d778e1dfe19d41ba1e3f17341d7a2ac77f138427031f6c04f1a.py)
+[Python source](../../../../.build/menu-sources/b30f19560d11b0dceeec298bf558ca0ced522ffd918c3dfd7404e2407b67a016.py)
 <!--/codeinclude-->

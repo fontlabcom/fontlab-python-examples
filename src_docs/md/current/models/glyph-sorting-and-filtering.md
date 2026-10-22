@@ -24,7 +24,7 @@ complete persistence/UI acceptance remain pending. Standalone Qt tests do not
 qualify the FontLab host. This replaces one preserved-source dispatcher; the
 original remains external and is never executed by this adaptation.
 
-Original: rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py
+Historical source: rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermodel-9dab02b61cebbdb7.py
 The generic UI and query policy live in App. The part3 official versions have
 different contracts and remain separate pending entries. Custom date filtering
 starts unrestricted rather than limiting real fonts to demonstration-only2026.
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8cf3fd124416fe5507062a0af462e1d25cb82c992a30c3251312c4805ebd5661.py)
+[Python source](../../../../.build/menu-sources/ae52266fa47673e9b9bc34fdbed65e5c95b49922536b840a02335dd5e2fe8943.py)
 <!--/codeinclude-->

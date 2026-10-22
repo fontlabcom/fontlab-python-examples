@@ -23,9 +23,9 @@ Archived replacements: Apache-2.0, own earlier work. Upstream BSD headers and
 collection GPL metadata have unresolved scope. No upstream code or assets copied.
 The two archived variants consolidate into this FontLab-specific workflow;
 original sample controls are not a claim of feature parity. Native acceptance pending.
-Source: rescued/part2/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
+Historical source: rescued/part2/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
 SHA256: 4a705367140cd7600706cf7ab7522523ddc7c5cd3592309c78d316b67cfc0055
-Source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
+Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
 SHA256: 80b66bcc88b46955f88d0b31040a2ea4cdf272aa6de1f825c9ff189abf21af22
 
 Run **Dialogs > Proof Text Coverage Dialog** from FontLab's Scripts menu.
@@ -35,5 +35,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3b7cd8b08e9a77a0cd9186a60117c8b6bbb4b79927a9a6d3770afb3cb80c56ef.py)
+[Python source](../../../../.build/menu-sources/dc6393a47da104ae698c9df5186808ac962d30195ebd4627f19c4a170bebc71e.py)
 <!--/codeinclude-->

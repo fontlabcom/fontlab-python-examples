@@ -14,9 +14,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt diagramscene example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
 SHA256: 9a955af5875f27bba1baad27d5c508910c80a5ec6463d7cb00890e983322fe56
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/diagramscene-1ca857d797199ecf.py
 SHA256: 2f1d99279f78a43459928e59388681eb4ded7a85f0bd7b3cb6a7593980d05f1e
 """
 

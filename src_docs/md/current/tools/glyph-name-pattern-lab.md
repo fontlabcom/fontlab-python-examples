@@ -27,7 +27,7 @@ Result:
 Compatibility:
     Native PythonQt, complete getter/cache/history/dirty/reopen acceptance pending.
     Independent implementation; no original body or source helper is executed.
-    Preserved source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
+    Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
 
 Run **Tools > Glyph Name Pattern Lab** from FontLab's Scripts menu.
 
@@ -36,5 +36,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b7f966b9251b68b735648be2b03b8c759631503ae1f1023a2c28227838bb5829.py)
+[Python source](../../../../.build/menu-sources/b87e36a21ad56c768f03e3379bfedba27457df556720a8347bd63beeab174871.py)
 <!--/codeinclude-->

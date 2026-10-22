@@ -1,7 +1,7 @@
 # MenuTitle: GetGo - Audit a Real Font
 # this_file: lessons/Scripts/GetGo Fonts/GetGo - Audit a Real Font.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: 4636db49daac6e914403bb7efac795042c830ada8f81953be6af43053a8159e6
+# historical source sha256: 4636db49daac6e914403bb7efac795042c830ada8f81953be6af43053a8159e6
 """GetGo - Audit a Real Font: run the packaged lesson on verified owned GetGo copies.
 
 Setup: Install fontlab-python-lessons with its packaged GetGo fonts and the

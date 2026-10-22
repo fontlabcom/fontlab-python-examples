@@ -1,9 +1,9 @@
 # this_file: Scripts/Drawing/Glyph SVG Reference.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
-# preserved-source-sha256: d2ccb421fa24dcc962e4abda1d081a7b5a0a4615a4aef6e1a4d2c8e4490c7665
-# preserved-source: rescued/part2/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
-# preserved-source-sha256: 5e88ce4d8959a0e13df6478a7811d6f69bbaa217ecef4728bb1f3bcfd2a28105
+# historical source: rescued/part3/pyqt-official-ports/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
+# historical source sha256: d2ccb421fa24dcc962e4abda1d081a7b5a0a4615a4aef6e1a4d2c8e4490c7665
+# historical source: rescued/part2/ports/painting/pyqt-official/svgviewer-b2d717e4d43806d2.py
+# historical source sha256: 5e88ce4d8959a0e13df6478a7811d6f69bbaa217ecef4728bb1f3bcfd2a28105
 """What: Compare local SVG reference artwork with the current glyph outline.
 How: Read the current-master outline and load the whole SVG into a native vector
 scene item. Fit and center it, or keep SVG user coordinates in font units.

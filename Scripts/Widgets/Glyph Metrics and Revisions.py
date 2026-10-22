@@ -24,9 +24,9 @@ Compatibility:
     filter local captured revision instants; they never change font dates.
     All numeric inputs are local estimates. No font/history/selection writer
     is used. Native PythonQt and complete-font preservation remain pending.
-    Source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
+    Historical source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 """
-# preserved-source-sha256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db
+# historical source sha256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db
 
 
 def main() -> None:

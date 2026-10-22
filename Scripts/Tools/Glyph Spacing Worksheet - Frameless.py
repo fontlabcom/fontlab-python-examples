@@ -18,9 +18,9 @@ Result:
 Compatibility:
     Native PythonQt and complete font/cache/history/reopen acceptance are pending.
     Independent behavior implementation; no preserved body/helper is executed.
-    Preserved source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
+    Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
 """
-# preserved-source-sha256: 3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084
+# historical source sha256: 3de6b2d062d29b0721bd8491772ca89bedc4dbe22680ca2af4f333ea6cfd2084
 
 
 def main() -> None:

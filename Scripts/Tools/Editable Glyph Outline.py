@@ -1,6 +1,6 @@
 # this_file: Scripts/Tools/Editable Glyph Outline.py
 # SPDX-License-Identifier: Apache-2.0
-# preserved-source-sha256: e2eeecb1ac3c93e603e98f49d9c56c0a967430d3021ae3255a2e3fad841e4c61
+# historical source sha256: e2eeecb1ac3c93e603e98f49d9c56c0a967430d3021ae3255a2e3fad841e4c61
 """Edit a complete local glyph-metadata tree.
 
 Purpose: Adapt the complete distinct part2 editable-tree workflow to FontLab.
@@ -18,8 +18,8 @@ owners and refuse deletion for Close retry; terminal faults use window Close.
 Close releases owned views, models, selection and callbacks. No original is run.
 Compatibility: Actual installed PythonQt/font/cache/history/dirty/save/reopen
 acceptance remains pending. No font, selection, preference, file or Output
-writer is used. Original source/resources remain preserved and unbundled.
-Original: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
+writer is used. Original source/resources are archived outside this repository and unbundled.
+Historical source: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
 """
 
 

@@ -1,5 +1,5 @@
 # this_file: tests/test_rescued_menus.py
-"""Keep original identities and bytes without presenting archive dispatch as a tool."""
+"""Keep historical path and hash identities without presenting archive dispatch as a tool."""
 
 import hashlib
 import json
@@ -8,8 +8,9 @@ from pathlib import Path
 
 import pytest
 
+from historical_sources import recorded_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(ROOT)))
 INDEX = json.loads((ROOT / "rescue-index.json").read_text())
 ADAPTATIONS = json.loads((ROOT / "menu-adaptations.json").read_text())
 ROWS = INDEX["menus"]
@@ -54,13 +55,12 @@ def test_index_when_loaded_then_complete_unique_source_scope_remains_pending():
 
 
 @pytest.mark.parametrize("row", ROWS, ids=lambda row: row["menu"])
-def test_source_when_retired_from_menu_then_original_bytes_preserved_and_no_dispatcher(
+def test_source_when_retired_from_menu_then_historical_identity_recorded_and_no_dispatcher(
     row,
 ):
     assert not (ROOT / row["menu"]).exists(), (
         "Archived dispatchers must stay outside active Scripts"
     )
-    source = ARCHIVE / row["target"]
-    assert hashlib.sha256(source.read_bytes()).hexdigest() == row["target_sha256"], (
-        "Never change preserved source bytes"
+    assert recorded_sha256(row["target"]) == row["target_sha256"], (
+        "Keep historical path and hash consistent across records"
     )

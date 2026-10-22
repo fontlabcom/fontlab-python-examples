@@ -24,8 +24,8 @@ Replace the synthetic outline/default.txt input with structured font metadata.
 The separate editable-tree lesson remains outside this read-only source pair.
 Compatibility: Original PythonQt virtual/UI/getter/cache/font/history/save/reopen
 acceptance remains pending. Standalone Qt is not native FontLab proof.
-Original: rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
-Original source/resources stay preserved; this command does not execute them.
+Historical source: rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
+Original source/resources are archived outside this repository; this command does not execute them.
 
 Run **Models > Glyph Metadata Outline** from FontLab's Scripts menu.
 
@@ -34,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/10fda6df7c2c3abe739ee4534643e83fcb7321f0fba67c445f6effa35ae4596b.py)
+[Python source](../../../../.build/menu-sources/0a2c7cb46bc2ef0f90cd721b0a612541b435ed9984e2f249888d2a889d3b24ca.py)
 <!--/codeinclude-->

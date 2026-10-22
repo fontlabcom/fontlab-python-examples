@@ -19,9 +19,9 @@ Modeless panel; font data, selection and application preferences stay unchanged.
 
 Independent rewrite of the Qt i18n example idea (Qt/Riverbank Computing;
 Nokia Corporation). Based on the author's own FontLab sample, Apache-2.0.
-Source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
 SHA256: a60c542ce24e27441a1c022e8fc57630edf380676eda4904bebc50510eb03047
-Source: rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
+Historical source: rescued/part2/ports/tools/pyqt-official/i18n-eca1cd9ef1528607.py
 SHA256: 6253c957368cdf32b0a298001f6bb07cec0abc724e4f0918918facba0cde245f
 """
 

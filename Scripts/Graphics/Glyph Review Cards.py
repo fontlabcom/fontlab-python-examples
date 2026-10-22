@@ -13,9 +13,9 @@ Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt embeddeddialogs example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
-Source: rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
+Historical source: rescued/part2/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
 SHA256: c08d4c310c70b3a0e129085b79f59493472859819fdf1c75e7024345724a83bc
-Source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
+Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
 SHA256: b90e385b1cb4ea7f2f202545920844cba59a825fcdf3986878ebd25d3fce1876
 """
 

@@ -40,8 +40,8 @@ The 494 historical source identities remain in `rescue-index.json`; the 222
 hash-bound adaptations and 259 retirements are recorded in `menu-adaptations.json`. The other 13
 identities remain migration backlog. A further 42 rescued files that never had a
 menu identity are recorded there too, without a `source_menu` key. Their original bodies and resources stay
-unchanged under the local `rescued/` tree. Archived runtime wrappers are retained
-privately for recovery and are no longer advertised as working menu tools.
+in an archive outside this repository (historical prefix `rescued/`). Historical runtime wrappers are retained outside this repository
+for recovery and are no longer advertised as working menu tools.
 
 The matching Lessons package source now lives in the repository's `lessons/`
 folder. It includes all sixteen packaged menu entries, the form resource and99
