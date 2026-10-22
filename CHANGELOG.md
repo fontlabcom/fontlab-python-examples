@@ -4,6 +4,11 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Follow App and Scriptmix master-metrics changes
+
+- `menu-adaptations.json` pins Scriptmix Font Info/Master Metrics Table at its new bytes (08244e0e…), which write through App `master_metrics`.
+- `test_issue122_E6` expects no `UpdateAll()` after a selection: App `select_glyphs` dropped it because it queued glyph ids (fl#8537).
+
 ## 2026-10-22 - Coverage tests for three scripts
 
 - `tests/test_cov_*.py` cover Font Drop Inspector, Glyph Snapshot Console and Symbol Tag Search (99-100% branch coverage). Script bytes and pins are unchanged.

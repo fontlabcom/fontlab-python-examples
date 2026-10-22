@@ -3338,7 +3338,7 @@
       "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/FontMetrics.py",
       "source_sha256": "238b24fa473a611284513bd1314d68503b1d6ccf3900f139da793f51df840281",
       "menu": "fontlab-python-scriptmix/Scripts/Font Info/Master Metrics Table.py",
-      "destination_sha256": "9e0c582b5d576c0bb9ac1203c613a803ca6c2343331fec24b9481fb43b040233",
+      "destination_sha256": "08244e0ece2fd4c02315f5562c4cbf5c5351987c583eacbf9bf04fef72f3e1ac",
       "entry_point": "main",
       "family": "typerig-independent",
       "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",

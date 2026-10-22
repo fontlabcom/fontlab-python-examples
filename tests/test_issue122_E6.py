@@ -673,7 +673,7 @@ def test_real_selection_helper_rejects_glyph_window_before_legacy_writes(
         inherits=lambda name: name == "FontWindow", parentWidget=lambda: frame
     )
     assert host.real_select(["A"], package_id=17) == ["A"]
-    assert writes == ["unselect", 0, "update"]
+    assert writes == ["unselect", 0], "selection repaints itself; no UpdateAll (fl#8537)"
 
 
 @pytest.mark.parametrize("title", TITLES)
