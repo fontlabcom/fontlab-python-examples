@@ -1,7 +1,7 @@
 {
   "this_file": "menu-adaptations.json",
   "source_index_sha256": "d173983992bba9e629d301ba0c88a4976871ea7e809992e6aebd6a1a06130564",
-  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 97 practical facades; 222 adaptations remain native pending, 259 identities have no script here, each with a recorded reason (10 of these name the native FontLab command that does the job), and 13 identities remain backlog. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
+  "policy": "Preserve all 494 historical identities and exact original bodies. Active Scripts contains 100 practical facades; 222 adaptations remain native pending, 259 identities have no script here, each with a recorded reason (10 of these name the native FontLab command that does the job), and 13 identities remain backlog. 42 further rescued files without a menu identity are recorded the same way without source_menu: 9 adaptations and 33 retirements. Original bodies/helpers/resources are not executed or bundled. Both Image Viewers retain distinct zoom/Fit/printing and asynchronous dialog workflows.",
   "adaptations": [
     {
       "source_menu": "Scripts/Archived UI A-I/itemviews - basicsortfiltermodel-9dab02b61cebbdb7.py",
@@ -3412,6 +3412,141 @@
       "source_body_redistributed": false,
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/Delta Machine/DeltaMachine.py",
+      "source_sha256": "eedcf9ce3cf70436563f88da2d0217c01deb5fe4bc2d6c41f6124a1c568a0bce",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "Scripts/Drawing/Scale With Stem Compensation.py",
+      "destination_sha256": "043cbd001b372180c7ec0a9920d8cb7991f9d61c2ab013a4c1816ea4b91d4064",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Batch selected glyphs times checked masters, with per-master source pair, measured/target stems, X/Y scale and slant; Preview/confirmation and new auxiliary output layers in one Undo step. All control nodes transform with the outline, TT stays quadratic, refused glyph/master rows are kept. No in-place overwrite, whole-font default, boundary-fix, stem probing, extrapolation or saved presets; output advance scales from source A, anchors/hints/guides and element metadata are not copied. Slant defaults are read separately per master. Read-back accepts native coordinate snapping within 1e-5 and compares advance with its detached native-setter result under current rounding preferences; tolerance remains unmeasured natively.",
+      "disposition": "ported",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/toolbar-mac.py",
+      "source_sha256": "8edd09bb545b9535accb629b1707ea9d0c30ed778e79093270f28be9e264aadd",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "Scripts/Contours/Node Slope And Handles.py",
+      "destination_sha256": "91b91a61c9708afaa69704535483c2b613ce03add85b39e625d61ddaa1a07079",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Numeric slope copy/paste/italic and proportional/Hobby handle optimization are covered here. Scriptmix Align And Distribute, Add Extremes and Round Coordinates cover related node jobs. Native node insert/remove/smooth, segment conversion, boolean, contour order/start and winding commands cover manual editing. No floating icon grid, stored target capture/collapse or TypeRig corner mitre/round/trap/loop/rebuild algorithms are reproduced by this destination.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Popups/popup-node-align.py",
+      "source_sha256": "da84d3de06a7f800c71603cd1fa6f9922485ac9e614e636e84e8ff924c528a01",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py",
+      "destination_sha256": "43b86780dd5c80484cf556cb3398aea2684fba718bf508deac9bac8398be54bc",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Selected-node and contour alignment across glyph layers; adjacent handles follow on-curve moves. No cursor popup, italic deskew, automatic guide/metric snapping, safe-distance option or stored target capture/collapse.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-CopyAnchors.py",
+      "source_sha256": "f1d4d5a981a01b677fa4ad9f1d060c802c4e64c638006941de4d46cc3e5e8285",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors Between Fonts.py",
+      "destination_sha256": "40e5a29d8b1b55225a6a4f90e09077b85c046d689ea36114c202e30b4951a3fb",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Existing independent rewrite provides two-font/layer selection, selected/all glyphs, anchor filtering, absolute/proportional positions, italic shift and overwrite/rename incoming or destination with suffix. Uses its own guarded transfer UI rather than the TypeRig panel.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-CopyLayers.py",
+      "source_sha256": "59960229e96473f00c06110d49cb5ea5cefb451ce3c6e1144fd8af395bda868d",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "Scripts/Tools/Copy Layers From Font.py",
+      "destination_sha256": "79d7b0589436df521bfcb72c8f4fe6ce2621698bbd5dc6b750014d84367390bb",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Copy named source layers from a chosen open font into selected current-font glyphs. Explicit mappings, overwrite, incoming/destination suffix and mask modes, Preview/confirmation, fgId fencing, kept rows and one destination Undo step. Components, guides, hints, metrics expressions and custom node/contour properties are refused. No glyph creation, whole-font default, colour marking, layer metadata or anchor-expression transfer; existing pin styles stay and new pins use name-derived styles. Mask targets only the exact mask.<mapped body> name; heuristic fallbacks are kept. Body-only hints, guides, components and metric expressions do not prevent mask copying. Reserved service prefixes and master-named backups are refused.",
+      "disposition": "ported",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-DeltaPreview.py",
+      "source_sha256": "3174875c4ade57f8d30596c5b5a34616a23cded6ddb71c615b46cbc9418780c0",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "Scripts/Drawing/Stem Blend.py",
+      "destination_sha256": "7cdfda967292c4d6956e3fa22412634ef99b58e253455df6051a1699e1997a9d",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Covers baking a two-source stem-compensated layer into the current glyph, with secondary SVG output. No virtual multi-axis tree, saved font/file axes, target-result vector grid, colour/metrics overlays, drag reordering or multi-target batch baking.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-EncodeGlyphs.py",
+      "source_sha256": "5c2bdbb9aced3c0f86b34dffb36cb7881d8db9395240d1f2ca98595da8584c05",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "Scripts/Tools/Apply Unicode Map.py",
+      "destination_sha256": "80440ee7ce34cba027f6284ea7a834438368b57d985c5f0a5f030024c21dd195",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Explicit JSON glyph-name map adds scalar values to selected glyphs with cached detached typing previews, fresh write facts, duplicate-claim checks, kept rows and one Unicode history commit. Already-present/missing preview rows partly cover Test encoding. No separate test report, NAM or .textproto loader, font-library map, file export, font chooser or whole-font default; existing codes stay.",
+      "disposition": "ported",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-PropagateAnchors.py",
+      "source_sha256": "195db1a50aa8df1b4785290be5c20bef8f4009fee90918e94cfeedb9db052971",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors From Glyph.py",
+      "destination_sha256": "046dbf5a680c87aa722a527da700231dcdf126d0c4a4c95e4d24f21259397f89",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "One source glyph to selected targets with merge/replace, optional advance scaling and current/all masters. No saved multi-row source/destination recipe table, per-row anchor/layer filters, incoming/destination rename suffix or LSB/RSB-relative positioning; advance scaling is covered.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-RenameAnchors.py",
+      "source_sha256": "f22c01285635bab4237140619aeb8af68827c2001ac23b54b2d7b6ae4b3d3022",
+      "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
+      "menu": "fontlab-python-scriptmix/Scripts/Anchors/Rename Bulk.py",
+      "destination_sha256": "88a65a46fb92d0121677d441e43a5a4e794395e205a8b3da57e1194c9e579dce",
+      "entry_point": "main",
+      "family": "typerig-independent",
+      "scope": "Find/replace or regex anchor renaming in selected glyphs or the whole font, current or all masters, with preview and collision checks. The source can choose any single named layer; this target offers current/all masters. The source has no preview. No arbitrary font chooser is provided.",
+      "disposition": "duplicate-of",
+      "assets": [],
+      "source_body_redistributed": false,
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ],
   "retirements": [
@@ -5588,6 +5723,237 @@
       "disposition": "retired",
       "reason": "SyConn/KNOSSOS neuron and synapse viewer needs segmentation datasets and a SyConn service; no FontLab workflow.",
       "license": "GPL-2.0"
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/contour.py",
+      "source_sha256": "64fb12677000e4dc658046a86f410d1088212e664121cc01a8e3ed5289abafe8",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Contour editing, splitting, winding and ordering are covered by outline_writer and the Contours scripts. TypeRig smart-cut and sort heuristics are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/curve.py",
+      "source_sha256": "0604ea5251dc2e19b6eccc2096ef4151556a7dcc34b0086a2eb92e231d7555e5",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Curve conversion is covered by outline_writer; handle proportions and Hobby tension are covered by Scripts/Contours/Node Slope And Handles.py. Tension-bank copy/paste is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/draw.py",
+      "source_sha256": "399274fc653ffa3b0aae02c19739e37b80065681f6eaeb0f38aba565f4c25d89",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App drawing. Drawing is covered by drawing and Scripts/Designer/Em Star Polygon.py. Selection-derived circles, squares and node tracing are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/layer.py",
+      "source_sha256": "2deeab4bfa8af5009746f42091b020223faa71bdc8e3b15f94d9dc8bab4d32ef",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App layer_writer. Layer edits are covered by layer_writer and scriptmix Masters tools. Layer unfold/restore and side-by-side staging are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/node.py",
+      "source_sha256": "596ba523480862dbbe4500ff8b8abdf9a40b2c3eefc0d7554fbff35788e8126a",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Node changes are covered by outline_writer and scriptmix Contours tools. TypeRig corner-loop reconstruction, fake strokes and cap algorithms are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/application/app.py",
+      "source_sha256": "d2a6ac7a814a0674da4a7e48076290bcebd56c0c89d0e61edb065c8989899b80",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App scripting. Workspace access is covered by scripting and named_tab. Text-frame cloning and page geometry wrappers are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/QtGui.py",
+      "source_sha256": "eabb4766afa4def94bdb0ee4c45529c8fb2ea255e7d3c08578d658f9e4be5c77",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App qt_dialogs. Owned Qt dialogs are covered by qt_dialogs. TypeRig branding, fonts and application-specific widget subclasses are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/drawing.py",
+      "source_sha256": "b1c534efe572f1f4d3e93eecf60bfe566d76941874e08509e0713c5cc6c72d15",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App drawing. Font-aware rendering is covered by drawing and content_geometry. TypeRig icon and selected-node marker renderers are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/widgets.py",
+      "source_sha256": "94762fae808381d688706c12cd1e02f3cf615add1832acdae3fce73c487e42c3",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App controls. Widget lifecycle and controls are covered by controls and selection_panel. TypeRig multi-axis trees, icon fonts and custom widget suite are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/base.py",
+      "source_sha256": "15bb77c397c26dfaf777b3e15299ee11eb4bb43f7d39b402519aa56c210a3680",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App content_geometry. Geometry conversion is covered by content_geometry and outline_transform. TypeRig Coord/Line/Vector/Curve wrapper classes are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/cjk.py",
+      "source_sha256": "b7c467a10b6894c57641d748d45325337df6ed3cbcfb4a90143253a21b3f1b35",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App masters. Area and bounds measurements are covered by masters. CJK raster gauges, IDC zones and family-band analysis are not menu tools and are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/contour.py",
+      "source_sha256": "515efb1b2c533f42c6fa56cfbd013852e5aa50710351316d71ccf42293852e80",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Contour traversal and edits are covered by outline_writer. Randomization and fragmentization wrappers are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/curve.py",
+      "source_sha256": "9a24cfccabbb043c7608e90c59837bc6d5f0408611a92595fd2dae5844425a5b",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Curve editing is covered by outline_writer and Scripts/Contours/Node Slope And Handles.py. Tunni and monoline object methods are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/font.py",
+      "source_sha256": "9074ce9984b5abd7a0257b7e869ceb5adc51c2b1308fdd69a590ac19041483d0",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App glyph_catalog. Font inventory is covered by glyph_catalog, masters, names_edit and kerning_batch. TypeRig font JSON and design-space wrapper classes are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/glyph.py",
+      "source_sha256": "6d30604d5b620a7e5bcf497825225f2e0739417a31f7f07251b5b47b64f1c5dd",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App layer_selection. Owned glyph/layer access is covered by layer_selection, layer_writer, anchor_writer and glyph_creation. Band-pass and TypeRig object conversion methods are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/kern.py",
+      "source_sha256": "df25f671d11f09b8c160bbc991d5fab022b247037961f1e1b3d4c4fc96fb01e1",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App kerning_batch. Kerning snapshots and writes are covered by kerning_batch and kerning_edit. TypeRig bidirectional group dictionaries are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/node.py",
+      "source_sha256": "f4001213ec18749661dc66e10175f6758afdf476213d8c8648ab1163921b9894",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Node edits are covered by outline_writer and scriptmix Contours tools. TypeRig node-container protocol and corner construction methods are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/shape.py",
+      "source_sha256": "c2c7f5ea9cd92e9f8b46edd0f630ca67a449d8a2d08c6f8c904c65674866f7e9",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_transform. Transforms are covered by outline_transform; outline ownership by outline_writer. TypeRig shape wrapper and builder-copy protocol are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/anchor.py",
+      "source_sha256": "07d796c9d36fe32b1fbda46329f4972594beb26f211a9f0014d00e4ae97fe478",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App anchor_writer. Native anchor writes are covered by anchor_writer and anchor_copy. Detached TypeRig mount/eject serialization is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/contour.py",
+      "source_sha256": "a5c15bc242e19403977292e9e89cfac1799e76167d624c42dcf009fea3cf8ea8",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App contour_copy. Native contour transfer is covered by contour_copy. Detached TypeRig contour mount/eject serialization is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/glyph.py",
+      "source_sha256": "08ffcdb2aa37bcd015681ecaecd698b0ebec37cd8102e60c0f1492350cbba7c4",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App glyph_creation. Native glyph creation is covered by glyph_creation and glyph_copies. TypeRig core-glyph mount/eject serialization is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/guideline.py",
+      "source_sha256": "980a7259f2772894e26917c643d621a1363c15b4ec965e11dfbe58ef4cecd658",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App guide_records. Guide conversion is covered by guide_records and guide_rewrite. TypeRig core-guideline mount/eject conversion is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/layer.py",
+      "source_sha256": "2e182b6bfbdca519ea1cf817c9062ff3e5afd83936ac66c2ebbd540db25ca3a6",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App layer_writer. Owned layer edits are covered by layer_writer and layer_selection. TypeRig detached-layer synchronization is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/shape.py",
+      "source_sha256": "64479c1664f6b4abae7ff385d4734b62292ffdf82e5b64277f18b770c052e889",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App outline_writer. Native outline writes are covered by outline_writer and outline_transform. TypeRig detached-shape synchronization is not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/ImpexActions/__init__.py",
+      "source_sha256": "af6aebcf2e828108c66a267167e803ef9bd66f44b9b87cd3a33bba40ce8086c6",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "library code; its behaviour is covered by App qt_dialogs. This module imports the AFM action and defines an empty placeholder widget; it has no font action of its own."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/ImpexActions/afm.py",
+      "source_sha256": "2c99d15977f8f38b1979da2972cfdd2682155b63d28d7f447d1bafdd037c78c7",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native File > Import > Metrics... imports AFM kerning; File > Export > Metrics... exports metrics. Native AFM import converts values to 1000 UPM. TypeRig filename stripping, group expansion, pair thresholds and rounding controls are not reproduced by a new script."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Utils/M-CopyMetricBindings.py",
+      "source_sha256": "b3ff07fc3b03592d4ad746b5e85ffb35d27bde14de61cf9c749c2ea8d29aa2f8",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native File > Import > Metrics... with Replace metrics expressions; File > Export > Metrics... writes reusable VFM data. No TypeRig raw JSON expression dictionary, clipboard bank or .FLC helper is provided."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Utils/M-CopyMetrics.py",
+      "source_sha256": "882714786bdbf486eeae90e4949cface4e033e4beb71f30ace6c98da9e4bb04a",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native File > Import > Metrics...; File > Export > Metrics... saves native VFM across masters and AFM for one master. No TypeRig three-number JSON dictionary, panel copy bank or mark-colour action is provided."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-manager.py",
+      "source_sha256": "991bfc953287bf161d1d5e9f6c8ded23358ab283a9f6f89b524c4d350e240667",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "Dynamic tab launcher only; imports Manager modules and displays their tool_tab widgets. Native import/export and independent collection menus expose the font actions without the TypeRig module loader."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-panel.py",
+      "source_sha256": "631578edd8d72e99d6179e24c6811494cb77f720526f0b9cb894496050c0375e",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "Panel loader and visibility configuration only; imports Panel modules and shares glyph/layer process mode. Independent menus and App selection_panel own the individual workflows; TypeRig panel-layout configuration files are not consumed."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Popups/popup-contour-cut.py",
+      "source_sha256": "a72c0c1a7d3273f003c9b863ebbe344f25fc7ade6b4ae73716d74ed7deec3690",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "Cursor popup combines cut-and-align, stem-centre, corner-loop/mitre, stroke separation and medial-axis extraction. Native Contour > Break and Contour > Align Points cover manual cutting/alignment; the specialized stroke and medial-axis algorithms have no equivalent in these collection tools and are not reproduced."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-MatchContours.py",
+      "source_sha256": "98baecafc1bb0794318d6dbbd3bdfadb1bd92f35a706506aec34fdcfda955d46",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "duplicate-of native Element > Contours > Sort Horizontally / Sort Vertically / By Area and Glyph > Match Masters. Native horizontal/vertical sorting covers source X/Y sorting; Match Masters makes contour/start-node matching permanent. Contour > Reverse Contour changes winding. Scriptmix Contour Order View is an inspection aid; Superaligner and Optimize Start Points cover start/winding jobs. No manual drag-grid reorder, combined left/right plus bottom/top or top/bottom ordering controls, Alt-reversal presets, corner start presets, next/previous cycling, transpose view or node-count badges."
+    },
+    {
+      "source": "rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-SortAnchors.py",
+      "source_sha256": "082d201f77b6191240a499d4f4b4c9b043179eb36050c292528117b5172b9fb7",
+      "license": "MPL-2.0",
+      "disposition": "retired",
+      "reason": "Changes anchor storage order by reference master, alphabet or custom list. FontLab variation deltas pair anchors by name and skip repeated names (Variations::createGlyphDeltas, v_createdeltas.cpp:303-319); storage-order normalization is unnecessary for interpolation. Scriptmix Anchors/Compatibility Report.py already reports missing names across masters. Reference-master/custom-order editing and orphan-list reporting are not reproduced."
     }
   ]
 }

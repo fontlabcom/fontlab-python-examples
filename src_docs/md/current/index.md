@@ -33,6 +33,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 - [Glyph Outline SVG](drawing/glyph-outline-svg.md)
 - [Glyph SVG Reference](drawing/glyph-svg-reference.md)
+- [Scale With Stem Compensation](drawing/scale-with-stem-compensation.md)
 - [Stem Blend](drawing/stem-blend.md)
 
 ## Forms
@@ -91,8 +92,10 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Tools
 
+- [Apply Unicode Map](tools/apply-unicode-map.md)
 - [Component Dependency Graph - Degree Forces](tools/component-dependency-graph-degree-forces.md)
 - [Component Dependency Graph](tools/component-dependency-graph.md)
+- [Copy Layers From Font](tools/copy-layers-from-font.md)
 - [Editable Glyph Outline](tools/editable-glyph-outline.md)
 - [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Find Font Source Files - Bytes](tools/find-font-source-files-bytes.md)

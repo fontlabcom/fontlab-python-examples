@@ -24,7 +24,11 @@ def test_index_when_loaded_then_complete_unique_source_scope_remains_pending():
         hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
         == ADAPTATIONS["source_index_sha256"]
     )
-    adapted = {row["source_menu"] for row in ADAPTATIONS["adaptations"]}
+    adapted = {
+        row["source_menu"]
+        for row in ADAPTATIONS["adaptations"]
+        if "source_menu" in row
+    }
     assert len(adapted) == 222 and len(ROWS) - len(adapted) == 272
     assert adapted <= {row["menu"] for row in ROWS}
     scriptmix_root = Path(

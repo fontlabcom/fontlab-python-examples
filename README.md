@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 97 practical facades in one category level: Contours, Designer,
+`Scripts/` contains 100 practical facades in one category level: Contours, Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -30,7 +30,9 @@ workflow acceptance still pending. Its `retirements` array records 259 identitie
 that have no script in this collection, each with its reason. For 10 of them
 the reason starts with "duplicate-of native" and names the FontLab command
 that does the job; the others are retired. The other 13 identities
-remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
+remain migration backlog. Another 42 rescued TypeRig files never had a menu
+identity. Their records have no `source_menu` key: 9 adaptations and 33
+retirements, 4 of which name a native FontLab command. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
 ## Documentation and verification
@@ -195,3 +197,8 @@ TypeRig library, launcher and .trglyph exchange code is retired.
 Ninety more rescued third-party references are retired, each with its own
 reason: robotics, virtual-world and medical-simulation viewers, audio editor
 macros, build utilities and generic widget examples.
+
+After TypeRig tools, Copy Layers From Font copies mapped layers from another
+open font into the selected glyphs, Apply Unicode Map adds Unicode values from a
+pasted JSON map, and Drawing > Scale With Stem Compensation makes new scaled
+layers with per-master stem targets. Each write is one Undo step.

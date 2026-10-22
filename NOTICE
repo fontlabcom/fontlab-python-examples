@@ -1654,3 +1654,124 @@ Philipp Schubert, Joergen Kornfeld and contributors, StructuralNeurobiologyLab/S
 HopeFOAM contributors, HopeFOAM/HopeFOAM: GPL-3.0.
 CRIMSON contributors, carthurs/CRIMSONPythonModules: AGPL-3.0.
 eryar/PipeCAD: proprietary.
+
+
+TypeRig tools, popups and libraries
+-----------------------------------
+These entries continue the TypeRig behaviour references above, under the
+same terms: written from scratch, Apache-2.0, no TypeRig source code or
+assets included. Most of these files had no historical menu entry.
+
+Scripts/Drawing/Scale With Stem Compensation.py
+Independent behaviour rewrite of DeltaMachine.py: stem-compensated
+scaling of selected glyphs across checked masters into new layers. The
+compensation arithmetic follows this collection's Stem Blend.
+rescued/part3/sources/kateliev_TypeRig/Scripts/Delta Machine/DeltaMachine.py
+SHA256 eedcf9ce3cf70436563f88da2d0217c01deb5fe4bc2d6c41f6124a1c568a0bce
+
+Scripts/Tools/Copy Layers From Font.py
+Independent behaviour rewrite of TR-CopyLayers.py: named layers from
+another open font into selected glyphs, with explicit mappings.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-CopyLayers.py
+SHA256 59960229e96473f00c06110d49cb5ea5cefb451ce3c6e1144fd8af395bda868d
+
+Scripts/Tools/Apply Unicode Map.py
+Independent behaviour rewrite of TR-EncodeGlyphs.py: a JSON glyph-name
+map adds Unicode values to selected glyphs.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-EncodeGlyphs.py
+SHA256 5c2bdbb9aced3c0f86b34dffb36cb7881d8db9395240d1f2ca98595da8584c05
+
+Mapped to existing tools (no new code or resources):
+Scripts/Contours/Node Slope And Handles.py (from toolbar-mac.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/toolbar-mac.py
+SHA256 8edd09bb545b9535accb629b1707ea9d0c30ed778e79093270f28be9e264aadd
+fontlab-python-scriptmix/Scripts/Contours/Align And Distribute.py (from popup-node-align.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Popups/popup-node-align.py
+SHA256 da84d3de06a7f800c71603cd1fa6f9922485ac9e614e636e84e8ff924c528a01
+fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors Between Fonts.py (from TR-CopyAnchors.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-CopyAnchors.py
+SHA256 f1d4d5a981a01b677fa4ad9f1d060c802c4e64c638006941de4d46cc3e5e8285
+Scripts/Drawing/Stem Blend.py (from TR-DeltaPreview.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-DeltaPreview.py
+SHA256 3174875c4ade57f8d30596c5b5a34616a23cded6ddb71c615b46cbc9418780c0
+fontlab-python-scriptmix/Scripts/Anchors/Copy Anchors From Glyph.py (from TR-PropagateAnchors.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-PropagateAnchors.py
+SHA256 195db1a50aa8df1b4785290be5c20bef8f4009fee90918e94cfeedb9db052971
+fontlab-python-scriptmix/Scripts/Anchors/Rename Bulk.py (from TR-RenameAnchors.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-RenameAnchors.py
+SHA256 f22c01285635bab4237140619aeb8af68827c2001ac23b54b2d7b6ae4b3d3022
+
+Covered by native FontLab commands (no new code or resources):
+File > Import > Metrics and File > Export > Metrics (from afm.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/ImpexActions/afm.py
+SHA256 2c99d15977f8f38b1979da2972cfdd2682155b63d28d7f447d1bafdd037c78c7
+File > Import > Metrics and File > Export > Metrics (from M-CopyMetricBindings.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Utils/M-CopyMetricBindings.py
+SHA256 b3ff07fc3b03592d4ad746b5e85ffb35d27bde14de61cf9c749c2ea8d29aa2f8
+File > Import > Metrics and File > Export > Metrics (from M-CopyMetrics.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Utils/M-CopyMetrics.py
+SHA256 882714786bdbf486eeae90e4949cface4e033e4beb71f30ace6c98da9e4bb04a
+Element > Contours > Sort and Glyph > Match Masters (from TR-MatchContours.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-MatchContours.py
+SHA256 98baecafc1bb0794318d6dbbd3bdfadb1bd92f35a706506aec34fdcfda955d46
+
+Retired without a script (library, launcher or format-specific code;
+reasons in menu-adaptations.json):
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/contour.py
+SHA256 64fb12677000e4dc658046a86f410d1088212e664121cc01a8e3ed5289abafe8
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/curve.py
+SHA256 0604ea5251dc2e19b6eccc2096ef4151556a7dcc34b0086a2eb92e231d7555e5
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/draw.py
+SHA256 399274fc653ffa3b0aae02c19739e37b80065681f6eaeb0f38aba565f4c25d89
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/layer.py
+SHA256 2deeab4bfa8af5009746f42091b020223faa71bdc8e3b15f94d9dc8bab4d32ef
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/node.py
+SHA256 596ba523480862dbbe4500ff8b8abdf9a40b2c3eefc0d7554fbff35788e8126a
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/application/app.py
+SHA256 d2a6ac7a814a0674da4a7e48076290bcebd56c0c89d0e61edb065c8989899b80
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/QtGui.py
+SHA256 eabb4766afa4def94bdb0ee4c45529c8fb2ea255e7d3c08578d658f9e4be5c77
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/drawing.py
+SHA256 b1c534efe572f1f4d3e93eecf60bfe566d76941874e08509e0713c5cc6c72d15
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/widgets.py
+SHA256 94762fae808381d688706c12cd1e02f3cf615add1832acdae3fce73c487e42c3
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/base.py
+SHA256 15bb77c397c26dfaf777b3e15299ee11eb4bb43f7d39b402519aa56c210a3680
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/cjk.py
+SHA256 b7c467a10b6894c57641d748d45325337df6ed3cbcfb4a90143253a21b3f1b35
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/contour.py
+SHA256 515efb1b2c533f42c6fa56cfbd013852e5aa50710351316d71ccf42293852e80
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/curve.py
+SHA256 9a24cfccabbb043c7608e90c59837bc6d5f0408611a92595fd2dae5844425a5b
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/font.py
+SHA256 9074ce9984b5abd7a0257b7e869ceb5adc51c2b1308fdd69a590ac19041483d0
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/glyph.py
+SHA256 6d30604d5b620a7e5bcf497825225f2e0739417a31f7f07251b5b47b64f1c5dd
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/kern.py
+SHA256 df25f671d11f09b8c160bbc991d5fab022b247037961f1e1b3d4c4fc96fb01e1
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/node.py
+SHA256 f4001213ec18749661dc66e10175f6758afdf476213d8c8648ab1163921b9894
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/objects/shape.py
+SHA256 c2c7f5ea9cd92e9f8b46edd0f630ca67a449d8a2d08c6f8c904c65674866f7e9
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/anchor.py
+SHA256 07d796c9d36fe32b1fbda46329f4972594beb26f211a9f0014d00e4ae97fe478
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/contour.py
+SHA256 a5c15bc242e19403977292e9e89cfac1799e76167d624c42dcf009fea3cf8ea8
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/glyph.py
+SHA256 08ffcdb2aa37bcd015681ecaecd698b0ebec37cd8102e60c0f1492350cbba7c4
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/guideline.py
+SHA256 980a7259f2772894e26917c643d621a1363c15b4ec965e11dfbe58ef4cecd658
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/layer.py
+SHA256 2e182b6bfbdca519ea1cf817c9062ff3e5afd83936ac66c2ebbd540db25ca3a6
+rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/tr/objects/shape.py
+SHA256 64479c1664f6b4abae7ff385d4734b62292ffdf82e5b64277f18b770c052e889
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Manager/ImpexActions/__init__.py
+SHA256 af6aebcf2e828108c66a267167e803ef9bd66f44b9b87cd3a33bba40ce8086c6
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-manager.py
+SHA256 991bfc953287bf161d1d5e9f6c8ded23358ab283a9f6f89b524c4d350e240667
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/typerig-panel.py
+SHA256 631578edd8d72e99d6179e24c6811494cb77f720526f0b9cb894496050c0375e
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Popups/popup-contour-cut.py
+SHA256 a72c0c1a7d3273f003c9b863ebbe344f25fc7ade6b4ae73716d74ed7deec3690
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-SortAnchors.py
+SHA256 082d201f77b6191240a499d4f4b4c9b043179eb36050c292528117b5172b9fb7

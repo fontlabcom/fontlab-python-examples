@@ -1,7 +1,9 @@
 # Tools
 
+- [Apply Unicode Map](apply-unicode-map.md)
 - [Component Dependency Graph - Degree Forces](component-dependency-graph-degree-forces.md)
 - [Component Dependency Graph](component-dependency-graph.md)
+- [Copy Layers From Font](copy-layers-from-font.md)
 - [Editable Glyph Outline](editable-glyph-outline.md)
 - [Editable Glyph Tree](editable-glyph-tree.md)
 - [Find Font Source Files - Bytes](find-font-source-files-bytes.md)

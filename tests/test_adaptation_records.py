@@ -12,6 +12,8 @@ Rules:
   disposition "retired"; its reason starts with "duplicate-of native " and
   names the menu command. It has no destination script.
 - The App floor is stated in each script's Setup line, not in the records.
+- A rescued file that never had a menu identity has a record without the
+  source_menu key. Its source is not a rescue-index.json target.
 """
 
 import json
@@ -63,12 +65,12 @@ RETIREMENT_OPTIONAL = {
 
 def test_records_when_loaded_then_keys_follow_the_schema() -> None:
     for row in RECORDS["adaptations"]:
-        keys = set(row)
+        keys = set(row) | {"source_menu"}
         assert ADAPTATION_REQUIRED <= keys, row["source"]
         assert keys <= ADAPTATION_REQUIRED | ADAPTATION_OPTIONAL, row["source"]
         assert row.get("disposition", "ported") in {"ported", "duplicate-of"}
     for row in RECORDS["retirements"]:
-        keys = set(row)
+        keys = set(row) | {"source_menu"}
         assert RETIREMENT_REQUIRED <= keys, row["source"]
         assert keys <= RETIREMENT_REQUIRED | RETIREMENT_OPTIONAL, row["source"]
         assert row["disposition"] == "retired", row["source"]
@@ -78,8 +80,27 @@ def test_records_when_loaded_then_keys_follow_the_schema() -> None:
 
 def test_records_when_loaded_then_each_source_has_one_record() -> None:
     rows = RECORDS["adaptations"] + RECORDS["retirements"]
-    menus = [row["source_menu"] for row in rows]
+    menus = [row["source_menu"] for row in rows if "source_menu" in row]
     assert len(menus) == len(set(menus)), "One record per historical identity"
+    sources = [row["source"] for row in rows if "source_menu" not in row]
+    assert len(sources) == len(set(sources)), "One record per rescued file"
+
+
+def test_source_only_records_when_present_then_outside_the_menu_index() -> None:
+    index = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
+    targets = {row["target"] for row in index}
+    rows = RECORDS["adaptations"] + RECORDS["retirements"]
+    source_only = [row for row in rows if "source_menu" not in row]
+    for row in source_only:
+        assert row["source"].startswith("rescued/"), row["source"]
+        assert row["source"] not in targets, "Use source_menu for an indexed file"
+    readme = (ROOT / "README.md").read_text()
+    adapted = sum("menu" in row for row in source_only)
+    assert (
+        f"Another {len(source_only)} rescued TypeRig files" in readme
+        and f"{adapted} adaptations and {len(source_only) - adapted}\nretirements"
+        in readme
+    ), "README source-only counts"
 
 
 def test_native_duplicates_when_retired_then_reason_names_the_command() -> None:
@@ -89,8 +110,10 @@ def test_native_duplicates_when_retired_then_reason_names_the_command() -> None:
         assert " > " in command.split(".")[0], row["source"]
     for row in RECORDS["adaptations"]:
         assert not str(row["scope"]).startswith(NATIVE), "A native duplicate is a retirement"
+    indexed = sum("source_menu" in row for row in native)
     readme = (ROOT / "README.md").read_text()
-    assert f"For {len(native)} of them" in readme, "README native-duplicate count"
+    assert f"For {indexed} of them" in readme, "README native-duplicate count"
+    assert f"{len(native) - indexed} of which name a native" in readme
     assert "retired without a replacement" not in readme
 
 
