@@ -7,12 +7,15 @@ rechecks the current font and original values, then calls App history.commit
 with metadata policy for only changed rows. One Apply creates one Undo step.
 Why: Native marks persist with the font and support FontLab colour selection.
 Usage: Open a font, double-click colour cells, choose marks and click Apply.
-Use Discard Changes to restore local edits. Glyphs with auto layers are refused.
+Use Discard Changes to restore local edits. Glyphs with auto layers are
+refused.
 Benefit: Review many glyph marks without changing names, notes or outlines.
-Requires: FontLab 9, Python 3.11, Fly and App names_edit, history, draft_signals
+Requires: FontLab 9, Python 3.11, Fly and App names_edit, history,
+draft_signals
 and qt_properties. Failed writes retain the local plan and show Undo guidance.
 
-Independent rewrite of the Qt coloreditorfactory example idea. Based on the author's own FontLab sample,
+Independent rewrite of the Qt coloreditorfactory example idea. Based on the
+author's own FontLab sample,
 Apache-2.0.
 Historical source: rescued/part2/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py
 SHA256: 06780068bb97fb0b0787dbc5fc5dc5d51b1c2c29cfd053fa0ba6be4be802ce58
@@ -90,7 +93,7 @@ def capture_metadata() -> tuple[int, dict[str, tuple[int, int]]]:
 
 def apply_changes(
     package_id: int, baseline: dict[str, tuple[int, int]], desired: dict[str, int]
-) -> tuple[str, ...]:
+, *, disclosure: dict[str, Any] | None = None) -> tuple[str, ...]:
     """Commit changed rows once; refuse switched, replaced or externally edited glyphs."""
     import fly.ap.history as history  # noqa: PLR0402 - use the lazy Fly module alias
     import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
@@ -127,7 +130,7 @@ def apply_changes(
                 raise RuntimeError(f"{entry.name}: native mark does not match Apply.")
         return ()
 
-    history.commit(
+    _done = history.commit(
         TITLE,
         layers,
         glyphs,
@@ -136,6 +139,8 @@ def apply_changes(
         facts=facts.autos,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return tuple(entry.name for entry, _value in todo)
 
 
@@ -342,9 +347,11 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
 
         def apply(self) -> None:
             """Write changed rows through one metadata history operation."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             self.editor_delegate.flush()
             try:
-                changed = apply_changes(self.package_id, self.baseline, self.changed)
+                changed = apply_changes(self.package_id, self.baseline, self.changed, disclosure=disclosure)
             except ValueError as error:
                 raise ValueError(
                     f"Whole Apply refused; no glyphs were changed. {error}"
@@ -355,9 +362,9 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
             self.dirty = False
             self.editor_delegate.reset_editor()
             self.status_line.setText(
-                f"Applied {len(changed)} glyph mark changes in one Undo step."
+                result_guards.append_note(f"Applied {len(changed)} glyph mark changes in one Undo step."
                 if changed
-                else "No changed marks."
+                else "No changed marks.", disclosure)
             )
 
         def discard_changes(self) -> None:

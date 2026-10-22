@@ -186,6 +186,8 @@ class ApplyResult:
     changed: int
     kept: dict[Key, str]
     facts: Any
+    pending_updates: tuple[int, ...] = ()
+    pending_note: str = ""
 
 
 def same_geometry(left: NodeRow, right: NodeRow) -> bool:
@@ -248,7 +250,7 @@ def apply_edits(
             ]
 
     try:
-        outlines.apply_work(
+        done = outlines.apply_work(
             [(current.glyph, current.layer, edits)],
             TITLE,
             current.facts,
@@ -258,7 +260,7 @@ def apply_edits(
         if str(error).startswith(history.NOT_STORED):
             raise RuntimeError(f"{error} {history.UNDO_HINT}") from error
         raise
-    return ApplyResult(len(edits), kept, current.facts)
+    return ApplyResult(len(edits), kept, current.facts, done["pending_updates"], done["pending_note"])
 
 
 def select_nodes(
@@ -470,7 +472,7 @@ def show(qt: Any, parent: Any) -> Any:
                 self.snapshot_data = None
                 self.node_table.setRowCount(0)
                 message += f" Refresh failed: {error}"
-            self.status_line.setText(message)
+            self.status_line.setText(message + (" · " + result.pending_note if result.pending_note else ""))
 
         def write_selection(self) -> None:
             """Route table row selection to the active canvas."""

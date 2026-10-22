@@ -1,18 +1,22 @@
 # this_file: Scripts/Models/Glyph Review Form.py
 # SPDX-License-Identifier: Apache-2.0
 """What: Save a review state and note in the current font's native glyph notes.
-How: Map an Unset/Todo/Review/Done combo and a literal note field to one table row with
+How: Map an Unset/Todo/Review/Done combo and a literal note field to one table
+row with
 QDataWidgetMapper. Apply submits only that row, checks the captured glyph id
 and original note, then commits metadata through App history.commit.
 Why: Native notes travel with the font; existing free-form notes stay intact
-until the user explicitly applies a review state. Auto-layer glyphs are refused.
+until the user explicitly applies a review state. Auto-layer glyphs are
+refused.
 Usage: Choose a row, select its state, enter a note and click Apply. Apply or
 Discard Changes before switching rows or closing. Each Apply is one Undo step.
 Benefit: Keep review decisions with the glyphs rather than in a separate draft.
-Requires: FontLab 9, Python 3.11, Fly and App names_edit, history, draft_signals
+Requires: FontLab 9, Python 3.11, Fly and App names_edit, history,
+draft_signals
 and qt_properties. Native read-back failures show the Edit > Undo recovery.
 
-Independent rewrite of the Qt simplewidgetmapper and combowidgetmapper example idea. Based on the author's own FontLab sample,
+Independent rewrite of the Qt simplewidgetmapper and combowidgetmapper example
+idea. Based on the author's own FontLab sample,
 Apache-2.0.
 Historical source: rescued/part2/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
 SHA256: b6cda27a2fdd03bd8cbfe3604df3e2b4e7f89dbb378d331ba8465d57291902c7
@@ -98,7 +102,7 @@ def capture_metadata() -> tuple[int, dict[str, tuple[int, str]]]:
 
 def apply_changes(
     package_id: int, baseline: dict[str, tuple[int, str]], desired: dict[str, str]
-) -> tuple[str, ...]:
+, *, disclosure: dict[str, Any] | None = None) -> tuple[str, ...]:
     """Commit changed rows once; refuse switched, replaced or externally edited glyphs."""
     import fly.ap.history as history  # noqa: PLR0402 - use the lazy Fly module alias
     import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
@@ -138,7 +142,7 @@ def apply_changes(
                 raise RuntimeError(f"{entry.name}: native note does not match Apply.")
         return ()
 
-    history.commit(
+    _done = history.commit(
         TITLE,
         layers,
         glyphs,
@@ -147,6 +151,8 @@ def apply_changes(
         facts=facts.autos,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return tuple(entry.name for entry, _value in todo)
 
 
@@ -345,15 +351,17 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
 
         def apply(self) -> None:
             """Submit one mapper row, then save its state and note in one Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             if not self.snapshot:
                 raise ValueError("Open a font and Refresh first.")
             if self.snapshot[self.current_row - 1][0] in self.blocked:
                 self.status_line.setText(
-                    "Read-only. " + self.blocked[self.snapshot[self.current_row - 1][0]]
+                    result_guards.append_note("Read-only. " + self.blocked[self.snapshot[self.current_row - 1][0]], disclosure)
                 )
                 return
             if not self.dirty:
-                self.status_line.setText("No changed review note.")
+                self.status_line.setText(result_guards.append_note("No changed review note.", disclosure))
                 return
             row = self.current_row - 1
             name = self.snapshot[row][0]
@@ -363,14 +371,14 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
             )
             if not self.mapper.submit():
                 raise RuntimeError("Qt refused the review form submission.")
-            changed = apply_changes(self.package_id, self.baseline, {name: text})
+            changed = apply_changes(self.package_id, self.baseline, {name: text}, disclosure=disclosure)
             if changed:
                 self.baseline[name] = (self.baseline[name][0], text)
             self.dirty = False
             self.status_line.setText(
-                "Review state and note saved in one Undo step."
+                result_guards.append_note("Review state and note saved in one Undo step."
                 if changed
-                else "No changed review note."
+                else "No changed review note.", disclosure)
             )
 
         def discard_changes(self) -> None:

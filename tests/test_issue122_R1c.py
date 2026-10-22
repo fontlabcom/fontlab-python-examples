@@ -405,9 +405,10 @@ def test_writer_when_pending_or_partial_failure_then_clear_error(
     work = [(glyph, layer, [row.edit for row in rows if row.edit])]
     facts = history.auto_facts(())
     native.host.flGlyph.updatedFgGlyphs = lambda: (4,)
-    with pytest.raises(ValueError, match="pending"):
-        writer.apply_work(work, module.TITLE, facts, module.CoordinateEditor())
-    assert not glyph.histories and not native.notifications
+    result = writer.apply_work(work, module.TITLE, facts, module.CoordinateEditor())
+    assert result["pending_updates"] == (4,)
+    assert native.host.flGlyph.updatedFgGlyphs() == (4,) and glyph.histories and native.notifications
+    native.notifications.clear()
     native.host.flGlyph.updatedFgGlyphs = lambda: ()
     layer.update = lambda: False
     with pytest.raises(

@@ -32,7 +32,8 @@ Credit: Independent behaviour rewrite of Delta.py and DeltaNew.py by Vassil
 Kateliev, TypeRig, kateliev/TypeRig, MPL-2.0.
 https://github.com/kateliev/TypeRig
 No source code, comments, icons or preset formats are copied.
-Read-back allows coordinate changes up to 1e-5 units. Advance is checked against
+Read-back allows coordinate changes up to 1e-5 units. Advance is checked
+against
 its detached value read immediately after the native setter applies the current
 rounding preference, with the same tolerance. The coordinate tolerance comes
 from native source; it is unmeasured in native FontLab execution.
@@ -341,11 +342,10 @@ def prepare_blend(
     }
 
 
-def create_layer(plan: dict[str, Any]) -> str:
+def create_layer(plan: dict[str, Any], *, disclosure: dict[str, Any] | None = None) -> str:
     """Create one layer through App history and settle; reject stale or unsafe previews."""
     import fly.ap.history as history  # noqa: PLR0402
     import fly.ap.layer_writer as writer
-    import fly.ap.outline_writer as outlines
     from fly import fl, qt
 
     package, _ = current_context()
@@ -360,7 +360,6 @@ def create_layer(plan: dict[str, Any]) -> str:
     reason = history.refusal(facts, str(glyph.name), "geometry")
     if reason:
         raise ValueError(f"Kept {glyph.name}: {reason}")
-    outlines.require_safe()
     # Build detached native objects before history; no source shape is cloned.
     layer = fl.flLayer()
     layer.name, layer.advanceWidth = plan["name"], plan["advance"]
@@ -422,12 +421,14 @@ def create_layer(plan: dict[str, Any]) -> str:
         facts=facts,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(
             "Native changes may remain; use Edit > Undo. "
             + str(history.unstored_error(result.mismatches))
         )
-    return f"{glyph.name}: '{plan['name']}' is recorded as one Undo step. The new layer becomes the active layer."
+    return _guards.append_note(f"{glyph.name}: '{plan['name']}' is recorded as one Undo step. The new layer becomes the active layer.", result)
 
 
 def show(qt: Any, parent: Any) -> Any:
@@ -548,12 +549,14 @@ def show(qt: Any, parent: Any) -> Any:
 
         def apply_result(self) -> None:
             """Write only the displayed plan; require a new Build after every attempt."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 if self.plan_data is None:
                     raise ValueError("Build the blend first.")
-                self.status_line.setText(create_layer(self.plan_data))
+                self.status_line.setText(result_guards.append_note(create_layer(self.plan_data, disclosure=disclosure), disclosure))
             except (ValueError, RuntimeError, TimeoutError) as error:
-                self.status_line.setText(str(error))
+                self.status_line.setText(result_guards.append_note(str(error), disclosure))
             finally:
                 self.plan_data = None
 

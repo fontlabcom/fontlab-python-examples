@@ -202,7 +202,7 @@ def test_real_app_names_when_installed_then_fly_aliases_resolve() -> None:
         "fly.ap.kerning_batch",
         "fly.ap.history",
         "fly.ap.layer_writer",
-        "fly.ap.outline_writer",
+        "fly.ap.edit_guards",
     } <= used.keys()
     for name, attributes in used.items():
         module = importlib.import_module(name)
@@ -975,7 +975,7 @@ def test_tt_native_layer_preserves_controls_and_is_tt(native_world: Any) -> None
 @pytest.mark.parametrize("kind", ["stale", "auto-owner", "auto-base", "pending"])
 def test_unsafe_layer_writes_refused_before_history(
     native_world: Any, kind: str
-) -> None:
+, capsys) -> None:
     module = load(1)
     plan = bound_plan(module)
     world = native_world
@@ -988,6 +988,12 @@ def test_unsafe_layer_writes_refused_before_history(
         world.facts = history.auto_facts((("aacute", True, ("a",)), ("a", False, ())))
     else:
         world.pending = (1,)
+    if kind == "pending":
+        result = module["create_layer"](plan)
+        assert world.pending == (1,) and world.notifications
+        output = capsys.readouterr().out
+        assert "(1,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
+        return
     with pytest.raises(ValueError):
         module["create_layer"](plan)
     assert (

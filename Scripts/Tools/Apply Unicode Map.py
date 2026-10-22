@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: Apache-2.0
 """What: Add explicit Unicode values to selected glyphs in the current font.
 How: Paste a JSON object of glyph names and code points. Integers are decimal;
-strings are hexadecimal, with optional U+ or 0x prefix. A value can be a list. Existing codes stay in place.
+strings are hexadecimal, with optional U+ or 0x prefix. A value can be a list.
+Existing codes stay in place.
 Why: Font > Generate Unicodes derives values from names. This map also encodes
 custom names and assigns several explicit values to one glyph.
 Usage: Select glyphs in the Font window and close Glyph editors. Paste a map,
@@ -13,7 +14,8 @@ Benefit: Apply a reusable character map without renaming outlines.
 
 Example: {"A": "0041", "space": [32, "00A0"]}. Repeated JSON keys and invalid
 Unicode scalars are refused. Several map rows cannot claim the same code.
-Only selected glyphs can change. Typing uses a detached font snapshot. Use Selection
+Only selected glyphs can change. Typing uses a detached font snapshot. Use
+Selection
 reloads it. Apply scans the font once and compares with the displayed preview;
 native read-back checks every changed list. A partial write directs you to
 Edit > Undo. JSON is pasted; NAM files and font-library maps are not loaded.
@@ -162,7 +164,7 @@ def write_map(
         raise StalePreviewError(facts)
     ready = [row for row in rows if not row["note"]]
     if not ready:
-        return {"changed": 0, "facts": snapshot_facts(facts)}
+        return {"pending_updates": (), "pending_note": "", "changed": 0, "facts": snapshot_facts(facts)}
 
     def mutate() -> None:
         for row in ready:
@@ -188,7 +190,7 @@ def write_map(
         raise RuntimeError(
             "Unicode values differ. Native changes may remain; use Edit > Undo."
         )
-    return {"changed": len(ready), "facts": snapshot_facts(facts)}
+    return {"pending_note": result.pending_note, "pending_updates": result.pending_updates, "changed": len(ready), "facts": snapshot_facts(facts)}
 
 
 def panel_type() -> type:

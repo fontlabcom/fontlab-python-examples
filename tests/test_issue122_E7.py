@@ -427,6 +427,7 @@ def drawing(host: Any, monkeypatch: Any) -> Any:
         history, "scan_auto_facts", lambda package: history.auto_facts(host.records)
     )
     monkeypatch.setitem(sys.modules, "fly.ap.history", history)
+    monkeypatch.setitem(sys.modules, "fly.ap.edit_guards", importlib.import_module("fontlabapp.edit_guards"))
     monkeypatch.setitem(sys.modules, "fly.ap.masters", masters)
     sys.modules["fly.ap"].history = history
     sys.modules["fly.ap"].masters = masters
@@ -475,7 +476,7 @@ def test_draw_exact_coordinates_one_undo_and_readback(
 )
 def test_draw_refusals_write_nothing(
     script: Any, drawing: Any, fault: str, match: str
-) -> None:
+, capsys) -> None:
     layer = drawing.glyph.activeLayer
     if fault == "font":
         drawing.package = None
@@ -497,6 +498,12 @@ def test_draw_refusals_write_nothing(
         drawing.cap_height = math.nan
     else:
         layer.advanceWidth = math.inf
+    if fault == "pending":
+        script.draw_current(4, 0.5, 0.25, 0)
+        assert drawing.pending and layer.shapes and drawing.notifications
+        output = capsys.readouterr().out
+        assert "(9,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
+        return
     with pytest.raises(ValueError, match=match):
         script.draw_current(4, 0.5, 0.25, 0)
     assert not layer.shapes and not drawing.notifications
@@ -736,7 +743,7 @@ def test_draw_slot_contains_requested_errors(
     monkeypatch: Any,
     error: Exception,
 ) -> None:
-    def fail(*args: Any) -> None:
+    def fail(*args: Any, **kwargs: Any) -> None:
         raise error
 
     monkeypatch.setattr(script, "draw_current", fail)

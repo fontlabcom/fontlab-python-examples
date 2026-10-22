@@ -8,7 +8,8 @@ categories: ["Tools"]
 
 What: Add explicit Unicode values to selected glyphs in the current font.
 How: Paste a JSON object of glyph names and code points. Integers are decimal;
-strings are hexadecimal, with optional U+ or 0x prefix. A value can be a list. Existing codes stay in place.
+strings are hexadecimal, with optional U+ or 0x prefix. A value can be a list.
+Existing codes stay in place.
 Why: Font > Generate Unicodes derives values from names. This map also encodes
 custom names and assigns several explicit values to one glyph.
 Usage: Select glyphs in the Font window and close Glyph editors. Paste a map,
@@ -19,7 +20,8 @@ Benefit: Apply a reusable character map without renaming outlines.
 
 Example: {"A": "0041", "space": [32, "00A0"]}. Repeated JSON keys and invalid
 Unicode scalars are refused. Several map rows cannot claim the same code.
-Only selected glyphs can change. Typing uses a detached font snapshot. Use Selection
+Only selected glyphs can change. Typing uses a detached font snapshot. Use
+Selection
 reloads it. Apply scans the font once and compares with the displayed preview;
 native read-back checks every changed list. A partial write directs you to
 Edit > Undo. JSON is pasted; NAM files and font-library maps are not loaded.
@@ -36,5 +38,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/80440ee7ce34cba027f6284ea7a834438368b57d985c5f0a5f030024c21dd195.py)
+[Python source](../../../../.build/menu-sources/46338393e308839c81c881b828fe59a686691032cdad729084d672e0dd436a31.py)
 <!--/codeinclude-->

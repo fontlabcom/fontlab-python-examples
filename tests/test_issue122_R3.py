@@ -244,8 +244,8 @@ def test_write_when_valid_then_real_history_one_notification(
     monkeypatch.setattr(names, "fresh_facts", fresh_facts)
     module = load()
     rows = module.plan_map(f, ["A", "B"], {"A": (65,), "B": (66,)})
-    if failure:
-        error_type = ValueError if failure == "pending" else RuntimeError
+    if failure and failure != "pending":
+        error_type = RuntimeError
         with pytest.raises(error_type) as caught:
             module.write_map(9, ["A", "B"], {"A": (65,), "B": (66,)}, rows)
         if failure == "pending":
@@ -257,6 +257,8 @@ def test_write_when_valid_then_real_history_one_notification(
         return
     result = module.write_map(9, ["A", "B"], {"A": (65,), "B": (66,)}, rows)
     assert result["changed"] == 1
+    assert result["pending_updates"] == ((7,) if failure == "pending" else ())
+    assert native.flGlyph.updatedFgGlyphs() == ([7] if failure == "pending" else [])
     assert f.entries["A"].record.unicodes == [65]
     assert f.entries["B"].record.unicodes == []
     assert len(calls) == 1
@@ -908,7 +910,7 @@ def test_crossfont_when_applied_then_one_destination_undo_and_source_unchanged(
     plan = tool.make_plan(11, 22, ["A", "B"], [("Regular", target)], mode, ".copy")
     assert plan["rows"][1]["note"], "Unavailable glyph is a kept row"
     result = tool.apply_plan(plan, True)
-    assert result == {"changed": 1, "kept": 1}
+    assert result == {"pending_note": "", "changed": 1, "kept": 1, "pending_updates": ()}
     assert len(host.calls) == 1
     assert host.calls[0][1][-1] is host.destination.findName("A")
     assert all(item is not host.source.findName("A") for item in host.calls[0][1])
@@ -972,7 +974,7 @@ def test_batch_scale_when_applied_then_checked_masters_and_kept_glyphs_one_undo(
     )
     assert len(plan["rows"]) == 4
     result = tool.apply_plan(plan, True)
-    assert result == {"changed": 2, "kept": 2}
+    assert result == {"pending_note": "", "changed": 2, "kept": 2, "pending_updates": ()}
     assert len(host.calls) == 1
     assert host.calls[0][1] == [
         glyph.findLayer("Regular.scaled"),
@@ -1370,7 +1372,7 @@ def test_mask_fallback_is_kept_and_exact_name_is_visible(host: Any) -> None:
     plan = tool.make_plan(11, 22, ["A"], [("Regular", "Regular.alt")], "Mask", "")
     assert plan["rows"][0]["mask_name"] == "mask.Regular.alt"
     assert "mask belongs to another layer" in plan["rows"][0]["note"]
-    assert tool.apply_plan(plan, True) == {"changed": 0, "kept": 1}
+    assert tool.apply_plan(plan, True) == {"changed": 0, "kept": 1, "pending_updates": (), "pending_note": ""}
     assert not host.calls and not mask.shapes
 
 
@@ -1448,7 +1450,7 @@ def test_scale_accepts_native_snapping_and_metric_rounding(
     config = scale_config()
     config.update(scales=(scale, scale), target=(50 * scale, 50 * scale))
     plan = tool.make_plan(22, ["A"], [config], ".scaled")
-    assert tool.apply_plan(plan, True) == {"changed": 1, "kept": 0}
+    assert tool.apply_plan(plan, True) == {"pending_note": "", "changed": 1, "kept": 0, "pending_updates": ()}
     assert glyph.findLayer("Regular.scaled").advanceWidth == (
         round(523 * scale) if rounding else 523 * scale
     )

@@ -891,17 +891,14 @@ def mark_host(host: Any, monkeypatch: Any) -> Any:
         ),
     )
 
-    def settled(native: Any) -> None:
-        if not state.settled:
-            raise ValueError("Queued glyph updates; wait before writing")
-
-    monkeypatch.setattr(guards, "require_settled", settled)
+    native.flGlyph = SimpleNamespace(updatedFgGlyphs=lambda: () if state.settled else (21,))
     monkeypatch.setattr(
         history,
         "scan_auto_facts",
         lambda package: history.auto_facts((("A", state.auto, ()),)),
     )
     monkeypatch.setitem(sys.modules, "fly.ap.history", history)
+    monkeypatch.setitem(sys.modules, "fly.ap.edit_guards", importlib.import_module("fontlabapp.edit_guards"))
     return state
 
 
@@ -928,7 +925,7 @@ def test_mark_drop_uses_real_metadata_commit_and_one_combined_notification(
 @pytest.mark.parametrize(
     "refusal", ("auto", "auto_layer", "font", "master", "glyph", "mark", "queued")
 )
-def test_mark_refuses_before_history(refusal: str, mark_host: Any) -> None:
+def test_mark_refuses_before_history(refusal: str, mark_host: Any, capsys) -> None:
     context, identity, mark = (12, 13, "Regular"), 21, 121
     if refusal == "auto":
         mark_host.auto = True
@@ -944,6 +941,12 @@ def test_mark_refuses_before_history(refusal: str, mark_host: Any) -> None:
         mark = 2
     else:
         mark_host.settled = False
+    if refusal == "queued":
+        assert load(MARK_TITLE)["apply_mark"](context, identity, "A", mark)
+        assert not mark_host.settled and mark_host.events
+        output = capsys.readouterr().out
+        assert "(21,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
+        return
     with pytest.raises(ValueError):
         load(MARK_TITLE)["apply_mark"](context, identity, "A", mark)
     assert not mark_host.events, "Refusal must precede history and mark mutation."

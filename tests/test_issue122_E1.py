@@ -71,6 +71,7 @@ def app(monkeypatch: Any) -> Any:
         "table_filter",
         "history",
         "names_edit",
+        "edit_guards",
     ):
         modules[name] = importlib.import_module("fontlabapp." + name)
         assert (
@@ -152,7 +153,7 @@ def test_metadata_write_one_undo_changed_rows_only_and_auto_refusal(
             )
         ),
     )
-    for name in ("history", "names_edit"):
+    for name in ("history", "names_edit", "edit_guards"):
         monkeypatch.setitem(sys.modules, "fly.ap." + name, getattr(app, name))
         setattr(sys.modules["fly.ap"], name, getattr(app, name))
     apply = load(title)["apply_changes"]
@@ -478,6 +479,7 @@ def host(app: Any, monkeypatch: Any) -> Any:
         "glyph_catalog",
         "history",
         "names_edit",
+        "edit_guards",
     ):
         module = getattr(app, name)
         monkeypatch.setitem(sys.modules, "fly.ap." + name, module)
@@ -767,7 +769,7 @@ def test_delegates_mapper_and_incremental_edits(
         monkeypatch.setitem(
             module["show"].__globals__,
             "apply_changes",
-            lambda pid, baseline, desired: (
+            lambda pid, baseline, desired, **kwargs: (
                 applied.append((pid, dict(desired))) or tuple(desired)
             ),
         )
@@ -793,7 +795,7 @@ def test_delegates_mapper_and_incremental_edits(
             monkeypatch.setitem(
                 module["show"].__globals__,
                 "apply_changes",
-                lambda pid, baseline, changed: (
+                lambda pid, baseline, changed, **kwargs: (
                     applied.append(dict(changed)) or tuple(changed)
                 ),
             )
@@ -1021,7 +1023,7 @@ def test_metadata_failure_keeps_one_undo_and_recovery_hint(
 @pytest.mark.parametrize("cause", ["identity", "external", "missing", "queued"])
 def test_metadata_stale_inputs_do_not_start_history(
     title: str, field: str, old: Any, new: Any, cause: str, native_font: Any
-) -> None:
+, capsys) -> None:
     font = native_font
     baseline = {"A": (1, old)}
     if cause == "identity":
@@ -1032,6 +1034,12 @@ def test_metadata_stale_inputs_do_not_start_history(
         font.facts.entries.pop("A")
     else:
         font.native.flGlyph.updatedFgGlyphs = lambda: (1,)
+    if cause == "queued":
+        assert load(title)["apply_changes"](17, baseline, {"A": new}) == ("A",)
+        assert font.native.flGlyph.updatedFgGlyphs() == (1,) and font.events
+        output = capsys.readouterr().out
+        assert "(1,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
+        return
     with pytest.raises(ValueError):
         load(title)["apply_changes"](17, baseline, {"A": new})
     assert font.events == []
@@ -1043,7 +1051,7 @@ def test_native_apply_refusal_survives_in_panel_with_input(
 ) -> None:
     module, panel = open_panel(title, host)
 
-    def refuse(package_id: int, baseline: dict, desired: dict) -> Any:
+    def refuse(package_id: int, baseline: dict, desired: dict, **kwargs: Any) -> Any:
         raise ValueError("Refused. A has auto layers.")
 
     monkeypatch.setitem(module["show"].__globals__, "apply_changes", refuse)

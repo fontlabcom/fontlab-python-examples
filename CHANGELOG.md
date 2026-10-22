@@ -4,6 +4,16 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Complete queued-update disclosure
+
+- Disclose queued ids and date caveats in contour, drawing and metadata tools.
+- Strengthen visible-message regressions and refresh generated pages and pins.
+
+## 2026-10-22 - Pending native update disclosure
+
+- Carry pending-update disclosure through layer-copy, scale and Unicode results.
+- Refresh local and Scriptmix destination pins and queue-preservation tests.
+
 ## 2026-10-22 - Destination pins and documentation cleanup
 
 - Updated 17 Scriptmix destination-pin occurrences to sibling script bytes and

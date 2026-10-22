@@ -11,7 +11,8 @@ Benefit: Flag individual glyphs directly without changing the font selection.
 The table and selection swatches edit the same property; this board adds
 prefix-scoped, drag-and-drop editing.
 Glyphs with auto layers are refused. A partial write reports Edit > Undo.
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits one glyph.
+Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits
+one glyph.
 Independent rewrite of the Qt dragdroprobot example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
@@ -112,7 +113,7 @@ def board_snapshot(
 
 def apply_mark(
     context: tuple[int, int, str], identity: int, name: str, mark: int
-) -> bool:
+, *, disclosure: dict[str, Any] | None = None) -> bool:
     """Set one glyph mark and check overrides without assuming propagation.
 
     Native propagation to layers that share the old glyph mark is unverified;
@@ -173,6 +174,8 @@ def apply_mark(
         facts=facts,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(result, disclosure)
     if result.mismatches:
         raise history.PartialWriteError(
             "Set Glyph Mark Colour", [RuntimeError("; ".join(result.mismatches))]
@@ -271,6 +274,8 @@ def panel_type(qt: Any) -> type:
 
         def dropEvent(self, event: Any) -> None:
             """One drop is one metadata action; partial failures keep the Undo hint."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 mark = self.dropped_mark(event)
                 changed = apply_mark(
@@ -278,16 +283,16 @@ def panel_type(qt: Any) -> type:
                     self.glyph_identity,
                     self.glyph_name,
                     mark,
-                )
-                self.setText(self.glyph_name + f"\nMark {mark}")
+                disclosure=disclosure)
+                self.setText(result_guards.append_note(self.glyph_name + f"\nMark {mark}", disclosure))
                 css = next(row[2] for row in SWATCHES if row[1] == mark)
                 self.setStyleSheet(
                     f"background: {css}; border: 1px solid #808080; padding: 8px;"
                 )
                 self.board_owner.message.setText(
-                    "Mark applied; one Edit > Undo step."
+                    result_guards.append_note("Mark applied; one Edit > Undo step."
                     if changed
-                    else "Mark already has that colour; no change."
+                    else "Mark already has that colour; no change.", disclosure)
                 )
                 event.setDropAction(core.Qt.CopyAction)
                 event.accept()

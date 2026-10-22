@@ -4897,3 +4897,31 @@ JSON Pointer syntax identifies each retained field; digest values are listed by 
 ### NOTICE expectation and retired metadata
 - `tests/test_spacing_menu_integration.py`, complete NOTICE SHA256 expectation: `d7cd82d4ffc5209b6cbe2727d26361ed6373ae41051d6751a1d04d4ba5a5aa5a` → `7e9571a2d816af6eb7cee3f0527ad2d58f4751af5db10131de1b7569aac7230d`.
 - `tests/spacing-curated-baseline.json`, `/notice_prefix`: removed the unused object (bytes 3645, obsolete prefix SHA256 `23c4aa47aa15e9a8a7d69ab6c85dabb6a070816ca5ea5a78bad25d54a88049b1`). The test continues to compare the complete current NOTICE digest.
+
+## 2026-10-22 — Round D: disclose queued native updates
+
+- Propagated queued ids through Apply Unicode Map, Copy Layers From Font and
+  Scale With Stem Compensation results and custom/shared status text. Updated
+  six test files for successful queued writes and unchanged queues.
+- Refreshed four destination pins: three local scripts and one Scriptmix Batch
+  Rename row. All 231 active destination rows were audited. Source pins unchanged.
+- Core gate: **1,747 passed, 92 skipped**; TypeRig-derived gate: **496 passed,
+  7 skipped**; documentation gate: **11 passed**. F821/Python 3.11 check passes.
+
+Exact file inventory and gate logs: `../round-D/`. No native retest, commit
+or repository Git-state change was performed.
+
+## 2026-10-22 — Round D fix round 1
+
+- Completed disclosure for Node Table, Em Star Polygon, Stem Blend, Glyph
+  Mark Colour Board and both metadata forms. Custom copy/scale panels and
+  Unicode map results use the same stored note. Kept scalar return contracts
+  through optional disclosure outputs and a visible standalone Output path.
+- Strengthened pending tests to assert exact ids and visible text, updated
+  typed results/mocks and regenerated current menu pages using the documented
+  src_docs/current_menus.py generator. Historical attribution lines are intact.
+- Refreshed 33 destination rows (9 local scripts plus Scriptmix destinations).
+  Core: 1,747 passed, 92 skipped; R: 496 passed, 7 skipped; docs: 11 passed.
+
+Complete caller, pin, file and gate evidence: `../s6-scratch/roundD-r1/`.
+No native retest, commits or repository Git-state changes.

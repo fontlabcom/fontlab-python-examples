@@ -17,7 +17,8 @@ Benefit: Flag individual glyphs directly without changing the font selection.
 The table and selection swatches edit the same property; this board adds
 prefix-scoped, drag-and-drop editing.
 Glyphs with auto layers are refused. A partial write reports Edit > Undo.
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits one glyph.
+Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits
+one glyph.
 Independent rewrite of the Qt dragdroprobot example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
@@ -33,5 +34,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/34e562975a08072aff30b900b2bef0c551f4c7d1e7f344332bb4a3513a5140bb.py)
+[Python source](../../../../.build/menu-sources/e826a9637318db5e86e0eebe4a77bfe2ae75f075c831e175cad36d2eb1e709c8.py)
 <!--/codeinclude-->

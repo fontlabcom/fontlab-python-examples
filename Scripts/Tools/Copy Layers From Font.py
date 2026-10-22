@@ -13,13 +13,15 @@ Benefit: Transfer outlines, anchor positions and advances across many glyphs.
 Components, hints, guides, metric expressions, locked/automatic layers and
 unsafe automatic dependants are kept. Element names, notes and transforms,
 contour names, node names and raw flags are retained; selection flags clear.
-Custom node/contour properties are refused. Anchor coordinates use App; existing
+Custom node/contour properties are refused. Anchor coordinates use App;
+existing
 pin styles stay, new pins use name-derived styles. Anchor expressions, layer
 metadata, links and colour marks are not copied. Units per em must match.
 Mask replaces the mapped layer's mask. Destination + suffix refuses master
 renames; existing suffix names are kept. New names cannot contain @ or # or
 begin with |temp|, mask, img. or bw.. Capture allows 3 seconds plus
-one second per selected glyph/mapping; a timeout refuses the whole preview. Apply rechecks the displayed plan. Partial failures direct
+one second per selected glyph/mapping; a timeout refuses the whole preview.
+Apply rechecks the displayed plan. Partial failures direct
 you to Edit > Undo. Setup: FontLab 9, Python 3.11, Fly, App>=0.2.150.dev0.
 Independent behaviour rewrite of TR-CopyLayers.py, Vassil Kateliev / Karandash
 Type Foundry, kateliev/TypeRig, MPL-2.0. https://github.com/kateliev/TypeRig
@@ -395,7 +397,7 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
         prepared.append((row, glyph, body, target, stage, steps, shapes))
         owners[row["name"]] = glyph
     if not prepared:
-        return {"changed": 0, "kept": len(rows)}
+        return {"pending_updates": (), "pending_note": "", "changed": 0, "kept": len(rows)}
     made, failures = [], []
 
     def mutate() -> list[Any]:
@@ -475,7 +477,7 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
         raise RuntimeError(
             "Native changes may remain; use Edit > Undo. " + "; ".join(done.mismatches)
         )
-    return {"changed": len(prepared), "kept": sum(bool(r["note"]) for r in rows)}
+    return {"pending_note": done.pending_note, "pending_updates": done.pending_updates, "changed": len(prepared), "kept": sum(bool(r["note"]) for r in rows)}
 
 
 def panel_type() -> type:
@@ -613,6 +615,7 @@ def panel_type() -> type:
                 result = apply_plan(self.plan_data, bool(self.confirm_box.isChecked()))
                 self.status.setText(
                     f"Copied {result['changed']} layers; kept {result['kept']}. One Undo step."
+                    + (" · " + result["pending_note"] if result.get("pending_note") else "")
                 )
             finally:
                 self.plan_data = None

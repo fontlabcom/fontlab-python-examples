@@ -141,7 +141,7 @@ def layer_geometry(layer: Any, qt: Any) -> tuple:
     return tuple(shapes)
 
 
-def draw_current(tips: int, outer: float, inner: float, rotation: float) -> None:
+def draw_current(tips: int, outer: float, inner: float, rotation: float, *, disclosure: dict[str, Any] | None = None) -> None:
     """Append one closed contour, fence context and check attached node geometry."""
     import fly.ap.history as history  # noqa: PLR0402 - Fly module import
     import fly.ap.masters as masters  # noqa: PLR0402 - Fly module import
@@ -245,6 +245,8 @@ def draw_current(tips: int, outer: float, inner: float, rotation: float) -> None
         facts=facts,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(" ".join(result.mismatches) + " " + history.UNDO_HINT)
 
@@ -335,13 +337,15 @@ def main() -> Any:
 
         def draw_polygon(self) -> None:
             """Add one contour or show the shared refusal/recovery message."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             try:
-                draw_current(*self.parameters())
+                draw_current(*self.parameters(), disclosure=disclosure)
                 self.status.setText(
-                    "Drawn one closed contour. Edit > Undo removes this action."
+                    result_guards.append_note("Drawn one closed contour. Edit > Undo removes this action.", disclosure)
                 )
             except (ValueError, RuntimeError, TimeoutError) as error:
-                self.status.setText(str(error))
+                self.status.setText(result_guards.append_note(str(error), disclosure))
 
         def publish(self, save: bool) -> None:
             """Preview fresh artwork; retain exact output when only saving fails."""

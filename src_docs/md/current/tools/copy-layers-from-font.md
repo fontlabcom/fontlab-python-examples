@@ -19,13 +19,15 @@ Benefit: Transfer outlines, anchor positions and advances across many glyphs.
 Components, hints, guides, metric expressions, locked/automatic layers and
 unsafe automatic dependants are kept. Element names, notes and transforms,
 contour names, node names and raw flags are retained; selection flags clear.
-Custom node/contour properties are refused. Anchor coordinates use App; existing
+Custom node/contour properties are refused. Anchor coordinates use App;
+existing
 pin styles stay, new pins use name-derived styles. Anchor expressions, layer
 metadata, links and colour marks are not copied. Units per em must match.
 Mask replaces the mapped layer's mask. Destination + suffix refuses master
 renames; existing suffix names are kept. New names cannot contain @ or # or
 begin with |temp|, mask, img. or bw.. Capture allows 3 seconds plus
-one second per selected glyph/mapping; a timeout refuses the whole preview. Apply rechecks the displayed plan. Partial failures direct
+one second per selected glyph/mapping; a timeout refuses the whole preview.
+Apply rechecks the displayed plan. Partial failures direct
 you to Edit > Undo. Setup: FontLab 9, Python 3.11, Fly, App>=0.2.150.dev0.
 Independent behaviour rewrite of TR-CopyLayers.py, Vassil Kateliev / Karandash
 Type Foundry, kateliev/TypeRig, MPL-2.0. https://github.com/kateliev/TypeRig
@@ -38,5 +40,5 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/79d7b0589436df521bfcb72c8f4fe6ce2621698bbd5dc6b750014d84367390bb.py)
+[Python source](../../../../.build/menu-sources/a82d9f63fd25a2f33b4cc64cba7ce23a1df70202ca3fef4a29b10f64aa714ebd.py)
 <!--/codeinclude-->

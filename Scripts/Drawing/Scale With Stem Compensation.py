@@ -1,29 +1,38 @@
 # this_file: Scripts/Drawing/Scale With Stem Compensation.py
 # SPDX-License-Identifier: Apache-2.0
-"""What: Scale selected glyphs with independent vertical/horizontal stem compensation.
+"""What: Scale selected glyphs with independent vertical/horizontal stem
+compensation.
 How: Each checked master row supplies two source layers, their measured stems,
 target stems, scale X/Y and slant. Unslant all nodes, blend X/Y independently,
 scale and reslant. Preview lists every glyph/master and output layer. Confirm,
 then Create Layers. The entire batch is recorded as one Undo step.
 Why: Plain scaling changes stems. Per-master stem measurements make derived
 small caps or superiors without changing the source masters.
-Usage: Select glyphs in the Font window. Use Selection, check target master rows,
+Usage: Select glyphs in the Font window. Use Selection, check target master
+rows,
 edit their source pairs and measurements, Preview, inspect kept rows, confirm.
 Benefit: Generate many compensated glyph layers in one repeatable action.
 
 Outputs are new auxiliary layers named master + suffix. Existing outputs are
-kept. New names cannot contain @ or # or start with |temp|. No in-place overwrite
-or whole-font default is provided. Preview and Apply each scan dependencies once;
+kept. New names cannot contain @ or # or start with |temp|. No in-place
+overwrite
+or whole-font default is provided. Preview and Apply each scan dependencies
+once;
 control edits never scan fonts. Apply rechecks the displayed plan.
 All nodes and controls use the same affine blend; TT contours remain quadratic,
 including consecutive controls and implied on-curves. First-source node names,
 raw flags and contour names are retained, with selection flags cleared. Advance
-is first-source advance times scale X. Components, transforms, automatic or locked
-sources, custom node/contour properties and unsafe automatic dependants are kept.
-Anchors, guides, hints, element metadata and metrics expressions are not copied.
-Source layers stay unchanged. Slant defaults to minus the current master's angle;
+is first-source advance times scale X. Components, transforms, automatic or
+locked
+sources, custom node/contour properties and unsafe automatic dependants are
+kept.
+Anchors, guides, hints, element metadata and metrics expressions are not
+copied.
+Source layers stay unchanged. Slant defaults to minus the current master's
+angle;
 each table row can override it. Extrapolation, boundary-fix, stem probing and
-saved table presets are not provided. Partial failures direct you to Edit > Undo.
+saved table presets are not provided. Partial failures direct you to Edit >
+Undo.
 Setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0. Non-modal panel.
 
 Independent behaviour rewrite of DeltaMachine.py, Vassil Kateliev / Karandash
@@ -32,7 +41,8 @@ The small arithmetic helper reuses the Apache-2.0 Stem Blend implementation.
 No TypeRig code, private identifiers, comments or assets copied.
 Capture allows 3 seconds plus one second per selected glyph/master. A timeout
 refuses the whole preview; select fewer glyphs.
-Read-back allows coordinate changes up to 1e-5 units. Advance is checked against
+Read-back allows coordinate changes up to 1e-5 units. Advance is checked
+against
 its detached value read immediately after the native setter applies the current
 rounding preference, with the same tolerance. The coordinate tolerance comes
 from native source; it is unmeasured in native FontLab execution.
@@ -322,7 +332,7 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
         prepared.append((row, glyph, layer, float(layer.advanceWidth)))
         owners[row["name"]] = glyph
     if not prepared:
-        return {"changed": 0, "kept": len(rows)}
+        return {"pending_updates": (), "pending_note": "", "changed": 0, "kept": len(rows)}
     made, failures = [], []
 
     def mutate() -> list[Any]:
@@ -375,7 +385,7 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
         raise RuntimeError(
             "Native changes may remain; use Edit > Undo. " + "; ".join(done.mismatches)
         )
-    return {"changed": len(prepared), "kept": sum(bool(r["note"]) for r in rows)}
+    return {"pending_note": done.pending_note, "pending_updates": done.pending_updates, "changed": len(prepared), "kept": sum(bool(r["note"]) for r in rows)}
 
 
 def panel_type() -> type:
@@ -532,6 +542,7 @@ def panel_type() -> type:
                 result = apply_plan(self.plan_data, bool(self.confirm_box.isChecked()))
                 self.status.setText(
                     f"Created {result['changed']} layers; kept {result['kept']}. One Undo step."
+                    + (" · " + result["pending_note"] if result.get("pending_note") else "")
                 )
             finally:
                 self.plan_data = None
