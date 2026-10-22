@@ -4,6 +4,30 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-10-22 - Current-font tools and archived-source checks
+
+- The collection now contains 100 practical menus. New panels cover models,
+  dialogs, drag and drop, text, graphics, widgets, drawing, font naming,
+  scripting queries, kerning recipes and TypeRig-inspired layer/node work.
+  Shared host and UI behavior uses App through Fly.
+- Historical menu records now contain 222 adaptations and 259 retirements,
+  leaving thirteen packaged GetGo workflows pending acceptance. Another 42
+  source-only TypeRig files have nine adaptations and 33 retirements.
+  These source checks do not establish native compatibility.
+- Default tests verify historical path/hash records without a `rescued/`
+  folder. Optional archive audits fail on missing or mismatched files once
+  the archive root exists, collect all full-archive failures and restore
+  parse checks for retired thread/SQL sources. Historical bodies are not run.
+- Public source and notice wording identifies the external archive. Reference
+  API checks use `FONTLAB_REFERENCE_ROOT`, separate from the archive root.
+  Scriptmix destination pins follow the reviewed Scriptmix files.
+- Verified on Python 3.11 arm64: core menu tests 1,747 passed, 92 opt-in skips;
+  TypeRig-derived tests 496 passed, seven opt-in skips; Lessons 199 passed,
+  96.18% branch-inclusive coverage. `ruff check --no-cache Scripts` passed.
+- Documentation tests on the prepared Python 3.12 arm64 environment: eleven
+  passed with Homebrew Git on PATH. Native acceptance, clean final package
+  delivery and site publication remain open.
+
 ## 2026-10-22 - TypeRig-inspired tools and the rest of the rescued backlog
 
 - Tools: Kerning Copy Rules expands current-master copy rules such as

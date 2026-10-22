@@ -2,189 +2,59 @@
 this_file: PLAN.md
 ---
 
-# GetGo real-font scripting acceptance
+# Current goals
 
-Owner request: use the public GetGo VFJ/TTF fonts for real tests and scripting
-examples, keeping public code.fontlab.com links and licence provenance.
+Keep the 100-menu collection useful in FontLab 9, with shared helpers in App
+and sixteen runtime menus packaged as Lessons. Use Python 3.11 arm64 for host
+code. Keep the separate documentation project on its declared Python 3.12+
+runtime. Current source and artifact checks do not close native acceptance.
 
-Done and archived in CHANGELOG.md: item 1 (fixtures, provenance, verification).
+## Native acceptance
 
-2. Native acceptance is recorded for the current VFJs (corpus 99/99; 17 fonts edited,
-   saved, reopened, exported; 6 of 16 variable exports pass, the other 10 fail on the
-   unedited originals). Remaining: after F1 fixes the source VFJs, re-sync them into
-   testdata/getgo (new hashes), re-run corpus and variable exports.
-3. Done: the 13 examples pass natively 13/13 (archived in CHANGELOG.md).
-4. Docs export (getgo.md) and the 1874-test suite are done. Close the group when 2 and 3
-   are complete; broader publication stays in the parent plan.
+Qualify installed artifacts on owned fonts in a dedicated host session. Cover
+all current panels, model/view policies, callbacks, close/reopen, cancellation,
+stale snapshots and failure paths. Include pattern rules, calendars, trees,
+completers, numeric controls, elastic graphs and spacing worksheets.
 
+Check character-map drawing/copy, file dialogs and desktop activation, image
+viewers and native printing separately. Check every writer with Apply, Undo,
+Redo and save/reopen. Compare complete font state and modification dates across
+successive edits, including unrelated glyphs. For cross-font copies, prove that
+the source stays unchanged.
 
-## Issue120 menu integration W1
+Probe Node Table selection-property side effects. Verify fresh-wrapper reads
+and selection restoration. Prove Stem Blend's new layers remain ordinary and
+non-auto after history and reopen. Test both stem-compensated writers under
+coordinate rounding.
 
-- [x] Verify the combined source layout, immutable release provenance and all existing tests.
-- [ ] Review feature-branch integration without changing canonical checkouts or live installs.
-- [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.
+Qualify the thirteen packaged GetGo workflows before reconciling their remaining
+catalogue entries. When corrected fixture VFJs are supplied, update manifests
+and hashes, then rerun corpus and variable-export checks. Keep earlier receipts
+as evidence for their exact source version only.
 
+## Small fixes and shared App work
 
-## Issue120 current documentation Z5
+Add missing selection-restoration coverage and cross-repository destination
+hash checks. Reconcile retirement licence fields, make collections count tests
+independent of line wrapping and check the image viewers' App floors. Combine
+the separate menu-test runs only after their import arrangements are compatible.
 
-- [x] Build current source documentation and verify rendered source plus local browser behavior.
-- [ ] Complete whole-branch review, original native acceptance and every remaining publication/distribution gate before promotion.
+Request a public App zone writer before adding scripted zone edits. Native
+Font Info > Zones remains the alternative. Add targeted auto-layer refusal to
+avoid duplicate whole-font scans in kerning imports. Keep generic UI and host
+helpers in App, fontParts/UFO adapters in Fontport and Glyphs.app adapters in
+Glyport; menus use App through Fly.
 
-- [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
-- [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
+## Delivery and publication
 
+Check the final reviewed sibling package set, destination hashes, clean installs
+and dependent suites. Complete browser asset provenance, transitive notices and
+source availability. Then qualify site routes, accessibility and deployment.
+Owner-managed editable installs and publication remain separate delivery steps.
 
-## Issue120 Z10 — complete part2 glyph sorting/filtering candidates
+## Done
 
-Adapt both basic/custom part2 source/proxy workflows to the complete current
-font's names, all Unicode assignments and local modification dates. Shared App
-Table/Query, Qt controls and owned model lifetime keep all three pattern modes,
-independent case switches, Basic key-column/native QRegExp, Custom first-two-
-column OR/inclusive dates/angle-tail ordering, both views and modeless Close.
-Raw demonstration records are replaced; initial dates are unrestricted and date
-limits explicit. Custom's ignored column control stays visible and disabled.
-Two immutable source-index identities now route to practical Models commands.
-Original bodies/resources and all other menus stay untouched. Distinct part3
-contracts remain pending. Qt5/Qt6 and metadata-shaped tests are offline evidence;
-native PythonQt callbacks/read/cache/font/history/save/reopen and publication/
-integration/release gates remain open under D25. No original numerator changes.
-
-
-## Issue120 Z11 — complete part3 typed-date workflows
-
-Both official part3 Basic/Custom models now adapt complete current-font metadata
-through shared App controls. Typed QDateTime cells, locale short-date matching,
-native QRegExp syntaxes, inclusive calendar-day limits, case-sensitive email-token
-text comparison and original ISODate ordering remain distinct from part2. Data-
-specific demo filters become full-font snapshots with explicit optional limits.
-Read-only models, Refresh/refusal and all completion routes keep owned lifetime.
-
-Tests exposed two timestamp-reader defects: displayed local dates assumed an
-already-local stamp and the source fence lost within-second changes. A local
-copy and native epoch milliseconds now preserve the intended observations. An
-optional immutable epoch channel keeps exact typed-cell instants (including DST
-folds); Basic retains millisecond ordering, Custom retains its source comparator.
-No new native font API, writer, original-source execution or live install is used.
-Standalone tests do not establish actual PythonQt/font/cache/history/persistence
-acceptance. All original/native/integration/distribution/publication gates stay open.
-
-
-## Issue120 Z13 — complete read-only Simple Tree Model pair
-
-Both archived part2/part3 read-only tree entrypoints now show complete current-
-font glyph metadata through a generic immutable App tree and injected Qt model.
-Each glyph keeps font order, every Unicode assignment and its local modification
-date; missing values stay explicit. Expand/collapse and cell selection are
-read-only. Part2 retains fixed columns, noneditable EditRole text, row/column
-status and File > Exit; part3 retains DisplayRole-only text and parent-item
-column counts. Their separate editable-tree entrypoints remain outside this pair.
-
-Source-specific synthetic outline/default.txt loading becomes structured native
-metadata input, using the existing source-fenced reader. Capture and model
-construction share one deadline. Refresh replaces the entire model and selection
-owner; failure removes all results. Model virtual failures are contained and
-obsolete callbacks become inert. All completion routes release owned resources.
-The raw sources/resources are preserved and never executed or packaged here.
-
-Requires reviewed unpublished App>=0.2.57.dev0 through Fly. Standalone Qt model
-tester/view/lifecycle checks and ordinary artifacts do not establish PythonQt
-virtual dispatch, native getter/font/cache/history/dirty/save/reopen acceptance.
-Native D25, integration/distribution/release/publication and the full original
-goal remain open. No new native API, writer or live installation is used.
-
-
-## Issue120 Z16 — complete part2 modification calendar candidate
-
-The complete part2 calendar retains three locales, Monday/Sunday, single/no
-selection, grid/navigation, every horizontal/vertical heading mode, selected/
-minimum/maximum date editors, all weekday/weekend/header colours and first-Friday/
-January-1 markings. Selected days show all matching current-font glyph metadata
-in font order, all Unicode assignments, explicit unencoded values and exact local
-timestamps. Undated glyphs are counted. Refresh replaces the entire observation.
-
-Initial controls agree with the actual calendar; crossing limits synchronize all
-three date editors. A copied owned date-surface palette preserves explicit named
-colours on dark hosts, including readable headers/off-month dates; the surrounding
-UI retains its host palette. Generic UI takes injected Qt and caller-owned signals.
-Setup failures fence queued slots; all completion routes, parent destruction and
-late Close release callbacks/data. Reads and planning share a bounded deadline.
-
-Requires reviewed unpublished App>=0.2.60.dev0 via Fly. No font, selection, history,
-preferences, file, clipboard or Output writer is added. The distinct part3 calendar
-is not implemented by this entry. Originals/dependencies remain read-only and
-unexecuted. Actual PythonQt/FontLab/getter/cache/font/history/dirty/reopen/native
-workflow, release/integration/download/docs/publication and full issue120 gates
-remain pending D25. Standalone scalar/Qt tests do not accept those requirements.
-
-
-## Issue120 Z17 — complete distinct part3 calendar candidate
-
-Part3 retains every Qt locale in original order, native language/country labels
-and last matching initial locale, all seven week starts, both selection modes,
-grid/navigation, every heading format, 1900–3000 date limits and MMM d yyyy
-editors, four weekday/weekend colours and Bold/Italic/Plain headers. The latent
-programmatic Green header rule remains without a new UI choice. Blue first-Friday
-and red May1 switches are independent; May1 wins collisions. Only owned old marks
-clear after page/year/switch changes. Full locale labels remain in the popup and
-tooltip while the field stays bounded. No global locale or theme setting changes.
-
-A shared injected-Qt base owns geometry, fields, coherent dates and callback
-fencing. Part2 retains every public import path and its distinct policy. Both
-modeless panels share whole captured local-day glyph reports and separate registry
-keys. Source/type/empty/error/deadline/close/teardown paths remain complete.
-
-Requires reviewed unpublished App>=0.2.61.dev0 through Fly. No original/corpus
-script, native font/selection/history/preferences/clipboard/file/Output writer,
-live install, canonical merge, release or publication is introduced. Actual
-PythonQt/native UI/getter/font/cache/history/dirty/save/reopen and all original
-issue120 source/integration/distribution/docs/publication gates remain pending D25.
-
-
-## Issue120 Z20 — complete glyph-name completion pair
-
-Implement both distinct part2/part3 custom-completer workflows over the complete
-current-font glyph-name snapshot. Share injected Qt editor/model ownership in
-App; preserve each original key, focus, suffix and menu policy. Use Qt itself
-for case-insensitive sorting before completer binary search. Refresh keeps the
-draft and discards stale vocabulary on failure. About information appears in
-the modeless status area; Vocabulary names are escaped plain data. Disconnect
-faults retain ownership and refuse Close for retry. Every ordinary completion,
-parent destruction, setup failure and queued callback is owned and fenced.
-
-Requires reviewed unpublished App>=0.2.63.dev0 through Fly. Originals/resources
-remain read only, unexecuted and unbundled. No native font/selection/history/
-preferences/file/Output writer or live install is added. Full installed PythonQt
-behavior and complete font/cache/history/dirty/save/reopen preservation remain
-pending D25, as do every original issue120 integration/distribution/publication
-gate. Source and artifact checks do not constitute native acceptance.
-
-Z20 visual acceptance caught the preserved part2 one-pixel completion popup. A tests-first content-width repair now applies the existing Qt popup-size calculation to both variants; key/focus/insertion policies stay distinct. Retain the initial candidate/renders and repeat final full/source/ordinary-install/Qt5 gates with artifact v2. Native qualification remains pending.
-
-## Issue120 Z23 — complete editable glyph-tree pair
-
-Implement both original editable-tree controllers over full local glyph metadata. Retain distinct sibling/child/column positions, text/QVariant values, header/default labels, part3 key sequences/mnemonics/separators, selection action enablement/status and ordinary delegate editing. Shared App model/view/editor/signal mechanics stage complete replacement views before releasing the current draft. Refresh refuses edited-draft discard; Reset Draft explicitly requests reload; capture/setup faults preserve the prior draft. Failed disconnects retain exact owners. Close button retries control/editor failures; terminal failures retain the destruction tombstone and use window Close. Every ordinary completion, parent destruction, constructor fault and queued callback is fenced. No original body/resource is executed or bundled. Requires reviewed unpublished App>=0.2.66.dev0 through Fly. Native PythonQt and full font/getter/cache/history/dirty/save/reopen, integration/distribution/docs/release/publication gates remain pending D25.
-
-## Issue120 Z24 frontend notices
-
-Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.
-
-
-## Issue120 curated active menu tree
-
-- [x] Keep the curated 30 reviewed practical facades and add the complete Glyph Name Pattern Lab (31 total); retain private archive recovery.
-- [ ] Complete479 remaining historical source identities with all intended original functionality/resources.
-- [ ] Native-qualify all 15 mapped adaptations and 16 packaged Lessons/GetGo workflows; hiding a dispatcher grants no acceptance.
-- [ ] Complete whole-branch, release and publication gates.
-
-
-## Issue120 N56 — complete pattern authoring
-
-Verify the frozen four-syntax source, native Qt5 semantics, full local authoring workflow, complete captured vocabulary, all source/ordinary artifacts/installed consumers, whole-module80/80 without exclusions and rendered documentation. Controller review precedes any push. Qualify actual PythonQt and complete font/getter/cache/history/dirty/reopen behavior separately.
-
-### Glyph Character Map pair
-
-Complete original reference-font controls and real-font coverage are implemented privately. Ordinary wheel/sdist, all seven current consumer suites and original-baseline170App/70Examples whole-module gates pass. Independent source/artifact controls pass; qualify installed artifacts in owned FontLab workflows before any native acceptance claim.
-
-Paired Find Files: retain actual PythonQt, file-dialog preferences, desktop opener and complete lifecycle qualification.
-
-N270 private .159 combines complete independently reviewed .157 Raise Ascender, .154 Perpendicular Guides and .156 paired Image Viewers on exact delivered .153. Preserve all 308 prior App runtime files and 162 menus; .158 excluded. Run ordinary artifacts, all seven consumers, full original module coverage, strict documentation and complete workflow controls. Native writer/font/history/reopen/printer/OS and retained Character Map domains remain pending; inherited .153 native evidence is not .159 qualification.
+The practical menu collection, TypeRig-inspired tools, explicit historical
+source dispositions and archive-independent default tests are integrated.
+Documentation generation and offline runtime checks are present. See CHANGELOG
+for verified changes and historical acceptance limits; see TODO for open work.
