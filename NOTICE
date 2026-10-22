@@ -1485,3 +1485,54 @@ SHA256 0b689b4b62fe499d10a073c6b62f8eb6417ebbff8f7f261aae996da3ef1a5dcd
 fontlab-python-scriptmix/Scripts/Masters/Duplicate Current Layer.py (from layer_backup recipe)
 rescued/part2/examples/recipes/layer_backup/recipe.py
 SHA256 468385b598a60b0dc936e359e989d4105092a1364fdd66cadea17672736c13a2
+
+
+TypeRig behaviour references
+----------------------------
+The scripts below are FontLab tools written from scratch after behaviour
+in TypeRig by Vassil Kateliev and Karandash Type Foundry
+(https://github.com/kateliev/TypeRig, MPL-2.0). No TypeRig source code,
+comments, icons, presets or other assets are included. The new tools are
+Apache-2.0. Each entry lists the TypeRig sources it replaces, with their
+SHA256 values; menu-adaptations.json records the differences.
+
+Scripts/Tools/Kerning Copy Rules.py
+Independent behaviour rewrite of the CopyKerning panel: current-master
+copy rules, direct clipboard handoff to Import Kerning Pair List and
+optional UTF-8 export.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/CopyKerning.py
+SHA256 3cbbc54d13cedfc57a67195188955c93eeec4c762d7af3ada2331e1cabe193e9
+
+Scripts/Drawing/Stem Blend.py
+Independent behaviour rewrite of the Delta and DeltaNew panels:
+stem-compensated blending into a new active glyph layer. SVG copy and
+export are secondary artwork.
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Delta.py
+SHA256 d9f68f6e4a3698c21e16f59074c95e2d345ef9e8b95fa1dcbcd87f861052a476
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/DeltaNew.py
+SHA256 40e47ffddedae0583e3e9256d57c56dddc30790afb5994d627a7808bda45c7f4
+
+Mapped to existing tools (no new code or resources):
+fontlab-python-scriptmix/Scripts/Anchors/Place From Bounds.py (from Anchor.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Anchor.py
+SHA256 ff215fef5eab87b6dde9a4f225a87a0cb70fbd1ae95dfad9154f3e086c8b0917
+fontlab-python-scriptmix/Scripts/Kerning/Exceptions Finder.py (from CleanKerning.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/CleanKerning.py
+SHA256 406c81b9c485fc4be30c5bc9bbc185e0f031dfe90843d32d7005eb9279e839d4
+fontlab-python-scriptmix/Scripts/Contours/Transform.py (from Contour.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Contour.py
+SHA256 0a457f0978019bc455c054e937dffbcf9795a500139e19773889c3933f165b86
+
+Covered by native FontLab commands (no new code or resources):
+Font > Metrics > Autospace (from AutoMetrics.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/AutoMetrics.py
+SHA256 889c6951667d393cbf3adeee46d472076a8d9b99977bf280b920868026a41a3d
+Edit > Copy and Edit > Paste Special (from Clipboard.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Clipboard.py
+SHA256 9b4a7e0faa71d00b34e73df42d43258fe6c853c8d12d5c4333533f67075affe5
+Contour > Nodes > Add Smart Corner, Add Corner Element and Ink Trap (from Corner.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Corner.py
+SHA256 5ed8db3f161835191ff30b37703d0b1aa3bbd09212182173a9d77000b8e8f732
+Element > Reference > Add Reference and Replace Reference (from Element.py)
+rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig GUI/Panel/Element.py
+SHA256 2afb7719d9e823af92168fe0b7f25a3b7526c6194f50142c9d5821a881d11b2c

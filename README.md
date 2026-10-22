@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-`Scripts/` contains 90 practical facades in one category level: Designer,
+`Scripts/` contains 92 practical facades in one category level: Designer,
 Dialogs, Drag And Drop, Drawing, Forms, GetGo Fonts, Graphics, Models, Text,
 Tools, Widgets and Windows. Install their matching Fly, App
 and fontlab-python-lessons packages in FontLab 9 Python 3.11; each script states
@@ -25,9 +25,11 @@ stated; nothing was accepted merely by removing an archived menu wrapper.
 
 The local `rescued/` tree retains all original bodies, resources and attribution.
 The frozen `rescue-index.json` retains all 494 historical source identities.
-`menu-adaptations.json` maps 202 practical replacements, with original
-workflow acceptance still pending. Its `retirements` array records 153 identities
-retired without a replacement, each with its reason. The other 139 identities
+`menu-adaptations.json` maps 208 practical replacements, with original
+workflow acceptance still pending. Its `retirements` array records 157 identities
+that have no script in this collection, each with its reason. For 4 of them
+the reason starts with "duplicate-of native" and names the FontLab command
+that does the job; the others are retired. The other 129 identities
 remain migration backlog. All 494 old runtime dispatchers are outside active `Scripts`; their
 exact previous bytes are retained in a private recovery snapshot.
 
@@ -162,3 +164,12 @@ lines, validates every glyph and existing @class name, and applies the list as
 one kerning batch and one Undo step, with read-back. Eight other recipe ideas
 map to existing Scriptmix tools, such as Contours > Remove Overlap and Metrics
 > Tabular Width.
+
+Tools adds Kerning Copy Rules, after TypeRig's CopyKerning panel. A rule such
+as `A|V A|W = T|o @ -5` copies the current-master T/o value minus five units to
+A/V and A/W. The tool copies the resulting pair list for Tools > Import Kerning
+Pair List and never changes the font itself. Drawing adds Stem
+Blend, after TypeRig's Delta panels. It blends two layers of the current glyph
+with stem compensation on each axis and creates the result as a new active
+layer, recorded as one Undo step. Seven other TypeRig panels map to existing
+Scriptmix tools or native FontLab commands, such as Font > Metrics > Autospace.

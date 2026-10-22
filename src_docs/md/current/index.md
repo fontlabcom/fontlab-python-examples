@@ -28,6 +28,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 - [Glyph Outline SVG](drawing/glyph-outline-svg.md)
 - [Glyph SVG Reference](drawing/glyph-svg-reference.md)
+- [Stem Blend](drawing/stem-blend.md)
 
 ## Forms
 
@@ -103,6 +104,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
 - [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 - [Import Kerning Pair List](tools/import-kerning-pair-list.md)
+- [Kerning Copy Rules](tools/kerning-copy-rules.md)
 - [Localized Font Names](tools/localized-font-names.md)
 - [Path Problem Report](tools/path-problem-report.md)
 - [Saved Proof Sample](tools/saved-proof-sample.md)
