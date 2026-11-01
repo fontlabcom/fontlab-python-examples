@@ -1743,3 +1743,11 @@ rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Popups/popup-contour-cut.
 SHA256 a72c0c1a7d3273f003c9b863ebbe344f25fc7ade6b4ae73716d74ed7deec3690
 rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-SortAnchors.py
 SHA256 082d201f77b6191240a499d4f4b4c9b043179eb36050c292528117b5172b9fb7
+
+
+Issue120 paired Image Viewers (independent App/Fly adaptation; Apache-2.0, owner D22).
+rescued/part2/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+SHA256 03e04bedb750535fbf3bf59fc9b3d90eda75890a8731f804204da0b9af1325ca
+rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/imageviewer-16456ba02f4b79cc.py
+SHA256 a56d05bd0de0204bb29e96995d043b9054104eb370fc80a36bc398db77a29bac
+Shared source contracts: part2 Session and part3 Demo; both originals/helpers remain preserved, never imported or bundled.

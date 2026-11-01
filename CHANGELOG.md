@@ -835,3 +835,6 @@ matches its label. No font writer; native acceptance remains pending.
 Added complete paired Find Files practical workflows; bounded read-only streaming searches and owned nonmodal UI.
 
 - Private .159 combines both complete reviewed reference Image Viewer profiles and their source-distinct zoom/Fit/printing, modal/asynchronous dialog and lifetime policies; native printer/OS and whole-font qualification remain pending.
+
+
+- Add both complete font reference Image Viewers: original Open/zoom/Fit/normal/printing and owned asynchronous dialogs through App/Fly. Native acceptance remains pending.
