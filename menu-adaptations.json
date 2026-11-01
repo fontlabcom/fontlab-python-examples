@@ -6102,6 +6102,38 @@
       "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI A-I/graphicsview - elasticnodes-fff97a435b73d548.py",
+      "menu": "Scripts/Tools/Component Dependency Graph.py",
+      "source": "rescued/part2/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+      "source_sha256": "d65729560a7b649d21bcffcd176aaba7541920cc427548c6e17c1269c70d6bef",
+      "destination_sha256": "9d485e8ada0df7c1f1d264b80addcd7b5df856e102cb54277c39413202914505",
+      "entry_point": "show",
+      "api_module": "component_graph",
+      "family": "elastic-nodes-part2",
+      "license": "Apache-2.0 (owner D22); complete existing notices preserved",
+      "scope": "Complete distinct part2 physics, node/edge painting/geometry, keys/wheel/zoom/shuffle, timer, guarded drag-close and owned lifetime. All current-master font dependencies plus exact original fixed graph; repeated/cyclic/missing bases retained. Local scene only; no font writers.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "assets": [],
+      "helper_executed": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/elasticnodes-fff97a435b73d548 - 3045bdbe.py",
+      "menu": "Scripts/Tools/Component Dependency Graph - Degree Forces.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/elasticnodes-fff97a435b73d548.py",
+      "source_sha256": "fa1dc74f37f29a33afd673b5e4a399838797d8cc355079d512769ec6d10e6a99",
+      "destination_sha256": "4f6bd173fbb68426700b8f41a6693cf33c9ce6c7e9fd0fadd820feb915a6c900",
+      "entry_point": "show_official",
+      "api_module": "component_graph",
+      "family": "elastic-nodes-part3",
+      "license": "Apache-2.0 (owner D22); complete existing notices preserved",
+      "scope": "Complete distinct part3 physics, node/edge painting/geometry, keys/wheel/zoom/shuffle, timer, guarded drag-close and owned lifetime. All current-master font dependencies plus exact original fixed graph; repeated/cyclic/missing bases retained. Local scene only; no font writers.",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false,
+      "assets": [],
+      "helper_executed": false
     }
   ]
 }
