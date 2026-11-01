@@ -2,6 +2,9 @@
 this_file: PLAN.md
 ---
 
+- [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
+
+
 # Current goals
 
 Keep the 100-menu collection useful in FontLab 9, with shared helpers in App

@@ -2,6 +2,40 @@
 this_file: WORK.md
 ---
 
+## 2026-11-01 — documentation validation
+
+Locked documentation environment:11tests passed with `rtk proxy env
+PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --frozen --with
+pytest python -B -m pytest -q -p no:cacheprovider tests_docs` (exit0; external
+parent docs-tests.log). The first minimal ad-hoc environment had2failures/9passes
+because required theme/Markdown dependencies were absent; full declared locked
+dependencies resolve both. No documentation site was published. New warning
+integration test Ruff and whole diff whitespace checks pass.
+
+
+## 2026-11-01 — warning and input dialog priority candidate
+
+Four error handlers use App run_standard_message_box with the same warning text,
+Ok result and modal ownership. Both SVG handlers now parent to MainWindow.
+Proof Text Coverage reapplies WindowStaysOnTopHint before each input-dialog show,
+preserving its original flags, parent, draft and Cancel behavior; a failed flag
+setter can be retried. Five script pins and generated source pages were refreshed.
+
+Regression-first warning routing: 4 failed then 4 passed. Actual owned warning
+integration: 8 tests pass on each standalone Qt5 and Qt6. Input assertions failed
+before the fix; normal accept/Cancel and setter-failure/retry checks now pass.
+Configured full gate: 1837 core passed/96 skipped and 496 TypeRig passed/7 skipped;
+all 31 changed modules exceed unchanged80% coverage. Source evidence mKah8s.
+
+Commands (cwd this candidate; each prefixed rtk proxy):
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_menu_warning_priority.py: exit0,8passed.
+- env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.metaswarm/quality.sh coverage "$PWD" fontlab-python-examples: exit0; parent full-gate-r2.log. First attempt exit3 because the feature branch had no upstream; set its tracking baseline to existing origin/issue-101-pythonqt-examples without changing any gate.
+
+Wait, but: standalone Qt and source coverage do not prove FontLab stacking or
+installed-menu distribution. Matching App helper is a new candidate dependency;
+no canonical installation or native state changed.
+
+
 ## Issue 122 T0 baseline
 
 - Suite EX; pre-change worktree HEAD recorded below; branch `issue-122` confirmed.

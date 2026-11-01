@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
+
+
 - [ ] Qualify all current menus in installed FontLab: callbacks, close/reopen, stale snapshots, cancellation, errors and complete font/cache/history preservation.
 - [ ] Qualify Models filters, calendars, read-only/editable trees, completers, pattern rules, spinboxes, sliders, elastic graphs and spacing worksheets in native PythonQt.
 - [ ] Qualify character-map drawing/copy, Find Files dialogs/desktop opening and image-viewer printing/OS behavior in the native host.

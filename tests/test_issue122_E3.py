@@ -125,6 +125,14 @@ class Widget:
         self.textValueSelected = Signal()
         self.items: list[Any] = []
         self.visible = False
+        self.flags = 3
+        self.parent_args = args
+
+    def windowFlags(self) -> int:
+        return self.flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self.flags = flags
 
     def setText(self, text: str) -> None:
         self.text = text
@@ -461,6 +469,7 @@ def host(monkeypatch: Any) -> Any:
     fly = ModuleType("fly")
     fly.fl = state.native
     fly.qt = SimpleNamespace(
+        QtCore=SimpleNamespace(Qt=SimpleNamespace(WindowStaysOnTopHint=0x40000)),
         QtGui=SimpleNamespace(
             **{
                 name: Widget
@@ -579,6 +588,8 @@ def test_standard_input_accepts_text_and_cancel_keeps_draft(host: Any) -> None:
     enter = next(w for w in panel.root.items if w.text == "Enter Proof Text")
     enter.clicked.emit(False)
     assert panel.input_dialog.visible
+    assert panel.input_dialog.windowFlags() == 3 | 0x40000, "Input keeps dialog type and priority before display"
+    assert panel.input_dialog.parent_args == (panel,), "Input remains owned by its panel"
     panel.input_dialog.textValueSelected.emit("AB!")
     assert panel.draft == "AB!"
     assert panel.output.text == "U+0041  A, A.alt\nU+0042  B\nU+0021  MISSING"
@@ -736,3 +747,20 @@ def test_script_uses_only_the_public_catalog_capture(title: str) -> None:
     text = (ROOT / "Scripts/Dialogs" / f"{title}.py").read_text()
     assert "_glyph_catalog_native" not in text
     assert "fly.ap._" not in text
+
+
+def test_input_priority_failure_preserves_draft_and_retries(host, monkeypatch):
+    panel = load(TITLES[3])["main"]()
+    original = panel.input_dialog.setWindowFlags
+
+    def fail(flags):
+        raise RuntimeError("priority failed")
+
+    monkeypatch.setattr(panel.input_dialog, "setWindowFlags", fail)
+    with pytest.raises(RuntimeError, match="priority failed"):
+        panel.enter_text()
+    assert not panel.input_dialog.visible, "Failed setup must not display the input"
+    assert panel.draft == "Hamburgefontsiv" and host.writes == [], "No draft or font mutation"
+    monkeypatch.setattr(panel.input_dialog, "setWindowFlags", original)
+    panel.enter_text()
+    assert panel.input_dialog.visible and panel.input_dialog.windowFlags() == 3 | 0x40000, "Retry must reapply priority before display"

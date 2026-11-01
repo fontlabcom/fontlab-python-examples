@@ -328,7 +328,11 @@ def main() -> Any:
     try:
         return show(qt, parent)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        qt.QtGui.QMessageBox.warning(parent, TITLE, str(error))
+        import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
+
+        qt_dialogs.run_standard_message_box(
+            qt, parent, TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

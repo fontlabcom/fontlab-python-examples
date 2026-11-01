@@ -2,6 +2,15 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — owned priority messages
+
+Four warning routes preserve modal results and use an owned priority helper; SVG
+warnings now use the FontLab main window as parent. Proof Text Coverage keeps its
+input dialog above the tool on every show. Source gate2333passed/103skipped; all31
+changed modules above80%. Qt5/Qt6 warning integration8passed each. Native and
+matching installed-artifact acceptance remain pending.
+
+
 # Changelog
 
 ## 2026-11-01 — Independent panel priority (source candidate)

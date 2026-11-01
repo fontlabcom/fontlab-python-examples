@@ -58,6 +58,7 @@ def test_real_app_names_are_available(monkeypatch: Any, title: str) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
     for module, names in {
         "scripting": ("current_package", "show_script_dialog"),
+        "qt_dialogs": ("run_standard_message_box",),
         "node_coordinates": ("current_glyph",),
         "inspectors": ("outline", "outline_source"),
         "qt_properties": ("value",),
@@ -80,6 +81,7 @@ def app(monkeypatch: Any) -> dict[str, Any]:
     modules = {}
     for name in (
         "qt_properties",
+        "qt_dialogs",
         "draft_signals",
         "scripting",
         "inspectors",
@@ -496,6 +498,8 @@ def test_main_uses_host_registry_and_error_boundary(
     import fly
 
     fly.qt = qt
+    parent = object()
+    fly.fl = NS(MainWindow=lambda: parent)
     m = load(title)
     app["scripting"].show_script_dialog = lambda cls, key: key
     assert m["main"]() == m["KEY"]
@@ -504,10 +508,11 @@ def test_main_uses_host_registry_and_error_boundary(
         raise TimeoutError("host timed out")
 
     errors = []
-    qt.QtGui.QMessageBox = NS(warning=lambda *args: errors.append(args))
+    qt.QtGui.QMessageBox = NS(Ok=1024)
+    app["qt_dialogs"].run_standard_message_box = lambda *args: errors.append(args)
     app["scripting"].show_script_dialog = fail
     assert m["main"]() is None
-    assert errors[0][-1] == "host timed out"
+    assert errors == [(qt, parent, title, "host timed out", "Warning", 1024)]
 
 
 @pytest.mark.parametrize("title", TITLES)

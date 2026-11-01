@@ -99,7 +99,7 @@ def main() -> Any:
             button = g.QPushButton("Enter Proof Text")
             self.root.addWidget(button)
             self.root.addWidget(self.output)
-            self._connect(button.clicked, lambda *a: self.input_dialog.show())
+            self._connect(button.clicked, lambda *a: self.enter_text())
             self._connect(self.input_dialog.textValueSelected, self.accept_text)
             preview = g.QPushButton("Preview / Refresh")
             close = g.QPushButton("Close")
@@ -128,6 +128,13 @@ def main() -> Any:
                     editor.setPlainText("")
                 self.status.setText(str(error))
                 return False
+
+        def enter_text(self) -> None:
+            """Keep the owned input dialog above its panel on every opening."""
+            self.input_dialog.setWindowFlags(
+                self.input_dialog.windowFlags() | qt.QtCore.Qt.WindowStaysOnTopHint
+            )
+            self.input_dialog.show()
 
         def accept_text(self, text: str) -> None:
             """Adopt accepted text only; Cancel leaves the local draft intact."""
