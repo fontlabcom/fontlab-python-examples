@@ -282,7 +282,7 @@ def host(monkeypatch: Any) -> Any:
     warnings: list[Any] = []
     gui.QMessageBox = SimpleNamespace(warning=lambda *args: warnings.append(args))
     enums = SimpleNamespace(
-        Tool=1,
+        Tool=1, WindowStaysOnTopHint=0x40000,
         WA_QuitOnClose=2,
         PlainText=3,
         LeftDockWidgetArea=4,

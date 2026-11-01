@@ -401,7 +401,7 @@ def fake_qt() -> Any:
     return NS(
         QtGui=gui,
         QtCore=NS(
-            QTimer=Timer, Qt=NS(WindowFlags=lambda v: v, Tool=1, WA_QuitOnClose=2)
+            QTimer=Timer, Qt=NS(WindowFlags=lambda v: v, Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2)
         ),
     )
 

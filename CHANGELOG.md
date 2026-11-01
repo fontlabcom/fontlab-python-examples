@@ -4,6 +4,12 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## 2026-11-01 — Independent panel priority (source candidate)
+
+- Add `WindowStaysOnTopHint` to the existing Tool flags of27 independent modeless panels. Retain parent, type, controls, signal ownership and Close behavior; the Unicode Issues Dock and child widgets are unchanged.
+- Refresh all63 affected adaptation destination pins and27 generated menu-page hashes. Historical source pins and licensing remain unchanged.
+- Exercise priority plus cleanup through actual menu show functions; update two nested-coordinate assertion sites for current pytest with strict point-count/order checks and the original approximation tolerance. Native acceptance is pending.
+
 ## 2026-10-22 - Follow App and Scriptmix master-metrics changes
 
 - `menu-adaptations.json` pins Scriptmix Font Info/Master Metrics Table at its new bytes (08244e0e…), which write through App `master_metrics`.

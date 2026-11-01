@@ -512,6 +512,7 @@ class Widget:
     """Reject native-member shadowing, while keeping Qt properties as attributes."""
 
     def __init__(self, *args: Any) -> None:
+        self.constructor_flags = args[1] if len(args) == 2 and isinstance(args[1], int) else None
         self.text = ""
         self.clicked, self.textChanged, self.destroyed = Signal(), Signal(), Signal()
         self.currentIndexChanged = Signal()
@@ -595,7 +596,7 @@ def fake_qt() -> Any:
         )
     )
     gui.QApplication = NS(clipboard=lambda: CLIPBOARD)
-    return NS(QtGui=gui, QtCore=NS(Qt=NS(WindowFlags=int, Tool=1, WA_QuitOnClose=2)))
+    return NS(QtGui=gui, QtCore=NS(Qt=NS(WindowFlags=int, Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2)))
 
 
 @pytest.mark.parametrize("index", [0, 1])
@@ -603,6 +604,7 @@ def test_panel_when_closed_then_disconnect_before_deletion_and_retry(
     index: int,
 ) -> None:
     panel = load(index)["show"](fake_qt(), None)
+    assert panel.constructor_flags == 1 | 0x40000, "Preserve Tool while requesting TypeRig priority before show"
     assert panel.visible and panel.result_field.readonly
     with pytest.raises(AttributeError, match="Native slot"):
         panel.render = "bad"

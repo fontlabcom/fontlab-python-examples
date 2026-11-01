@@ -457,7 +457,7 @@ def test_panel_error_clears_output_copy_recaptures_and_close_drains(
             QPushButton=Widget,
             QApplication=NS(clipboard=lambda: clipboard),
         ),
-        QtCore=NS(Qt=NS(Tool=1, WindowFlags=int, WA_QuitOnClose=2)),
+        QtCore=NS(Qt=NS(Tool=1, WindowStaysOnTopHint=0x40000, WindowFlags=int, WA_QuitOnClose=2)),
     )
     if title == TITLES[0]:
         monkeypatch.setattr(module, "search_result", lambda fields: ("/A/V", ()))
@@ -897,7 +897,7 @@ def test_choices_are_fixed_and_failed_show_drains_signals(
         QPushButton=Widget,
         QComboBox=Widget,
     )
-    qt = NS(QtGui=gui, QtCore=NS(Qt=NS(Tool=1, WindowFlags=int, WA_QuitOnClose=2)))
+    qt = NS(QtGui=gui, QtCore=NS(Qt=NS(Tool=1, WindowStaysOnTopHint=0x40000, WindowFlags=int, WA_QuitOnClose=2)))
     if title == TITLES[0]:
         monkeypatch.setattr(module, "search_result", lambda fields: ("/A", ()))
     else:
@@ -992,7 +992,7 @@ def node_qt(widget: type = Widget, button: type = Widget) -> Any:
         ),
         QtCore=NS(
             Qt=NS(
-                Tool=1,
+                Tool=1, WindowStaysOnTopHint=0x40000,
                 WindowFlags=int,
                 WA_QuitOnClose=2,
                 ItemIsEnabled=1,

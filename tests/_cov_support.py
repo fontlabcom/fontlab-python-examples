@@ -199,7 +199,7 @@ def make_qt(widget: type = Widget) -> NS:
         QAbstractItemView=NS(ExtendedSelection=3), QApplication=Application, QDrag=Drag,
     )
     core = NS(Qt=NS(CopyAction=1, Window=2, WA_QuitOnClose=3, LeftButton=1,
-                    Tool=4, PlainText=5, WindowFlags=int), QMimeData=MimeData)
+                    Tool=4, WindowStaysOnTopHint=0x40000, PlainText=5, WindowFlags=int), QMimeData=MimeData)
     return NS(QtGui=gui, QtCore=core, clipboard=clipboard, drags=drags, Drag=Drag)
 
 

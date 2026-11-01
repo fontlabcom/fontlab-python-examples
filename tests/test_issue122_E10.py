@@ -341,7 +341,7 @@ def test_panel_export_error_and_signal_cleanup(
         QtGui=gui,
         QtCore=SimpleNamespace(
             Qt=SimpleNamespace(
-                WindowFlags=lambda value: value, Tool=1, WA_QuitOnClose=2
+                WindowFlags=lambda value: value, Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2
             )
         ),
     )
@@ -399,7 +399,7 @@ def make_panel(title: str) -> tuple[dict[str, Any], Any]:
         QtGui=gui,
         QtCore=SimpleNamespace(
             Qt=SimpleNamespace(
-                WindowFlags=lambda value: value, Tool=1, WA_QuitOnClose=2
+                WindowFlags=lambda value: value, Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2
             )
         ),
     )
@@ -620,7 +620,7 @@ def test_localized_initial_build_failure_can_be_corrected_and_discarded(
         QtGui=gui,
         QtCore=SimpleNamespace(
             Qt=SimpleNamespace(
-                WindowFlags=lambda value: value, Tool=1, WA_QuitOnClose=2
+                WindowFlags=lambda value: value, Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2
             )
         ),
     )

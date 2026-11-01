@@ -355,7 +355,7 @@ def show(qt: Any, parent: Any) -> Any:
         """Keep cell edits until Apply or Refresh; synchronize selection explicitly."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.setWindowTitle(TITLE)
             self.setAttribute(core.Qt.WA_QuitOnClose, False)
             self.resize(800, 560)

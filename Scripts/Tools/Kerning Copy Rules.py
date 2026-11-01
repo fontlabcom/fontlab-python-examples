@@ -140,7 +140,7 @@ def show(qt: Any, parent: Any) -> Any:
         """Keep complete output; discard stale preview when the recipe changes."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.setWindowTitle(TITLE)
             self.setAttribute(core.Qt.WA_QuitOnClose, False)
             self.resize(640, 560)

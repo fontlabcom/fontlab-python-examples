@@ -293,9 +293,9 @@ def test_curve_when_proportions_change_then_tangents_and_types_stay(
 ) -> None:
     curve = cubic()
     moves = module.handle_moves(curve, "Proportions", 0.3, 0.5)
-    assert [(x, y) for _, x, y in moves] == pytest.approx(
-        [(0, math.sqrt(20000) * 0.3), (100 - math.sqrt(20000) * 0.5, 100)]
-    )
+    expected = [(0, math.sqrt(20000) * 0.3), (100 - math.sqrt(20000) * 0.5, 100)]
+    for actual, point in zip([(x, y) for _, x, y in moves], expected, strict=True):
+        assert actual == pytest.approx(point), "Preserve ordered proportional handle points"
     assert module.proportions(curve) == pytest.approx(
         (30 / math.sqrt(20000), 30 / math.sqrt(20000))
     )
@@ -1071,9 +1071,8 @@ def test_planning_when_native_getters_return_fresh_wrappers_then_one_snapshot_an
     module.CoordinateEditor().write(layer, steps)
     oracle = module.changes(layer_with([expected_curve]), mode, a, b, False, False)
     module.CoordinateEditor().write(None, [r.edit for r in oracle if r.edit])
-    assert [(n.x, n.y) for n in fresh.state] == pytest.approx(
-        [(n.x, n.y) for n in expected_curve.nodes()]
-    )
+    for actual, expected in zip(fresh.state, expected_curve.nodes(), strict=True):
+        assert (actual.x, actual.y) == pytest.approx((expected.x, expected.y)), "Fresh wrappers must preserve every ordered node coordinate"
     if mode == "Slope":
         assert [fresh.state[i].x for i in (2, 3, 4)] == [30, 50, 70], (
             "Smooth node's two handles must follow"

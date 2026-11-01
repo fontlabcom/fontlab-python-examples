@@ -58,3 +58,7 @@ The practical menu collection, TypeRig-inspired tools, explicit historical
 source dispositions and archive-independent default tests are integrated.
 Documentation generation and offline runtime checks are present. See CHANGELOG
 for verified changes and historical acceptance limits; see TODO for open work.
+
+## Independent panel priority source candidate
+
+Twenty-seven standalone Tool constructors now preserve their flags and request TypeRig priority. The28 embedded show routes include one intentional dock, which is unchanged. Other script constructors use the shared launcher or create child canvases. Lessons Models/Forms reach the shared launcher; GetGo Font Info Mini Tool reaches App reports. Verify installed shared App plus these menus in dedicated native FontLab, including switching Font/Glyph windows, Close/reopen and other-application behavior.

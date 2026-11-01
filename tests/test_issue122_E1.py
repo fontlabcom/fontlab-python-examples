@@ -221,6 +221,7 @@ class Widget:
 
     def __init__(self, *args: Any) -> None:
         object.__setattr__(self, "_ready", False)
+        self.constructor_flags = args[1] if len(args) == 2 and isinstance(args[1], int) else None
         self.nodes: list[Any] = []
         for arg in args:
             if isinstance(arg, Widget):
@@ -514,7 +515,7 @@ def host(app: Any, monkeypatch: Any) -> Any:
         QtGui=gui,
         QtCore=SimpleNamespace(
             QByteArray=bytes,
-            Qt=SimpleNamespace(Tool=1, WindowFlags=int, WA_QuitOnClose=2, PlainText=0),
+            Qt=SimpleNamespace(Tool=1, WindowStaysOnTopHint=0x40000, WindowFlags=int, WA_QuitOnClose=2, PlainText=0),
         ),
     )
     return SimpleNamespace(
@@ -1394,3 +1395,12 @@ def test_star_paint_failure_restores_borrowed_painter(host: Any) -> None:
     panel.editor_delegate.paint(painter, option, SimpleNamespace(row=lambda: 0))
     assert calls == ["save", "restore"] and "paint failed" in panel.status_line.text()
     close_panel(panel)
+
+
+@pytest.mark.parametrize("title", TITLES)
+def test_independent_panel_when_opened_then_priority_preserves_tool_and_cleanup(title, host):
+    module, panel = open_panel(title, host)
+    assert panel.constructor_flags == host.qt.QtCore.Qt.Tool | 0x40000, "Modeless Tool priority must be set before showing"
+    assert panel.visible, "The flagged panel must still open"
+    panel.closeEvent(SimpleNamespace(accept=lambda: None, ignore=lambda: None))
+    assert panel.deleted, "Priority must preserve owned panel cleanup"

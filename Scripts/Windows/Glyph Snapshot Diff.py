@@ -146,7 +146,7 @@ def show(qt: Any, parent: Any, capture: Callable[[], Any] | None = None) -> Any:
         """Retain two detached snapshots and one reusable visible model."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.baseline: Snapshot | None = None
             self.latest: Snapshot | None = None
             self.package_id: int | None = None

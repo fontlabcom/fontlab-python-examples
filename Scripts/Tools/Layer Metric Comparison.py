@@ -156,7 +156,7 @@ def show(qt: Any, parent: Any) -> Any:
         """Own inputs, current output and a retryable signal scope."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.setWindowTitle(TITLE)
             self.setAttribute(core.Qt.WA_QuitOnClose, False)
             self.resize(740, 540)

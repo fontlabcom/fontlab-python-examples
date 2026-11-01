@@ -279,7 +279,7 @@ def qt() -> Any:
         "QWidget", "QLabel", "QLineEdit", "QPlainTextEdit", "QPushButton", "QVBoxLayout",
         "QDoubleSpinBox", "QComboBox")})
     gui.QApplication = SimpleNamespace(clipboard=lambda: clipboard, focusWidget=lambda: clipboard)
-    core = SimpleNamespace(Qt=SimpleNamespace(WindowFlags=lambda value: value, Tool=1,
+    core = SimpleNamespace(Qt=SimpleNamespace(WindowFlags=lambda value: value, Tool=1, WindowStaysOnTopHint=0x40000,
                                               WA_QuitOnClose=2),
                            QTimer=Widget, QSettings=NativeSettings,
                            QMetaMethod=SimpleNamespace(Signal=1, Slot=2))

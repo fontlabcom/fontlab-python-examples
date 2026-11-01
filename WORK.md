@@ -4925,3 +4925,40 @@ or repository Git-state change was performed.
 
 Complete caller, pin, file and gate evidence: `../s6-scratch/roundD-r1/`.
 No native retest, commits or repository Git-state changes.
+
+
+## 2026-11-01 — Independent modeless panel priority
+
+Read-only sibling symlinks use reviewed App panel-priority worktree plus canonical Fly/Scriptmix. No edits through them. Enumerated28 embedded show routes:27 standalone Tool windows and Unicode Issues Dock. Other local QWidget constructors are children or shared-launcher paths. Lessons Models/Forms launch through App; GetGo font-info uses App reports. Only27 constructor flag expressions changed; the parent, wrapped flags type, controls and ownership remain. Updated63 destination pin occurrences and27 generated documentation hashes; verified every changed manifest value against destination bytes and found zero stale former hashes in tracked Python/JSON/Markdown. Historical source hashes/licences unchanged.
+
+Exact test prefix (all commands through `rtk proxy`, from this worktree):
+
+```sh
+export FONTLAB_REFERENCE_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting
+export UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/panel-priority-20261101/uv-cache
+export TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/example-priority-20261101
+export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'
+PYTHONPATH=../fontlab-fly/src QT_QPA_PLATFORM=offscreen uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../fontlab-fontlabapp --with PySide6-Essentials python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R1a.py tests/test_issue122_R1b.py tests/test_issue122_R1c.py tests/test_issue122_R2.py tests/test_issue122_R3.py
+```
+
+- Core baseline exit0:1825 passed/92 skipped. Regression-first `...wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_E1.py -k priority` exit1:7 failed/23 passed/142 deselected (wheel-env under issue123/fontport-read/artifacts-3ddbd09/install-checks). Failures measured missing priority through actual show functions.
+- Initial TypeRig baseline used `PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src` with pytest only: exit1,487 passed/9 failed/7 skipped. Five failures required noneditable App, four exposed current pytest nested-approx rejection. A diagnostic ordinary App install with pytest8.4.2 passed496/7; this is not the accepted gate. Final tests use current resolver and preserve ordered coordinate/count/tolerance by per-point approx with strict zip at the two failing assertion sites.
+- Final core command above: exit0,1832 passed/92 skipped. Same core command with `QT_QPA_PLATFORM=offscreen` and `--with PySide6-Essentials`: exit0,1832 passed/92 skipped. These are source tests with Qt doubles; adding the binding does not make them native proof.
+- Final TypeRig command above: exit0,496 passed/7 skipped, genuine noneditable App build without pretend versions. New/strengthened tests verify constructor flags before show and existing Close/disconnect lifetime in7 Models and2 TypeRig-derived panels. Other existing panel suites exercise all affected families.
+- `ruff check --no-cache Scripts`: exit1,30 existing E402/E741 findings. Compared each finding against `git show HEAD:<file>` piped to `ruff check --no-cache --output-format=json --stdin-filename <file> -`: all30 code/location/message triples identical. No unrelated source formatting or lint cleanup.
+- Manifest verification script: exit0,63 exact destination updates, zero changed source pins, zero stale old hashes. Core catalogue test regenerated27 menu-page source hashes.
+
+Wait, but flag expressions and doubles do not prove macOS stacking. Full native/artifact/publication acceptance remains open. No source third-party bytes, canonical files, dependencies or installations were changed; no native run, commit or push.
+
+
+Root verification 2026-11-01: independent source/hash review approved all27
+flag-only edits,63 exact destination pins and27 page hashes; historical fields
+unchanged. Full configured coverage gate exits0:1832passed/92skipped core,
+496passed/7skipped TypeRig, all27 changed modules81.90–100% combined coverage.
+Exact command: `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin sh .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/example-priority-20261101/fontlab-python-examples fontlab-python-examples`
+from workspace root. Evidence copied to sibling gate-final (eD6QYa). Initial
+controller attempts exit3 (missing upstream) and exit1 (PATH omitted uv; KRdt8U)
+retained. Set isolated feature upstream to origin/issue-101-pythonqt-examples;
+verified baseline7d2f2cf. Existing source-gate pretend version policy is unchanged;
+this is source coverage, not ordinary-artifact/native proof.

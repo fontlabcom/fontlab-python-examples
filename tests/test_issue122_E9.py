@@ -329,7 +329,7 @@ def host(monkeypatch: Any) -> Any:
     qt = SimpleNamespace(
         QtGui=gui,
         QtCore=SimpleNamespace(
-            Qt=SimpleNamespace(Tool=1, WA_QuitOnClose=2, WindowFlags=WindowFlags)
+            Qt=SimpleNamespace(Tool=1, WindowStaysOnTopHint=0x40000, WA_QuitOnClose=2, WindowFlags=WindowFlags)
         ),
     )
     sys.modules["fly"].fl = SimpleNamespace(

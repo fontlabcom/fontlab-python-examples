@@ -97,7 +97,7 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
         """Keep Python state on a subclass and never shadow a native member."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.snapshot: Rows = ()
             self.drafts: dict[str, str] = {}
             self.dirty = False

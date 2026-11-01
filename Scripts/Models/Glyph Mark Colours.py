@@ -225,7 +225,7 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
         """Own controls and stage captures before replacing visible results."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.snapshot: Rows = ()
             self.owned_model: Any = None
             self.editor_delegate: Any = None

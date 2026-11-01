@@ -211,7 +211,7 @@ def show(qt: Any, parent: Any) -> Any:
         """Keep the complete report and disconnect signals before deletion."""
 
         def __init__(self) -> None:
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.setWindowTitle(TITLE)
             self.setAttribute(core.Qt.WA_QuitOnClose, False)
             self.resize(700, 520)

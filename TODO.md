@@ -23,3 +23,5 @@ this_file: TODO.md
 - [ ] Complete browser asset provenance, transitive notices and required source availability before site publication.
 - [ ] Recheck the complete reviewed package set with clean wheel/sdist installs and all dependent suites before delivery.
 - [ ] Qualify final documentation routes, accessibility and deployment before publication.
+
+- [ ] Verify TypeRig-style stacking for27 independent Tool panels plus shared-App routes using installed artifacts in native FontLab; preserve dock/modal/child-widget policies.

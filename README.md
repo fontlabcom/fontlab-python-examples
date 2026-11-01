@@ -31,6 +31,8 @@ FontLab loads the package code when a menu runs. Never add a QApplication,
 start a second application event loop or install an alternate Qt binding in
 FontLab. PySide6 is used only for separate, offscreen tests.
 
+The 27 independently launched modeless Tool panels request TypeRig-style window priority while preserving their Tool type. Other modeless menus use App’s shared launcher. The Unicode Issues Dock remains a dock; child widgets and modal dialogs keep their existing policies. Native stacking acceptance remains pending.
+
 ## Use the tools
 
 Open an owned copy of a font. Run a menu from a category below. Where a panel

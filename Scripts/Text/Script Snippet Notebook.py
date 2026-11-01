@@ -99,7 +99,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def __init__(self) -> None:
             """Initialize the owned controls and the local draft state."""
-            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool))
+            gui.QWidget.__init__(self, parent, core.Qt.WindowFlags(core.Qt.Tool | core.Qt.WindowStaysOnTopHint))
             self.connections: list[tuple[Any, Callable[..., Any]]] = []
             self.dirty = False
             self.closed = False
