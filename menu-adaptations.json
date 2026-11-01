@@ -6074,6 +6074,34 @@
       "scope": "Complete original slider controls with local selected-layer geometric spacing-offset preview; no font writers",
       "native_acceptance": "pending",
       "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived UI L-Z/Widgets - Official spinboxes - 468179092748a72e.py",
+      "menu": "Scripts/Widgets/Glyph Metrics and Revisions.py",
+      "source": "rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "source_sha256": "cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db",
+      "destination_sha256": "2b8e8b7e0dae1742b371f13c746719125e18165411d5a4a78ad5026a43eb542b",
+      "entry_point": "show",
+      "family": "spinboxes-part2",
+      "license": "Apache-2.0 (owner D22)",
+      "assets": [],
+      "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
+    },
+    {
+      "source_menu": "Scripts/Archived Official/spinboxes-468179092748a72e - 5895d0ae.py",
+      "menu": "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py",
+      "source": "rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py",
+      "source_sha256": "e25b26cd135fd40ef1ed9316a402483d676ba7606da94007f00078993b5fa54b",
+      "destination_sha256": "70bafdadcd8bc78754eebc516eedd8c1146eaf3f20d1ca2d1af7222ddfc41c12",
+      "entry_point": "show_detailed",
+      "family": "spinboxes-part3",
+      "license": "Apache-2.0 (owner D22)",
+      "assets": [],
+      "scope": "Complete original local numeric and date/time/format interaction contract; selected-layer metric estimates and whole-font revision cutoffs",
+      "native_acceptance": "pending",
+      "original_workflow_accepted": false
     }
   ]
 }
