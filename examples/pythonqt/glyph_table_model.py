@@ -28,11 +28,10 @@ def read(owner: Any, name: str) -> Any:
 
 
 def rows(font: Any) -> list[tuple[str, int, float]]:
-    """One (name, layer count, advance of the active layer) row per glyph."""
+    """One (name, layer count, advance) row per glyph; the advance is fgGlyph.width."""
     result = []
     for glyph in read(font, "glyphs"):
-        layer = read(glyph, "activeLayer")
-        advance = float(read(layer, "advanceWidth")) if layer is not None else 0.0
+        advance = float(read(glyph, "width"))
         result.append((str(read(glyph, "name")), len(list(read(glyph, "layers") or ())), advance))
     return result
 

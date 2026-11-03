@@ -18,6 +18,26 @@ ROOT = Path(__file__).resolve().parents[1]
 EXAMPLES = sorted((ROOT / "examples/pythonqt").glob("*.py"))
 
 
+class FgLayer:
+    """Mirrors the native fgLayer: a name and shapes, but no advance or width."""
+
+    __slots__ = ("name",)
+
+    def __init__(self, name="Regular"):
+        self.name = name
+
+
+class FgGlyph:
+    """Mirrors the native fgGlyph: the advance is `width`, layers are fgLayer objects."""
+
+    __slots__ = ("activeLayer", "layers", "name", "width")
+
+    def __init__(self, name, width, layers=None):
+        layers = [FgLayer()] if layers is None else layers
+        self.name, self.width, self.layers = name, width, layers
+        self.activeLayer = layers[0] if layers else None
+
+
 def load(name):
     path = ROOT / "examples/pythonqt" / f"{name}.py"
     spec = importlib.util.spec_from_file_location(f"pythonqt_example_{name}", path)
@@ -54,8 +74,7 @@ def test_example_when_run_outside_fontlab_then_fails_loudly(path):
 
 def test_live_glyph_panel_when_summarising_then_reads_properties_and_methods():
     module = load("live_glyph_panel")
-    layer = NS(name="Regular", advanceWidth=lambda: 512)  # method and property styles mix
-    glyph = NS(name="A", layers=[layer, layer], activeLayer=layer)
+    glyph = FgGlyph("A", 512.0, [FgLayer(), FgLayer()])
     text = module.summary(glyph)
     assert "Name: A" in text and "Layers: 2" in text and "Advance width: 512" in text
     assert "No current glyph" in module.summary(None)
@@ -63,8 +82,7 @@ def test_live_glyph_panel_when_summarising_then_reads_properties_and_methods():
 
 def test_glyph_table_when_rows_built_then_numbers_stay_numbers():
     module = load("glyph_table_model")
-    layer = NS(advanceWidth=600)
-    font = NS(glyphs=[NS(name="a", layers=[layer], activeLayer=layer), NS(name="b", layers=[], activeLayer=None)])
+    font = NS(glyphs=[FgGlyph("a", 600), FgGlyph("b", 0, [])])
     assert module.rows(font) == [("a", 1, 600.0), ("b", 0, 0.0)]
 
 
@@ -139,9 +157,25 @@ def test_settings_when_status_reports_error_then_save_raises():
 
 def test_batch_when_snapshot_processed_then_scaled_and_font_untouched():
     module = load("batch_with_progress")
-    layer = NS(advanceWidth=500)
-    font = NS(glyphs=[NS(name="a", activeLayer=layer), NS(name="n", activeLayer=None)])
+    glyph = FgGlyph("a", 500)
+    font = NS(glyphs=[glyph, FgGlyph("n", 0, [])])
     records = module.snapshot(font)
     assert records == [("a", 500.0), ("n", 0.0)]
     assert list(module.process(records)) == [("a", 550), ("n", 0)]
-    assert layer.advanceWidth == 500, "the source objects are never modified"
+    assert glyph.width == 500, "the source objects are never modified"
+
+
+def test_fake_layer_when_asked_for_advance_then_like_native_it_has_none():
+    with pytest.raises(AttributeError):
+        getattr(FgLayer(), "advanceWidth")
+
+
+def test_overlay_state_when_module_loaded_again_then_shared_with_earlier_run():
+    """FontLab runs a script as a fresh module each time; state must outlive that."""
+    first = load("canvas_overlay_with_menu")
+    second = load("canvas_overlay_with_menu")
+    assert first._STATE is second._STATE, "a later run must see what an earlier run installed"
+    closed = []
+    first._STATE["menus"] = NS(close=lambda: closed.append(True))
+    second.uninstall()
+    assert closed == [True] and first._STATE["menus"] is None

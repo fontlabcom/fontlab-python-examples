@@ -6,7 +6,7 @@ Shows: QProgressDialog, chunked work driven by a zero-delay QTimer so the
 interface stays responsive and the five-second script deadline is respected,
 cancellation, and a result report.
 Run: open a font and run from the Scripts menu. The batch reads each glyph's
-advance width into a copy and computes widths scaled by 110 percent; it
+advance width (fgGlyph.width) into a copy and computes widths scaled by 110 percent; it
 reports the copy, and writes nothing to the font. Press Cancel to stop early.
 Setup: FontLab 9, Python 3.11, Fly with App (fly.ap.scripting).
 
@@ -28,8 +28,7 @@ def snapshot(font: Any) -> list[tuple[str, float]]:
     """Copy (name, advance) for every glyph. After this the font is not touched."""
     result = []
     for glyph in font.glyphs:
-        layer = glyph.activeLayer
-        result.append((str(glyph.name), float(layer.advanceWidth) if layer is not None else 0.0))
+        result.append((str(glyph.name), float(glyph.width)))
     return result
 
 

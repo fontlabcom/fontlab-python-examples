@@ -21,12 +21,18 @@ exact painter can be removed; menu callbacks never delete their own action
 
 from __future__ import annotations
 
+import sys
 from typing import Any
 
 SHORTCUT = "Ctrl+Alt+Shift+O"
 MENU = "Tools"
 ACTION_TEXT = "Toggle Glyph Name Overlay"
-_STATE: dict[str, Any] = {"menus": None, "canvas": None, "token": None}
+# FontLab runs a script file as a fresh module every time, so module globals do not
+# survive a second run. Keep the state in sys (as App's show_script_dialog does) so a
+# later run can find, remove and replace what an earlier run installed.
+_STATE: dict[str, Any] = sys.__dict__.setdefault(
+    "_fontlab_pythonqt_overlay_example", {"menus": None, "canvas": None, "token": None}
+)
 
 
 def label(glyph_name: str | None) -> str:

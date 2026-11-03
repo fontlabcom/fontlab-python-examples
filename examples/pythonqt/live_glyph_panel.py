@@ -35,10 +35,11 @@ def summary(glyph: Any) -> str:
     lines = [f"Name: {read(glyph, 'name')}"]
     layers = list(read(glyph, "layers") or ())
     lines.append(f"Layers: {len(layers)}")
+    # fgGlyph.width is the advance; the fgLayer objects carry no width of their own.
+    lines.append(f"Advance width: {read(glyph, 'width')}")
     layer = read(glyph, "activeLayer")
     if layer is not None:
         lines.append(f"Active layer: {read(layer, 'name')}")
-        lines.append(f"Advance width: {read(layer, 'advanceWidth')}")
     return "\n".join(lines)
 
 
