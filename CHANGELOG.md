@@ -2,6 +2,21 @@
 this_file: CHANGELOG.md
 ---
 
+## PythonQt examples (issue 201) — 2026-11-03
+
+Added six short, commented PythonQt scripts in `examples/pythonqt/` (live glyph
+panel, glyph table model, canvas overlay with a shortcut menu action, signals
+and timers, saved settings, batch with progress) and offline checks in
+`tests/test_pythonqt_examples.py` (compile, import without FontLab, pure logic).
+They sit outside `Scripts/`, so the 100-menu catalogue, hashes and docs are
+unchanged. The inventory found no stale `fontport.ui`, `fontlabapp.actions` or
+Echopy Glyphs/vanilla references here; every `fly.ap` module used still exists.
+
+Native checks still open: panel updates on glyph change; table sorts numerically
+and filters; overlay text over the canvas and the Ctrl+Alt+Shift+O action;
+`button.connect("clicked()", fn)`; settings persist across restart; progress
+dialog cancels and leaves the font unchanged.
+
 ## Unicode dock refusal and recovery — 2026-11-03
 
 Retain refused Close for retry or parent-destruction cleanup, preserving controls.

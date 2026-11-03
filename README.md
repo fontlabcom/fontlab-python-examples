@@ -90,6 +90,7 @@ Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
 | Path | Contents |
 | --- | --- |
 | `Scripts/<Category>/*.py` | Current menu entrypoints and script-specific logic. |
+| `examples/pythonqt/` | Six short PythonQt teaching scripts (panel, model view, canvas painter and menu action, signals, settings, progress); not menus. See its README. |
 | `lessons/src/fontlab_python_lessons/` | Lazy entrypoints, detached records, Qt models, panels and forms. |
 | `lessons/src/fontlab_python_lessons/getgo/` | Real-font algorithms, reports, binary exports and 99 licensed fixtures. |
 | `lessons/provenance/` | Lesson source and licence records. |
