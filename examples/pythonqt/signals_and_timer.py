@@ -85,13 +85,14 @@ def build(parent: Any) -> Any:
     reset.clicked.connect(on_reset)           # Style 1 again; the bool `checked` arrives in *args.
 
     def teardown(*args: Any) -> None:
-        # Best effort: by now Qt may already have deleted the children, which
-        # raises RuntimeError. The timer is parented to the panel, so Qt cleans up anyway.
+        # Best effort: by now Qt may already have deleted the children, and PythonQt
+        # reports a destroyed object as ValueError (RuntimeError is also accepted).
+        # The timer is parented to the panel, so Qt cleans up anyway.
         try:
             timer.stop()
             timer.timeout.disconnect(on_tick)
             reset.clicked.disconnect(on_reset)
-        except RuntimeError:
+        except (RuntimeError, ValueError):
             pass
 
     panel.destroyed.connect(teardown)

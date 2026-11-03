@@ -10,8 +10,8 @@ Setup: FontLab 9, Python 3.11, Fly with App (fly.ap.scripting). Nothing is
 written to any font.
 
 Why a timer: this example does not assume a glyph-change signal. Polling the
-current glyph name every 200 ms is cheap, and the label is rewritten only when
-the name differs, so the panel never flickers or fights the editor.
+current glyph every 200 ms is cheap, and the label is rewritten only when its text
+differs (a new glyph, or a changed width or layer count), so the panel never flickers.
 """
 
 from __future__ import annotations
@@ -56,16 +56,16 @@ def build(parent: Any) -> Any:
     label.setTextInteractionFlags(core.Qt.TextSelectableByMouse)
     layout = gui.QVBoxLayout(panel)
     layout.addWidget(label)
-    shown = [object()]  # Never equals a glyph name, so the first tick always draws.
+    shown = [None]  # The text on screen; summary() is never None, so the first tick draws.
 
     def tick(*args: Any) -> None:
         # Slots run inside Qt: never let an exception escape into the event loop.
         try:
             glyph = fl.CurrentGlyph()
-            name = None if glyph is None else read(glyph, "name")
-            if name != shown[0]:
-                shown[0] = name
-                label.setText(summary(glyph))
+            text = summary(glyph)
+            if text != shown[0]:
+                shown[0] = text
+                label.setText(text)
         except Exception as error:  # noqa: BLE001 - Qt callback boundary
             label.setText(f"Refresh failed: {error}")
 

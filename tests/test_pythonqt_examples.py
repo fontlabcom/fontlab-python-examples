@@ -11,11 +11,13 @@ import importlib.util
 import py_compile
 from pathlib import Path
 from types import SimpleNamespace as NS
+from typing import ClassVar
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAMPLES = sorted((ROOT / "examples/pythonqt").glob("*.py"))
+HOST_MODULES = {"fly", "PythonQt", "fontlab", "fontlabapp", "echopy", "fontlab_echopy"}
 
 
 class FgLayer:
@@ -68,8 +70,14 @@ def test_example_when_imported_then_needs_no_fontlab_and_documents_itself(path):
 @pytest.mark.parametrize("path", EXAMPLES, ids=lambda p: p.stem)
 def test_example_when_run_outside_fontlab_then_fails_loudly(path):
     module = load(path.stem)
-    with pytest.raises((ImportError, RuntimeError)):  # RuntimeError when App is installed but FontLab is absent
+    try:
         module.main()  # no silent success without the host
+    except ModuleNotFoundError as error:  # the host modules are absent
+        assert error.name in HOST_MODULES, f"unrelated import failed: {error}"
+    except RuntimeError as error:  # fontlabapp is installed but FontLab is not running
+        assert "native API inside FontLab" in str(error), f"unrelated error: {error}"
+    else:
+        pytest.fail(f"{path.name} ran without FontLab")
 
 
 def test_live_glyph_panel_when_summarising_then_reads_properties_and_methods():
@@ -167,7 +175,7 @@ def test_batch_when_snapshot_processed_then_scaled_and_font_untouched():
 
 def test_fake_layer_when_asked_for_advance_then_like_native_it_has_none():
     with pytest.raises(AttributeError):
-        getattr(FgLayer(), "advanceWidth")
+        _ = FgLayer().advanceWidth
 
 
 def test_overlay_state_when_module_loaded_again_then_shared_with_earlier_run():
@@ -179,3 +187,182 @@ def test_overlay_state_when_module_loaded_again_then_shared_with_earlier_run():
     first._STATE["menus"] = NS(close=lambda: closed.append(True))
     second.uninstall()
     assert closed == [True] and first._STATE["menus"] is None
+
+
+# --- A fake Qt, enough to run build() the way the host would -------------------------------
+SIGNALS = {"timeout", "clicked", "canceled", "destroyed"}
+
+
+class Signal:
+    def __init__(self):
+        self.slots, self.error = [], None
+
+    def connect(self, slot):
+        self.slots.append(slot)
+
+    def disconnect(self, slot):
+        if self.error:
+            raise self.error  # like a signal of an already deleted C++ object
+        self.slots.remove(slot)
+
+    def emit(self, *args):
+        for slot in list(self.slots):
+            slot(*args)
+
+
+class Widget:
+    """Records every method call; the names in SIGNALS are signals."""
+
+    made: ClassVar[dict] = {}
+
+    def __init__(self, *args):
+        self.__dict__["calls"], self.__dict__["signals"] = [], {}
+        Widget.made.setdefault(type(self).__name__, []).append(self)
+
+    def __getattr__(self, name):
+        if name in SIGNALS:
+            return self.signals.setdefault(name, Signal())
+        return lambda *args: self.calls.append((name, args))
+
+    def called(self, name):
+        return [args for method, args in self.calls if method == name]
+
+
+class QTimer(Widget):
+    singles: ClassVar[list] = []
+
+    @staticmethod
+    def singleShot(delay, callback):
+        QTimer.singles.append(callback)
+
+
+class AnyAttr:
+    def __getattr__(self, name):
+        return name
+
+
+class Space:
+    """A Qt module: QTimer is fixed, any other Q-name becomes a recording Widget class."""
+
+    def __init__(self):
+        self.classes = {"QTimer": QTimer, "Qt": AnyAttr()}
+
+    def __getattr__(self, name):
+        return self.classes.setdefault(name, type(name, (Widget,), {}))
+
+
+@pytest.fixture
+def host(monkeypatch):
+    """A fake `fly` module with a font of 30 glyphs and a mutable current glyph."""
+    import sys
+    from types import ModuleType
+
+    Widget.made, QTimer.singles = {}, []
+    state = NS(font=NS(glyphs=[FgGlyph(f"g{i}", 100 + i) for i in range(30)]), glyph=FgGlyph("A", 600.0))
+    fly = ModuleType("fly")
+    fly.fl = NS(CurrentFont=lambda: state.font, CurrentGlyph=lambda: state.glyph)
+    fly.qt = NS(QtCore=Space(), QtGui=Space())
+    monkeypatch.setitem(sys.modules, "fly", fly)
+    return state
+
+
+def test_batch_when_built_then_dialog_stays_open_after_the_last_slice(host):
+    dialog = load("batch_with_progress").build(None)
+    assert dialog.called("setAutoReset") == [(False,)], "autoReset would hide the Done text"
+    assert dialog.called("setAutoClose") == [(False,)], "autoClose would hide the Done text"
+    timer = Widget.made["QTimer"][0]
+    timer.timeout.emit()
+    assert dialog.called("setValue")[-1] == (25,)
+    timer.timeout.emit()
+    assert dialog.called("setLabelText")[-1][0].startswith("Done: 30 widths")
+    assert dialog.called("setCancelButtonText")[-1] == ("Close",)
+    assert dialog.called("close") == [], "the user closes the finished dialog"
+
+
+def test_batch_when_cancelled_early_then_reports_and_closes_after_the_signal(host, capsys):
+    dialog = load("batch_with_progress").build(None)
+    Widget.made["QTimer"][0].timeout.emit()
+    dialog.canceled.emit()
+    assert "Batch cancelled after 25 of 30 glyphs" in capsys.readouterr().out
+    assert dialog.called("close") == [], "closing waits for the signal to return"
+    assert len(QTimer.singles) == 1
+    QTimer.singles[0]()
+    assert dialog.called("close") == [()]
+
+
+def test_batch_when_closed_after_finishing_then_message_says_closed_not_cancelled(host, capsys):
+    dialog = load("batch_with_progress").build(None)
+    timer = Widget.made["QTimer"][0]
+    timer.timeout.emit()
+    timer.timeout.emit()
+    dialog.canceled.emit()
+    out = capsys.readouterr().out
+    assert "closed (30 of 30 glyphs done)" in out and "cancelled" not in out
+
+
+def test_closing_text_when_done_or_not_then_wording_differs():
+    module = load("batch_with_progress")
+    assert module.closing_text(3, 5).startswith("Batch cancelled after 3 of 5")
+    assert module.closing_text(5, 5).startswith("Batch dialog closed (5 of 5")
+
+
+def test_batch_when_no_font_then_asks_to_open_one(host):
+    host.font = None
+    with pytest.raises(RuntimeError, match="Open a font"):
+        load("batch_with_progress").build(None)
+
+
+@pytest.mark.parametrize("error", [ValueError("deleted"), RuntimeError("deleted")])
+def test_signals_teardown_when_children_already_destroyed_then_nothing_escapes(host, error):
+    panel = load("signals_and_timer").build(None)
+    Widget.made["QTimer"][0].timeout.error = error
+    panel.destroyed.emit()  # an exception here would escape into Qt
+
+
+def test_signals_teardown_when_children_alive_then_disconnects_what_it_connected(host):
+    panel = load("signals_and_timer").build(None)
+    timer = Widget.made["QTimer"][0]
+    reset = Widget.made["QPushButton"][1]
+    assert timer.timeout.slots and reset.clicked.slots, "build connected both"
+    panel.destroyed.emit()
+    assert timer.timeout.slots == [] and reset.clicked.slots == []
+    assert timer.called("stop"), "teardown stops the timer first"
+
+
+def test_signals_panel_when_start_clicked_then_timer_runs_and_done_is_scheduled(host):
+    load("signals_and_timer").build(None)
+    timer, (start, _reset) = Widget.made["QTimer"][0], Widget.made["QPushButton"]
+    assert timer.called("start") == [], "stopped until Start is pressed"
+    on_start = next(args[1] for method, args in start.calls if method == "connect")
+    on_start()
+    assert timer.called("start") == [()] and start.called("setText")[-1] == ("Stop",)
+    for _ in range(50):
+        timer.timeout.emit()
+    assert len(QTimer.singles) == 1, "the done message is scheduled exactly once"
+
+
+def test_live_panel_when_only_width_changes_then_label_is_redrawn(host):
+    load("live_glyph_panel").build(None)
+    label, timer = Widget.made["QLabel"][0], Widget.made["QTimer"][0]
+    drawn = len(label.called("setText"))
+    assert drawn == 1, "the first tick draws"
+    timer.timeout.emit()
+    assert len(label.called("setText")) == drawn, "an unchanged glyph is not redrawn"
+    host.glyph.width = 640.0  # same name, new advance
+    timer.timeout.emit()
+    assert len(label.called("setText")) == drawn + 1
+    assert "Advance width: 640.0" in label.called("setText")[-1][0]
+    host.glyph = FgGlyph("A", 640.0, [FgLayer(), FgLayer()])  # same name and width, new layer count
+    timer.timeout.emit()
+    assert "Layers: 2" in label.called("setText")[-1][0]
+    host.glyph = None
+    timer.timeout.emit()
+    assert "No current glyph" in label.called("setText")[-1][0]
+
+
+def test_live_panel_when_reading_glyph_fails_then_label_shows_the_error(host):
+    load("live_glyph_panel").build(None)
+    label, timer = Widget.made["QLabel"][0], Widget.made["QTimer"][0]
+    host.glyph = NS()  # has no name: summary raises
+    timer.timeout.emit()
+    assert "Refresh failed" in label.called("setText")[-1][0]

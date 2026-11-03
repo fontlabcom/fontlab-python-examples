@@ -5,11 +5,11 @@ this_file: PLAN.md
 ## Dock refusal and shared recovery — 2026-11-03
 
 The Unicode Issues Dock retains refused Close for retry or parent destruction.
-Five new regressions include two red refusal cases; all43focused cases pass.
-Normal1842core/496TypeRig with96/7existing skips and94.42%changed-script coverage
-passes. Both App.dev334 ordinary prefixes pass1846core/496TypeRig with92/7existing
+Five new regressions include two red refusal cases; all 43 focused cases pass.
+Normal 1842 core/496 TypeRig with 96/7 existing skips and 94.42% changed-script coverage
+passes. Both App.dev334 ordinary prefixes pass 1846 core/496 TypeRig with 92/7 existing
 skips and unchanged import-origin guards. Retain all controls and frozen records.
-Complete the separately audited27constructor/parent-death and shared-launcher
+Complete the separately audited 27 constructor/parent-death and shared-launcher
 lifetime contracts, then actual native/window/four-font/history/publication gates.
 
 - [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.

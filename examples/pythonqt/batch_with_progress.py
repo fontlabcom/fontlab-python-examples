@@ -3,8 +3,7 @@
 """What: Run a batch over every glyph of the current font with a cancellable
 progress dialog, working on a copy of the data so the font is never changed.
 Shows: QProgressDialog, chunked work driven by a zero-delay QTimer so the
-interface stays responsive and the five-second script deadline is respected,
-cancellation, and a result report.
+interface stays responsive between slices, cancellation, and a result report.
 Run: open a font and run from the Scripts menu. The batch reads each glyph's
 advance width (fgGlyph.width) into a copy and computes widths scaled by 110 percent; it
 reports the copy, and writes nothing to the font. Press Cancel to stop early.
@@ -22,6 +21,8 @@ from typing import Any
 KEY = "pythonqt-example-batch-progress"
 SCALE = 1.10
 SLICE = 25  # Glyphs per timer tick: small enough that one tick never blocks the UI.
+CLOSED_AFTER_DONE = "Batch dialog closed ({} of {} glyphs done)"
+CANCELLED = "Batch cancelled after {} of {} glyphs"
 
 
 def snapshot(font: Any) -> list[tuple[str, float]]:
@@ -38,6 +39,24 @@ def process(records: list[tuple[str, float]], scale: float = SCALE) -> Iterator[
         yield name, round(advance * scale)
 
 
+def closing_text(done: int, total: int) -> str:
+    """What to report when the dialog goes away: cancelled early, or closed after finishing."""
+    template = CANCELLED if done < total else CLOSED_AFTER_DONE
+    return template.format(done, total) + "; the font was not changed."
+
+
+def configure(dialog: Any) -> None:
+    """Keep the dialog open at 100 percent so the Done message can be read.
+
+    By default a QProgressDialog resets and closes itself when it reaches its
+    maximum; that would hide the result before anyone saw it.
+    """
+    dialog.setWindowTitle("Batch with Progress")
+    dialog.setMinimumDuration(0)
+    dialog.setAutoReset(False)
+    dialog.setAutoClose(False)
+
+
 def build(parent: Any) -> Any:
     from fly import fl, qt
 
@@ -49,9 +68,8 @@ def build(parent: Any) -> Any:
     work = process(records)
     done: list[tuple[str, float]] = []
     dialog = gui.QProgressDialog("Scaling widths on a copy...", "Cancel", 0, len(records), parent)
-    dialog.setWindowTitle("Batch with Progress")
+    configure(dialog)
     dialog.setAttribute(core.Qt.WA_DeleteOnClose)
-    dialog.setMinimumDuration(0)
     timer = core.QTimer(dialog)  # Child of the dialog: it dies with it.
 
     def finish(text: str) -> None:
@@ -73,10 +91,11 @@ def build(parent: Any) -> Any:
             finish(f"Stopped: {error}")
 
     def cancelled(*args: Any) -> None:
+        # Qt emits canceled for the Cancel button and for "Close" after the batch is done.
         timer.stop()
-        # QProgressDialog also emits canceled when it is closed after finishing.
-        message = "Batch cancelled after {} of {} glyphs" if len(done) < len(records) else "Batch dialog closed ({} of {} glyphs done)"
-        print(message.format(len(done), len(records)) + "; the font was not changed.")
+        print(closing_text(len(done), len(records)))
+        # Close after the signal returns, not inside its dispatch.
+        core.QTimer.singleShot(0, dialog.close)
 
     dialog.canceled.connect(cancelled)  # Qt spells the signal "canceled".
     timer.timeout.connect(step)

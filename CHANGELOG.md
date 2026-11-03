@@ -12,21 +12,20 @@ They sit outside `Scripts/`, so the 100-menu catalogue, hashes and docs are
 unchanged. The inventory found no stale `fontport.ui`, `fontlabapp.actions` or
 Echopy Glyphs/vanilla references here; every `fly.ap` module used still exists.
 
-Native run: signals, settings and overlay passed; panel, table and batch failed on a
-non-existent fgLayer.advanceWidth and now read fgGlyph.width (fakes mirror fgLayer).
-The overlay example keeps its install state in sys so a later run can remove it.
-Still to check: panel updates on glyph change; table sorts numerically
-and filters; overlay text over the canvas and the Ctrl+Alt+Shift+O action;
-`button.connect("clicked()", fn)`; settings persist across restart; progress
-dialog cancels and leaves the font unchanged.
+Native results (FontLab 9, owned copy): after f8cb86d all six examples passed.
+The overlay painter drew, its menu action was added and removed (Tools menu action
+count 0, then 2, then 0). Before that, the panel, table and batch examples failed on
+a non-existent fgLayer.advanceWidth and now read fgGlyph.width; the test fakes mirror
+the real fgLayer. The overlay example keeps its install state in sys so a later run
+can remove it. Not claimed: behaviour beyond what was observed in those runs.
 
 ## Unicode dock refusal and recovery — 2026-11-03
 
 Retain refused Close for retry or parent-destruction cleanup, preserving controls.
-Five new checks and accurate Qt doubles pass normal1842core/496TypeRig and both
-installed1846core/496TypeRig; changed script94.42%combined. Existing skips and
+Five new checks and accurate Qt doubles pass normal 1842 core/496 TypeRig and both
+installed 1846 core/496 TypeRig; changed script 94.42% combined. Existing skips and
 native acceptance remain explicit. Update only the current script-source link;
-all historical hashes and remaining27constructor/native/history scope remain.
+all historical hashes and remaining 27 constructor/native/history scope remain.
 
 ## Unreleased — owned priority messages
 
