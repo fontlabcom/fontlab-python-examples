@@ -2,6 +2,17 @@
 this_file: TODO.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## Current workspace handoff —2026-11-03
+
+Issue 123 is paused. Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+
+Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+
+- [ ] Re-review refusal-reporting fixes and pass complete core/TypeRig and per-module80%gates after reviewed source-pin regeneration.
+- [ ] Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
+<!-- /workspace-handoff -->
+
 - [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
 
 

@@ -2,6 +2,23 @@
 this_file: AGENTS.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## Workspace documentation handoff —2026-11-03
+
+Issue 123 implementation is paused by the owner. The present request authorizes
+only documentation maintenance; preserve all source, owner edits and branch state.
+Useful menu tools and separately packaged Lessons examples. Observed canonical checkout: `main` at `8648fd4528e1`. No source integration is performed by this update.
+
+Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+
+Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+
+Read workspace AGENTS/DECISIONS and local project guidance before later work.
+Use direct execution unless a new request explicitly authorizes agents. Product
+work stays isolated; this docs-only request does not authorize native actions,
+installs, merges, pushes, releases, generated-site updates or legacy retirement.
+<!-- /workspace-handoff -->
+
 # FontLab Python examples
 
 Provide useful FontLab menu examples and a separately packaged Lessons runtime.

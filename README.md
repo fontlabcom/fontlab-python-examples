@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab Python examples
 
-One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9.
+One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9. **Workspace handoff (2026-11-03):** Issue 123 development is paused. Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls. Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
 They inspect fonts, build proofs, edit selected data and show modeless panels.
 Each script states its setup, scope and limits. Some scripts change fonts;
 read the script's Usage and Setup text before running it.

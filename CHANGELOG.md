@@ -2,6 +2,23 @@
 this_file: CHANGELOG.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## 2026-11-03 — documentation handoff for November 2–3
+
+Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+
+Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+
+Observed canonical checkout: `main` at `8648fd4528e1`. No source integration is performed by this update.
+
+Updated the requested AGENTS/TODO/PLAN/CHANGELOG/README documentation and
+recorded the paused state. Existing project text, examples and history remain;
+no runtime source, installation, native session, branch/ref, release or site was
+changed by this documentation maintenance. Source/archive/ordinary/native and
+promotion acceptance remain separate claims. Detailed workspace evidence is
+recorded in the root CHANGELOG and retained verification reports.
+<!-- /workspace-handoff -->
+
 ## Unreleased — owned priority messages
 
 Four warning routes preserve modal results and use an owned priority helper; SVG
