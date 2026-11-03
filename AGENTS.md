@@ -28,6 +28,10 @@ Provide useful FontLab menu examples and a separately packaged Lessons runtime.
 - Target embedded Python 3.11 arm64. Request `--python cpython-3.11-macos-aarch64-none`; plain `3.11` can select x86_64.
 - Keep `Scripts/<Title Case Category>/*.py` one level deep. Read each Setup line for its App minimum.
 - General UI and native FontLab helpers belong in `fontlabapp`. `fontport` is fontParts/UFO only; `glyport` is Glyphs.app compatibility only. Scripts use App through `fly.ap`.
+- Teach canonical domain imports, such as `fly.ap.core.scripting` and
+  `fly.ap.glyphs.catalog.model`. Fontport editors live in `fly.ap.fontui`.
+- `python -B tools/migrate_app_paths.py --check` audits API path migration against
+  the sibling App alias table; migration fixtures intentionally retain old inputs.
 - The root project is documentation-only and requires Python 3.12+. Runtime packaging is in `lessons/pyproject.toml`.
 
 ## Checks

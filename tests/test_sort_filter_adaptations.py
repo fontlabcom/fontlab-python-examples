@@ -11,6 +11,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -55,9 +57,9 @@ def test_practical_menu_when_imported_then_lazy_and_exact_public_fly_dispatch(
 ):
     row = next(r for r in adaptations()["adaptations"] if r["entry_point"] == entry)
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.glyph_catalog"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyph_catalog"], entry, lambda: calls.append(entry))
+    for name in ("fly", "fly.ap", "fly.ap.glyphs.catalog.model"):
+        install_module(monkeypatch, name, ModuleType(name))
+    setattr(sys.modules["fly.ap.glyphs.catalog.model"], entry, lambda: calls.append(entry))
     path = ROOT / row["menu"]
     ns = runpy.run_path(str(path), run_name="inspection")
     assert not calls

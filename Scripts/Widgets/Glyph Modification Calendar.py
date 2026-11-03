@@ -24,7 +24,7 @@ Original source/resources are archived outside this repository; this command doe
 
 def main() -> None:
     """Open the complete owned local-date glyph report through the lazy Fly alias."""
-    from fly.ap.glyph_calendar import show
+    from fly.ap.glyphs.calendar.model import show
 
     show()
 

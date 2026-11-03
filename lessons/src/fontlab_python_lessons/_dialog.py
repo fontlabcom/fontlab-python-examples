@@ -9,7 +9,7 @@ from collections.abc import Callable
 from typing import Any
 
 from fly import qt
-from fly.ap import scripting as api
+import fly.ap.core.scripting as api
 
 from .domain import Snapshot
 

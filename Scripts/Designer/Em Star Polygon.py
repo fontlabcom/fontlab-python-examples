@@ -85,7 +85,7 @@ def polygon_svg(
 
 def current_svg(tips: int, outer: float, inner: float, rotation: float) -> str:
     """Read and fence the current font UPM. Refuse a missing or changed font."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module import
 
     package = scripting.current_package()
     if package is None:
@@ -143,9 +143,9 @@ def layer_geometry(layer: Any, qt: Any) -> tuple:
 
 def draw_current(tips: int, outer: float, inner: float, rotation: float, *, disclosure: dict[str, Any] | None = None) -> None:
     """Append one closed contour, fence context and check attached node geometry."""
-    import fly.ap.history as history  # noqa: PLR0402 - Fly module import
-    import fly.ap.masters as masters  # noqa: PLR0402 - Fly module import
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly module import
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - Fly module import
+    import fly.ap.masters.inspect.model as masters  # noqa: PLR0402 - Fly module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module import
     from fly import fl, qt
 
     def context() -> tuple[Any, Any, Any, tuple]:
@@ -245,7 +245,7 @@ def draw_current(tips: int, outer: float, inner: float, rotation: float, *, disc
         facts=facts,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(" ".join(result.mismatches) + " " + history.UNDO_HINT)
@@ -253,8 +253,8 @@ def draw_current(tips: int, outer: float, inner: float, rotation: float, *, disc
 
 def main() -> Any:
     """Open the shared App panel. Keep native imports lazy until menu use."""
-    import fly.ap.qt_properties as properties
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly module import
+    import fly.ap.qt.properties as properties
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module import
     from fly import qt
 
     gui = qt.QtGui
@@ -337,7 +337,7 @@ def main() -> Any:
 
         def draw_polygon(self) -> None:
             """Add one contour or show the shared refusal/recovery message."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 draw_current(*self.parameters(), disclosure=disclosure)

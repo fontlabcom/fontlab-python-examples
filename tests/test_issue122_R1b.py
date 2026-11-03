@@ -13,7 +13,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from fontlabapp.layer_selection import LayerSelection
+from fontlabapp.masters.layers.selection import LayerSelection
 
 from historical_sources import recorded_sha256
 
@@ -119,10 +119,10 @@ def fake_selection_capture(deadline: float) -> LayerSelection:
 
 def test_faked_app_signatures_match_real() -> None:
     for name, fake in (
-        ("glyph_catalog.capture", fake_catalog_capture),
-        ("layer_selection.capture", fake_selection_capture),
+        ("glyphs.catalog.model.capture", fake_catalog_capture),
+        ("masters.layers.selection.capture", fake_selection_capture),
     ):
-        module, attribute = name.split(".")
+        module, attribute = name.rsplit(".", 1)
         real = getattr(importlib.import_module("fontlabapp." + module), attribute)
         assert inspect.signature(fake) == inspect.signature(real), name
 
@@ -146,7 +146,10 @@ def patch_reader(monkeypatch: Any, name: str, result: Any) -> None:
         "layer_selection": ("capture", selection),
     }
     attribute, fake = fakes[name]
-    module = importlib.import_module("fly.ap." + name)
+    module = importlib.import_module("fly.ap." + {
+        "glyph_catalog": "glyphs.catalog.model",
+        "layer_selection": "masters.layers.selection",
+    }[name])
     assert inspect.signature(fake) == inspect.signature(getattr(module, attribute)), (
         name
     )
@@ -687,7 +690,7 @@ class Shape:
 @pytest.fixture
 def node_world(monkeypatch: Any) -> Any:
     """Run the real outline writer and history.commit on owned native-shaped fakes."""
-    history = importlib.import_module("fly.ap.history")
+    history = importlib.import_module("fly.ap.core.history.glyphs")
     module = load("Node Table")
     points = [
         Node(PointF(10, 20)),
@@ -758,7 +761,7 @@ def node_world(monkeypatch: Any) -> Any:
         scan_side_effect=None,
         canvas=canvas,
     )
-    from fontlabapp.history import AutoFacts
+    from fontlabapp.core.history.glyphs import AutoFacts
 
     def scan_auto_facts(package: Any) -> AutoFacts:
         assert package is world.package
@@ -1108,7 +1111,7 @@ def test_node_refused_edits_still_sync_selection(
     refusal: str, node_world: Any, monkeypatch: Any
 ) -> None:
     world, module = node_world, node_world.module
-    history = importlib.import_module("fly.ap.history")
+    history = importlib.import_module("fly.ap.core.history.glyphs")
     if refusal == "base":
         world.facts = history.auto_facts([("Aacute", True, ("A",))])
     elif refusal == "owner":

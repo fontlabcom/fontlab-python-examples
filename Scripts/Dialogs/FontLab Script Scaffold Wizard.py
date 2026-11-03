@@ -56,7 +56,7 @@ def scaffold(name: str, title: str) -> str:
 def main() -> Any:
     """Open a retained, owned panel through Fly and the existing App lifecycle."""
     from fly import qt
-    from fly.ap.scripting import names_dialog_type, show_script_dialog
+    from fly.ap.core.scripting import names_dialog_type, show_script_dialog
 
     g = qt.QtGui
     base = names_dialog_type()

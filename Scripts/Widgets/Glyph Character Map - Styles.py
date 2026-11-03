@@ -31,7 +31,7 @@ Compatibility:
 
 def main() -> None:
     """Open the complete reference picker through Fly's lazy App namespace."""
-    from fly.ap.character_map import show_official
+    from fly.ap.glyphs.character_map.model import show_official
 
     show_official()
 

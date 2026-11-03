@@ -7,6 +7,8 @@ from types import ModuleType, SimpleNamespace as NS
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 MENUS = (
     "Drawing/Glyph Outline SVG.py",
@@ -24,9 +26,9 @@ def test_warning_when_setup_fails_then_uses_owned_priority_helper(monkeypatch, r
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.__path__, ap.__path__ = [], []
     fly.qt, fly.fl, fly.ap = qt, NS(MainWindow=lambda: parent), ap
-    helpers = ModuleType("fly.ap.qt_dialogs")
+    helpers = ModuleType("fly.ap.qt.dialogs")
     helpers.run_standard_message_box = lambda *args: calls.append(args)
-    scripting = ModuleType("fly.ap.scripting")
+    scripting = ModuleType("fly.ap.core.scripting")
 
     def fail(*args):
         raise TimeoutError("setup expired")
@@ -34,8 +36,8 @@ def test_warning_when_setup_fails_then_uses_owned_priority_helper(monkeypatch, r
     scripting.show_script_dialog = fail
     ap.qt_dialogs, ap.scripting = helpers, scripting
     for name, value in (("fly", fly), ("fly.ap", ap),
-                        ("fly.ap.qt_dialogs", helpers), ("fly.ap.scripting", scripting)):
-        monkeypatch.setitem(sys.modules, name, value)
+                        ("fly.ap.qt.dialogs", helpers), ("fly.ap.core.scripting", scripting)):
+        install_module(monkeypatch, name, value)
     menu = runpy.run_path(str(ROOT / "Scripts" / relative))
     menu["main"].__globals__.update(show=fail, panel_type=lambda qt: object)
     assert menu["main"]() is None, "Setup refusal must not escape after the warning"
@@ -48,7 +50,7 @@ def test_actual_warning_when_setup_fails_then_modal_owner_is_preserved(monkeypat
     binding = "PyQt5" if os.environ.get("FONTLABAPP_TEST_QT5") == "1" else "PySide6"
     C = pytest.importorskip(binding + ".QtCore")
     G = pytest.importorskip(binding + ".QtWidgets")
-    import fontlabapp.qt_dialogs as real
+    import fontlabapp.qt.dialogs as real
 
     app = G.QApplication.instance() or G.QApplication([])
     parent = G.QWidget()
@@ -56,7 +58,7 @@ def test_actual_warning_when_setup_fails_then_modal_owner_is_preserved(monkeypat
     fly.__path__, ap.__path__ = [], []
     qt = NS(QtCore=C, QtGui=G)
     fly.qt, fly.fl, fly.ap = qt, NS(MainWindow=lambda: parent), ap
-    scripting = ModuleType("fly.ap.scripting")
+    scripting = ModuleType("fly.ap.core.scripting")
 
     def fail(*args):
         raise TimeoutError("actual warning")
@@ -64,8 +66,8 @@ def test_actual_warning_when_setup_fails_then_modal_owner_is_preserved(monkeypat
     scripting.show_script_dialog = fail
     ap.qt_dialogs, ap.scripting = real, scripting
     for name, value in (("fly", fly), ("fly.ap", ap),
-                        ("fly.ap.qt_dialogs", real), ("fly.ap.scripting", scripting)):
-        monkeypatch.setitem(sys.modules, name, value)
+                        ("fly.ap.qt.dialogs", real), ("fly.ap.core.scripting", scripting)):
+        install_module(monkeypatch, name, value)
     menu = runpy.run_path(str(ROOT / "Scripts" / relative))
     menu["main"].__globals__.update(show=fail, panel_type=lambda qt: object)
     reference = G.QMessageBox(parent)

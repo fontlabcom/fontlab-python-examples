@@ -27,7 +27,7 @@ Compatibility:
 
 def main() -> None:
     """Launch this complete graph profile through the lazy public Fly namespace."""
-    from fly.ap.component_graph import show
+    from fly.ap.components.graph.model import show
 
     show()
 

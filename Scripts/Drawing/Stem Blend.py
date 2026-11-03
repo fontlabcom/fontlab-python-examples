@@ -222,8 +222,8 @@ def read_contours(layer: Any, deadline: float) -> Contours:
 
 def capture_pair(first: str, second: str) -> tuple[str, Contours, Contours]:
     """Read both source layers twice and refuse a changed current font or glyph."""
-    import fly.ap.node_coordinates as coordinates
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.nodes.coordinates as coordinates
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     deadline = monotonic() + 3.0
     snapshots = []
@@ -274,8 +274,8 @@ def numbers(text: str, count: int) -> tuple[float, ...]:
 
 def current_context() -> tuple[Any, Any]:
     """Resolve an owned current glyph without reading native FontGate caches."""
-    import fly.ap.node_coordinates as coordinates
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.nodes.coordinates as coordinates
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     package = scripting.current_package()
     if package is None:
@@ -344,8 +344,8 @@ def prepare_blend(
 
 def create_layer(plan: dict[str, Any], *, disclosure: dict[str, Any] | None = None) -> str:
     """Create one layer through App history and settle; reject stale or unsafe previews."""
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.layer_writer as writer
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.masters.layers.writer as writer
     from fly import fl, qt
 
     package, _ = current_context()
@@ -421,7 +421,7 @@ def create_layer(plan: dict[str, Any], *, disclosure: dict[str, Any] | None = No
         facts=facts,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(
@@ -433,8 +433,8 @@ def create_layer(plan: dict[str, Any], *, disclosure: dict[str, Any] | None = No
 
 def show(qt: Any, parent: Any) -> Any:
     """Show repeatable blend controls; keep SVG detached and invalidate on edits."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -549,7 +549,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def apply_result(self) -> None:
             """Write only the displayed plan; require a new Build after every attempt."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 if self.plan_data is None:

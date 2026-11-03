@@ -31,7 +31,7 @@ Compatibility:
 
 def main() -> None:
     """Open the complete owned worksheet through the lazy Fly App namespace."""
-    from fly.ap.glyph_numeric import show
+    from fly.ap.proof.numeric.launcher import show
 
     show()
 

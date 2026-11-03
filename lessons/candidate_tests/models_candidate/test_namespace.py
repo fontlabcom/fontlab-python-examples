@@ -74,7 +74,7 @@ assert legacy.inspect('QLabel')['launched'] is True
 legacy.close('QLabel')
 assert handle.owner.closed and events == ['show']
 dialog = object()
-sys.modules['fly.ap.scripting'] = NS(show_script_dialog=lambda cls, key: (cls, key))
+sys.modules['fly.ap.core.scripting'] = NS(show_script_dialog=lambda cls, key: (cls, key))
 sys.modules['fontlab_python_lessons.ui'] = NS(dialog_type=lambda name: dialog)
 assert lessons.launch('glyph-name-filter') == (dialog, 'examples-glyph-name-filter')
 assert legacy.launch is not lessons.launch

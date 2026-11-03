@@ -194,9 +194,9 @@ def test_real_app_names_in_g1_form() -> None:
         fly = importlib.import_module("fly")
         assert fly.ALIASES["ap"] == "fontlabapp"
         for name, wanted in {
-            "scripting": ("show_script_dialog", "close_script_dialog"),
-            "qtsafe": ("qt_list", "main_window"),
-            "draft_signals": ("Scope",),
+            "core.scripting": ("show_script_dialog", "close_script_dialog"),
+            "qt.safe": ("qt_list", "main_window"),
+            "core.signals.scope": ("Scope",),
         }.items():
             module = importlib.import_module("fly.ap." + name)
             assert module is importlib.import_module("fontlabapp." + name)

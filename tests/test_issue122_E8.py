@@ -12,6 +12,8 @@ from typing import Any
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
     "Deferred Glyph Report Drag",
@@ -396,10 +398,10 @@ def runtime(monkeypatch: Any) -> Any:
             self.pairs.clear()
             return True
 
-    for name in ("fly", "fly.ap", "fly.ap.draft_signals", "fly.ap.qt_properties"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    sys.modules["fly.ap.draft_signals"].Scope = Scope
-    sys.modules["fly.ap.qt_properties"].value = lambda obj, key: (
+    for name in ("fly", "fly.ap", "fly.ap.core.signals.scope", "fly.ap.qt.properties"):
+        install_module(monkeypatch, name, ModuleType(name))
+    sys.modules["fly.ap.core.signals.scope"].Scope = Scope
+    sys.modules["fly.ap.qt.properties"].value = lambda obj, key: (
         getattr(obj, key)() if callable(getattr(obj, key)) else getattr(obj, key)
     )
     drags: list[Any] = []
@@ -610,15 +612,15 @@ def test_main_uses_existing_app_capture_and_retained_window(
 
     calls: list[Any] = []
     sys.modules["fly"].qt = runtime.qt
-    for name in ("fly.ap.character_map_capture", "fly.ap.scripting"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    sys.modules["fly.ap.character_map_capture"].capture = lambda: facts
-    sys.modules["fly.ap.scripting"].show_script_dialog = lambda factory, key: (
+    for name in ("fly.ap.glyphs.character_map.capture", "fly.ap.core.scripting"):
+        install_module(monkeypatch, name, ModuleType(name))
+    sys.modules["fly.ap.glyphs.character_map.capture"].capture = lambda: facts
+    sys.modules["fly.ap.core.scripting"].show_script_dialog = lambda factory, key: (
         calls.append(key) or factory(None)
     )
-    controls = ModuleType("fly.ap.controls")
+    controls = ModuleType("fly.ap.core.controls")
     controls.FontLab = lambda: pytest.fail("Opening must remain lazy")
-    monkeypatch.setitem(sys.modules, "fly.ap.controls", controls)
+    install_module(monkeypatch, "fly.ap.core.controls", controls)
     panel = load(title)["main"]()
     assert panel.title == title and len(calls) == 1
 
@@ -886,9 +888,9 @@ def test_shelf_uses_workspace_confirmation_for_native_open(
                 raise RuntimeError("native open exception")
             return result
 
-    controls = ModuleType("fly.ap.controls")
+    controls = ModuleType("fly.ap.core.controls")
     controls.FontLab = Host
-    monkeypatch.setitem(sys.modules, "fly.ap.controls", controls)
+    install_module(monkeypatch, "fly.ap.core.controls", controls)
     sys.modules["fly"].fl = NS(flWorkspace=NS(instance=lambda: NS(packages=listed)))
     fn = load(TITLES[1])["open_in_fontlab"]
     if success:
@@ -985,13 +987,13 @@ def test_real_app_names_used_by_scripts_are_callable(monkeypatch: Any) -> None:
                     )
                     checked.add(owner_name + "." + node.func.attr)
     assert {
-        "fontlabapp.draft_signals.Scope",
-        "fontlabapp.draft_signals.Scope.connect",
-        "fontlabapp.draft_signals.Scope.finish",
-        "fontlabapp.qt_properties.value",
-        "fontlabapp.controls.FontLab.open_font",
-        "fontlabapp.scripting.show_script_dialog",
-        "fontlabapp.character_map_capture.capture",
+        "fontlabapp.core.signals.scope.Scope",
+        "fontlabapp.core.signals.scope.Scope.connect",
+        "fontlabapp.core.signals.scope.Scope.finish",
+        "fontlabapp.qt.properties.value",
+        "fontlabapp.core.controls.FontLab.open_font",
+        "fontlabapp.core.scripting.show_script_dialog",
+        "fontlabapp.glyphs.character_map.capture.capture",
     } <= checked, "Derive all script imports and their called methods from source"
 
 
@@ -1028,9 +1030,9 @@ def test_shelf_batch_counts_only_workspace_confirmed_opens(
             if path == str(paths[0]):
                 packages.append(NS(id=2))
 
-    controls = ModuleType("fly.ap.controls")
+    controls = ModuleType("fly.ap.core.controls")
     controls.FontLab = Host
-    monkeypatch.setitem(sys.modules, "fly.ap.controls", controls)
+    install_module(monkeypatch, "fly.ap.core.controls", controls)
     sys.modules["fly"].fl = NS(
         flWorkspace=NS(instance=lambda: NS(packages=lambda: packages))
     )

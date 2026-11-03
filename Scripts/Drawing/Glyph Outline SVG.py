@@ -49,9 +49,9 @@ def capture_outline() -> tuple[str, Any, tuple[float, float, float]]:
     Compare raw geometry, layer and glyph ids, package ids and master before
     returning. Never read the native fgGlyph cache or notify font history.
     """
-    import fly.ap.inspectors as inspectors  # noqa: PLR0402 - Fly requires module import
-    import fly.ap.node_coordinates as coordinates
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.proof.inspectors.model as inspectors  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.contours.nodes.coordinates as coordinates
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
 
     deadline = monotonic() + 2.0
 
@@ -111,7 +111,7 @@ def font_frame(
     Equal integer viewport and viewBox dimensions keep user units at 1:1.
     Outward rounding retains fractional overhangs without translating artwork.
     """
-    import fly.ap.qt_properties as properties
+    import fly.ap.qt.properties as properties
 
     advance, descender, ascender = metrics
     rect = path.boundingRect()
@@ -149,7 +149,7 @@ def svg_text(qt: Any, path: Any, label: str, frame: tuple[int, int, int, int]) -
     names and raw node flags are not exported. Invert y once for SVG coordinates.
     Always end the owned painter, including errors, before releasing its buffer.
     """
-    import fly.ap.qt_properties as properties
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
     svg = getattr(qt, "QtSvg", None)
@@ -208,8 +208,8 @@ def save_svg(filename: str, text: str) -> None:
 
 def panel_type(qt: Any) -> type:
     """Bind a modeless snapshot panel to FontLab's Qt and owned signal scope."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -398,13 +398,13 @@ def panel_type(qt: Any) -> type:
 
 def main() -> Any:
     """Use FontLab's existing application and App's retained panel registry."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
     from fly import fl, qt
 
     try:
         return scripting.show_script_dialog(panel_type(qt), KEY)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
+        import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
 
         qt_dialogs.run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

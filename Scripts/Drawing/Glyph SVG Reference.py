@@ -38,9 +38,9 @@ def capture_outline() -> tuple[str, Any]:
     Compare raw geometry, layer and glyph ids, package ids and master before
     returning. Never read the native fgGlyph cache or notify font history.
     """
-    import fly.ap.inspectors as inspectors  # noqa: PLR0402 - Fly requires module import
-    import fly.ap.node_coordinates as coordinates
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.proof.inspectors.model as inspectors  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.contours.nodes.coordinates as coordinates
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
 
     deadline = monotonic() + 2.0
 
@@ -159,8 +159,8 @@ def reference_matrix(
 
 def panel_type(qt: Any) -> type:
     """Build an owned vector scene; leave painting and item lifetimes with Qt."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -366,13 +366,13 @@ def panel_type(qt: Any) -> type:
 
 def main() -> Any:
     """Open via the host registry; never construct another application."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
     from fly import fl, qt
 
     try:
         return scripting.show_script_dialog(panel_type(qt), KEY)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
+        import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
 
         qt_dialogs.run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

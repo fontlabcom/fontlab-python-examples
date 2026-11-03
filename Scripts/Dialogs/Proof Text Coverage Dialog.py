@@ -33,7 +33,7 @@ def glyph_rows() -> tuple[tuple[str, tuple[int, ...]], ...]:
     The existing App helper owns native double reads and package/font/master
     fences. Convert its Unicode display column under the same deadline only.
     """
-    from fly.ap.glyph_catalog import capture
+    from fly.ap.glyphs.catalog.model import capture
 
     deadline = monotonic() + 2.0
     table = capture(deadline=deadline)
@@ -68,7 +68,7 @@ def coverage(rows: tuple[tuple[str, tuple[int, ...]], ...], text: str) -> str:
 def main() -> Any:
     """Open a retained, owned panel through Fly and the existing App lifecycle."""
     from fly import qt
-    from fly.ap.scripting import names_dialog_type, show_script_dialog
+    from fly.ap.core.scripting import names_dialog_type, show_script_dialog
 
     g = qt.QtGui
     base = names_dialog_type()

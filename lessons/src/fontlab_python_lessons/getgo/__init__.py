@@ -34,7 +34,7 @@ def launch(name: str, **kwargs: Any) -> Any:
     if name == "font_info_ui":
         return module.show(**kwargs)
     report = module.run(**kwargs)
-    from fly.ap.reports import show_report
+    from fly.ap.proof.reports.model import show_report
 
     return show_report(
         report, title="GetGo: " + name.replace("_", " ").title(), key="getgo-" + name

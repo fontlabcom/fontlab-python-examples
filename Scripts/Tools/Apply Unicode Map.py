@@ -112,7 +112,7 @@ def plan_map(
     facts: Any, selected: list[str], mapping: dict[str, tuple[int, ...]]
 ) -> list[dict[str, Any]]:
     """Keep each refused item visible; preserve codes and reject shared claims."""
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - preserve module import
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - preserve module import
 
     owners = getattr(facts, "code_owners", None)
     if owners is None:
@@ -156,7 +156,7 @@ def write_map(
     preview: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Replan with fresh facts; write safe rows through the shared Unicode writer."""
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - preserve module import
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - preserve module import
 
     facts = names_edit.fresh_facts(package_id)
     rows = plan_map(facts, selected, mapping)
@@ -195,8 +195,8 @@ def write_map(
 
 def panel_type() -> type:
     """Build only inside FontLab; the shared base owns signals and refusals."""
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - preserve module import
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402 - preserve module import
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - preserve module import
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402 - preserve module import
     from fly import qt
 
     class MapPanel(selection_panel.panel_type()):
@@ -261,7 +261,7 @@ def panel_type() -> type:
 
 def main() -> None:
     """Contain startup errors; the shared panel contains slot errors."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - preserve module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - preserve module import
 
     try:
         scripting.show_script_dialog(panel_type(), "apply_unicode_map")

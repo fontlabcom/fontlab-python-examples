@@ -49,8 +49,8 @@ def coverage_report(facts: Any, text: str) -> str:
 
 def panel_type(qt: Any, capture: Callable[[], Any]) -> type:
     """Build an owned modeless panel. Inject Qt and capture for offline checks."""
-    from fly.ap.draft_signals import Scope
-    from fly.ap.qt_properties import value
+    from fly.ap.core.signals.scope import Scope
+    from fly.ap.qt.properties import value
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -304,8 +304,8 @@ def panel_type(qt: Any, capture: Callable[[], Any]) -> type:
 def main() -> Any:
     """Show the retained modeless panel through Fly."""
     from fly import qt
-    from fly.ap.character_map_capture import capture
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.glyphs.character_map.capture import capture
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(panel_type(qt, capture), KEY)
 

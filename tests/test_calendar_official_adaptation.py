@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from types import ModuleType
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -36,7 +38,7 @@ def test_official_calendar_keeps_frozen_source_and_all_distinct_options():
         not row["original_workflow_accepted"] and row["native_acceptance"] == "pending"
     )
     assert (
-        row["api_module"] == "glyph_calendar" and row["entry_point"] == "show_official"
+        row["api_module"] == "glyphs.calendar.model" and row["entry_point"] == "show_official"
     )
     assert all(
         word in row["scope"]
@@ -53,9 +55,9 @@ def test_official_calendar_keeps_frozen_source_and_all_distinct_options():
 def test_official_calendar_import_is_lazy_and_exactly_routes_through_fly(monkeypatch):
     path = ROOT / "Scripts/Widgets/Glyph Modification Calendar with Formats.py"
     calls = []
-    for name in ["fly", "fly.ap", "fly.ap.glyph_calendar"]:
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    sys.modules["fly.ap.glyph_calendar"].show_official = lambda: calls.append(
+    for name in ["fly", "fly.ap", "fly.ap.glyphs.calendar.model"]:
+        install_module(monkeypatch, name, ModuleType(name))
+    sys.modules["fly.ap.glyphs.calendar.model"].show_official = lambda: calls.append(
         "official"
     )
     namespace = runpy.run_path(str(path), run_name="inspection")

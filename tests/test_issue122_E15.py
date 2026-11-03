@@ -26,21 +26,15 @@ def load(title: str) -> dict[str, Any]:
 @pytest.fixture
 def app(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    app_module = importlib.import_module("fontlabapp")
-    fly = ModuleType("fly")
-    fly.ap = app_module
-    monkeypatch.setitem(sys.modules, "fly", fly)
-    monkeypatch.setitem(sys.modules, "fly.ap", app_module)
-    for name in ("draft_signals", "glyph_catalog", "qt_properties", "scripting"):
-        module = importlib.import_module("fontlabapp." + name)
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, module)
-    monkeypatch.setattr(importlib.import_module("fly.ap.scripting"), "current_package",
+    monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fly/src"))
+    importlib.import_module("fly.ap")
+    monkeypatch.setattr(importlib.import_module("fly.ap.core.scripting"), "current_package",
                         lambda: SimpleNamespace(glyphsCount=300))
 
 
 def test_real_app_names(app: None) -> None:
-    for module, symbol in (("glyph_catalog", "capture"), ("draft_signals", "Scope"),
-                           ("qt_properties", "value"), ("scripting", "current_package")):
+    for module, symbol in (("glyphs.catalog.model", "capture"), ("core.signals.scope", "Scope"),
+                           ("qt.properties", "value"), ("core.scripting", "current_package")):
         assert callable(getattr(importlib.import_module("fly.ap." + module), symbol))
 
 
@@ -304,7 +298,7 @@ def close_panel(panel: Any) -> None:
 
 
 def test_console_capture_once_errors_and_reset(app: None, qt: Any, monkeypatch: Any) -> None:
-    catalog = importlib.import_module("fly.ap.glyph_catalog")
+    catalog = importlib.import_module("fly.ap.glyphs.catalog.model")
     rows = tuple((str(i), "", "") for i in range(300))
     monkeypatch.setattr(catalog, "capture", lambda **kwargs: SimpleNamespace(rows=rows))
     module = load(TITLES[0])
@@ -335,7 +329,7 @@ def test_console_capture_once_errors_and_reset(app: None, qt: Any, monkeypatch: 
 @pytest.mark.parametrize("error", [ValueError("Open a font"), RuntimeError("Changed font"), TimeoutError("expired")])
 def test_proof_capture_refusals_clear_stale_output(app: None, qt: Any, monkeypatch: Any, error: Exception) -> None:
     module = load(TITLES[1])
-    catalog = importlib.import_module("fly.ap.glyph_catalog")
+    catalog = importlib.import_module("fly.ap.glyphs.catalog.model")
     monkeypatch.setattr(catalog, "capture", lambda **kwargs: SimpleNamespace(rows=ROWS))
     panel = module["show"](qt, Widget())
     panel.sample_entry.setText("A")
@@ -471,7 +465,7 @@ def test_settings_read_error_cleans_up_owned_panel(app: None, qt: Any, monkeypat
 
 
 def test_empty_font_finishes_console_capture(app: None, qt: Any, monkeypatch: Any) -> None:
-    monkeypatch.setattr(importlib.import_module("fly.ap.glyph_catalog"), "capture",
+    monkeypatch.setattr(importlib.import_module("fly.ap.glyphs.catalog.model"), "capture",
                         lambda **kwargs: SimpleNamespace(rows=()))
     panel = load(TITLES[0])["show"](qt, Widget())
     panel.capture_rows()
@@ -484,8 +478,8 @@ def test_capture_deadline_scales_with_simulated_per_glyph_cost(app: None, qt: An
     module = load(title)
     clock = SimpleNamespace(now=100.0)
     monkeypatch.setitem(module["show"].__globals__, "monotonic", lambda: clock.now)
-    scripting = importlib.import_module("fly.ap.scripting")
-    catalog = importlib.import_module("fly.ap.glyph_catalog")
+    scripting = importlib.import_module("fly.ap.core.scripting")
+    catalog = importlib.import_module("fly.ap.glyphs.catalog.model")
     budgets: list[float] = []
     panel = module["show"](qt, Widget())
     for count in (10, 50000):
@@ -633,7 +627,7 @@ def test_reference_direct_children_conversion_preserves_gc_state() -> None:
 @pytest.mark.parametrize("title", TITLES[:2])
 def test_scan_refuses_absent_font_before_catalog_access(app: None, qt: Any, monkeypatch: Any, title: str) -> None:
     module = load(title)
-    monkeypatch.setattr(importlib.import_module("fly.ap.scripting"), "current_package", lambda: None)
+    monkeypatch.setattr(importlib.import_module("fly.ap.core.scripting"), "current_package", lambda: None)
     with pytest.raises(ValueError, match="Open a font"):
         module["capture_current"](Widget())
 

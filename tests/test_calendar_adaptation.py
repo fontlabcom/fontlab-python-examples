@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from types import ModuleType
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -17,7 +19,7 @@ def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_route():
     rows = [r for r in manifest["adaptations"] if r.get("family") == "calendar-part2"]
     assert len(manifest["adaptations"]) == 231 and len(rows) == 1
     row = rows[0]
-    assert row["api_module"] == "glyph_calendar" and row["entry_point"] == "show"
+    assert row["api_module"] == "glyphs.calendar.model" and row["entry_point"] == "show"
     index = json.loads((ROOT / "rescue-index.json").read_text())
     source = next(r for r in index["menus"] if r["menu"] == row["source_menu"])
     assert (
@@ -54,9 +56,9 @@ def test_calendar_adaptation_keeps_all_sources_and_distinct_part3_route():
 def test_calendar_facade_is_lazy_typed_and_routes_through_fly(monkeypatch):
     path = ROOT / "Scripts/Widgets/Glyph Modification Calendar.py"
     calls = []
-    for name in ["fly", "fly.ap", "fly.ap.glyph_calendar"]:
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    sys.modules["fly.ap.glyph_calendar"].show = lambda: calls.append("show")
+    for name in ["fly", "fly.ap", "fly.ap.glyphs.calendar.model"]:
+        install_module(monkeypatch, name, ModuleType(name))
+    sys.modules["fly.ap.glyphs.calendar.model"].show = lambda: calls.append("show")
     namespace = runpy.run_path(str(path), run_name="inspection")
     assert calls == []
     namespace["main"]()

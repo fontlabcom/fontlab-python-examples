@@ -10,6 +10,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -41,9 +43,9 @@ def test_complete_family_identity_and_lazy_fly_menu(monkeypatch, part, sha, entr
     assert len(Path(row["menu"]).parts) == 3
     assert hashlib.sha256(path.read_bytes()).hexdigest() == row["destination_sha256"]
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.slider_spacing"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.slider_spacing"], entry, lambda: calls.append(entry))
+    for name in ("fly", "fly.ap", "fly.ap.metrics.offset.model"):
+        install_module(monkeypatch, name, ModuleType(name))
+    setattr(sys.modules["fly.ap.metrics.offset.model"], entry, lambda: calls.append(entry))
     body = runpy.run_path(str(path), run_name="inspection")
     assert not calls
     body["main"]()

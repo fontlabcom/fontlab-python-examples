@@ -11,6 +11,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -27,7 +29,7 @@ def test_tree_pair_keeps_frozen_identities_and_complete_readonly_contracts():
         for r in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     }
     for row in rows:
-        assert row["api_module"] == "glyph_tree"
+        assert row["api_module"] == "glyphs.tree.model"
         assert row["source"] == original[row["source_menu"]]["target"]
         assert row["source_sha256"] == original[row["source_menu"]]["target_sha256"]
         assert (
@@ -47,9 +49,9 @@ def test_tree_menus_remain_lazy_typed_python311_fly_facades(monkeypatch, entry):
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     row = next(r for r in rows if r["entry_point"] == entry)
     calls = []
-    for name in ["fly", "fly.ap", "fly.ap.glyph_tree"]:
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyph_tree"], entry, lambda: calls.append(entry))
+    for name in ["fly", "fly.ap", "fly.ap.glyphs.tree.model"]:
+        install_module(monkeypatch, name, ModuleType(name))
+    setattr(sys.modules["fly.ap.glyphs.tree.model"], entry, lambda: calls.append(entry))
     path = ROOT / row["menu"]
     values = runpy.run_path(str(path), run_name="inspection")
     assert calls == []

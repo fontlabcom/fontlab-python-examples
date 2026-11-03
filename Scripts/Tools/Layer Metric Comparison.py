@@ -47,7 +47,7 @@ MetricRow = tuple[
 
 def read_rows(selected: Any, deadline: float) -> tuple[MetricRow, ...]:
     """Read scalar geometry only; retain empty outlines as unavailable values."""
-    import fly.ap.qt_properties as properties
+    import fly.ap.qt.properties as properties
 
     rows = []
     for item in selected.occurrences:
@@ -76,7 +76,7 @@ def read_rows(selected: Any, deadline: float) -> tuple[MetricRow, ...]:
 
 def capture_metrics() -> tuple[MetricRow, ...]:
     """Use ordered selected-layer captures with equal scalar reads and context."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     if current_thread() is not main_thread():
         raise RuntimeError("Read layer metrics on the main UI thread.")
@@ -147,8 +147,8 @@ def checked(text: str) -> str:
 
 def show(qt: Any, parent: Any) -> Any:
     """Open an owned modeless panel; drain callbacks before deletion."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 

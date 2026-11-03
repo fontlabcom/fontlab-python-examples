@@ -98,7 +98,7 @@ def current_context(native: Any) -> tuple[tuple[int, int, int, int], Any, Any, A
 
 def read_rows(layer: Any, deadline: float) -> tuple[NodeRow, ...]:
     """Read current-layer nodes and shape guards only; never scan font dependencies."""
-    import fly.ap.outline_writer as outlines
+    import fly.ap.contours.writer as outlines
 
     allowed, _ = outlines.outline_shapes(layer)
     editable_ids = {int(shape.id) for shape in allowed}
@@ -158,8 +158,8 @@ def capture_nodes(native: Any = None, *, facts: Any = None) -> Snapshot:
     Start the geometry budget after the dependency scan. The scan is the App's
     separate whole-font preflight and is not charged to the current-layer read.
     """
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.qt.properties as properties
 
     native = native_module(native)
     context, package, glyph, layer = current_context(native)
@@ -202,8 +202,8 @@ def apply_edits(
     snapshot: Snapshot, cells: dict[Key, tuple[str, str]], native: Any = None
 ) -> ApplyResult:
     """Write valid fresh rows once; keep each refused or invalid row independently."""
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.outline_writer as outlines
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.writer as outlines
 
     current = capture_nodes(native)
     if current.context != snapshot.context:
@@ -346,8 +346,8 @@ def select_nodes(
 
 def show(qt: Any, parent: Any) -> Any:
     """Open an owned editable table; drain callbacks on Close or setup failure."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 

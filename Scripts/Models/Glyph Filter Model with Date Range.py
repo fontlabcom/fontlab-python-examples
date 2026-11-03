@@ -27,7 +27,7 @@ empty initial pattern and optional observed date limits. Shared policy lives in 
 
 def main() -> None:
     """Open the complete owned workflow through the lazy Fly namespace."""
-    from fly.ap.glyph_catalog import show_official_custom
+    from fly.ap.glyphs.catalog.model import show_official_custom
 
     show_official_custom()
 

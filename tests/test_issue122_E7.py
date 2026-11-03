@@ -19,6 +19,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Designer/Em Star Polygon.py"
 FAMILIES = {
@@ -65,16 +67,16 @@ def script() -> Any:
 
 def test_real_app_names_exist(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    scripting = importlib.import_module("fontlabapp.scripting")
-    properties = importlib.import_module("fontlabapp.qt_properties")
+    scripting = importlib.import_module("fontlabapp.core.scripting")
+    properties = importlib.import_module("fontlabapp.qt.properties")
     assert all(
         callable(getattr(scripting, name))
         for name in ("current_package", "names_dialog_type", "show_script_dialog")
     )
     assert callable(properties.value)
-    history = importlib.import_module("fontlabapp.history")
+    history = importlib.import_module("fontlabapp.core.history.glyphs")
     assert callable(history.commit) and callable(history.scan_auto_facts)
-    masters = importlib.import_module("fontlabapp.masters")
+    masters = importlib.import_module("fontlabapp.masters.inspect.model")
     assert masters.associated_master("Regular@backup", ["Regular"]) == "Regular"
 
 
@@ -254,7 +256,7 @@ class Base(Widget):
 @pytest.fixture
 def host(monkeypatch: Any) -> Any:
     state = SimpleNamespace(package=SimpleNamespace(id=7, upm=1000), reads=0)
-    app = ModuleType("fly.ap.scripting")
+    app = ModuleType("fly.ap.core.scripting")
 
     def current_package(expected_id: int | None = None) -> Any:
         state.reads += 1
@@ -271,7 +273,7 @@ def host(monkeypatch: Any) -> Any:
     app.current_package = current_package
     app.names_dialog_type = lambda: Base
     app.show_script_dialog = lambda kind, key: kind(None)
-    properties = ModuleType("fly.ap.qt_properties")
+    properties = ModuleType("fly.ap.qt.properties")
     properties.value = lambda obj, name: getattr(obj, name)
     gui = SimpleNamespace(
         **{
@@ -312,10 +314,10 @@ def host(monkeypatch: Any) -> Any:
     for name, module in {
         "fly": fly,
         "fly.ap": ap,
-        "fly.ap.scripting": app,
-        "fly.ap.qt_properties": properties,
+        "fly.ap.core.scripting": app,
+        "fly.ap.qt.properties": properties,
     }.items():
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
     state.qt, state.scripting = qt, app
     return state
 
@@ -324,8 +326,8 @@ def host(monkeypatch: Any) -> Any:
 def drawing(host: Any, monkeypatch: Any) -> Any:
     """Use real history.commit; fake only native objects and dependency reads."""
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    history = importlib.import_module("fontlabapp.history")
-    masters = importlib.import_module("fontlabapp.masters")
+    history = importlib.import_module("fontlabapp.core.history.glyphs")
+    masters = importlib.import_module("fontlabapp.masters.inspect.model")
     host.events, host.notifications, host.records = [], [], [("A", False, ())]
     host.corrupt, host.pending, host.glyph_missing = False, False, False
     host.fail_attach = False
@@ -426,9 +428,9 @@ def drawing(host: Any, monkeypatch: Any) -> Any:
     monkeypatch.setattr(
         history, "scan_auto_facts", lambda package: history.auto_facts(host.records)
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.history", history)
-    monkeypatch.setitem(sys.modules, "fly.ap.edit_guards", importlib.import_module("fontlabapp.edit_guards"))
-    monkeypatch.setitem(sys.modules, "fly.ap.masters", masters)
+    install_module(monkeypatch, "fly.ap.core.history.glyphs", history)
+    install_module(monkeypatch, "fly.ap.core.edit_guards", importlib.import_module("fontlabapp.core.edit_guards"))
+    install_module(monkeypatch, "fly.ap.masters.inspect.model", masters)
     sys.modules["fly.ap"].history = history
     sys.modules["fly.ap"].masters = masters
     sys.modules["fly"].fl = native

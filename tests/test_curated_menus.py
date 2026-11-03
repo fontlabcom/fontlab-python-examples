@@ -9,6 +9,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -54,7 +56,7 @@ def test_existing_lesson_when_run_then_dispatches_exact_packaged_entry(
     calls = []
     module = ModuleType("fontlab_python_lessons")
     module.launch = lambda key: calls.append(key)
-    monkeypatch.setitem(sys.modules, module.__name__, module)
+    install_module(monkeypatch, module.__name__, module)
     path = ROOT / "Scripts" / relative
     runpy.run_path(str(path), run_name="inspection")
     assert calls == [], "Inspection must not launch a lesson"
@@ -87,8 +89,8 @@ def test_getgo_when_run_then_lazy_exact_packaged_dispatch(monkeypatch, title, en
     module = ModuleType("fontlab_python_lessons.getgo")
     result = object()
     module.launch = lambda key: calls.append(key) or result
-    monkeypatch.setitem(sys.modules, parent.__name__, parent)
-    monkeypatch.setitem(sys.modules, module.__name__, module)
+    install_module(monkeypatch, parent.__name__, parent)
+    install_module(monkeypatch, module.__name__, module)
     path = ROOT / "Scripts/GetGo Fonts" / f"GetGo - {title}.py"
     namespace = runpy.run_path(str(path), run_name="inspection")
     assert calls == [], "Inspection must not open fonts or windows"

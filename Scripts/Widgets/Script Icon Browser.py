@@ -36,8 +36,8 @@ def icon_names(style_type: type, query: str) -> tuple[str, ...]:
 
 def main() -> Any:
     """Open the owned modeless App panel. Import Qt only in the host."""
-    import fly.ap.qt_properties as properties
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.qt.properties as properties
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
     from fly import qt
 
     g = qt.QtGui

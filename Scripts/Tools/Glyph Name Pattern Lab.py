@@ -27,7 +27,7 @@ Compatibility:
 
 def main() -> None:
     """Open the owned pattern laboratory through the lazy Fly namespace."""
-    from fly.ap.glyph_pattern import show
+    from fly.ap.glyphs.pattern import show
 
     show()
 

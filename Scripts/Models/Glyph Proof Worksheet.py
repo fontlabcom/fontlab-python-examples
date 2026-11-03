@@ -84,12 +84,12 @@ def report(rows: Rows, drafts: dict[str, str]) -> str:
 
 def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) -> Any:
     """Open one owned modeless panel. Inject detached capture in offline tests."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
     if capture is None:
-        import fly.ap.glyph_catalog as catalogue
+        import fly.ap.glyphs.catalog.model as catalogue
 
         capture = catalogue.capture
 

@@ -195,8 +195,8 @@ def compare_info(saved: Capture, current: Capture) -> str:
 
 def show(qt: Any, parent: Any) -> Any:
     """Open a retained modeless panel; disconnect owned slots before deletion."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 

@@ -51,7 +51,7 @@ wheel hashes. Install FontTools for pen/export lessons:
 uv venv --python cpython-3.11-macos-aarch64-none .venv-install-check
 uv pip install --python .venv-install-check/bin/python --prerelease=allow wheelhouse/*.whl fonttools
 uv pip check --python .venv-install-check/bin/python
-.venv-install-check/bin/python -I -c 'import fly, fontlabapp; assert fly.ap is fontlabapp; from fly.ap.reports import show_report; from fontlab_python_lessons.getgo import launch'
+.venv-install-check/bin/python -I -c 'import fly, fontlabapp; assert fly.ap is fontlabapp; from fly.ap.proof.reports.model import show_report; from fontlab_python_lessons.getgo import launch'
 ```
 
 These commands create a disposable external install check. They do not install
@@ -90,7 +90,7 @@ is no Apply button. Geometry, metrics, history and preferences remain unchanged.
 The input supports three decimals within ±1,000,000,000 units. A missing layer
 disables Preview; an empty font invents no rows.
 
-All panels use `fly.ap.scripting` native reads, signal ownership, replacement and
+All panels use `fly.ap.core.scripting` native reads, signal ownership, replacement and
 Close handling. Snapshot records keep detached values, not native glyph wrappers.
 A missing, corrupt or wrong-type form resource produces a closable error.
 

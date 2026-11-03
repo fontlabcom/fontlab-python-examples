@@ -10,7 +10,7 @@ from fontlab_python_lessons.domain import capture, ensure_current, filtered, pre
 
 
 class Source:
-    """Expose only the existing fly.ap.scripting read/selection boundary."""
+    """Expose only the existing fly.ap.core.scripting read/selection boundary."""
 
     def __init__(self):
         self.package = NS(id=14, master="Regular")

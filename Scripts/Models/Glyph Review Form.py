@@ -91,7 +91,7 @@ def display_note(name: str, text: str) -> tuple[str, str]:
 
 def capture_metadata() -> tuple[int, dict[str, tuple[int, str]]]:
     """Read scalar identities and note values; retain no native glyph handles."""
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
 
     facts = names_edit.scan()
     return facts.package_id, {
@@ -104,8 +104,8 @@ def apply_changes(
     package_id: int, baseline: dict[str, tuple[int, str]], desired: dict[str, str]
 , *, disclosure: dict[str, Any] | None = None) -> tuple[str, ...]:
     """Commit changed rows once; refuse switched, replaced or externally edited glyphs."""
-    import fly.ap.history as history  # noqa: PLR0402 - use the lazy Fly module alias
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
 
     facts = names_edit.fresh_facts(package_id)
     todo = []
@@ -151,15 +151,15 @@ def apply_changes(
         facts=facts.autos,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return tuple(entry.name for entry, _value in todo)
 
 
 def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) -> Any:
     """Open through the existing host. Keep exact callback and model owners."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     if capture is None:
         capture = capture_metadata
@@ -351,7 +351,7 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
 
         def apply(self) -> None:
             """Submit one mapper row, then save its state and note in one Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             if not self.snapshot:
                 raise ValueError("Open a font and Refresh first.")

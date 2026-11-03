@@ -4,7 +4,7 @@
 from typing import Any
 
 from fly import qt
-from fly.ap import scripting as api
+import fly.ap.core.scripting as api
 
 from ._dialog import LessonDialog
 from .domain import capture, ensure_current, filtered

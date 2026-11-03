@@ -25,7 +25,7 @@ def launch(name: str) -> Any:
     names = ("glyph-name-filter", "glyph-metrics-model", "glyph-metrics-form")
     if name not in names:
         raise ValueError(f"Unknown lesson {name!r}; choose {', '.join(names)}.")
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     from .ui import dialog_type
 

@@ -135,9 +135,9 @@ def diff_text(rows: Changes) -> str:
 
 def show(qt: Any, parent: Any, capture: Callable[[], Any] | None = None) -> Any:
     """Open a modeless first-to-latest comparison of one current font."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.glyph_catalog as catalogue
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly dotted-import contract
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.glyphs.catalog.model as catalogue
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly dotted-import contract
 
     gui, core = qt.QtGui, qt.QtCore
     capture_font = catalogue.capture if capture is None else capture
@@ -328,7 +328,7 @@ def main() -> Any:
     try:
         return show(qt, parent)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
+        import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly module import
 
         qt_dialogs.run_standard_message_box(
             qt, parent, TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

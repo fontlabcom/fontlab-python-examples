@@ -18,8 +18,19 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Glyph Outline SVG",)
+APP_MODULES = {
+    "qt_properties": "qt.properties",
+    "qt_dialogs": "qt.dialogs",
+    "draft_signals": "core.signals.scope",
+    "scripting": "core.scripting",
+    "inspectors": "proof.inspectors.model",
+    "node_coordinates": "contours.nodes.coordinates",
+}
+
 
 
 def load(title: str) -> dict[str, Any]:
@@ -57,12 +68,12 @@ def test_svg_save_is_explicit_exact_and_never_overwrites(
 def test_real_app_names_are_available(monkeypatch: Any, title: str) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
     for module, names in {
-        "scripting": ("current_package", "show_script_dialog"),
-        "qt_dialogs": ("run_standard_message_box",),
-        "node_coordinates": ("current_glyph",),
-        "inspectors": ("outline", "outline_source"),
-        "qt_properties": ("value",),
-        "draft_signals": ("Scope",),
+        "core.scripting": ("current_package", "show_script_dialog"),
+        "qt.dialogs": ("run_standard_message_box",),
+        "contours.nodes.coordinates": ("current_glyph",),
+        "proof.inspectors.model": ("outline", "outline_source"),
+        "qt.properties": ("value",),
+        "core.signals.scope": ("Scope",),
     }.items():
         real = importlib.import_module("fontlabapp." + module)
         for name in names:
@@ -76,8 +87,8 @@ def app(monkeypatch: Any) -> dict[str, Any]:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.ap = ap
-    monkeypatch.setitem(sys.modules, "fly", fly)
-    monkeypatch.setitem(sys.modules, "fly.ap", ap)
+    install_module(monkeypatch, "fly", fly)
+    install_module(monkeypatch, "fly.ap", ap)
     modules = {}
     for name in (
         "qt_properties",
@@ -87,10 +98,10 @@ def app(monkeypatch: Any) -> dict[str, Any]:
         "inspectors",
         "node_coordinates",
     ):
-        real = importlib.import_module("fontlabapp." + name)
-        fake = ModuleType("fly.ap." + name)
+        real = importlib.import_module("fontlabapp." + APP_MODULES[name])
+        fake = ModuleType("fly.ap." + APP_MODULES[name])
         fake.__dict__.update(real.__dict__)
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, fake)
+        install_module(monkeypatch, "fly.ap." + APP_MODULES[name], fake)
         setattr(ap, name, fake)
         modules[name] = fake
     return modules

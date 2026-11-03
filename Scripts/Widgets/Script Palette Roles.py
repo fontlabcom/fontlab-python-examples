@@ -167,8 +167,8 @@ def role_code() -> str:
 
 def main() -> Any:
     """Inspect this panel's palette without setting any palette or style."""
-    import fly.ap.qt_properties as properties
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.qt.properties as properties
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
     from fly import qt
 
     g, base = qt.QtGui, scripting.names_dialog_type()

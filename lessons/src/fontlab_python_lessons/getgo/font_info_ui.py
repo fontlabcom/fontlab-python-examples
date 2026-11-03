@@ -42,7 +42,7 @@ class InfoTool:
 
 def run() -> InfoTool:
     """Close the font before showing a window; caller retains and closes the tool."""
-    from fly.ap.reports import show_report
+    from fly.ap.proof.reports.model import show_report
 
     with owned_font("stroke-chan") as (package, record):
         report = {

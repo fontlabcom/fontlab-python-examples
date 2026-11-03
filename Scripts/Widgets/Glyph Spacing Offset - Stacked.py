@@ -29,7 +29,7 @@ Compatibility:
 
 def main() -> None:
     """Open the shared App preview through Fly's lazy namespace."""
-    from fly.ap.slider_spacing import show_stacked
+    from fly.ap.metrics.offset.model import show_stacked
 
     show_stacked()
 

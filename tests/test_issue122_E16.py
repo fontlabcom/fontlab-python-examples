@@ -15,6 +15,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Tools/Path Problem Report.py"
 SOURCES = {
@@ -69,30 +71,17 @@ def contour(
 @pytest.fixture
 def app(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    import fontlabapp
-
-    fly = ModuleType("fly")
-    fly.ap = fontlabapp
-    monkeypatch.setitem(sys.modules, "fly", fly)
-    monkeypatch.setitem(sys.modules, "fly.ap", fontlabapp)
-    for name in (
-        "scripting",
-        "kerning_batch",
-        "history",
-        "draft_signals",
-        "edit_guards",
-    ):
-        module = importlib.import_module("fontlabapp." + name)
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, module)
+    monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fly/src"))
+    importlib.import_module("fly.ap")
 
 
 def test_real_app_imports(app: None) -> None:
     for module, symbol in (
-        ("kerning_batch", "write_kerning"),
-        ("kerning_batch", "ensure_snapshot"),
-        ("history", "refusal"),
-        ("scripting", "current_package"),
-        ("draft_signals", "Scope"),
+        ("kerning.batch", "write_kerning"),
+        ("kerning.batch", "ensure_snapshot"),
+        ("core.history.glyphs", "refusal"),
+        ("core.scripting", "current_package"),
+        ("core.signals.scope", "Scope"),
     ):
         assert callable(
             getattr(importlib.import_module("fontlabapp." + module), symbol)
@@ -482,7 +471,7 @@ def test_timer_cancel_restart_progress_export_and_close_retry(
 def test_selection_delegates_bound_names_and_refuses_glyph_window(
     app: None, monkeypatch: Any
 ) -> None:
-    import fontlabapp.scripting as service
+    import fontlabapp.core.scripting as service
 
     module, panel, _state, _service = report_panel()
     drain(panel)
@@ -508,7 +497,7 @@ def test_selection_delegates_bound_names_and_refuses_glyph_window(
 def test_real_selection_guard_precedes_legacy_writes(
     app: None, monkeypatch: Any
 ) -> None:
-    import fontlabapp.scripting as service
+    import fontlabapp.core.scripting as service
 
     calls: list[str] = []
     native = NS(
@@ -570,9 +559,9 @@ def test_kerning_parser_exact_comments_rounding_and_errors() -> None:
 def kern_host(app: None, monkeypatch: Any) -> tuple[Any, Any, Any, Any]:
     from copy import deepcopy
 
-    import fontlabapp.history as history  # noqa: PLR0402 - preserve module imports
-    import fontlabapp.kerning_batch as batch
-    import fontlabapp.scripting as service
+    import fontlabapp.core.history.glyphs as history  # noqa: PLR0402 - preserve module imports
+    import fontlabapp.kerning.batch as batch
+    import fontlabapp.core.scripting as service
 
     class Kern:
         def __init__(self) -> None:
@@ -820,7 +809,7 @@ def test_entry_points_use_the_host_window(
     fly = ModuleType("fly")
     fly.fl = NS(MainWindow=lambda: "host")
     fly.qt = object()
-    monkeypatch.setitem(sys.modules, "fly", fly)
+    install_module(monkeypatch, "fly", fly)
     calls: list[Any] = []
     module["main"].__globals__["show"] = lambda qt, parent: calls.append((qt, parent))
     module["main"]()

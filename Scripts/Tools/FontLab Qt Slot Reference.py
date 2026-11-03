@@ -92,7 +92,7 @@ _PANELS: list[Any] = []
 
 def show(qt: Any, parent: Any) -> Any:
     """Open an owned tool window; use App to fence and disconnect callbacks."""
-    import fly.ap.draft_signals as signals
+    import fly.ap.core.signals.scope as signals
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -146,7 +146,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def read_slots(self) -> None:
             """Read the selected target; missing metadata leaves the rules visible."""
-            import fly.ap.qt_properties as properties
+            import fly.ap.qt.properties as properties
 
             self.output_box.setPlainText(json.dumps({"PythonQt rules": PYTHONQT_RULES}, indent=2))
             index = int(properties.value(self.target_picker, "currentIndex"))

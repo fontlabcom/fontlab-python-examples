@@ -72,9 +72,9 @@ def host(monkeypatch, application):
     ]
     parent_module._native = lambda name: qt if name == "PythonQt" else native
     monkeypatch.setitem(sys.modules, "fontlabapp", parent_module)
-    for name in ("fontlabapp.scripting", "fontlabapp._names_dialog"):
+    for name in ("fontlabapp.core.scripting", "fontlabapp.glyphs.names.ui"):
         monkeypatch.delitem(sys.modules, name, raising=False)
-    scripting = importlib.import_module("fontlabapp.scripting")
+    scripting = importlib.import_module("fontlabapp.core.scripting")
     for name in (
         "current_package",
         "names_font_glyphs",
@@ -88,10 +88,15 @@ def host(monkeypatch, application):
     fly.qt = qt
     ap = ModuleType("fly.ap")
     ap.__path__ = []
-    ap.scripting = scripting
+    core = ModuleType("fly.ap.core")
+    core.__path__ = []
+    core.scripting = scripting
+    ap.core = core
+    fly.ap = ap
     monkeypatch.setitem(sys.modules, "fly", fly)
     monkeypatch.setitem(sys.modules, "fly.ap", ap)
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
+    monkeypatch.setitem(sys.modules, "fly.ap.core", core)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", scripting)
     for name in list(sys.modules):
         if name.startswith("fontlab_python_lessons.") and name.rsplit(".", 1)[-1] in {
             "_dialog",
@@ -117,7 +122,7 @@ def host(monkeypatch, application):
             pass
     QtCore.QCoreApplication.sendPostedEvents(None, QtCore.QEvent.DeferredDelete)
     application.processEvents()
-    for name in ("fontlabapp.scripting", "fontlabapp._names_dialog"):
+    for name in ("fontlabapp.core.scripting", "fontlabapp.glyphs.names.ui"):
         sys.modules.pop(name, None)
 
 
@@ -255,7 +260,7 @@ def test_form_when_required_control_absent_then_deletes_partial_form_and_keeps_c
 def test_actual_app_layout_when_empty_falsey_glyph_then_reads_its_zero_metrics(host, monkeypatch):
     from fontlab_python_lessons.domain import capture
 
-    inspectors = importlib.import_module("fontlabapp.inspectors")
+    inspectors = importlib.import_module("fontlabapp.proof.inspectors.model")
 
     class Glyph:
         def __bool__(self):

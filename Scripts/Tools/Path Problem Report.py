@@ -99,7 +99,7 @@ class Scan:
         clock: Any = monotonic,
     ) -> None:
         if service is None:
-            import fly.ap.scripting as service
+            import fly.ap.core.scripting as service
         if native is None:
             from fly import fl as native
         diagnose([], threshold)
@@ -203,7 +203,7 @@ def export_report(filename: str, report: dict[str, Any]) -> None:
 
 def show(qt: Any, parent: Any) -> Any:
     """Show a retained modeless panel with owned, guarded connections."""
-    import fly.ap.draft_signals as signals
+    import fly.ap.core.signals.scope as signals
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -300,7 +300,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def select_findings(self) -> None:
             """Delegate the Font-window guard and bound selection to App."""
-            import fly.ap.scripting as scripting  # noqa: PLR0402 - preserve module imports
+            import fly.ap.core.scripting as scripting  # noqa: PLR0402 - preserve module imports
 
             try:
                 if self.result is None:

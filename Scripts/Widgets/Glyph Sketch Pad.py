@@ -62,9 +62,9 @@ def sketch_svg(label: str, strokes: list[list[Point]], box: Box) -> str:
 
 def capture_outline() -> tuple[str, Any, Box]:
     """Capture once under a deadline. Never read the mutating fgGlyph getter."""
-    import fly.ap.inspectors as inspectors  # noqa: PLR0402 - Fly requires module imports
-    import fly.ap.node_coordinates as coordinates
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.proof.inspectors.model as inspectors  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.contours.nodes.coordinates as coordinates
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
 
     deadline = monotonic() + 2
     package = scripting.current_package()
@@ -105,7 +105,7 @@ def capture_outline() -> tuple[str, Any, Box]:
 
 def canvas_type(qt: Any, status: Any, changed: Any) -> type:
     """Create a bounded local canvas. Contain every native event boundary."""
-    import fly.ap.qt_properties as properties
+    import fly.ap.qt.properties as properties
 
     g, core = qt.QtGui, qt.QtCore
 
@@ -229,7 +229,7 @@ def canvas_type(qt: Any, status: Any, changed: Any) -> type:
 
 def main() -> Any:
     """Open the modeless App shell with a detached vector sketch surface."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
     from fly import qt
 
     g, base = qt.QtGui, scripting.names_dialog_type()

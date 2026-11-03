@@ -11,6 +11,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -49,9 +51,9 @@ def test_distinct_elastic_provenance_and_exact_public_fly_launch(
     assert digest in text and digest in (ROOT / "NOTICE").read_text()
     ast.parse(text, feature_version=(3, 11))
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.component_graph"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.component_graph"], entry, lambda: calls.append(entry))
+    for name in ("fly", "fly.ap", "fly.ap.components.graph.model"):
+        install_module(monkeypatch, name, ModuleType(name))
+    setattr(sys.modules["fly.ap.components.graph.model"], entry, lambda: calls.append(entry))
     namespace = runpy.run_path(str(path), run_name="inspection")
     assert calls == []
     namespace["main"]()

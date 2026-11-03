@@ -33,7 +33,7 @@ class Snapshot:
 
 
 def capture(api: Any, mode: Mode, name: str | None = None) -> Snapshot:
-    """Read a complete source snapshot through fly.ap.scripting, without edits.
+    """Read a complete source snapshot through fly.ap.core.scripting, without edits.
 
     Names mode needs no metrics. Metrics mode reads the exact Font window
     selection. Form mode reads one existing glyph, defaulting to the first

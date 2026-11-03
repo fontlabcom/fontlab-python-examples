@@ -92,9 +92,9 @@ def validate_row(
 
 def prepare_pairs(text: str) -> dict[str, Any]:
     """Bind a complete row preview to current font, master and kerning values."""
-    import fly.ap.history as history  # noqa: PLR0402 - preserve module imports
-    import fly.ap.kerning_batch as batch
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - preserve module imports
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - preserve module imports
+    import fly.ap.kerning.batch as batch
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - preserve module imports
 
     package = scripting.current_package()
     if package is None:
@@ -127,9 +127,9 @@ def apply_pairs(plan: dict[str, Any], text: str) -> bool:
     This is the same checkpoint and read-back path as Scriptmix Pairs From
     Text. It never notifies glyphs or layers and never creates a glyph.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - preserve module imports
-    import fly.ap.kerning_batch as batch
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - preserve module imports
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - preserve module imports
+    import fly.ap.kerning.batch as batch
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - preserve module imports
 
     if text != plan["text"]:
         raise ValueError("Text changed; Preview again.")
@@ -153,7 +153,7 @@ def apply_pairs(plan: dict[str, Any], text: str) -> bool:
 
 def show(qt: Any, parent: Any) -> Any:
     """Build a modeless list importer with explicit Preview and Apply actions."""
-    import fly.ap.draft_signals as signals
+    import fly.ap.core.signals.scope as signals
 
     gui, core = qt.QtGui, qt.QtCore
 

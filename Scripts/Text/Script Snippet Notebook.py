@@ -31,7 +31,7 @@ _PANELS: list[Any] = []
 
 def capture_names() -> tuple[str, ...]:
     """Read the current font's glyph names. Refuse missing or unstable font context."""
-    from fly.ap.glyph_catalog import capture
+    from fly.ap.glyphs.catalog.model import capture
 
     return tuple(row[0] for row in capture().rows)
 
@@ -147,7 +147,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def save(self) -> None:
             """Validate and export the current draft to a new file."""
-            from fly.ap.qt_properties import value
+            from fly.ap.qt.properties import value
 
             content = self.payload()
             check_text(content)
@@ -305,7 +305,7 @@ class Notebook:
 
 def _populate(panel: Any, qt: Any) -> None:
     """Keep record drafts separate from the committed, exportable collection."""
-    from fly.ap.qt_properties import value
+    from fly.ap.qt.properties import value
 
     gui = qt.QtGui
     panel.book = Notebook()

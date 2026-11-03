@@ -18,6 +18,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 APP_SOURCE = ROOT.parent / "fontlab-fontlabapp" / "src"
 TITLES = (
@@ -52,6 +54,16 @@ DISPOSITIONS = {
     "stardelegate": ("ported", "Scripts/Models/Glyph Review Priorities.py"),
     "storageview": ("retired", "no FontLab action; OS disk utilities cover it"),
 }
+APP_MODULES = {
+    "glyph_catalog": "glyphs.catalog.model",
+    "qt_properties": "qt.properties",
+    "draft_signals": "core.signals.scope",
+    "table_filter": "qt.tables.filter.model",
+    "history": "core.history.glyphs",
+    "names_edit": "glyphs.names.model",
+    "edit_guards": "core.edit_guards",
+}
+
 
 
 def load(title: str) -> dict[str, Any]:
@@ -73,7 +85,7 @@ def app(monkeypatch: Any) -> Any:
         "names_edit",
         "edit_guards",
     ):
-        modules[name] = importlib.import_module("fontlabapp." + name)
+        modules[name] = importlib.import_module("fontlabapp." + APP_MODULES[name])
         assert (
             Path(modules[name].__file__).resolve().is_relative_to(APP_SOURCE.resolve())
         )
@@ -154,7 +166,7 @@ def test_metadata_write_one_undo_changed_rows_only_and_auto_refusal(
         ),
     )
     for name in ("history", "names_edit", "edit_guards"):
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, getattr(app, name))
+        install_module(monkeypatch, "fly.ap." + APP_MODULES[name], getattr(app, name))
         setattr(sys.modules["fly.ap"], name, getattr(app, name))
     apply = load(title)["apply_changes"]
     baseline = {"A": (1, old)}
@@ -472,7 +484,7 @@ def host(app: Any, monkeypatch: Any) -> Any:
     for name in ("fly", "fly.ap"):
         module = ModuleType(name)
         module.__path__ = []
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
     sys.modules["fly"].ap = sys.modules["fly.ap"]
     for name in (
         "draft_signals",
@@ -483,7 +495,7 @@ def host(app: Any, monkeypatch: Any) -> Any:
         "edit_guards",
     ):
         module = getattr(app, name)
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, module)
+        install_module(monkeypatch, "fly.ap." + APP_MODULES[name], module)
         setattr(sys.modules["fly.ap"], name, module)
     gui = SimpleNamespace(
         **{
@@ -686,7 +698,7 @@ def test_real_no_font_refusal_in_main(
         CurrentFont=lambda: None,
     )
     monkeypatch.setattr(app.names_edit, "_native", lambda name: native)
-    module_native = importlib.import_module("fontlabapp._glyph_catalog_native")
+    module_native = importlib.import_module("fontlabapp.glyphs.catalog.native")
     monkeypatch.setattr(module_native, "_native", lambda name: native)
     sys.modules["fly"].fl = SimpleNamespace(MainWindow=lambda: None)
     sys.modules["fly"].qt = host.qt

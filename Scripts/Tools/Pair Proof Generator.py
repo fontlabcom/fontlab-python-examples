@@ -54,7 +54,7 @@ def resolve(text: str, suffix: str, known: set[str]) -> tuple[str, ...]:
 
 def build_output(fields: tuple[str, ...]) -> str:
     """Retain input order and repeats in a complete validated pair product."""
-    import fly.ap.glyph_catalog as catalog
+    import fly.ap.glyphs.catalog.model as catalog
 
     left_text, right_text, left_suffix, right_suffix, mode, before, after = fields
     known = {row[0] for row in catalog.capture().rows}
@@ -89,8 +89,8 @@ def checked(text: str) -> str:
 
 def show(qt: Any, parent: Any) -> Any:
     """Open an owned modeless panel; drain callbacks before deletion."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 

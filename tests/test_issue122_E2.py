@@ -16,6 +16,8 @@ import pytest
 
 from historical_sources import archived_source, recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
     "Font Units Calculator",
@@ -444,20 +446,20 @@ def host(monkeypatch: pytest.MonkeyPatch) -> Any:
             ),
         },
         "fly.ap": {},
-        "fly.ap.scripting": {
+        "fly.ap.core.scripting": {
             "names_dialog_type": lambda: Panel,
             "show_script_dialog": show,
             "current_package": lambda *a: state.package,
         },
-        "fly.ap.glyph_catalog": {"capture": capture},
-        "fly.ap.qt_properties": {"value": value},
+        "fly.ap.glyphs.catalog.model": {"capture": capture},
+        "fly.ap.qt.properties": {"value": value},
     }
     for name, members in modules.items():
         module = ModuleType(name)
         module.__dict__.update(members)
         if name in ("fly", "fly.ap"):
             module.__path__ = []
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
         if "." in name:
             parent, child = name.rsplit(".", 1)
             setattr(sys.modules[parent], child, module)
@@ -717,7 +719,7 @@ def test_real_capture_outline_checks_current_font_glyph_master_and_deadline(
     path = SimpleNamespace(boundingRect=lambda: bounds)
     layer = SimpleNamespace(isNull=False)
     glyph = SimpleNamespace(name="A", findLayer=lambda master: layer)
-    inspector = ModuleType("fly.ap.inspectors")
+    inspector = ModuleType("fly.ap.proof.inspectors.model")
     outline_calls: list[Any] = []
 
     def read_outline(layer: Any) -> Any:
@@ -725,10 +727,10 @@ def test_real_capture_outline_checks_current_font_glyph_master_and_deadline(
         return path
 
     inspector.outline = read_outline
-    coordinates = ModuleType("fly.ap.node_coordinates")
+    coordinates = ModuleType("fly.ap.contours.nodes.coordinates")
     coordinates.current_glyph = lambda package: glyph
     for native in (inspector, coordinates):
-        monkeypatch.setitem(sys.modules, native.__name__, native)
+        install_module(monkeypatch, native.__name__, native)
         monkeypatch.setattr(
             sys.modules["fly.ap"], native.__name__.split(".")[-1], native, raising=False
         )

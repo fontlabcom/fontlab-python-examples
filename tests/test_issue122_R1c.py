@@ -17,9 +17,11 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from fontlabapp.layer_selection import LayerSelection
+from fontlabapp.masters.layers.selection import LayerSelection
 
 from historical_sources import recorded_sha256
+
+from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Contours/Node Slope And Handles.py"
@@ -185,11 +187,11 @@ def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> Non
     """No App src override: verify the installed package and Fly alias identity."""
     used = app_names_used()
     assert set(used) == {
-        "fly.ap.outline_writer",
-        "fly.ap.outline_panel",
-        "fly.ap.scripting",
-        "fly.ap.layer_selection",
-        "fly.ap.master_angles",
+        "fly.ap.contours.writer",
+        "fly.ap.contours.panel.model",
+        "fly.ap.core.scripting",
+        "fly.ap.masters.layers.selection",
+        "fly.ap.masters.angles.model",
     }
     app = importlib.import_module("fontlabapp")
     app_root = Path(app.__file__).resolve().parent
@@ -362,9 +364,9 @@ def native(monkeypatch: Any) -> Any:
     qt.QtGui = NS(
         QComboBox=Control, QLabel=Control, QCheckBox=Control, QPushButton=Control
     )
-    monkeypatch.setitem(sys.modules, "fontlab", host)
-    monkeypatch.setitem(sys.modules, "PythonQt", qt)
-    monkeypatch.setitem(sys.modules, "fly.qt", qt)
+    install_module(monkeypatch, "fontlab", host)
+    install_module(monkeypatch, "PythonQt", qt)
+    install_module(monkeypatch, "fly.qt", qt)
     monkeypatch.setattr(importlib.import_module("fly"), "qt", qt, raising=False)
     return NS(host=host, qt=qt, notifications=notifications)
 
@@ -372,8 +374,8 @@ def native(monkeypatch: Any) -> Any:
 def test_writer_when_batch_has_auto_glyph_then_keep_it_and_commit_others_once(
     module: Any, native: Any
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.outline_writer as writer
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.writer as writer
 
     glyphs = [Owned("a"), Owned("auto")]
     layers = {g.name: layer_with([cubic()]) for g in glyphs}
@@ -397,8 +399,8 @@ def test_writer_when_batch_has_auto_glyph_then_keep_it_and_commit_others_once(
 def test_writer_when_pending_or_partial_failure_then_clear_error(
     module: Any, native: Any
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.outline_writer as writer
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.writer as writer
 
     glyph, layer = Owned("a"), layer_with([cubic()])
     rows = module.changes(layer, "Proportions", 0.4, 0.4, False, False)
@@ -488,11 +490,11 @@ def fake_show_script_dialog(dialog_type: Callable[[Any], Any], key: str) -> Any:
 
 def test_app_fakes_when_inspected_then_match_real_signatures() -> None:
     for name, fake in (
-        ("outline_panel.panel_type", fake_panel_type),
-        ("layer_selection.capture", fake_capture),
-        ("scripting.show_script_dialog", fake_show_script_dialog),
+        ("contours.panel.model.panel_type", fake_panel_type),
+        ("masters.layers.selection.capture", fake_capture),
+        ("core.scripting.show_script_dialog", fake_show_script_dialog),
     ):
-        mod, attr = name.split(".")
+        mod, attr = name.rsplit(".", 1)
         real = getattr(importlib.import_module("fontlabapp." + mod), attr)
         expected, got = inspect.signature(real), inspect.signature(fake)
         assert got == expected, name
@@ -501,7 +503,7 @@ def test_app_fakes_when_inspected_then_match_real_signatures() -> None:
 def test_panel_when_created_then_no_native_member_shadowing(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
+    import fly.ap.contours.panel.model as panel
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     cls = module.panel_type()
@@ -528,7 +530,7 @@ def test_main_when_host_refuses_then_reports_error(
 def test_copy_capture_when_layer_selection_changes_then_refuses_or_reads_current(
     module: Any, monkeypatch: Any
 ) -> None:
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     monkeypatch.setattr(selection, "capture", fake_capture)
     with pytest.raises(ValueError, match="one glyph layer"):
@@ -655,8 +657,8 @@ def fake_current_package(expected_id: int | None = None) -> Any | None:
 def test_copy_slots_when_values_or_errors_then_update_controls_and_keep_errors(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.panel.model as panel
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     assert inspect.signature(fake_current_package) == inspect.signature(
         scripting.current_package
@@ -694,8 +696,8 @@ def test_copy_slots_when_values_or_errors_then_update_controls_and_keep_errors(
 def test_main_when_host_available_then_uses_shared_registry(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.panel.model as panel
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     monkeypatch.setattr(scripting, "show_script_dialog", fake_show_script_dialog)
@@ -838,8 +840,8 @@ def test_preview_when_edits_planned_then_shows_exact_coordinates(
 def test_readback_when_gap_then_app_prefix_and_no_duplicate_undo_text(
     module: Any, native: Any
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.outline_writer as writer
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.writer as writer
 
     layer = layer_with([cubic()])
     moves = module.handle_moves(layer.shapes[0].contours[0], "Proportions", 0.4, 0.4)
@@ -866,7 +868,7 @@ def test_readback_when_gap_then_app_prefix_and_no_duplicate_undo_text(
 def test_controls_when_built_then_buttons_labels_ranges_and_watches_are_correct(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
+    import fly.ap.contours.panel.model as panel
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     widget = module.panel_type()()
@@ -907,7 +909,7 @@ def test_controls_when_built_then_buttons_labels_ranges_and_watches_are_correct(
 
 
 def test_panel_self_reads_when_parsed_then_use_only_public_base_or_own_names() -> None:
-    import fly.ap.outline_panel as panel
+    import fly.ap.contours.panel.model as panel
 
     tree = ast.parse(SCRIPT.read_text())
     own = {
@@ -935,7 +937,7 @@ def test_panel_self_reads_when_parsed_then_use_only_public_base_or_own_names() -
 def test_intro_when_font_or_selection_missing_then_base_guidance_stays(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
+    import fly.ap.contours.panel.model as panel
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     widget = module.panel_type()()
@@ -952,8 +954,8 @@ def test_intro_when_font_or_selection_missing_then_base_guidance_stays(
 def test_italic_when_all_masters_then_each_angle_drives_its_own_preview_and_write(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.panel.model as panel
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     monkeypatch.setattr(scripting, "current_package", fake_current_package)
@@ -1083,8 +1085,8 @@ def test_planning_when_native_getters_return_fresh_wrappers_then_one_snapshot_an
 def test_italic_when_requested_master_is_not_in_capture_then_clear_value_error(
     module: Any, monkeypatch: Any, native: Any
 ) -> None:
-    import fly.ap.outline_panel as panel
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.contours.panel.model as panel
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     monkeypatch.setattr(scripting, "current_package", fake_current_package)
@@ -1124,7 +1126,7 @@ def test_snapshot_positions_when_multiple_contours_then_preview_and_write_do_not
 def test_copy_when_getters_return_fresh_wrappers_then_reuses_one_snapshot(
     module: Any, monkeypatch: Any, native: Any, action: str
 ) -> None:
-    import fly.ap.outline_panel as panel
+    import fly.ap.contours.panel.model as panel
 
     monkeypatch.setattr(panel, "panel_type", fake_panel_type)
     widget = module.panel_type()()

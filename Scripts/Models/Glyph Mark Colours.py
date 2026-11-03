@@ -82,7 +82,7 @@ def mark_label(value: int) -> str:
 
 def capture_metadata() -> tuple[int, dict[str, tuple[int, int]]]:
     """Read scalar identities and mark values; retain no native glyph handles."""
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
 
     facts = names_edit.scan()
     return facts.package_id, {
@@ -95,8 +95,8 @@ def apply_changes(
     package_id: int, baseline: dict[str, tuple[int, int]], desired: dict[str, int]
 , *, disclosure: dict[str, Any] | None = None) -> tuple[str, ...]:
     """Commit changed rows once; refuse switched, replaced or externally edited glyphs."""
-    import fly.ap.history as history  # noqa: PLR0402 - use the lazy Fly module alias
-    import fly.ap.names_edit as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - use the lazy Fly module alias
+    import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - use the lazy Fly module alias
 
     facts = names_edit.fresh_facts(package_id)
     todo = []
@@ -139,14 +139,14 @@ def apply_changes(
         facts=facts.autos,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return tuple(entry.name for entry, _value in todo)
 
 
 def delegate_type(qt: Any) -> type:
     """Use a native combo editor and an explicit cell-change callback."""
-    import fly.ap.qt_properties as properties
+    import fly.ap.qt.properties as properties
 
     gui = qt.QtGui
 
@@ -215,7 +215,7 @@ def delegate_type(qt: Any) -> type:
 
 def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) -> Any:
     """Open through the existing host. Keep exact callback and model owners."""
-    import fly.ap.draft_signals as signals
+    import fly.ap.core.signals.scope as signals
 
     if capture is None:
         capture = capture_metadata
@@ -347,7 +347,7 @@ def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) 
 
         def apply(self) -> None:
             """Write changed rows through one metadata history operation."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             self.editor_delegate.flush()
             try:

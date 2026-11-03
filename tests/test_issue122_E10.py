@@ -14,6 +14,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Font Name Encoding Audit", "Localized Font Names", "Font Info Snapshot")
 FIELDS = (
@@ -53,16 +55,12 @@ def load(title: str) -> dict[str, Any]:
 @pytest.fixture
 def app(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
-    import fontlabapp
-
-    fly = ModuleType("fly")
-    fly.ap = fontlabapp
-    monkeypatch.setitem(sys.modules, "fly", fly)
-    monkeypatch.setitem(sys.modules, "fly.ap", fontlabapp)
+    monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fly/src"))
+    importlib.import_module("fly.ap")
 
 
 def test_real_app_imports(app: None) -> None:
-    for name, symbol in (("draft_signals", "Scope"), ("qt_properties", "value")):
+    for name, symbol in (("core.signals.scope", "Scope"), ("qt.properties", "value")):
         assert callable(getattr(importlib.import_module("fontlabapp." + name), symbol))
 
 
@@ -493,7 +491,7 @@ def test_entry_uses_existing_host_application(title: str, monkeypatch: Any) -> N
     fly = ModuleType("fly")
     fly.qt = object()
     fly.fl = SimpleNamespace(MainWindow=lambda: "host")
-    monkeypatch.setitem(sys.modules, "fly", fly)
+    install_module(monkeypatch, "fly", fly)
     module["main"]()
     assert calls == [(fly.qt, "host")]
 
@@ -502,7 +500,7 @@ def test_regexp_duplicate_target_and_all_seven_source_identities() -> None:
     """Bind the duplicate to its current entry and each source to its recorded hash."""
 
     target = ROOT / "Scripts/Tools/Glyph Name Pattern Lab.py"
-    assert "glyph_pattern" in target.read_text()
+    assert "fly.ap.glyphs.pattern" in target.read_text()
     index = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     rows = [
         r

@@ -26,7 +26,7 @@ starts unrestricted rather than limiting real fonts to demonstration-only2026.
 
 def main() -> None:
     """Open the complete owned real-font workflow through the lazy Fly namespace."""
-    from fly.ap.glyph_catalog import show_custom
+    from fly.ap.glyphs.catalog.model import show_custom
 
     show_custom()
 

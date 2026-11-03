@@ -61,8 +61,8 @@ def font_paths(paths: list[str]) -> tuple[str, ...]:
 
 def panel_type(qt: Any, open_font: Callable[[str], None]) -> type:
     """Build a file shelf with an injected FontLab opener."""
-    from fly.ap.draft_signals import Scope
-    from fly.ap.qt_properties import value
+    from fly.ap.core.signals.scope import Scope
+    from fly.ap.qt.properties import value
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -303,7 +303,7 @@ def panel_type(qt: Any, open_font: Callable[[str], None]) -> type:
 def open_in_fontlab(path: str) -> None:
     """Require one new workspace package; never infer success from return shape."""
     from fly import fl
-    from fly.ap.controls import FontLab
+    from fly.ap.core.controls import FontLab
 
     workspace = fl.flWorkspace.instance()
     before = {package.id for package in workspace.packages()}
@@ -321,7 +321,7 @@ def open_in_fontlab(path: str) -> None:
 def main() -> Any:
     """Show the shelf; defer native file-opening setup until the action runs."""
     from fly import qt
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(panel_type(qt, open_in_fontlab), KEY)
 

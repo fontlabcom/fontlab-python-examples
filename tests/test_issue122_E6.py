@@ -18,6 +18,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 APP_SOURCE = ROOT.parent / "fontlab-fontlabapp" / "src"
 TITLES = ("Unicode Issues Dock", "Glyph Snapshot Diff")
@@ -249,17 +251,17 @@ def host(monkeypatch: Any) -> Any:
     ap = ModuleType("fly.ap")
     ap.__path__ = []
     fly.ap = ap
-    monkeypatch.setitem(sys.modules, "fly", fly)
-    monkeypatch.setitem(sys.modules, "fly.ap", ap)
+    install_module(monkeypatch, "fly", fly)
+    install_module(monkeypatch, "fly.ap", ap)
     for name in (
-        "widgets",
-        "draft_signals",
-        "qt_properties",
-        "glyph_catalog",
-        "scripting",
+        "qt.widgets",
+        "core.signals.scope",
+        "qt.properties",
+        "glyphs.catalog.model",
+        "core.scripting",
     ):
         module = importlib.import_module("fontlabapp." + name)
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, module)
+        install_module(monkeypatch, "fly.ap." + name, module)
     gui = SimpleNamespace(
         **{
             name: Widget
@@ -295,7 +297,7 @@ def host(monkeypatch: Any) -> Any:
         QtGui=gui,
         QtCore=SimpleNamespace(Qt=enums, QEvent=SimpleNamespace(Close=19)),
     )
-    widgets = sys.modules["fly.ap.widgets"]
+    widgets = sys.modules["fly.ap.qt.widgets"]
     monkeypatch.setattr(widgets, "_native", lambda name: qt)
     package = SimpleNamespace(id=17)
     state = SimpleNamespace(
@@ -320,11 +322,11 @@ def host(monkeypatch: Any) -> Any:
         state.selections.append((names, package_id))
         return names
 
-    scripting = sys.modules["fly.ap.scripting"]
+    scripting = sys.modules["fly.ap.core.scripting"]
     real_select = scripting.select_glyphs
     monkeypatch.setattr(scripting, "current_package", current_package)
     monkeypatch.setattr(scripting, "select_glyphs", select_glyphs)
-    monkeypatch.setattr(sys.modules["fly.ap.glyph_catalog"], "capture", capture)
+    monkeypatch.setattr(sys.modules["fly.ap.glyphs.catalog.model"], "capture", capture)
     parent = Widget()
     fly.qt, fly.fl = qt, SimpleNamespace(MainWindow=lambda: parent)
     return SimpleNamespace(
@@ -339,12 +341,15 @@ def host(monkeypatch: Any) -> Any:
 
 
 def test_real_app_names_and_selection_guard_contract(host: Any) -> None:
-    from fontlabapp import draft_signals, glyph_catalog, scripting, widgets
+    import fontlabapp.core.signals.scope as draft_signals
+    import fontlabapp.glyphs.catalog.model as glyph_catalog
+    import fontlabapp.core.scripting as scripting
+    import fontlabapp.qt.widgets as widgets
 
     assert callable(widgets.create_panel) and callable(widgets.OwnedWidget.close)
     assert callable(draft_signals.Scope) and callable(glyph_catalog.capture)
     assert callable(scripting.select_glyphs) and callable(scripting.current_package)
-    source = (APP_SOURCE / "fontlabapp" / "scripting.py").read_text()
+    source = (APP_SOURCE / "fontlabapp" / "core" / "scripting.py").read_text()
     selection = source[
         source.index("def select_glyphs(") : source.index(
             "def _require_selection_window("
@@ -381,7 +386,7 @@ def test_real_fontlab_dock_parent_area_and_mac_profile(
     module = load(TITLES[0])
     host.parent.local_visible = visible
     panel = module["show"](host.qt, host.parent, area=area)
-    assert isinstance(panel.owned, sys.modules["fly.ap.widgets"].OwnedWidget)
+    assert isinstance(panel.owned, sys.modules["fly.ap.qt.widgets"].OwnedWidget)
     assert host.parent.local_dock is panel.owned.widget
     assert panel.owned.widget.local_floating is (not visible)
     assert host.parent.local_area == (5 if area == "right" else 4)
@@ -426,7 +431,7 @@ def test_dock_safe_selection_refusal_and_queued_close_retry(
     def refusal(*args: Any, **kwargs: Any) -> Any:
         raise ValueError("Activate the Font window before selecting glyphs.")
 
-    monkeypatch.setattr(sys.modules["fly.ap.scripting"], "select_glyphs", refusal)
+    monkeypatch.setattr(sys.modules["fly.ap.core.scripting"], "select_glyphs", refusal)
     panel.issue_view.doubleClicked.emit(
         SimpleNamespace(row=lambda: 0, isValid=lambda: True)
     )
@@ -639,7 +644,7 @@ def test_fake_guard_rejects_class_and_instance_native_members() -> None:
 def test_real_selection_helper_rejects_glyph_window_before_legacy_writes(
     host: Any, monkeypatch: Any
 ) -> None:
-    scripting = sys.modules["fly.ap.scripting"]
+    scripting = sys.modules["fly.ap.core.scripting"]
     writes: list[Any] = []
 
     class Legacy:

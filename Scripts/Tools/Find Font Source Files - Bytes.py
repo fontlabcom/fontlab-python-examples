@@ -18,7 +18,7 @@ Historical source identifier: rescued/part3/pyqt-official-ports/ports/dialogs/py
 
 def main() -> None:
     """Open the complete paired workflow through the lazy public Fly facade."""
-    from fly.ap.find_files import show_bytes
+    from fly.ap.qt.find_files.model import show_bytes
 
     show_bytes()
 

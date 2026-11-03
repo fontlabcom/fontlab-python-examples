@@ -3,6 +3,8 @@
 import hashlib,json,runpy,sys
 from pathlib import Path
 from types import ModuleType
+
+from module_doubles import install_module
 ROOT=Path(__file__).resolve().parents[1]
 
 def test_pattern_authoring_preserves_exact_source_identity_and_public_entry(monkeypatch):
@@ -12,8 +14,8 @@ def test_pattern_authoring_preserves_exact_source_identity_and_public_entry(monk
     assert row['assets']==[] and row['native_acceptance']=='pending' and row['original_workflow_accepted'] is False
     path=ROOT/row['menu'];assert hashlib.sha256(path.read_bytes()).hexdigest()==row['destination_sha256']
     calls=[]
-    for name in ('fly','fly.ap','fly.ap.glyph_pattern'):monkeypatch.setitem(sys.modules,name,ModuleType(name))
-    sys.modules['fly.ap.glyph_pattern'].show=lambda:calls.append('show')
+    for name in ('fly','fly.ap','fly.ap.glyphs.pattern'):install_module(monkeypatch, name, ModuleType(name))
+    sys.modules['fly.ap.glyphs.pattern'].show=lambda:calls.append('show')
     entry=runpy.run_path(str(path),run_name='inspection');assert not calls
     entry['main']();runpy.run_path(str(path),run_name='__main__');assert calls==['show','show']
     assert row['source_sha256'] in (ROOT/'NOTICE').read_text()

@@ -139,7 +139,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def save(self) -> None:
             """Validate and export the current draft to a new file."""
-            from fly.ap.qt_properties import value
+            from fly.ap.qt.properties import value
 
             content = self.payload()
             check_text(content)
@@ -212,7 +212,7 @@ def show(qt: Any, parent: Any) -> Any:
 
 def capture_codes() -> frozenset[int]:
     """Read Unicode coverage from the snapshot's Unicode column, not glyph names."""
-    from fly.ap.glyph_catalog import capture
+    from fly.ap.glyphs.catalog.model import capture
 
     return frozenset(
         int(code.removeprefix("U+"), 16)
@@ -261,7 +261,7 @@ def _populate(panel: Any, qt: Any) -> None:
     """Keep explicit Build so changing font context never replaces a proof silently."""
     from datetime import datetime
 
-    from fly.ap.qt_properties import value
+    from fly.ap.qt.properties import value
 
     gui = qt.QtGui
     controls = gui.QHBoxLayout()

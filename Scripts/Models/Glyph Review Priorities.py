@@ -232,11 +232,11 @@ def import_queue(path: Path, names: set[str]) -> tuple[dict[str, str], str]:
 
 def show(qt: Any, parent: Any = None, capture: Callable[[], Any] | None = None) -> Any:
     """Open through the existing host. Keep exact callback and model owners."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     if capture is None:
-        import fly.ap.glyph_catalog as catalogue
+        import fly.ap.glyphs.catalog.model as catalogue
 
         capture = catalogue.capture
     gui, core = qt.QtGui, qt.QtCore

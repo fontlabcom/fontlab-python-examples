@@ -25,7 +25,7 @@ Original source/resources are archived outside this repository; this command doe
 
 def main() -> None:
     """Open the complete owned read-only hierarchy through the lazy Fly alias."""
-    from fly.ap.glyph_tree import show_outline
+    from fly.ap.glyphs.tree.model import show_outline
 
     show_outline()
 

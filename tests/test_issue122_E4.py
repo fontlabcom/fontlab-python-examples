@@ -14,6 +14,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
     "Glyph Proof Layout",
@@ -369,8 +371,8 @@ class Widget:
 def host(monkeypatch: Any) -> Any:
     """Use the real App lifecycle scope and fake only Qt and catalogue I/O."""
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    scope = importlib.import_module("fontlabapp.draft_signals")
-    props = importlib.import_module("fontlabapp.qt_properties")
+    scope = importlib.import_module("fontlabapp.core.signals.scope")
+    props = importlib.import_module("fontlabapp.qt.properties")
     state = SimpleNamespace(
         rows=(("A", "U+0041", ""), ("A.alt", "", ""), ("B", "U+0042", "")),
         error=None,
@@ -384,9 +386,9 @@ def host(monkeypatch: Any) -> Any:
             raise state.error
         return SimpleNamespace(rows=state.rows)
 
-    catalog = ModuleType("fly.ap.glyph_catalog")
+    catalog = ModuleType("fly.ap.glyphs.catalog.model")
     catalog.capture = capture
-    scripting = ModuleType("fly.ap.scripting")
+    scripting = ModuleType("fly.ap.core.scripting")
 
     def show(factory: Any, key: str) -> Any:
         panel = factory(None)
@@ -486,12 +488,12 @@ def host(monkeypatch: Any) -> Any:
     for name, module in (
         ("fly", fly),
         ("fly.ap", ModuleType("fly.ap")),
-        ("fly.ap.glyph_catalog", catalog),
-        ("fly.ap.scripting", scripting),
-        ("fly.ap.draft_signals", scope),
-        ("fly.ap.qt_properties", props),
+        ("fly.ap.glyphs.catalog.model", catalog),
+        ("fly.ap.core.scripting", scripting),
+        ("fly.ap.core.signals.scope", scope),
+        ("fly.ap.qt.properties", props),
     ):
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
     return state
 
 
@@ -711,8 +713,8 @@ def test_parent_destruction_releases_owned_callbacks(title: str, host: Any) -> N
 def test_real_catalog_double_read_and_font_master_fences(
     title: str, host: Any, monkeypatch: Any
 ) -> None:
-    native = importlib.import_module("fontlabapp._glyph_catalog_native")
-    public = importlib.import_module("fontlabapp.glyph_catalog")
+    native = importlib.import_module("fontlabapp.glyphs.catalog.native")
+    public = importlib.import_module("fontlabapp.glyphs.catalog.model")
     reads = SimpleNamespace(count=0, drift=False)
     package = SimpleNamespace(id=12, fgId=13, isNull=False, master="Regular")
     mapped = SimpleNamespace(
@@ -744,7 +746,7 @@ def test_real_catalog_double_read_and_font_master_fences(
             flWorkspace=SimpleNamespace(instance=lambda: workspace),
         ),
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.glyph_catalog", public)
+    install_module(monkeypatch, "fly.ap.glyphs.catalog.model", public)
     read = load(title)["capture_names"]
     assert read() == ("A",)
     assert reads.count == 3
@@ -778,16 +780,16 @@ def test_capture_adapter_honours_expired_budget(title: str, host: Any) -> None:
 
 def test_real_app_names_exist_without_native_import(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp/src"))
-    assert callable(importlib.import_module("fontlabapp.glyph_catalog").capture)
-    assert callable(importlib.import_module("fontlabapp.scripting").show_script_dialog)
-    assert callable(importlib.import_module("fontlabapp.draft_signals").Scope)
-    assert callable(importlib.import_module("fontlabapp.qt_properties").value)
-    assert callable(importlib.import_module("fontlabapp.history").commit)
-    assert callable(importlib.import_module("fontlabapp.history").scan_auto_facts)
+    assert callable(importlib.import_module("fontlabapp.glyphs.catalog.model").capture)
+    assert callable(importlib.import_module("fontlabapp.core.scripting").show_script_dialog)
+    assert callable(importlib.import_module("fontlabapp.core.signals.scope").Scope)
+    assert callable(importlib.import_module("fontlabapp.qt.properties").value)
+    assert callable(importlib.import_module("fontlabapp.core.history.glyphs").commit)
+    assert callable(importlib.import_module("fontlabapp.core.history.glyphs").scan_auto_facts)
     assert issubclass(
-        importlib.import_module("fontlabapp.history").PartialWriteError, RuntimeError
+        importlib.import_module("fontlabapp.core.history.glyphs").PartialWriteError, RuntimeError
     )
-    assert callable(importlib.import_module("fontlabapp.scripting").current_package)
+    assert callable(importlib.import_module("fontlabapp.core.scripting").current_package)
 
 
 def test_mark_palette_mapping_and_rejects_unknown_colours() -> None:
@@ -803,8 +805,8 @@ def test_mark_palette_mapping_and_rejects_unknown_colours() -> None:
 
 @pytest.fixture
 def mark_host(host: Any, monkeypatch: Any) -> Any:
-    history = importlib.import_module("fontlabapp.history")
-    guards = importlib.import_module("fontlabapp.edit_guards")
+    history = importlib.import_module("fontlabapp.core.history.glyphs")
+    guards = importlib.import_module("fontlabapp.core.edit_guards")
     state = SimpleNamespace(
         events=[],
         auto=False,
@@ -868,7 +870,7 @@ def mark_host(host: Any, monkeypatch: Any) -> Any:
         layers,
         history,
     )
-    scripting = sys.modules["fly.ap.scripting"]
+    scripting = sys.modules["fly.ap.core.scripting"]
     scripting.current_package = lambda: package if state.available else None
     native = SimpleNamespace(
         flItems=lambda: SimpleNamespace(
@@ -897,8 +899,8 @@ def mark_host(host: Any, monkeypatch: Any) -> Any:
         "scan_auto_facts",
         lambda package: history.auto_facts((("A", state.auto, ()),)),
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.history", history)
-    monkeypatch.setitem(sys.modules, "fly.ap.edit_guards", importlib.import_module("fontlabapp.edit_guards"))
+    install_module(monkeypatch, "fly.ap.core.history.glyphs", history)
+    install_module(monkeypatch, "fly.ap.core.edit_guards", importlib.import_module("fontlabapp.core.edit_guards"))
     return state
 
 
@@ -1312,7 +1314,7 @@ def test_public_source_has_python311_contracts_and_no_font_writes(title: str) ->
     if title != MARK_TITLE:
         assert "history.commit" not in text
     else:
-        assert "import fly.ap.history as history" in text
+        assert "import fly.ap.core.history.glyphs as history" in text
         assert 'operation="metadata"' in text
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):

@@ -2,6 +2,16 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — Issue 205 package API paths
+
+- Migrate menus, Lessons and documentation to App's canonical domain modules;
+  add the deterministic stdlib `tools/migrate_app_paths.py` with explicit
+  Fontport and Remopy renames and boundary/idempotence regression tests.
+- Follow the new module layout in import doubles, source-file checks, identity
+  assertions and API metadata while retaining all existing assertions.
+- Refresh current destination, regression-snapshot and documentation hash pins,
+  including refactored sibling Scriptmix destinations. Preserve archival hashes.
+
 <!-- workspace-handoff:2026-11-03 -->
 ## 2026-11-03 — fixes from runs inside FontLab 9
 

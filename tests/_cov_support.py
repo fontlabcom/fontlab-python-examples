@@ -8,6 +8,8 @@ import sys
 from types import ModuleType, SimpleNamespace as NS
 from typing import Any
 
+from module_doubles import install_module
+
 
 class Signal:
     """Minimal Qt signal: connect, disconnect and emit."""
@@ -124,7 +126,7 @@ class Event:
 
 
 class Scope:
-    """Signal-scope double matching fly.ap.draft_signals.Scope's used surface."""
+    """Signal-scope double matching fly.ap.core.signals.scope.Scope's used surface."""
 
     refuse_default = False
 
@@ -153,7 +155,7 @@ class Scope:
 
 
 def read_property(obj: Any, key: str) -> Any:
-    """Match fly.ap.qt_properties.value for plain attributes and methods."""
+    """Match fly.ap.qt.properties.value for plain attributes and methods."""
     found = getattr(obj, key)
     return found() if callable(found) else found
 
@@ -205,19 +207,16 @@ def make_qt(widget: type = Widget) -> NS:
 
 def install_fly(monkeypatch: Any, qt: NS) -> NS:
     """Replace the ``fly`` package with doubles; return handles tests can tune."""
-    names = ("fly", "fly.ap", "fly.ap.draft_signals", "fly.ap.qt_properties",
-             "fly.ap.character_map_capture", "fly.ap.scripting", "fly.ap.glyph_catalog")
+    names = ("fly", "fly.ap", "fly.ap.core.signals.scope", "fly.ap.qt.properties",
+             "fly.ap.glyphs.character_map.capture", "fly.ap.core.scripting", "fly.ap.glyphs.catalog.model")
     modules = {name: ModuleType(name) for name in names}
     for name, module in modules.items():
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
     root, ap = modules["fly"], modules["fly.ap"]
     root.ap, root.qt = ap, qt
     root.fl = NS(MainWindow=lambda: "main-window")
-    for short in ("draft_signals", "qt_properties", "character_map_capture",
-                  "scripting", "glyph_catalog"):
-        setattr(ap, short, modules["fly.ap." + short])
-    modules["fly.ap.draft_signals"].Scope = Scope
-    modules["fly.ap.qt_properties"].value = read_property
-    return NS(root=root, scripting=modules["fly.ap.scripting"],
-              catalog=modules["fly.ap.glyph_catalog"],
-              capture_module=modules["fly.ap.character_map_capture"])
+    modules["fly.ap.core.signals.scope"].Scope = Scope
+    modules["fly.ap.qt.properties"].value = read_property
+    return NS(root=root, scripting=modules["fly.ap.core.scripting"],
+              catalog=modules["fly.ap.glyphs.catalog.model"],
+              capture_module=modules["fly.ap.glyphs.character_map.capture"])

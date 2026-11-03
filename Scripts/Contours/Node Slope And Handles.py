@@ -36,7 +36,7 @@ from itertools import pairwise
 from time import monotonic
 from typing import Any, NamedTuple
 
-import fly.ap.outline_writer as writer
+import fly.ap.contours.writer as writer
 
 TITLE = "Node Slope And Handles"
 KEY = "numeric_node_slope_handles"
@@ -341,7 +341,7 @@ class CoordinateEditor(writer.Editor):
 
 def selected_contours() -> list[Any]:
     """Read one current layer for Copy actions; refuse ambiguous selections."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     snapshot = selection.capture(deadline=monotonic() + 2)
     layers = {int(item.layer.id): item.layer for item in snapshot.occurrences}
@@ -353,8 +353,8 @@ def selected_contours() -> list[Any]:
 
 def panel_type() -> type:
     """Build the non-modal App panel only inside the native host."""
-    import fly.ap.outline_panel as panel
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - retain the Fly module import
+    import fly.ap.contours.panel.model as panel
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - retain the Fly module import
     from fly import qt
 
     class NumericPanel(panel.panel_type()):
@@ -485,7 +485,7 @@ def panel_type() -> type:
             slopes = {}
             use_italic = mode == "Slope" and self.per_master_italic.isChecked()
             if use_italic:
-                import fly.ap.master_angles as angles
+                import fly.ap.masters.angles.model as angles
 
                 package = scripting.current_package(self.package_id)
                 if package is None:
@@ -513,7 +513,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Show the retained panel; contain native read and deadline errors."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - retain the Fly module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - retain the Fly module import
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

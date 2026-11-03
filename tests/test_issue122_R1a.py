@@ -18,6 +18,8 @@ import pytest
 
 from historical_sources import recorded_sha256
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = (
     ROOT / "Scripts/Tools/Kerning Copy Rules.py",
@@ -195,14 +197,14 @@ def test_real_app_names_when_installed_then_fly_aliases_resolve() -> None:
     assert fly.ALIASES["ap"] == "fontlabapp"
     used = app_names_used()
     assert {
-        "fly.ap.scripting",
-        "fly.ap.draft_signals",
-        "fly.ap.qt_properties",
-        "fly.ap.node_coordinates",
-        "fly.ap.kerning_batch",
-        "fly.ap.history",
-        "fly.ap.layer_writer",
-        "fly.ap.edit_guards",
+        "fly.ap.core.scripting",
+        "fly.ap.core.signals.scope",
+        "fly.ap.qt.properties",
+        "fly.ap.contours.nodes.coordinates",
+        "fly.ap.kerning.batch",
+        "fly.ap.core.history.glyphs",
+        "fly.ap.masters.layers.writer",
+        "fly.ap.core.edit_guards",
     } <= used.keys()
     for name, attributes in used.items():
         module = importlib.import_module(name)
@@ -226,8 +228,8 @@ def fake_current_glyph(package: Any) -> Any | None:
 
 def test_app_fakes_when_compared_then_exact_signatures() -> None:
     for module, name, fake in (
-        ("scripting", "current_package", fake_current_package),
-        ("node_coordinates", "current_glyph", fake_current_glyph),
+        ("core.scripting", "current_package", fake_current_package),
+        ("contours.nodes.coordinates", "current_glyph", fake_current_glyph),
     ):
         real = getattr(importlib.import_module("fontlabapp." + module), name)
         assert inspect.signature(real) == inspect.signature(fake), (
@@ -369,8 +371,8 @@ STATE: dict[str, Any] = {}
 @pytest.fixture
 def world(monkeypatch: Any) -> Any:
     """Patch only context acquisition; all other App calls stay real."""
-    scripting = importlib.import_module("fly.ap.scripting")
-    coordinates = importlib.import_module("fly.ap.node_coordinates")
+    scripting = importlib.import_module("fly.ap.core.scripting")
+    coordinates = importlib.import_module("fly.ap.contours.nodes.coordinates")
     package = NS(
         id=9, master="Light", upm=1000, masters=("Light", "Bold"), italicAngle_value=-12
     )
@@ -464,8 +466,8 @@ def test_capture_when_changed_or_timed_out_then_no_artifact(world: Any) -> None:
 def test_pair_list_when_snapshot_then_real_app_validation_and_exact_text(
     world: Any, monkeypatch: Any
 ) -> None:
-    batch = importlib.import_module("fly.ap.kerning_batch")
-    scripting = importlib.import_module("fontlabapp.scripting")
+    batch = importlib.import_module("fly.ap.kerning.batch")
+    scripting = importlib.import_module("fontlabapp.core.scripting")
     # kerning_batch binds current_package and kerning_pairs at module import.
     monkeypatch.setattr(batch, "current_package", scripting.current_package)
 
@@ -838,7 +840,7 @@ def test_tt_read_and_blend_keep_native_kind(world: Any) -> None:
 @pytest.fixture
 def native_world(world: Any, monkeypatch: Any) -> Any:
     """Run the real App history commit over native-shape fakes; never fake commit."""
-    history = importlib.import_module("fly.ap.history")
+    history = importlib.import_module("fly.ap.core.history.glyphs")
     native = ModuleType("fontlab")
     notifications: list = []
     snapshots: list = []
@@ -910,8 +912,8 @@ def native_world(world: Any, monkeypatch: Any) -> Any:
     qt = fake_qt()
     qt.QtCore.QPointF = lambda x, y: (x, y)
     qt.QtCore.QDateTime = NS(currentDateTimeUtc=lambda: "STAMP")
-    monkeypatch.setitem(sys.modules, "fontlab", native)
-    monkeypatch.setitem(sys.modules, "PythonQt", qt)
+    install_module(monkeypatch, "fontlab", native)
+    install_module(monkeypatch, "PythonQt", qt)
     fly = importlib.import_module("fly")
     monkeypatch.setitem(fly.__dict__, "fl", native)
     monkeypatch.setitem(fly.__dict__, "qt", qt)
@@ -981,7 +983,7 @@ def test_unsafe_layer_writes_refused_before_history(
     module = load(1)
     plan = bound_plan(module)
     world = native_world
-    history = importlib.import_module("fly.ap.history")
+    history = importlib.import_module("fly.ap.core.history.glyphs")
     if kind == "stale":
         world.layers["Light"].shapes[0].contours[0].nodes()[0].x += 1
     elif kind == "auto-owner":

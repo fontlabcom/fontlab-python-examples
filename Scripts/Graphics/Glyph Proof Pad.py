@@ -45,7 +45,7 @@ def check_names(names: tuple[str, ...]) -> tuple[str, ...]:
 
 def capture_names() -> tuple[str, ...]:
     """Use App's bounded double-read capture; never access native glyph caches."""
-    import fly.ap.glyph_catalog as catalog
+    import fly.ap.glyphs.catalog.model as catalog
 
     deadline = monotonic() + 2.0
     names = check_names(
@@ -68,8 +68,8 @@ def page_names(names: tuple[str, ...], index: int) -> tuple[str, ...]:
 
 def panel_type(qt: Any) -> type:
     """Bind a modeless scene to the host Qt; retain and drain exact signals."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -282,7 +282,7 @@ def panel_type(qt: Any) -> type:
 
 def main() -> Any:
     """Open through Fly and the host registry; never create an application."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
     from fly import qt
 
     return scripting.show_script_dialog(panel_type(qt), KEY)

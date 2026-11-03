@@ -864,7 +864,7 @@ def run_host(monkeypatch):
         widget.show()
         return widget
 
-    monkeypatch.setitem(sys.modules, "fly.ap.reports", SimpleNamespace(show_report=show_report))
+    monkeypatch.setitem(sys.modules, "fly.ap.proof.reports.model", SimpleNamespace(show_report=show_report))
     monkeypatch.setitem(sys.modules, "PythonQt", SimpleNamespace(QtGui=qtgui))
     monkeypatch.setitem(
         sys.modules,

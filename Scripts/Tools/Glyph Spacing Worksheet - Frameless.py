@@ -24,7 +24,7 @@ Compatibility:
 
 def main() -> None:
     """Open the owned App worksheet through the lazy Fly namespace."""
-    from fly.ap.spacing_worksheet import show_official
+    from fly.ap.metrics.worksheet.model import show_official
 
     show_official()
 

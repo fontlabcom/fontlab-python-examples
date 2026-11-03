@@ -59,7 +59,7 @@ def checked_glyph(
     context: tuple[int, int, str], identity: int | None, name: str
 ) -> tuple[Any, Any]:
     """Resolve only a current, valid glyph with the captured native identity."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
 
     package = scripting.current_package()
     if context_of(package) != context:
@@ -81,8 +81,8 @@ def board_snapshot(
     prefix: str,
 ) -> tuple[tuple[int, int, str], tuple[tuple[str, int, int], ...]]:
     """Capture immutable names, IDs and marks twice; never publish a partial board."""
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
 
     deadline = monotonic() + 2.0
     context = context_of(scripting.current_package())
@@ -121,7 +121,7 @@ def apply_mark(
     Enroll every layer and the glyph in one App metadata commit. Never
     notify an auto layer: history.commit owns the refusal before history starts.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - Fly requires module import
 
     if type(mark) is not int or mark not in {row[1] for row in SWATCHES}:
         raise ValueError("Unknown FontLab mark colour.")
@@ -174,7 +174,7 @@ def apply_mark(
         facts=facts,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(result, disclosure)
     if result.mismatches:
         raise history.PartialWriteError(
@@ -185,9 +185,9 @@ def apply_mark(
 
 def panel_type(qt: Any) -> type:
     """Create a modeless colour-drop board; no native item stores Python state."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.history as history  # noqa: PLR0402 - Fly requires module import
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -274,7 +274,7 @@ def panel_type(qt: Any) -> type:
 
         def dropEvent(self, event: Any) -> None:
             """One drop is one metadata action; partial failures keep the Undo hint."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 mark = self.dropped_mark(event)
@@ -415,7 +415,7 @@ def panel_type(qt: Any) -> type:
 
 def main() -> Any:
     """Open in FontLab's application through the existing App window registry."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module import
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module import
     from fly import qt
 
     return scripting.show_script_dialog(panel_type(qt), KEY)

@@ -24,7 +24,7 @@ Original source/resources are archived outside this repository and are not bundl
 
 def main() -> None:
     """Open the complete distinct owned completion policy through Fly."""
-    from fly.ap.glyph_completion import show
+    from fly.ap.glyphs.completion.model import show
 
     show()
 

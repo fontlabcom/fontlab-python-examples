@@ -1,4 +1,5 @@
 {
+  "note": "issue-205 import-path update",
   "this_file": "lessons/provenance/getgo.json",
   "license": "Apache-2.0",
   "native_status": "pending",
@@ -49,7 +50,7 @@
       "source": "rescued/part2/examples/getgo/__init__.py",
       "source_sha256": "20a0331ce120192ffc3b305552737fe3de779bc8d9a08188b1346073c7b023ff",
       "destination": "src/fontlab_python_lessons/getgo/__init__.py",
-      "destination_sha256": "615d10f095ece21c51b6442920c40b0431adfe4bf5de3fe59817b0f24faf12b2"
+      "destination_sha256": "643d99c9fc77b6775cc4a4fa73774745da509eaa4eada945e2fe8749cbc3cbcd"
     },
     {
       "source": "rescued/part2/examples/getgo/designspace.py",
@@ -91,7 +92,7 @@
       "source": "rescued/part2/examples/getgo/font_info_ui.py",
       "source_sha256": "b2574dfef010e55be3ae347d2695c3c69f0137548a666902d3ce3221902b1c5f",
       "destination": "src/fontlab_python_lessons/getgo/font_info_ui.py",
-      "destination_sha256": "c9f099f68bad4b1e99c4860880bb8e9503d6f0033cbb9229346c9f4af03779b0"
+      "destination_sha256": "b9486c0c22345415183085fde59563f5cd7f7124c401d3f982d18a64d9576cfd"
     },
     {
       "source": "rescued/part2/examples/getgo/export_ttf.py",

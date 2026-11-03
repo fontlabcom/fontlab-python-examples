@@ -84,7 +84,7 @@ def registered_fonts() -> dict[int, tuple[str, Any]]:
 
 def resolve(source_id: int, destination_id: int) -> tuple[Any, Any]:
     """Require two registered fonts, equal units per em and the current destination."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     fonts, current = registered_fonts(), scripting.current_package()
     if (
@@ -189,8 +189,8 @@ def survey(
     facts: Any,
 ) -> list[dict[str, Any]]:
     """Keep every refused glyph/layer row; plan only the selected destination names."""
-    import fly.ap.anchor_writer as anchors
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchors
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     if not names or not mappings:
         raise ValueError("Select destination glyphs and add mappings.")
@@ -303,7 +303,7 @@ def make_plan(
     suffix: str,
 ) -> dict[str, Any]:
     """Run one destination dependency scan per explicit Preview."""
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     source, destination = resolve(source_id, destination_id)
     facts = history.scan_auto_facts(destination)
@@ -320,7 +320,7 @@ def make_plan(
 
 def clone_shapes(layer: Any) -> list[Any]:
     """Restore clone losses through contour_copy before history starts."""
-    import fly.ap.contour_copy as copies
+    import fly.ap.contours.copy as copies
 
     output = []
     for old in layer.shapes:
@@ -342,9 +342,9 @@ def clone_shapes(layer: Any) -> list[Any]:
 
 def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
     """Recheck the visible plan and write one destination Undo step."""
-    import fly.ap.anchor_writer as anchors
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.layer_writer as writer
+    import fly.ap.anchors.writer as anchors
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.masters.layers.writer as writer
     from fly import fl
 
     if not confirmed:
@@ -482,8 +482,8 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
 
 def panel_type() -> type:
     """Build the non-modal mapping editor; only Preview and Copy scan dependencies."""
-    import fly.ap.edit_guards as guards
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.edit_guards as guards
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     gui = qt.QtGui
@@ -629,7 +629,7 @@ def panel_type() -> type:
 
 def main() -> None:
     """Contain startup errors; the App guards owned signal callbacks."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         scripting.show_script_dialog(panel_type(), KEY)

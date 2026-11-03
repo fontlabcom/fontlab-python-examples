@@ -187,7 +187,7 @@ def read_contours(layer: Any, deadline: float) -> tuple[list, list]:
 
 def current_font(identity: int) -> Any:
     """Bind to the current font's fgId, never its label or wrapper identity."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     package = scripting.current_package()
     if package is None or int(package.fgId) != identity:
@@ -203,7 +203,7 @@ def survey(
     facts: Any,
 ) -> list[dict[str, Any]]:
     """Plan selected glyphs times checked masters; retain every refused combination."""
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     if not names or not configs:
         raise ValueError("Select glyphs and check at least one master row.")
@@ -275,7 +275,7 @@ def make_plan(
     identity: int, names: list[str], configs: list[dict[str, Any]], suffix: str
 ) -> dict[str, Any]:
     """Take an explicit batch preview with one shared dependency scan."""
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package = current_font(identity)
     facts = history.scan_auto_facts(package)
@@ -290,9 +290,9 @@ def make_plan(
 
 def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
     """Create all ready layers through one history.commit, after rechecking Preview."""
-    import fly.ap.contour_copy as copies
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.layer_writer as writer
+    import fly.ap.contours.copy as copies
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.masters.layers.writer as writer
     from fly import fl, qt
 
     if not confirmed:
@@ -390,9 +390,9 @@ def apply_plan(plan: dict[str, Any], confirmed: bool) -> dict[str, Any]:
 
 def panel_type() -> type:
     """Build a per-master table, explicit Preview and separate confirmation."""
-    import fly.ap.edit_guards as guards
-    import fly.ap.master_angles as master_angles  # noqa: PLR0402
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.edit_guards as guards
+    import fly.ap.masters.angles.model as master_angles  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     gui = qt.QtGui
@@ -556,7 +556,7 @@ def panel_type() -> type:
 
 def main() -> None:
     """Contain startup errors; the App guards all owned callbacks."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         scripting.show_script_dialog(panel_type(), KEY)

@@ -46,9 +46,9 @@ BUILTINS = {function.__name__: function for function in (
 
 def capture_current(status_line: Any) -> Any:
     """Scale the scan budget up to 120 seconds; never reject a font by size."""
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.qt_properties as properties
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires the module alias
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.qt.properties as properties
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires the module alias
 
     package = scripting.current_package()
     if package is None:
@@ -128,7 +128,7 @@ _PANELS: list[Any] = []
 
 def show(qt: Any, parent: Any) -> Any:
     """Open an owned tool window; use App to fence and disconnect callbacks."""
-    import fly.ap.draft_signals as signals
+    import fly.ap.core.signals.scope as signals
 
     gui, core = qt.QtGui, qt.QtCore
 
@@ -192,7 +192,7 @@ def show(qt: Any, parent: Any) -> Any:
 
         def run_query(self) -> None:
             """Show Python failures, including a deadline timeout, in the output."""
-            import fly.ap.qt_properties as properties
+            import fly.ap.qt.properties as properties
 
             self.output_box.setPlainText("")
             try:

@@ -86,7 +86,7 @@ def test_launch_calls_original_run_once_with_defaults_or_original_kwargs(row, cu
     monkeypatch.setattr(module, "show", lambda: run(), raising=False)
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.reports",
+        "fly.ap.proof.reports.model",
         SimpleNamespace(show_report=lambda data, **kw: shows.append((data, kw)) or "window"),
     )
     actual = package.launch(row["id"], **kwargs)

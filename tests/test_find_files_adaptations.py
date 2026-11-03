@@ -9,6 +9,8 @@ from pathlib import Path
 from types import ModuleType
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -46,9 +48,9 @@ def test_both_complete_original_profiles_and_prior_catalogue_remain():
 )
 def test_exact_lazy_public_Fly_menu_dispatch(monkeypatch, name, entry):
     calls = []
-    module = ModuleType("fly.ap.find_files")
+    module = ModuleType("fly.ap.qt.find_files.model")
     setattr(module, entry, lambda: calls.append(entry))
-    monkeypatch.setitem(sys.modules, "fly.ap.find_files", module)
+    install_module(monkeypatch, "fly.ap.qt.find_files.model", module)
     menu = ROOT / f"Scripts/Tools/{name}.py"
     scope = runpy.run_path(str(menu), run_name="inspection")
     assert calls == []

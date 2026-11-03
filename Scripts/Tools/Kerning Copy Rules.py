@@ -93,8 +93,8 @@ def expand_rules(
 
 def build_pair_list(text: str) -> str:
     """Read the current master; validate class sides and recheck the full snapshot."""
-    import fly.ap.kerning_batch as batch
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.kerning.batch as batch
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     package = scripting.current_package()
     if package is None:
@@ -131,8 +131,8 @@ def export_new(filename: str, content: str) -> None:
 
 def show(qt: Any, parent: Any) -> Any:
     """Keep a non-modal recipe panel with owned callbacks and read-only output."""
-    import fly.ap.draft_signals as signals
-    import fly.ap.qt_properties as properties
+    import fly.ap.core.signals.scope as signals
+    import fly.ap.qt.properties as properties
 
     gui, core = qt.QtGui, qt.QtCore
 

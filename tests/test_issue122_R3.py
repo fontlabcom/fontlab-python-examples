@@ -14,9 +14,11 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from fontlabapp.names_edit import Facts
+from fontlabapp.glyphs.names.model import Facts
 
 from historical_sources import archived_source, recorded_sha256, recorded_sources
+
+from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Tools/Apply Unicode Map.py"
@@ -51,8 +53,8 @@ def fake_panel_type() -> type:
 
 
 def facts(codes: dict[str, list[int]], auto: tuple[str, ...] = ()) -> Any:
-    from fontlabapp.history import auto_facts
-    from fontlabapp.names_edit import Entry, Facts
+    from fontlabapp.core.history.glyphs import auto_facts
+    from fontlabapp.glyphs.names.model import Entry, Facts
 
     entries = {}
     for name, points in codes.items():
@@ -86,9 +88,9 @@ def test_real_app_names_when_installed_then_all_used_names_exist(script: Path) -
     }
     if script == SCRIPT:
         assert set(aliases.values()) == {
-            "fly.ap.names_edit",
-            "fly.ap.selection_panel",
-            "fly.ap.scripting",
+            "fly.ap.glyphs.names.model",
+            "fly.ap.contours.selection.panel.model",
+            "fly.ap.core.scripting",
         }
     app_root = Path(importlib.import_module("fontlabapp").__file__).resolve().parent
     assert "site-packages" in str(app_root), "Use a non-editable installed App"
@@ -107,7 +109,7 @@ def test_real_app_names_when_installed_then_all_used_names_exist(script: Path) -
 
 
 def test_fake_signatures_when_used_then_match_real_app() -> None:
-    from fontlabapp.selection_panel import panel_type
+    from fontlabapp.contours.selection.panel.model import panel_type
 
     assert inspect.signature(fake_panel_type) == inspect.signature(panel_type)
 
@@ -185,9 +187,9 @@ def test_plan_when_unicode_claimed_then_keep_conflicting_rows() -> None:
 def test_write_when_valid_then_real_history_one_notification(
     monkeypatch: Any, failure: str
 ) -> None:
-    import fontlabapp.edit_guards as guards
-    import fontlabapp.history as history  # noqa: PLR0402 - preserve module import
-    import fontlabapp.names_edit as names
+    import fontlabapp.core.edit_guards as guards
+    import fontlabapp.core.history.glyphs as history  # noqa: PLR0402 - preserve module import
+    import fontlabapp.glyphs.names.model as names
 
     f = facts({"A": [], "B": []}, ("B",))
     calls = []
@@ -318,7 +320,7 @@ def test_panel_when_built_then_controls_and_preview_use_real_hooks(
     monkeypatch: Any,
 ) -> None:
     import fly
-    import fontlabapp.selection_panel as selection
+    import fontlabapp.contours.selection.panel.model as selection
 
     class StrictPanel:
         def __setattr__(self, name: str, value: Any) -> None:
@@ -348,7 +350,7 @@ def test_panel_when_built_then_controls_and_preview_use_real_hooks(
     assert inspect.signature(fake_panel_type) == inspect.signature(selection.panel_type)
     monkeypatch.setattr(selection, "panel_type", fake_panel_type)
     monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=NS(QPlainTextEdit=Text)))
-    from fontlabapp import names_edit
+    import fontlabapp.glyphs.names.model as names_edit
 
     scans = []
     f = facts({"A": []})
@@ -419,7 +421,7 @@ def test_panel_when_built_then_controls_and_preview_use_real_hooks(
     app_root = Path(importlib.import_module("fontlabapp").__file__).parent
     real_watch = next(
         n
-        for n in ast.walk(ast.parse((app_root / "_selection_panel.py").read_text()))
+        for n in ast.walk(ast.parse((app_root / "contours/selection/panel/ui.py").read_text()))
         if isinstance(n, ast.FunctionDef) and n.name == "watch"
     )
     fake_watch = ast.parse(textwrap.dedent(inspect.getsource(StrictPanel.watch))).body[
@@ -436,7 +438,7 @@ def test_panel_when_built_then_controls_and_preview_use_real_hooks(
 
 
 def test_write_when_preview_stale_then_no_history(monkeypatch: Any) -> None:
-    import fontlabapp.names_edit as names
+    import fontlabapp.glyphs.names.model as names
 
     f = facts({"A": [66]})
 
@@ -819,7 +821,7 @@ def host(monkeypatch: Any) -> Any:
     import sys
 
     import fly
-    import fontlabapp.edit_guards as guards
+    import fontlabapp.core.edit_guards as guards
 
     source = HostPackage(
         11, [HostGlyph("A", [host_layer()]), HostGlyph("B", [host_layer()])]
@@ -866,8 +868,8 @@ def host(monkeypatch: Any) -> Any:
         QtCore=NS(QPointF=Point, QDateTime=NS(currentDateTimeUtc=lambda: "stamp")),
         QtGui=NS(QTransform=Transform),
     )
-    monkeypatch.setitem(sys.modules, "fontlab", native)
-    monkeypatch.setitem(sys.modules, "PythonQt", qt)
+    install_module(monkeypatch, "fontlab", native)
+    install_module(monkeypatch, "PythonQt", qt)
     monkeypatch.setitem(fly.__dict__, "fl", native)
     monkeypatch.setitem(fly.__dict__, "qt", qt)
 
@@ -1138,7 +1140,7 @@ def test_new_panel_when_constructed_then_real_controls_preview_and_owned_cleanup
     monkeypatch: Any,
     script: Path,
 ) -> None:
-    from fontlabapp import scripting
+    import fontlabapp.core.scripting as scripting
 
     gui = host.qt.QtGui
     for name in (
@@ -1186,7 +1188,7 @@ def test_new_panel_when_constructed_then_real_controls_preview_and_owned_cleanup
     old_sources = panel.source_ids[:] if script == COPY else panel.master_names[:]
     host.workspace.currentPackage = host.source
     monkeypatch.setattr(
-        "fontlabapp.edit_guards.require_selection_window", lambda identity: None
+        "fontlabapp.core.edit_guards.require_selection_window", lambda identity: None
     )
 
     # Fail after the candidate identity was read, before any state may be installed.

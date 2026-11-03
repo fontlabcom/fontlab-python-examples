@@ -24,7 +24,7 @@ Compatibility:
 
 def main() -> None:
     """Open this source-distinct reference viewer through Fly's lazy App alias."""
-    from fly.ap.image_viewer import show
+    from fly.ap.qt.images.viewer.model import show
 
     show()
 

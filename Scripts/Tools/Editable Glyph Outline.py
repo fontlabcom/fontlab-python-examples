@@ -24,7 +24,7 @@ Historical source: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel
 
 def main() -> None:
     """Open this complete distinct editable policy through Fly."""
-    from fly.ap.editable_glyph_tree import show_outline
+    from fly.ap.glyphs.tree.editable.model import show_outline
 
     show_outline()
 

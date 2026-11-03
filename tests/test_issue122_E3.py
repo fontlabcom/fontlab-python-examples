@@ -12,6 +12,8 @@ from typing import Any
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = (
     "FontLab Script Scaffold Wizard",
@@ -393,8 +395,8 @@ class NativeRecord:
 def host(monkeypatch: Any) -> Any:
     # Exercise the real App capture, not an imitation of its fences or scans.
     monkeypatch.syspath_prepend(str(ROOT.parent / "fontlab-fontlabapp" / "src"))
-    native_capture = importlib.import_module("fontlabapp._glyph_catalog_native")
-    public_catalog = importlib.import_module("fontlabapp.glyph_catalog")
+    native_capture = importlib.import_module("fontlabapp.glyphs.catalog.native")
+    public_catalog = importlib.import_module("fontlabapp.glyphs.catalog.model")
     state = SimpleNamespace(
         font=True,
         panels=[],
@@ -456,7 +458,7 @@ def host(monkeypatch: Any) -> Any:
     )
     monkeypatch.setattr(native_capture, "_native", lambda name: state.native)
     state.capture_module = native_capture
-    scripting = ModuleType("fly.ap.scripting")
+    scripting = ModuleType("fly.ap.core.scripting")
     scripting.names_dialog_type = lambda: Panel
 
     def show(factory: Any, key: str) -> Any:
@@ -494,10 +496,10 @@ def host(monkeypatch: Any) -> Any:
     for name, module in (
         ("fly", fly),
         ("fly.ap", ModuleType("fly.ap")),
-        ("fly.ap.scripting", scripting),
-        ("fly.ap.glyph_catalog", public_catalog),
+        ("fly.ap.core.scripting", scripting),
+        ("fly.ap.glyphs.catalog.model", public_catalog),
     ):
-        monkeypatch.setitem(sys.modules, name, module)
+        install_module(monkeypatch, name, module)
     return state
 
 

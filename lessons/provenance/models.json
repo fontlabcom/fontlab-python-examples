@@ -13,7 +13,7 @@
   "archive_root": "fontlab-python-examples/_old",
   "license_basis": "Original insight catalogue records Apache-2.0; owned .ui explicitly declares Apache-2.0. Referenced third-party bodies were not used.",
   "catalogue_metadata": "catalog/insights.json; original inspiration citation metadata remains historical and does not grant copied third-party code",
-  "shared_host_implementation": "Existing fly.ap.scripting and inspectors.layout; no new native host adapter",
+  "shared_host_implementation": "Existing fly.ap.core.scripting and inspectors.layout; no new native host adapter",
   "native_acceptance": "FontLab 9.0.9784 macOS arm64: actual installed menus, three workflows, twelve edge controls, complete font/history preservation and legacy QLabel coexistence pass with App0.2.23",
   "originals_removed": false
 }

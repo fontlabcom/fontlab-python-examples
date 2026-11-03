@@ -51,8 +51,8 @@ def proof_groups(
 
 def main() -> Any:
     """Open the owned modeless App panel. Import Qt only in the host."""
-    import fly.ap.qt_properties as properties
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
+    import fly.ap.qt.properties as properties
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly requires module imports
     from fly import qt
 
     g = qt.QtGui
@@ -126,7 +126,7 @@ def main() -> Any:
 
         def build_result(self) -> None:
             """Build one complete result from current controls and context."""
-            import fly.ap.glyph_catalog as catalog
+            import fly.ap.glyphs.catalog.model as catalog
 
             rows = tuple(catalog.capture().rows)
             result = proof_groups(

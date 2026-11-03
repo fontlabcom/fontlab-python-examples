@@ -11,6 +11,8 @@ from types import ModuleType
 
 import pytest
 
+from module_doubles import install_module
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -27,7 +29,7 @@ def test_complete_spacing_pair_identity_lazy_fly_and_notices(part, entry, monkey
         row["source"] == original["target"]
         and row["source_sha256"] == original["target_sha256"]
     )
-    assert row["entry_point"] == entry and row["api_module"] == "spacing_worksheet"
+    assert row["entry_point"] == entry and row["api_module"] == "metrics.worksheet.model"
     assert (
         row["native_acceptance"] == "pending"
         and row["original_workflow_accepted"] is False
@@ -54,9 +56,9 @@ def test_complete_spacing_pair_identity_lazy_fly_and_notices(part, entry, monkey
         and len(path.relative_to(ROOT / "Scripts").parts) == 2
     )
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.spacing_worksheet"):
-        monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.spacing_worksheet"], entry, lambda: calls.append(entry))
+    for name in ("fly", "fly.ap", "fly.ap.metrics.worksheet.model"):
+        install_module(monkeypatch, name, ModuleType(name))
+    setattr(sys.modules["fly.ap.metrics.worksheet.model"], entry, lambda: calls.append(entry))
     values = runpy.run_path(str(path), run_name="inspection")
     assert not calls
     values["main"]()

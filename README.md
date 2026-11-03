@@ -105,6 +105,9 @@ Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
 Put general UI and native FontLab helpers in `fontlabapp`. Keep `fontport` for
 fontParts/UFO compatibility and `glyport` for Glyphs.app compatibility. Scripts
 access App through `fly.ap`; do not copy shared UI code into each menu.
+Use domain paths such as `fly.ap.core.scripting` and `fly.ap.glyphs.catalog.model`.
+Fontport editors and feature-block helpers live in `fly.ap.fontui`.
+Run `python -B tools/migrate_app_paths.py --check` to audit API path migration.
 
 ## Tests and lint
 
