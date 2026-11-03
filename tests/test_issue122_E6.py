@@ -126,6 +126,15 @@ class Widget:
         self.deleted = False
         self.local_visible = True
         self.local_floating = False
+        self.local_window_flags = 0
+        self.topLevelChanged = Signal()
+
+    def windowFlags(self) -> int:
+        return self.local_window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self.local_window_flags = flags
+        self.local_visible = False
 
     def setWindowTitle(self, text: str) -> None:
         self.local_title = text
@@ -179,6 +188,10 @@ class Widget:
 
     def setFloating(self, state: bool) -> None:
         self.local_floating = state
+        self.topLevelChanged.emit(state)
+
+    def isFloating(self) -> bool:
+        return self.local_floating
 
     def isVisible(self) -> bool:
         return self.local_visible
@@ -784,7 +797,8 @@ def test_dock_failed_shared_cleanup_retains_owner_until_parent_destruction(
     assert panel in module["_PANELS"] and not panel.owned.widget.deleted
     assert "native remove refused" in panel.status_line.text()
     assert not panel.close_owned()
-    assert "incomplete" in panel.status_line.text()
+    assert "native remove refused" in panel.status_line.text()
+    assert not panel.owned.closed, "Retain the actual unfinished cleanup stage for retry"
     content.destroyed.emit()
     assert panel not in module["_PANELS"]
     assert panel.close_owned()

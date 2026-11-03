@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## Unicode dock refusal and recovery — 2026-11-03
+
+Retain refused Close for retry or parent-destruction cleanup, preserving controls.
+Five new checks and accurate Qt doubles pass normal1842core/496TypeRig and both
+installed1846core/496TypeRig; changed script94.42%combined. Existing skips and
+native acceptance remain explicit. Update only the current script-source link;
+all historical hashes and remaining27constructor/native/history scope remain.
+
 ## Unreleased — owned priority messages
 
 Four warning routes preserve modal results and use an owned priority helper; SVG

@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Repair the audited27direct-panel constructor/parent-death and remaining shared-launcher lifetime gaps without losing controls or failed-Close owners.
+- [ ] Native-qualify dock refusal/retry/floating priority with the reviewed App candidate; source/ordinary results are in CHANGELOG.md.
+
 - [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
 
 
