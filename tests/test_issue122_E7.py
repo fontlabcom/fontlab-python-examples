@@ -432,7 +432,8 @@ def drawing(host: Any, monkeypatch: Any) -> Any:
     install_module(monkeypatch, "fly.ap.core.edit_guards", importlib.import_module("fontlabapp.core.edit_guards"))
     install_module(monkeypatch, "fly.ap.masters.inspect.model", masters)
     sys.modules["fly.ap"].history = history
-    sys.modules["fly.ap"].masters = masters
+    # `import fly.ap.masters.inspect.model as m` walks this attribute chain.
+    sys.modules["fly.ap"].masters = SimpleNamespace(inspect=SimpleNamespace(model=masters))
     sys.modules["fly"].fl = native
     host.native, host.history = native, history
     return host
