@@ -46,10 +46,10 @@ def test_example_when_imported_then_needs_no_fontlab_and_documents_itself(path):
 
 
 @pytest.mark.parametrize("path", EXAMPLES, ids=lambda p: p.stem)
-def test_example_when_run_outside_fontlab_then_fails_with_import_error(path):
+def test_example_when_run_outside_fontlab_then_fails_loudly(path):
     module = load(path.stem)
-    with pytest.raises(ImportError):
-        module.main()  # fly aliases need FontLab's PythonQt / App; no silent success.
+    with pytest.raises((ImportError, RuntimeError)):  # RuntimeError when App is installed but FontLab is absent
+        module.main()  # no silent success without the host
 
 
 def test_live_glyph_panel_when_summarising_then_reads_properties_and_methods():
