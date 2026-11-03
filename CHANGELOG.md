@@ -3,6 +3,11 @@ this_file: CHANGELOG.md
 ---
 
 <!-- workspace-handoff:2026-11-03 -->
+## 2026-11-03 — fixes from runs inside FontLab 9
+
+- GetGo tools read their fixture manifest and licences as UTF-8; FontLab's Python
+  defaults to ASCII and failed with UnicodeDecodeError. Pinned SHA-256 values updated.
+
 ## 2026-11-03 — installer options, licence and cleanup
 
 - Added `install.vfpy`: copies `Scripts/` into FontLab's Scripts folder (merging with

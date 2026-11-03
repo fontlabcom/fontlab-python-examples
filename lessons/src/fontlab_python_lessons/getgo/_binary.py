@@ -50,7 +50,7 @@ def snapshot(package: Any, record: dict) -> dict:
         "descender": round(package.info.descender),
         "copyright": package.info.copyright,
         "source": record["page_url"],
-        "license": (FIXTURES / record["license_path"]).read_text(),
+        "license": (FIXTURES / record["license_path"]).read_text(encoding="utf-8"),
     }
 
 

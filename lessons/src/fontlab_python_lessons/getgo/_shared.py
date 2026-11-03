@@ -16,7 +16,7 @@ FIXTURES = Path(__file__).resolve().parent / "data"
 
 def fixture(font_id: str) -> tuple[dict, Path]:
     """Resolve a manifest ID and check its immutable source bytes before opening."""
-    rows = json.loads((FIXTURES / "manifest.json").read_text())["fonts"]
+    rows = json.loads((FIXTURES / "manifest.json").read_text(encoding="utf-8"))["fonts"]
     record = next((row for row in rows if row["id"] == font_id), None)
     if record is None:
         raise KeyError(font_id)
