@@ -2,6 +2,15 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — v1.2.1: Qt Slot Reference no longer blocks quitting FontLab
+
+- The panel watched the widget focused when it opened. When that widget was
+  destroyed (for example, by closing its font), the panel could no longer
+  disconnect from it, so it refused every close, including FontLab's Quit.
+  Each watched widget now has its own signal scope, which is released when the
+  widget is destroyed. A regression test covers this.
+  Pinned SHA-256 values are updated.
+
 ## 2026-11-03 — Issue 205 package API paths
 
 - Migrate menus, Lessons and documentation to App's canonical domain modules;

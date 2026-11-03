@@ -112,6 +112,8 @@ def show(qt: Any, parent: Any) -> Any:
             self.box.addWidget(self.status_line)
             self.scope = signals.Scope(lambda error: self.status_line.setText(str(error)))
             self.scope.connect(self.destroyed, lambda *args: self.release_owner())
+            # One scope per target: a destroyed native emitter cannot be disconnected.
+            self.target_scopes: list[Any] = []
 
         def add_button(self, text: str, action: Any) -> None:
             """Wrap signal arguments; never connect a native slot directly."""
@@ -122,6 +124,8 @@ def show(qt: Any, parent: Any) -> Any:
         def release_owner(self) -> None:
             """Drop Python references when FontLab destroys the native parent."""
             self.scope.finish(destroyed=True)
+            for scope in self.target_scopes:
+                scope.finish(destroyed=True)
             self.targets = []
             if self in _PANELS:
                 _PANELS.remove(self)
@@ -129,7 +133,7 @@ def show(qt: Any, parent: Any) -> Any:
         def closeEvent(self, event: Any) -> None:
             """Stop owned work and disconnect before scheduling native deletion."""
             self.stop_owned()
-            if not self.scope.finish():
+            if not self.finish_scopes():
                 event.ignore()
                 return
             if self in _PANELS:
@@ -140,9 +144,15 @@ def show(qt: Any, parent: Any) -> Any:
         def stop_owned(self) -> None:
             """There is no queued work in this panel."""
 
+        def finish_scopes(self) -> bool:
+            """Disconnect live targets, then the panel; False keeps the panel open for a retry."""
+            targets_done = all([scope.finish() for scope in self.target_scopes])
+            return targets_done and self.scope.finish()
+
         def forget_target(self, index: int) -> None:
             """Clear a destroyed native pointer without calling any of its members."""
             self.targets[index] = None
+            self.target_scopes[index].finish(destroyed=True)
 
         def read_slots(self) -> None:
             """Read the selected target; missing metadata leaves the rules visible."""
@@ -164,8 +174,10 @@ def show(qt: Any, parent: Any) -> Any:
         panel.target_picker = gui.QComboBox(panel)
         for index, (label, target) in enumerate(choices):
             panel.target_picker.addItem(label)
+            panel.target_scopes.append(signals.Scope(lambda error: panel.status_line.setText(str(error))))
             if target is not None:
-                panel.scope.connect(target.destroyed, lambda *args, index=index: panel.forget_target(index))
+                panel.target_scopes[index].connect(
+                    target.destroyed, lambda *args, index=index: panel.forget_target(index))
         panel.box.addWidget(panel.target_picker)
         panel.output_box = gui.QPlainTextEdit(panel)
         panel.output_box.setReadOnly(True)
@@ -175,7 +187,7 @@ def show(qt: Any, parent: Any) -> Any:
         panel.show()
     except Exception:
         panel.stop_owned()
-        if panel.scope.finish():
+        if panel.finish_scopes():
             _PANELS.remove(panel)
             panel.deleteLater()
         else:

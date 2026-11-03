@@ -456,6 +456,19 @@ def test_native_slot_reference_button_and_parent_destruction(app: None, qt: Any)
     assert panel not in module["_PANELS"] and panel.scope.records == []
 
 
+def test_slot_reference_closes_after_focused_target_is_destroyed(app: None, qt: Any) -> None:
+    """A destroyed native emitter cannot be disconnected; it must not veto close (FontLab quit)."""
+    module = load(TITLES[2])
+    focus = Widget()
+    qt.QtGui.QApplication.focusWidget = lambda: focus
+    panel = module["show"](qt, Widget())
+    focus.destroyed.emit()
+    focus.destroyed.fail = True  # the native emitter is gone
+    assert panel.targets[1] is None
+    close_panel(panel)
+    assert panel not in module["_PANELS"]
+
+
 def test_settings_read_error_cleans_up_owned_panel(app: None, qt: Any, monkeypatch: Any) -> None:
     monkeypatch.setattr(NativeSettings, "status", lambda self: 1)
     module = load(TITLES[1])
