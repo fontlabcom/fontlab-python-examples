@@ -74,7 +74,9 @@ def build(parent: Any) -> Any:
 
     def cancelled(*args: Any) -> None:
         timer.stop()
-        print(f"Batch cancelled after {len(done)} of {len(records)} glyphs; the font was not changed.")
+        # QProgressDialog also emits canceled when it is closed after finishing.
+        message = "Batch cancelled after {} of {} glyphs" if len(done) < len(records) else "Batch dialog closed ({} of {} glyphs done)"
+        print(message.format(len(done), len(records)) + "; the font was not changed.")
 
     dialog.canceled.connect(cancelled)  # Qt spells the signal "canceled".
     timer.timeout.connect(step)

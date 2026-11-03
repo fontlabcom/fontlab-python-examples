@@ -96,10 +96,12 @@ def install() -> Any:
 
 
 def uninstall() -> None:
-    overlay_off()
     menus, _STATE["menus"] = _STATE["menus"], None
-    if menus is not None:
-        menus.close()
+    try:
+        overlay_off()
+    finally:  # The menu items must go even if the native painter removal raises.
+        if menus is not None:
+            menus.close()
 
 
 def main() -> Any:
