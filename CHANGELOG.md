@@ -3,6 +3,12 @@ this_file: CHANGELOG.md
 ---
 
 <!-- workspace-handoff:2026-11-03 -->
+## 2026-11-03 — installer options, licence and cleanup
+
+- Added `install.vfpy`: copies `Scripts/` into FontLab's Scripts folder (merging with
+  other extensions) and links the `fontlab_python_lessons` package; verified inside FontLab 9.
+- Removed the stray tracked symlink `Scripts/Contours/Contours`.
+
 ## 2026-11-03 — documentation handoff for November 2–3
 
 Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.

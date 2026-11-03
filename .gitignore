@@ -234,3 +234,4 @@ _reference/
 
 # External owned documentation build link
 .build
+*.vfpyc
