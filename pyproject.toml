@@ -24,4 +24,4 @@ package = false
 id = "com.fontlab.python-examples"
 name = "fontlab-python-lessons"  # the record the lessons package reads its version from
 packages = ["lessons/src/fontlab_python_lessons"]
-dependencies = ["fontlab-fly>=0.2.1", "fontlab-fontlabapp>=0.2.26.dev0"]  # not the docs toolchain above
+dependencies = ["fontlab-fly>=1.2.0", "fontlab-fontlabapp>=1.2.0"]  # not the docs toolchain above
