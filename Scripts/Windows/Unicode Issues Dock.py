@@ -301,7 +301,8 @@ def show(
                 return False
             self.close_in_progress = True
             try:
-                self.owned.close()
+                if self.owned.close() is False:
+                    raise RuntimeError("The owned dock refused Close; retry when ready.")
             except (ValueError, RuntimeError, TimeoutError) as error:
                 # A helper cleanup failure must not drop the surviving dock owner.
                 self.status_line.setText("Dock cleanup paused: " + str(error))

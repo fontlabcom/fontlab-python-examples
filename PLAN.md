@@ -16,6 +16,15 @@ Focused checks pass, with two refusal-reporting review fixes; full current cover
 1. Re-review refusal-reporting fixes and pass complete core/TypeRig and per-module80%gates after reviewed source-pin regeneration.
 2. Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
 <!-- /workspace-handoff -->
+## Dock refusal and shared recovery — 2026-11-03
+
+The Unicode Issues Dock retains refused Close for retry or parent destruction.
+Five new regressions include two red refusal cases; all 43 focused cases pass.
+Normal 1842 core/496 TypeRig with 96/7 existing skips and 94.42% changed-script coverage
+passes. Both App.dev334 ordinary prefixes pass 1846 core/496 TypeRig with 92/7 existing
+skips and unchanged import-origin guards. Retain all controls and frozen records.
+Complete the separately audited 27 constructor/parent-death and shared-launcher
+lifetime contracts, then actual native/window/four-font/history/publication gates.
 
 - [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
 

@@ -48,6 +48,30 @@ changed by this documentation maintenance. Source/archive/ordinary/native and
 promotion acceptance remain separate claims. Detailed workspace evidence is
 recorded in the root CHANGELOG and retained verification reports.
 <!-- /workspace-handoff -->
+## PythonQt examples (issue 201) — 2026-11-03
+
+Added six short, commented PythonQt scripts in `examples/pythonqt/` (live glyph
+panel, glyph table model, canvas overlay with a shortcut menu action, signals
+and timers, saved settings, batch with progress) and offline checks in
+`tests/test_pythonqt_examples.py` (compile, import without FontLab, pure logic).
+They sit outside `Scripts/`, so the 100-menu catalogue, hashes and docs are
+unchanged. The inventory found no stale `fontport.ui`, `fontlabapp.actions` or
+Echopy Glyphs/vanilla references here; every `fly.ap` module used still exists.
+
+Native results (FontLab 9, owned copy): after f8cb86d all six examples passed.
+The overlay painter drew, its menu action was added and removed (Tools menu action
+count 0, then 2, then 0). Before that, the panel, table and batch examples failed on
+a non-existent fgLayer.advanceWidth and now read fgGlyph.width; the test fakes mirror
+the real fgLayer. The overlay example keeps its install state in sys so a later run
+can remove it. Not claimed: behaviour beyond what was observed in those runs.
+
+## Unicode dock refusal and recovery — 2026-11-03
+
+Retain refused Close for retry or parent-destruction cleanup, preserving controls.
+Five new checks and accurate Qt doubles pass normal 1842 core/496 TypeRig and both
+installed 1846 core/496 TypeRig; changed script 94.42% combined. Existing skips and
+native acceptance remain explicit. Update only the current script-source link;
+all historical hashes and remaining 27 constructor/native/history scope remain.
 
 ## Unreleased — owned priority messages
 

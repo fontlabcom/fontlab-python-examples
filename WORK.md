@@ -2,6 +2,28 @@
 this_file: WORK.md
 ---
 
+## 2026-11-03 — dock refusal and shared recovery
+
+Honor shared Close False through the existing retained failure path. Independent
+tests 2 red/3 green become 43 focused green including E6. Initial injection hit the
+fixture's valid native-instance guard; corrected class injection demonstrates
+the actual ignored refusal. Qt doubles now model floating/flags/transition and
+flag-induced hiding. One old message assertion now verifies retryable native
+failure and an open owner; every other assertion remains intact.
+
+Normal 1842 core/496 TypeRig, 96/7 existing skips, changed script 94.42% combined; both
+genuine App.dev334 prefixes 1846 core/496 TypeRig, 92/7 existing skips. Per-prefix
+catalogue copies avoid sharing mutable outputs. App/src resolves to genuine
+installed files, making 121 unchanged origin assertions pass. Failed attempts
+remain in private evidence; no import assertion or test was disabled.
+
+Portable normal command, exit 0 (expanded local argv retained privately):
+`rtk proxy "$FONTLAB_WORKSPACE/.metaswarm/quality.sh" coverage "$PWD" fontlab-python-examples`
+The existing generator changes one current-source link; historical rescue,
+adaptation and licence records remain exact. Independent review passes. No
+native request, live install, retained export or site publication occurred.
+All 27 constructor/parent-death/shared-launcher and native/history gates remain.
+
 ## 2026-11-01 — documentation validation
 
 Locked documentation environment:11tests passed with `rtk proxy env

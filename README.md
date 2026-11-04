@@ -31,7 +31,7 @@ FontLab loads the package code when a menu runs. Never add a QApplication,
 start a second application event loop or install an alternate Qt binding in
 FontLab. PySide6 is used only for separate, offscreen tests.
 
-The 27 independently launched modeless Tool panels request TypeRig-style window priority while preserving their Tool type. Other modeless menus use App’s shared launcher. The Unicode Issues Dock remains a dock; child widgets and modal dialogs keep their existing policies. Native stacking acceptance remains pending.
+The 27 independently launched modeless Tool panels request TypeRig-style window priority while preserving their Tool type. Other modeless menus use App’s shared launcher. The Unicode Issues Dock retains refused Close for retry with the reviewed App 0.2.26.dev334 recovery/priority candidate. Registry availability and native stacking acceptance remain separate.
 
 ## Use the tools
 
@@ -90,6 +90,7 @@ Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
 | Path | Contents |
 | --- | --- |
 | `Scripts/<Category>/*.py` | Current menu entrypoints and script-specific logic. |
+| `examples/pythonqt/` | Six short PythonQt teaching scripts (panel, model view, canvas painter and menu action, signals, settings, progress); not menus. See its README. |
 | `lessons/src/fontlab_python_lessons/` | Lazy entrypoints, detached records, Qt models, panels and forms. |
 | `lessons/src/fontlab_python_lessons/getgo/` | Real-font algorithms, reports, binary exports and 99 licensed fixtures. |
 | `lessons/provenance/` | Lesson source and licence records. |
