@@ -9,6 +9,7 @@ examples README for the checks to run inside FontLab.
 
 import importlib.util
 import py_compile
+import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import ClassVar
@@ -68,7 +69,9 @@ def test_example_when_imported_then_needs_no_fontlab_and_documents_itself(path):
 
 
 @pytest.mark.parametrize("path", EXAMPLES, ids=lambda p: p.stem)
-def test_example_when_run_outside_fontlab_then_fails_loudly(path):
+def test_example_when_run_outside_fontlab_then_fails_loudly(path, monkeypatch):
+    for name in [n for n in sys.modules if n.split(".")[0] in HOST_MODULES]:
+        monkeypatch.delitem(sys.modules, name)  # other tests leave host doubles behind
     module = load(path.stem)
     try:
         module.main()  # no silent success without the host
