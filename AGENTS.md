@@ -2,22 +2,21 @@
 this_file: AGENTS.md
 ---
 
-<!-- workspace-handoff:2026-11-03 -->
-## Workspace documentation handoff —2026-11-03
+## Current scope — 2026-11-05
 
-Issue 123 implementation is paused by the owner. The present request authorizes
-only documentation maintenance; preserve all source, owner edits and branch state.
-Useful menu tools and separately packaged Lessons examples. Observed canonical checkout: `main` at `8648fd4528e1`. No source integration is performed by this update.
+Issue 230 documentation reconciliation is current. Issue 123 remains paused. The qualified Issue 207 isolated candidate is separate from canonical source, installed artifacts, native acceptance and publication. Reconcile that candidate with later work before integration. Issue 210 specifies future architecture; Issue 211 retains unfinished follow-up checks. Retained dated receipts describe their original source and acceptance surface only.
 
-Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+Canonical source inspected for this proposal: `7de2bf9120af`. This is a dated source observation, not an installed or native acceptance claim.
 
-Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+Keep all lesson, original-source and destination-hash contracts while updating examples for reviewed App/provider migrations.
 
-Read workspace AGENTS/DECISIONS and local project guidance before later work.
-Use direct execution unless a new request explicitly authorizes agents. Product
-work stays isolated; this docs-only request does not authorize native actions,
-installs, merges, pushes, releases, generated-site updates or legacy retirement.
-<!-- /workspace-handoff -->
+Qualify the installed cohort, actual owned native workflows, whole-font/history, window priority and save/reopen; keep site and runtime acceptance separate.
+
+## Organization and checks
+
+`Scripts/` contains examples; `lessons/` is a separate runtime distribution with candidate tests; `tests/` checks menus/provenance; `src_docs/` and `tests_docs/` own the catalogue website.
+
+Use README Tests and lint for separate arm64 Python 3.11 core/TypeRig-derived checks and offscreen lessons tests. Prepare the root Python 3.12+ docs environment with `uv sync --locked` before `tests_docs`. Use real reviewed App artifact versions, never pretend build metadata.
 
 # FontLab Python examples
 
@@ -44,7 +43,7 @@ separate processes because they use different App/Fly loading arrangements.
 ```sh
 export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'
-SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0 PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../fontlab-fontlabapp python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
+PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with "$EXAMPLES_APP_WHEEL" python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff ruff check --no-cache Scripts
 export EXAMPLES_APP_SOURCE="$PWD/../fontlab-fontlabapp/src/fontlabapp"
 export EXAMPLES_LEGACY_API_SOURCE="$PWD/../legacy-api-28bc505"
@@ -86,3 +85,26 @@ checkouts, private source corpora, live installs or the `fontlab-user-folder`
 symlink. The owner manages editable installs into FontLab. Retain historical
 path/hash records; do not execute or ship archived bodies. Put disposable files
 outside the repository and preserve existing owner work.
+
+## Milestones and delivery
+
+Read [PLAN.md](PLAN.md), [TODO.md](TODO.md) and [WORK.md](WORK.md) before work.
+Make the smallest complete MVP for one named acceptance task. Find all callers,
+tests, fixtures, exports and documentation first. Use graph impact before source
+symbol edits; confirm stale or unknown graph results against current source.
+Keep product work in isolated successors and preserve the owner's checkout.
+
+Run this repository's exact checks and the unchanged 80% gate for each complete
+changed production module. Use an independent review before a milestone commit.
+Under the current owner task, commit and push reviewed, passing milestones;
+verify remote heads rather than inferring delivery from local tracking refs.
+Before main integration, reconcile concurrent work and all consumers, run graph
+change analysis and repeat the required acceptance on the combined source.
+
+Before removing obsolete branches or files, prove integration, retain recoverable
+unique work and check fresh owner/worktree attachments. Preserve sealed reports,
+licences, archives and private data. Do not rewrite history by implication.
+Remove verified completed work from PLAN/TODO and record scoped evidence in
+CHANGELOG. Keep implemented-only native/artifact checks open in TODO. Issue 123
+remains paused; no instruction here authorizes driving the owner's FontLab,
+installing into its user folder or publishing a site.

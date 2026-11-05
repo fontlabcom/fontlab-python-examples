@@ -2,6 +2,18 @@
 this_file: lessons/CHANGELOG.md
 ---
 
+## 2026-11-05 — separate released and expanded lesson scope
+
+Inspected lessons/pyproject.toml and the current README. The package declares
+App >=0.2.26.dev0 and Fly >=0.2.1; its candidate tests live under
+candidate_tests/models_candidate. Historical v1.0.3 acceptance covers the original
+three model/form workflows. All thirteen packaged GetGo runtime rows still need
+native acceptance; no new tests or native actions were run here.
+
+Removed the nine completed three-lesson TODO rows and accepted-slice PLAN prose
+from future work. Their evidence and original history remain below and in WORK.
+Expanded-package verification, archive reconciliation and release gates remain open.
+
 # Lesson changes
 
 ## 1.0.3 — 2026-10-18

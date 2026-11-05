@@ -2,6 +2,30 @@
 this_file: lessons/WORK.md
 ---
 
+## 2026-11-05 — separate released and expanded lesson scope
+
+Inspected lessons/pyproject.toml and the current README. The package declares
+App >=0.2.26.dev0 and Fly >=0.2.1; its candidate tests live under
+candidate_tests/models_candidate. Historical v1.0.3 acceptance covers the original
+three model/form workflows. All thirteen packaged GetGo runtime rows still need
+native acceptance; no new tests or native actions were run here.
+
+From the Examples repository root, set S230_PY to a prepared isolated arm64
+Python 3.11 environment with genuine installed matching App, Fly, Qt test providers,
+fontTools, pytest and pytest-cov. Then run:
+
+```sh
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen \
+  "$S230_PY" -B -m pytest -p pytest_cov \
+  --confcutdir lessons/candidate_tests/models_candidate -q -p no:cacheprovider \
+  lessons/candidate_tests/models_candidate \
+  --cov=lessons/src/fontlab_python_lessons --cov-branch --cov-fail-under=80
+```
+
+This inspected recipe is unexecuted in this documentation pass. Root runtime and
+documentation suites have separate prerequisites and denominators; this lesson
+coverage command does not replace them. Do not use pretend version metadata.
+
 # Lesson package integration
 
 The three lessons use real font names and metrics. Their distinct

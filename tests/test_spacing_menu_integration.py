@@ -85,8 +85,15 @@ def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
 
 
 def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserved():
+    successors = json.loads((ROOT / "tests/spacing-guide-successors.json").read_text())["guides"]
+    assert set(successors) == {
+        "lessons/CHANGELOG.md", "lessons/PLAN.md", "lessons/TODO.md", "lessons/WORK.md",
+    }
+    for path, row in successors.items():
+        assert row["original_sha256"] == BASE["lessons"][path], path
     for path, digest in {**BASE["lessons"], **BASE["licences"]}.items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        expected = successors[path]["approved_sha256"] if path in successors else digest
+        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, path
     notice = (ROOT / "NOTICE").read_bytes()
     assert (
         hashlib.sha256(notice).hexdigest()

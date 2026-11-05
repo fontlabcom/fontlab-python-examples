@@ -2,9 +2,25 @@
 this_file: README.md
 ---
 
+## Development status — 2026-11-05
+
+Canonical source inspected for this proposal: `7de2bf9120af`. This is a dated source observation, not an installed or native acceptance claim.
+
+Keep all lesson, original-source and destination-hash contracts while updating examples for reviewed App/provider migrations.
+
+Qualify the installed cohort, actual owned native workflows, whole-font/history, window priority and save/reopen; keep site and runtime acceptance separate.
+
+## Repository and development
+
+`Scripts/` contains examples; `lessons/` is a separate runtime distribution with candidate tests; `tests/` checks menus/provenance; `src_docs/` and `tests_docs/` own the catalogue website.
+
+Use README Tests and lint for separate arm64 Python 3.11 core/TypeRig-derived checks and offscreen lessons tests. Prepare the root Python 3.12+ docs environment with `uv sync --locked` before `tests_docs`. Use real reviewed App artifact versions, never pretend build metadata.
+
+Keep runtime, ordinary installed artifacts, native workflows and published documentation as separate acceptance results. Track open checks in [TODO.md](TODO.md), the implementation route in [PLAN.md](PLAN.md), and dated evidence in [CHANGELOG.md](CHANGELOG.md).
+
 # FontLab Python examples
 
-One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9. **Workspace handoff (2026-11-03):** Issue 123 development is paused. Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls. Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9.
 They inspect fonts, build proofs, edit selected data and show modeless panels.
 Each script states its setup, scope and limits. Some scripts change fonts;
 read the script's Usage and Setup text before running it.
@@ -119,18 +135,17 @@ and access to the required packages, or a populated cache for offline use.
 Set `FONTLAB_REFERENCE_ROOT` to the workspace containing the Echopy Qt
 stub and API documentation repositories. This is independent of the archive root.
 
-Core tests use App source from the sibling checkout. Run them separately from
+Core tests use App source from the sibling checkout. Set `EXAMPLES_APP_WHEEL` to the genuine reviewed App wheel for the TypeRig-derived tests. Run them separately from
 the TypeRig-derived tool tests, which need an installed App and real Fly:
 
 ```sh
 export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'
-SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0 PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../fontlab-fontlabapp python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
+PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with "$EXAMPLES_APP_WHEEL" python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff ruff check --no-cache Scripts
 ```
 
-The version override supplies build metadata for the isolated App test install;
-it does not select an App release. The script lint command checks `Scripts/`
+Set `EXAMPLES_APP_WHEEL` to a genuine reviewed App wheel built from its Git history, with its matching dependency cohort. Check the wheel version and installed origins before this run; do not override hatch-vcs metadata. The script lint command checks `Scripts/`
 only. It is not a lint result for the whole repository.
 
 Lessons tests also need the first-party legacy API checkout at

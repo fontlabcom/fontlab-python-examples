@@ -2,6 +2,38 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-05 — independently approved documentation applied
+
+[Task 2 final review](../verification/issue-230/task-2-fix2-review.md) records
+SPEC PASS / QUALITY APPROVED. The [78-file application receipt](../verification/issue-230/task-2-apply.json)
+includes this repository's six guides and preserves all 21 repository heads,
+branches, indexes and non-selected diffs. This is applied documentation evidence,
+not a new product test, installed artifact, native result or publication.
+
+[Round 2 independent review](../verification/issue-230/round-2/repair-review.md),
+[application](../verification/issue-230/round-2/apply.json) and
+[controller verification](../verification/issue-230/round-2/controller-verification.json)
+include this repository's `TODO.md`. The complete round
+has 26 successors across the workspace; its acceptance is source/documentation-
+receipt scope, not runtime/native acceptance.
+
+The complete earlier handoff/history below retains its proposal-stage statements
+and dated source pins. Later review, application and delivery status belong in the
+[live workspace ledger](../verification/issue-230/progress.md). Original future,
+native, artifact and preservation contracts remain binding.
+
+## 2026-11-05 — documentation reconciliation proposal
+
+Prepared repository-specific organization, test and MVP/delivery guidance from current source/test configuration and retained Issue 207–211 evidence. Distinguished current canonical layout from qualified candidates, future plugin ownership and unfinished native/artifact gates. Preserved all prior work and changelog evidence; no runtime completion, installation or publication is claimed. Historical checked tasks now require receipt/current-scope reconciliation rather than being silently counted complete.
+
+## 2026-11-05 — planning chronology reconciliation
+
+Dock-refusal and priority source receipts are historical source acceptance, not native completion. Preserve all27constructor/parent-death,28show routes and four-font/history tests. Existing production route-A zone writer replaces the obsolete request to create another public writer; native/serializer boundaries stay open. Historical passing results retain their dated source and acceptance scope in the entries above and original history below. This documentation change creates no new runtime acceptance.
+
+---
+this_file: CHANGELOG.md
+---
+
 ## 2026-11-03 — v1.2.1: Qt Slot Reference no longer blocks quitting FontLab
 
 - The panel watched the widget focused when it opened. When that widget was
