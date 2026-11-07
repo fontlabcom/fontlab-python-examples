@@ -32,8 +32,8 @@ Run **Dialogs > Glyph Batch Recipe Settings** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/59a3e88ce42193f4014d7174a5bfcb2ad4a12f86e95c56abe979a4b39763069a.py)
-<!--/codeinclude-->
+SHA256: `59a3e88ce42193f4014d7174a5bfcb2ad4a12f86e95c56abe979a4b39763069a`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Glyph%20Batch%20Recipe%20Settings.py)

@@ -27,8 +27,8 @@ Run **Text > Font Review Notes** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d5c2860596235d62c91674c94c528c69b62cec462b60f0b86d807c38e5af44aa.py)
-<!--/codeinclude-->
+SHA256: `d5c2860596235d62c91674c94c528c69b62cec462b60f0b86d807c38e5af44aa`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Text/Font%20Review%20Notes.py)

@@ -26,8 +26,8 @@ Run **Models > Glyph Inventory XML** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/008b7dcc17f0409f5d123c16c9b6993afc66048a79a8cb6d449df262002d5475.py)
-<!--/codeinclude-->
+SHA256: `008b7dcc17f0409f5d123c16c9b6993afc66048a79a8cb6d449df262002d5475`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Inventory%20XML.py)

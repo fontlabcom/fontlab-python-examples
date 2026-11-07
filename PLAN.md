@@ -2,90 +2,38 @@
 this_file: PLAN.md
 ---
 
-<!-- workspace-handoff:2026-11-03 -->
-## Current workspace handoff —2026-11-03
+# Forward plan
 
-**Implementation paused.** Useful menu tools and separately packaged Lessons examples.
+Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
 
-Observed canonical checkout: `main` at `8648fd4528e1`. No source integration is performed by this update.
+## Runtime and lesson acceptance
 
-Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+Keep the practical 100-menu collection and sixteen separately packaged Lessons menus useful on host arm64 Python3.11. Keep docs on declared Python3.12+. Preserve every original control, provenance/hash and failed owner. Finish all27 constructor/parent-death and shared-launcher disconnect contracts after the Unicode Dock refusal repair; qualify matching installed App priority-message behavior separately.
 
-Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+Qualify all current panels/model-view policies/callbacks/Close/reopen/cancellation/stale/error routes on owned fonts. Cover patterns, calendars, trees, completers, numeric controls, elastic graphs and spacing worksheets. Check Character Map drawing/copy, dialogs/desktop activation, image viewers/native printing separately. Every writer needs Apply/Undo/Redo/save-reopen, complete-font/modification-date comparison across successive edits and unchanged sources in cross-font copies.
 
-1. Re-review refusal-reporting fixes and pass complete core/TypeRig and per-module80%gates after reviewed source-pin regeneration.
-2. Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
-<!-- /workspace-handoff -->
-## Dock refusal and shared recovery — 2026-11-03
+Probe Node Table selection-property side effects, fresh wrappers and restoration. Verify Stem Blend creates ordinary non-auto layers after history/reopen and both stem-compensated writers under coordinate rounding. Qualify all13 GetGo workflows. When corrected VFJs exist, update current manifests/hashes and rerun corpus/variable-export checks without relabeling older native receipts.
 
-The Unicode Issues Dock retains refused Close for retry or parent destruction.
-Five new regressions include two red refusal cases; all 43 focused cases pass.
-Normal 1842 core/496 TypeRig with 96/7 existing skips and 94.42% changed-script coverage
-passes. Both App.dev334 ordinary prefixes pass 1846 core/496 TypeRig with 92/7 existing
-skips and unchanged import-origin guards. Retain all controls and frozen records.
-Complete the separately audited 27 constructor/parent-death and shared-launcher
-lifetime contracts, then actual native/window/four-font/history/publication gates.
+## Shared APIs and source pins
 
-- [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
+Add missing selection-restoration coverage and destination-hash checks. Reconcile retirement licence fields, line-wrap-independent collection tests and image-viewer App floors. Combine separate test runs only after import contexts are compatible. Recheck full core/TypeRig suites and every changed complete-module80% gate against reviewed source pins.
 
+The production App route-A zone writer now exists; qualify that supported route before scripted zone edits instead of requesting another writer. Native Font Info > Zones remains an alternative. Keep the serializer route independently held. Add targeted automatic-layer refusal to avoid duplicate whole-font kerning scans. Generic UI/native helpers belong in App, fontParts/UFO in Fontport and Glyphs.app compatibility in Glyport; menus use Fly.
 
-# Current goals
+## Priority and delivery
 
-Keep the 100-menu collection useful in FontLab 9, with shared helpers in App
-and sixteen runtime menus packaged as Lessons. Use Python 3.11 arm64 for host
-code. Keep the separate documentation project on its declared Python 3.12+
-runtime. Current source and artifact checks do not close native acceptance.
+Qualify the27 standalone priority constructors, the28 embedded show routes (one intentional unchanged dock), other shared-launcher/child-canvas routes, Lessons Models/Forms and GetGo Font Info Mini Tool delegation in actual FontLab. Include Font/Glyph-window switches, Close/reopen and other-application behavior. Source flags/standalone Qt are not native acceptance.
 
-## Native acceptance
+Check the final matching sibling tuple, destination hashes, genuine installs and dependent suites. Complete browser asset/transitive licence/source availability, site routes/accessibility/deployment. Keep owner editable installs and publication as separate delivery steps.
 
-Qualify installed artifacts on owned fonts in a dedicated host session. Cover
-all current panels, model/view policies, callbacks, close/reopen, cancellation,
-stale snapshots and failure paths. Include pattern rules, calendars, trees,
-completers, numeric controls, elastic graphs and spacing worksheets.
+## Development checks
 
-Check character-map drawing/copy, file dialogs and desktop activation, image
-viewers and native printing separately. Check every writer with Apply, Undo,
-Redo and save/reopen. Compare complete font state and modification dates across
-successive edits, including unrelated glyphs. For cross-font copies, prove that
-the source stays unchanged.
+Use README Tests and lint for separate arm64 Python 3.11 core/TypeRig-derived checks and offscreen lessons tests. Prepare the separate Python 3.13 hash-locked docs environment following README before `tests_docs`. Use real reviewed App artifact versions, never pretend build metadata.
 
-Probe Node Table selection-property side effects. Verify fresh-wrapper reads
-and selection restoration. Prove Stem Blend's new layers remain ordinary and
-non-auto after history and reopen. Test both stem-compensated writers under
-coordinate rounding.
+## Review, integration and cleanup
 
-Qualify the thirteen packaged GetGo workflows before reconciling their remaining
-catalogue entries. When corrected fixture VFJs are supplied, update manifests
-and hashes, then rerun corpus and variable-export checks. Keep earlier receipts
-as evidence for their exact source version only.
+Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. Complete one scoped MVP, then run the exact repository checks and unchanged 80% gate for each complete changed production module. Keep source, genuine artifacts, ordinary origins and native behavior separate. Obtain independent review before a milestone commit/push and verify the actual remote head. Reconcile concurrent source and all callers before main integration. Preserve recovery/unique work and fresh owner/worktree attachments before obsolete branch/file cleanup. Update TODO/PLAN and record only scoped verified results in CHANGELOG. Do not drive the owner's FontLab, install into its user folder or publish a site from this proposal.
 
-## Small fixes and shared App work
+## Public site qualification
 
-Add missing selection-restoration coverage and cross-repository destination
-hash checks. Reconcile retirement licence fields, make collections count tests
-independent of line wrapping and check the image viewers' App floors. Combine
-the separate menu-test runs only after their import arrangements are compatible.
-
-Request a public App zone writer before adding scripted zone edits. Native
-Font Info > Zones remains the alternative. Add targeted auto-layer refusal to
-avoid duplicate whole-font scans in kerning imports. Keep generic UI and host
-helpers in App, fontParts/UFO adapters in Fontport and Glyphs.app adapters in
-Glyport; menus use App through Fly.
-
-## Delivery and publication
-
-Check the final reviewed sibling package set, destination hashes, clean installs
-and dependent suites. Complete browser asset provenance, transitive notices and
-source availability. Then qualify site routes, accessibility and deployment.
-Owner-managed editable installs and publication remain separate delivery steps.
-
-## Done
-
-The practical menu collection, TypeRig-inspired tools, explicit historical
-source dispositions and archive-independent default tests are integrated.
-Documentation generation and offline runtime checks are present. See CHANGELOG
-for verified changes and historical acceptance limits; see TODO for open work.
-
-## Independent panel priority source candidate
-
-Twenty-seven standalone Tool constructors now preserve their flags and request TypeRig priority. The28 embedded show routes include one intentional dock, which is unchanged. Other script constructors use the shared launcher or create child canvases. Lessons Models/Forms reach the shared launcher; GetGo Font Info Mini Tool reaches App reports. Verify installed shared App plus these menus in dedicated native FontLab, including switching Font/Glyph windows, Close/reopen and other-application behavior.
+Retain the complete 100-menu catalogue and Lessons guides. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current nine-asset English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 36 licence files from the 31 locked Python distributions remain distributed.

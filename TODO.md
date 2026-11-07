@@ -2,21 +2,17 @@
 this_file: TODO.md
 ---
 
-<!-- workspace-handoff:2026-11-03 -->
-## Current workspace handoff —2026-11-03
+# Open tasks
 
-Issue 123 is paused. Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls.
+- [ ] Keep all lesson, original-source and destination-hash contracts while updating examples for reviewed App/provider migrations.
+- [ ] Qualify the installed cohort, actual owned native workflows, whole-font/history, window priority and save/reopen; keep site and runtime acceptance separate.
+- [ ] Run the exact repository checks on the integrated source, obtain independent review, commit/push the scoped milestone and verify its remote head.
+- [ ] After qualified main integration, inventory obsolete branches/files, preserve unique work and remove only proven stale items with recovery evidence.
 
-Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
-
-- [ ] Re-review refusal-reporting fixes and pass complete core/TypeRig and per-module80%gates after reviewed source-pin regeneration.
-- [ ] Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
-<!-- /workspace-handoff -->
 - [ ] Repair the audited27direct-panel constructor/parent-death and remaining shared-launcher lifetime gaps without losing controls or failed-Close owners.
 - [ ] Native-qualify dock refusal/retry/floating priority with the reviewed App candidate; source/ordinary results are in CHANGELOG.md.
 
 - [ ] Qualify the priority-message candidate with its matching App artifact and native FontLab; source coverage and standalone Qt checks pass, but do not close the host gate.
-
 
 - [ ] Qualify all current menus in installed FontLab: callbacks, close/reopen, stale snapshots, cancellation, errors and complete font/cache/history preservation.
 - [ ] Qualify Models filters, calendars, read-only/editable trees, completers, pattern rules, spinboxes, sliders, elastic graphs and spacing worksheets in native PythonQt.
@@ -34,10 +30,16 @@ Focused checks pass, with two refusal-reporting review fixes; full current cover
 - [ ] Replace the collections-page whitespace-sensitive count assertion and explain what its entry count includes.
 - [ ] Check whether both Font Reference Image Viewers need their stated App minimum.
 - [ ] Consolidate the two menu-test processes once their App/Fly loading arrangements can coexist without weakening checks.
-- [ ] Add a public App zone writer before considering scripted zone editing; retain native Font Info > Zones as the current alternative.
+- [ ] Reconcile and qualify the existing production App route-A zone writer on the chosen current tuple before adopting scripted zone editing. Preserve all-master staging, one history commit, row/Font-window refusals, tags/lock, Undo/Redo, complete-font preservation and save/reopen. Keep the serializer ABI hold and D31 reserved zone/master lane. Native Font Info > Zones remains an alternative; the reviewed final fix4 receipt proves source/offline scope only.
 - [ ] Add targeted App auto-layer refusal so kerning imports avoid repeated whole-font scans.
 - [ ] Complete browser asset provenance, transitive notices and required source availability before site publication.
 - [ ] Recheck the complete reviewed package set with clean wheel/sdist installs and all dependent suites before delivery.
 - [ ] Qualify final documentation routes, accessibility and deployment before publication.
 
 - [ ] Verify TypeRig-style stacking for27 independent Tool panels plus shared-App routes using installed artifacts in native FontLab; preserve dock/modal/child-widget policies.
+
+- [ ] Re-review refusal-reporting fixes and pass complete core/TypeRig and per-module80%gates after reviewed source-pin regeneration.
+
+- [ ] Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
+
+- [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.

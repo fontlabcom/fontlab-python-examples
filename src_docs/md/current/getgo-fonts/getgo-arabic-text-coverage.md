@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Arabic Text Coverage** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476.py)
-<!--/codeinclude-->
+SHA256: `3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Arabic%20Text%20Coverage.py)

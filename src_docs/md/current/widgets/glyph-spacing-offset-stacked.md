@@ -34,8 +34,8 @@ Run **Widgets > Glyph Spacing Offset - Stacked** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/95b983078974156f0ded83e6dde1576237fa638ac4beeda17cef04f7d4989485.py)
-<!--/codeinclude-->
+SHA256: `95b983078974156f0ded83e6dde1576237fa638ac4beeda17cef04f7d4989485`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Spacing%20Offset%20-%20Stacked.py)

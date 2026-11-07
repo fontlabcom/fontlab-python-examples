@@ -21,8 +21,8 @@ Run **Drag And Drop > Font Drop Inspector** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/74a595b4944c809756c110d16a996cbd7020885bc2b1dd32fe27ad50bbec7296.py)
-<!--/codeinclude-->
+SHA256: `74a595b4944c809756c110d16a996cbd7020885bc2b1dd32fe27ad50bbec7296`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Font%20Drop%20Inspector.py)

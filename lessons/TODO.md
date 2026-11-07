@@ -2,12 +2,12 @@
 this_file: lessons/TODO.md
 ---
 
-- [x] Preserve reviewed runtime/menu/resource bytes and distinct namespace.
-- [x] Pass actual menu tests, complete 11-module coverage and both full suites.
-- [x] Verify standalone build includes its own full license.
-- [x] Audit final wheel and source distribution payloads.
-- [x] Resolve/install all declared dependencies normally in clean Python 3.11.
-- [x] Repeat installed native workflows, edge/lifecycle and preservation checks.
-- [x] Merge added paths while preserving owner archive/deletion status.
-- [x] Release and independently verify downloaded tags and assets.
-- [x] Record accepted source dispositions without removing unresolved archives.
+# Pending expanded-package checks
+
+The nine checked v1.0.3 tasks are historical completed scope in CHANGELOG and
+WORK. They are removed from this future-only list, not reopened for that release.
+
+- [ ] Run the current candidate suite with a genuine matched App/Fly cohort and retain complete changed-module coverage at 80% or higher.
+- [ ] Native-qualify all thirteen packaged GetGo runtime rows with owned fixtures, full font/history preservation, actual controls and cleanup.
+- [ ] Verify matched expanded-package artifacts, ordinary installs and release/download identities before qualifying the expanded distribution.
+- [ ] Reconcile complete archive and documentation gates before removing any of the four retained original inputs.

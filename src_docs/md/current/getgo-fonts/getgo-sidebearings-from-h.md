@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Sidebearings from H** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1.py)
-<!--/codeinclude-->
+SHA256: `989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Sidebearings%20from%20H.py)

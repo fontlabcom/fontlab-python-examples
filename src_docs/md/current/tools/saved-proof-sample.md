@@ -31,8 +31,8 @@ Run **Tools > Saved Proof Sample** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/31cfd1c0f067b1ab2e912aa3832921c3bc93e51232d027d37723b9f4ca98407e.py)
-<!--/codeinclude-->
+SHA256: `31cfd1c0f067b1ab2e912aa3832921c3bc93e51232d027d37723b9f4ca98407e`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Saved%20Proof%20Sample.py)

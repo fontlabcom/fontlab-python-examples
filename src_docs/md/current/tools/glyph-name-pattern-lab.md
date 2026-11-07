@@ -32,8 +32,8 @@ Run **Tools > Glyph Name Pattern Lab** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5937cd70a1882ba66ed3b20c1ed553ca1b6b0a80d27f11a0a001777e70337f3a.py)
-<!--/codeinclude-->
+SHA256: `5937cd70a1882ba66ed3b20c1ed553ca1b6b0a80d27f11a0a001777e70337f3a`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Name%20Pattern%20Lab.py)

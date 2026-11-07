@@ -29,8 +29,8 @@ Run **Widgets > Glyph Modification Calendar** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/386c89bb6a956c0e230f87cca67f7a7a610d16a0b30967f743a98f5c9a79b10f.py)
-<!--/codeinclude-->
+SHA256: `386c89bb6a956c0e230f87cca67f7a7a610d16a0b30967f743a98f5c9a79b10f`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Modification%20Calendar.py)

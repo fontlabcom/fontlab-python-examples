@@ -36,8 +36,8 @@ Run **Designer > Em Star Polygon** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d758cceb6e0b47d0ea349678f4de68be7f5b3eb8af71eb370bfdee60ea39ed39.py)
-<!--/codeinclude-->
+SHA256: `d758cceb6e0b47d0ea349678f4de68be7f5b3eb8af71eb370bfdee60ea39ed39`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Designer/Em%20Star%20Polygon.py)

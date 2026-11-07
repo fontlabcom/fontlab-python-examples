@@ -30,8 +30,8 @@ Run **Models > Glyph Review Priorities** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f3b02e1b82cb3a4735f8d419fe95b9d6a63eb05510af2708b938936a475db05c.py)
-<!--/codeinclude-->
+SHA256: `f3b02e1b82cb3a4735f8d419fe95b9d6a63eb05510af2708b938936a475db05c`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Review%20Priorities.py)

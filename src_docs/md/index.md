@@ -26,10 +26,13 @@ For the native APIs, use the
 catalogue have separate identities and acceptance histories. A documentation
 build does not rerun or qualify any native example.
 
-Browse the [33 current practical scripts](current/index.md) for Forms, Models,
-Tools, Widgets and packaged GetGo lessons. Archived dispatchers have been removed
+Browse the [100 current practical scripts](current/index.md) for current font inspection, proofs, editing, panels and packaged GetGo lessons. Archived dispatchers have been removed
 from the active Scripts tree. Their original sources and resources remain in the
 external rescue archive; removing a menu does not qualify or complete its workflow.
 
 Explore both [component dependency graph profiles](elastic-component-graphs.md),
 with complete original elastic controls and an immutable font snapshot.
+
+## Complete current and historical collections
+
+Browse all [100 current menus](current/index.md), the [Lessons runtime](lessons/readme.md), [GetGo workflows](lessons/getgo.md), [PythonQt teaching examples](lessons/pythonqt.md), [42-page retained catalogue](retained-catalogue/index.md) and [complete historical integration guide](guides/pre-integration.md). Historical native counts retain their original source and host limits.

@@ -29,8 +29,8 @@ Run **Tools > Font Reference Image Viewer - Bounded Zoom** from FontLab's Script
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2626a83f431b2511c41f814cc5a082f9d99cfc308842d1de7c378130c443645a.py)
-<!--/codeinclude-->
+SHA256: `2626a83f431b2511c41f814cc5a082f9d99cfc308842d1de7c378130c443645a`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Font%20Reference%20Image%20Viewer%20-%20Bounded%20Zoom.py)

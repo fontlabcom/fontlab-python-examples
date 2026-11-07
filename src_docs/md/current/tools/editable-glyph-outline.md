@@ -29,8 +29,8 @@ Run **Tools > Editable Glyph Outline** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9500cdb06e7867f75d30c82e24f0c99c5bb0bfc66bc577b1138ab0523ea0ff80.py)
-<!--/codeinclude-->
+SHA256: `9500cdb06e7867f75d30c82e24f0c99c5bb0bfc66bc577b1138ab0523ea0ff80`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Editable%20Glyph%20Outline.py)

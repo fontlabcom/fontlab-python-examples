@@ -32,8 +32,8 @@ Run **Dialogs > Expandable Glyph Search** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/66a3d1f83148dc6fbe1fdc822493551b1432d967068f3c687583e75dce4da89c.py)
-<!--/codeinclude-->
+SHA256: `66a3d1f83148dc6fbe1fdc822493551b1432d967068f3c687583e75dce4da89c`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Expandable%20Glyph%20Search.py)

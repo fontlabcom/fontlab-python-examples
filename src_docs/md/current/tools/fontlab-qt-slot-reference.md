@@ -30,8 +30,8 @@ Run **Tools > FontLab Qt Slot Reference** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c032fef24d6938ee31002c3d4dd387c3e59b025631fb7c0c8c794a9c85051ede.py)
-<!--/codeinclude-->
+SHA256: `c032fef24d6938ee31002c3d4dd387c3e59b025631fb7c0c8c794a9c85051ede`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/FontLab%20Qt%20Slot%20Reference.py)

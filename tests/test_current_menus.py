@@ -1,6 +1,7 @@
 # this_file: tests/test_current_menus.py
 """Check generated documentation against the actual shipped menu sources."""
 
+import hashlib
 import importlib.util
 from pathlib import Path
 
@@ -22,9 +23,8 @@ def test_catalogue_when_built_then_every_menu_has_exact_source_inclusion():
     assert len(menus) == len(pages), "Every menu needs its own source page"
     for source in menus:
         text = "\n".join(p.read_text() for p in pages if source.stem in p.read_text())
-        assert "<!--codeinclude-->" in text, (
-            f"Missing live source include: {source.name}"
-        )
+        assert hashlib.sha256(source.read_bytes()).hexdigest() in text
+        assert "<!--codeinclude-->" not in text
 
 
 def test_catalogue_when_menu_is_removed_then_stale_page_is_removed(tmp_path):
@@ -37,9 +37,9 @@ def test_catalogue_when_menu_is_removed_then_stale_page_is_removed(tmp_path):
     scripts.mkdir(parents=True)
     source = scripts / "A report.py"
     source.write_text('"""Read a font."""\n')
-    module.catalogue(tmp_path)
+    module.catalogue(tmp_path, revision="a" * 40)
     source.unlink()
-    module.catalogue(tmp_path)
+    module.catalogue(tmp_path, revision="a" * 40)
     assert not [
         p
         for p in (tmp_path / "src_docs/md/current").glob("*/*.md")
@@ -60,4 +60,4 @@ def test_catalogue_when_filenames_collapse_to_one_slug_then_refuses(tmp_path):
     (tmp_path / "Scripts/ignored.txt").write_text("not a menu")
     (tmp_path / "Scripts/Empty").mkdir()
     with pytest.raises(ValueError, match="Duplicate documentation slug"):
-        module.catalogue(tmp_path)
+        module.catalogue(tmp_path, revision="a" * 40)

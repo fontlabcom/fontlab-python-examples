@@ -32,8 +32,8 @@ Run **Dialogs > FontLab Script Scaffold Wizard** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f0cc432f0694ac574ec941432a229a79a97a5eb14cf0d2af2db47f47f890c417.py)
-<!--/codeinclude-->
+SHA256: `f0cc432f0694ac574ec941432a229a79a97a5eb14cf0d2af2db47f47f890c417`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/FontLab%20Script%20Scaffold%20Wizard.py)

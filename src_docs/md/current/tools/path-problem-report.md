@@ -31,8 +31,8 @@ Run **Tools > Path Problem Report** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/23824e20bd430c7121e78733850463eed1d4a344272af8bea8980da8e41095bc.py)
-<!--/codeinclude-->
+SHA256: `23824e20bd430c7121e78733850463eed1d4a344272af8bea8980da8e41095bc`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Path%20Problem%20Report.py)

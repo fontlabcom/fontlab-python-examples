@@ -34,8 +34,8 @@ Run **Widgets > Glyph Spacing Offset** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bcf8e7f275745e51f720577cd1a6c6ff2ecb834a2c87f990ae22afe40968578d.py)
-<!--/codeinclude-->
+SHA256: `bcf8e7f275745e51f720577cd1a6c6ff2ecb834a2c87f990ae22afe40968578d`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Spacing%20Offset.py)

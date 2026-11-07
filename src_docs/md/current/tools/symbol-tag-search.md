@@ -28,8 +28,8 @@ Run **Tools > Symbol Tag Search** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d79ca108fadfae9649ed60765d745722d956a930a6a3d3d22bd27a9bbe04cdd9.py)
-<!--/codeinclude-->
+SHA256: `d79ca108fadfae9649ed60765d745722d956a930a6a3d3d22bd27a9bbe04cdd9`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Symbol%20Tag%20Search.py)

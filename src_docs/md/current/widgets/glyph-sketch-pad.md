@@ -28,8 +28,8 @@ Run **Widgets > Glyph Sketch Pad** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7f1c7dddc498c960edb24db72d72f22ec2941f2d528701c79061d5c47aff4815.py)
-<!--/codeinclude-->
+SHA256: `7f1c7dddc498c960edb24db72d72f22ec2941f2d528701c79061d5c47aff4815`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Sketch%20Pad.py)

@@ -27,8 +27,8 @@ Run **Widgets > Script Palette Roles** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/470472eb81adda9ba61ebb2423568157f7e5140c88c53ca120121858243107c3.py)
-<!--/codeinclude-->
+SHA256: `470472eb81adda9ba61ebb2423568157f7e5140c88c53ca120121858243107c3`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Script%20Palette%20Roles.py)

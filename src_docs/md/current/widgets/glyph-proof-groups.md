@@ -25,8 +25,8 @@ Run **Widgets > Glyph Proof Groups** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/925e194a2e2d7a5b3838fd1c52990028b483b6abccce333d47c03ce4d012bda4.py)
-<!--/codeinclude-->
+SHA256: `925e194a2e2d7a5b3838fd1c52990028b483b6abccce333d47c03ce4d012bda4`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Proof%20Groups.py)

@@ -32,8 +32,8 @@ Run **Models > Glyph Filter Model with Local Dates** from FontLab's Scripts menu
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/50c0ee6696e83d821ebb147cddd78f959d571406b63fb736e131a4e78a9796fe.py)
-<!--/codeinclude-->
+SHA256: `50c0ee6696e83d821ebb147cddd78f959d571406b63fb736e131a4e78a9796fe`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Filter%20Model%20with%20Local%20Dates.py)

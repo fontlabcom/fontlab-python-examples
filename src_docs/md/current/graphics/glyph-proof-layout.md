@@ -29,8 +29,8 @@ Run **Graphics > Glyph Proof Layout** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9c49139060a6a2c158704e1ed3c8b9c5eaf19ed19206307b45e3cc949d6ba409.py)
-<!--/codeinclude-->
+SHA256: `9c49139060a6a2c158704e1ed3c8b9c5eaf19ed19206307b45e3cc949d6ba409`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Proof%20Layout.py)

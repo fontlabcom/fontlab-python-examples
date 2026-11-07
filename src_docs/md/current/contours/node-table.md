@@ -36,8 +36,8 @@ Run **Contours > Node Table** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1fd13c79c47ae52347782f4f3afb8203378d9cf4220fd479453382b9c0c39b28.py)
-<!--/codeinclude-->
+SHA256: `1fd13c79c47ae52347782f4f3afb8203378d9cf4220fd479453382b9c0c39b28`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Contours/Node%20Table.py)

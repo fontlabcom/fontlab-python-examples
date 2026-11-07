@@ -8,7 +8,7 @@ categories:
 
 # Insight examples
 
-Each page includes the retained Python source and the scope recorded in the catalogue.
+Each page preserves the recorded scope and the retained source hash.
 
 | Example | Pattern |
 | --- | --- |

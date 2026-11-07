@@ -1,0 +1,23 @@
+{
+  "this_file": "tests/spacing-guide-successors.json",
+  "authority": "Issue 230 Task 3 application; four lesson handoff guides only; original lesson code and licence baseline retained.",
+  "task_3_apply_sha256": "74ca24285bf9a23d748664832879a28d5088f20935f0786c3da2cb614bc29945",
+  "guides": {
+    "lessons/CHANGELOG.md": {
+      "original_sha256": "a0fb7623c3d00aa22fcabab408eaaae3f814b4095b8608b39ed0a2891ab674d5",
+      "approved_sha256": "f3f9123bb622eb78af5686bc1eae12100b8df0f274eb6e0d982cec3b15150f6e"
+    },
+    "lessons/PLAN.md": {
+      "original_sha256": "cb7675d6deb4a77e8e12e7addb713a828ff25b9834d14a67adc5780c98abfd3d",
+      "approved_sha256": "7b3091122c2ea5bcd5edde3dedd6bfbcc49341f3d722a45564ee3bd204fc3f72"
+    },
+    "lessons/TODO.md": {
+      "original_sha256": "b0c2050debca83d0d26ec35e04ef5abedf127b49c2a86cc3e81b8c4b2e8fef38",
+      "approved_sha256": "c52aaba8e79f65ac32170fd2f0b6ec55f49b56cd389ce6680301570529550333"
+    },
+    "lessons/WORK.md": {
+      "original_sha256": "75010336c29f0c5e316b3149c0f9cc30d6335ee31742661a53fdff2f8898ac32",
+      "approved_sha256": "3e8267a34202820c99a7e45eb4ecdab3888306a1840e503426ebe72d26c5a947"
+    }
+  }
+}

@@ -28,8 +28,8 @@ Run **Models > Glyph Proof Worksheet** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ae6b441dc156be8d7bc5d7b434529bc3c18dedf870faa0cf5ab522fee60861c4.py)
-<!--/codeinclude-->
+SHA256: `ae6b441dc156be8d7bc5d7b434529bc3c18dedf870faa0cf5ab522fee60861c4`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Proof%20Worksheet.py)

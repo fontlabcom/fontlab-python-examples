@@ -48,8 +48,8 @@ Run **Drawing > Stem Blend** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5b9312c7e7400de15a9a125e90924a37a2e97097d2bb258fdb6858b80c8268bc.py)
-<!--/codeinclude-->
+SHA256: `5b9312c7e7400de15a9a125e90924a37a2e97097d2bb258fdb6858b80c8268bc`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drawing/Stem%20Blend.py)

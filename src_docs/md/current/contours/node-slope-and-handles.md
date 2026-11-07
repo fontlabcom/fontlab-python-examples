@@ -40,8 +40,8 @@ Run **Contours > Node Slope And Handles** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/15bbf0ccb0b9af5c5e980f1e9fd6cbd08ca9ffbb33c54ea28847d5d30dd3fff1.py)
-<!--/codeinclude-->
+SHA256: `15bbf0ccb0b9af5c5e980f1e9fd6cbd08ca9ffbb33c54ea28847d5d30dd3fff1`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Contours/Node%20Slope%20And%20Handles.py)

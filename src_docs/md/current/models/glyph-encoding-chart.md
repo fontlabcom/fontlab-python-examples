@@ -26,8 +26,8 @@ Run **Models > Glyph Encoding Chart** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d6559f455f52ae5bdbe168e33a4371dbe0caaa9e667a81425f24815c3d40f652.py)
-<!--/codeinclude-->
+SHA256: `d6559f455f52ae5bdbe168e33a4371dbe0caaa9e667a81425f24815c3d40f652`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Encoding%20Chart.py)

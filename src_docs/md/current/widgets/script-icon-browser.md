@@ -25,8 +25,8 @@ Run **Widgets > Script Icon Browser** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7904e8816b86027e0a4c18237d8eb1fc3d91743825540527e1b63268f7646deb.py)
-<!--/codeinclude-->
+SHA256: `7904e8816b86027e0a4c18237d8eb1fc3d91743825540527e1b63268f7646deb`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Script%20Icon%20Browser.py)

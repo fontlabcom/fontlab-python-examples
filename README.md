@@ -2,9 +2,10 @@
 this_file: README.md
 ---
 
+
 # FontLab Python examples
 
-One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9. **Workspace handoff (2026-11-03):** Issue 123 development is paused. Accepted feature aa27c4a fixes Unicode dock refusal. Local ABchanges27 direct panel lifetimes and12 nonreserved inherited terminal controls. Focused checks pass, with two refusal-reporting review fixes; full current coverage/catalogue/artifact/native gates remain pending.
+One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9.
 They inspect fonts, build proofs, edit selected data and show modeless panels.
 Each script states its setup, scope and limits. Some scripts change fonts;
 read the script's Usage and Setup text before running it.
@@ -100,7 +101,7 @@ Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
 | `src_docs/md/` | Authored site pages and current menu pages. |
 | `src_docs/current_menus.py` | Menu index and source-page generator. |
 | `src_docs/build.py` | Static retained-catalogue export and strict site build. |
-| `docs/` | Retained authored guides. Generated site output goes to `.build/site/`. |
+| `docs/` | Generated site output; retained authored history is under `source_guides/`. |
 | `rescue-index.json`, `menu-adaptations.json`, `NOTICE` | Historical paths, hashes, dispositions and credits. |
 
 Put general UI and native FontLab helpers in `fontlabapp`. Keep `fontport` for
@@ -119,18 +120,17 @@ and access to the required packages, or a populated cache for offline use.
 Set `FONTLAB_REFERENCE_ROOT` to the workspace containing the Echopy Qt
 stub and API documentation repositories. This is independent of the archive root.
 
-Core tests use App source from the sibling checkout. Run them separately from
+Core tests use App source from the sibling checkout. Set `EXAMPLES_APP_WHEEL` to the genuine reviewed App wheel for the TypeRig-derived tests. Run them separately from
 the TypeRig-derived tool tests, which need an installed App and real Fly:
 
 ```sh
 export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'
-SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0 PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../fontlab-fontlabapp python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
+PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with "$EXAMPLES_APP_WHEEL" python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
 uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff ruff check --no-cache Scripts
 ```
 
-The version override supplies build metadata for the isolated App test install;
-it does not select an App release. The script lint command checks `Scripts/`
+Set `EXAMPLES_APP_WHEEL` to a genuine reviewed App wheel built from its Git history, with its matching dependency cohort. Check the wheel version and installed origins before this run; do not override hatch-vcs metadata. The script lint command checks `Scripts/`
 only. It is not a lint result for the whole repository.
 
 Lessons tests also need the first-party legacy API checkout at
@@ -156,26 +156,18 @@ in this opt-in mode. No archived source is executed.
 
 ## Documentation build
 
-The root `pyproject.toml` requires **Python 3.12 or later** for the documentation
-project. This is separate from the Python 3.11 FontLab runtime. Prepare the root
-`.venv` with `uv sync --locked` before running docs tests. The locked project
-includes pytest and the required documentation plugins. Put Homebrew Git on PATH
-for the notice distribution tests; the system Git may fail through Xcode.
-Those tests create isolated fixture repositories and preserve the caller's Git
-state.
+The site uses Python 3.13 and the 31-package hash lock in `src_docs/requirements.txt`:
 
 ```sh
-PATH="/opt/homebrew/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -B -m pytest -q -p no:cacheprovider tests_docs
-./build.sh
-./build.sh --offline
-./build.sh --serve
+uv venv --python 3.13 .docs-venv
+uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
+PATH="$PWD/.docs-venv/bin:/opt/homebrew/bin:$PATH" sh src_docs/build.sh
+.docs-venv/bin/python -m unittest discover -s tests_docs -p 'test_pipeline_*.py' -v
 ```
 
-Docs tests use the prepared 3.12+ `.venv`; the 3.11 selector above is for runtime
-checks. The build verifies static source hashes and generates menu pages without
-running archived code. Site publication still needs route, accessibility,
-licence and deployment checks. Build the separate runtime distribution with
-`uv build lessons`; it includes sixteen menus, the form, fixtures and provenance.
+Legacy pytest documentation checks additionally require pytest in a separate test environment. The older root `uv.lock` is retained for historical tooling; it is not the site's publication lock. Every push to `main` builds the site and verifies immutable generated output, source identity, parentage and source epoch before requesting public Pages. Configure `main:/docs` only after independent privacy, licence, build and settings qualification. A local build does not establish publication.
+
+`./build.sh`, `./build.sh --offline` and `./build.sh --serve` use the same lock. Historical authored guides remain byte-exact under `source_guides/`; only generated output belongs in `docs/`.
 
 ## Historical sources and licence
 

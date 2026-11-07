@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Compare Two Real Fonts** from FontLab's Scripts menu
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec.py)
-<!--/codeinclude-->
+SHA256: `abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Compare%20Two%20Real%20Fonts.py)

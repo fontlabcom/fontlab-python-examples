@@ -32,8 +32,8 @@ Run **Dialogs > Glyph Proof Batch Wizard** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/97d8657ebe41a2d7cec5104406d3bc0568ec98a547fa346ebf3ce98672e1d20f.py)
-<!--/codeinclude-->
+SHA256: `97d8657ebe41a2d7cec5104406d3bc0568ec98a547fa346ebf3ce98672e1d20f`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Glyph%20Proof%20Batch%20Wizard.py)

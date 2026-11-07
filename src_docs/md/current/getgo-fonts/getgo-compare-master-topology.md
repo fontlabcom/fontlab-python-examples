@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Compare Master Topology** from FontLab's Scripts men
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e14e2953a78a67de7787b83d98751b1365cdb27cbcf0b5dac9dce8299e3640e0.py)
-<!--/codeinclude-->
+SHA256: `e14e2953a78a67de7787b83d98751b1365cdb27cbcf0b5dac9dce8299e3640e0`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Compare%20Master%20Topology.py)

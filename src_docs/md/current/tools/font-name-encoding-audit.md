@@ -29,8 +29,8 @@ Run **Tools > Font Name Encoding Audit** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c52b0fd91faf14d04b1d1fca67274c1877c08179c5acb527959bbca56121ca2b.py)
-<!--/codeinclude-->
+SHA256: `c52b0fd91faf14d04b1d1fca67274c1877c08179c5acb527959bbca56121ca2b`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Font%20Name%20Encoding%20Audit.py)

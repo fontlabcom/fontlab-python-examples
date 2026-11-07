@@ -29,8 +29,8 @@ Run **Tools > Editable Glyph Tree** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3774cdaa6aa3fd00ba3927798cf7bec0395709c2e83075412211b08b7dd9b95f.py)
-<!--/codeinclude-->
+SHA256: `3774cdaa6aa3fd00ba3927798cf7bec0395709c2e83075412211b08b7dd9b95f`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Editable%20Glyph%20Tree.py)

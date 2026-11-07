@@ -29,8 +29,8 @@ Run **Graphics > Glyph Proof Pad** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c4ab989b8a56c8d212825f7115b9570b6a65cf4d916e2da520ff48964621e795.py)
-<!--/codeinclude-->
+SHA256: `c4ab989b8a56c8d212825f7115b9570b6a65cf4d916e2da520ff48964621e795`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Proof%20Pad.py)

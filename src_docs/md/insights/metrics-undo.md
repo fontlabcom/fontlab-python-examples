@@ -16,6 +16,4 @@ This is an archived example. Review its imports and host assumptions before runn
 
 ## Source
 
-```python
---8<-- "src_docs/retained-insights/metrics-undo.py.txt"
-```
+Retained source SHA256: `aaf8d655ed841c54c307a08ae3aee0dfd80b53f976fc9f082fe9242d5f1257c3`. The exact source and licence remain in the repository at [metrics-undo.py.txt](https://github.com/fontlabcom/fontlab-python-examples/blob/7de2bf9120afbacf4b5d19cfdca4bb113c3966a2/src_docs/retained-insights/metrics-undo.py.txt). The source is not executed by this site.

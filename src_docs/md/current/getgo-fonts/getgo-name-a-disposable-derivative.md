@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Name a Disposable Derivative** from FontLab's Script
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675.py)
-<!--/codeinclude-->
+SHA256: `9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Name%20a%20Disposable%20Derivative.py)

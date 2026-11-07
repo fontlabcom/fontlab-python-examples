@@ -37,8 +37,8 @@ Run **Tools > Copy Layers From Font** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/168d0f01ded1c90d200d65e42dfbd8e5e2fcb04af910ccc7885dd87fb0b6e676.py)
-<!--/codeinclude-->
+SHA256: `168d0f01ded1c90d200d65e42dfbd8e5e2fcb04af910ccc7885dd87fb0b6e676`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Copy%20Layers%20From%20Font.py)

@@ -21,8 +21,8 @@ Run **Models > Glyph Name Filter** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5dffc5cfb00f5e6c2232a386145ed69c033426a6063a3aad37b2bc335a7c372d.py)
-<!--/codeinclude-->
+SHA256: `5dffc5cfb00f5e6c2232a386145ed69c033426a6063a3aad37b2bc335a7c372d`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Name%20Filter.py)

@@ -235,3 +235,6 @@ _reference/
 # External owned documentation build link
 .build
 *.vfpyc
+
+# Isolated documentation runtime
+.docs-venv/

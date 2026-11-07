@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Outline Pens and Intersections** from FontLab's Scri
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4e1496a86ad04d98a1a5e813587ab49e1615d75e888889b43a13c3a00a771cde.py)
-<!--/codeinclude-->
+SHA256: `4e1496a86ad04d98a1a5e813587ab49e1615d75e888889b43a13c3a00a771cde`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Outline%20Pens%20and%20Intersections.py)

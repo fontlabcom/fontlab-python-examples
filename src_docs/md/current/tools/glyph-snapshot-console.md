@@ -32,8 +32,8 @@ Run **Tools > Glyph Snapshot Console** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/90a0b4ce7c31213be435bbf9d2883892a43ddf49dcb356a045f7982644e5d970.py)
-<!--/codeinclude-->
+SHA256: `90a0b4ce7c31213be435bbf9d2883892a43ddf49dcb356a045f7982644e5d970`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Snapshot%20Console.py)

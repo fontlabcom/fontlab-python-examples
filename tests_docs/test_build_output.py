@@ -14,7 +14,7 @@ def test_clean_build_when_project_output_used_then_authored_guides_survive_twice
 ):
     project = load_config(str(ROOT / "src_docs/mkdocs.yml"))
     output = Path(project.site_dir).relative_to(ROOT)
-    guides = tmp_path / "docs"
+    guides = tmp_path / "source_guides"
     guides.mkdir()
     guide = guides / "PRE-INTEGRATION-GUIDE.md"
     expected = b"# Owned historical guide\nKeep every byte.\n"
@@ -38,6 +38,6 @@ def test_clean_build_when_project_output_used_then_authored_guides_survive_twice
         assert (Path(config.site_dir) / "index.html").exists(), (
             "The configured site still has to build"
         )
-    assert output == Path(".build/site"), (
+    assert output == Path("docs"), (
         "Keep generated output separate from tracked docs source"
     )

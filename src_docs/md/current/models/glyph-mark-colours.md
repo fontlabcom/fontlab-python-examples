@@ -32,8 +32,8 @@ Run **Models > Glyph Mark Colours** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ba2ffbce7bfb60daa8161ab488471ccc6a7b2500468a01fe9a99c3a42f9c0886.py)
-<!--/codeinclude-->
+SHA256: `ba2ffbce7bfb60daa8161ab488471ccc6a7b2500468a01fe9a99c3a42f9c0886`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Mark%20Colours.py)

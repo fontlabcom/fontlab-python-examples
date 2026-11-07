@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Export an OTF Geometry Subset** from FontLab's Scrip
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794.py)
-<!--/codeinclude-->
+SHA256: `ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Export%20an%20OTF%20Geometry%20Subset.py)

@@ -37,8 +37,8 @@ Run **Models > Glyph Review Form** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1d4057256856d161529627b3f3f0ee45fb567acb6d6667741a8c8aff7d1952e5.py)
-<!--/codeinclude-->
+SHA256: `1d4057256856d161529627b3f3f0ee45fb567acb6d6667741a8c8aff7d1952e5`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Review%20Form.py)

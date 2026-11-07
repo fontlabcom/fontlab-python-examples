@@ -27,8 +27,8 @@ Run **Models > Glyph Coverage Grid** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2012732abb8ae55c49c87628b4b44a4fed11c295be71b53913dcbee458282dc8.py)
-<!--/codeinclude-->
+SHA256: `2012732abb8ae55c49c87628b4b44a4fed11c295be71b53913dcbee458282dc8`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Coverage%20Grid.py)

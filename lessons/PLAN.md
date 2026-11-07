@@ -2,19 +2,33 @@
 this_file: lessons/PLAN.md
 ---
 
-# Accepted three-lesson slice
+# Expanded lesson package: remaining plan
 
-The wheel/sdist and menu ZIP are released as v1.0.3. Independent downloads match
-their published hashes. Full-license/privacy/source audits pass, as do normal
-23-package resolution, four namespace orders, resources and actual menus.
+The released v1.0.3 three-model/form slice has historical installed/native and
+downloaded-artifact acceptance in CHANGELOG and WORK. That scope stays complete.
+The current sixteen-menu package adds thirteen GetGo runtime workflows; historical
+9783 GetGo or 9784 three-lesson receipts do not establish their native acceptance.
 
-The downloaded wheel passes all three workflows and twelve edge/lifecycle
-controls on FontLab9.0.9784 with App0.2.23. Complete font/history preservation,
-Close and restored imports pass; six screenshots match the inspected candidate.
+1. Run the current candidate suite with a genuine matched App/Fly cohort and retain complete changed-module coverage at 80% or higher.
+2. Native-qualify all thirteen packaged GetGo runtime rows with owned fixtures, full font/history preservation, actual controls and cleanup.
+3. Verify matched expanded-package artifacts, ordinary installs and release/download identities before qualifying the expanded distribution.
+4. Reconcile complete archive and documentation gates before removing any of the four retained original inputs.
 
-The additions-only canonical merge preserves all1,231owner status entries and
-dirty-file hashes/symlinks. The root documentation project remains intact;
-lesson packaging lives here. All prior tags remain unchanged. The four input
-dispositions are recorded in provenance/models.json and the workspace ledger.
-The originals remain because complete archive and documentation gates are open.
-Further catalogue/insight/recipe/GetGo work is tracked by the workspace plan.
+From the Examples repository root, set S230_PY to a prepared isolated arm64
+Python 3.11 environment with genuine installed matching App, Fly, Qt test providers,
+fontTools, pytest and pytest-cov. Then run:
+
+```sh
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen \
+  "$S230_PY" -B -m pytest -p pytest_cov \
+  --confcutdir lessons/candidate_tests/models_candidate -q -p no:cacheprovider \
+  lessons/candidate_tests/models_candidate \
+  --cov=lessons/src/fontlab_python_lessons --cov-branch --cov-fail-under=80
+```
+
+This inspected recipe is unexecuted in this documentation pass. Root runtime and
+documentation suites have separate prerequisites and denominators; this lesson
+coverage command does not replace them. Do not use pretend version metadata.
+
+Keep fixture licences, source hashes and complete original scenario denominators.
+Issue 123 remains paused; this plan does not authorize owner-host access.

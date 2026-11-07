@@ -53,8 +53,8 @@ Run **Windows > Unicode Issues Dock** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f8aa7bb694352b07d8d456ac5cd637d59c091e6578f4552c7261a09234fb0d59.py)
-<!--/codeinclude-->
+SHA256: `f8aa7bb694352b07d8d456ac5cd637d59c091e6578f4552c7261a09234fb0d59`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Windows/Unicode%20Issues%20Dock.py)

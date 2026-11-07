@@ -31,8 +31,8 @@ Run **Models > Glyph Sorting and Filtering with Dates** from FontLab's Scripts m
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4365ed5ac85d15c6d22b5a6a12205e7e1a99d76a269df1559ff238d1431158bb.py)
-<!--/codeinclude-->
+SHA256: `4365ed5ac85d15c6d22b5a6a12205e7e1a99d76a269df1559ff238d1431158bb`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Sorting%20and%20Filtering%20with%20Dates.py)

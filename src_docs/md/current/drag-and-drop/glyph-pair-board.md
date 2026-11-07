@@ -22,8 +22,8 @@ Run **Drag And Drop > Glyph Pair Board** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/efd4c69ffa998a6138a5f73036eafa1ae3a5bf16ab21b6ac53a4f3e8dec50b8e.py)
-<!--/codeinclude-->
+SHA256: `efd4c69ffa998a6138a5f73036eafa1ae3a5bf16ab21b6ac53a4f3e8dec50b8e`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Glyph%20Pair%20Board.py)

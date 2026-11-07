@@ -22,8 +22,8 @@ Run **Forms > Glyph Metrics Form** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/552075cdbe2d26d4f36360447ffa1bba09973a4a24a4580cda0ef6ed5b987ae5.py)
-<!--/codeinclude-->
+SHA256: `552075cdbe2d26d4f36360447ffa1bba09973a4a24a4580cda0ef6ed5b987ae5`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Forms/Glyph%20Metrics%20Form.py)

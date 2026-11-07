@@ -31,8 +31,8 @@ Run **Graphics > Glyph Mark Colour Board** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6d04716a04c246a9b1a7a01a79133ef2845685d53b535e62ca46f146e8319bae.py)
-<!--/codeinclude-->
+SHA256: `6d04716a04c246a9b1a7a01a79133ef2845685d53b535e62ca46f146e8319bae`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Mark%20Colour%20Board.py)

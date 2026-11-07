@@ -36,8 +36,8 @@ Run **Tools > Kerning Copy Rules** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e87db86b06d95a48cd72770e359095805e06fabb4985fc46c4c8bb38a2922f73.py)
-<!--/codeinclude-->
+SHA256: `e87db86b06d95a48cd72770e359095805e06fabb4985fc46c4c8bb38a2922f73`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Kerning%20Copy%20Rules.py)

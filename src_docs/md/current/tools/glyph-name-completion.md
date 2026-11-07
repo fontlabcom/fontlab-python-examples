@@ -29,8 +29,8 @@ Run **Tools > Glyph Name Completion** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/49c7fd5046b7210b5b947e683bc2c811b03d2418a64663ee7cc277ea57ef4ebc.py)
-<!--/codeinclude-->
+SHA256: `49c7fd5046b7210b5b947e683bc2c811b03d2418a64663ee7cc277ea57ef4ebc`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Name%20Completion.py)

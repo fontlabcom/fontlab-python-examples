@@ -29,8 +29,8 @@ Run **Text > Script Snippet Notebook** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b961e496593e17b0fa7dcb17e1af2efbeb7e7814f9635d4570378c6ad1068fac.py)
-<!--/codeinclude-->
+SHA256: `b961e496593e17b0fa7dcb17e1af2efbeb7e7814f9635d4570378c6ad1068fac`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Text/Script%20Snippet%20Notebook.py)

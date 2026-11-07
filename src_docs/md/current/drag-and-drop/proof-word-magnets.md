@@ -22,8 +22,8 @@ Run **Drag And Drop > Proof Word Magnets** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3ca12c4b039282f35956b96189abb628305d985e7797854e2643295d5bbbdd9f.py)
-<!--/codeinclude-->
+SHA256: `3ca12c4b039282f35956b96189abb628305d985e7797854e2643295d5bbbdd9f`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Proof%20Word%20Magnets.py)

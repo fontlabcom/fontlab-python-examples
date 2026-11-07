@@ -31,8 +31,8 @@ Run **Models > Glyph Sorting and Filtering** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9854ec64fd9306473586890e55836b84fd89d61d9efd06d368bd54b9df042772.py)
-<!--/codeinclude-->
+SHA256: `9854ec64fd9306473586890e55836b84fd89d61d9efd06d368bd54b9df042772`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Sorting%20and%20Filtering.py)

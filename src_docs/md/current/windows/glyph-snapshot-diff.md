@@ -33,8 +33,8 @@ Run **Windows > Glyph Snapshot Diff** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d838006f8983ae200a3d2fd932c0213a8afc8f5d429e7c6b4e86812523811d8c.py)
-<!--/codeinclude-->
+SHA256: `d838006f8983ae200a3d2fd932c0213a8afc8f5d429e7c6b4e86812523811d8c`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Windows/Glyph%20Snapshot%20Diff.py)

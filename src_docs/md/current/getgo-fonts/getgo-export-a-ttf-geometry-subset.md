@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Export a TTF Geometry Subset** from FontLab's Script
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c29ad6050c068858297109992daa71256c280995c67b06cad55f932993a7d076.py)
-<!--/codeinclude-->
+SHA256: `c29ad6050c068858297109992daa71256c280995c67b06cad55f932993a7d076`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Export%20a%20TTF%20Geometry%20Subset.py)

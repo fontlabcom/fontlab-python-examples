@@ -21,8 +21,8 @@ Run **Drag And Drop > Draggable Glyph Names** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/366fe2e09e40a33a446e3dfdddc665f8e5d7db7b7538b25bf1ae08da88d92142.py)
-<!--/codeinclude-->
+SHA256: `366fe2e09e40a33a446e3dfdddc665f8e5d7db7b7538b25bf1ae08da88d92142`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Draggable%20Glyph%20Names.py)

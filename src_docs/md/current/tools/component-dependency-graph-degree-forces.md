@@ -32,8 +32,8 @@ Run **Tools > Component Dependency Graph - Degree Forces** from FontLab's Script
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a6c1b6eaedfc19db641ddd7905485919dc1c130c30455018213d299295bf914c.py)
-<!--/codeinclude-->
+SHA256: `a6c1b6eaedfc19db641ddd7905485919dc1c130c30455018213d299295bf914c`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Component%20Dependency%20Graph%20-%20Degree%20Forces.py)

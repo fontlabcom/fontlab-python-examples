@@ -25,26 +25,9 @@ Install these packages in FontLab's embedded Python environment. Use the
 TypeRig is not a runtime dependency of the rewritten tools. Fontport is for
 fontParts/UFO compatibility; Glyport is for Glyphs.app compatibility.
 
-## Documentation
+## Current documentation dependencies
 
-The root project requires Python 3.12 or later. `uv sync --locked` installs the
-following documentation packages at the versions recorded in `uv.lock`.
-
-| Package | Version requirement | Purpose |
-| --- | --- | --- |
-| properdocs | ==1.6.7 | Static site builder. |
-| mkdocs-materialx | ==10.1.5 | Site theme. |
-| mkdocstrings | ==1.0.7 | API documentation rendering. |
-| mkdocstrings-python | ==2.0.9 | Python API inspection. |
-| mkdocs-autorefs | ==1.4.4 | Cross-page API links. |
-| griffe | ==2.3.2 | Python source analysis. |
-| pymdown-extensions | >=10.2 | Markdown extensions. |
-| mkdocs-codeinclude-plugin | ==0.3.1 | Literal source inclusion. |
-| mkdocs-awesome-nav | ==3.3.0 | Navigation generation. |
-| mkdocs-live-edit-plugin | ==0.4.1 | Source edit links. |
-| mkdocs-categories-plugin | ==0.6.0 | Category pages. |
-| mkdocs-print-site-plugin | ==2.9 | Printable site output. |
-| mkdocs-include-markdown-plugin | ==7.3.0 | Markdown file inclusion. |
+Python 3.13 runs the exact 31-package hash lock in `src_docs/requirements.txt`: ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. Search uses MkDocs' bundled plugin. No API renderer or source-body inclusion plugin is used. The shared fltheme26/1.0.0 menu/footer is light. Installed licence bytes and 44 generated asset identities are recorded in `src_docs/md/assets/current-docs-inventory.json`; its transitive review remains incomplete. Runtime dependencies and package metadata are unchanged.
 
 ## Development and tests
 

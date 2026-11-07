@@ -36,8 +36,8 @@ Run **Widgets > Glyph Character Map - Styles** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/96d71bb21c61674afe9feaaf2a92d793359b262c6959e92f8eec7f73101d93bc.py)
-<!--/codeinclude-->
+SHA256: `96d71bb21c61674afe9feaaf2a92d793359b262c6959e92f8eec7f73101d93bc`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Character%20Map%20-%20Styles.py)

@@ -23,8 +23,8 @@ Run **GetGo Fonts > GetGo - Audit a Real Font** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cad7eeef1119a1c0a3ea924c29bb26b6a87b62b189c287ee1b1891ec68c8d743.py)
-<!--/codeinclude-->
+SHA256: `cad7eeef1119a1c0a3ea924c29bb26b6a87b62b189c287ee1b1891ec68c8d743`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Audit%20a%20Real%20Font.py)

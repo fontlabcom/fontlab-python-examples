@@ -23,8 +23,8 @@ Run **Widgets > Font Units Calculator** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/595ee84ca7920e5a72b5dbc5120eb2d9ff4d83b5f99363f8a8345e98b29284f1.py)
-<!--/codeinclude-->
+SHA256: `595ee84ca7920e5a72b5dbc5120eb2d9ff4d83b5f99363f8a8345e98b29284f1`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Font%20Units%20Calculator.py)

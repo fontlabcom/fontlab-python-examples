@@ -31,8 +31,8 @@ Run **Tools > Font Info Snapshot** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5cabadec4f590122e5e6f37b332e2f28cd3f812b809721861ce3ea9dfc0f869e.py)
-<!--/codeinclude-->
+SHA256: `5cabadec4f590122e5e6f37b332e2f28cd3f812b809721861ce3ea9dfc0f869e`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Font%20Info%20Snapshot.py)

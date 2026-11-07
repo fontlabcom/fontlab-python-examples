@@ -36,8 +36,8 @@ Run **Widgets > Glyph Metrics and Revisions** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3298e1461eb01acd81d7c9b606ee0f055fde4dd0051bcf18ad1e01f395acf33b.py)
-<!--/codeinclude-->
+SHA256: `3298e1461eb01acd81d7c9b606ee0f055fde4dd0051bcf18ad1e01f395acf33b`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Metrics%20and%20Revisions.py)

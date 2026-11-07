@@ -28,8 +28,8 @@ Run **Text > Calendar Proof Builder** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7e0ed7debff0aef538d9f1638628055ee5cdfa1ec9c50fbc1207cdc7f8f63bda.py)
-<!--/codeinclude-->
+SHA256: `7e0ed7debff0aef538d9f1638628055ee5cdfa1ec9c50fbc1207cdc7f8f63bda`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Text/Calendar%20Proof%20Builder.py)

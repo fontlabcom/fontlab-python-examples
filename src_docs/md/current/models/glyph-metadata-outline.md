@@ -30,8 +30,8 @@ Run **Models > Glyph Metadata Outline** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7cd408cf96d52cb99d2e7db792a7b3c8a9b112e9337dcf7630354d656b12c8bd.py)
-<!--/codeinclude-->
+SHA256: `7cd408cf96d52cb99d2e7db792a7b3c8a9b112e9337dcf7630354d656b12c8bd`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Metadata%20Outline.py)

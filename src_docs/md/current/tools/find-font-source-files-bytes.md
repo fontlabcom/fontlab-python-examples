@@ -24,8 +24,8 @@ Run **Tools > Find Font Source Files - Bytes** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c6419a8a53aa3cfd00875e4296ea1ea5f203052dc7c7dfeb31613a9e5cee3f5e.py)
-<!--/codeinclude-->
+SHA256: `c6419a8a53aa3cfd00875e4296ea1ea5f203052dc7c7dfeb31613a9e5cee3f5e`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Find%20Font%20Source%20Files%20-%20Bytes.py)

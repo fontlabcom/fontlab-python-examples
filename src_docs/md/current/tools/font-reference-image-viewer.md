@@ -29,8 +29,8 @@ Run **Tools > Font Reference Image Viewer** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a4cb79252c2162c8b73e192ee121e49b6e959b9958b4c877c6366f774d07202f.py)
-<!--/codeinclude-->
+SHA256: `a4cb79252c2162c8b73e192ee121e49b6e959b9958b4c877c6366f774d07202f`
+
+[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Font%20Reference%20Image%20Viewer.py)
