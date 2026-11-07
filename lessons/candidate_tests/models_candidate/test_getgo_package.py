@@ -32,6 +32,37 @@ MENUS = {
     "unicode_coverage": "Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py",
     "font_audit": "Scripts/GetGo Fonts/GetGo - Audit a Real Font.py",
 }
+MENU_REFERENCE = json.loads((ROOT / "provenance/getgo-menus.json").read_text())
+PACKAGE_COMPATIBILITY = "Compatibility: Native acceptance of this packaged adaptation is pending."
+
+
+def checked_packaged_menu(path, menu, reference):
+    assert path.is_file(), "Required packaged menu is missing"
+    source = path.read_text()
+    lines = source.splitlines()
+    assert lines.count(f"# this_file: lessons/{menu}") == 1
+    assert sum(line.startswith("# this_file:") for line in lines) == 1
+    assert lines.count(PACKAGE_COMPATIBILITY) == 1
+    assert sum(line.startswith("Compatibility:") for line in lines) == 1
+    assert reference["path"] == f"lessons/{menu}"
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == reference["sha256"]
+    return source
+
+
+def assert_menu_route(path, entry, monkeypatch):
+    calls = []
+    monkeypatch.setitem(
+        sys.modules,
+        "fontlab_python_lessons.getgo",
+        SimpleNamespace(launch=lambda name: calls.append(name)),
+    )
+    ns = runpy.run_path(str(path), run_name="packaged_menu_import")
+    assert calls == [], "Import must not launch a lesson"
+    ns["main"]()
+    assert calls == [entry], "main must launch the exact lesson once"
+    calls.clear()
+    runpy.run_path(str(path), run_name="__main__")
+    assert calls == [entry], "__main__ must launch the exact lesson once"
 
 
 def test_complete_fixture_payload_and_pending_runtime_provenance():
@@ -111,30 +142,38 @@ def test_unknown_entry_fails_before_module_or_ui_import(monkeypatch):
 @pytest.mark.parametrize("row", ROWS, ids=lambda row: row["id"])
 def test_all_thirteen_real_menu_routes_match_packaged_entry(row, monkeypatch):
     assert len(MENUS) == len(ROWS) == 13
+    assert MENU_REFERENCE["schema"] == "getgo-menu-reference-v1"
+    assert MENU_REFERENCE["native_status"] == "pending"
+    references = {item["id"]: item for item in MENU_REFERENCE["menus"]}
+    assert len(MENU_REFERENCE["menus"]) == len(references) == 13
+    assert set(references) == set(MENUS) == {item["id"] for item in ROWS}
     menu = MENUS[row["id"]]
-    calls = []
-    monkeypatch.setitem(
-        sys.modules,
-        "fontlab_python_lessons.getgo",
-        SimpleNamespace(launch=lambda name: calls.append(name)),
-    )
-    paths = [ROOT.parent / menu, ROOT / menu]
-    for path in paths:
-        calls.clear()
-        ns = runpy.run_path(str(path), run_name="packaged_menu_import")
-        assert calls == []
-        ns["main"]()
-        assert calls == [row["id"]]
-        calls.clear()
-        runpy.run_path(str(path), run_name="__main__")
-        assert calls == [row["id"]]
+    path = ROOT / menu
+    checked_packaged_menu(path, menu, references[row["id"]]["package"])
+    assert_menu_route(path, row["id"], monkeypatch)
 
-    def normalized(path):
-        return "\n".join(
-            line for line in path.read_text().splitlines() if not line.startswith("# this_file:")
-        )
 
-    assert normalized(paths[0]) == normalized(paths[1])
+@pytest.mark.parametrize("damage", ["wrong-route", "no-op", "import-launch"])
+def test_menu_route_oracle_rejects_independent_mutations(tmp_path, monkeypatch, damage):
+    entry = "font_audit"
+    source = (ROOT / MENUS[entry]).read_text()
+    if damage == "wrong-route":
+        source = source.replace("launch('font_audit')", "launch('unicode_coverage')")
+    elif damage == "no-op":
+        source = source.replace("return launch('font_audit')", "return None")
+    else:
+        source += "\nmain()\n"
+    assert source != (ROOT / MENUS[entry]).read_text(), "Control must change executable text"
+    path = tmp_path / "damaged-menu.py"
+    path.write_text(source)
+    with pytest.raises(AssertionError):
+        assert_menu_route(path, entry, monkeypatch)
+
+
+def test_packaged_menu_oracle_requires_the_real_package_file(tmp_path):
+    reference = MENU_REFERENCE["menus"][0]
+    with pytest.raises(AssertionError, match="Required packaged menu is missing"):
+        checked_packaged_menu(tmp_path / "absent.py", MENUS[reference["id"]], reference["package"])
 
 
 def test_info_handle_after_owned_parent_destruction_is_idempotent():

@@ -11,6 +11,7 @@ from types import ModuleType
 import pytest
 
 from module_doubles import install_module
+from test_spacing_menu_integration import lesson_contract_successors
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -57,8 +58,12 @@ def test_complete_family_identity_and_lazy_fly_menu(monkeypatch, part, sha, entr
 
 def test_all_prior_runtime_and_provenance_rows_remain_exact():
     baseline = json.loads((ROOT / "tests/sliders-prior-baseline.json").read_text())
+    successors = lesson_contract_successors(
+        json.loads((ROOT / "tests/lesson-contract-successors.json").read_text())
+    )
     for path, digest in baseline["prior_runtime"].items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        expected = successors[path] if path in successors else digest
+        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, path
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     assert rows[:19] == baseline["prior_adaptations"]
     assert len(rows) == 231

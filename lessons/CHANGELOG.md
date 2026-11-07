@@ -2,6 +2,21 @@
 this_file: lessons/CHANGELOG.md
 ---
 
+## 2026-11-07 — require both GetGo menu layouts
+
+Repair the test-only compatibility comparison without changing any menu or
+production body. Require thirteen package routes in standalone distributions and
+thirteen real source/package pairs in root integration. Add exact26-path/hash
+provenance and negative controls while preserving every original source,
+destination, licence and native-pending record.
+
+Qualify203 Lessons cases at96.18% coverage,1899 Core and496 R cases; retain their
+existing96/7 archive opt-ins. The normal installed hook passes its unchanged80%
+gate for84 milestone-selected modules. Preserve frozen baseline records through
+three explicit test/progress successors. Ordinary artifact receipts, existing
+lint findings and graph output limits remain separately recorded. No native,
+owner installation, source delivery or publication acceptance is implied.
+
 ## 2026-11-05 — separate released and expanded lesson scope
 
 Inspected lessons/pyproject.toml and the current README. The package declares

@@ -2,6 +2,35 @@
 this_file: lessons/WORK.md
 ---
 
+## 2026-11-07 — qualify both GetGo menu layouts
+
+Reproduced the thirteen inherited prose-parity failures on unchanged source and
+thirteen missing-checkout-peer failures in its genuine standalone sdist. The
+nested suite now requires all thirteen packaged routes, exact path/compatibility
+metadata and immutable raw hashes. Root integration independently requires all
+thirteen real source/package pairs and normalizes only their declared metadata.
+The distinct pending-native compatibility statement remains exact.
+
+The retained 199-case Lessons cohort plus four negative controls passes all203
+cases with96.18% coverage. Root Core passes1899 cases with96 existing archive
+opt-ins skipped; R passes496 with7 existing archive opt-ins skipped. No skip was
+added. The normal installed pre-push hook passes both root suites and all84
+production modules selected by its historical milestone baseline at80% or higher.
+This task changes no production module. Existing menu lint has30E402 findings;
+the unchanged curated-test imports retain their prior I001/F401 findings.
+
+The new menu reference records26 actual path/hash pairs. Three separately
+reviewable test/progress successors preserve the original frozen baseline and
+Task3 guide records; negative controls reject unauthorized paths/hashes, missing
+inputs and changed non-successor runtime bytes. Original nineteen destination
+pins, all menu/production bytes and fixture/native manifests remain unchanged.
+
+Private Task28 receipts distinguish source, standalone and ordinary installed
+artifact qualification, retained errors and graph limits. Extension impact output
+was truncated before editing; complete later checks retain UNKNOWN caller risk.
+Independent review, commit/delivery, publication and native acceptance remain
+separate. All thirteen native rows stay pending; Issue123 remains paused.
+
 ## 2026-11-05 — separate released and expanded lesson scope
 
 Inspected lessons/pyproject.toml and the current README. The package declares

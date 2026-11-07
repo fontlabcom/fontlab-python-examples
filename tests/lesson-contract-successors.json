@@ -1,0 +1,27 @@
+{
+  "this_file": "tests/lesson-contract-successors.json",
+  "source_commit": "61e114bc9d5512ca445967d420d7e3d48c6ac302",
+  "authority": "Issue 230/233 Task 28 bounded Lessons test-contract and progress successors; independent review required.",
+  "frozen_references": {
+    "tests/sliders-prior-baseline.json": "67e2f3a2d3fc7761df5fe3c21d876e7378ba59a5196ff5f7630fa7bcd9c056f8",
+    "tests/spacing-curated-baseline.json": "e6c46bbd62757e71ba60868346df28af57631aa8c3fbf92e9e0b774c6bbcc6f3",
+    "tests/spacing-guide-successors.json": "d22c767eb9307e65f332770835110d5ec06635e7c4ba543b27b6e76dec196f8e"
+  },
+  "successors": {
+    "lessons/candidate_tests/models_candidate/test_getgo_package.py": {
+      "original_sha256": "a361b5bd2d2cb4065902201deee39e445e3a46c2f69f51cbc3214f58cf7baab8",
+      "previous_sha256": "a361b5bd2d2cb4065902201deee39e445e3a46c2f69f51cbc3214f58cf7baab8",
+      "successor_sha256": "d22124facbae60f377331d2de7c28cba0560a23accfb5916b967667408a19fea"
+    },
+    "lessons/WORK.md": {
+      "original_sha256": "75010336c29f0c5e316b3149c0f9cc30d6335ee31742661a53fdff2f8898ac32",
+      "previous_sha256": "3e8267a34202820c99a7e45eb4ecdab3888306a1840e503426ebe72d26c5a947",
+      "successor_sha256": "83341e6a4a3488d15860f00ad931f0bfb3824062ad2629aef7494585baac88c6"
+    },
+    "lessons/CHANGELOG.md": {
+      "original_sha256": "a0fb7623c3d00aa22fcabab408eaaae3f814b4095b8608b39ed0a2891ab674d5",
+      "previous_sha256": "f3f9123bb622eb78af5686bc1eae12100b8df0f274eb6e0d982cec3b15150f6e",
+      "successor_sha256": "aaba2de33067ebe8bfb36485f7cbcb490c8b32d84d110f534a636280ac4d419e"
+    }
+  }
+}

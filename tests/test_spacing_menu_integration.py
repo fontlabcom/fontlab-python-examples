@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = json.loads((ROOT / "tests/spacing-curated-baseline.json").read_text())
 NEW = {
@@ -70,6 +72,32 @@ EXAMPLE_BATCHES = {
     "Scripts/Windows/Glyph Snapshot Diff.py",
     "Scripts/Windows/Unicode Issues Dock.py",
 }
+LESSON_SUCCESSOR_PATHS = {
+    "lessons/candidate_tests/models_candidate/test_getgo_package.py",
+    "lessons/WORK.md",
+    "lessons/CHANGELOG.md",
+}
+
+
+def lesson_contract_successors(record):
+    assert record["source_commit"] == "61e114bc9d5512ca445967d420d7e3d48c6ac302"
+    frozen = {
+        "tests/sliders-prior-baseline.json": "67e2f3a2d3fc7761df5fe3c21d876e7378ba59a5196ff5f7630fa7bcd9c056f8",
+        "tests/spacing-curated-baseline.json": "e6c46bbd62757e71ba60868346df28af57631aa8c3fbf92e9e0b774c6bbcc6f3",
+        "tests/spacing-guide-successors.json": "d22c767eb9307e65f332770835110d5ec06635e7c4ba543b27b6e76dec196f8e",
+    }
+    assert record["frozen_references"] == frozen
+    for path, digest in frozen.items():
+        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+    guides = json.loads((ROOT / "tests/spacing-guide-successors.json").read_text())["guides"]
+    assert set(record["successors"]) == LESSON_SUCCESSOR_PATHS
+    for path, row in record["successors"].items():
+        assert set(row) == {"original_sha256", "previous_sha256", "successor_sha256"}
+        assert row["original_sha256"] == BASE["lessons"][path], path
+        previous = guides[path]["approved_sha256"] if path in guides else BASE["lessons"][path]
+        assert row["previous_sha256"] == previous, path
+        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == row["successor_sha256"], path
+    return {path: row["successor_sha256"] for path, row in record["successors"].items()}
 
 
 def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
@@ -85,6 +113,9 @@ def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
 
 
 def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserved():
+    lesson_successors = lesson_contract_successors(
+        json.loads((ROOT / "tests/lesson-contract-successors.json").read_text())
+    )
     successors = json.loads((ROOT / "tests/spacing-guide-successors.json").read_text())["guides"]
     assert set(successors) == {
         "lessons/CHANGELOG.md", "lessons/PLAN.md", "lessons/TODO.md", "lessons/WORK.md",
@@ -93,6 +124,8 @@ def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserv
         assert row["original_sha256"] == BASE["lessons"][path], path
     for path, digest in {**BASE["lessons"], **BASE["licences"]}.items():
         expected = successors[path]["approved_sha256"] if path in successors else digest
+        if path in lesson_successors:
+            expected = lesson_successors[path]
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, path
     notice = (ROOT / "NOTICE").read_bytes()
     assert (
@@ -100,6 +133,43 @@ def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserv
         == "7e9571a2d816af6eb7cee3f0527ad2d58f4751af5db10131de1b7569aac7230d"
     )
     assert b"The author supplies these first-party samples under Apache-2.0." in notice
+
+
+@pytest.mark.parametrize(
+    "damage", ["unauthorized-path", "original_sha256", "previous_sha256", "successor_sha256"]
+)
+def test_lesson_successor_record_rejects_unapproved_changes(damage):
+    record = json.loads((ROOT / "tests/lesson-contract-successors.json").read_text())
+    if damage == "unauthorized-path":
+        record["successors"]["lessons/unapproved.py"] = {}
+    else:
+        record["successors"]["lessons/WORK.md"][damage] = "0" * 64
+    with pytest.raises(AssertionError):
+        lesson_contract_successors(record)
+
+
+def test_lesson_successor_record_requires_every_current_file(monkeypatch):
+    record = json.loads((ROOT / "tests/lesson-contract-successors.json").read_text())
+    missing = ROOT / "lessons/WORK.md"
+    read_bytes = Path.read_bytes
+
+    def read(path):
+        if path == missing:
+            raise FileNotFoundError(path)
+        return read_bytes(path)
+
+    monkeypatch.setattr(Path, "read_bytes", read)
+    with pytest.raises(FileNotFoundError):
+        lesson_contract_successors(record)
+
+
+def test_lesson_successors_keep_non_successor_runtime_bytes_protected(monkeypatch):
+    protected = ROOT / "lessons/src/fontlab_python_lessons/getgo/__init__.py"
+    assert protected.relative_to(ROOT).as_posix() not in LESSON_SUCCESSOR_PATHS
+    read_bytes = Path.read_bytes
+    monkeypatch.setattr(Path, "read_bytes", lambda path: b"damaged" if path == protected else read_bytes(path))
+    with pytest.raises(AssertionError, match="getgo/__init__.py"):
+        test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserved()
 
 
 def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_remain():

@@ -1,0 +1,163 @@
+{
+  "this_file": "lessons/provenance/getgo-menus.json",
+  "schema": "getgo-menu-reference-v1",
+  "native_status": "pending",
+  "menus": [
+    {
+      "id": "font_info_ui",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py",
+        "sha256": "1764def4d2c07a39a4038ac4510d300b63ea9a18b34d59bf369f3a0e0871b53a"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py",
+        "sha256": "2a28ddbbb1e637e23634c6fc2ea1f0eb899c1f9e05a4d1c8aac648fe02c822ba"
+      },
+      "common_body_sha256": "8a3205190dae1d70f175b5f4ff8465b4ec3cffbe10ec5fc630b0435f9a234fcb"
+    },
+    {
+      "id": "export_ttf",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py",
+        "sha256": "c29ad6050c068858297109992daa71256c280995c67b06cad55f932993a7d076"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py",
+        "sha256": "328132bd111fbe8bbefd1a068301f8265b2272de7db028f996722493fb4439a2"
+      },
+      "common_body_sha256": "7bd2753655c439da72dcfbd4055b8b0d346b2d8b9eba82da8e42c167beea83b4"
+    },
+    {
+      "id": "compare_fonts",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py",
+        "sha256": "abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py",
+        "sha256": "6d5cb670556e64ec5a63507f5a817fad8bd7e6653b9dc09a97aa6ef91cc5a54b"
+      },
+      "common_body_sha256": "18145a4a92b8e534fc20446401ec33f1946d6e08c38c358a2d5de9d0e7c98fc9"
+    },
+    {
+      "id": "designspace",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py",
+        "sha256": "3300f5b1c76e89cce4d8ae4672eb7ff5965ba5062ff8e2212a09a5d35d1f7d98"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py",
+        "sha256": "c8ee5b5418b1dd83386c372aff79e4138becd8ae761a2e176209116ca5cf7294"
+      },
+      "common_body_sha256": "6367b0e1da3a2ced6fc5e3a17d0e0859a5cd84952f5281ae6a78ca5eb80dd458"
+    },
+    {
+      "id": "naming",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py",
+        "sha256": "9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py",
+        "sha256": "4e538ca07748ef42ba09443a3c2e489fe4e27ecdead04aeb116f193f01d246d3"
+      },
+      "common_body_sha256": "7daa456aff773dcc83eefdd50e9cc88cc2ff45222763ae5251695f2937e6e77c"
+    },
+    {
+      "id": "outline_pens",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py",
+        "sha256": "4e1496a86ad04d98a1a5e813587ab49e1615d75e888889b43a13c3a00a771cde"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py",
+        "sha256": "05fa7181e7479c63e5dca25272ff2c0616549ee48b0c57e09e53c29c90dea468"
+      },
+      "common_body_sha256": "aaa07e10bb200a5dafda42f40707459896773de85adb24638e098f43fe5444f2"
+    },
+    {
+      "id": "kerning_classes",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py",
+        "sha256": "952f3f4ae658259702e06928d0dfe19c184d2828986679ecf3e6cbb59f73eba2"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py",
+        "sha256": "f63075e771f7e210808b0422a86f247a1dd42117f98d972f1d8e2fc949900b98"
+      },
+      "common_body_sha256": "09a279c701f2e2b7a22761228065bbb191fb9ae7a9b863f20dcfc99e51c5c24d"
+    },
+    {
+      "id": "master_compatibility",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Compare Master Topology.py",
+        "sha256": "e14e2953a78a67de7787b83d98751b1365cdb27cbcf0b5dac9dce8299e3640e0"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Compare Master Topology.py",
+        "sha256": "aac7f3eac92ffb8b0543af76692aace232df568d049792690ada39e8a0941cec"
+      },
+      "common_body_sha256": "57dbad3948be5d2a1c2ef42ec7775c19d9e372f3d0a3a453a3ba609abbf3bcbf"
+    },
+    {
+      "id": "batch_transform",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py",
+        "sha256": "1ddd0fe74439a5d73e558c61a4dd428bd3ab12d1fc155c48bf5b73a1e871c519"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py",
+        "sha256": "63d34fd3cf0f6e21307631a7903e2881231ca152c9969e784903fec2fd170c65"
+      },
+      "common_body_sha256": "db0ebdb13880d27fa377f84952e63ddcfdbf6c431bfb5a95d5f6d2d42cb05ba8"
+    },
+    {
+      "id": "spacing",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Sidebearings from H.py",
+        "sha256": "989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Sidebearings from H.py",
+        "sha256": "7caf1bd76881efa94419cc908b4d4f53220d4e156557e683e117306ee22faf3f"
+      },
+      "common_body_sha256": "4301fb6b1dd14d763899673d575c34f434c478bf6c15be57d5773bf6f90939ab"
+    },
+    {
+      "id": "export_otf",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py",
+        "sha256": "ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py",
+        "sha256": "ca95250ad161550737c3a9af813450e55e9c05d8a81f93558c0ef5a7ef6d4a50"
+      },
+      "common_body_sha256": "54b527668ec8b5d7c6646c8b8ce3ae1b779a82c7c4d957e5af8ee1372dcfb432"
+    },
+    {
+      "id": "unicode_coverage",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py",
+        "sha256": "3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py",
+        "sha256": "556c7d81e57ab7f5989c8d08154038c3c7b9314962c40256e00c5299f9faf1a3"
+      },
+      "common_body_sha256": "713c67173752439929f4ccc58e8cc8f44e71c53c92a67df95f8afcc090946275"
+    },
+    {
+      "id": "font_audit",
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Audit a Real Font.py",
+        "sha256": "cad7eeef1119a1c0a3ea924c29bb26b6a87b62b189c287ee1b1891ec68c8d743"
+      },
+      "package": {
+        "path": "lessons/Scripts/GetGo Fonts/GetGo - Audit a Real Font.py",
+        "sha256": "24dedb911bd5272d637fcc7728ad1c27cfda161e4066569273e72ec793ab8338"
+      },
+      "common_body_sha256": "6277df1382a9cda3f015c1bcd9251ddcad6e7a1b7bf7a6d55ba68310f5e2093d"
+    }
+  ]
+}
