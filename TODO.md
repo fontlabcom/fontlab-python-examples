@@ -21,14 +21,12 @@ this_file: TODO.md
 - [ ] Qualify the thirteen packaged GetGo workflows and reconcile their remaining historical catalogue entries after acceptance.
 - [ ] Re-sync corrected GetGo VFJs when supplied; refresh hashes and manifests, then rerun the full corpus and variable exports.
 - [ ] Probe whether Node Table writes to __smart_selected queue changes or persist in FontLab.
-- [ ] Add a Node Table test for selection restoration after a refused or failed edit.
 - [ ] Check Node Table coordinates with fresh wrappers after Refresh.
 - [ ] Prove Stem Blend creates an ordinary, non-auto, non-master layer after Apply, Redo and reopen.
 - [ ] Check Stem Blend and Scale With Stem Compensation read-back with FontLab coordinate rounding enabled.
 - [ ] Add freshness checks for Scriptmix destination hashes, or recheck every pin against the final reviewed sibling files before delivery.
 - [ ] Clarify whether retirement licence fields describe upstream sources or first-party rewrites; use the same meaning across records.
-- [ ] Replace the collections-page whitespace-sensitive count assertion and explain what its entry count includes.
-- [ ] Check whether both Font Reference Image Viewers need their stated App minimum.
+- [ ] Decide the true App minimum for both Font Reference Image Viewers (both state `App>=0.2.156.dev0`, now tested equal; App tags jump v0.2.26 to v1.0.0 and the model first ships in v1.2.0).
 - [ ] Consolidate the two menu-test processes once their App/Fly loading arrangements can coexist without weakening checks.
 - [ ] Reconcile and qualify the existing production App route-A zone writer on the chosen current tuple before adopting scripted zone editing. Preserve all-master staging, one history commit, row/Font-window refusals, tags/lock, Undo/Redo, complete-font preservation and save/reopen. Keep the serializer ABI hold and D31 reserved zone/master lane. Native Font Info > Zones remains an alternative; the reviewed final fix4 receipt proves source/offline scope only.
 - [ ] Add targeted App auto-layer refusal so kerning imports avoid repeated whole-font scans.

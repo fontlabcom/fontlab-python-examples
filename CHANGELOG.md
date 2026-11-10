@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 250: Node Table, collections and viewer tests
+
+- Node Table: tests prove a failed selection-property write restores the row's opening `selected` and `__smart_selected` flags while other rows still sync, and that a refused (auto-layer) edit leaves canvas selection unchanged.
+- Collections page: the entry-count assertion now normalises whitespace; the page states that an entry is one `Scripts/<category>/<name>.py` file, and the test checks that wording.
+- Font Reference Image Viewers: tests require both scripts to state exactly one, identical App floor. The floor value itself is unverified (see TODO).
+
 ## 2026-11-10 — live font editing rule (Issue 250, D44)
 
 - AGENTS.md: agents test and edit the font open in FontLab 9, starting from the Desktop VFJs, and may save them.

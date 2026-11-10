@@ -1240,6 +1240,38 @@ def test_node_selection_property_failure_is_reported_per_row(node_world: Any) ->
     assert world.scans == 1 and not world.notifications
 
 
+def test_node_selection_failed_write_restores_opening_flags(node_world: Any) -> None:
+    world, module = node_world, node_world.module
+
+    class RefusesSmartWrite(Node):
+        def setProperty(self, name: str, value: Any) -> None:
+            raise RuntimeError("Smart selection write refused")
+
+    node = RefusesSmartWrite(PointF(10, 20))
+    node.selected = True
+    Node.setProperty(node, "__smart_selected", True)
+    world.shape.contours[0]._nodes[0] = node
+    snapshot = module.capture_nodes(world.native)
+    errors = module.select_nodes(snapshot, {(0, 0, 1)}, world.native)
+    assert errors == {(0, 0, 0): "Smart selection write refused"}
+    assert node.selected is True, "A failed row must keep its opening selection"
+    assert node.getProperty("__smart_selected") is True
+    assert world.points[1].selected, "Other rows still sync after one failure"
+    assert not world.notifications
+
+
+def test_node_selection_after_refused_edit_is_unchanged(node_world: Any) -> None:
+    world, module = node_world, node_world.module
+    world.points[1].selected = True
+    snapshot = module.capture_nodes(world.native)
+    before = [p.selected for p in world.points]
+    world.layer.autoLayer = True
+    result = module.apply_edits(snapshot, {(0, 0, 0): ("99", "99")}, world.native)
+    assert result.changed == 0 and result.kept[(0, 0, 0)] == "auto layer"
+    assert [p.selected for p in world.points] == before
+    assert world.notifications == []
+
+
 def test_node_selection_nonfinite_coordinates_remain_selectable(
     node_world: Any,
 ) -> None:

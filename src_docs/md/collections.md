@@ -32,8 +32,8 @@ The archive is retained for migration and recovery; it is not installed by this 
 ## Current practical scripts
 
 [Current Scripts](current/index.md) lists every active facade and includes its
-actual source. The 100 entries require the matching App, Fly and Lessons
-packages. Each entry states its setup, behavior and acceptance limits. A shared
+actual source. The 100 entries (one `Scripts/<category>/<name>.py` file each)
+require the matching App, Fly and Lessons packages. Each entry states its setup, behavior and acceptance limits. A shared
 package or facade passing offline tests does not prove native FontLab acceptance.
 
 The 494 historical source identities remain in `rescue-index.json`; the 222
