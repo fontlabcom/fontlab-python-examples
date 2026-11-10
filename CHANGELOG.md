@@ -2,6 +2,20 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — install.vfpy always reinstalls scripts and dependencies
+
+- Every install copies all files from `Scripts/` afresh and replaces any file
+  already at the same path. A symlinked script folder is replaced by a real
+  folder; the link target is never written. A directory where a script file
+  belongs is still refused.
+- Required packages are installed on every run. Packages that no package
+  index carries (the fontlab-* packages, pythonqtside) are installed from
+  checkouts beside this one through their own `install.vfpy`, once per run
+  and safe against cycles. uv receives every other requirement, so version
+  ranges, markers and extras are enforced. Without uv, sibling checkouts are
+  still installed and only the remaining missing requirements are reported.
+- The installer is byte-identical across all eleven installer repositories.
+
 ## 2026-11-07 — public site review corrections
 
 Both catalogue workflow jobs now fetch full history where catalogue generation needs the last Scripts commit. Genuine depth-one/depth-two checkouts with docs-only children reproduce the previous error and recover all immutable catalogue links after fetching history. The explicit English build validates all 44 historical vendor hashes and references before omitting exactly 35 unused language helpers. The remaining nine vendor assets retain their original bytes. The current component manifest binds primary package notices, embedded preferred sources and CSS/icon provenance; all 36 notice files from 31 locked Python distributions remain. Historical incomplete inventory records remain historical.
