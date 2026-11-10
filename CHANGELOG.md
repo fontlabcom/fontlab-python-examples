@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Issue 250: live FontLab check of the Echopy native-identity examples
+
+- Ran `fontlab-echopy/examples/native_smoke.py` inside the running FontLab 9 through `verification/issue-104/fl-native.sh --mutating --lane issue250-i3` (Remopy `execute_script`; no font opened or edited): identity, constructors, native argument conversion, native return type, properties and extensions all `true`; native-name coverage fontlab 110, fontgate 125, fontpr 58, PythonQt 12 plus 12 children. A second probe confirmed `echopy.fontlab.flGlyph/flLayer/flNode/flPackage` are the native classes (`is`), `flWorkspace.instance` stays a `staticmethod`, and `inspect.signature` on the native constructors raises `ValueError` (builtin wrappers), so signature reading relies on the shipped `.pyi`, not runtime introspection. Not covered: no authored Examples page with "signature-reading" or "owned descriptor" snippets exists in `src_docs/md`, and the rendered-guide half is unverified, so the ledger row stays open.
+
 ## 2026-11-11 — E6 fake Widget gains isWindow/updatesEnabled (Issue 250)
 
 - App `_enable_floating_updates` (63f936f) calls `isWindow()`/`updatesEnabled`; the native-faithful fake `Widget` in `tests/test_issue122_E6.py` now provides them, fixing two dock tests that failed against App main 03ff266.
