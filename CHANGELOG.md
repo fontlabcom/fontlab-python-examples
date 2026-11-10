@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — E6 fake Widget gains isWindow/updatesEnabled (Issue 250)
+
+- App `_enable_floating_updates` (63f936f) calls `isWindow()`/`updatesEnabled`; the native-faithful fake `Widget` in `tests/test_issue122_E6.py` now provides them, fixing two dock tests that failed against App main 03ff266.
+
 ## 2026-11-11 — pin freshness: explicit root must exist (Issue 250)
 
 - `FONTLAB_SCRIPTMIX_ROOT` set to a missing directory now fails instead of skipping; skip only when the variable is unset and no sibling checkout exists. Two tests added. CI still runs only tests_docs; wiring is an open TODO.

@@ -198,6 +198,15 @@ class Widget:
     def isVisible(self) -> bool:
         return self.local_visible
 
+    def isWindow(self) -> bool:
+        return self.local_floating
+
+    def updatesEnabled(self) -> bool:
+        return True
+
+    def setUpdatesEnabled(self, enabled: bool) -> None:
+        pass
+
     def setModel(self, model: Any) -> None:
         self.local_model = model
 
