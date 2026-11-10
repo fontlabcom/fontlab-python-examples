@@ -147,6 +147,11 @@ matching installed-artifact acceptance remain pending.
 
 # Changelog
 
+## 2026-11-10 — Issue 250 documentation round
+
+- AGENTS.md describes the delegation, integration and release workflow.
+- WORK.md reset to the current round; the earlier bytes are archived on the owner's workspace data volume, not public.
+
 ## 2026-11-01 — Independent panel priority (source candidate)
 
 - Add `WindowStaysOnTopHint` to the existing Tool flags of27 independent modeless panels. Retain parent, type, controls, signal ownership and Close behavior; the Unicode Issues Dock and child widgets are unchanged.

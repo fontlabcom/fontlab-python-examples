@@ -43,3 +43,4 @@ this_file: TODO.md
 - [ ] Preserve original controls, provenance, unsaved drafts and exact failed owners; qualify real FontLab priority/four-font/history behavior.
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
+- [ ] Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check (5 byte-identical and 4 whitespace-equal to Qt qtbase styleexample 5.15/6.5; 5 PyQt assets untraced): record upstream licence or replace each asset.
