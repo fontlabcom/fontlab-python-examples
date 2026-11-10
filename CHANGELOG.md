@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Scriptmix destination-pin freshness check (Issue 250)
+
+- `tests/test_scriptmix_pin_freshness.py` hashes every Scriptmix-hosted row of `menu-adaptations.json` (24) against the sibling checkout (`FONTLAB_SCRIPTMIX_ROOT` or `../fontlab-python-scriptmix`) and reports each missing or stale pin by name; a synthetic test proves the helper flags changed and missing files. It skips without a checkout. Existing `test_rescued_menus.py` only checked that the files exist.
+- Verified against origin/main Scriptmix: all 24 pins current. Core suite 1893 passed, 96 skipped, 10 failed; the same 10 `test_issue122_E12.py` failures occur on origin/main (1891 passed) because the Echopy Qt-stub workspace is not provisioned here. Ruff clean on the new file.
+
 ## 2026-11-10 — Issue 250: Node Table, collections and viewer tests
 
 - Node Table: tests prove a failed selection-property write restores the row's opening `selected` and `__smart_selected` flags while other rows still sync, and that a refused (auto-layer) edit leaves canvas selection unchanged.

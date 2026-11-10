@@ -24,7 +24,6 @@ this_file: TODO.md
 - [ ] Check Node Table coordinates with fresh wrappers after Refresh.
 - [ ] Prove Stem Blend creates an ordinary, non-auto, non-master layer after Apply, Redo and reopen.
 - [ ] Check Stem Blend and Scale With Stem Compensation read-back with FontLab coordinate rounding enabled.
-- [ ] Add freshness checks for Scriptmix destination hashes, or recheck every pin against the final reviewed sibling files before delivery.
 - [ ] Clarify whether retirement licence fields describe upstream sources or first-party rewrites; use the same meaning across records.
 - [ ] Decide the true App minimum for both Font Reference Image Viewers (both state `App>=0.2.156.dev0`, now tested equal; App tags jump v0.2.26 to v1.0.0 and the model first ships in v1.2.0).
 - [ ] Consolidate the two menu-test processes once their App/Fly loading arrangements can coexist without weakening checks.
