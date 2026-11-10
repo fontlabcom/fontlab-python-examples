@@ -41,3 +41,4 @@ this_file: TODO.md
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 - [ ] Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check (5 byte-identical and 4 whitespace-equal to Qt qtbase styleexample 5.15/6.5; 5 PyQt assets untraced): record upstream licence or replace each asset.
+- [ ] Wire `tests/test_scriptmix_pin_freshness.py` into CI (CI runs only tests_docs, so the check is local-only); check out Scriptmix and set `FONTLAB_SCRIPTMIX_ROOT`.

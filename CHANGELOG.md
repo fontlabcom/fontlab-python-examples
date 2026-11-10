@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — pin freshness: explicit root must exist (Issue 250)
+
+- `FONTLAB_SCRIPTMIX_ROOT` set to a missing directory now fails instead of skipping; skip only when the variable is unset and no sibling checkout exists. Two tests added. CI still runs only tests_docs; wiring is an open TODO.
+
 ## 2026-11-11 — Scriptmix destination-pin freshness check (Issue 250)
 
 - `tests/test_scriptmix_pin_freshness.py` hashes every Scriptmix-hosted row of `menu-adaptations.json` (24) against the sibling checkout (`FONTLAB_SCRIPTMIX_ROOT` or `../fontlab-python-scriptmix`) and reports each missing or stale pin by name; a synthetic test proves the helper flags changed and missing files. It skips without a checkout. Existing `test_rescued_menus.py` only checked that the files exist.

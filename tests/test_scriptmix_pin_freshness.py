@@ -45,11 +45,34 @@ def test_stale_pins_when_file_changed_or_missing_then_reported(tmp_path):
     ]
 
 
+def resolve_scriptmix_root() -> Path | None:
+    """Return the Scriptmix checkout; None only when the variable is unset and no sibling exists.
+
+    An explicit FONTLAB_SCRIPTMIX_ROOT that is not a directory is an error, never a skip.
+    """
+    explicit = os.environ.get("FONTLAB_SCRIPTMIX_ROOT")
+    if explicit is not None:
+        root = Path(explicit)
+        assert root.is_dir(), f"FONTLAB_SCRIPTMIX_ROOT is not a directory: {explicit}"
+        return root
+    sibling = ROOT.parent / "fontlab-python-scriptmix"
+    return sibling if sibling.is_dir() else None
+
+
+def test_resolve_scriptmix_root_when_env_points_to_missing_dir_then_fails(monkeypatch, tmp_path):
+    monkeypatch.setenv("FONTLAB_SCRIPTMIX_ROOT", str(tmp_path / "nope"))
+    with pytest.raises(AssertionError, match="not a directory"):
+        resolve_scriptmix_root()
+
+
+def test_resolve_scriptmix_root_when_env_set_to_dir_then_returns_it(monkeypatch, tmp_path):
+    monkeypatch.setenv("FONTLAB_SCRIPTMIX_ROOT", str(tmp_path))
+    assert resolve_scriptmix_root() == tmp_path
+
+
 def test_scriptmix_pins_when_sibling_checkout_present_then_all_current():
-    root = Path(
-        os.environ.get("FONTLAB_SCRIPTMIX_ROOT", str(ROOT.parent / "fontlab-python-scriptmix"))
-    )
-    if not root.is_dir():
+    root = resolve_scriptmix_root()
+    if root is None:
         pytest.skip("no Scriptmix checkout; set FONTLAB_SCRIPTMIX_ROOT")
     rows = [r for r in ADAPTATIONS if r["menu"].startswith(PREFIX)]
     assert len(rows) == 24, "the recorded Scriptmix-hosted row count changed"
