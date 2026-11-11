@@ -25,11 +25,15 @@ Selection
 reloads it. Apply scans the font once and compares with the displayed preview;
 native read-back checks every changed list. A partial write directs you to
 Edit > Undo. JSON is pasted; NAM files and font-library maps are not loaded.
-Setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0. Modeless panel.
+Original profile setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0. Modeless panel.
 
 Independent behaviour rewrite of TR-EncodeGlyphs.py by Vassil Kateliev,
 kateliev/TypeRig, MPL-2.0. https://github.com/kateliev/TypeRig
 No TypeRig code, private identifiers, comments or resources are copied.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Unicode Lab; opens the Apply Unicode Map profile.
 
 Run **Tools > Apply Unicode Map** from FontLab's Scripts menu.
 
@@ -37,6 +41,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `ce54be9d669c5c1a057d2c949362b10728e832cde9ccb08ed607d84ef9a2ea24`
+SHA256: `9feca2343c2874fdecaf994e1c6bd363b45fcc35e1ff76b4b1654bd3815d49ef`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Apply%20Unicode%20Map.py)

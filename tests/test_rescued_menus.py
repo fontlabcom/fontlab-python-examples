@@ -7,7 +7,6 @@ import os
 from pathlib import Path
 
 import pytest
-
 from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]

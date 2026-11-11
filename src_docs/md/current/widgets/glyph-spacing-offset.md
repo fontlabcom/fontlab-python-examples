@@ -10,7 +10,7 @@ Preview a horizontal ink offset across captured selected glyph layers.
 
 Purpose:
     Compare left+offset and right-offset sidebearings at unchanged advance.
-Setup:
+Original profile setup:
     FontLab 9, Python3.11, Fly and App>=0.2.95.dev0. Open a font
     and select glyph layers in a Font or Glyph window. Installs nothing.
 Run:
@@ -30,12 +30,17 @@ Compatibility:
     results.
     Historical source: rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
 
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Metrics Controls Lab; opens the Glyph Spacing Offset profile.
+
 Run **Widgets > Glyph Spacing Offset** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `bcf8e7f275745e51f720577cd1a6c6ff2ecb834a2c87f990ae22afe40968578d`
+SHA256: `3dbf80198e3a89a61080c83b8867bce0c6523a0aaf01bbd4cf2b0ac54e04294a`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Spacing%20Offset.py)

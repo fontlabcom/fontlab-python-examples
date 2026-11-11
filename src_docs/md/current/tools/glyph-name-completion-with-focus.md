@@ -9,7 +9,7 @@ categories: ["Tools"]
 Draft text with current-font glyph-name completions.
 
 Purpose: Adapt the complete part3 custom-completer workflow to FontLab.
-Setup: FontLab 9, Python 3.11, Fly and App>=0.2.63.dev0.
+Original profile setup: FontLab 9, Python 3.11, Fly and App>=0.2.63.dev0.
 Run: Open a font, run this Tools command, and type at least three characters.
 Ctrl+E also offers shorter prefixes. Use Refresh after font changes.
 Result: Keep every exact glyph name in the vocabulary, including unencoded and
@@ -25,12 +25,16 @@ Compatibility: Uses FontLab's supplied PythonQt. This command edits no font, sel
 Historical source: rescued/part3/pyqt-official-ports/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
 Original source/resources are archived outside this repository and are not bundled by this facade.
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Completion Lab; opens the Glyph Name Completion with Focus profile.
+
 Run **Tools > Glyph Name Completion with Focus** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `a9b0779d69e988bb6ffa90bb5e3ed39127310f01930a743afd601c763ca9bd82`
+SHA256: `6d8b67013b27f1a121189ab3ce9259762cfc2bee06d73670d4ed529591063506`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Name%20Completion%20with%20Focus.py)

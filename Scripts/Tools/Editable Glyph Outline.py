@@ -1,10 +1,9 @@
 # this_file: Scripts/Tools/Editable Glyph Outline.py
 # SPDX-License-Identifier: Apache-2.0
-# historical source sha256: e2eeecb1ac3c93e603e98f49d9c56c0a967430d3021ae3255a2e3fad841e4c61
 """Edit a complete local glyph-metadata tree.
 
 Purpose: Adapt the complete distinct part2 editable-tree workflow to FontLab.
-Setup: FontLab 9, Python 3.11, Fly and App>=0.2.66.dev0.
+Original profile setup: FontLab 9, Python 3.11, Fly and App>=0.2.66.dev0.
 Run: Open a font and run this Tools command. Edit local cells, rows and columns.
 Result: Explore every glyph, Unicode assignment and local modification date.
 Part2 adds siblings before the selection, appends children/columns and keeps
@@ -19,14 +18,18 @@ Close releases owned views, models, selection and callbacks. No original is run.
 Compatibility: Uses FontLab's supplied PythonQt. No font, selection, preference, file or Output
 writer is used. Original source/resources are archived outside this repository and unbundled.
 Historical source: rescued/part2/ports/itemviews/pyqt-official/editabletreemodel-227efef76ed4ac74.py
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Tree Models Lab; opens the Editable Glyph Outline profile.
 """
 
 
-def main() -> None:
-    """Open this complete distinct editable policy through Fly."""
-    from fly.ap.glyphs.tree.editable.model import show_outline
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show_outline()
+    return show("E02", profile='Editable Glyph Outline')
 
 
 if __name__ == "__main__":

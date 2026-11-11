@@ -10,7 +10,7 @@ Sort and filter a complete real-font glyph metadata snapshot.
 
 Purpose: Adapt the complete part2 basic source/proxy model lesson to
 current-font glyph names, all Unicode assignments and local modification dates.
-Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
+Original profile setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
 Run: Open a font, then run this Models command. Both read-only views share one
 captured model. Enter a regular expression, wildcard or fixed string. Toggle
 filter and sorting case independently; click a result header to sort.
@@ -27,12 +27,17 @@ The generic UI and query policy live in App. The part3 official versions have
 different contracts and remain separate entries. Custom date filtering
 starts unrestricted rather than limiting real fonts to demonstration-only2026.
 
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Model Filtering Lab; opens the Glyph Sorting and Filtering profile.
+
 Run **Models > Glyph Sorting and Filtering** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `9854ec64fd9306473586890e55836b84fd89d61d9efd06d368bd54b9df042772`
+SHA256: `82fe0a046be08762f07dbabdd001147d1bf8d0441fbf8785ccc76ae56063110c`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Sorting%20and%20Filtering.py)

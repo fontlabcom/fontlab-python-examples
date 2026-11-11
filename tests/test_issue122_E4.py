@@ -4,16 +4,14 @@
 import ast
 import importlib
 import re
-import runpy
 import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +26,7 @@ MARK_TITLE = "Glyph Mark Colour Board"
 
 def load(title: str) -> dict[str, Any]:
     """Import only a new script, with no UI side effect."""
-    return runpy.run_path(str(ROOT / "Scripts/Graphics" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts/Graphics" / f"{title}.py"))
 
 
 def test_anchor_layout_selects_complete_named_sample() -> None:
@@ -670,7 +668,7 @@ def test_feature_draft_accepts_development_names_and_rejects_injection() -> None
 
 @pytest.mark.parametrize("title", TITLES + (MARK_TITLE,))
 def test_source_attribution_hashes_match_historical_records(title: str) -> None:
-    text = (ROOT / "Scripts/Graphics" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts/Graphics" / f"{title}.py")).read_text()
     sources = re.findall(r"Historical source: ([^\n]+)\nSHA256: ([0-9a-f]{64})", text)
     assert len(sources) == 2, (
         "Each delivered family must identify both archived variants."
@@ -806,7 +804,7 @@ def test_mark_palette_mapping_and_rejects_unknown_colours() -> None:
 @pytest.fixture
 def mark_host(host: Any, monkeypatch: Any) -> Any:
     history = importlib.import_module("fontlabapp.core.history.glyphs")
-    guards = importlib.import_module("fontlabapp.core.edit_guards")
+    importlib.import_module("fontlabapp.core.edit_guards")
     state = SimpleNamespace(
         events=[],
         auto=False,
@@ -1193,7 +1191,7 @@ def test_spacing_capture_refuses_changed_master_or_measurements(
 
 @pytest.mark.parametrize("title", TITLES[:2] + TITLES[3:] + (MARK_TITLE,))
 def test_readonly_and_mark_tools_have_no_review_lifecycle_messages(title: str) -> None:
-    text = (ROOT / "Scripts/Graphics" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts/Graphics" / f"{title}.py")).read_text()
     assert "saved_review" not in text and "has_draft" not in text
     assert "Unsaved review" not in text and "edits stay local" not in text
     assert "feature-parity claim" not in text and "BSD/GPL" not in text
@@ -1268,7 +1266,7 @@ def test_pad_filters_before_paging_and_uses_explicit_shortcuts(host: Any) -> Non
     assert panel.names == ("g2", *(f"g{i}" for i in range(20, 30)))
     panel.navigate(1)
     assert panel.result == "/g28/g29"
-    source = (ROOT / "Scripts/Graphics/Glyph Proof Pad.py").read_text()
+    source = (production_path(ROOT / "Scripts/Graphics/Glyph Proof Pad.py")).read_text()
     assert 'gui.QKeySequence("Alt+Left")' in source
     assert 'gui.QKeySequence("Alt+Right")' in source
 
@@ -1292,14 +1290,14 @@ def test_discard_failed_close_retains_review_cards_and_copy(host: Any) -> None:
 @pytest.mark.parametrize("title", TITLES + (MARK_TITLE,))
 def test_public_source_has_python311_contracts_and_no_font_writes(title: str) -> None:
     path = ROOT / "Scripts/Graphics" / f"{title}.py"
-    text = path.read_text()
+    text = production_path(path).read_text()
     tree = ast.parse(text, feature_version=(3, 11))
     doc = ast.get_docstring(tree)
     assert all(
         label in doc
         for label in ("What:", "How:", "Why:", "Usage:", "Benefit:", "Apache-2.0")
     )
-    assert "# this_file: " + str(path.relative_to(ROOT)) in text
+    assert "# this_file: " + production_relative(path) in text
     assert all(
         term not in text
         for term in (

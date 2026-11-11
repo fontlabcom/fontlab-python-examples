@@ -15,7 +15,7 @@ Copy before Refresh or Close; Discard and Close explicitly drops local notes.
 Benefit: Prepare a named review handoff without altering glyph notes or history.
 Notes are plain text. Unsupported Qt text classes are refused during transfer.
 
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
+Original profile setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt embeddeddialogs example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
@@ -24,12 +24,16 @@ SHA256: c08d4c310c70b3a0e129085b79f59493472859819fdf1c75e7024345724a83bc
 Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/embeddeddialogs-0578c17977b471f1.py
 SHA256: b90e385b1cb4ea7f2f202545920844cba59a825fcdf3986878ebd25d3fce1876
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Review Model Lab; opens the Glyph Review Cards profile.
+
 Run **Graphics > Glyph Review Cards** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `e4f4cc3b6dd0f43227c3d2f5d6bf68376816d2579056b265ad3524864a58f513`
+SHA256: `45e6656303acdc1e304b1184c23642f3f3926d166323eb93d036c1202e54a517`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Review%20Cards.py)

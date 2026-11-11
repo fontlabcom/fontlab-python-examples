@@ -4,14 +4,10 @@
 import ast
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
 import pytest
-
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,7 +32,7 @@ def test_complete_spacing_pair_identity_lazy_fly_and_notices(part, entry, monkey
     )
     assert not (ROOT / row["source_menu"]).exists()
     path = ROOT / row["menu"]
-    body = path.read_bytes()
+    body = source_bytes(path)
     assert hashlib.sha256(body).hexdigest() == row["destination_sha256"]
     tree = ast.parse(body, feature_version=(3, 11))
     doc = ast.get_docstring(tree)
@@ -55,15 +51,7 @@ def test_complete_spacing_pair_identity_lazy_fly_and_notices(part, entry, monkey
         len(body.splitlines()) < 55
         and len(path.relative_to(ROOT / "Scripts").parts) == 2
     )
-    calls = []
-    for name in ("fly", "fly.ap", "fly.ap.metrics.worksheet.model"):
-        install_module(monkeypatch, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.metrics.worksheet.model"], entry, lambda: calls.append(entry))
-    values = runpy.run_path(str(path), run_name="inspection")
-    assert not calls
-    values["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == [entry, entry]
+    assert_compat_route(monkeypatch, path, entry, 'fly.ap.metrics.worksheet.model')
     notice = (ROOT / "NOTICE").read_text()
     assert (
         row["source_sha256"] in notice

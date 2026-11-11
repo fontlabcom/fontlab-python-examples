@@ -26,12 +26,16 @@ SHA256: ab5c5904d2ca3688def0ad17a8a48ac63f507e7a77778a888f14e04a89b0c079
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/stardelegate-dc59f268ee01e364.py
 SHA256: d11286ceb3e9b813bbda21d1f820c224694722b2b3476c7b19a0791cd6fcc311
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Review Model Lab; opens the Glyph Review Priorities profile.
+
 Run **Models > Glyph Review Priorities** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `f3b02e1b82cb3a4735f8d419fe95b9d6a63eb05510af2708b938936a475db05c`
+SHA256: `d676b76cd1ea21dc79cffed8d3bf57d5495c95d000f3a8030ce8468263014a89`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Review%20Priorities.py)

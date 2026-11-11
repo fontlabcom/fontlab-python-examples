@@ -1,11 +1,10 @@
 # this_file: Scripts/Models/Glyph Sorting and Filtering.py
 # SPDX-License-Identifier: Apache-2.0
-# historical source sha256: 4c46c9af9db4321d45690cc5cb82e3c0d60454d0ed3123d0f9a8c5f002980d39
 """Sort and filter a complete real-font glyph metadata snapshot.
 
 Purpose: Adapt the complete part2 basic source/proxy model lesson to
 current-font glyph names, all Unicode assignments and local modification dates.
-Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
+Original profile setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.54.dev0.
 Run: Open a font, then run this Models command. Both read-only views share one
 captured model. Enter a regular expression, wildcard or fixed string. Toggle
 filter and sorting case independently; click a result header to sort.
@@ -21,14 +20,19 @@ Historical source: rescued/part2/ports/itemviews/pyqt-official/basicsortfiltermo
 The generic UI and query policy live in App. The part3 official versions have
 different contracts and remain separate entries. Custom date filtering
 starts unrestricted rather than limiting real fonts to demonstration-only2026.
+
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Model Filtering Lab; opens the Glyph Sorting and Filtering profile.
 """
 
 
-def main() -> None:
-    """Open the complete owned real-font workflow through the lazy Fly namespace."""
-    from fly.ap.glyphs.catalog.model import show_basic
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show_basic()
+    return show("E01", profile='Glyph Sorting and Filtering')
 
 
 if __name__ == "__main__":

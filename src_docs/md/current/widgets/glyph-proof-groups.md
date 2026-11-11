@@ -15,11 +15,15 @@ plain text into FontLab Metrics. Dots identify suffix names by convention.
 Names outside portable slash syntax are omitted and listed in the status line.
 Benefit: Compare base glyphs and alternates in repeatable proof groups.
 
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless, read-only tool.
+Original profile setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless, read-only tool.
 App owns panel lifetime, signals and completion.
 Independent rewrite of the Qt Group Box example idea (Riverbank Computing, Nokia).
 Based on the author's own FontLab sample, Apache-2.0.
 Idea only; no upstream code or assets included.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Glyph Proof Groups profile.
 
 Run **Widgets > Glyph Proof Groups** from FontLab's Scripts menu.
 
@@ -27,6 +31,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `925e194a2e2d7a5b3838fd1c52990028b483b6abccce333d47c03ce4d012bda4`
+SHA256: `ae2ed60f136b5f3411d894b27a7ac8a7c9b94786b5467c3318b8b4d619332dfc`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Proof%20Groups.py)

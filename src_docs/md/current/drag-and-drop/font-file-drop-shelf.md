@@ -18,12 +18,16 @@ Opening relies on FontLab's own format support.
 Requires FontLab 9, Python 3.11, Fly and native font-opening support.
 Independent behaviour-only rewrite. Apache-2.0 (own earlier work).
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Drag Drop Lab; opens the Font File Drop Shelf profile.
+
 Run **Drag And Drop > Font File Drop Shelf** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `dfb10fb032cdabe7595ddbea41e81b574e2604acc1f7a4d6162b2230eb92cc81`
+SHA256: `909a5643b8c1536ddeb4463051c11a426a4ea68ac8d48c078fc14289aff82370`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Font%20File%20Drop%20Shelf.py)

@@ -5,7 +5,9 @@ this_file: README.md
 
 # FontLab Python examples
 
-One hundred menu scripts show useful Python and PythonQt workflows in FontLab 9.
+Nine core PythonQt labs combine related workflows beside live font previews.
+The transitional menu tree contains 109 entrypoints, including 48 small
+compatibility launchers and the three retained Models/Forms lesson entrypoints.
 They inspect fonts, build proofs, edit selected data and show modeless panels.
 Each script states its setup, scope and limits. Some scripts change fonts;
 read the script's Usage and Setup text before running it.
@@ -66,6 +68,7 @@ expanded packaged workflows.
 
 | Category | Main workflows |
 | --- | --- |
+| Labs | Model Filtering; Tree Models; Metrics Controls; Calendar; Completion; Drag Drop; Proof Composition; Unicode; Review Model. |
 | Contours | Node Table; Node Slope And Handles. |
 | Designer | Em Star Polygon preview and one-step contour creation. |
 | Dialogs | Scaffold, glyph search, coverage, inventory and proof recipes. |
@@ -81,6 +84,8 @@ expanded packaged workflows.
 | Windows | Unicode issues dock and glyph snapshot differences. |
 
 For per-menu source and limits, see the [current menu catalogue](src_docs/md/current/index.md).
+Its source pages retain the pre-WP09 committed snapshot. WP11 will regenerate
+them after integration, when the new launcher bytes have truthful containing commits.
 Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
 [elastic graphs](src_docs/md/elastic-component-graphs.md),
 [slider previews](src_docs/md/slider-spacing-offsets.md) and

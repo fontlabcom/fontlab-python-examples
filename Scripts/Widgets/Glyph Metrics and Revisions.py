@@ -5,7 +5,7 @@
 Purpose:
     Estimate advance offsets and scaled widths for every selected glyph layer.
     Inspect whole-font modification-date cutoffs and a per-glyph proof quote.
-Setup:
+Original profile setup:
     Use FontLab 9, Python 3.11, Fly and App>=0.2.90.dev0.
     Open a font and select glyph layers. This script installs nothing.
 Run:
@@ -25,15 +25,19 @@ Compatibility:
     All numeric inputs are local estimates. No font/history/selection writer
     is used.
     Historical source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
+
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Metrics Controls Lab; opens the Glyph Metrics and Revisions profile.
 """
-# historical source sha256: cbaed2d33a67865efa54c15f71701d7b62c6d2bda69a111e6351fac866f972db
 
 
-def main() -> None:
-    """Open the complete owned worksheet through the lazy Fly App namespace."""
-    from fly.ap.proof.numeric.launcher import show
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show()
+    return show("E03", profile='Glyph Metrics and Revisions')
 
 
 if __name__ == "__main__":

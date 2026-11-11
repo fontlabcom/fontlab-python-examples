@@ -18,12 +18,16 @@ Prepare quick proof variations without changing glyphs or metrics.
 Requires FontLab 9, Python 3.11 and Fly.
 Independent behaviour-only rewrite. Apache-2.0 (own earlier work).
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Drag Drop Lab; opens the Proof Word Magnets profile.
+
 Run **Drag And Drop > Proof Word Magnets** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `3ca12c4b039282f35956b96189abb628305d985e7797854e2643295d5bbbdd9f`
+SHA256: `e0a6e756d094c0f90a5a154d4656efc8a987f0f47e31104d2d1a1f9b163e7104`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Proof%20Word%20Magnets.py)

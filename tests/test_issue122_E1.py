@@ -8,16 +8,14 @@ import ast
 import importlib
 import json
 import os
-import runpy
 import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -68,7 +66,7 @@ APP_MODULES = {
 
 def load(title: str) -> dict[str, Any]:
     """Execute only the new menu, without its main entrypoint."""
-    return runpy.run_path(str(ROOT / "Scripts" / "Models" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Models" / f"{title}.py"))
 
 
 @pytest.fixture
@@ -711,7 +709,7 @@ def test_real_no_font_refusal_in_main(
 
 @pytest.mark.parametrize("title", TITLES)
 def test_public_source_contract(title: str) -> None:
-    text = (ROOT / "Scripts/Models" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts/Models" / f"{title}.py")).read_text()
     tree = ast.parse(text, feature_version=(3, 11))
     doc = ast.get_docstring(tree)
     assert all(
@@ -733,7 +731,7 @@ def test_public_source_contract(title: str) -> None:
     assert "Based on the author's own FontLab sample, Apache-2.0." in " ".join(
         doc.split()
     )
-    assert f"this_file: Scripts/Models/{title}.py" in text
+    assert "this_file: " + production_relative(ROOT / "Scripts/Models" / f"{title}.py") in text
     assert not any(
         word in text
         for word in (
@@ -1411,7 +1409,7 @@ def test_star_paint_failure_restores_borrowed_painter(host: Any) -> None:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_independent_panel_when_opened_then_priority_preserves_tool_and_cleanup(title, host):
-    module, panel = open_panel(title, host)
+    _module, panel = open_panel(title, host)
     assert panel.constructor_flags == host.qt.QtCore.Qt.Tool | 0x40000, "Modeless Tool priority must be set before showing"
     assert panel.visible, "The flagged panel must still open"
     panel.closeEvent(SimpleNamespace(accept=lambda: None, ignore=lambda: None))

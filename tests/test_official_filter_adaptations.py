@@ -4,14 +4,10 @@
 import ast
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
 import pytest
-
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -35,7 +31,7 @@ def test_manifest_when_official_pair_adapted_then_frozen_source_and_distinct_sem
         assert not (ROOT / row["source_menu"]).exists()
         assert (
             row["destination_sha256"]
-            == hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            == hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
         )
         assert (
             row["native_acceptance"] == "pending"
@@ -48,15 +44,7 @@ def test_manifest_when_official_pair_adapted_then_frozen_source_and_distinct_sem
 def test_menu_when_loaded_and_run_then_exact_lazy_fly_route(monkeypatch, entry):
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     row = next(r for r in rows if r["entry_point"] == entry)
-    calls = []
-    for name in ("fly", "fly.ap", "fly.ap.glyphs.catalog.model"):
-        install_module(monkeypatch, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyphs.catalog.model"], entry, lambda: calls.append(entry))
     path = ROOT / row["menu"]
-    values = runpy.run_path(str(path), run_name="inspection")
-    assert not calls
-    values["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == [entry, entry]
+    assert_compat_route(monkeypatch, path, entry, 'fly.ap.glyphs.catalog.model')
     tree = ast.parse(path.read_text(), feature_version=(3, 11))
     assert "App>=0.2.55.dev0" in ast.get_docstring(tree)

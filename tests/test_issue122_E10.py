@@ -4,16 +4,13 @@
 import ast
 import importlib
 import json
-import runpy
-import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any, ClassVar
 
 import pytest
-
+from _wp09_routes import source_bytes, production_path, run_profile
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,7 +46,7 @@ def fixture_names(
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts" / "Tools" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Tools" / f"{title}.py"))
 
 
 @pytest.fixture
@@ -361,7 +358,7 @@ def test_panel_export_error_and_signal_cleanup(
 
 @pytest.mark.parametrize("title", TITLES)
 def test_python311_source_has_no_font_writer_or_process_boilerplate(title: str) -> None:
-    text = (ROOT / "Scripts" / "Tools" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts" / "Tools" / f"{title}.py")).read_text()
     ast.parse(text, feature_version=(3, 11))
     for term in (
         "notifyChangesApplied",
@@ -500,7 +497,7 @@ def test_regexp_duplicate_target_and_all_seven_source_identities() -> None:
     """Bind the duplicate to its current entry and each source to its recorded hash."""
 
     target = ROOT / "Scripts/Tools/Glyph Name Pattern Lab.py"
-    assert "fly.ap.glyphs.pattern" in target.read_text()
+    assert "fly.ap.glyphs.pattern" in source_bytes(target).decode()
     index = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     rows = [
         r

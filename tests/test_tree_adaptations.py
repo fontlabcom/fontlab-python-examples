@@ -4,14 +4,10 @@
 import ast
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
 import pytest
-
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,7 +29,7 @@ def test_tree_pair_keeps_frozen_identities_and_complete_readonly_contracts():
         assert row["source"] == original[row["source_menu"]]["target"]
         assert row["source_sha256"] == original[row["source_menu"]]["target_sha256"]
         assert (
-            hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
             == row["destination_sha256"]
         )
         assert not (ROOT / row["source_menu"]).exists()
@@ -48,15 +44,7 @@ def test_tree_pair_keeps_frozen_identities_and_complete_readonly_contracts():
 def test_tree_menus_remain_lazy_typed_python311_fly_facades(monkeypatch, entry):
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     row = next(r for r in rows if r["entry_point"] == entry)
-    calls = []
-    for name in ["fly", "fly.ap", "fly.ap.glyphs.tree.model"]:
-        install_module(monkeypatch, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyphs.tree.model"], entry, lambda: calls.append(entry))
     path = ROOT / row["menu"]
-    values = runpy.run_path(str(path), run_name="inspection")
-    assert calls == []
-    values["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == [entry, entry]
+    assert_compat_route(monkeypatch, path, entry, 'fly.ap.glyphs.tree.model')
     tree = ast.parse(path.read_text(), feature_version=(3, 11))
     assert "App>=0.2.57.dev0" in ast.get_docstring(tree)

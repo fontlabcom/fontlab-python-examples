@@ -4,12 +4,9 @@
 import ast
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -31,7 +28,7 @@ def test_official_calendar_keeps_frozen_source_and_all_distinct_options():
     )
     assert not (ROOT / row["source_menu"]).exists()
     assert (
-        hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+        hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
         == row["destination_sha256"]
     )
     assert (
@@ -54,17 +51,7 @@ def test_official_calendar_keeps_frozen_source_and_all_distinct_options():
 
 def test_official_calendar_import_is_lazy_and_exactly_routes_through_fly(monkeypatch):
     path = ROOT / "Scripts/Widgets/Glyph Modification Calendar with Formats.py"
-    calls = []
-    for name in ["fly", "fly.ap", "fly.ap.glyphs.calendar.model"]:
-        install_module(monkeypatch, name, ModuleType(name))
-    sys.modules["fly.ap.glyphs.calendar.model"].show_official = lambda: calls.append(
-        "official"
-    )
-    namespace = runpy.run_path(str(path), run_name="inspection")
-    assert calls == []
-    namespace["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == ["official", "official"]
+    assert_compat_route(monkeypatch, path, 'show_official', 'fly.ap.glyphs.calendar.model')
     assert "App>=0.2.61.dev0" in ast.get_docstring(
         ast.parse(path.read_text(), feature_version=(3, 11))
     )

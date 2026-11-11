@@ -3,14 +3,10 @@
 import ast
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
 import pytest
-
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,17 +22,9 @@ def test_completion_pair_is_source_bound_and_native_pending(part, entry, monkeyp
     assert row["native_acceptance"] == "pending" and not row["original_workflow_accepted"]
     assert not (ROOT / row["source_menu"]).exists()
     path = ROOT / row["menu"]
-    body = path.read_bytes()
+    body = source_bytes(path)
     assert hashlib.sha256(body).hexdigest() == row["destination_sha256"]
     tree = ast.parse(body, feature_version=(3, 11))
     assert "App>=0.2.63.dev0" in ast.get_docstring(tree)
     assert "this_file: " + row["menu"] in body.decode().splitlines()[0]
-    calls = []
-    for name in ("fly", "fly.ap", "fly.ap.glyphs.completion.model"):
-        install_module(monkeypatch, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyphs.completion.model"], entry, lambda: calls.append(entry))
-    values = runpy.run_path(str(path), run_name="inspection")
-    assert calls == [], "Import must be lazy"
-    values["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == [entry, entry]
+    assert_compat_route(monkeypatch, path, entry, 'fly.ap.glyphs.completion.model')

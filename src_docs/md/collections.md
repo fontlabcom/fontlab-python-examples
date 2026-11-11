@@ -32,9 +32,14 @@ The archive is retained for migration and recovery; it is not installed by this 
 ## Current practical scripts
 
 [Current Scripts](current/index.md) lists every active facade and includes its
-actual source. The 100 entries (one `Scripts/<category>/<name>.py` file each)
+actual source. The 109 entries (one `Scripts/<category>/<name>.py` file each)
 require the matching App, Fly and Lessons packages. Each entry states its setup, behavior and acceptance limits. A shared
 package or facade passing offline tests does not prove native FontLab acceptance.
+
+Nine WP09 labs share previews and named profiles. Forty-eight old menu paths
+remain small compatibility launchers, and the three original Models/Forms
+entrypoints still launch the Lessons package. Final menu removal and installed
+menu cleanup belong to WP11; the 25-lab target is not yet the active menu count.
 
 The 494 historical source identities remain in `rescue-index.json`; the 222
 hash-bound adaptations and 259 retirements are recorded in `menu-adaptations.json`. The other 13

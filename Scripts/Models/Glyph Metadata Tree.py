@@ -1,12 +1,11 @@
 # this_file: Scripts/Models/Glyph Metadata Tree.py
 # SPDX-License-Identifier: Apache-2.0
-# historical source sha256: 0eb40bcaded0341ad05f3891e54ee5f06e02616d3efa03b175742863d178fc86
 """Inspect all current-font glyph metadata in an expandable read-only hierarchy.
 
 Purpose: Adapt the complete part3 Simple Tree Model workflow to FontLab.
 Show glyphs in font order. Expand each glyph to inspect all Unicode assignments
 and its local modification date. Missing values remain explicit.
-Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
+Original profile setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
 Run: Open a font and run this Models command. Expand or collapse rows; select a
 cell to inspect it. Keep DisplayRole-only text and parent-item column counts; no original selection-status control is added.
 Use Refresh to read the current font again. Reads and rendering share a bounded
@@ -20,14 +19,18 @@ The separate editable-tree lesson remains outside this read-only source pair.
 Compatibility: Uses FontLab's supplied PythonQt.
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
 Original source/resources are archived outside this repository; this command does not execute them.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Tree Models Lab; opens the Glyph Metadata Tree profile.
 """
 
 
-def main() -> None:
-    """Open the complete owned read-only hierarchy through the lazy Fly alias."""
-    from fly.ap.glyphs.tree.model import show_tree
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show_tree()
+    return show("E02", profile='Glyph Metadata Tree')
 
 
 if __name__ == "__main__":

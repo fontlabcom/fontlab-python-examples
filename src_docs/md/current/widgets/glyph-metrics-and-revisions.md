@@ -11,7 +11,7 @@ Compare captured glyph metrics and revision cutoffs with local numeric drafts.
 Purpose:
     Estimate advance offsets and scaled widths for every selected glyph layer.
     Inspect whole-font modification-date cutoffs and a per-glyph proof quote.
-Setup:
+Original profile setup:
     Use FontLab 9, Python 3.11, Fly and App>=0.2.90.dev0.
     Open a font and select glyph layers. This script installs nothing.
 Run:
@@ -32,12 +32,17 @@ Compatibility:
     is used.
     Historical source: rescued/part2/ports/widgets/pyqt-official/spinboxes-468179092748a72e.py
 
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Metrics Controls Lab; opens the Glyph Metrics and Revisions profile.
+
 Run **Widgets > Glyph Metrics and Revisions** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `3298e1461eb01acd81d7c9b606ee0f055fde4dd0051bcf18ad1e01f395acf33b`
+SHA256: `2ef5da3dbec3a28265181a480a8563cd98c3267eaf3cf13ca100d78d7c6f3b1b`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Metrics%20and%20Revisions.py)

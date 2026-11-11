@@ -1,10 +1,9 @@
 # this_file: Scripts/Tools/Glyph Name Completion.py
 # SPDX-License-Identifier: Apache-2.0
-# historical source sha256: 63ef7a0c41c7c25fc66ebb8373ea523319ee9655b7995a9ed27956e30fd9b931
 """Draft text with current-font glyph-name completions.
 
 Purpose: Adapt the complete part2 custom-completer workflow to FontLab.
-Setup: FontLab 9, Python 3.11, Fly and App>=0.2.63.dev0.
+Original profile setup: FontLab 9, Python 3.11, Fly and App>=0.2.63.dev0.
 Run: Open a font, run this Tools command, and type at least three characters.
 Ctrl+E also offers shorter prefixes. Use Refresh after font changes.
 Result: Keep every exact glyph name in the vocabulary, including unencoded and
@@ -19,14 +18,18 @@ Close releases owned callbacks and models; no original body is executed.
 Compatibility: Uses FontLab's supplied PythonQt. This command edits no font, selection, preference, file or Output.
 Historical source: rescued/part2/ports/tools/pyqt-official/customcompleter-10ef4dacb4db4080.py
 Original source/resources are archived outside this repository and are not bundled by this facade.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Completion Lab; opens the Glyph Name Completion profile.
 """
 
 
-def main() -> None:
-    """Open the complete distinct owned completion policy through Fly."""
-    from fly.ap.glyphs.completion.model import show
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show()
+    return show("E05", profile='Glyph Name Completion')
 
 
 if __name__ == "__main__":

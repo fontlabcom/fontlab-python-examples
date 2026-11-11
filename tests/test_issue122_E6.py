@@ -8,16 +8,14 @@ native member list at class creation and attribute assignment.
 import ast
 import importlib
 import json
-import runpy
 import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,7 +62,7 @@ ROWS = (
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts" / "Windows" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Windows" / f"{title}.py"))
 
 
 class Signal:
@@ -296,6 +294,7 @@ def host(monkeypatch: Any) -> Any:
                 "QHBoxLayout",
                 "QTableView",
                 "QDockWidget",
+        "QMainWindow",
             )
         }
     )
@@ -365,8 +364,8 @@ def host(monkeypatch: Any) -> Any:
 def test_real_app_names_and_selection_guard_contract(host: Any) -> None:
     import fontlabapp.core.signals.scope as draft_signals
     import fontlabapp.glyphs.catalog.model as glyph_catalog
-    import fontlabapp.core.scripting as scripting
-    import fontlabapp.qt.widgets as widgets
+    from fontlabapp.core import scripting
+    from fontlabapp.qt import widgets
 
     assert callable(widgets.create_panel) and callable(widgets.OwnedWidget.close)
     assert callable(draft_signals.Scope) and callable(glyph_catalog.capture)
@@ -583,9 +582,7 @@ def test_diff_font_identity_refusal_and_explicit_reset(host: Any) -> None:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_parent_destroy_and_real_main_entrypoint(title: str, host: Any) -> None:
-    namespace = runpy.run_path(
-        str(ROOT / "Scripts" / "Windows" / f"{title}.py"), run_name="__main__"
-    )
+    namespace = run_profile(str(ROOT / "Scripts" / "Windows" / f"{title}.py"), run_name='__main__')
     panel = namespace["_PANELS"][0]
     emitter = panel.owned.content if title == TITLES[0] else panel
     slots = [slot for _, slot, _ in panel.scope.records]
@@ -598,10 +595,10 @@ def test_parent_destroy_and_real_main_entrypoint(title: str, host: Any) -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_native_name_guards_source_typing_and_provenance(title: str) -> None:
     path = ROOT / "Scripts" / "Windows" / f"{title}.py"
-    text = path.read_text()
+    text = production_path(path).read_text()
     tree = ast.parse(text, feature_version=(3, 11))
     doc = ast.get_docstring(tree)
-    assert f"this_file: Scripts/Windows/{title}.py" in text
+    assert "this_file: " + production_relative(path) in text
     assert all(
         label in doc
         for label in (
@@ -884,6 +881,7 @@ def test_script_qt_names_are_in_the_host_shaped_fake(title: str, host: Any) -> N
         "QHBoxLayout",
         "QTableView",
         "QDockWidget",
+        "QMainWindow",
         "QStandardItemModel",
         "QStandardItem",
         "QAbstractItemView",
@@ -898,7 +896,7 @@ def test_script_qt_names_are_in_the_host_shaped_fake(title: str, host: Any) -> N
     ):
         with pytest.raises(AttributeError):
             getattr(namespace, name)
-    tree = ast.parse((ROOT / "Scripts" / "Windows" / f"{title}.py").read_text())
+    tree = ast.parse((production_path(ROOT / "Scripts" / "Windows" / f"{title}.py")).read_text())
     aliases = {"core": host.qt.QtCore, "gui": host.qt.QtGui}
     for node in ast.walk(tree):
         if not isinstance(node, ast.Attribute):

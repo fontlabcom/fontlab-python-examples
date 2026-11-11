@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import pytest
+from _wp09_routes import source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = json.loads((ROOT / "tests/spacing-curated-baseline.json").read_text())
@@ -88,7 +89,7 @@ def lesson_contract_successors(record):
     }
     assert record["frozen_references"] == frozen
     for path, digest in frozen.items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == digest, path
     guides = json.loads((ROOT / "tests/spacing-guide-successors.json").read_text())["guides"]
     assert set(record["successors"]) == LESSON_SUCCESSOR_PATHS
     for path, row in record["successors"].items():
@@ -96,20 +97,20 @@ def lesson_contract_successors(record):
         assert row["original_sha256"] == BASE["lessons"][path], path
         previous = guides[path]["approved_sha256"] if path in guides else BASE["lessons"][path]
         assert row["previous_sha256"] == previous, path
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == row["successor_sha256"], path
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == row["successor_sha256"], path
     return {path: row["successor_sha256"] for path, row in record["successors"].items()}
 
 
 def test_spacing_pair_when_added_then_only_two_new_one_level_scripts():
     paths = {p.relative_to(ROOT).as_posix() for p in (ROOT / "Scripts").rglob("*.py")}
-    assert paths == set(BASE["menus"]) | NEW | {"Scripts/Tools/Glyph Name Pattern Lab.py", "Scripts/Tools/Component Dependency Graph.py", "Scripts/Tools/Component Dependency Graph - Degree Forces.py", "Scripts/Widgets/Glyph Metrics and Revisions.py", "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py", "Scripts/Widgets/Glyph Spacing Offset.py", "Scripts/Widgets/Glyph Spacing Offset - Stacked.py", "Scripts/Widgets/Glyph Character Map.py", "Scripts/Widgets/Glyph Character Map - Styles.py", "Scripts/Tools/Find Font Source Files.py", "Scripts/Tools/Find Font Source Files - Bytes.py", "Scripts/Tools/Font Reference Image Viewer.py", "Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py"} | EXAMPLE_BATCHES, (
+    assert paths == set(BASE["menus"]) | NEW | {"Scripts/Tools/Glyph Name Pattern Lab.py", "Scripts/Tools/Component Dependency Graph.py", "Scripts/Tools/Component Dependency Graph - Degree Forces.py", "Scripts/Widgets/Glyph Metrics and Revisions.py", "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py", "Scripts/Widgets/Glyph Spacing Offset.py", "Scripts/Widgets/Glyph Spacing Offset - Stacked.py", "Scripts/Widgets/Glyph Character Map.py", "Scripts/Widgets/Glyph Character Map - Styles.py", "Scripts/Tools/Find Font Source Files.py", "Scripts/Tools/Find Font Source Files - Bytes.py", "Scripts/Tools/Font Reference Image Viewer.py", "Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py"} | EXAMPLE_BATCHES | {row["destination"]["path"] for row in json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"] if row["acceptance"]["state"] == "implemented"}, (
         "Keep every curated menu and add exactly the two reviewed tools"
     )
-    assert len(paths) == 100 and not any(
+    assert len(paths) == 109 and not any(
         path.startswith("Scripts/Archived") for path in paths
     )
     for path, digest in BASE["menus"].items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == digest, path
 
 
 def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserved():
@@ -126,8 +127,8 @@ def test_spacing_pair_when_integrated_then_all_lessons_and_license_bytes_preserv
         expected = successors[path]["approved_sha256"] if path in successors else digest
         if path in lesson_successors:
             expected = lesson_successors[path]
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, path
-    notice = (ROOT / "NOTICE").read_bytes()
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == expected, path
+    notice = source_bytes(ROOT / "NOTICE")
     assert (
         hashlib.sha256(notice).hexdigest()
         == "7e9571a2d816af6eb7cee3f0527ad2d58f4751af5db10131de1b7569aac7230d"
@@ -177,7 +178,7 @@ def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_re
     assert data["adaptations"][:12] == BASE["prior_adaptations"]
     assert len(data["adaptations"]) == 231
     assert (
-        hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
+        hashlib.sha256(source_bytes(ROOT / "rescue-index.json")).hexdigest()
         == BASE["rescue_index_sha256"]
     )
     assert all(
@@ -189,7 +190,7 @@ def test_spacing_pair_when_mapped_then_original_provenance_and_native_pending_re
     assert {row["menu"] for row in rows} == NEW
     for row in rows:
         assert (
-            hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
             == row["destination_sha256"]
         )
         assert not (ROOT / row["source_menu"]).exists()

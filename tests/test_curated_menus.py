@@ -5,12 +5,10 @@ import ast
 import hashlib
 import json
 import runpy
-import sys
 from pathlib import Path
 from types import ModuleType
 
 import pytest
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,8 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_active_scripts_when_scanned_then_only_curated_practical_one_level_menus():
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
-    assert len(paths) == 100, "Ship the 100 practical facades with native acceptance pending"
+    assert len(paths) == 109, "Keep 100 compatible routes and add nine core labs"
     assert {p.parent.name for p in paths} == {
+        "Labs",
         "Contours",
         "Designer",
         "Dialogs",

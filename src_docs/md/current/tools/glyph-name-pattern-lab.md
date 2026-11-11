@@ -11,7 +11,7 @@ Author native Qt 5 patterns against complete captured FontLab glyph names.
 Purpose:
     Keep the complete Pattern Matching Inspector useful for glyph-name rules.
     Test captures, positions and lengths before using a pattern in another tool.
-Setup:
+Original profile setup:
     Use FontLab 9, Python 3.11, Fly and App>=0.2.76.dev0.
     Install the prerequisites yourself. This script installs nothing.
 Run:
@@ -28,12 +28,17 @@ Compatibility:
     Independent implementation; no original body or source helper is executed.
     Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
 
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Model Filtering Lab; opens the Glyph Name Pattern Lab profile.
+
 Run **Tools > Glyph Name Pattern Lab** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `5937cd70a1882ba66ed3b20c1ed553ca1b6b0a80d27f11a0a001777e70337f3a`
+SHA256: `3ec4acf173cd70589abd088130392d22317acfe73e4290c9cc20399070ee395f`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Name%20Pattern%20Lab.py)
