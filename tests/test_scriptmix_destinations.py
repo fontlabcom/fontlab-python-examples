@@ -7,9 +7,9 @@ import subprocess
 from pathlib import Path
 
 import pytest
-from scriptmix_destinations import ABSORPTIONS, check_destination
+import scriptmix_destinations
+from scriptmix_destinations import ABSORPTIONS, GIT, check_destination
 
-GIT = "/opt/homebrew/bin/git"
 OLD = b"print('old')\n"
 PIN = hashlib.sha256(OLD).hexdigest()
 MENU = "Scripts/Contours/Old.py"
@@ -17,6 +17,8 @@ LAUNCHER = "Scripts/Contours/Studio.py"
 
 
 def git(root: Path, *args: str) -> str:
+    if GIT is None:
+        pytest.skip("no git executable to build the synthetic Scriptmix history")
     return subprocess.run(
         [GIT, "-C", str(root), *args], check=True, capture_output=True, text=True
     ).stdout.strip()
@@ -129,6 +131,14 @@ def test_unpinned_absent_file_when_history_unavailable_then_skipped(tmp_path):
     mix, app, row = make(tmp_path, repo=False)
     assert check(MENU, PIN, mix, app, [row]) == PIN
     with pytest.raises(pytest.skip.Exception, match="git history"):
+        check(MENU, None, mix, app, [row])
+
+
+def test_unpinned_absent_file_when_git_executable_missing_then_skipped(tmp_path, monkeypatch):
+    mix, app, row = make(tmp_path)
+    monkeypatch.setattr(scriptmix_destinations, "GIT", None)
+    assert check(MENU, PIN, mix, app, [row]) == PIN
+    with pytest.raises(pytest.skip.Exception, match="no git executable"):
         check(MENU, None, mix, app, [row])
 
 

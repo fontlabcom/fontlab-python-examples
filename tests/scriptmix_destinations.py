@@ -12,6 +12,7 @@ import ast
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -19,7 +20,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "fontlab-python-scriptmix/"
-GIT = "/opt/homebrew/bin/git"
+HOMEBREW_GIT = "/opt/homebrew/bin/git"
+GIT = HOMEBREW_GIT if Path(HOMEBREW_GIT).is_file() else shutil.which("git")
 ABSORPTIONS = json.loads((ROOT / "scriptmix-absorptions.json").read_text())["absorptions"]
 
 
@@ -34,10 +36,13 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess:
 def _history(mix: Path, row: dict, pinned: bool) -> None:
     """Check the recorded removal commit in any git checkout; without git, only a pin may vouch."""
     removed, menu = row["removed_by"], row["menu"]
-    if _git(mix, "rev-parse", "--git-dir").returncode != 0:
+    reason = "no git executable" if GIT is None else None
+    if reason is None and _git(mix, "rev-parse", "--git-dir").returncode != 0:
+        reason = "Scriptmix is not a git checkout"
+    if reason is not None:
         if pinned:
             return
-        pytest.skip(f"{menu}: Scriptmix git history for removed_by {removed[:8]} is unavailable")
+        pytest.skip(f"{menu}: Scriptmix git history for removed_by {removed[:8]} is unavailable ({reason})")
     before = _git(mix, "show", f"{removed}^:{menu}")
     assert before.returncode == 0, f"{menu}: removed_by {removed[:8]} has no parent copy of the file"
     assert hashlib.sha256(before.stdout).hexdigest() == row["last_sha256"], f"{menu}: removed_by parent bytes differ"
