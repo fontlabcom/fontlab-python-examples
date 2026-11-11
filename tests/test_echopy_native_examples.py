@@ -34,9 +34,20 @@ def test_read_signature_when_python_class_then_known_signature():
     assert sigs.read_signature(Plain) == ("(x, y=0)", True)
 
 
-@pytest.mark.parametrize("builtin", [int, type(None)])
-def test_read_signature_when_builtin_has_none_then_fallback_not_invented(builtin):
-    text, known = sigs.read_signature(builtin)
+class _NoSignatureMeta(type):
+    """Like a native constructor: ``inspect.signature`` raises ValueError on every Python."""
+
+    @property
+    def __signature__(cls):
+        raise ValueError("no signature found for builtin type")
+
+
+class NoSignature(metaclass=_NoSignatureMeta):
+    pass
+
+
+def test_read_signature_when_signature_unavailable_then_fallback_not_invented():
+    text, known = sigs.read_signature(NoSignature)
     assert not known and text == sigs.UNAVAILABLE
 
 
