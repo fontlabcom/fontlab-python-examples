@@ -24,7 +24,11 @@ strings or OpenType class declarations.
 Independent behaviour-only rewrite of the pair-generation idea from Pairs.py.
 Credit: Vassil Kateliev and Karandash Type Foundry; kateliev/TypeRig, MPL-2.0.
 No TypeRig code, comments, icons or resources are included.
-Setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0.
+Original profile setup: FontLab 9, Python 3.11, Fly and App>=0.2.150.dev0.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Pair Proof Generator profile.
 
 Run **Tools > Pair Proof Generator** from FontLab's Scripts menu.
 
@@ -32,6 +36,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `8cdc58521908a7959208789ea4a71674e2a3b44e6d177c374ee746bd6be95129`
+SHA256: `349766c5405c069861c5cc3aba94df8de5ddbda11f9e4712be4781d5d9d454c5`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Pair%20Proof%20Generator.py)

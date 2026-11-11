@@ -18,11 +18,15 @@ to proof the actual font. Export New saves a complete UTF-8 HTML document.
 
 Benefit: Check date spacing with realistic numeral sequences.
 
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Panels stay open beside the
+Original profile setup: FontLab 9, Python 3.11, Fly and fontlabapp. Panels stay open beside the
 font. Export uses a new absolute path and never overwrites an existing file.
 
 Idea from the Qt/PyQt examples (Riverbank Computing, Nokia, 2010-2013).
 Independent rewrite. Apache-2.0.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Calendar Lab; opens the Calendar Proof Builder profile.
 
 Run **Text > Calendar Proof Builder** from FontLab's Scripts menu.
 
@@ -30,6 +34,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `7e0ed7debff0aef538d9f1638628055ee5cdfa1ec9c50fbc1207cdc7f8f63bda`
+SHA256: `13bdb19e3f0a47d339d70a76af2deed2b07f9ae9bb5a536fe98a5ba5b2bc2cfc`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Text/Calendar%20Proof%20Builder.py)

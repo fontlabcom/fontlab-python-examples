@@ -5,7 +5,7 @@
 Purpose:
     Keep the complete Pattern Matching Inspector useful for glyph-name rules.
     Test captures, positions and lengths before using a pattern in another tool.
-Setup:
+Original profile setup:
     Use FontLab 9, Python 3.11, Fly and App>=0.2.76.dev0.
     Install the prerequisites yourself. This script installs nothing.
 Run:
@@ -21,15 +21,19 @@ Result:
 Compatibility:
     Independent implementation; no original body or source helper is executed.
     Historical source: rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py
+
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Model Filtering Lab; opens the Glyph Name Pattern Lab profile.
 """
-# historical source sha256: c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e
 
 
-def main() -> None:
-    """Open the owned pattern laboratory through the lazy Fly namespace."""
-    from fly.ap.glyphs.pattern import show
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show()
+    return show("E01", profile='Glyph Name Pattern Lab')
 
 
 if __name__ == "__main__":

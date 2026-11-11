@@ -18,12 +18,16 @@ Prepare focused pair checks without entering each pair separately.
 Requires FontLab 9, Python 3.11 and Fly.
 Independent behaviour-only rewrite. Apache-2.0 (own earlier work).
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Drag Drop Lab; opens the Glyph Pair Board profile.
+
 Run **Drag And Drop > Glyph Pair Board** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `efd4c69ffa998a6138a5f73036eafa1ae3a5bf16ab21b6ac53a4f3e8dec50b8e`
+SHA256: `9b28a38edd5d9c7b51b2874904e9fe66dc2f2a910df45bc64baa64142d4487f9`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Glyph%20Pair%20Board.py)

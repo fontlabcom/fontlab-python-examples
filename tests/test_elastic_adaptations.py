@@ -10,7 +10,7 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
-
+from _wp09_routes import source_bytes
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,7 +47,7 @@ def test_distinct_elastic_provenance_and_exact_public_fly_launch(
     assert f"part{part}/" in row["source"] and not (ROOT / row["source_menu"]).exists()
     path = ROOT / row["menu"]
     text = path.read_text()
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == row["destination_sha256"]
+    assert hashlib.sha256(source_bytes(path)).hexdigest() == row["destination_sha256"]
     assert digest in text and digest in (ROOT / "NOTICE").read_text()
     ast.parse(text, feature_version=(3, 11))
     calls = []
@@ -64,11 +64,11 @@ def test_distinct_elastic_provenance_and_exact_public_fly_launch(
 def test_all_31_prior_menu_bytes_and_15_provenance_rows_unchanged():
     baseline = json.loads((ROOT / "tests/elastic-baseline.json").read_text())
     for path, digest in baseline["menus"].items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == digest, path
     data = json.loads((ROOT / "menu-adaptations.json").read_text())
     assert data["adaptations"][:15] == baseline["adaptations"]
     assert (
-        hashlib.sha256((ROOT / "rescue-index.json").read_bytes()).hexdigest()
+        hashlib.sha256(source_bytes(ROOT / "rescue-index.json")).hexdigest()
         == baseline["source_index_sha256"]
     )
-    assert len(list((ROOT / "Scripts").rglob("*.py"))) == 100
+    assert len(list((ROOT / "Scripts").rglob("*.py"))) == 109

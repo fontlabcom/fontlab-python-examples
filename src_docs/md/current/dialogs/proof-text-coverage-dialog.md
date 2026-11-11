@@ -8,7 +8,7 @@ categories: ["Dialogs"]
 
 Check proof text against current-font Unicode assignments.
 
-Setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
+Original profile setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
 Click Enter Proof Text to open a modeless standard input dialog. Accept to inspect coverage; Cancel keeps the existing draft. Preview reads the current font again. Duplicate assignments remain visible.
 Why: Use a modeless text dialog and normalize Qt UTF-16 text.
 Benefit: Find missing characters and ambiguous assignments before proofing.
@@ -28,12 +28,16 @@ SHA256: 4a705367140cd7600706cf7ab7522523ddc7c5cd3592309c78d316b67cfc0055
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/standarddialogs-e1a0a829f8f2e311.py
 SHA256: 80b66bcc88b46955f88d0b31040a2ea4cdf272aa6de1f825c9ff189abf21af22
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Unicode Lab; opens the Proof Text Coverage Dialog profile.
+
 Run **Dialogs > Proof Text Coverage Dialog** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `4f69b4e8ffc2a772ef858aaa6ca6143d4bf0297c147cfeee7bad9b835b4e9795`
+SHA256: `6d6a84f7383ccbad53ec92897301ee48fc3f9f89ab581265cd118852fb47c637`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Proof%20Text%20Coverage%20Dialog.py)

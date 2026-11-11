@@ -10,7 +10,7 @@ Choose reference-font characters and check the current FontLab font's coverage.
 
 Purpose:
     Compose a Unicode proof while seeing covered and missing FontLab characters.
-Setup:
+Original profile setup:
     FontLab 9, Python3.11, Fly and App>=0.2.103.dev0. Open a font
     for coverage. The grid renders an installed Reference Font, not unsaved
     FontLab outlines. Installs nothing and changes no font.
@@ -32,12 +32,16 @@ Compatibility:
     cannot be copied; no replacement characters or silent sequence rewriting.
     Historical source: rescued/part2/ports/widgets/pyqt-official/charactermap-499e965d86347920.py
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Unicode Lab; opens the Glyph Character Map profile.
+
 Run **Widgets > Glyph Character Map** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `af966898d6794f97aa3feb7bc9487a7ac827af0a0d3739668afb5be8167fcc54`
+SHA256: `1956fa533572f1c9cdeb9e52ba782625fbaad28bd2e16c49ab3264755e93170b`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Character%20Map.py)

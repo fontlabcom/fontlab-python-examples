@@ -2,17 +2,17 @@
 # SPDX-License-Identifier: Apache-2.0
 """Cover Font Drop Inspector panel behaviour with offline Qt/Fly doubles."""
 
+
 from __future__ import annotations
 
-import runpy
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-
 from _cov_support import Event, Widget, install_fly, make_qt
+from _wp09_routes import run_profile
 
 SCRIPT = Path(__file__).resolve().parents[1] / "Scripts/Drag And Drop/Font Drop Inspector.py"
 
@@ -69,7 +69,7 @@ FACTS = NS(rows=(NS(name="A", unicodes=(65,)), NS(name="A.alt", unicodes=(65,)),
 
 @pytest.fixture
 def module() -> dict[str, Any]:
-    return runpy.run_path(str(SCRIPT))
+    return run_profile(str(SCRIPT))
 
 
 @pytest.fixture
@@ -335,5 +335,5 @@ def test_script_when_run_as_main_then_main_executes(env: NS) -> None:
     shown: list[str] = []
     env.fly.capture_module.capture = lambda: FACTS
     env.fly.scripting.show_script_dialog = lambda panel, key: shown.append(key)
-    runpy.run_path(str(SCRIPT), run_name="__main__")
+    run_profile(str(SCRIPT), run_name='__main__')
     assert shown == ["drag_drop_dropsite"], "__main__ run reaches main()"

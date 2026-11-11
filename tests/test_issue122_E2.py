@@ -6,16 +6,14 @@ import hashlib
 import importlib
 import json
 import math
-import runpy
 import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile, source_bytes
 from historical_sources import archived_source, recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,7 +32,7 @@ ROWS = (
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts" / "Widgets" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Widgets" / f"{title}.py"))
 
 
 def test_units_arithmetic_and_conversions() -> None:
@@ -535,9 +533,9 @@ def test_real_app_names_exist(monkeypatch: pytest.MonkeyPatch) -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_source_contract_and_no_font_writer(title: str) -> None:
     path = ROOT / "Scripts" / "Widgets" / f"{title}.py"
-    text = path.read_text()
+    text = production_path(path).read_text()
     ast.parse(text, feature_version=(3, 11))
-    assert text.startswith(f"# this_file: Scripts/Widgets/{title}.py")
+    assert text.startswith("# this_file: " + production_relative(path))
     for banned in (
         "notifyChangesApplied",
         "UpdateAll(",
@@ -893,7 +891,7 @@ def integration_rows() -> dict[str, list[dict[str, Any]]]:
             record.update(
                 menu=target,
                 destination_sha256=hashlib.sha256(
-                    (ROOT / target).read_bytes()
+                    source_bytes(ROOT / target)
                 ).hexdigest(),
                 entry_point="main",
                 family="widgets",
@@ -930,9 +928,7 @@ def test_complete_source_dispositions_and_recorded_hashes() -> None:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_menu_entry_point_runs_with_host_shaped_fakes(title: str, host: Any) -> None:
-    runpy.run_path(
-        str(ROOT / "Scripts" / "Widgets" / f"{title}.py"), run_name="__main__"
-    )
+    run_profile(str(ROOT / "Scripts" / "Widgets" / f"{title}.py"), run_name='__main__')
     assert host.panel is not None
     assert host.panel.close()
 
@@ -1039,7 +1035,7 @@ def test_preserved_source_headers_match_index() -> None:
         for row in json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     }
     for title in TITLES:
-        lines = (ROOT / "Scripts" / "Widgets" / f"{title}.py").read_text().splitlines()
+        lines = (production_path(ROOT / "Scripts" / "Widgets" / f"{title}.py")).read_text().splitlines()
         sources = [
             (i, line.removeprefix("# historical source: "))
             for i, line in enumerate(lines)
@@ -1068,7 +1064,7 @@ def test_integration_rows_are_complete_hash_bound_and_disjoint() -> None:
     for row in records["adaptations"]:
         assert (
             row["destination_sha256"]
-            == hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            == hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
         )
         assert row["family"] and row["native_acceptance"] == "pending"
 

@@ -9,16 +9,14 @@ import ast
 import importlib
 import json
 import re
-import runpy
 import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, run_profile
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,7 +32,7 @@ TITLES = (
 
 def load(title: str) -> dict[str, Any]:
     """Read the new menu with its host entry disabled."""
-    return runpy.run_path(str(ROOT / "Scripts" / "Text" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Text" / f"{title}.py"))
 
 
 def test_calendar_leap_year_and_reference_html() -> None:
@@ -551,9 +549,7 @@ def test_menu_main_routes_through_fly(title: str, host: Any, monkeypatch: Any) -
     fly = sys.modules["fly"]
     fly.qt = host.qt
     fly.fl = SimpleNamespace(MainWindow=lambda: None)
-    namespace = runpy.run_path(
-        str(ROOT / "Scripts/Text" / f"{title}.py"), run_name="__main__"
-    )
+    namespace = run_profile(str(ROOT / "Scripts/Text" / f"{title}.py"), run_name='__main__')
     assert len(namespace["_PANELS"]) == 1
     panel = namespace["_PANELS"][0]
     click(panel, "Discard and Close")
@@ -712,13 +708,13 @@ def test_added_feature_keywords_respect_full_glyph_name_boundaries() -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_public_documentation_has_no_internal_provenance(title: str) -> None:
     path = ROOT / "Scripts/Text" / f"{title}.py"
-    tree = ast.parse(path.read_text(), feature_version=(3, 11))
+    tree = ast.parse(production_path(path).read_text(), feature_version=(3, 11))
     doc = ast.get_docstring(tree)
     assert all(
         label in doc for label in ("What:", "How:", "Why:", "Usage:", "Benefit:")
     )
     assert not any(
-        term in path.read_text()
+        term in production_path(path).read_text()
         for term in (
             "issue 122",
             "E9",
@@ -834,7 +830,7 @@ def test_missing_highlighter_has_explicit_status(host: Any) -> None:
 
 
 def test_calendar_has_no_dead_capture_helper_and_keeps_local_date() -> None:
-    source = (ROOT / "Scripts/Text/Calendar Proof Builder.py").read_text()
+    source = (production_path(ROOT / "Scripts/Text/Calendar Proof Builder.py")).read_text()
     assert "def capture_names(" not in source
     assert "datetime.now().astimezone().date()" in source
 
@@ -842,6 +838,6 @@ def test_calendar_has_no_dead_capture_helper_and_keeps_local_date() -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_script_uses_only_the_public_catalog_capture(title: str) -> None:
     """Scripts import the public App capture and no private App module."""
-    text = (ROOT / "Scripts/Text" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts/Text" / f"{title}.py")).read_text()
     assert "_glyph_catalog_native" not in text
     assert "fly.ap._" not in text

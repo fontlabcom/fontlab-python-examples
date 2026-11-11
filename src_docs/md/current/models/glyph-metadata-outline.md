@@ -11,7 +11,7 @@ Inspect all current-font glyph metadata in an expandable read-only hierarchy.
 Purpose: Adapt the complete part2 Simple Tree Model workflow to FontLab.
 Show glyphs in font order. Expand each glyph to inspect all Unicode assignments
 and its local modification date. Missing values remain explicit.
-Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
+Original profile setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.57.dev0.
 Run: Open a font and run this Models command. Expand or collapse rows; select a
 cell to inspect it. Keep fixed columns, noneditable EditRole text, selected row/column status and File > Exit.
 Use Refresh to read the current font again. Reads and rendering share a bounded
@@ -26,12 +26,16 @@ Compatibility: Uses FontLab's supplied PythonQt.
 Historical source: rescued/part2/ports/itemviews/pyqt-official/simpletreemodel-321f8e535facafde.py
 Original source/resources are archived outside this repository; this command does not execute them.
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Tree Models Lab; opens the Glyph Metadata Outline profile.
+
 Run **Models > Glyph Metadata Outline** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `7cd408cf96d52cb99d2e7db792a7b3c8a9b112e9337dcf7630354d656b12c8bd`
+SHA256: `98679521ec9454ae21cb35ff4daf10fa7ce511aab9d67ee168ceb2bfc1c04649`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Metadata%20Outline.py)

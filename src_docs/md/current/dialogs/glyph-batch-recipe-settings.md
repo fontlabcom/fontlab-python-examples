@@ -8,7 +8,7 @@ categories: ["Dialogs"]
 
 Draft a JSON recipe from real glyph names.
 
-Setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
+Original profile setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
 Choose a prefix and a batch size on the settings pages. Preview captures the current font and builds a complete JSON recipe. Paste the JSON into Glyph Proof Batch Wizard to generate proof lines. No preferences are saved.
 Why: Keep batch settings local and export an explicit glyph list.
 Benefit: Reuse the recipe in Glyph Proof Batch Wizard without retyping settings.
@@ -28,12 +28,16 @@ SHA256: a8723ff0df166a67c564237dbf0c11dfe87d4f649b2769c2de409efc1508c33f
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/configdialog-3f5f77c0358d9fef.py
 SHA256: 5ddbb490939e6e767b7603a197b0ec14019611ff4447c04fff97293593cb571d
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Glyph Batch Recipe Settings profile.
+
 Run **Dialogs > Glyph Batch Recipe Settings** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `59a3e88ce42193f4014d7174a5bfcb2ad4a12f86e95c56abe979a4b39763069a`
+SHA256: `7de396bca4734d49b6db74d558dab0fc1f7d32fd157d37025f569caa985751e8`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Glyph%20Batch%20Recipe%20Settings.py)

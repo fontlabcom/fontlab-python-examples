@@ -4,7 +4,7 @@
 
 Purpose:
     Compare left+offset and right-offset sidebearings at unchanged advance.
-Setup:
+Original profile setup:
     FontLab 9, Python3.11, Fly and App>=0.2.95.dev0. Open a font
     and select glyph layers in a Font or Glyph window. Installs nothing.
 Run:
@@ -23,15 +23,19 @@ Compatibility:
     Bounds are geometric, not slanted metrics/keys; refresh failures clear stale
     results.
     Historical source: rescued/part2/ports/widgets/pyqt-official/sliders-36805750b888fba6.py
+
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Metrics Controls Lab; opens the Glyph Spacing Offset profile.
 """
-# historical source sha256: aa662a1158ce7f691d467ef90974895e39ef05ce33098ac7072b7cca5efbad56
 
 
-def main() -> None:
-    """Open the shared App preview through Fly's lazy namespace."""
-    from fly.ap.metrics.offset.model import show
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show()
+    return show("E03", profile='Glyph Spacing Offset')
 
 
 if __name__ == "__main__":

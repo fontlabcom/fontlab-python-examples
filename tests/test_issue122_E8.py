@@ -1,17 +1,17 @@
 # this_file: tests/test_issue122_E8.py
 """E8 independent drag/drop rewrites. Offline doubles; no native acceptance."""
 
+
 from __future__ import annotations
 
 import ast
 import json
-import runpy
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +26,7 @@ TITLES = (
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts/Drag And Drop" / (title + ".py")))
+    return run_profile(str(ROOT / "Scripts/Drag And Drop" / (title + ".py")))
 
 
 @pytest.fixture
@@ -45,9 +45,9 @@ def facts() -> Any:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_new_scripts_import_lazily_and_use_shared_fly(title: str) -> None:
-    code = (ROOT / "Scripts/Drag And Drop" / (title + ".py")).read_text()
+    code = (production_path(ROOT / "Scripts/Drag And Drop" / (title + ".py"))).read_text()
     tree = ast.parse(code, feature_version=(3, 11))
-    assert "this_file: Scripts/Drag And Drop/" + title in code
+    assert "this_file: " + production_relative(ROOT / "Scripts/Drag And Drop" / (title + ".py")) in code
     assert "behaviour-only" in ast.get_docstring(tree)
     assert callable(load(title)["panel_type"])
 
@@ -823,7 +823,7 @@ def test_drag_distance_uses_components_without_point_operators(
 
 @pytest.mark.parametrize("title", TITLES)
 def test_user_docs_and_public_methods_are_documented(title: str) -> None:
-    tree = ast.parse((ROOT / "Scripts/Drag And Drop" / (title + ".py")).read_text())
+    tree = ast.parse((production_path(ROOT / "Scripts/Drag And Drop" / (title + ".py"))).read_text())
     doc = ast.get_docstring(tree)
     assert "Apache-2.0 (own earlier work)" in doc
     assert not any(
@@ -933,16 +933,16 @@ def test_real_app_names_used_by_scripts_are_callable(monkeypatch: Any) -> None:
     monkeypatch.syspath_prepend(str(app_source))
     checked = set()
     for title in TITLES:
-        tree = ast.parse((ROOT / "Scripts/Drag And Drop" / (title + ".py")).read_text())
+        tree = ast.parse((production_path(ROOT / "Scripts/Drag And Drop" / (title + ".py"))).read_text())
         imports = {}
         for node in ast.walk(tree):
             if (
                 not isinstance(node, ast.ImportFrom)
                 or not node.module
-                or not node.module.startswith("fly.ap.")
+                or not node.module.startswith(("fly.ap.", "fontlabapp."))
             ):
                 continue
-            module_name = "fontlabapp." + node.module.removeprefix("fly.ap.")
+            module_name = "fontlabapp." + node.module.removeprefix("fly.ap.").removeprefix("fontlabapp.")
             module = importlib.import_module(module_name)
             assert (
                 Path(module.__file__).resolve().is_relative_to(app_source.resolve())
@@ -999,7 +999,7 @@ def test_real_app_names_used_by_scripts_are_callable(monkeypatch: Any) -> None:
 
 @pytest.mark.parametrize("title", [TITLES[i] for i in (0, 1, 2, 3)])
 def test_non_reordering_panels_have_no_reorder_flag(title: str) -> None:
-    tree = ast.parse((ROOT / "Scripts/Drag And Drop" / (title + ".py")).read_text())
+    tree = ast.parse((production_path(ROOT / "Scripts/Drag And Drop" / (title + ".py"))).read_text())
     assert not any(
         isinstance(node, ast.Name) and node.id == "REORDER" for node in ast.walk(tree)
     )

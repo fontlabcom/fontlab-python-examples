@@ -8,7 +8,7 @@ categories: ["Dialogs"]
 
 Build slash-escaped proof lines from current-font glyph names.
 
-Setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
+Original profile setup: Use FontLab 9 with Python 3.11, Fly and fontlabapp.
 Choose a prefix and a line size, or paste JSON from Glyph Batch Recipe Settings. Use Next to review proof batches. Copy the result into a FontLab text workflow. Back retains your settings. The tool does not open tabs or change selection.
 Why: Validate pasted recipes against a fresh font snapshot.
 Benefit: Turn the settings recipe into reproducible proof lines without font edits.
@@ -28,12 +28,16 @@ SHA256: 9c74350f548bafb26b39fab1126681762dc20b334036595203ec5126893c96ac
 Historical source: rescued/part3/pyqt-official-ports/ports/dialogs/pyqt-official/trivialwizard-c0d4a173b261a3e5.py
 SHA256: 8ad810ecf2897a079286ed7b7ede6a2259c30c0fe7e6b90dc4141af0912103b5
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Glyph Proof Batch Wizard profile.
+
 Run **Dialogs > Glyph Proof Batch Wizard** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `97d8657ebe41a2d7cec5104406d3bc0568ec98a547fa346ebf3ce98672e1d20f`
+SHA256: `c02e783ff960c483c2d6f22279070852d648af1124f23cebbe09cffa7bee8140`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Glyph%20Proof%20Batch%20Wizard.py)

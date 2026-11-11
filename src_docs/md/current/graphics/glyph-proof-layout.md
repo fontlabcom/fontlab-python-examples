@@ -16,7 +16,7 @@ width, then Refresh. Copy Result sends slash names to a Glyph window text bar.
 Benefit: Spot width outliers without changing outlines or font metrics.
 Empty layers have no ink margins; their side bearings show an em dash.
 
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
+Original profile setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; no font writes.
 Independent rewrite of the Qt anchorlayout example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
 No upstream code or assets copied.
@@ -25,12 +25,16 @@ SHA256: 4de40f5bc168015793f3529ef70f2e69dc46be41b38d17afb29f7e34ef8d717f
 Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/anchorlayout-a96a7978c0b9f6ee.py
 SHA256: 60caa0dacfd8b8e41a4c8a5c83e5aced63a298e574433410c25e529452560ad2
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Glyph Proof Layout profile.
+
 Run **Graphics > Glyph Proof Layout** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `9c49139060a6a2c158704e1ed3c8b9c5eaf19ed19206307b45e3cc949d6ba409`
+SHA256: `bb817d85fd38c51883668bae0f97dde416970e8833c1961b96982b6ee596163d`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Proof%20Layout.py)

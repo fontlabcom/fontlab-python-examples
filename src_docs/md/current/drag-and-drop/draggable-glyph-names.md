@@ -17,12 +17,16 @@ This panel sends text; it does not accept incoming drops.
 Requires FontLab 9, Python 3.11 and Fly.
 Independent behaviour-only rewrite. Apache-2.0 (own earlier work).
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Drag Drop Lab; opens the Draggable Glyph Names profile.
+
 Run **Drag And Drop > Draggable Glyph Names** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `366fe2e09e40a33a446e3dfdddc665f8e5d7db7b7538b25bf1ae08da88d92142`
+SHA256: `95cb03a7a394bee9f9cf21a1d79cb7f89a8e242db90f60116c2f781509c49e8b`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Draggable%20Glyph%20Names.py)

@@ -11,7 +11,7 @@ Inspect and filter whole-font glyph metadata with typed Qt dates.
 Purpose: Adapt the complete part3 official custom source/proxy model lesson.
 Show every glyph name, all Unicode assignments and local modification datetimes.
 Both read-only views share one captured model with native QDateTime cells.
-Setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.55.dev0.
+Original profile setup: FontLab9 Python3.11, fontlab-fly and App>=0.2.55.dev0.
 Run: Open a font and run this Models command. Use regular expressions, wildcards
 or fixed strings, and click result headers to sort.
 Match either name or Unicode with Qt QRegExp, then optionally limit inclusive calendar days. Text sorting stays case-sensitive; email-shaped values use the original extracted-token comparator.
@@ -28,12 +28,17 @@ The two part2 workflows retain their separate Python matching/string-date rules.
 Demo-specific text and2006/2007date defaults become a complete font snapshot with
 empty initial pattern and optional observed date limits. Shared policy lives in App.
 
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Model Filtering Lab; opens the Glyph Filter Model with Date Range profile.
+
 Run **Models > Glyph Filter Model with Date Range** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `bc533f2b26ff496f393891238e920cb2ee2d4ffc2aa8c65f43b3459c70cec05b`
+SHA256: `47eba445887f407fdff60be3567b23324316a5a7888d79e6d60f912dc1530073`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Filter%20Model%20with%20Date%20Range.py)

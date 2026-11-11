@@ -2,6 +2,31 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Issue 250 WP09: nine core PythonQt lab routes
+
+- Added nine lazy Labs entrypoints and replaced 48 old menu bodies/routes with
+  small compatibility launchers selecting their exact named profile. Retained
+  the three original Models/Forms Lessons entrypoints byte-for-byte. The
+  transitional active count is 109; final menu removal remains WP11 work.
+- Kept all 100 source commit/hash identities and original adaptation/rescue
+  records unchanged. Recorded 51 implemented lab destinations and 48 current
+  compatibility hashes separately; behavior parity and native acceptance remain
+  false. Source data recovery uses the existing reviewed Scriptmix resolver.
+- Focused arm64 Python 3.11 launcher and ledger checks: **63 passed, zero failed**.
+  All 57 changed/new launcher modules have **100% line and branch coverage**;
+  pinned Ruff 0.14.10 passes these launchers and the two focused test modules.
+- Prepared full suite equivalents pass **2,470 tests with 99 existing skips**
+  (core: 1,972 passed/92 skipped; separate R process: 498 passed/7 skipped).
+  Existing behavior oracles exercise the migrated live App implementations;
+  immutable byte checks use the reviewed historical resolver. Canonical-wrapper
+  and native acceptance remain separate.
+- Restored generated source pages to their committed historical bytes after
+  catalogue tests; no dirty/new launcher is assigned a fabricated immutable
+  source link. WP11 must regenerate current pages after reviewed commits.
+- Updated the transitional menu counts and runtime prerequisites. E01/E03
+  explicitly require fontlab-python-lessons; all new routes require the matching
+  App WP09 candidate, not merely the original profiles’ older App minimums.
+
 ## 2026-11-11 — Issue 250 WPF: WP01 integration on current main
 
 - Resolved the CHANGELOG conflict without dropping current-main or WP01 entries;

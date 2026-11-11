@@ -16,9 +16,8 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 import pytest
-
+from _wp09_routes import source_bytes
 from historical_sources import recorded_sha256
-
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,7 +138,7 @@ def test_export_is_exact_and_never_overwrites(script: Any, tmp_path: Path) -> No
     path = tmp_path / "star.svg"
     text = script.polygon_svg(1000, 5, 0.45, 0.2, 90)
     script.save_svg(str(path), text)
-    assert path.read_bytes() == text.encode("utf-8")
+    assert source_bytes(path) == text.encode("utf-8")
     with pytest.raises(FileExistsError):
         script.save_svg(str(path), "replacement")
     assert path.read_text() == text
@@ -837,7 +836,7 @@ def fragment_records() -> tuple[list[dict], list[dict]]:
             menu=destination,
             family=f"designer-{family}-{'part2' if '/part2/' in source else 'part3'}",
             destination_sha256=hashlib.sha256(
-                (ROOT / destination).read_bytes()
+                source_bytes(ROOT / destination)
             ).hexdigest(),
             entry_point="glyph-metrics-form" if "/Forms/" in destination else "main",
             license="Apache-2.0 (independent rewrite; source Apache-2.0)",
@@ -941,7 +940,7 @@ def test_fragment_complete_schema_current_hashes_and_controller_dispositions() -
         assert row["license"] == "Apache-2.0 (independent rewrite; source Apache-2.0)"
         assert (
             row["destination_sha256"]
-            == hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            == hashlib.sha256(source_bytes(ROOT / row["menu"])).hexdigest()
         )
     counter = [r for r in retirements if "counterlabel" in r["source"]]
     assert len(counter) == 2 and all(

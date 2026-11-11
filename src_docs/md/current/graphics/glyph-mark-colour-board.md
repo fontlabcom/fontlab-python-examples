@@ -17,7 +17,7 @@ Benefit: Flag individual glyphs directly without changing the font selection.
 The table and selection swatches edit the same property; this board adds
 prefix-scoped, drag-and-drop editing.
 Glyphs with auto layers are refused. A partial write reports Edit > Undo.
-Setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits
+Original profile setup: FontLab 9, Python 3.11, Fly and fontlabapp. Modeless; each drop edits
 one glyph.
 Independent rewrite of the Qt dragdroprobot example idea (Qt/Nokia, Riverbank).
 Based on the author's own FontLab sample, Apache-2.0.
@@ -27,12 +27,16 @@ SHA256: f1faf59693b2054c207de5811e7d721260755e6a5675f199f3472e3d520204d2
 Historical source: rescued/part3/pyqt-official-ports/ports/graphicsview/pyqt-official/dragdroprobot-2cd6ffc2b2ed65bb.py
 SHA256: c021aba5ca45ca9cf3b0fde77ceb654ff5077191380d83cef5d84c1aec9c8313
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Review Model Lab; opens the Glyph Mark Colour Board profile.
+
 Run **Graphics > Glyph Mark Colour Board** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `6d04716a04c246a9b1a7a01a79133ef2845685d53b535e62ca46f146e8319bae`
+SHA256: `b7abfa18753369bc31f7ef6df20690656a7462c723cc72fb57fde92f06fe51c4`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Mark%20Colour%20Board.py)

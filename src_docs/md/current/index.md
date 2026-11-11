@@ -64,6 +64,18 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Glyph Review Cards](graphics/glyph-review-cards.md)
 - [Glyph Variant Feature Graph](graphics/glyph-variant-feature-graph.md)
 
+## Labs
+
+- [Calendar Lab](labs/calendar-lab.md)
+- [Completion Lab](labs/completion-lab.md)
+- [Drag Drop Lab](labs/drag-drop-lab.md)
+- [Metrics Controls Lab](labs/metrics-controls-lab.md)
+- [Model Filtering Lab](labs/model-filtering-lab.md)
+- [Proof Composition Lab](labs/proof-composition-lab.md)
+- [Review Model Lab](labs/review-model-lab.md)
+- [Tree Models Lab](labs/tree-models-lab.md)
+- [Unicode Lab](labs/unicode-lab.md)
+
 ## Models
 
 - [Glyph Coverage Grid](models/glyph-coverage-grid.md)

@@ -33,12 +33,16 @@ SHA256: fae480ee8369b1fd438007ad15563eacaa22313496ffff7bebd93cb574840ae9
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/combowidgetmapper-cc95f9719b8e4eda.py
 SHA256: 741f446ef14303840be12852cc2b9383eb5ccd716c894ebff21dfc95aa6d44d9
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Review Model Lab; opens the Glyph Review Form profile.
+
 Run **Models > Glyph Review Form** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `1d4057256856d161529627b3f3f0ee45fb567acb6d6667741a8c8aff7d1952e5`
+SHA256: `d5c3075ab9f013eae6d81fa086eecf3540143efc4cff1f7cbb759c9f51a8c7f2`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Review%20Form.py)

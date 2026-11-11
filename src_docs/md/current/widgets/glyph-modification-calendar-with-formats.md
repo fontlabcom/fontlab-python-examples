@@ -11,7 +11,7 @@ Inspect current-font modification dates with the complete part3 calendar.
 Purpose: Adapt the distinct full part3 Calendar Widget workflow to FontLab.
 Retain every Qt locale in native order, all seven week starts, both selection
 modes, grid/navigation, all headings, date limits and four weekday/weekend colours.
-Setup: FontLab 9, Python 3.11, fontlab-fly and App>=0.2.61.dev0.
+Original profile setup: FontLab 9, Python 3.11, fontlab-fly and App>=0.2.61.dev0.
 Run: Open a font and run this Widgets command. Choose a date to inspect complete
 captured glyph names, Unicode assignments and local modification times in order.
 Set Bold/Italic/Plain headers. Toggle first Friday in blue and May 1 in red
@@ -26,12 +26,16 @@ Compatibility: Uses FontLab's supplied PythonQt. The separate part2 calendar kee
 Historical source: rescued/part3/pyqt-official-ports/ports/widgets/pyqt-official/calendarwidget-b91effc45f81fbb0.py
 Original source/resources are archived outside this repository; this command does not execute them.
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Calendar Lab; opens the Glyph Modification Calendar with Formats profile.
+
 Run **Widgets > Glyph Modification Calendar with Formats** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `974455f9e60d487ae64f28fe409ca304fd8b009999fe9c310a103c6fa7c1dc0f`
+SHA256: `2405f96d1f6fc43f6c5afb79c9712d4de7197e473fab6543dba27fd044eea739`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Modification%20Calendar%20with%20Formats.py)

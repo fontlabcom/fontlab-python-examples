@@ -23,9 +23,13 @@ No font or selection changes occur. Unicode coverage is not shaping coverage.
 NUL and input-method transfer have known loss (fl#8567, fl#8568). This example
 also conservatively refuses NBSP, U+2028/U+2029 and lone surrogates; it requires
 exact proof text. This is a transfer policy, not a Unicode coverage limitation.
-Setup: FontLab 9, Python 3.11, Fly, App glyph_catalog and draft_signals.
+Original profile setup: FontLab 9, Python 3.11, Fly, App glyph_catalog and draft_signals.
 Independent rewrite of sandbox-settings.
 Based on the author's own FontLab sample, Apache-2.0. No original source body is redistributed.
+
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Proof Composition Lab; opens the Saved Proof Sample profile.
 
 Run **Tools > Saved Proof Sample** from FontLab's Scripts menu.
 
@@ -33,6 +37,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `31cfd1c0f067b1ab2e912aa3832921c3bc93e51232d027d37723b9f4ca98407e`
+SHA256: `d167c7338d0a9ae8a7f2bf989add63d609d4d32e650e06ab18c013223aab7ad1`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Saved%20Proof%20Sample.py)

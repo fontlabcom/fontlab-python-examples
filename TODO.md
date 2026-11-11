@@ -4,12 +4,13 @@ this_file: TODO.md
 
 # Open tasks
 
-- [ ] Orchestrator: run the canonical G-Examples wrapper after integration in an authorized controller environment; WPF prepared equivalent passed 2,412 tests with 99 existing archive opt-in skips; exact provisioning remains blocked by PyPI DNS.
+- [ ] Orchestrator: run canonical G-Examples after integration; this local WP09 lane exits 3 for no milestone baseline/upstream merge-base. Prepared full suites pass 2,470 tests with 99 existing skips.
 
-- [ ] Review the proposed 100-source/25-lab consolidation routes against the final integrated Scriptmix/App cohort before implementing WP09/WP10.
-- [ ] Preserve all original adaptation identities, hashes and tests when recording implemented lab destinations; review each new full-hash pair independently.
+- [ ] Reconcile WP10 and review the 100-source/25-lab map against the integrated App/Scriptmix cohort; WP09 has nine implemented destinations and 48 retained compatibility launchers.
+- [ ] Independently review each WP09 source/destination/runtime profile and current compatibility-launcher hash; retain behavior-parity false until full route review passes.
 - [ ] Reconcile the sixteen packaged Lessons entrypoints and installed stale-menu cleanup in WP11 before retiring any source launcher.
-- [ ] Native: qualify each implemented lab/tab in FontLab PythonQt under WP12; proposed ledger entries establish no behavior parity or native acceptance.
+- [ ] WP11: after the orchestrator commits the reviewed WP09 sources, regenerate catalogue pages only with containing commits whose blobs equal the current launcher bytes; retain historical route pages and redirects separately.
+- [ ] Native: qualify all nine WP09 labs and 51 profiles in FontLab PythonQt under WP12, including property getters, sorting/filtering identity, Unicode/IME, deferred MIME, model notifications, read-only/editable differences and dock-refused-Close recovery.
 
 - [ ] Keep all lesson, original-source and destination-hash contracts while updating examples for reviewed App/provider migrations.
 - [ ] Qualify the installed cohort, actual owned native workflows, whole-font/history, window priority and save/reopen; keep site and runtime acceptance separate.

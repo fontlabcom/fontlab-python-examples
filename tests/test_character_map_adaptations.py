@@ -3,14 +3,10 @@
 
 import hashlib
 import json
-import runpy
-import sys
 from pathlib import Path
-from types import ModuleType
 
 import pytest
-
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,16 +39,8 @@ def test_complete_family_identity_and_lazy_fly_menu(monkeypatch, part, sha, entr
     assert f"part{part}" in row["source"] and "charactermap-" in row["source"]
     path = ROOT / row["menu"]
     assert len(Path(row["menu"]).parts) == 3
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == row["destination_sha256"]
-    calls = []
-    for name in ("fly", "fly.ap", "fly.ap.glyphs.character_map.model"):
-        install_module(monkeypatch, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.glyphs.character_map.model"], entry, lambda: calls.append(entry))
-    body = runpy.run_path(str(path), run_name="inspection")
-    assert not calls
-    body["main"]()
-    runpy.run_path(str(path), run_name="__main__")
-    assert calls == [entry, entry]
+    assert hashlib.sha256(source_bytes(path)).hexdigest() == row["destination_sha256"]
+    assert_compat_route(monkeypatch, path, entry, 'fly.ap.glyphs.character_map.model')
     assert sha in (ROOT / "NOTICE").read_text()
     assert "this_file: " + row["menu"] in path.read_text()
 
@@ -62,7 +50,7 @@ def test_all_prior_runtime_and_provenance_rows_remain_exact():
         (ROOT / "tests/character-map-prior-baseline.json").read_text()
     )
     for path, digest in baseline["prior_runtime"].items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == digest, path
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     assert rows[:21] == baseline["prior_adaptations"]
     assert len(rows) == 231

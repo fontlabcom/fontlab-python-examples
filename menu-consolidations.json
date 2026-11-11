@@ -94,20 +94,25 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Expandable Glyph Search"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Dialogs/Expandable Glyph Search.py",
+        "sha256": "e6ef77af86258531ce5126829d14defdab66a1fe424d5486fe69ded8b2458a1d"
       }
     },
     {
@@ -173,20 +178,25 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Recipes",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Batch Recipe Settings"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Dialogs/Glyph Batch Recipe Settings.py",
+        "sha256": "7de396bca4734d49b6db74d558dab0fc1f7d32fd157d37025f569caa985751e8"
       }
     },
     {
@@ -199,20 +209,25 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Recipes",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Proof Batch Wizard"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Dialogs/Glyph Proof Batch Wizard.py",
+        "sha256": "c02e783ff960c483c2d6f22279070852d648af1124f23cebbe09cffa7bee8140"
       }
     },
     {
@@ -225,20 +240,25 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Coverage",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Proof Text Coverage Dialog"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Dialogs/Proof Text Coverage Dialog.py",
+        "sha256": "6d6a84f7383ccbad53ec92897301ee48fc3f9f89ab581265cd118852fb47c637"
       }
     },
     {
@@ -251,20 +271,25 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Deferred MIME",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Deferred Glyph Report Drag"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Deferred Glyph Report Drag.py",
+        "sha256": "02f30ccf16180b2ee87911f40dcc22061609c45508d67a39230eaf402544c2bc"
       }
     },
     {
@@ -277,20 +302,25 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Glyph names",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Draggable Glyph Names"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Draggable Glyph Names.py",
+        "sha256": "95cb03a7a394bee9f9cf21a1d79cb7f89a8e242db90f60116c2f781509c49e8b"
       }
     },
     {
@@ -303,7 +333,7 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Glyph names",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Font Drop Inspector"
       },
       "retirement_reason": null,
@@ -311,13 +341,18 @@
         "tests/test_cov_font_drop_inspector.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Font Drop Inspector.py",
+        "sha256": "df156bd6c302365e1dd8d6c377beaa7165b65e60d50db2edce81999bfa9d83ef"
       }
     },
     {
@@ -330,20 +365,25 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Files",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Font File Drop Shelf"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Font File Drop Shelf.py",
+        "sha256": "909a5643b8c1536ddeb4463051c11a426a4ea68ac8d48c078fc14289aff82370"
       }
     },
     {
@@ -356,7 +396,7 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Proof words and pairs",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Glyph Pair Board"
       },
       "retirement_reason": null,
@@ -364,13 +404,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Glyph Pair Board.py",
+        "sha256": "9b28a38edd5d9c7b51b2874904e9fe66dc2f2a910df45bc64baa64142d4487f9"
       }
     },
     {
@@ -383,20 +428,25 @@
       "destination": {
         "path": "Scripts/Labs/Drag Drop Lab.py",
         "tab": "Proof words and pairs",
-        "sha256": null,
+        "sha256": "2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e",
         "action": "Proof Word Magnets"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Drag And Drop/Proof Word Magnets.py",
+        "sha256": "e0a6e756d094c0f90a5a154d4656efc8a987f0f47e31104d2d1a1f9b163e7104"
       }
     },
     {
@@ -519,7 +569,7 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Models and forms",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Metrics Form"
       },
       "retirement_reason": null,
@@ -527,10 +577,11 @@
         "tests/test_issue122_E15.py",
         "tests/test_curated_menus.py",
         "tests/test_issue122_E7.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -871,20 +922,25 @@
       "destination": {
         "path": "Scripts/Labs/Review Model Lab.py",
         "tab": "Mark colours",
-        "sha256": null,
+        "sha256": "11dc73fec7024376cbe5034100ce08ac3a968c3f22bce39bc62af240ed00da6f",
         "action": "Glyph Mark Colour Board"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Graphics/Glyph Mark Colour Board.py",
+        "sha256": "b7abfa18753369bc31f7ef6df20690656a7462c723cc72fb57fde92f06fe51c4"
       }
     },
     {
@@ -897,20 +953,25 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Layouts",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Proof Layout"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Graphics/Glyph Proof Layout.py",
+        "sha256": "bb817d85fd38c51883668bae0f97dde416970e8833c1961b96982b6ee596163d"
       }
     },
     {
@@ -923,7 +984,7 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Layouts",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Proof Pad"
       },
       "retirement_reason": null,
@@ -931,13 +992,18 @@
         "tests/test_issue122_E4.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Graphics/Glyph Proof Pad.py",
+        "sha256": "837b7908fba1029d25f5ca0aac91ab07c9ba1ecdf8b53678fc31776801781900"
       }
     },
     {
@@ -950,20 +1016,25 @@
       "destination": {
         "path": "Scripts/Labs/Review Model Lab.py",
         "tab": "Cards",
-        "sha256": null,
+        "sha256": "11dc73fec7024376cbe5034100ce08ac3a968c3f22bce39bc62af240ed00da6f",
         "action": "Glyph Review Cards"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Graphics/Glyph Review Cards.py",
+        "sha256": "45e6656303acdc1e304b1184c23642f3f3926d166323eb93d036c1202e54a517"
       }
     },
     {
@@ -1002,7 +1073,7 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Coverage",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Glyph Coverage Grid"
       },
       "retirement_reason": null,
@@ -1010,13 +1081,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Coverage Grid.py",
+        "sha256": "c92c7ffb70b6cd2b49c0cad880271bdf0cca8967455c767698526ee24e04e606"
       }
     },
     {
@@ -1029,7 +1105,7 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Encoding",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Glyph Encoding Chart"
       },
       "retirement_reason": null,
@@ -1037,13 +1113,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Encoding Chart.py",
+        "sha256": "dd6a07657459d6337abbf9b36c3046112f34967106e9b27b69b0399bf6d6435a"
       }
     },
     {
@@ -1056,19 +1137,24 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Date filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Filter Model with Date Range"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Filter Model with Date Range.py",
+        "sha256": "47eba445887f407fdff60be3567b23324316a5a7888d79e6d60f912dc1530073"
       }
     },
     {
@@ -1081,19 +1167,24 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Date filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Filter Model with Local Dates"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Filter Model with Local Dates.py",
+        "sha256": "0999fad4aa3303a929ff55084b69a831877905e347661a272f0c48117347bbbb"
       }
     },
     {
@@ -1133,7 +1224,7 @@
       "destination": {
         "path": "Scripts/Labs/Review Model Lab.py",
         "tab": "Mark colours",
-        "sha256": null,
+        "sha256": "11dc73fec7024376cbe5034100ce08ac3a968c3f22bce39bc62af240ed00da6f",
         "action": "Glyph Mark Colours"
       },
       "retirement_reason": null,
@@ -1141,13 +1232,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Mark Colours.py",
+        "sha256": "c39b0882c87f0dd2cadaf1ef5d43f1514ca2f82ddaa4d0fae23ed45535506584"
       }
     },
     {
@@ -1160,19 +1256,24 @@
       "destination": {
         "path": "Scripts/Labs/Tree Models Lab.py",
         "tab": "Read-only trees",
-        "sha256": null,
+        "sha256": "413cc4c8edd4f5598ed5491262f135bb3cfca537d1a725b3c3713147d2192c86",
         "action": "Glyph Metadata Outline"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Metadata Outline.py",
+        "sha256": "98679521ec9454ae21cb35ff4daf10fa7ce511aab9d67ee168ceb2bfc1c04649"
       }
     },
     {
@@ -1185,19 +1286,24 @@
       "destination": {
         "path": "Scripts/Labs/Tree Models Lab.py",
         "tab": "Read-only trees",
-        "sha256": null,
+        "sha256": "413cc4c8edd4f5598ed5491262f135bb3cfca537d1a725b3c3713147d2192c86",
         "action": "Glyph Metadata Tree"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Metadata Tree.py",
+        "sha256": "7bd330e7d89df5e4d3f2e6a56e299da7e13580c166d3e238cab4cf1fb25aff9a"
       }
     },
     {
@@ -1210,17 +1316,18 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Models and forms",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Metrics Model"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_issue122_E15.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -1236,17 +1343,18 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Name Filter"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_issue122_E15.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -1262,7 +1370,7 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Layouts",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Proof Worksheet"
       },
       "retirement_reason": null,
@@ -1270,13 +1378,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Proof Worksheet.py",
+        "sha256": "ce4a12a1224b87d48fe510d1d09b968bb5a6705c983ddd5935c37fb8d8f37ce6"
       }
     },
     {
@@ -1289,7 +1402,7 @@
       "destination": {
         "path": "Scripts/Labs/Review Model Lab.py",
         "tab": "Review forms",
-        "sha256": null,
+        "sha256": "11dc73fec7024376cbe5034100ce08ac3a968c3f22bce39bc62af240ed00da6f",
         "action": "Glyph Review Form"
       },
       "retirement_reason": null,
@@ -1298,13 +1411,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Review Form.py",
+        "sha256": "d5c3075ab9f013eae6d81fa086eecf3540143efc4cff1f7cbb759c9f51a8c7f2"
       }
     },
     {
@@ -1317,7 +1435,7 @@
       "destination": {
         "path": "Scripts/Labs/Review Model Lab.py",
         "tab": "Priorities",
-        "sha256": null,
+        "sha256": "11dc73fec7024376cbe5034100ce08ac3a968c3f22bce39bc62af240ed00da6f",
         "action": "Glyph Review Priorities"
       },
       "retirement_reason": null,
@@ -1325,13 +1443,18 @@
         "tests/test_issue122_E1.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Review Priorities.py",
+        "sha256": "d676b76cd1ea21dc79cffed8d3bf57d5495c95d000f3a8030ce8468263014a89"
       }
     },
     {
@@ -1344,19 +1467,24 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Date filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Sorting and Filtering with Dates"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Sorting and Filtering with Dates.py",
+        "sha256": "ef24bb580bd82584b91d5ac3640d09c54d4b69b4d9f887ba6c07a91bfe0c5a93"
       }
     },
     {
@@ -1369,20 +1497,25 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Filters",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Sorting and Filtering"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_issue122_E1.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Models/Glyph Sorting and Filtering.py",
+        "sha256": "82fe0a046be08762f07dbabdd001147d1bf8d0441fbf8785ccc76ae56063110c"
       }
     },
     {
@@ -1395,7 +1528,7 @@
       "destination": {
         "path": "Scripts/Labs/Calendar Lab.py",
         "tab": "Proof generation",
-        "sha256": null,
+        "sha256": "998bfc453e1ce443c6551df38acc1f54ebea837bfa4a2e199c187881f2121fea",
         "action": "Calendar Proof Builder"
       },
       "retirement_reason": null,
@@ -1403,13 +1536,18 @@
         "tests/test_spacing_menu_integration.py",
         "tests/test_issue122_E9.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Text/Calendar Proof Builder.py",
+        "sha256": "13bdb19e3f0a47d339d70a76af2deed2b07f9ae9bb5a536fe98a5ba5b2bc2cfc"
       }
     },
     {
@@ -1526,7 +1664,7 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Unicode writes",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Apply Unicode Map"
       },
       "retirement_reason": null,
@@ -1534,13 +1672,18 @@
         "tests/test_issue122_R3.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Apply Unicode Map.py",
+        "sha256": "9feca2343c2874fdecaf994e1c6bd363b45fcc35e1ff76b4b1654bd3815d49ef"
       }
     },
     {
@@ -1632,19 +1775,24 @@
       "destination": {
         "path": "Scripts/Labs/Tree Models Lab.py",
         "tab": "Editable trees",
-        "sha256": null,
+        "sha256": "413cc4c8edd4f5598ed5491262f135bb3cfca537d1a725b3c3713147d2192c86",
         "action": "Editable Glyph Outline"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Editable Glyph Outline.py",
+        "sha256": "68295963a822a7626555e43b1e43a5ef558ad03695bb8ae698c93761c7702389"
       }
     },
     {
@@ -1657,19 +1805,24 @@
       "destination": {
         "path": "Scripts/Labs/Tree Models Lab.py",
         "tab": "Editable trees",
-        "sha256": null,
+        "sha256": "413cc4c8edd4f5598ed5491262f135bb3cfca537d1a725b3c3713147d2192c86",
         "action": "Editable Glyph Tree"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Editable Glyph Tree.py",
+        "sha256": "511739edde383a04fba10ac0db42653229961ccab8abda40ca0b47be15ab5be9"
       }
     },
     {
@@ -1867,20 +2020,25 @@
       "destination": {
         "path": "Scripts/Labs/Completion Lab.py",
         "tab": "Focus behavior",
-        "sha256": null,
+        "sha256": "b46da404619281548ed78aa00ea4766e600470fc67da37d5ed5a7d1844c39f83",
         "action": "Glyph Name Completion with Focus"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_issue122_E15.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Glyph Name Completion with Focus.py",
+        "sha256": "6d8b67013b27f1a121189ab3ce9259762cfc2bee06d73670d4ed529591063506"
       }
     },
     {
@@ -1893,19 +2051,24 @@
       "destination": {
         "path": "Scripts/Labs/Completion Lab.py",
         "tab": "Basic completion",
-        "sha256": null,
+        "sha256": "b46da404619281548ed78aa00ea4766e600470fc67da37d5ed5a7d1844c39f83",
         "action": "Glyph Name Completion"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Glyph Name Completion.py",
+        "sha256": "7ee035dde9f95a937a574fa5bb101ed4312509e82f0b6cb2fb29e5b0ca1ae6b2"
       }
     },
     {
@@ -1918,7 +2081,7 @@
       "destination": {
         "path": "Scripts/Labs/Model Filtering Lab.py",
         "tab": "Pattern matching",
-        "sha256": null,
+        "sha256": "9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f",
         "action": "Glyph Name Pattern Lab"
       },
       "retirement_reason": null,
@@ -1926,13 +2089,18 @@
         "tests/test_issue122_E10.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Glyph Name Pattern Lab.py",
+        "sha256": "3ec4acf173cd70589abd088130392d22317acfe73e4290c9cc20399070ee395f"
       }
     },
     {
@@ -1972,20 +2140,25 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Spacing worksheets",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Spacing Worksheet - Frameless"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Glyph Spacing Worksheet - Frameless.py",
+        "sha256": "fc8f343b66aa376af2242fd87336bf5228d05bbd4096bc9800d1cd4a5099bf49"
       }
     },
     {
@@ -1998,20 +2171,25 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Spacing worksheets",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Spacing Worksheet"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Glyph Spacing Worksheet.py",
+        "sha256": "7390079fc7caa5763e7633c7cdb470dc52aa7d6a2ef2809aeaf883456d40abd9"
       }
     },
     {
@@ -2133,7 +2311,7 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Samples and pairs",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Pair Proof Generator"
       },
       "retirement_reason": null,
@@ -2142,13 +2320,18 @@
         "tests/test_spacing_menu_integration.py",
         "tests/test_issue122_R1b.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Pair Proof Generator.py",
+        "sha256": "349766c5405c069861c5cc3aba94df8de5ddbda11f9e4712be4781d5d9d454c5"
       }
     },
     {
@@ -2188,20 +2371,25 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Samples and pairs",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Saved Proof Sample"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Tools/Saved Proof Sample.py",
+        "sha256": "d167c7338d0a9ae8a7f2bf989add63d609d4d32e650e06ab18c013223aab7ad1"
       }
     },
     {
@@ -2242,7 +2430,7 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Numeric controls",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Font Units Calculator"
       },
       "retirement_reason": null,
@@ -2250,13 +2438,18 @@
         "tests/test_issue122_E7.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Font Units Calculator.py",
+        "sha256": "3d0c7a743500581ad54a5023415c44426134e7e3a00c5a582af2f069cfb98034"
       }
     },
     {
@@ -2269,20 +2462,25 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Character maps",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Glyph Character Map - Styles"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Character Map - Styles.py",
+        "sha256": "7411559a003c95b50817b3f3f90e931c80b602eb4ae6358a78fda0658593402c"
       }
     },
     {
@@ -2295,20 +2493,25 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Character maps",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Glyph Character Map"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Character Map.py",
+        "sha256": "1956fa533572f1c9cdeb9e52ba782625fbaad28bd2e16c49ab3264755e93170b"
       }
     },
     {
@@ -2321,20 +2524,25 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Numeric controls",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Metrics and Revisions - Detailed"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py",
+        "sha256": "6ec822aad847d811406d9330d29286452b1e224d40edb28074a5164669bb1277"
       }
     },
     {
@@ -2347,20 +2555,25 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Numeric controls",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Metrics and Revisions"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Metrics and Revisions.py",
+        "sha256": "2ef5da3dbec3a28265181a480a8563cd98c3267eaf3cf13ca100d78d7c6f3b1b"
       }
     },
     {
@@ -2373,7 +2586,7 @@
       "destination": {
         "path": "Scripts/Labs/Calendar Lab.py",
         "tab": "Date formatting",
-        "sha256": null,
+        "sha256": "998bfc453e1ce443c6551df38acc1f54ebea837bfa4a2e199c187881f2121fea",
         "action": "Glyph Modification Calendar with Formats"
       },
       "retirement_reason": null,
@@ -2381,13 +2594,18 @@
         "tests/test_calendar_official_adaptation.py",
         "tests/test_issue122_E7.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Modification Calendar with Formats.py",
+        "sha256": "2405f96d1f6fc43f6c5afb79c9712d4de7197e473fab6543dba27fd044eea739"
       }
     },
     {
@@ -2400,20 +2618,25 @@
       "destination": {
         "path": "Scripts/Labs/Calendar Lab.py",
         "tab": "Calendar widgets",
-        "sha256": null,
+        "sha256": "998bfc453e1ce443c6551df38acc1f54ebea837bfa4a2e199c187881f2121fea",
         "action": "Glyph Modification Calendar"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_calendar_adaptation.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Modification Calendar.py",
+        "sha256": "e5d3a38564025cc2d17263d14df83ec76f2fd4afbdddeb8de0cba31b8c324212"
       }
     },
     {
@@ -2426,20 +2649,25 @@
       "destination": {
         "path": "Scripts/Labs/Proof Composition Lab.py",
         "tab": "Groups",
-        "sha256": null,
+        "sha256": "63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b",
         "action": "Glyph Proof Groups"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Proof Groups.py",
+        "sha256": "ae2ed60f136b5f3411d894b27a7ac8a7c9b94786b5467c3318b8b4d619332dfc"
       }
     },
     {
@@ -2478,20 +2706,25 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Numeric controls",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Spacing Offset - Stacked"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Spacing Offset - Stacked.py",
+        "sha256": "e4a7a7c5319d530ab383da755453a7483c91ad250b6494d5e4fb7f828a010a48"
       }
     },
     {
@@ -2504,7 +2737,7 @@
       "destination": {
         "path": "Scripts/Labs/Metrics Controls Lab.py",
         "tab": "Numeric controls",
-        "sha256": null,
+        "sha256": "cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe",
         "action": "Glyph Spacing Offset"
       },
       "retirement_reason": null,
@@ -2512,13 +2745,18 @@
         "tests/test_issue122_E15.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Widgets/Glyph Spacing Offset.py",
+        "sha256": "3dbf80198e3a89a61080c83b8867bce0c6523a0aaf01bbd4cf2b0ac54e04294a"
       }
     },
     {
@@ -2610,7 +2848,7 @@
       "destination": {
         "path": "Scripts/Labs/Unicode Lab.py",
         "tab": "Dock lifecycle",
-        "sha256": null,
+        "sha256": "a110219e966bd9eaf449ccdb89f1175f6cdb0847714b76dfbb9ac64703579ffd",
         "action": "Unicode Issues Dock"
       },
       "retirement_reason": null,
@@ -2619,13 +2857,18 @@
         "tests/test_menu_warning_priority.py",
         "tests/test_spacing_menu_integration.py",
         "tests/test_curated_menus.py",
-        "tests/test_menu_consolidations.py"
+        "tests/test_menu_consolidations.py",
+        "tests/test_wp09_labs.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
+      },
+      "compatibility_launcher": {
+        "path": "Scripts/Windows/Unicode Issues Dock.py",
+        "sha256": "b6ad38c482f55db7fdf546097f75b3eef63f8889bfc1bfba08e6fd5d8cb32ba9"
       }
     }
   ]

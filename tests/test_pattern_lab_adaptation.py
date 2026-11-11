@@ -1,10 +1,11 @@
 # this_file: tests/test_pattern_lab_adaptation.py
 """Hash-bound full authoring workflow and lazy public Fly facade."""
-import hashlib,json,runpy,sys
+import hashlib
+import json
 from pathlib import Path
-from types import ModuleType
 
-from module_doubles import install_module
+from _wp09_routes import assert_compat_route, source_bytes
+
 ROOT=Path(__file__).resolve().parents[1]
 
 def test_pattern_authoring_preserves_exact_source_identity_and_public_entry(monkeypatch):
@@ -12,10 +13,7 @@ def test_pattern_authoring_preserves_exact_source_identity_and_public_entry(monk
     assert row['source']=='rescued/part2/ports/tools/pyqt-official/regexp-626fd0acec74fd91.py'
     assert row['source_sha256']=='c45e9688f256a61cbe36eb3fd91e73750dec4f08175acda54a667db37bc8823e'
     assert row['assets']==[] and row['native_acceptance']=='pending' and row['original_workflow_accepted'] is False
-    path=ROOT/row['menu'];assert hashlib.sha256(path.read_bytes()).hexdigest()==row['destination_sha256']
-    calls=[]
-    for name in ('fly','fly.ap','fly.ap.glyphs.pattern'):install_module(monkeypatch, name, ModuleType(name))
-    sys.modules['fly.ap.glyphs.pattern'].show=lambda:calls.append('show')
-    entry=runpy.run_path(str(path),run_name='inspection');assert not calls
-    entry['main']();runpy.run_path(str(path),run_name='__main__');assert calls==['show','show']
+    path=ROOT/row['menu']
+    assert hashlib.sha256(source_bytes(path)).hexdigest()==row['destination_sha256']
+    assert_compat_route(monkeypatch, path, 'show', 'fly.ap.glyphs.pattern')
     assert row['source_sha256'] in (ROOT/'NOTICE').read_text()

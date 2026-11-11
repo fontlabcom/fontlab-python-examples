@@ -4,14 +4,12 @@
 import ast
 import importlib
 import json
-import runpy
-import sys
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-
+from _wp09_routes import production_path, run_profile
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +24,7 @@ TITLES = (
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts" / "Dialogs" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts" / "Dialogs" / f"{title}.py"))
 
 
 def test_scaffold_is_valid_python_and_refuses_invalid_names() -> None:
@@ -723,7 +721,7 @@ def test_native_write_spies_record_mutations(host: Any) -> None:
 def test_scripts_explain_why_and_benefit_and_avoid_shadowing() -> None:
     for title in TITLES:
         path = ROOT / "Scripts" / "Dialogs" / f"{title}.py"
-        tree = ast.parse(path.read_text(), feature_version=(3, 11))
+        tree = ast.parse(production_path(path).read_text(), feature_version=(3, 11))
         doc = ast.get_docstring(tree)
         assert "Why:" in doc and "Benefit:" in doc
         assert "Fly and fontlabapp" in doc
@@ -746,7 +744,7 @@ def test_scripts_explain_why_and_benefit_and_avoid_shadowing() -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_script_uses_only_the_public_catalog_capture(title: str) -> None:
     """Scripts import the public App capture and no private App module."""
-    text = (ROOT / "Scripts/Dialogs" / f"{title}.py").read_text()
+    text = (production_path(ROOT / "Scripts/Dialogs" / f"{title}.py")).read_text()
     assert "_glyph_catalog_native" not in text
     assert "fly.ap._" not in text
 

@@ -22,12 +22,16 @@ SHA256: 9e370ed256018c9b63db004c6693b85685a50169b7d7be45b9b5809d7ed37510
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/chart-306c12d5cc1db46c.py
 SHA256: 0bdf280e85649088518dfc0647ad99a46ab7f446eac7b52aed2eee1d25912956
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Unicode Lab; opens the Glyph Encoding Chart profile.
+
 Run **Models > Glyph Encoding Chart** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `d6559f455f52ae5bdbe168e33a4371dbe0caaa9e667a81425f24815c3d40f652`
+SHA256: `dd6a07657459d6337abbf9b36c3046112f34967106e9b27b69b0399bf6d6435a`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Encoding%20Chart.py)

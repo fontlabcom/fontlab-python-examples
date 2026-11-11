@@ -28,12 +28,16 @@ SHA256: 06780068bb97fb0b0787dbc5fc5dc5d51b1c2c29cfd053fa0ba6be4be802ce58
 Historical source: rescued/part3/pyqt-official-ports/ports/itemviews/pyqt-official/coloreditorfactory-0a3b15766909bdc3.py
 SHA256: 5b4aa3c5c7aaad2b40cb25c868c6aa41f828dbc884021db9fd2d630f5cd64534
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Review Model Lab; opens the Glyph Mark Colours profile.
+
 Run **Models > Glyph Mark Colours** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `ba2ffbce7bfb60daa8161ab488471ccc6a7b2500468a01fe9a99c3a42f9c0886`
+SHA256: `c39b0882c87f0dd2cadaf1ef5d43f1514ca2f82ddaa4d0fae23ed45535506584`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Mark%20Colours.py)

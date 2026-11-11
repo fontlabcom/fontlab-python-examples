@@ -1,5 +1,5 @@
 # this_file: tests/test_menu_consolidations.py
-"""Keep proposed lab routes separate from immutable history and parity claims."""
+"""Keep implementation routes separate from immutable history and parity claims."""
 
 import hashlib
 import importlib.util
@@ -20,27 +20,35 @@ class ConsolidationTests(unittest.TestCase):
         rows = LAYOUT.consolidation_rows(ROOT)
         current = {p.relative_to(ROOT).as_posix() for p in ROOT.glob("Scripts/*/*.py")}
         self.assertEqual(len(rows), 100)
-        self.assertEqual({row["source"]["path"] for row in rows}, current)
+        self.assertEqual({row["source"]["path"] for row in rows} | {
+            row["destination"]["path"] for row in rows
+            if row["acceptance"]["state"] == "implemented"
+        }, current)
         self.assertEqual(len({row["destination"]["path"] for row in rows}), 25)
         for row in rows:
             source = ROOT / row["source"]["path"]
-            self.assertEqual(row["source"]["sha256"], hashlib.sha256(source.read_bytes()).hexdigest())
-            self.assertEqual(row["acceptance"]["state"], "proposed")
+            self.assertEqual(row["source"]["sha256"], hashlib.sha256(LAYOUT.source_bytes(ROOT, row["source"])).hexdigest())
+            self.assertIn(row["acceptance"]["state"], {"proposed", "implemented"})
             self.assertIs(row["acceptance"]["behavior_parity"], False)
             self.assertIs(row["acceptance"]["native"], False)
             self.assertEqual(row["disposition"], "absorbed")
-            self.assertIsNone(row["destination"]["sha256"])
+            if row["acceptance"]["state"] == "proposed":
+                self.assertIsNone(row["destination"]["sha256"])
+            else:
+                target = ROOT / row["destination"]["path"]
+                self.assertEqual(row["destination"]["sha256"],
+                                 hashlib.sha256(target.read_bytes()).hexdigest())
             self.assertTrue(row["destination"]["tab"].strip())
             self.assertEqual(row["destination"]["action"], source.stem)
             self.assertTrue(row["destination"]["path"].startswith("Scripts/Labs/"))
             for route in row["test_routes"]:
                 self.assertTrue((ROOT / route.split("::", 1)[0]).is_file(), route)
 
-    def test_sources_when_resolved_then_exact_current_bytes(self):
+    def test_sources_when_resolved_then_exact_committed_bytes(self):
         for row in LAYOUT.consolidation_rows(ROOT):
             self.assertEqual(
                 LAYOUT.source_bytes(ROOT, row["source"]),
-                (ROOT / row["source"]["path"]).read_bytes(),
+                LAYOUT.source_bytes(ROOT, row["source"], committed=True),
             )
 
     def test_adaptations_when_mapped_then_original_identities_and_hashes_survive(self):
@@ -70,8 +78,10 @@ class ConsolidationTests(unittest.TestCase):
         self.assertEqual(len(packaged), 16)
         for path in packaged:
             row = rows[path.relative_to(ROOT / "lessons").as_posix()]
-            self.assertEqual(row["acceptance"]["state"], "proposed")
+            self.assertIn(row["acceptance"]["state"], {"proposed", "implemented"})
             self.assertFalse(row["acceptance"]["native"])
+            self.assertEqual((ROOT / row["source"]["path"]).read_bytes(),
+                             LAYOUT.source_bytes(ROOT, row["source"], committed=True))
 
 
 if __name__ == "__main__":

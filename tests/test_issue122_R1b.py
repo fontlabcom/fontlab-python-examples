@@ -1,6 +1,8 @@
 # this_file: tests/test_issue122_R1b.py
 """Check independent reference workflows without executing preserved sources."""
 
+from _wp09_routes import production_path, source_bytes
+
 import ast
 import hashlib
 import importlib
@@ -52,7 +54,7 @@ def script_path(title: str) -> Path:
 
 def load(title: str) -> Any:
     """Load only the new script, with lazy native imports left untouched."""
-    path = script_path(title)
+    path = production_path(script_path(title))
     spec = importlib.util.spec_from_file_location(title.replace(" ", "_"), path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -63,7 +65,7 @@ def app_names_used() -> dict[str, set[str]]:
     """Collect every qualified App attribute, as in the G1 name gate."""
     result: dict[str, set[str]] = {}
     for title in (*TITLES, "Node Table"):
-        tree = ast.parse(script_path(title).read_text())
+        tree = ast.parse(production_path(script_path(title)).read_text())
         aliases = {
             alias.asname: alias.name
             for node in ast.walk(tree)
@@ -213,7 +215,7 @@ def test_native_constructor_template_guard_rejects_positional_options() -> None:
 
 @pytest.mark.parametrize("title", (*TITLES, "Node Table"))
 def test_class_attributes_do_not_shadow_qwidget_names(title: str) -> None:
-    path = script_path(title)
+    path = production_path(script_path(title))
     for node in ast.walk(ast.parse(path.read_text())):
         if isinstance(node, ast.ClassDef):
             for member in node.body:
@@ -479,6 +481,8 @@ def test_panel_error_clears_output_copy_recaptures_and_close_drains(
     monkeypatch.setattr(
         module, "search_result" if title == TITLES[0] else "build_output", fail
     )
+    if title == "Pair Proof Generator":
+        monkeypatch.setattr(panel, "_capture", fail)
     panel.copy_output()
     assert panel.output_box.plainText == "", "A failed recapture must clear stale text."
     assert clipboard.text == "Existing clipboard", (
@@ -495,7 +499,7 @@ def test_panel_error_clears_output_copy_recaptures_and_close_drains(
 
 def test_no_native_writes_or_foreign_source_imports() -> None:
     for title in TITLES:
-        source = (ROOT / "Scripts" / "Tools" / f"{title}.py").read_text()
+        source = production_path(ROOT / "Scripts" / "Tools" / f"{title}.py").read_text()
         ast.parse(source, feature_version=(3, 11))
         assert "typerig" not in "\n".join(
             line
@@ -610,7 +614,7 @@ def fragment_records() -> dict[str, list[dict[str, Any]]]:
                 "source": source,
                 "source_sha256": digest,
                 "menu": destination,
-                "destination_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "destination_sha256": hashlib.sha256(source_bytes(path)).hexdigest(),
                 "entry_point": "main",
                 "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
                 "scope": SCOPES[name],

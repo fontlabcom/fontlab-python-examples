@@ -4,14 +4,13 @@
 
 import importlib
 import json
-import runpy
 import sys
 from pathlib import Path
-from types import ModuleType, SimpleNamespace
+from types import SimpleNamespace
 from typing import Any, ClassVar
 
 import pytest
-
+from _wp09_routes import production_path, production_relative, run_profile
 from historical_sources import recorded_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +19,7 @@ ROWS = (("A", "U+0041", ""), ("space", "U+0020", ""), ("A.alt", "", ""))
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts/Tools" / f"{title}.py"))
+    return run_profile(str(ROOT / "Scripts/Tools" / f"{title}.py"))
 
 
 @pytest.fixture
@@ -372,7 +371,7 @@ def test_owned_close_retries_and_fences_callbacks(app: None, qt: Any, title: str
 def test_main_uses_existing_application_only(app: None, qt: Any, monkeypatch: Any, title: str) -> None:
     fly = sys.modules["fly"]
     fly.qt, fly.fl = qt, SimpleNamespace(MainWindow=lambda: Widget())
-    module = runpy.run_path(str(ROOT / "Scripts/Tools" / f"{title}.py"), run_name="__main__")
+    module = run_profile(str(ROOT / "Scripts/Tools" / f"{title}.py"), run_name='__main__')
     assert len(module["_PANELS"]) == 1
     close_panel(module["_PANELS"][0])
 
@@ -397,14 +396,14 @@ def test_source_identity_bytes_and_first_party_provenance(stem: str, digest: str
 def test_script_is_python311_and_has_no_native_writes(title: str) -> None:
     import ast
 
-    source = (ROOT / "Scripts/Tools" / f"{title}.py").read_text()
+    source = (production_path(ROOT / "Scripts/Tools" / f"{title}.py")).read_text()
     tree = ast.parse(source, feature_version=(3, 11))
     forbidden = {"notifyChangesApplied", "commit", "CurrentFont", "exec_", "QApplication"}
     calls = {node.func.attr for node in ast.walk(tree)
              if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)}
     assert not forbidden.intersection(calls), "New panels never write font data or create an application"
     assert "SPDX-License-Identifier: Apache-2.0" in source
-    assert source.splitlines()[0] == "# this_file: Scripts/Tools/" + title + ".py"
+    assert source.splitlines()[0] == "# this_file: " + production_relative(ROOT / "Scripts/Tools" / f"{title}.py")
     for node in ast.walk(tree):
         if isinstance(node, ast.ClassDef):
             members = {item.name for item in node.body if isinstance(item, ast.FunctionDef)}

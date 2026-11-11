@@ -22,7 +22,7 @@ Close or the dock X calls handle.close_owned(): disconnect callbacks first, then
 OwnedWidget.close() removes the dock and schedules its widget for deletion.
 Benefit: Select the exact glyph that needs an encoding decision, without changing
 its Unicode values or geometry. Counts cover every issue, even on other pages.
-Setup: FontLab 9, Python 3.11, Fly and App with widgets, scripting, glyph_catalog,
+Original profile setup: FontLab 9, Python 3.11, Fly and App with widgets, scripting, glyph_catalog,
 draft_signals and qt_properties.
 Independent rewrite of the Qt dockwidgets, menus, separations, basiclayouts and
 borderlayout example ideas (Qt/Nokia, Riverbank). Based on the author's own FontLab sample, Apache-2.0.
@@ -49,12 +49,16 @@ SHA256: 20ab7a5fd5b64e7c3b0cf66bfb80fbca9f8301317b314bb95e66d76b4475fc8d
 Historical source: rescued/part2/ports/mainwindows/pyqt-official/separations-2d36e0fe43f5d49a.py
 SHA256: fedecc268d265622812e43e61b3d80d9c4dbbb812411cc177a2f37d58ad1b039
 
+
+Setup: FontLab 9, Fly and the matching App WP09 core PythonQt labs candidate.
+Consolidated in Labs > Unicode Lab; opens the Unicode Issues Dock profile.
+
 Run **Windows > Unicode Issues Dock** from FontLab's Scripts menu.
 
 Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.
 
 ## Source identity
 
-SHA256: `f8aa7bb694352b07d8d456ac5cd637d59c091e6578f4552c7261a09234fb0d59`
+SHA256: `b6ad38c482f55db7fdf546097f75b3eef63f8889bfc1bfba08e6fd5d8cb32ba9`
 
 [Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Windows/Unicode%20Issues%20Dock.py)

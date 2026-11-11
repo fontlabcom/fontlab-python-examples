@@ -1,6 +1,8 @@
 # this_file: tests/test_issue122_R3.py
 """Check explicit encoding plans, real history, host shapes and source coverage."""
 
+from _wp09_routes import production_path, source_bytes
+
 import ast
 import hashlib
 import importlib
@@ -42,7 +44,7 @@ COLLISIONS = {
 
 
 def load(path: Path = SCRIPT) -> Any:
-    spec = importlib.util.spec_from_file_location("r3_tool", path)
+    spec = importlib.util.spec_from_file_location("r3_tool", production_path(path))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -78,7 +80,7 @@ class Owned:
 
 @pytest.mark.parametrize("script", [SCRIPT, COPY, SCALE])
 def test_real_app_names_when_installed_then_all_used_names_exist(script: Path) -> None:
-    tree = ast.parse(script.read_text())
+    tree = ast.parse(production_path(script).read_text())
     aliases = {
         a.asname: a.name
         for n in ast.walk(tree)
@@ -115,7 +117,7 @@ def test_fake_signatures_when_used_then_match_real_app() -> None:
 
 
 def test_script_when_parsed_then_no_native_class_member_shadowing() -> None:
-    tree = ast.parse(SCRIPT.read_text(), feature_version=(3, 11))
+    tree = ast.parse(production_path(SCRIPT).read_text(), feature_version=(3, 11))
     for node in ast.walk(tree):
         if isinstance(node, ast.ClassDef):
             assert not (
@@ -311,7 +313,7 @@ def test_dispositions_when_loaded_then_cover_exact_source_identities() -> None:
                 else ROOT / row["menu"]
             )
             assert (
-                hashlib.sha256(target.read_bytes()).hexdigest()
+                hashlib.sha256(source_bytes(target)).hexdigest()
                 == row["destination_sha256"]
             ), row["menu"]
 
@@ -579,7 +581,7 @@ def test_stem_scaling_when_tt_then_scales_every_control_without_cubic_conversion
 def test_new_tools_when_parsed_then_python311_and_no_native_member_shadowing(
     script: Path,
 ) -> None:
-    tree = ast.parse(script.read_text(), feature_version=(3, 11))
+    tree = ast.parse(production_path(script).read_text(), feature_version=(3, 11))
     for node in ast.walk(tree):
         if isinstance(node, ast.Attribute) and isinstance(node.ctx, ast.Store):
             assert node.attr not in COLLISIONS
@@ -818,7 +820,6 @@ def host_layer(
 
 @pytest.fixture
 def host(monkeypatch: Any) -> Any:
-    import sys
 
     import fly
     import fontlabapp.core.edit_guards as guards

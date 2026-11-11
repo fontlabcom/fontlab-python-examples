@@ -5,7 +5,7 @@
 Purpose:
     Keep the complete preserved part2 Spin Box Delegate lesson useful in FontLab.
     A is a font-unit increment. B is its repeat count. Edit all eight cells.
-Setup:
+Original profile setup:
     Use FontLab 9, Python 3.11, Fly and App>=0.2.70.dev0.
     Use matching artifacts. No automatic installation is performed.
 Run:
@@ -18,15 +18,19 @@ Result:
 Compatibility:
     Independent behavior implementation; no preserved body/helper is executed.
     Historical source: rescued/part2/ports/itemviews/pyqt-official/spinboxdelegate-ddb20b1b68b18a91.py
+
+
+Setup: FontLab 9, Fly, fontlab-python-lessons and the matching App WP09
+core PythonQt labs candidate.
+Consolidated in Labs > Metrics Controls Lab; opens the Glyph Spacing Worksheet profile.
 """
-# historical source sha256: 539bd9a3542e02bafe8b89fc847c9b88277859b4e1edb9ac6624eeb7c18a7025
 
 
-def main() -> None:
-    """Open the owned App worksheet through the lazy Fly namespace."""
-    from fly.ap.metrics.worksheet.model import show
+def main():
+    """Open this retained route in its shared lab."""
+    from fly.ap.studios.core_pythonqt_labs import show
 
-    show()
+    return show("E03", profile='Glyph Spacing Worksheet')
 
 
 if __name__ == "__main__":
