@@ -25,7 +25,7 @@ this_file: TODO.md
 - [ ] Qualify all current menus in installed FontLab: callbacks, close/reopen, stale snapshots, cancellation, errors and complete font/cache/history preservation.
 - [ ] Qualify Models filters, calendars, read-only/editable trees, completers, pattern rules, spinboxes, sliders, elastic graphs and spacing worksheets in native PythonQt.
 - [ ] Qualify character-map drawing/copy, Find Files dialogs/desktop opening and image-viewer printing/OS behavior in the native host.
-- [ ] Qualify the remaining metadata, contour and kerning writers with Apply/Undo/Redo and saved/reopened owned fonts. Copy Layers From Font passed live (6 layers as one row, source untouched, reopen equal; hinted glyphs refused with "hints or guides are not transferred").
+- [ ] Qualify the remaining metadata, contour, kerning and other layer writers with Apply/Undo/Redo and saved/reopened owned fonts. Copy Layers From Font passed live (6 layers as one row, source untouched, reopen equal; hinted glyphs refused with "hints or guides are not transferred").
 - [ ] Qualify the thirteen packaged GetGo workflows and reconcile their remaining historical catalogue entries after acceptance.
 - [ ] Re-sync corrected GetGo VFJs when supplied; refresh hashes and manifests, then rerun the full corpus and variable exports.
 - [ ] Probe whether Node Table writes to __smart_selected queue changes or persist in FontLab.
