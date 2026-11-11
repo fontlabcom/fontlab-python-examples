@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — R3 package fake exposes `fgPackage` (Issue 250)
+
+App `dependency_values` now reads `package.fgPackage.glyphs` (App e4b69da). `HostPackage` in `tests/test_issue122_R3.py` gains that attribute with its glyphs in order, as the real `flPackage` has; 31 cross-font tests failed with `AttributeError` without it. No assertion changed.
+
 ## 2026-11-11 — Issue 250: Echopy signature-reading and owned-helper examples
 
 - New `examples/echopy/signature_reading.py` (reads a signature, falls back to `(*args, **kwargs)` when `inspect.signature` raises `ValueError`, as it does for every native FontLab constructor) and `examples/echopy/owned_descriptors.py` (installs Echopy helpers only where the name is free and calls them through `get_extension` on immutable native classes), plus the guide `src_docs/md/echopy-native-examples.md`. Eight offline tests in `tests/test_echopy_native_examples.py` (the fallback case uses a class whose `__signature__` raises `ValueError`, so it holds on Python 3.11–3.14; review I-1) (examples at 94% line coverage; the misses are the two `__main__` guards). tests_docs inventories updated for the new page (302 to 303 built files, one more search location); `-p 'test_pipeline_*.py'` 42 tests OK; the other tests_docs and core-suite failures (3 errors, 10 failures) are identical without this change. Generated `docs/` was not regenerated here: the published output is built by the docs workflow.

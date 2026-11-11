@@ -779,6 +779,8 @@ class HostPackage:
     def __init__(self, fg_id: int, glyphs: list[HostGlyph]) -> None:
         self.fgId, self.id = fg_id, fg_id + 1000
         self.glyphs = {g.name: g for g in glyphs}
+        # Real flPackage.fgPackage.glyphs is the package's own glyph order (App dependency_values).
+        self.fgPackage = NS(glyphs=list(self.glyphs.values()))
         self.master, self.masters = "Regular", ["Regular", "Bold"]
         self.info = NS(unitsPerEm=1000)
         self.italicAngle_value = 0
