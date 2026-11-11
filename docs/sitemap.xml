@@ -311,6 +311,56 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/index.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/calendar-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/completion-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/drag-drop-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/metrics-controls-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/model-filtering-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/proof-composition-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/review-model-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/tree-models-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/unicode-lab.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/models/index.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
