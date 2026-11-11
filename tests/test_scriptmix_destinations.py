@@ -148,3 +148,41 @@ def test_recorded_absorptions_when_loaded_then_name_one_removal_per_path():
     assert {row["removed_by"] for row in ABSORPTIONS} == {
         "cb3a95057641f3b2382a887172fab524dbc4901a"
     }
+
+
+def test_absent_app_when_skip_reason_unset_then_rejected(tmp_path, monkeypatch):
+    monkeypatch.delenv("FONTLAB_EXAMPLES_SKIP_APP_TAB", raising=False)
+    mix, _, row = make(tmp_path)
+    with pytest.raises(AssertionError, match="tab"):
+        check(MENU, PIN, mix, tmp_path / "no-app", [row])
+
+
+def test_absent_app_when_skip_reason_set_then_only_tab_check_skips(tmp_path, monkeypatch):
+    monkeypatch.setenv("FONTLAB_EXAMPLES_SKIP_APP_TAB", "App is private in public CI")
+    mix, _, row = make(tmp_path)
+    with pytest.raises(pytest.skip.Exception, match="App tab check skipped: App is private in public CI"):
+        check(MENU, PIN, mix, tmp_path / "no-app", [row])
+
+
+def test_absent_app_when_skip_reason_set_then_scriptmix_checks_still_run(tmp_path, monkeypatch):
+    monkeypatch.setenv("FONTLAB_EXAMPLES_SKIP_APP_TAB", "App is private in public CI")
+    mix, _, row = make(tmp_path, state="proposed")
+    with pytest.raises(AssertionError, match="not implemented"):
+        check(MENU, PIN, mix, tmp_path / "no-app", [row])
+    mix2, _, row2 = make(tmp_path / "b")
+    row2["removed_by"] = git(mix2, "rev-parse", "HEAD~1")
+    with pytest.raises(AssertionError, match="removed_by"):
+        check(MENU, PIN, mix2, tmp_path / "no-app", [row2])
+
+
+def test_present_app_when_skip_reason_set_then_tab_still_checked(tmp_path, monkeypatch):
+    monkeypatch.setenv("FONTLAB_EXAMPLES_SKIP_APP_TAB", "App is private in public CI")
+    mix, app, row = make(tmp_path, declared="Renamed Tab")
+    try:
+        check(MENU, PIN, mix, app, [row])
+    except AssertionError as error:
+        assert "tab" in str(error)
+    except pytest.skip.Exception:
+        pytest.fail("a present App module must be checked even when the skip reason is set")
+    else:
+        pytest.fail("a renamed App tab must be rejected")

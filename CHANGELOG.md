@@ -2,6 +2,15 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Scriptmix pin checks run in public CI (Issue 250)
+
+- New `.github/workflows/pin-freshness.yml` (push to main, pull requests, manual) checks out public `fontlabcom/fontlab-python-scriptmix` main with full history and no persisted credentials, sets `FONTLAB_SCRIPTMIX_ROOT`, and runs `tests/test_scriptmix_pin_freshness.py` and `tests/test_scriptmix_destinations.py` with pytest under uv. Permissions are `contents: read`; it has no Pages, publishing or secret steps, and actions are pinned to the same SHAs as `docs.yml`.
+- App is private, so CI sets `FONTLAB_EXAMPLES_SKIP_APP_TAB` to a stated reason. Only the App tab literal check skips, and only when the App module is absent; the absorption row, Scriptmix consolidation, launcher and removal-commit history checks still run first. With App absent and the variable unset the check fails, and a present App module is always checked. The workflow fails on any skip other than the App tab one.
+- `stale_pins` now collects that skip per row and checks all 24 Scriptmix-hosted rows before skipping, so one absorbed row cannot hide a later stale pin.
+- `tests/test_pin_freshness_workflow.py` pins the workflow's checkout, environment, skip filter, read-only permissions and full-SHA actions.
+- Local CI simulation (fresh Scriptmix clone, no App): 26 passed, 1 skipped (App tab check for 7 absorbed rows). A drifted Scriptmix file fails with `stale pin`; unsetting the variable fails with `App does not declare tab`. Mutants: skipping the App check even when App is present, skipping without the variable, skipping before the Scriptmix checks, and letting the skip stop `stale_pins` each fail 1 test.
+- TODO row reworded: the App tab literal check in CI stays open (local gate only).
+
 ## 2026-11-11 — Scriptmix absorbed destinations followed; frozen pins kept (Issue 250)
 
 - Scriptmix cb3a9505 (WP05 re-land) removed seven `Scripts/Contours` scripts that Examples rows name: Align And Distribute, Correct Contour Direction, Make Compatible, Optimize Start Points, Remove Overlap, Round Coordinates and Transform. Each was absorbed into an implemented launcher tab. Eight Examples tests (E16, R1a, R1b, R1c, R3, menu consolidations, rescued menus, pin freshness) failed with missing files in the pre-push hook.

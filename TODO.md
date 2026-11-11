@@ -47,7 +47,7 @@ this_file: TODO.md
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 - [ ] Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check (5 byte-identical and 4 whitespace-equal to Qt qtbase styleexample 5.15/6.5; 5 PyQt assets untraced): record upstream licence or replace each asset.
-- [ ] Wire `tests/test_scriptmix_pin_freshness.py` into CI (CI runs only tests_docs, so the check is local-only); check out Scriptmix and set `FONTLAB_SCRIPTMIX_ROOT`.
+- [ ] Run the App tab literal check for absorbed Scriptmix destinations in CI (`.github/workflows/pin-freshness.yml` skips only that check, because fontlab-fontlabapp is private and no credential is authorized); it runs in the local pre-push gate only for now.
 - [ ] After a native Undo the Node Table keeps stale coordinates until Refresh is pressed; refresh it on the host history notification (A2 report 14 section 7, Examples).
 - [ ] Standalone Stem Blend and Scale With Stem Compensation still use `COORDINATE_TOLERANCE` 1e-5 and can falsely refuse after Redo (drift 1.5e-5) or reopen (up to 5e-4), per live reports 16 and 17; the App writers were fixed to 1e-3 (App e5b744f, 687b592). They are proposed consolidation sources that must stay byte-identical, so resolve when the Stem Interpolation Lab absorbs them.
 - [ ] Port the WP10 Codex labs snapshot (App teaching_* modules plus 20 Examples tests) onto the WP09 routes (`production_path`/`run_profile`); App-level tests must reach 80% per module before landing.

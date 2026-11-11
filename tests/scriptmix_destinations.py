@@ -4,7 +4,9 @@
 A present file is always hashed (its pin must match). A file Scriptmix removed passes only when
 scriptmix-absorptions.json records it, Scriptmix's own menu-consolidations.json marks the same
 source bytes absorbed and implemented into the same launcher tab, the launcher exists and parses,
-App declares the tab as a string literal, and (when available) git shows the recorded removal.
+git shows the recorded removal (when available), and App declares the tab as a string literal.
+Where App is absent and FONTLAB_EXAMPLES_SKIP_APP_TAB is set (public CI), only the App check
+skips, with that reason; absent App without the variable fails.
 Used by the Examples tests that check menu-adaptations.json / rescue-index.json destinations.
 """
 
@@ -22,6 +24,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "fontlab-python-scriptmix/"
 HOMEBREW_GIT = "/opt/homebrew/bin/git"
 GIT = HOMEBREW_GIT if Path(HOMEBREW_GIT).is_file() else shutil.which("git")
+SKIP_APP_TAB = "FONTLAB_EXAMPLES_SKIP_APP_TAB"
+"""Set only where App is unavailable (public CI); its value is the stated skip reason."""
 ABSORPTIONS = json.loads((ROOT / "scriptmix-absorptions.json").read_text())["absorptions"]
 
 
@@ -81,7 +85,9 @@ def check_destination(menu, pin=None, *, scriptmix=None, app=None, rows=None) ->
     launcher = mix / into["path"]
     assert launcher.is_file(), f"{menu}: launcher {into['path']} is missing"
     ast.parse(launcher.read_text(), feature_version=(3, 11))
-    module = app / row["tab_declared_in"]
-    assert module.is_file() and _declares(module, into["tab"]), f"{menu}: App does not declare tab {into['tab']!r}"
     _history(mix, row, pinned=pin is not None)
+    module = app / row["tab_declared_in"]
+    if not module.is_file() and os.environ.get(SKIP_APP_TAB):
+        pytest.skip(f"{menu}: App tab check skipped: {os.environ[SKIP_APP_TAB]}")
+    assert module.is_file() and _declares(module, into["tab"]), f"{menu}: App does not declare tab {into['tab']!r}"
     return row["last_sha256"]
