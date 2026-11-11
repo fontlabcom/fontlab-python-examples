@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Standalone stem-script tolerance recorded as open (Issue 250)
+
+The App Stem Blend and Scale With Stem Compensation writers now accept 1e-3 read-back drift. The standalone scripts keep 1e-5 because proposed consolidation sources must stay byte-identical (menu layout check); TODO records the false-refusal risk and the Stem Interpolation Lab absorption that resolves it.
+
 ## 2026-11-11 — Live Copy Layers From Font and Stem Blend layer proof (A2 report 17)
 
 - Copy Layers From Font: six layers copied as one Undo row, source font untouched, saved/reopened equal; glyphs with hints or guides are refused with "hints or guides are not transferred", the intended refusal.
