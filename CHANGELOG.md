@@ -2,6 +2,25 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Issue 250 WPF: WP01 integration on current main
+
+- Resolved the CHANGELOG conflict without dropping current-main or WP01 entries;
+  retained all 100 source identities, 25 proposed lab destinations, immutable
+  manifests and current launchers. Independent source review verified every
+  recorded commit/blob/hash and the complete tracked inventory.
+- Final arm64 Python 3.11 prepared full-suite equivalent: **2,412 passed,
+  99 existing skips, zero failures** (core 1,914/92; separate R process 498/7).
+  The R process used a genuine wheel built from the final sibling App source,
+  version `1.2.10.dev33+g277a0016a.d20261111`, installed into a lane-local target.
+  No production module changed; per-module coverage is not applicable.
+- Exact `repos.sh` provisioning was blocked by PyPI DNS. After copying cached
+  Ruff 0.14.10 into the lane-local cache, offline `uvx ruff check` passed the
+  changed test file. The prepared
+  runs preserve both test selections and the controller coverage arguments;
+  they do not establish a canonical-wrapper or native FontLab pass. One initial
+  prepared R run had five installation-path assertion failures, corrected by
+  installing the same wheel under `site-packages`; no oracle was changed.
+
 ## 2026-11-11 — E6 fake Widget gains isWindow/updatesEnabled (Issue 250)
 
 - App `_enable_floating_updates` (63f936f) calls `isWindow()`/`updatesEnabled`; the native-faithful fake `Widget` in `tests/test_issue122_E6.py` now provides them, fixing two dock tests that failed against App main 03ff266.
@@ -14,6 +33,29 @@ this_file: CHANGELOG.md
 
 - `tests/test_scriptmix_pin_freshness.py` hashes every Scriptmix-hosted row of `menu-adaptations.json` (24) against the sibling checkout (`FONTLAB_SCRIPTMIX_ROOT` or `../fontlab-python-scriptmix`) and reports each missing or stale pin by name; a synthetic test proves the helper flags changed and missing files. It skips without a checkout. Existing `test_rescued_menus.py` only checked that the files exist.
 - Verified against origin/main Scriptmix: all 24 pins current. Core suite 1893 passed, 96 skipped, 10 failed; the same 10 `test_issue122_E12.py` failures occur on origin/main (1891 passed) because the Echopy Qt-stub workspace is not provisioned here. Ruff clean on the new file.
+
+## 2026-11-11 — Issue 242 WP01: proposed consolidation ledger
+
+- Added 100 exact committed source identities mapped to 25 proposed lab paths,
+  with exact tab captions, distinct source actions, existing test routes and dated
+  pending acceptance. All 100 current launchers remain; no original manifests,
+  source hashes or Lessons provenance records changed.
+- Reused Scriptmix's compatibility-aware ledger/source resolver. Five new tests
+  cover all source bytes, 494 historical rescue identities, 24 cross-repository
+  adaptation pins and the sixteen packaged Lessons menus. Retirement, behavior
+  parity and native acceptance remain separate concepts.
+- Focused arm64 Python 3.11 checks: 33 passed (five new and 28 unchanged
+  adaptation/curated tests); changed Python file passes Ruff. The initial new
+  tests failed before the resolver existed. No Examples production module changed,
+  so per-module runtime coverage is not applicable here; shared resolver coverage
+  is recorded by Scriptmix.
+- Full lane-contained G-Examples suite equivalent: 2,408 passed, 99 existing
+  archive opt-in skips, zero failures (core 1,910 passed/92 skipped; separate R
+  process 498 passed/7 skipped). It preserves the controller recipe's pytest
+  arguments and uses a genuine matched App wheel for the R process. The canonical
+  quality wrapper remains unexecuted because its output paths leave this lane;
+  the lane report retains the exact command and evidence. No native acceptance
+  is claimed.
 
 ## 2026-11-10 — Issue 250: Node Table, collections and viewer tests
 
