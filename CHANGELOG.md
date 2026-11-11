@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Font Reference Image Viewers: App minimum decided as v1.2.4 (Issue 250)
+
+- Decision: both viewers need App v1.2.4. App v1.2.0 is the first release tag with `qt.images.viewer.model.show` and `show_bounded`; in FontLab the bounded viewer's shortcuts also need 6ece10e (`QAction.setShortcut(gui.QKeySequence(shortcut))`, from a native PythonQt probe), first released in v1.2.4. App has not changed the viewer package since: `git diff v1.2.4 origin/main -- src/fontlabapp/qt/images/viewer/` is empty.
+- The scripts keep stating `App>=0.2.156.dev0`. Both are proposed consolidation sources in `menu-consolidations.json` (absorbed into Image Viewer Lab), and Scriptmix `menu_layout.py` refuses a proposed source whose bytes changed; editing either docstring fails four `tests/test_menu_consolidations.py` tests. This follows the Stem Blend 1e-5 decision.
+- `tests/test_image_viewer_app_floor.py` records `DECIDED_FLOOR = "1.2.4"` and checks it against the sibling App checkout's release tags (oldest tag defining both entry points and carrying the shortcut fix) and against the `[tool.fontlab-install]` floor `fontlab-fontlabapp>=1.2.0`. Mutants: `1.2.0` fails one test, `1.1.8` fails two.
+- The TODO row stays open for the docstring update.
+
 ## 2026-11-11 — Standalone stem-script tolerance recorded as open (Issue 250)
 
 The App Stem Blend and Scale With Stem Compensation writers now accept 1e-3 read-back drift. The standalone scripts keep 1e-5 because proposed consolidation sources must stay byte-identical (menu layout check); TODO records the false-refusal risk and the Stem Interpolation Lab absorption that resolves it.

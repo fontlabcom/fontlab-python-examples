@@ -31,7 +31,7 @@ this_file: TODO.md
 - [ ] Probe whether Node Table writes to __smart_selected queue changes or persist in FontLab.
 - [ ] Check Stem Blend and Scale With Stem Compensation read-back with FontLab coordinate rounding enabled.
 - [ ] Clarify whether retirement licence fields describe upstream sources or first-party rewrites; use the same meaning across records.
-- [ ] Decide the true App minimum for both Font Reference Image Viewers (both state `App>=0.2.156.dev0`, now tested equal; App tags jump v0.2.26 to v1.0.0 and the model first ships in v1.2.0).
+- [ ] State the decided App minimum `App>=1.2.4` in both Font Reference Image Viewers (now `App>=0.2.156.dev0`; decision and tag evidence in CHANGELOG 2026-11-11, `DECIDED_FLOOR` in tests/test_image_viewer_app_floor.py). Next check: update both docstrings when Image Viewer Lab absorbs them or at the next consolidation-ledger re-baseline; both scripts must stay byte-identical until then.
 - [ ] Consolidate the two menu-test processes once their App/Fly loading arrangements can coexist without weakening checks.
 - [ ] Reconcile and qualify the existing production App route-A zone writer on the chosen current tuple before adopting scripted zone editing. Preserve all-master staging, one history commit, row/Font-window refusals, tags/lock, Undo/Redo, complete-font preservation and save/reopen. Keep the serializer ABI hold and D31 reserved zone/master lane. Native Font Info > Zones remains an alternative; the reviewed final fix4 receipt proves source/offline scope only.
 - [ ] Add targeted App auto-layer refusal so kerning imports avoid repeated whole-font scans.
