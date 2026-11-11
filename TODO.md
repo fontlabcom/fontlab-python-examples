@@ -29,7 +29,6 @@ this_file: TODO.md
 - [ ] Qualify the thirteen packaged GetGo workflows and reconcile their remaining historical catalogue entries after acceptance.
 - [ ] Re-sync corrected GetGo VFJs when supplied; refresh hashes and manifests, then rerun the full corpus and variable exports.
 - [ ] Probe whether Node Table writes to __smart_selected queue changes or persist in FontLab.
-- [ ] Check Node Table coordinates with fresh wrappers after Refresh.
 - [ ] Prove Stem Blend creates an ordinary, non-auto, non-master layer after Apply, Redo and reopen.
 - [ ] Check Stem Blend and Scale With Stem Compensation read-back with FontLab coordinate rounding enabled.
 - [ ] Clarify whether retirement licence fields describe upstream sources or first-party rewrites; use the same meaning across records.
@@ -50,3 +49,4 @@ this_file: TODO.md
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 - [ ] Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check (5 byte-identical and 4 whitespace-equal to Qt qtbase styleexample 5.15/6.5; 5 PyQt assets untraced): record upstream licence or replace each asset.
 - [ ] Wire `tests/test_scriptmix_pin_freshness.py` into CI (CI runs only tests_docs, so the check is local-only); check out Scriptmix and set `FONTLAB_SCRIPTMIX_ROOT`.
+- [ ] After a native Undo the Node Table keeps stale coordinates until Refresh is pressed; refresh it on the host history notification (A2 report 14 section 7, Examples).

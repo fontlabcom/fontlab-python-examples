@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Node Table live check (A2 live report 14 (FontLab 9.0.9809))
+
+Node Table on Examples main 7477f67 (fid 4909, glyph b, Regular, 32 nodes; `r14n_*.json`): every table X/Y equals native coordinates after open and after Refresh; editing row 0 X 304 to 309 and Apply gave one Undo row "Node Table" with native and table both 309; after Undo native reads 304 and the document is clean, and the table equals native again after Refresh. The panel closed cleanly.
+
 ## 2026-11-11 — Docs pipeline pins follow the WP09 labs pages (Issue 250)
 
 The WP09 merge (bbfd241) added nine launcher menus and the `current/labs` section (nine pages plus index), so the Documentation workflow failed four pins: menu and page counts 100 to 109 (`test_pipeline_site.py`, `test_pipeline_history.py`), generated file count 303 to 313 (`test_pipeline_build.py`) and the search-location set (ten `current/labs/*` locations added). The commit also carries the regenerated `src_docs/md` source links (101 files, now pointing at f9d4d5f). Pins updated to the measured values from a local `src_docs/build.sh` build; 42 pipeline tests pass. No assertion was loosened.
