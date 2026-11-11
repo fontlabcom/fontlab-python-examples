@@ -25,11 +25,10 @@ this_file: TODO.md
 - [ ] Qualify all current menus in installed FontLab: callbacks, close/reopen, stale snapshots, cancellation, errors and complete font/cache/history preservation.
 - [ ] Qualify Models filters, calendars, read-only/editable trees, completers, pattern rules, spinboxes, sliders, elastic graphs and spacing worksheets in native PythonQt.
 - [ ] Qualify character-map drawing/copy, Find Files dialogs/desktop opening and image-viewer printing/OS behavior in the native host.
-- [ ] Qualify all metadata, contour, kerning and layer writers with Apply/Undo/Redo and saved/reopened owned fonts; include cross-font layer copies and untouched source fonts.
+- [ ] Qualify the remaining metadata, contour and kerning writers with Apply/Undo/Redo and saved/reopened owned fonts. Copy Layers From Font passed live (6 layers as one row, source untouched, reopen equal; hinted glyphs refused with "hints or guides are not transferred").
 - [ ] Qualify the thirteen packaged GetGo workflows and reconcile their remaining historical catalogue entries after acceptance.
 - [ ] Re-sync corrected GetGo VFJs when supplied; refresh hashes and manifests, then rerun the full corpus and variable exports.
 - [ ] Probe whether Node Table writes to __smart_selected queue changes or persist in FontLab.
-- [ ] Prove Stem Blend creates an ordinary, non-auto, non-master layer after Apply, Redo and reopen.
 - [ ] Check Stem Blend and Scale With Stem Compensation read-back with FontLab coordinate rounding enabled.
 - [ ] Clarify whether retirement licence fields describe upstream sources or first-party rewrites; use the same meaning across records.
 - [ ] Decide the true App minimum for both Font Reference Image Viewers (both state `App>=0.2.156.dev0`, now tested equal; App tags jump v0.2.26 to v1.0.0 and the model first ships in v1.2.0).

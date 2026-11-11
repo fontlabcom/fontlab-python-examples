@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Live Copy Layers From Font and Stem Blend layer proof (A2 report 17)
+
+- Copy Layers From Font: six layers copied as one Undo row, source font untouched, saved/reopened equal; glyphs with hints or guides are refused with "hints or guides are not transferred", the intended refusal.
+- Stem Blend creates an ordinary layer: isMasterLayer and autoLayer are False after Apply, Redo and reopen.
+
 ## 2026-11-11 — Node Table live check (A2 live report 14 (FontLab 9.0.9809))
 
 Node Table on Examples main 7477f67 (fid 4909, glyph b, Regular, 32 nodes; `r14n_*.json`): every table X/Y equals native coordinates after open and after Refresh; editing row 0 X 304 to 309 and Apply gave one Undo row "Node Table" with native and table both 309; after Undo native reads 304 and the document is clean, and the table equals native again after Refresh. The panel closed cleanly.
