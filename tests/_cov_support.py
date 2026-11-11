@@ -160,6 +160,12 @@ def read_property(obj: Any, key: str) -> Any:
     return found() if callable(found) else found
 
 
+def drag_distance(application: Any) -> int:
+    """Match fontlabapp.qt.properties.start_drag_distance for the fake QApplication."""
+    found = getattr(application, "startDragDistance", 10)
+    return int(found() if callable(found) else found)
+
+
 def make_qt(widget: type = Widget) -> NS:
     """Build a fake ``fly.qt`` with a clipboard and recorded drags/mime data."""
     clipboard = Widget()
@@ -217,6 +223,7 @@ def install_fly(monkeypatch: Any, qt: NS) -> NS:
     root.fl = NS(MainWindow=lambda: "main-window")
     modules["fly.ap.core.signals.scope"].Scope = Scope
     modules["fly.ap.qt.properties"].value = read_property
+    modules["fly.ap.qt.properties"].start_drag_distance = drag_distance
     return NS(root=root, scripting=modules["fly.ap.core.scripting"],
               catalog=modules["fly.ap.glyphs.catalog.model"],
               capture_module=modules["fly.ap.glyphs.character_map.capture"])
