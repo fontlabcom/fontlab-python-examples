@@ -404,6 +404,9 @@ def runtime(monkeypatch: Any) -> Any:
     sys.modules["fly.ap.qt.properties"].value = lambda obj, key: (
         getattr(obj, key)() if callable(getattr(obj, key)) else getattr(obj, key)
     )
+    sys.modules["fly.ap.qt.properties"].start_drag_distance = lambda application: int(
+        getattr(application, "startDragDistance", 10)
+    )
     drags: list[Any] = []
     clipboard = Widget()
 

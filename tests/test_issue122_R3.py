@@ -230,7 +230,12 @@ def test_write_when_valid_then_real_history_one_notification(
     def selection_window(package_id: int) -> None:
         assert package_id == 9
 
-    def no_editors(*, qt: Any = None, deadline: float | None = None) -> None:
+    def no_editors(
+        *,
+        qt: Any = None,
+        deadline: float | None = None,
+        action: str = "removing Unicode assignments",
+    ) -> None:
         pass
 
     def fresh_facts(package_id: int, *, native: Any = None) -> Facts:
@@ -879,7 +884,12 @@ def host(monkeypatch: Any) -> Any:
     def selection_window(package_id: int) -> None:
         assert package_id == destination.id
 
-    def no_editors(*, qt: Any = None, deadline: float | None = None) -> None:
+    def no_editors(
+        *,
+        qt: Any = None,
+        deadline: float | None = None,
+        action: str = "removing Unicode assignments",
+    ) -> None:
         pass
 
     assert inspect.signature(selection_window) == inspect.signature(
