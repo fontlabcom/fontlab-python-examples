@@ -1,0 +1,2632 @@
+{
+  "schema_version": 1,
+  "source_commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+  "source_count": 100,
+  "transitions": [
+    {
+      "source": {
+        "path": "Scripts/Contours/Node Slope And Handles.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "15bbf0ccb0b9af5c5e980f1e9fd6cbd08ca9ffbb33c54ea28847d5d30dd3fff1"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Node Editing Lab.py",
+        "tab": "Slopes and handles",
+        "sha256": null,
+        "action": "Node Slope And Handles"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_R1c.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Contours/Node Table.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "1fd13c79c47ae52347782f4f3afb8203378d9cf4220fd479453382b9c0c39b28"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Node Editing Lab.py",
+        "tab": "Node table",
+        "sha256": null,
+        "action": "Node Table"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_R1b.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Designer/Em Star Polygon.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d758cceb6e0b47d0ea349678f4de68be7f5b3eb8af71eb370bfdee60ea39ed39"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Painter Lab.py",
+        "tab": "Polygon",
+        "sha256": null,
+        "action": "Em Star Polygon"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E7.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/Expandable Glyph Search.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "66a3d1f83148dc6fbe1fdc822493551b1432d967068f3c687583e75dce4da89c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Filters",
+        "sha256": null,
+        "action": "Expandable Glyph Search"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/Font Glyph Inventory Tabs.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "829f3ccb406c13cf89f10904d4e918b4da9927aa6c5b44512761b70bcbd6fdfa"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Snapshot Lab.py",
+        "tab": "Inventory tabs",
+        "sha256": null,
+        "action": "Font Glyph Inventory Tabs"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E7.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/FontLab Script Scaffold Wizard.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "f0cc432f0694ac574ec941432a229a79a97a5eb14cf0d2af2db47f47f890c417"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Scripting Workbench.py",
+        "tab": "Scaffold",
+        "sha256": null,
+        "action": "FontLab Script Scaffold Wizard"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/Glyph Batch Recipe Settings.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "59a3e88ce42193f4014d7174a5bfcb2ad4a12f86e95c56abe979a4b39763069a"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Recipes",
+        "sha256": null,
+        "action": "Glyph Batch Recipe Settings"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/Glyph Proof Batch Wizard.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "97d8657ebe41a2d7cec5104406d3bc0568ec98a547fa346ebf3ce98672e1d20f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Recipes",
+        "sha256": null,
+        "action": "Glyph Proof Batch Wizard"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Dialogs/Proof Text Coverage Dialog.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "4f69b4e8ffc2a772ef858aaa6ca6143d4bf0297c147cfeee7bad9b835b4e9795"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Coverage",
+        "sha256": null,
+        "action": "Proof Text Coverage Dialog"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Deferred Glyph Report Drag.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "138a809f419d024f95e499da5b50f2ea8d08fbe2e0a24afd16982c67a82af1fb"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Deferred MIME",
+        "sha256": null,
+        "action": "Deferred Glyph Report Drag"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Draggable Glyph Names.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "366fe2e09e40a33a446e3dfdddc665f8e5d7db7b7538b25bf1ae08da88d92142"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Glyph names",
+        "sha256": null,
+        "action": "Draggable Glyph Names"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Font Drop Inspector.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "74a595b4944c809756c110d16a996cbd7020885bc2b1dd32fe27ad50bbec7296"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Glyph names",
+        "sha256": null,
+        "action": "Font Drop Inspector"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_cov_font_drop_inspector.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Font File Drop Shelf.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "dfb10fb032cdabe7595ddbea41e81b574e2604acc1f7a4d6162b2230eb92cc81"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Files",
+        "sha256": null,
+        "action": "Font File Drop Shelf"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Glyph Pair Board.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "efd4c69ffa998a6138a5f73036eafa1ae3a5bf16ab21b6ac53a4f3e8dec50b8e"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Proof words and pairs",
+        "sha256": null,
+        "action": "Glyph Pair Board"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drag And Drop/Proof Word Magnets.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "3ca12c4b039282f35956b96189abb628305d985e7797854e2643295d5bbbdd9f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Drag Drop Lab.py",
+        "tab": "Proof words and pairs",
+        "sha256": null,
+        "action": "Proof Word Magnets"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drawing/Glyph Outline SVG.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "8411e650253aa79bd74b432e9fceb74bc921f745714acddad7ca63277f727171"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Painter Lab.py",
+        "tab": "SVG export",
+        "sha256": null,
+        "action": "Glyph Outline SVG"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_menu_warning_priority.py",
+        "tests/test_issue122_E5.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drawing/Glyph SVG Reference.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "08591b11c41e702a69e3ae51f3bd091e42b47f5625b7d5283b2f853063ce9bf1"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Painter Lab.py",
+        "tab": "SVG reference",
+        "sha256": null,
+        "action": "Glyph SVG Reference"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_menu_warning_priority.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drawing/Scale With Stem Compensation.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "feaff99b0907b1639d7260982135429ec4ba27677be5def6132a179a8492f1fd"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Stem Interpolation Lab.py",
+        "tab": "Stem-compensated scale",
+        "sha256": null,
+        "action": "Scale With Stem Compensation"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R3.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Drawing/Stem Blend.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "5b9312c7e7400de15a9a125e90924a37a2e97097d2bb258fdb6858b80c8268bc"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Stem Interpolation Lab.py",
+        "tab": "Stem blend",
+        "sha256": null,
+        "action": "Stem Blend"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R1a.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Forms/Glyph Metrics Form.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "552075cdbe2d26d4f36360447ffa1bba09973a4a24a4580cda0ef6ed5b987ae5"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Models and forms",
+        "sha256": null,
+        "action": "Glyph Metrics Form"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_curated_menus.py",
+        "tests/test_issue122_E7.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Arabic Text Coverage.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Arabic",
+        "sha256": null,
+        "action": "GetGo - Arabic Text Coverage"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Audit a Real Font.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "cad7eeef1119a1c0a3ea924c29bb26b6a87b62b189c287ee1b1891ec68c8d743"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Audit",
+        "sha256": null,
+        "action": "GetGo - Audit a Real Font"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Compare Master Topology.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "e14e2953a78a67de7787b83d98751b1365cdb27cbcf0b5dac9dce8299e3640e0"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Topology",
+        "sha256": null,
+        "action": "GetGo - Compare Master Topology"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Compare Two Real Fonts.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Cross-font comparison",
+        "sha256": null,
+        "action": "GetGo - Compare Two Real Fonts"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Export a TTF Geometry Subset.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c29ad6050c068858297109992daa71256c280995c67b06cad55f932993a7d076"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Geometry.py",
+        "tab": "TTF subset",
+        "sha256": null,
+        "action": "GetGo - Export a TTF Geometry Subset"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Export an OTF Geometry Subset.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Geometry.py",
+        "tab": "OTF subset",
+        "sha256": null,
+        "action": "GetGo - Export an OTF Geometry Subset"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Font Info Mini Tool.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "1764def4d2c07a39a4038ac4510d300b63ea9a18b34d59bf369f3a0e0871b53a"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Editing.py",
+        "tab": "Font info",
+        "sha256": null,
+        "action": "GetGo - Font Info Mini Tool"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Kerning and Classes Report.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "952f3f4ae658259702e06928d0dfe19c184d2828986679ecf3e6cbb59f73eba2"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Kerning",
+        "sha256": null,
+        "action": "GetGo - Kerning and Classes Report"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Masters Axes and Instances.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "3300f5b1c76e89cce4d8ae4672eb7ff5965ba5062ff8e2212a09a5d35d1f7d98"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Reports.py",
+        "tab": "Masters",
+        "sha256": null,
+        "action": "GetGo - Masters Axes and Instances"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Name a Disposable Derivative.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Editing.py",
+        "tab": "Derivative naming",
+        "sha256": null,
+        "action": "GetGo - Name a Disposable Derivative"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Outline Pens and Intersections.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "4e1496a86ad04d98a1a5e813587ab49e1615d75e888889b43a13c3a00a771cde"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Geometry.py",
+        "tab": "Pens and intersections",
+        "sha256": null,
+        "action": "GetGo - Outline Pens and Intersections"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Sidebearings from H.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Editing.py",
+        "tab": "Sidebearings",
+        "sha256": null,
+        "action": "GetGo - Sidebearings from H"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/GetGo Fonts/GetGo - Widen Two Glyphs.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "1ddd0fe74439a5d73e558c61a4dd428bd3ab12d1fc155c48bf5b73a1e871c519"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/GetGo Editing.py",
+        "tab": "Width edits",
+        "sha256": null,
+        "action": "GetGo - Widen Two Glyphs"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Graphics/Glyph Mark Colour Board.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "6d04716a04c246a9b1a7a01a79133ef2845685d53b535e62ca46f146e8319bae"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Review Model Lab.py",
+        "tab": "Mark colours",
+        "sha256": null,
+        "action": "Glyph Mark Colour Board"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Graphics/Glyph Proof Layout.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "9c49139060a6a2c158704e1ed3c8b9c5eaf19ed19206307b45e3cc949d6ba409"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Layouts",
+        "sha256": null,
+        "action": "Glyph Proof Layout"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Graphics/Glyph Proof Pad.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c4ab989b8a56c8d212825f7115b9570b6a65cf4d916e2da520ff48964621e795"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Layouts",
+        "sha256": null,
+        "action": "Glyph Proof Pad"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E4.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Graphics/Glyph Review Cards.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "e4f4cc3b6dd0f43227c3d2f5d6bf68376816d2579056b265ad3524864a58f513"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Review Model Lab.py",
+        "tab": "Cards",
+        "sha256": null,
+        "action": "Glyph Review Cards"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Graphics/Glyph Variant Feature Graph.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d9a142913ec14bea53254d7835bce4b474c01064a47ae74b1f3afc0650b01681"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Graph Lab.py",
+        "tab": "Feature graph",
+        "sha256": null,
+        "action": "Glyph Variant Feature Graph"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Coverage Grid.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "2012732abb8ae55c49c87628b4b44a4fed11c295be71b53913dcbee458282dc8"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Coverage",
+        "sha256": null,
+        "action": "Glyph Coverage Grid"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Encoding Chart.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d6559f455f52ae5bdbe168e33a4371dbe0caaa9e667a81425f24815c3d40f652"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Encoding",
+        "sha256": null,
+        "action": "Glyph Encoding Chart"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Filter Model with Date Range.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "bc533f2b26ff496f393891238e920cb2ee2d4ffc2aa8c65f43b3459c70cec05b"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Date filters",
+        "sha256": null,
+        "action": "Glyph Filter Model with Date Range"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Filter Model with Local Dates.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "50c0ee6696e83d821ebb147cddd78f959d571406b63fb736e131a4e78a9796fe"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Date filters",
+        "sha256": null,
+        "action": "Glyph Filter Model with Local Dates"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Inventory XML.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "008b7dcc17f0409f5d123c16c9b6993afc66048a79a8cb6d449df262002d5475"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Snapshot Lab.py",
+        "tab": "XML model",
+        "sha256": null,
+        "action": "Glyph Inventory XML"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Mark Colours.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "ba2ffbce7bfb60daa8161ab488471ccc6a7b2500468a01fe9a99c3a42f9c0886"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Review Model Lab.py",
+        "tab": "Mark colours",
+        "sha256": null,
+        "action": "Glyph Mark Colours"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Metadata Outline.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "7cd408cf96d52cb99d2e7db792a7b3c8a9b112e9337dcf7630354d656b12c8bd"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Tree Models Lab.py",
+        "tab": "Read-only trees",
+        "sha256": null,
+        "action": "Glyph Metadata Outline"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Metadata Tree.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "318e1caeb16d99f92faec860c3223c8bbde827d65a34354670476e8ccebcc4c1"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Tree Models Lab.py",
+        "tab": "Read-only trees",
+        "sha256": null,
+        "action": "Glyph Metadata Tree"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Metrics Model.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c515c98b3de9b8d60ac973ee12c59f8d5624f5b4aa118c202057c8e1f2614b40"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Models and forms",
+        "sha256": null,
+        "action": "Glyph Metrics Model"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Name Filter.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "5dffc5cfb00f5e6c2232a386145ed69c033426a6063a3aad37b2bc335a7c372d"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Filters",
+        "sha256": null,
+        "action": "Glyph Name Filter"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Proof Worksheet.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "ae6b441dc156be8d7bc5d7b434529bc3c18dedf870faa0cf5ab522fee60861c4"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Layouts",
+        "sha256": null,
+        "action": "Glyph Proof Worksheet"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Review Form.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "1d4057256856d161529627b3f3f0ee45fb567acb6d6667741a8c8aff7d1952e5"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Review Model Lab.py",
+        "tab": "Review forms",
+        "sha256": null,
+        "action": "Glyph Review Form"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Review Priorities.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "f3b02e1b82cb3a4735f8d419fe95b9d6a63eb05510af2708b938936a475db05c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Review Model Lab.py",
+        "tab": "Priorities",
+        "sha256": null,
+        "action": "Glyph Review Priorities"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Sorting and Filtering with Dates.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "4365ed5ac85d15c6d22b5a6a12205e7e1a99d76a269df1559ff238d1431158bb"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Date filters",
+        "sha256": null,
+        "action": "Glyph Sorting and Filtering with Dates"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Models/Glyph Sorting and Filtering.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "9854ec64fd9306473586890e55836b84fd89d61d9efd06d368bd54b9df042772"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Filters",
+        "sha256": null,
+        "action": "Glyph Sorting and Filtering"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Text/Calendar Proof Builder.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "7e0ed7debff0aef538d9f1638628055ee5cdfa1ec9c50fbc1207cdc7f8f63bda"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Calendar Lab.py",
+        "tab": "Proof generation",
+        "sha256": null,
+        "action": "Calendar Proof Builder"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_E9.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Text/Feature Code Draft.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "a6adcf63cc5c607328e86b5c257570bb262ec3a20045559a08229b765b0c1697"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Text Editors Lab.py",
+        "tab": "Feature draft",
+        "sha256": null,
+        "action": "Feature Code Draft"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Text/Font Handoff Letter.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "69daf90c33896c7b030642c067eb18999584d36c790d9abf52aa7dd2ba57ee61"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Text Editors Lab.py",
+        "tab": "Rich letter",
+        "sha256": null,
+        "action": "Font Handoff Letter"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Text/Font Review Notes.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d5c2860596235d62c91674c94c528c69b62cec462b60f0b86d807c38e5af44aa"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Text Editors Lab.py",
+        "tab": "Review notes",
+        "sha256": null,
+        "action": "Font Review Notes"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Text/Script Snippet Notebook.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "b961e496593e17b0fa7dcb17e1af2efbeb7e7814f9635d4570378c6ad1068fac"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Scripting Workbench.py",
+        "tab": "Snippet notebook",
+        "sha256": null,
+        "action": "Script Snippet Notebook"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Apply Unicode Map.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "ce54be9d669c5c1a057d2c949362b10728e832cde9ccb08ed607d84ef9a2ea24"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Unicode writes",
+        "sha256": null,
+        "action": "Apply Unicode Map"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R3.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Component Dependency Graph - Degree Forces.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "a6c1b6eaedfc19db641ddd7905485919dc1c130c30455018213d299295bf914c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Graph Lab.py",
+        "tab": "Degree forces",
+        "sha256": null,
+        "action": "Component Dependency Graph - Degree Forces"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Component Dependency Graph.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "af2fbd1fb7fa0d3d6b034c50775bba00ffb9663392ecd49c0b70f3f9740aff06"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Graph Lab.py",
+        "tab": "Dependency forces",
+        "sha256": null,
+        "action": "Component Dependency Graph"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Copy Layers From Font.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "168d0f01ded1c90d200d65e42dfbd8e5e2fcb04af910ccc7885dd87fb0b6e676"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Layer Transfer Lab.py",
+        "tab": "Layer copies",
+        "sha256": null,
+        "action": "Copy Layers From Font"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R3.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Editable Glyph Outline.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "9500cdb06e7867f75d30c82e24f0c99c5bb0bfc66bc577b1138ab0523ea0ff80"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Tree Models Lab.py",
+        "tab": "Editable trees",
+        "sha256": null,
+        "action": "Editable Glyph Outline"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Editable Glyph Tree.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "3774cdaa6aa3fd00ba3927798cf7bec0395709c2e83075412211b08b7dd9b95f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Tree Models Lab.py",
+        "tab": "Editable trees",
+        "sha256": null,
+        "action": "Editable Glyph Tree"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Find Font Source Files - Bytes.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c6419a8a53aa3cfd00875e4296ea1ea5f203052dc7c7dfeb31613a9e5cee3f5e"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/File Search Lab.py",
+        "tab": "Bytes profile",
+        "sha256": null,
+        "action": "Find Font Source Files - Bytes"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Find Font Source Files.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "4846f5e832802099895201f92cbe802141cdfe297e3877ed9de191efad7d2c0c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/File Search Lab.py",
+        "tab": "Text search",
+        "sha256": null,
+        "action": "Find Font Source Files"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E1.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Font Info Snapshot.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "5cabadec4f590122e5e6f37b332e2f28cd3f812b809721861ce3ea9dfc0f869e"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Font Metadata Lab.py",
+        "tab": "Snapshot",
+        "sha256": null,
+        "action": "Font Info Snapshot"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Font Name Encoding Audit.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c52b0fd91faf14d04b1d1fca67274c1877c08179c5acb527959bbca56121ca2b"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Font Metadata Lab.py",
+        "tab": "Encoding audit",
+        "sha256": null,
+        "action": "Font Name Encoding Audit"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "2626a83f431b2511c41f814cc5a082f9d99cfc308842d1de7c378130c443645a"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Image Viewer Lab.py",
+        "tab": "Bounded zoom",
+        "sha256": null,
+        "action": "Font Reference Image Viewer - Bounded Zoom"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_image_viewer_app_floor.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Font Reference Image Viewer.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "a4cb79252c2162c8b73e192ee121e49b6e959b9958b4c877c6366f774d07202f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Image Viewer Lab.py",
+        "tab": "Full viewer",
+        "sha256": null,
+        "action": "Font Reference Image Viewer"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_image_viewer_app_floor.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/FontLab Qt Slot Reference.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c032fef24d6938ee31002c3d4dd387c3e59b025631fb7c0c8c794a9c85051ede"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Scripting Workbench.py",
+        "tab": "Qt slots",
+        "sha256": null,
+        "action": "FontLab Qt Slot Reference"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Name Completion with Focus.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "a9b0779d69e988bb6ffa90bb5e3ed39127310f01930a743afd601c763ca9bd82"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Completion Lab.py",
+        "tab": "Focus behavior",
+        "sha256": null,
+        "action": "Glyph Name Completion with Focus"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Name Completion.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "49c7fd5046b7210b5b947e683bc2c811b03d2418a64663ee7cc277ea57ef4ebc"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Completion Lab.py",
+        "tab": "Basic completion",
+        "sha256": null,
+        "action": "Glyph Name Completion"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Name Pattern Lab.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "5937cd70a1882ba66ed3b20c1ed553ca1b6b0a80d27f11a0a001777e70337f3a"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Model Filtering Lab.py",
+        "tab": "Pattern matching",
+        "sha256": null,
+        "action": "Glyph Name Pattern Lab"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E10.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Snapshot Console.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "90a0b4ce7c31213be435bbf9d2883892a43ddf49dcb356a045f7982644e5d970"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Snapshot Lab.py",
+        "tab": "Console",
+        "sha256": null,
+        "action": "Glyph Snapshot Console"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_cov_glyph_snapshot_console.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Spacing Worksheet - Frameless.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "8e5f7deab36ef1b15addf3b9ca96927599c72a100e1c8364b52076776c866f9c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Spacing worksheets",
+        "sha256": null,
+        "action": "Glyph Spacing Worksheet - Frameless"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Glyph Spacing Worksheet.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c81ed034fd57ffedd415f0958fc10008f463ff392703afe5d0badc7a6f2f6749"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Spacing worksheets",
+        "sha256": null,
+        "action": "Glyph Spacing Worksheet"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Import Kerning Pair List.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "baaee6e3a32a7afc16b6163826b5867ad8cbb2e09327cfccc9eb894fa39bbd71"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Kerning Recipe Lab.py",
+        "tab": "Pair imports",
+        "sha256": null,
+        "action": "Import Kerning Pair List"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R1a.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_E16.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Kerning Copy Rules.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "e87db86b06d95a48cd72770e359095805e06fabb4985fc46c4c8bb38a2922f73"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Kerning Recipe Lab.py",
+        "tab": "Copy rules",
+        "sha256": null,
+        "action": "Kerning Copy Rules"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R1a.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Layer Metric Comparison.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "c516c85d08598262e8f5f23f143ce461059420e1fcac3e740a13040a57111c69"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Layer Transfer Lab.py",
+        "tab": "Metric comparison",
+        "sha256": null,
+        "action": "Layer Metric Comparison"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R3.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_R1b.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Localized Font Names.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "b5f6c1631ee2f2cbb32a96e8c77f7a6eb2d6021d3d6160ef6279beff3b609f40"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Font Metadata Lab.py",
+        "tab": "Localized names",
+        "sha256": null,
+        "action": "Localized Font Names"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Pair Proof Generator.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "8cdc58521908a7959208789ea4a71674e2a3b44e6d177c374ee746bd6be95129"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Samples and pairs",
+        "sha256": null,
+        "action": "Pair Proof Generator"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_R3.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_R1b.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Path Problem Report.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "23824e20bd430c7121e78733850463eed1d4a344272af8bea8980da8e41095bc"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Font Inspection Lab.py",
+        "tab": "Paths",
+        "sha256": null,
+        "action": "Path Problem Report"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_E16.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Saved Proof Sample.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "31cfd1c0f067b1ab2e912aa3832921c3bc93e51232d027d37723b9f4ca98407e"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Samples and pairs",
+        "sha256": null,
+        "action": "Saved Proof Sample"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Tools/Symbol Tag Search.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d79ca108fadfae9649ed60765d745722d956a930a6a3d3d22bd27a9bbe04cdd9"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Font Inspection Lab.py",
+        "tab": "Symbol tags",
+        "sha256": null,
+        "action": "Symbol Tag Search"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_cov_symbol_tag_search.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_issue122_R1b.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Font Units Calculator.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "595ee84ca7920e5a72b5dbc5120eb2d9ff4d83b5f99363f8a8345e98b29284f1"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Numeric controls",
+        "sha256": null,
+        "action": "Font Units Calculator"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E7.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Character Map - Styles.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "96d71bb21c61674afe9feaaf2a92d793359b262c6959e92f8eec7f73101d93bc"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Character maps",
+        "sha256": null,
+        "action": "Glyph Character Map - Styles"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Character Map.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "af966898d6794f97aa3feb7bc9487a7ac827af0a0d3739668afb5be8167fcc54"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Character maps",
+        "sha256": null,
+        "action": "Glyph Character Map"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Metrics and Revisions - Detailed.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "5f61bb06c92cceea8d4c26f8034cb6ee92e3e11fe3b3b484f0df252ac5710087"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Numeric controls",
+        "sha256": null,
+        "action": "Glyph Metrics and Revisions - Detailed"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Metrics and Revisions.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "3298e1461eb01acd81d7c9b606ee0f055fde4dd0051bcf18ad1e01f395acf33b"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Numeric controls",
+        "sha256": null,
+        "action": "Glyph Metrics and Revisions"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Modification Calendar with Formats.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "974455f9e60d487ae64f28fe409ca304fd8b009999fe9c310a103c6fa7c1dc0f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Calendar Lab.py",
+        "tab": "Date formatting",
+        "sha256": null,
+        "action": "Glyph Modification Calendar with Formats"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_calendar_official_adaptation.py",
+        "tests/test_issue122_E7.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Modification Calendar.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "386c89bb6a956c0e230f87cca67f7a7a610d16a0b30967f743a98f5c9a79b10f"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Calendar Lab.py",
+        "tab": "Calendar widgets",
+        "sha256": null,
+        "action": "Glyph Modification Calendar"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_calendar_adaptation.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Proof Groups.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "925e194a2e2d7a5b3838fd1c52990028b483b6abccce333d47c03ce4d012bda4"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Proof Composition Lab.py",
+        "tab": "Groups",
+        "sha256": null,
+        "action": "Glyph Proof Groups"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Sketch Pad.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "7f1c7dddc498c960edb24db72d72f22ec2941f2d528701c79061d5c47aff4815"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Painter Lab.py",
+        "tab": "Sketch",
+        "sha256": null,
+        "action": "Glyph Sketch Pad"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Spacing Offset - Stacked.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "95b983078974156f0ded83e6dde1576237fa638ac4beeda17cef04f7d4989485"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Numeric controls",
+        "sha256": null,
+        "action": "Glyph Spacing Offset - Stacked"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Glyph Spacing Offset.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "bcf8e7f275745e51f720577cd1a6c6ff2ecb834a2c87f990ae22afe40968578d"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Metrics Controls Lab.py",
+        "tab": "Numeric controls",
+        "sha256": null,
+        "action": "Glyph Spacing Offset"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Script Icon Browser.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "7904e8816b86027e0a4c18237d8eb1fc3d91743825540527e1b63268f7646deb"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Scripting Workbench.py",
+        "tab": "Icons",
+        "sha256": null,
+        "action": "Script Icon Browser"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Widgets/Script Palette Roles.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "470472eb81adda9ba61ebb2423568157f7e5140c88c53ca120121858243107c3"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Scripting Workbench.py",
+        "tab": "Palette roles",
+        "sha256": null,
+        "action": "Script Palette Roles"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Windows/Glyph Snapshot Diff.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "d838006f8983ae200a3d2fd932c0213a8afc8f5d429e7c6b4e86812523811d8c"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Snapshot Lab.py",
+        "tab": "Diff",
+        "sha256": null,
+        "action": "Glyph Snapshot Diff"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_menu_warning_priority.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Windows/Unicode Issues Dock.py",
+        "commit": "85dda6670144c8ab32621efbcfe1ee61eab2ff72",
+        "sha256": "f8aa7bb694352b07d8d456ac5cd637d59c091e6578f4552c7261a09234fb0d59"
+      },
+      "disposition": "absorbed",
+      "destination": {
+        "path": "Scripts/Labs/Unicode Lab.py",
+        "tab": "Dock lifecycle",
+        "sha256": null,
+        "action": "Unicode Issues Dock"
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_issue122_E15.py",
+        "tests/test_menu_warning_priority.py",
+        "tests/test_spacing_menu_integration.py",
+        "tests/test_curated_menus.py",
+        "tests/test_menu_consolidations.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    }
+  ]
+}

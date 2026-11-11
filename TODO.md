@@ -4,6 +4,13 @@ this_file: TODO.md
 
 # Open tasks
 
+- [ ] Orchestrator: run the canonical G-Examples wrapper after integration in an authorized controller environment; WPF prepared equivalent passed 2,412 tests with 99 existing archive opt-in skips; exact provisioning remains blocked by PyPI DNS.
+
+- [ ] Review the proposed 100-source/25-lab consolidation routes against the final integrated Scriptmix/App cohort before implementing WP09/WP10.
+- [ ] Preserve all original adaptation identities, hashes and tests when recording implemented lab destinations; review each new full-hash pair independently.
+- [ ] Reconcile the sixteen packaged Lessons entrypoints and installed stale-menu cleanup in WP11 before retiring any source launcher.
+- [ ] Native: qualify each implemented lab/tab in FontLab PythonQt under WP12; proposed ledger entries establish no behavior parity or native acceptance.
+
 - [ ] Keep all lesson, original-source and destination-hash contracts while updating examples for reviewed App/provider migrations.
 - [ ] Qualify the installed cohort, actual owned native workflows, whole-font/history, window priority and save/reopen; keep site and runtime acceptance separate.
 - [ ] Run the exact repository checks on the integrated source, obtain independent review, commit/push the scoped milestone and verify its remote head.
