@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 ## 2026-11-11 — Docs pipeline pins follow the WP09 labs pages (Issue 250)
 
-The WP09 merge (bbfd241) added nine launcher menus and the `current/labs` section (nine pages plus index), so the Documentation workflow failed four pins: menu and page counts 100 to 109 (`test_pipeline_site.py`, `test_pipeline_history.py`), generated file count 303 to 313 (`test_pipeline_build.py`) and the search-location set (ten `current/labs/*` locations added). Pins updated to the measured values from a local `src_docs/build.sh` build; 42 pipeline tests pass. No assertion was loosened.
+The WP09 merge (bbfd241) added nine launcher menus and the `current/labs` section (nine pages plus index), so the Documentation workflow failed four pins: menu and page counts 100 to 109 (`test_pipeline_site.py`, `test_pipeline_history.py`), generated file count 303 to 313 (`test_pipeline_build.py`) and the search-location set (ten `current/labs/*` locations added). The commit also carries the regenerated `src_docs/md` source links (101 files, now pointing at f9d4d5f). Pins updated to the measured values from a local `src_docs/build.sh` build; 42 pipeline tests pass. No assertion was loosened.
 
 ## 2026-11-11 — R3 package fake exposes `fgPackage` (Issue 250)
 
