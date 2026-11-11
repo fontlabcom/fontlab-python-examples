@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `3300f5b1c76e89cce4d8ae4672eb7ff5965ba5062ff8e2212a09a5d35d1f7d98`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Masters%20Axes%20and%20Instances.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Masters%20Axes%20and%20Instances.py)

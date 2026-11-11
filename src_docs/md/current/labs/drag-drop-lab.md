@@ -21,4 +21,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `2d12a8995e8a2cf17b02e0b0896401e10afbbb4ab42ac8f3ead9982965e4d64e`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Labs/Drag%20Drop%20Lab.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Labs/Drag%20Drop%20Lab.py)

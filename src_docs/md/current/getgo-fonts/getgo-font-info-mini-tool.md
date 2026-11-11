@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1764def4d2c07a39a4038ac4510d300b63ea9a18b34d59bf369f3a0e0871b53a`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Font%20Info%20Mini%20Tool.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Font%20Info%20Mini%20Tool.py)

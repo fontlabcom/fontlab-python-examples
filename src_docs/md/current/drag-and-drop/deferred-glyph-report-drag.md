@@ -29,4 +29,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `02f30ccf16180b2ee87911f40dcc22061609c45508d67a39230eaf402544c2bc`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Drag%20And%20Drop/Deferred%20Glyph%20Report%20Drag.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Drag%20And%20Drop/Deferred%20Glyph%20Report%20Drag.py)

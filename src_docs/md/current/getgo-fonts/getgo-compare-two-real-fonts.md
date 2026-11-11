@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `abfa7d13fbf0be4bb8e9ab2300b8e3bd5daa31aa042252211a06739d9a9050ec`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Compare%20Two%20Real%20Fonts.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Compare%20Two%20Real%20Fonts.py)

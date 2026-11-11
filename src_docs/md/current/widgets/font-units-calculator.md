@@ -32,4 +32,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `3d0c7a743500581ad54a5023415c44426134e7e3a00c5a582af2f069cfb98034`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Font%20Units%20Calculator.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Widgets/Font%20Units%20Calculator.py)

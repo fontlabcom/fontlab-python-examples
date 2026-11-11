@@ -36,4 +36,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `45e6656303acdc1e304b1184c23642f3f3926d166323eb93d036c1202e54a517`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Review%20Cards.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Graphics/Glyph%20Review%20Cards.py)

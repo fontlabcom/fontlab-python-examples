@@ -21,4 +21,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `413cc4c8edd4f5598ed5491262f135bb3cfca537d1a725b3c3713147d2192c86`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Labs/Tree%20Models%20Lab.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Labs/Tree%20Models%20Lab.py)

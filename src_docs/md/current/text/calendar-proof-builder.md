@@ -36,4 +36,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `13bdb19e3f0a47d339d70a76af2deed2b07f9ae9bb5a536fe98a5ba5b2bc2cfc`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Text/Calendar%20Proof%20Builder.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Text/Calendar%20Proof%20Builder.py)

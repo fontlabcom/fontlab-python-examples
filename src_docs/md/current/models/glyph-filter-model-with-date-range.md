@@ -41,4 +41,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `47eba445887f407fdff60be3567b23324316a5a7888d79e6d60f912dc1530073`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Filter%20Model%20with%20Date%20Range.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Filter%20Model%20with%20Date%20Range.py)

@@ -40,4 +40,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `c02e783ff960c483c2d6f22279070852d648af1124f23cebbe09cffa7bee8140`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Glyph%20Proof%20Batch%20Wizard.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Dialogs/Glyph%20Proof%20Batch%20Wizard.py)

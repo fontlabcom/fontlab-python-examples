@@ -38,4 +38,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `fc8f343b66aa376af2242fd87336bf5228d05bbd4096bc9800d1cd4a5099bf49`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Spacing%20Worksheet%20-%20Frameless.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Tools/Glyph%20Spacing%20Worksheet%20-%20Frameless.py)

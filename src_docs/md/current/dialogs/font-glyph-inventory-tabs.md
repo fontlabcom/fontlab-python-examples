@@ -36,4 +36,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `829f3ccb406c13cf89f10904d4e918b4da9927aa6c5b44512761b70bcbd6fdfa`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Font%20Glyph%20Inventory%20Tabs.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Dialogs/Font%20Glyph%20Inventory%20Tabs.py)

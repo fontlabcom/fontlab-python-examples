@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `3dcee684f6dd6ff95805c9c5a43cdd098ab25157d542f9273472602eba189476`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Arabic%20Text%20Coverage.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Arabic%20Text%20Coverage.py)

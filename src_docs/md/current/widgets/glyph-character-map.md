@@ -44,4 +44,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1956fa533572f1c9cdeb9e52ba782625fbaad28bd2e16c49ab3264755e93170b`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Character%20Map.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Widgets/Glyph%20Character%20Map.py)

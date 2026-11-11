@@ -14,7 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR = "src_docs/current_menus.py"
 OUTPUT = "src_docs/md/current"
-COUNT = 100
+COUNT = 109
 
 
 class SourceHistoryTests(unittest.TestCase):

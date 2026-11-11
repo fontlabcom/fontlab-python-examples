@@ -41,4 +41,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `e6ef77af86258531ce5126829d14defdab66a1fe424d5486fe69ded8b2458a1d`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Dialogs/Expandable%20Glyph%20Search.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Dialogs/Expandable%20Glyph%20Search.py)

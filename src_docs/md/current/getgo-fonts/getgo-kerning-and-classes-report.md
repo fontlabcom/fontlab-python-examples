@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `952f3f4ae658259702e06928d0dfe19c184d2828986679ecf3e6cbb59f73eba2`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/GetGo%20Fonts/GetGo%20-%20Kerning%20and%20Classes%20Report.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Kerning%20and%20Classes%20Report.py)

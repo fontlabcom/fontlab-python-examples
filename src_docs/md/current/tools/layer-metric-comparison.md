@@ -33,4 +33,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `c516c85d08598262e8f5f23f143ce461059420e1fcac3e740a13040a57111c69`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Layer%20Metric%20Comparison.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Tools/Layer%20Metric%20Comparison.py)

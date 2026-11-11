@@ -38,4 +38,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `d676b76cd1ea21dc79cffed8d3bf57d5495c95d000f3a8030ce8468263014a89`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Review%20Priorities.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Review%20Priorities.py)

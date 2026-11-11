@@ -40,4 +40,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `d758cceb6e0b47d0ea349678f4de68be7f5b3eb8af71eb370bfdee60ea39ed39`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Designer/Em%20Star%20Polygon.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Designer/Em%20Star%20Polygon.py)

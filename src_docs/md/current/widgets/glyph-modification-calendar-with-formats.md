@@ -38,4 +38,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `2405f96d1f6fc43f6c5afb79c9712d4de7197e473fab6543dba27fd044eea739`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Widgets/Glyph%20Modification%20Calendar%20with%20Formats.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Widgets/Glyph%20Modification%20Calendar%20with%20Formats.py)

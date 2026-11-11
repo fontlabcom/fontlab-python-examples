@@ -38,4 +38,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `7bd330e7d89df5e4d3f2e6a56e299da7e13580c166d3e238cab4cf1fb25aff9a`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Metadata%20Tree.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Metadata%20Tree.py)

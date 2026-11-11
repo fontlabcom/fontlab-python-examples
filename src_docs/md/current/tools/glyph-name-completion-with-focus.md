@@ -37,4 +37,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `6d8b67013b27f1a121189ab3ce9259762cfc2bee06d73670d4ed529591063506`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Tools/Glyph%20Name%20Completion%20with%20Focus.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Tools/Glyph%20Name%20Completion%20with%20Focus.py)

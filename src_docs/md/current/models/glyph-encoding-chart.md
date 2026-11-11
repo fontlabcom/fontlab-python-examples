@@ -34,4 +34,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `dd6a07657459d6337abbf9b36c3046112f34967106e9b27b69b0399bf6d6435a`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Encoding%20Chart.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Encoding%20Chart.py)

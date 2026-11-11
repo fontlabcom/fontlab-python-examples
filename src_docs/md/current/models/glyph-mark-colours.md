@@ -40,4 +40,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `c39b0882c87f0dd2cadaf1ef5d43f1514ca2f82ddaa4d0fae23ed45535506584`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Mark%20Colours.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Mark%20Colours.py)

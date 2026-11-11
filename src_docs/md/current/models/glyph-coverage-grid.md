@@ -35,4 +35,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `c92c7ffb70b6cd2b49c0cad880271bdf0cca8967455c767698526ee24e04e606`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Models/Glyph%20Coverage%20Grid.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Models/Glyph%20Coverage%20Grid.py)

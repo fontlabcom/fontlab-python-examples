@@ -40,4 +40,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1fd13c79c47ae52347782f4f3afb8203378d9cf4220fd479453382b9c0c39b28`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Contours/Node%20Table.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Contours/Node%20Table.py)

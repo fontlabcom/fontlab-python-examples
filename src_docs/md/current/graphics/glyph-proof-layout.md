@@ -37,4 +37,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `bb817d85fd38c51883668bae0f97dde416970e8833c1961b96982b6ee596163d`
 
-[Python source at `1505ea0b53c6`](https://github.com/fontlabcom/fontlab-python-examples/blob/1505ea0b53c62938e842d3b039f4fadf2632a842/Scripts/Graphics/Glyph%20Proof%20Layout.py)
+[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Graphics/Glyph%20Proof%20Layout.py)
