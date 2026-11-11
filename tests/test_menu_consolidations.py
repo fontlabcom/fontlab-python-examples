@@ -7,6 +7,8 @@ import json
 import unittest
 from pathlib import Path
 
+from scriptmix_destinations import check_destination
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
     "examples_consolidation_layout", ROOT.parent / "fontlab-python-scriptmix/menu_layout.py"
@@ -69,8 +71,7 @@ class ConsolidationTests(unittest.TestCase):
         cross_repo = [row for row in records if row["menu"].startswith("fontlab-python-scriptmix/")]
         self.assertEqual(len(cross_repo), 24)
         for row in cross_repo:
-            source = ROOT.parent / row["menu"]
-            self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), row["destination_sha256"])
+            self.assertEqual(check_destination(row["menu"], row["destination_sha256"]), row["destination_sha256"])
 
     def test_packaged_menus_when_proposed_then_all_16_remain_accounted(self):
         rows = {row["source"]["path"]: row for row in LAYOUT.consolidation_rows(ROOT)}

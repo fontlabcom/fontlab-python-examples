@@ -1,0 +1,83 @@
+{
+  "this_file": "scriptmix-absorptions.json",
+  "note": "Scriptmix scripts that Examples rows still name but Scriptmix removed after absorbing them into a launcher tab. last_sha256 is the frozen identity (the bytes before removal); the Examples pins in menu-adaptations.json stay unchanged.",
+  "absorptions": [
+    {
+      "menu": "Scripts/Contours/Align And Distribute.py",
+      "last_sha256": "9f75b37714c3e7041563d182142a409e239724284be6e592903d1b250d80093b",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Align and Nudge.py",
+        "tab": "Align And Distribute"
+      },
+      "tab_declared_in": "src/fontlabapp/fontui/outline_studios.py"
+    },
+    {
+      "menu": "Scripts/Contours/Correct Contour Direction.py",
+      "last_sha256": "c66dda7f51ad5724ff7232b989b5eb47bb6c08e4d6c149862f1d2e7ce600d982",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Outline Doctor.py",
+        "tab": "Correct Contour Direction"
+      },
+      "tab_declared_in": "src/fontlabapp/fontui/outline_editing.py"
+    },
+    {
+      "menu": "Scripts/Contours/Make Compatible.py",
+      "last_sha256": "b101c41dc8381b61322148c9b87dc6fbb34ac17e0422dd7bd152d2041a57e35c",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Outline Compatibility.py",
+        "tab": "Make Compatible"
+      },
+      "tab_declared_in": "src/fontlabapp/fontui/outline_compatibility.py"
+    },
+    {
+      "menu": "Scripts/Contours/Optimize Start Points.py",
+      "last_sha256": "ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Outline Doctor.py",
+        "tab": "Optimize Start Points"
+      },
+      "tab_declared_in": "src/fontlabapp/fontui/outline_editing.py"
+    },
+    {
+      "menu": "Scripts/Contours/Remove Overlap.py",
+      "last_sha256": "7b6f775d90984c19bfa3fd80bfb9294cd32256a43e42b41fbd34740c3b03320d",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Outline Doctor.py",
+        "tab": "Remove Overlap"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/outline_doctor/checks.py"
+    },
+    {
+      "menu": "Scripts/Contours/Round Coordinates.py",
+      "last_sha256": "7b0f85d35d89bfd6d714596f76e48b9a5ff9b50322cbc87ae35e1da318faac76",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Outline Doctor.py",
+        "tab": "Round Coordinates"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/outline_doctor/checks.py"
+    },
+    {
+      "menu": "Scripts/Contours/Transform.py",
+      "last_sha256": "027d07ff32d8f0dc40070fe80d77af0da941a6c48aebd3977c8e2484617d2d41",
+      "removed_by": "cb3a95057641f3b2382a887172fab524dbc4901a",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Contours/Transform Studio.py",
+        "tab": "Transform"
+      },
+      "tab_declared_in": "src/fontlabapp/fontui/outline_studios.py"
+    }
+  ]
+}

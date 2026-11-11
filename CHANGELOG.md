@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Scriptmix absorbed destinations followed; frozen pins kept (Issue 250)
+
+- Scriptmix cb3a9505 (WP05 re-land) removed seven `Scripts/Contours` scripts that Examples rows name: Align And Distribute, Correct Contour Direction, Make Compatible, Optimize Start Points, Remove Overlap, Round Coordinates and Transform. Each was absorbed into an implemented launcher tab. Eight Examples tests (E16, R1a, R1b, R1c, R3, menu consolidations, rescued menus, pin freshness) failed with missing files in the pre-push hook.
+- No frozen hash, path or count changed. The new `scriptmix-absorptions.json` records each removed path with its last sha256 (equal to the Examples pin and to Scriptmix's consolidation `source.sha256`), `removed_by` cb3a9505, the launcher path and tab, and the App module that declares the tab.
+- The new `tests/scriptmix_destinations.py` still hashes a present file strictly against its pin, including a listed path that reappears. An absent file passes only when all of these hold: its absorption row matches the pin; Scriptmix marks the same bytes absorbed and implemented into the same tab; the launcher exists and parses; App declares the tab as a string literal; and git shows the file at `removed_by^` with those bytes and absent at `removed_by`. Paths with no Examples pin skip when Scriptmix has no git history.
+- Mutants: dropping a row fails 3 tests; one changed hash byte fails 4; a wrong `removed_by` fails 1; a consolidation set back to proposed fails 3; renaming the App tab literal fails 1; restoring the strict missing-file check brings back the original 8 failures.
+
 ## 2026-11-11 — Font Reference Image Viewers: App minimum decided as v1.2.4 (Issue 250)
 
 - Decision: both viewers need App v1.2.4. App v1.2.0 is the first release tag with `qt.images.viewer.model.show` and `show_bounded`; in FontLab the bounded viewer's shortcuts also need 6ece10e (`QAction.setShortcut(gui.QKeySequence(shortcut))`, from a native PythonQt probe), first released in v1.2.4. App has not changed the viewer package since: `git diff v1.2.4 origin/main -- src/fontlabapp/qt/images/viewer/` is empty.

@@ -19,6 +19,7 @@ import pytest
 from fontlabapp.glyphs.names.model import Facts
 
 from historical_sources import archived_source, recorded_sha256, recorded_sources
+from scriptmix_destinations import check_destination
 
 from module_doubles import install_module
 
@@ -317,10 +318,13 @@ def test_dispositions_when_loaded_then_cover_exact_source_identities() -> None:
                 if row["menu"].startswith("fontlab-python-")
                 else ROOT / row["menu"]
             )
-            assert (
-                hashlib.sha256(source_bytes(target)).hexdigest()
-                == row["destination_sha256"]
-            ), row["menu"]
+            if row["menu"].startswith("fontlab-python-scriptmix/"):
+                check_destination(row["menu"], row["destination_sha256"])
+            else:
+                assert (
+                    hashlib.sha256(source_bytes(target)).hexdigest()
+                    == row["destination_sha256"]
+                ), row["menu"]
 
 
 def test_panel_when_built_then_controls_and_preview_use_real_hooks(

@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 from historical_sources import recorded_sha256
+from scriptmix_destinations import check_destination
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = json.loads((ROOT / "rescue-index.json").read_text())
@@ -44,9 +45,12 @@ def test_index_when_loaded_then_complete_unique_source_scope_remains_pending():
             if menu.startswith(prefix)
             else ROOT / menu
         )
-        assert destination.is_file(), (
-            "Keep each reviewed practical destination active"
-        )
+        if menu.startswith(prefix):
+            check_destination(menu, row["destination_sha256"], scriptmix=scriptmix_root)
+        else:
+            assert destination.is_file(), (
+                "Keep each reviewed practical destination active"
+            )
         assert (
             row["native_acceptance"] == "pending"
             and row["original_workflow_accepted"] is False

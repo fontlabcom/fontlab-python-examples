@@ -18,6 +18,7 @@ import pytest
 from fontlabapp.masters.layers.selection import LayerSelection
 
 from historical_sources import recorded_sha256
+from scriptmix_destinations import check_destination
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Symbol Tag Search", "Pair Proof Generator", "Layer Metric Comparison")
@@ -614,7 +615,11 @@ def fragment_records() -> dict[str, list[dict[str, Any]]]:
                 "source": source,
                 "source_sha256": digest,
                 "menu": destination,
-                "destination_sha256": hashlib.sha256(source_bytes(path)).hexdigest(),
+                "destination_sha256": (
+                    check_destination(destination)
+                    if destination.startswith("fontlab-python-scriptmix/")
+                    else hashlib.sha256(source_bytes(path)).hexdigest()
+                ),
                 "entry_point": "main",
                 "license": "Apache-2.0 (independent rewrite; source MPL-2.0)",
                 "scope": SCOPES[name],

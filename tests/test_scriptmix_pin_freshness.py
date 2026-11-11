@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 
 import pytest
+from scriptmix_destinations import check_destination
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "fontlab-python-scriptmix/"
@@ -20,11 +21,10 @@ def stale_pins(rows: list[dict], scriptmix_root: Path) -> list[str]:
         menu = row["menu"]
         if not menu.startswith(PREFIX):
             continue
-        path = scriptmix_root / menu.removeprefix(PREFIX)
-        if not path.is_file():
-            problems.append(f"missing: {menu}")
-        elif hashlib.sha256(path.read_bytes()).hexdigest() != row["destination_sha256"]:
-            problems.append(f"stale pin: {menu}")
+        try:
+            check_destination(menu, row["destination_sha256"], scriptmix=scriptmix_root)
+        except AssertionError as error:
+            problems.append(str(error))
     return problems
 
 

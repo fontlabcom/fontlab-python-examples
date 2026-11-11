@@ -17,6 +17,7 @@ from xml.etree import ElementTree as ET
 import pytest
 
 from historical_sources import recorded_sha256
+from scriptmix_destinations import check_destination
 
 from module_doubles import install_module
 
@@ -357,11 +358,14 @@ def test_dispositions_when_checked_then_all_source_bytes_and_targets_match() -> 
                 if row["menu"].startswith("fontlab-python-scriptmix/")
                 else ROOT / row["menu"]
             )
-            assert destination.is_file(), row["menu"]
-            assert (
-                hashlib.sha256(destination.read_bytes()).hexdigest()
-                == row["destination_sha256"]
-            ), row["menu"]
+            if row["menu"].startswith("fontlab-python-scriptmix/"):
+                check_destination(row["menu"], row["destination_sha256"])
+            else:
+                assert destination.is_file(), row["menu"]
+                assert (
+                    hashlib.sha256(destination.read_bytes()).hexdigest()
+                    == row["destination_sha256"]
+                ), row["menu"]
         assert row["source_body_redistributed"] is False
 
 

@@ -20,6 +20,7 @@ import pytest
 from fontlabapp.masters.layers.selection import LayerSelection
 
 from historical_sources import recorded_sha256
+from scriptmix_destinations import check_destination
 
 from module_doubles import install_module
 
@@ -734,10 +735,13 @@ def test_dispositions_when_loaded_then_all_17_frozen_identities_have_exact_rows(
                 if row["menu"].startswith("fontlab-python-scriptmix/")
                 else ROOT / row["menu"]
             )
-            assert (
-                hashlib.sha256(destination.read_bytes()).hexdigest()
-                == row["destination_sha256"]
-            )
+            if row["menu"].startswith("fontlab-python-scriptmix/"):
+                check_destination(row["menu"], row["destination_sha256"])
+            else:
+                assert (
+                    hashlib.sha256(destination.read_bytes()).hexdigest()
+                    == row["destination_sha256"]
+                )
             if row["menu"] == "Scripts/Contours/Node Slope And Handles.py":
                 assert "App>=0.2.150.dev0" in destination.read_text()
             assert row["original_workflow_accepted"] is False

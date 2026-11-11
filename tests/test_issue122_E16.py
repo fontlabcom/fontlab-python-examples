@@ -16,6 +16,7 @@ import pytest
 from historical_sources import recorded_sha256
 
 from module_doubles import install_module
+from scriptmix_destinations import check_destination
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "Scripts/Tools/Path Problem Report.py"
@@ -106,8 +107,10 @@ def test_all_recipe_identities_and_duplicate_targets() -> None:
     mix = ROOT.parent / "fontlab-python-scriptmix/Scripts"
     for paths in DUPLICATES.values():
         for path in paths:
-            assert (mix / path).is_file(), path
-            ast.parse((mix / path).read_text(), feature_version=(3, 11))
+            if (mix / path).is_file():
+                ast.parse((mix / path).read_text(), feature_version=(3, 11))
+            else:
+                check_destination("Scripts/" + path)
     assert set(SOURCES) - set(DUPLICATES) == {
         "glyphs_path_report/recipe.py",
         "glyphs_path_report/path_report.py",
