@@ -8,6 +8,11 @@ this_file: CHANGELOG.md
 - `tests/test_pin_freshness_workflow.py::test_workflow_when_read_then_runs_weekly_on_a_schedule` pins one weekly cron.
 - Still open: a scheduled or dispatched run on `main` has not yet been observed passing.
 
+## 2026-11-12 — 14 unresolved licence assets pinned absent (Issue 250)
+
+- Closes the TODO row "Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check". The row, which 544659f had re-added, was stale. d3ab76d (2026-10-15) replaced all 14 assets with self-authored files. 9c53f92 (2026-10-20) then removed the whole `ports/` tree, `catalog/licenses.json` and the replacement generator, and that removal is archived outside the repository. None of the 14 assets is tracked on `main`.
+- New `tests/test_unresolved_licence_assets_absent.py` pins each asset's original path, the SHA-256 of its upstream bytes and the SHA-256 with all whitespace removed. The values come from `d3ab76d^:catalog/licenses.json` and the blobs. A tracked file at an original path, with the same bytes, or with the same content once whitespace is removed fails the test until its licence is recorded or it is replaced. The empty `nostyle.qss` is checked by path only.
+
 ## 2026-11-12 — Retirement licence fields have one meaning (Issue 250)
 
 - `menu-adaptations.json`: a retirement's `license` now always means the SPDX expression recorded for the retired file named in `source` (no code is shipped; not claimed to be the Qt/PyQt upstream's licence); an adaptation's `license` keeps describing the first-party rewrite. Nine free-text values were normalised without adding a claim: two `BSD-3-Clause headers; GPL-3.0-only collection metadata` became `BSD-3-Clause AND GPL-3.0-only` (as in five sibling records), and `Apache-2.0 (archived implementation)` / six `Apache-2.0 (no source redistributed)` became `Apache-2.0` (the six already carry `source_body_redistributed: false`). The rule is stated in `policy`.
