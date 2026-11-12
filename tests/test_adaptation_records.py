@@ -17,6 +17,7 @@ Rules:
 """
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,3 +121,22 @@ def test_native_duplicates_when_retired_then_reason_names_the_command() -> None:
 def test_app_floor_when_recorded_then_only_in_script_setup_lines() -> None:
     for row in RECORDS["adaptations"] + RECORDS["retirements"]:
         assert "app_minimum" not in row, row["source"]
+
+
+SPDX_TOKEN = re.compile(r"^[A-Za-z0-9.+-]+$")
+
+
+def test_retirement_license_when_read_then_is_spdx_for_the_retired_source_file() -> None:
+    """A retirement's licence is the one recorded for the retired file named in `source`.
+
+    An adaptation's licence describes the first-party rewrite. A retirement ships
+    no code; its licence is an SPDX expression (ids joined by AND/OR) or a
+    LicenseRef-, and annotations belong in other fields. It is not claimed to be
+    the licence of the Qt/PyQt upstream.
+    """
+    bad = []
+    for row in RECORDS["retirements"]:
+        tokens = [t for t in row["license"].split() if t not in {"AND", "OR"}]
+        if not tokens or not all(SPDX_TOKEN.match(t) for t in tokens):
+            bad.append((row["source"], row["license"]))
+    assert not bad, f"free-text retirement licences: {bad}"
