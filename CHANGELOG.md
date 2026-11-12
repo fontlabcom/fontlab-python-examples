@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Node Table history-follow row annotated (Issue 250)
+
+- TODO row for the Node Table keeping stale coordinates after a native Undo now records why it is not fixed here: the script is a pinned proposed consolidation source (85dda66; changing it fails the consolidation, R1b and R3 disposition tests), so the fix moves to the App Node Editing Lab tab. No code change.
+
 ## 2026-11-11 — Scriptmix pin checks run in public CI (Issue 250)
 
 - New `.github/workflows/pin-freshness.yml` (push to main, pull requests, manual) checks out public `fontlabcom/fontlab-python-scriptmix` main with full history and no persisted credentials, sets `FONTLAB_SCRIPTMIX_ROOT`, and runs `tests/test_scriptmix_pin_freshness.py` and `tests/test_scriptmix_destinations.py` with pytest under uv. Permissions are `contents: read`; it has no Pages, publishing or secret steps, and actions are pinned to the same SHAs as `docs.yml`.
