@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — 14 unresolved licence assets pinned absent (Issue 250)
+
+- Closes the TODO row "Resolve the 14 unresolved licence-provenance records from the 2026-10-15 closing check". The row, which 544659f had re-added, was stale. d3ab76d (2026-10-15) replaced all 14 assets with self-authored files. 9c53f92 (2026-10-20) then removed the whole `ports/` tree, `catalog/licenses.json` and the replacement generator, and that removal is archived outside the repository. None of the 14 assets is tracked on `main`.
+- New `tests/test_unresolved_licence_assets_absent.py` pins each asset's original path, the SHA-256 of its upstream bytes and the SHA-256 with all whitespace removed. The values come from `d3ab76d^:catalog/licenses.json` and the blobs. A tracked file at an original path, with the same bytes, or with the same content once whitespace is removed fails the test until its licence is recorded or it is replaced. The empty `nostyle.qss` is checked by path only.
+
 ## 2026-11-12 — Node Table history-follow row annotated (Issue 250)
 
 - TODO row for the Node Table keeping stale coordinates after a native Undo now records why it is not fixed here: the script is a pinned proposed consolidation source (85dda66; changing it fails the consolidation, R1b and R3 disposition tests), so the fix moves to the App Node Editing Lab tab. No code change.
