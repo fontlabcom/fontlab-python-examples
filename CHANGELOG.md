@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — D46 documentation pass (Issue 250)
+
+- Landed on `main` this session (Issue 250): `85dda66` (rows 24 and 30), `812bad0` + `beab3d6` (row 31), `bc05bbd` (Node Table history-follow TODO annotated with the consolidation-pin blocker), `8bc0c5a` + `a765886` (14 unresolved licence assets pinned absent; retirement licence fields name the upstream SPDX expression), `144c755` + `f6ccc57` (weekly schedule for pin-freshness) and `fe46908` (dispatched run 43255331095 recorded). No source changed in this pass.
+- New open native check in TODO: Node Table on the "b" glyph window of an owned copy (owner; no `FL.fl` setters).
+- New open TODO row: the Q5 licence audit (D46 licence rows).
+- `WORK.md` now holds a short current status. Its previous 1,035-byte WP09 round note (SHA-256 `b9c4df67f464de73a483b1bb745e316f40d66569a3d1ee58bb1075b955819d62`) is archived on the workspace data volume; the facts it records (nine Labs, 48 compatibility launchers, 2,470 passed with 99 skipped) are in earlier CHANGELOG entries and the open TODO rows.
+
 ## 2026-11-12 — Pin-freshness runs weekly (Issue 250)
 
 - `.github/workflows/pin-freshness.yml` gains `schedule: cron '17 5 * * 1'` (Mondays 05:17 UTC), so Scriptmix drift is caught without an Examples push or pull request.
