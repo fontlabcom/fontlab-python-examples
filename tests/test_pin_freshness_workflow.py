@@ -46,3 +46,10 @@ def test_workflow_when_read_then_actions_are_pinned_to_full_shas():
     for ref in uses:
         sha = ref.split("@", 1)[1].split()[0]
         assert len(sha) == 40 and all(c in "0123456789abcdef" for c in sha), f"unpinned action: {ref}"
+
+
+def test_workflow_when_read_then_runs_weekly_on_a_schedule():
+    body = text()
+    assert "  schedule:\n    - cron: '" in body, "a weekly schedule trigger catches Scriptmix drift without an Examples push"
+    cron = body.split("- cron: '", 1)[1].split("'", 1)[0].split()
+    assert len(cron) == 5 and cron[2:] == ["*", "*", cron[4]] and cron[4].isdigit(), "cron must fire once a week"

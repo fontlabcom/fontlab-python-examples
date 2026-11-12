@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Pin-freshness runs weekly (Issue 250)
+
+- `.github/workflows/pin-freshness.yml` gains `schedule: cron '17 5 * * 1'` (Mondays 05:17 UTC), so Scriptmix drift is caught without an Examples push or pull request.
+- `tests/test_pin_freshness_workflow.py::test_workflow_when_read_then_runs_weekly_on_a_schedule` pins one weekly cron.
+- Still open: a scheduled or dispatched run on `main` has not yet been observed passing.
+
 ## 2026-11-12 — Retirement licence fields have one meaning (Issue 250)
 
 - `menu-adaptations.json`: a retirement's `license` now always means the SPDX expression recorded for the retired file named in `source` (no code is shipped; not claimed to be the Qt/PyQt upstream's licence); an adaptation's `license` keeps describing the first-party rewrite. Nine free-text values were normalised without adding a claim: two `BSD-3-Clause headers; GPL-3.0-only collection metadata` became `BSD-3-Clause AND GPL-3.0-only` (as in five sibling records), and `Apache-2.0 (archived implementation)` / six `Apache-2.0 (no source redistributed)` became `Apache-2.0` (the six already carry `source_body_redistributed: false`). The rule is stated in `policy`.
