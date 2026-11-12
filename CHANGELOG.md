@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Retirement licence fields have one meaning (Issue 250)
+
+- `menu-adaptations.json`: a retirement's `license` now always means the SPDX expression recorded for the retired file named in `source` (no code is shipped; not claimed to be the Qt/PyQt upstream's licence); an adaptation's `license` keeps describing the first-party rewrite. Nine free-text values were normalised without adding a claim: two `BSD-3-Clause headers; GPL-3.0-only collection metadata` became `BSD-3-Clause AND GPL-3.0-only` (as in five sibling records), and `Apache-2.0 (archived implementation)` / six `Apache-2.0 (no source redistributed)` became `Apache-2.0` (the six already carry `source_body_redistributed: false`). The rule is stated in `policy`.
+- `tests/test_adaptation_records.py::test_retirement_license_when_read_then_is_spdx_for_the_retired_source_file` enforces it.
+- Still open: the Apache-2.0 retirement records describe the first-party port, while NOTICE:158-160 records BSD headers plus GPL-3.0 collection metadata for the pyqt-official upstream; see the licence-provenance TODO.
+
 ## 2026-11-12 — Node Table history-follow row annotated (Issue 250)
 
 - TODO row for the Node Table keeping stale coordinates after a native Undo now records why it is not fixed here: the script is a pinned proposed consolidation source (85dda66; changing it fails the consolidation, R1b and R3 disposition tests), so the fix moves to the App Node Editing Lab tab. No code change.
