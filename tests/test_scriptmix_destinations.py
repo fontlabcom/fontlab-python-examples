@@ -144,9 +144,13 @@ def test_unpinned_absent_file_when_git_executable_missing_then_skipped(tmp_path,
 
 def test_recorded_absorptions_when_loaded_then_name_one_removal_per_path():
     menus = [row["menu"] for row in ABSORPTIONS]
-    assert len(menus) == len(set(menus)) == 7
+    assert len(menus) == len(set(menus)) == 14
+    # cb3a950: the first seven (Contours); 1e620fb: WP03 (Metrics, Font Info, Kerning);
+    # b52710a: WP07 (Names/Batch Rename).
     assert {row["removed_by"] for row in ABSORPTIONS} == {
-        "cb3a95057641f3b2382a887172fab524dbc4901a"
+        "cb3a95057641f3b2382a887172fab524dbc4901a",
+        "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+        "b52710a04ed5e9e3759b7086daeb0b09ec65b6f3",
     }
 
 

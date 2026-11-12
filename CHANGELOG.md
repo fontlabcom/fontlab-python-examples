@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Scriptmix absorptions after WP03/WP07 (Issue 250)
+
+- `scriptmix-absorptions.json` records seven more Scriptmix scripts that WP03 (`1e620fbd`) and WP07 (`b52710a0`) retired after absorbing them into launcher tabs: Master Metrics Table, Exceptions Finder, Scale Advances, Round Advances, Tabular Width, Copy Metrics From Reference and Batch Rename. Each row carries its frozen source SHA-256, removal commit and the App module that declares the tab.
+- `tests/test_issue122_E15.py` now verifies a removed duplicate destination through `check_destination` instead of requiring the file; `tests/test_scriptmix_destinations.py` pins 14 absorptions and their three removal commits. No pin was removed or weakened. This repairs the four `test_issue122_R1a/R1b/R1c/R3` failures (plus E15/E16) that main-vs-Scriptmix-main produced.
+
 ## 2026-11-12 — D46 documentation pass (Issue 250)
 
 - Landed on `main` this session (Issue 250): `85dda66` (rows 24 and 30), `812bad0` + `beab3d6` (row 31), `bc05bbd` (Node Table history-follow TODO annotated with the consolidation-pin blocker), `8bc0c5a` + `a765886` (14 unresolved licence assets pinned absent; retirement licence fields name the upstream SPDX expression), `144c755` + `f6ccc57` (weekly schedule for pin-freshness) and `fe46908` (dispatched run 43255331095 recorded). No source changed in this pass.

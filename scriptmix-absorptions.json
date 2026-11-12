@@ -78,6 +78,83 @@
         "tab": "Transform"
       },
       "tab_declared_in": "src/fontlabapp/fontui/outline_studios.py"
+    },
+    {
+      "menu": "Scripts/Font Info/Master Metrics Table.py",
+      "last_sha256": "227270400c504febeb813c695b97a8c301f1dd658742f270ce2dada456f97f4f",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Font Info/Font Metrics.py",
+        "tab": "Metrics table"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/vertical_metrics/__init__.py"
+    },
+    {
+      "menu": "Scripts/Kerning/Exceptions Finder.py",
+      "last_sha256": "897c73e3d1cb15cbb67e29663782a279b2232c869933b8909aed7d1772f06387",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Kerning/Kerning Browser.py",
+        "tab": "Exceptions"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/kerning_browser/__init__.py"
+    },
+    {
+      "menu": "Scripts/Metrics/Scale Advances.py",
+      "last_sha256": "8df2c4722b7b5aaedf41da3626cc6a438f8dc61713aa30178ae733b179ec7364",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Metrics/Advance Widths.py",
+        "tab": "Round & scale"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/advance_widths/__init__.py"
+    },
+    {
+      "menu": "Scripts/Metrics/Tabular Width.py",
+      "last_sha256": "15438d3983d0542075caf940af3e4231c56ebe2b3f1f94728e429b52be9f63b5",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Metrics/Advance Widths.py",
+        "tab": "Tabular"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/advance_widths/__init__.py"
+    },
+    {
+      "menu": "Scripts/Names/Batch Rename.py",
+      "last_sha256": "4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9",
+      "removed_by": "b52710a04ed5e9e3759b7086daeb0b09ec65b6f3",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Names/Glyph Identity.py",
+        "tab": "Batch Rename"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/glyph_identity/app.py"
+    },
+    {
+      "menu": "Scripts/Metrics/Copy Metrics From Reference.py",
+      "last_sha256": "7d1dcbdd9a53638a7ac869e8def838f5b24682110764560ff4537ce1556020a1",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Metrics/Spacing Studio.py",
+        "tab": "Reference"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/spacing_studio/__init__.py"
+    },
+    {
+      "menu": "Scripts/Metrics/Round Advances.py",
+      "last_sha256": "9b7e790969514bc1c5075e79f3bd10cd6fb5d6be3cc90b610a845b4a2651a7e8",
+      "removed_by": "1e620fbd8c7ffe9e928f1e71b3fb6bd04ee38745",
+      "consolidation_source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+      "absorbed_into": {
+        "path": "Scripts/Metrics/Advance Widths.py",
+        "tab": "Round & scale"
+      },
+      "tab_declared_in": "src/fontlabapp/studios/advance_widths/__init__.py"
     }
   ]
 }

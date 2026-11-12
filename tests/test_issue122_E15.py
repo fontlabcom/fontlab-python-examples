@@ -12,6 +12,7 @@ from typing import Any, ClassVar
 import pytest
 from _wp09_routes import production_path, production_relative, run_profile
 from historical_sources import recorded_sha256
+from scriptmix_destinations import check_destination
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Glyph Snapshot Console", "Saved Proof Sample", "FontLab Qt Slot Reference")
@@ -435,8 +436,10 @@ def test_dispositions_cover_all_eighteen_without_overlap() -> None:
     assert not set(DUPLICATES).intersection(PORTED) and not RETIRED.intersection(PORTED)
     for destination in DUPLICATES.values():
         path = ROOT.parent / destination
-        assert path.is_file(), f"Duplicate destination must exist: {destination}"
-        assert "this_file:" in path.read_text(), destination
+        if path.is_file():
+            assert "this_file:" in path.read_text(), destination
+        else:  # removed after Scriptmix absorbed it into a launcher tab: verify the record
+            check_destination(destination)
     for title in PORTED.values():
         assert (ROOT / "Scripts/Tools" / f"{title}.py").is_file()
 
