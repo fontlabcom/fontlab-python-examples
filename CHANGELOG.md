@@ -6,7 +6,7 @@ this_file: CHANGELOG.md
 
 - `.github/workflows/pin-freshness.yml` gains `schedule: cron '17 5 * * 1'` (Mondays 05:17 UTC), so Scriptmix drift is caught without an Examples push or pull request.
 - `tests/test_pin_freshness_workflow.py::test_workflow_when_read_then_runs_weekly_on_a_schedule` pins one weekly cron.
-- Still open: a scheduled or dispatched run on `main` has not yet been observed passing.
+- Pushed as f6ccc57. A dispatched run on `main` passed (run 43255331095); the first scheduled run is still to be observed.
 
 ## 2026-11-12 — 14 unresolved licence assets pinned absent (Issue 250)
 
