@@ -19,7 +19,7 @@ def call_owned(obj, member, key, *args, specs=None):
 
 
 def main():
-    from echopy import fontlab as fl
+    from fly import fl
     from fontlab_echopy.extensions import install_extensions
 
     status = install_extensions()

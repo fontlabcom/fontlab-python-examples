@@ -24,9 +24,7 @@ def direction(area: float, closed: bool) -> str:
 
 def contour_report(contour: Any) -> dict:
     """Use segment pens, rather than treating off-curve nodes as a polygon."""
-    from fontTools.pens.areaPen import AreaPen
-    from fontTools.pens.boundsPen import BoundsPen
-    from fontTools.pens.recordingPen import RecordingPen, replayRecording
+    from fly.pens import AreaPen, BoundsPen, RecordingPen, replayRecording
 
     recording = RecordingPen()
     try:

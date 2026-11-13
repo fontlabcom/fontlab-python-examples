@@ -20,7 +20,7 @@
       "source": "rescued/part2/examples/getgo/outline_pens.py",
       "source_sha256": "b6084952d02dcad932da450f300bb20aa7fb470ab36ba389a3c9f1ea13ace0d7",
       "destination": "src/fontlab_python_lessons/getgo/outline_pens.py",
-      "destination_sha256": "7dac80e789d22980ca7bf5c9d9e62989d9f7d313c4198cfee17bb95820e72b77"
+      "destination_sha256": "abae01a0e5bb8a228e02013b306161e173b7e00c77338d20aa25a87127a1e0c5"
     },
     {
       "source": "rescued/part2/examples/getgo/export_otf.py",

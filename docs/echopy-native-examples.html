@@ -7266,7 +7266,8 @@
 <p>Two runnable examples show how to read what Echopy declares for FontLab's
 native classes, and how to add a helper of your own without replacing anything
 FontLab ships. Both live in <code>examples/echopy/</code> and run inside FontLab 9 with
-<code>fontlab_echopy</code> installed.</p>
+<code>fontlab-fly</code> and Echopy installed. Native APIs use <code>fly.fl</code>; extension
+management deliberately uses <code>fontlab_echopy.extensions</code>, which has no Fly alias.</p>
 <h2 id="read-a-signature-or-say-there-is-none">Read a signature, or say there is none</h2>
 <p>FontLab's native classes are builtin types. <code>inspect.signature</code> raises
 <code>ValueError</code> for their constructors, so the example catches that and prints the
@@ -7296,7 +7297,7 @@ for the real parameters. The example never guesses.</p>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">echopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">fontlab</span> <span class="k">as</span> <span class="n">fl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">fly</span><span class="w"> </span><span class="kn">import</span> <span class="n">fl</span>
 
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">report</span><span class="p">([</span><span class="n">fl</span><span class="o">.</span><span class="n">flNode</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">flGlyph</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">flLayer</span><span class="p">,</span> <span class="n">fl</span><span class="o">.</span><span class="n">flPackage</span><span class="p">])</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">row</span><span class="p">[</span><span class="s1">'constructor'</span><span class="p">]</span><span class="si">}</span><span class="s2">  [</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'members'</span><span class="p">]</span><span class="si">}</span><span class="s2"> public members]"</span><span class="p">)</span>
@@ -7305,7 +7306,8 @@ for the real parameters. The example never guesses.</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Verified live in FontLab 9: <code>flNode</code>, <code>flGlyph</code>, <code>flLayer</code> and <code>flPackage</code> each
+<p>Earlier direct-import examples verified live in FontLab 9 (the Fly-routed
+examples still need native qualification): <code>flNode</code>, <code>flGlyph</code>, <code>flLayer</code> and <code>flPackage</code> each
 print the fallback signature with their public member counts (118, 129, 186 and
 229).</p>
 <h2 id="own-a-helper-without-changing-native-classes">Own a helper without changing native classes</h2>
@@ -7323,7 +7325,7 @@ When a class is immutable, call the helper through <code>get_extension</code> in
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">echopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">fontlab</span> <span class="k">as</span> <span class="n">fl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">fly</span><span class="w"> </span><span class="kn">import</span> <span class="n">fl</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">fontlab_echopy.extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">install_extensions</span>
 
     <span class="n">status</span> <span class="o">=</span> <span class="n">install_extensions</span><span class="p">()</span>
@@ -7336,7 +7338,8 @@ When a class is immutable, call the helper through <code>get_extension</code> in
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Verified live in FontLab 9: <code>flGlyph</code> reports <code>immutable</code> for <code>has_layer</code> and
+<p>Earlier direct-import examples verified live in FontLab 9 (the Fly-routed
+examples still need native qualification): <code>flGlyph</code> reports <code>immutable</code> for <code>has_layer</code> and
 <code>layer_names</code>, so the helper is reached through <code>get_extension</code>, and a detached
 empty glyph returns an empty layer list. <code>flGlyph()</code> takes no name.</p>
 

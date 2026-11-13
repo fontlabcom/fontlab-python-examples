@@ -37,7 +37,7 @@ license texts ship beside the GetGo modules. No rescued directory is needed.
 ## Install the matched candidate packages
 
 The current candidate requires `fontlab-fontlabapp>=0.2.26.dev0` and
-`fontlab-fly>=0.2.1`. Older App0.2.22/0.2.23 releases lack the reports API needed
+`fontlab-fly>=1.3.0`. Older App0.2.22/0.2.23 releases lack the reports API needed
 by GetGo. App0.2.26.dev0 and Lessons1.0.4.dev0 are unpublished development
 candidates. Review and native acceptance must precede release or normal use.
 
@@ -45,7 +45,8 @@ Use a matched, reviewed wheel collection. Some FontLab packages are supplied as
 checkout builds or GitHub artifacts; do not assume a plain PyPI install resolves
 all dependencies. The verified candidate collection includes App, Lessons, Fly,
 Echopy, pythonqtside, TypeRig, Fontport and Glyport. Record source revisions and
-wheel hashes. Install FontTools for pen/export lessons:
+wheel hashes. Fly supplies the standard pens through `fly.pens`. Install FontTools for binary
+export lessons:
 
 ```sh
 uv venv --python cpython-3.11-macos-aarch64-none .venv-install-check

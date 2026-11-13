@@ -1,7 +1,7 @@
 # this_file: examples/echopy/signature_reading.py
 """Read Echopy native-class signatures, with a fallback when none exist.
 
-Run inside FontLab 9 (or any Python with ``fontlab_echopy`` installed). Native
+Run inside FontLab 9 with ``fontlab-fly`` and Echopy installed. Native
 constructors are builtin types, so ``inspect.signature`` raises ``ValueError``
 for them. This example reports that honestly instead of inventing a signature.
 """
@@ -30,7 +30,7 @@ def report(classes):
 
 
 def main():
-    from echopy import fontlab as fl
+    from fly import fl
 
     for name, row in report([fl.flNode, fl.flGlyph, fl.flLayer, fl.flPackage]).items():
         print(f"{name}{row['constructor']}  [{row['members']} public members]")

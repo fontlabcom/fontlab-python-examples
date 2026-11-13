@@ -1199,3 +1199,36 @@ def test_kerning_manifest_and_native_item_count_flatten_vfj_right_sides(run_host
     from fontlab_python_lessons.getgo._checks import assert_expected
 
     assert_expected(result, row["expected"])
+
+
+def test_outline_pens_when_loaded_in_isolation_then_uses_canonical_fly_provider():
+    import subprocess
+
+    code = f"""
+import sys
+sys.path.insert(0, {str(ROOT / 'src')!r})
+import fly
+import fontlab_pens
+from fontlab_pens.measure import AreaPen, BoundsPen
+from fontlab_pens.recording import RecordingPen, replayRecording
+assert fly.pens is fontlab_pens
+assert (fly.pens.AreaPen, fly.pens.BoundsPen) == (AreaPen, BoundsPen)
+assert (fly.pens.RecordingPen, fly.pens.replayRecording) == (RecordingPen, replayRecording)
+from fontlab_python_lessons.getgo.outline_pens import contour_report
+from types import SimpleNamespace
+def draw(pen):
+    pen.moveTo((0, 0))
+    pen.lineTo((10, 0))
+    pen.lineTo((10, 10))
+    pen.lineTo((0, 10))
+    pen.closePath()
+report = contour_report(SimpleNamespace(draw=draw, closed=True, nodes=lambda: [None]*4))
+assert report['bounds'] == [0, 0, 10, 10]
+assert report['signed_area'] == 100
+assert report['direction'] == 'counter-clockwise'
+"""
+    result = subprocess.run(
+        [sys.executable, "-I", "-B", "-c", code], capture_output=True, text=True, timeout=10,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr

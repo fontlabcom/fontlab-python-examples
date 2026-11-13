@@ -7,7 +7,8 @@ this_file: src_docs/md/echopy-native-examples.md
 Two runnable examples show how to read what Echopy declares for FontLab's
 native classes, and how to add a helper of your own without replacing anything
 FontLab ships. Both live in `examples/echopy/` and run inside FontLab 9 with
-`fontlab_echopy` installed.
+`fontlab-fly` and Echopy installed. Native APIs use `fly.fl`; extension
+management deliberately uses `fontlab_echopy.extensions`, which has no Fly alias.
 
 ## Read a signature, or say there is none
 
@@ -41,7 +42,7 @@ def report(classes):
 
 
 def main():
-    from echopy import fontlab as fl
+    from fly import fl
 
     for name, row in report([fl.flNode, fl.flGlyph, fl.flLayer, fl.flPackage]).items():
         print(f"{name}{row['constructor']}  [{row['members']} public members]")
@@ -51,7 +52,8 @@ if __name__ == "__main__":
     main()
 ```
 
-Verified live in FontLab 9: `flNode`, `flGlyph`, `flLayer` and `flPackage` each
+Earlier direct-import examples verified live in FontLab 9 (the Fly-routed
+examples still need native qualification): `flNode`, `flGlyph`, `flLayer` and `flPackage` each
 print the fallback signature with their public member counts (118, 129, 186 and
 229).
 
@@ -73,7 +75,7 @@ def call_owned(obj, member, key, *args, specs=None):
 
 
 def main():
-    from echopy import fontlab as fl
+    from fly import fl
     from fontlab_echopy.extensions import install_extensions
 
     status = install_extensions()
@@ -87,6 +89,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Verified live in FontLab 9: `flGlyph` reports `immutable` for `has_layer` and
+Earlier direct-import examples verified live in FontLab 9 (the Fly-routed
+examples still need native qualification): `flGlyph` reports `immutable` for `has_layer` and
 `layer_names`, so the helper is reached through `get_extension`, and a detached
 empty glyph returns an empty layer list. `flGlyph()` takes no name.

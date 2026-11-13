@@ -4,7 +4,7 @@
 a menu item that has a keyboard shortcut.
 Shows: flCanvas.appendPythonPainter / removePythonPainter, QPainter text
 drawing in viewport coordinates, a QAction added to a FontLab menu with
-fontlabapp.owned_menus.OwnedMenus, and a QKeySequence shortcut.
+fly.ap.qt.menus.OwnedMenus, and a QKeySequence shortcut.
 Run: open a font and a glyph window, then run this script. Tools > "Toggle
 Glyph Name Overlay" (Ctrl+Alt+Shift+O) appears; use it to switch the overlay on
 and off. "Remove Overlay Menu Items" undoes everything; running the script again
@@ -78,7 +78,7 @@ def toggle() -> None:
 
 def install() -> Any:
     from fly import fl, qt
-    from fontlabapp.owned_menus import OwnedMenus
+    from fly.ap.qt.menus import OwnedMenus
 
     if not hasattr(fl.flCanvas, "appendPythonPainter"):
         raise RuntimeError("This FontLab build has no flCanvas.appendPythonPainter.")

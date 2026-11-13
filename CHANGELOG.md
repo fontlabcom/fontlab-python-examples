@@ -2,6 +2,57 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-13 — Isolate the real ProperDocs configuration test
+
+- The complete docs pytest process collected MkDocs before ProperDocs installed
+  its replacement aliases. Material's cached SearchPlugin then inherited the
+  MkDocs BasePlugin rather than ProperDocs BasePlugin; the real configuration
+  test failed while it passed alone. Installed-source inspection and isolated
+  import-order probes reproduced the exact class-identity mismatch.
+- Only that test now loads the real configuration in a fresh `-I` child, imports
+  `properdocs.replacement` first and inserts the known project root explicitly.
+  It retains `on_config(config) is config` and exact search language `['en']`;
+  captured child failures fail the parent test. No plugin doubles, skips, runtime,
+  configuration, dependency lock, browser asset or generated-output edits.
+- In the separate hash-locked Python 3.13 docs environment with test-only
+  pytest8.4.2: before, 1 failed/56 passed; after, focused 1 passed and the full
+  docs suite 57 passed. Scoped specification and quality review pass; the
+  controller strict docs build and full 57-test docs suite pass (51.55 seconds).
+  The one pre-existing import-order lint finding remains;
+  no new finding. No package installation, native or publication action.
+
+## 2026-11-13 — Fly teaching imports (Issue 255 candidate)
+
+- Authored Echopy examples and their current teaching fences access native APIs
+  through `fly.fl`; extension instrumentation keeps `fontlab_echopy.extensions`
+  and original registry keys. Overlay menu ownership uses canonical
+  `fly.ap.qt.menus.OwnedMenus`. Supported outline lesson pens use `fly.pens`.
+- Lessons and installer dependency records require genuine Fly>=1.3.0. The
+  FontTools binary export extra and internal/compiler provider imports remain.
+  Only the changed outline destination hash advances; original lesson source
+  hashes, all 231 adaptation identities, 24 Scriptmix targets, frozen baseline
+  files, licences and fixtures are preserved. Six explicit Lessons successors
+  keep the existing original/current contract checks strict.
+- arm64 CPython 3.11: core 2,013 passed/96 inherited skips, separate first-party
+  Examples TypeRig-derived tests 498 passed/7 inherited skips, Lessons 204 passed
+  at 95.99% controller aggregate coverage (the separate lane receipt was
+  96.17%). Authored focused tests: 55 passed. Every complete
+  changed production module exceeds 80% statements and branches with zero
+  exclusions: Echopy examples 100%/100%, overlay 98.31%/91.67%, outline lesson
+  94.59%/90%. Preservation and all Scriptmix destination checks: 42 passed.
+- Genuine disposable candidate wheel/sdist
+  `1.2.6.dev0+g341a66520.d20261113` match all 151 source/fixture/menu files;
+  ordinary installed Fly1.3.0/App1.2.15/Pens1.0.5 identity, triangle measurement
+  and dependency checks pass. This is an uncommitted-source candidate artifact,
+  not a final release. Provider metadata has no reverse Fly/Lessons cycle.
+- API path audit passes; changed example/test lint passes. The exact 72 existing
+  Scripts lint findings and outline lesson's existing import-order finding are
+  unchanged. Graph analysis reports four affected flows; its bounded flow
+  omissions require corroboration with current source. No native, publication,
+  release or integration acceptance is claimed. Independent source review and
+  controller source/strict-module/docs gates pass; fresh-main/pre-push delivery,
+  actual remote/CI verification and final released/native acceptance remain open.
+
 ## 2026-11-12 — Scriptmix absorptions after WP03/WP07 (Issue 250)
 
 - `scriptmix-absorptions.json` records seven more Scriptmix scripts that WP03 (`1e620fbd`) and WP07 (`b52710a0`) retired after absorbing them into launcher tabs: Master Metrics Table, Exceptions Finder, Scale Advances, Round Advances, Tabular Width, Copy Metrics From Reference and Batch Rename. Each row carries its frozen source SHA-256, removal commit and the App module that declares the tab.

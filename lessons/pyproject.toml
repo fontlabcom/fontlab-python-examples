@@ -11,7 +11,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0 AND CC0-1.0 AND OFL-1.1"
 license-files = ["provenance/LICENSE-Apache-2.0.txt", "provenance/NOTICE-models.md", "src/fontlab_python_lessons/getgo/data/**/LICENSE.txt"]
-dependencies = ["fontlab-fontlabapp>=0.2.26.dev0", "fontlab-fly>=0.2.1"]
+dependencies = ["fontlab-fontlabapp>=0.2.26.dev0", "fontlab-fly>=1.3.0"]
 
 [project.optional-dependencies]
 fonttools = ["fonttools>=4.59"]

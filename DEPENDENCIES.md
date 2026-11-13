@@ -15,19 +15,19 @@ release or native installation acceptance is claimed. No additional runtime depe
 | --- | --- | --- |
 | FontLab | 9, embedded Python 3.11 arm64 | Runs the menu scripts. |
 | PythonQt | Supplied with FontLab | Uses the host widgets and existing application instance. |
-| fontlab-fly | 0.2.1 | Exposes shared App helpers through `fly.ap`. |
+| fontlab-fly | 1.3.0 for Lessons | Exposes App through `fly.ap` and canonical Pens through `fly.pens`. |
 | fontlab-fontlabapp | 0.2.26.dev0 for Lessons; each menu's Setup line can require more | Supplies font access, UI ownership, models and edit helpers. |
 | fontlab-python-lessons | No numeric floor declared by the menus | Supplies the sixteen packaged Models, Forms and GetGo entrypoints, form and font fixtures. |
-| fonttools | 4.59, optional Lessons extra | Supplies pen and binary-font export operations. |
+| fonttools | 4.59, optional Lessons extra | Supplies binary-font export operations. |
 
 Install these packages in FontLab's embedded Python environment. Use the
-`fonttools` extra on `fontlab-python-lessons` for pen and export lessons.
+`fonttools` extra on `fontlab-python-lessons` for binary export lessons.
 TypeRig is not a runtime dependency of the rewritten tools. Fontport is for
 fontParts/UFO compatibility; Glyport is for Glyphs.app compatibility.
 
 ## Current documentation dependencies
 
-Python 3.13 runs the exact 31-package hash lock in `src_docs/requirements.txt`: ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. Search uses MkDocs' bundled plugin. No API renderer or source-body inclusion plugin is used. The shared fltheme26/1.0.0 menu/footer is light. Installed licence bytes and 44 generated asset identities are recorded in `src_docs/md/assets/current-docs-inventory.json`; its transitive review remains incomplete. Runtime dependencies and package metadata are unchanged.
+Python 3.13 runs the exact 31-package hash lock in `src_docs/requirements.txt`: ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. Search uses MkDocs' bundled plugin. No API renderer or source-body inclusion plugin is used. The shared fltheme26/1.0.0 menu/footer is light. Installed licence bytes and 44 generated asset identities are recorded in `src_docs/md/assets/current-docs-inventory.json`; its transitive review remains incomplete. Documentation dependencies and their lock are unchanged.
 
 ## Development and tests
 

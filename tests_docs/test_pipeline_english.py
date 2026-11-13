@@ -2,6 +2,8 @@
 """English-only output must reject configuration, reference and vendor drift."""
 import importlib.metadata
 import json
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -94,11 +96,22 @@ class EnglishSearchTests(unittest.TestCase):
         self.assertFalse((self.site / 'assets/javascripts/lunr/wordcut.js').exists())
 
     def test_real_properdocs_materialx_configuration_uses_the_expected_search_plugin(self):
-        import properdocs.replacement
-        from properdocs.config import load_config
-        config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
-        self.assertIs(english_search.on_config(config), config)
-        self.assertEqual(config['plugins']['materialx/search'].config['lang'], ['en'])
+        # Collection may cache MkDocs classes before ProperDocs installs its aliases.
+        code = f"""
+import properdocs.replacement
+import sys
+sys.path.insert(0, {str(ROOT)!r})
+from properdocs.config import load_config
+from src_docs import english_search
+config = load_config({str(ROOT / 'src_docs/mkdocs.yml')!r})
+assert english_search.on_config(config) is config
+assert config['plugins']['materialx/search'].config['lang'] == ['en']
+"""
+        result = subprocess.run(
+            [sys.executable, '-I', '-B', '-c', code],
+            capture_output=True, text=True, timeout=30, check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_manifest_count_or_helper_boundary_drift_is_rejected(self):
         policy = json.loads((ROOT / 'src_docs/md/assets/english-search-omissions.json').read_text())

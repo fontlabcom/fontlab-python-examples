@@ -74,6 +74,12 @@ EXAMPLE_BATCHES = {
     "Scripts/Windows/Unicode Issues Dock.py",
 }
 LESSON_SUCCESSOR_PATHS = {
+    "lessons/DEPENDENCIES.md",
+    "lessons/README.md",
+    "lessons/pyproject.toml",
+    "lessons/candidate_tests/models_candidate/test_getgo.py",
+    "lessons/provenance/getgo.json",
+    "lessons/src/fontlab_python_lessons/getgo/outline_pens.py",
     "lessons/candidate_tests/models_candidate/test_getgo_package.py",
     "lessons/WORK.md",
     "lessons/CHANGELOG.md",

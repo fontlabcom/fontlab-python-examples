@@ -4,6 +4,8 @@ this_file: TODO.md
 
 # Open tasks
 
+- [ ] Issue 255: reconcile reviewed source with fresh main, run the unchanged pre-push checks, deliver and verify actual remote/CI; qualify final genuine released Lessons artifacts and native workflows separately from verified source/offscreen and disposable development artifacts.
+
 - [ ] Orchestrator: run canonical G-Examples after integration; this local WP09 lane exits 3 for no milestone baseline/upstream merge-base. Prepared full suites pass 2,470 tests with 99 existing skips.
 
 - [ ] Reconcile WP10 and review the 100-source/25-lab map against the integrated App/Scriptmix cohort; WP09 has nine implemented destinations and 48 retained compatibility launchers.

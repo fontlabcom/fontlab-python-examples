@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 from _wp09_routes import assert_compat_route, source_bytes
+from test_spacing_menu_integration import lesson_contract_successors
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -45,8 +46,12 @@ def test_complete_family_identity_and_lazy_fly_menu(monkeypatch, part, sha, entr
 
 def test_all_prior_runtime_and_provenance_rows_remain_exact():
     baseline = json.loads((ROOT / "tests/spinbox-prior-baseline.json").read_text())
+    successors = lesson_contract_successors(
+        json.loads((ROOT / "tests/lesson-contract-successors.json").read_text())
+    )
     for path, digest in baseline["prior_runtime"].items():
-        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == digest, path
+        expected = successors.get(path, digest)
+        assert hashlib.sha256(source_bytes(ROOT / path)).hexdigest() == expected, path
     rows = json.loads((ROOT / "menu-adaptations.json").read_text())["adaptations"]
     assert rows[:17] == baseline["prior_adaptations"]
     assert len(rows) == 231

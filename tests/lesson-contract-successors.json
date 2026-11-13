@@ -1,7 +1,7 @@
 {
   "this_file": "tests/lesson-contract-successors.json",
   "source_commit": "61e114bc9d5512ca445967d420d7e3d48c6ac302",
-  "authority": "Issue 230/233 Task 28 bounded Lessons test-contract and progress successors; independent review required.",
+  "authority": "Issue 230/233 Task 28 bounded Lessons test-contract and progress successors; independent review required. Issue 255 adds six bounded Fly teaching/dependency/provenance successors; original baselines retained.",
   "frozen_references": {
     "tests/sliders-prior-baseline.json": "67e2f3a2d3fc7761df5fe3c21d876e7378ba59a5196ff5f7630fa7bcd9c056f8",
     "tests/spacing-curated-baseline.json": "e6c46bbd62757e71ba60868346df28af57631aa8c3fbf92e9e0b774c6bbcc6f3",
@@ -22,6 +22,36 @@
       "original_sha256": "a0fb7623c3d00aa22fcabab408eaaae3f814b4095b8608b39ed0a2891ab674d5",
       "previous_sha256": "f3f9123bb622eb78af5686bc1eae12100b8df0f274eb6e0d982cec3b15150f6e",
       "successor_sha256": "aaba2de33067ebe8bfb36485f7cbcb490c8b32d84d110f534a636280ac4d419e"
+    },
+    "lessons/DEPENDENCIES.md": {
+      "original_sha256": "97e666887e00c36805cf3761584a3f1e37a417a9870eef22e3119889e1865b0c",
+      "previous_sha256": "97e666887e00c36805cf3761584a3f1e37a417a9870eef22e3119889e1865b0c",
+      "successor_sha256": "5118a6ab7a930b11a93907d90ed49b271977c822a4bfc937724811a321ed1908"
+    },
+    "lessons/README.md": {
+      "original_sha256": "b93d8c2b608f58413994a2d0c6ca9e03d393b4d190e6559efe5747864ca6a17f",
+      "previous_sha256": "b93d8c2b608f58413994a2d0c6ca9e03d393b4d190e6559efe5747864ca6a17f",
+      "successor_sha256": "b7b1a5a081232c8ca47543c4ace5df6de1ec49fd00766d7146438972a030fd0f"
+    },
+    "lessons/pyproject.toml": {
+      "original_sha256": "28d50b266ffa596e4ec60d4ec2b58cf21ae9226df67589810598fff094e32400",
+      "previous_sha256": "28d50b266ffa596e4ec60d4ec2b58cf21ae9226df67589810598fff094e32400",
+      "successor_sha256": "174c179cb5e4a1520d7b5d84cd5457ccfd5fc585f819da1432fbddf4843a41d1"
+    },
+    "lessons/candidate_tests/models_candidate/test_getgo.py": {
+      "original_sha256": "99ada68266d86d0260f552aa2bc0d95514d03afa77a4d1b538d044a26d3c0500",
+      "previous_sha256": "99ada68266d86d0260f552aa2bc0d95514d03afa77a4d1b538d044a26d3c0500",
+      "successor_sha256": "3f6915a9b6b1e2027a3192a4fa6e9500b48827464e004a178286f28836310f79"
+    },
+    "lessons/provenance/getgo.json": {
+      "original_sha256": "9629e1aff307d7304a739da86a5aa1daa28aa44d919f2fb799f2c916a0deb00d",
+      "previous_sha256": "9629e1aff307d7304a739da86a5aa1daa28aa44d919f2fb799f2c916a0deb00d",
+      "successor_sha256": "e48d2bde23edc9b91607ee1ab6670b3b1227178c385fb9da86cf1a64ae567091"
+    },
+    "lessons/src/fontlab_python_lessons/getgo/outline_pens.py": {
+      "original_sha256": "7dac80e789d22980ca7bf5c9d9e62989d9f7d313c4198cfee17bb95820e72b77",
+      "previous_sha256": "7dac80e789d22980ca7bf5c9d9e62989d9f7d313c4198cfee17bb95820e72b77",
+      "successor_sha256": "abae01a0e5bb8a228e02013b306161e173b7e00c77338d20aa25a87127a1e0c5"
     }
   }
 }

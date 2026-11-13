@@ -369,3 +369,89 @@ def test_live_panel_when_reading_glyph_fails_then_label_shows_the_error(host):
     host.glyph = NS()  # has no name: summary raises
     timer.timeout.emit()
     assert "Refresh failed" in label.called("setText")[-1][0]
+
+
+@pytest.fixture
+def overlay_host(host, monkeypatch):
+    from types import ModuleType
+
+    module = load("canvas_overlay_with_menu")
+    module.uninstall()
+    events, actions = [], []
+    canvas = NS(
+        isNull=False,
+        OverOwner="above",
+        appendPythonPainter=lambda callback, placement: events.append((callback, placement)) or 42,
+        removePythonPainter=lambda token: events.append(("remove", token)),
+        update=lambda: events.append("update"),
+    )
+    host_api = sys.modules["fly"].fl
+    host_api.flCanvas = NS(appendPythonPainter=lambda: None)
+    host_api.flWorkspace = NS(instance=lambda: NS(getActiveCanvas=lambda: canvas))
+    menus = NS(
+        add_action=lambda menu, text, callback: actions.append((menu, text, callback)) or len(actions),
+        action=lambda token: NS(setShortcut=lambda shortcut: events.append(("shortcut", shortcut))),
+        close=lambda: events.append("close"),
+    )
+    owned = ModuleType("fly.ap.qt.menus")
+
+    def create(qt, fl, *, error_sink):
+        assert fl is host_api and qt is sys.modules["fly"].qt
+        menus.report = error_sink
+        return menus
+
+    owned.OwnedMenus = create
+    monkeypatch.setitem(sys.modules, "fly.ap.qt.menus", owned)
+    yield NS(module=module, canvas=canvas, menus=menus, events=events, actions=actions, api=host_api)
+    module.uninstall()
+
+
+def test_overlay_when_installed_then_owns_shortcut_toggle_and_removal(overlay_host, capsys):
+    h = overlay_host
+    assert h.module.main() is h.menus
+    assert [text for _, text, _ in h.actions] == [h.module.ACTION_TEXT, "Remove Overlay Menu Items"]
+    assert h.module._STATE["menus"] is h.menus
+    h.menus.report(ValueError("failed"), h.menus)
+    assert "Overlay example: failed" in capsys.readouterr().out
+    h.actions[0][2]()
+    assert h.module._STATE["token"] == 42
+    assert (h.module._paint, "above") in h.events
+    h.actions[0][2]()
+    assert ("remove", 42) in h.events and h.module._STATE["token"] is None
+    h.actions[1][2]()
+    assert h.module._STATE["menus"] is None and h.events[-1] == "close"
+
+
+def test_overlay_when_host_lacks_canvas_or_editor_then_refuses(overlay_host):
+    h = overlay_host
+    h.api.flCanvas = NS()
+    with pytest.raises(RuntimeError, match="no flCanvas.appendPythonPainter"):
+        h.module.install()
+    for canvas in (None, NS(isNull=True)):
+        h.api.flWorkspace = NS(instance=lambda canvas=canvas: NS(getActiveCanvas=lambda: canvas))
+        with pytest.raises(RuntimeError, match="Open a glyph window"):
+            h.module.toggle()
+
+
+def test_overlay_when_painted_then_uses_current_name_and_contains_callback_errors(overlay_host, host):
+    calls = []
+    painter = NS(setPen=lambda color: None, drawText=lambda point, text: calls.append(text))
+    overlay_host.module._paint(painter, overlay_host.canvas)
+    host.glyph = None
+    overlay_host.module._paint(painter, overlay_host.canvas)
+    assert calls == ["Glyph: A", "No glyph"]
+    overlay_host.module._paint(NS(), overlay_host.canvas)
+
+
+def test_overlay_when_painter_removal_fails_then_menus_still_close(overlay_host):
+    h = overlay_host
+    h.module.install()
+    h.module.toggle()
+
+    def fail(token):
+        raise RuntimeError("deleted canvas")
+
+    h.canvas.removePythonPainter = fail
+    with pytest.raises(RuntimeError, match="deleted canvas"):
+        h.module.uninstall()
+    assert h.events[-1] == "close" and h.module._STATE["token"] is None

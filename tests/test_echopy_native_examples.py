@@ -69,7 +69,7 @@ def _fake_echopy(monkeypatch, status):
             pass
 
     fl = types.SimpleNamespace(flGlyph=Glyph, flNode=Plain, flLayer=Plain, flPackage=Plain)
-    monkeypatch.setitem(sys.modules, "echopy", types.SimpleNamespace(fontlab=fl))
+    monkeypatch.setitem(sys.modules, "fly", types.SimpleNamespace(fl=fl))
     ext = types.ModuleType("fontlab_echopy.extensions")
     ext.install_extensions = lambda: status
     ext.get_extension = lambda key, specs=None: (specs or {key: lambda g: ["from-spec"]})[key]
@@ -98,3 +98,12 @@ def test_main_when_fake_host_then_prints_status_and_signatures(monkeypatch, caps
     assert "fontlab.flGlyph.layer_names -> immutable" in out
     assert "layer_names: ['from-spec']" in out
     assert "Glyph()  [0 public members]" in out and "public members" in out
+
+
+@pytest.mark.parametrize("name", ["owned_descriptors", "signature_reading"])
+def test_example_when_executed_as_script_then_uses_fly_native_alias(monkeypatch, capsys, name):
+    import runpy
+
+    _fake_echopy(monkeypatch, {"fontlab.flGlyph.layer_names": "immutable; use get_extension"})
+    runpy.run_path(str(ROOT / "examples/echopy" / f"{name}.py"), run_name="__main__")
+    assert capsys.readouterr().out
