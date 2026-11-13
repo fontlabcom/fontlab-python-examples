@@ -4,7 +4,8 @@ this_file: TODO.md
 
 # Open tasks
 
-- [ ] Issue 255: reconcile reviewed source with fresh main, run the unchanged pre-push checks, deliver and verify actual remote/CI; qualify final genuine released Lessons artifacts and native workflows separately from verified source/offscreen and disposable development artifacts.
+- [ ] Issue 255: After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence.
+
 
 - [ ] Orchestrator: run canonical G-Examples after integration; this local WP09 lane exits 3 for no milestone baseline/upstream merge-base. Prepared full suites pass 2,470 tests with 99 existing skips.
 

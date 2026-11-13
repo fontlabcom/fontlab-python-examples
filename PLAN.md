@@ -23,15 +23,9 @@ native acceptance. WP12 must qualify every lab/profile in FontLab PythonQt,
 including previews, edits, sorting, Unicode/IME, deferred MIME and refused Close.
 The orchestrator owns combined gates, review and delivery.
 
-## Issue 255 teaching-import qualification
+## Issue 255 remaining native acceptance
 
-Reconcile the reviewed Fly native/App/Pens teaching migration and bounded
-Lessons successors with fresh main, rerun the unchanged pre-push checks, deliver
-normally and verify the actual remote SHA and CI. Source review, controller
-runtime/strict-module gates, strict docs build and all 57 docs tests are complete;
-see CHANGELOG. Qualify final genuine released artifacts and native workflows
-separately from disposable development artifacts. Private Pages, D43 and
-Issue123 holds remain.
+After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence. Source, genuine artifact, ordinary external-install and release/download qualification for v1.2.6 is recorded in CHANGELOG. Existing private Pages and Issue 123 holds remain. The three outer examples are published source only and are not included in Lessons wheel/sdist artifacts.
 
 ## Runtime and lesson acceptance
 

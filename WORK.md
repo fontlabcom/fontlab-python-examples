@@ -2,29 +2,16 @@
 this_file: WORK.md
 ---
 
-# Current round — Issue 255 source verified
+# Current round — Issue 255 post-release reconciliation
 
-The authored Fly native/App/Pens teaching migration and bounded Lessons
-successors passed independent source review. The separate documentation-test
-isolation repair passed scoped specification and quality review.
+[fontlab-python-examples v1.2.6](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.2.6) is qualified at `ff5177105afc80eeb2a3e58ebfb03531da5cbbd0`.
 
-Controller gates: arm64 Python3.11 core 2,013 passed/96 inherited skips; separate
-first-party Examples TypeRig-derived tests 498 passed/7 inherited skips;
-Lessons 204 passed at 95.99% aggregate coverage; authored tests 55 passed.
-All four complete changed production modules pass separate statement/branch
-gates with zero exclusions: 100/100, 100/100, 98.31/91.67 and 94.59/90 percent.
-Strict docs build passes; full hash-locked Python3.13 docs suite: 57 passed
-in 51.55 seconds. All 103 inherited skips remain explicit.
+Authored native/App/Pens teaching and bounded Lessons successors use Fly; the final source re-audit closes the consumer migration.
 
-Historical hashes, licences and fixtures are preserved. All 24 Scriptmix
-routes pass the shared resolver. Existing 72 Scripts lint findings and outline
-I001 remain; the necessary docs bootstrap change removes its unused-import
-finding without adding one. No unrelated lint fixes.
+Core tests pass 2,013 with 96 inherited skips; derived tests pass 498 with 7 inherited skips; Lessons passes 204 and authored tests 55. All four complete changed-module gates and 57 documentation tests pass, with exact 313-file parity. Main/tag hooks, CI, the public guide and immutable outer example sources are qualified. Genuine Lessons wheel/sdist ordinary installs match all 166 installed files and pass real provider identity and contour geometry checks; actual downloads match reviewed artifacts.
 
-Disposable dirty-source development artifacts passed source/menu parity and
-ordinary alias/dependency checks; they are not final released artifacts.
-Exact lane/controller receipts remain on the workspace data volume.
+The source, artifact, ordinary external-install, release and download gates above are verified. This round reconciles their progress records after release; it changes no runtime source, installer, dependency declaration, generated documentation or immutable release asset. The three outer examples are published source only and are not included in Lessons wheel/sdist artifacts.
 
-Next: fresh-main reconciliation, unchanged pre-push checks, ordinary delivery
-and actual remote/CI verification; then qualify final genuine released artifacts
-and native behavior separately. Issue123, D43 and private Pages holds remain.
+Remaining: After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence.
+
+D43 native acceptance remains held and unproved. Issue 123 remains paused; existing private Pages holds and every unrelated acceptance task remain in PLAN/TODO. Prior WORK bytes are retained exactly in the private external delivery ledger, SHA256 `2388e883100e96a10fc1353e780434372ce8e5b4acff535884fee8638c92ae84`.

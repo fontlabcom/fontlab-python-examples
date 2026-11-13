@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-13 — Issue 255 verified release qualification
+
+- [fontlab-python-examples v1.2.6](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.2.6) is released at `ff5177105afc80eeb2a3e58ebfb03531da5cbbd0`. Reviewed main/tag delivery, applicable CI and actual downloads match the qualified artifacts.
+- Authored native/App/Pens teaching and bounded Lessons successors use Fly; the final source re-audit closes the consumer migration.
+- Core tests pass 2,013 with 96 inherited skips; derived tests pass 498 with 7 inherited skips; Lessons passes 204 and authored tests 55. All four complete changed-module gates and 57 documentation tests pass, with exact 313-file parity. Main/tag hooks, CI, the public guide and immutable outer example sources are qualified. Genuine Lessons wheel/sdist ordinary installs match all 166 installed files and pass real provider identity and contour geometry checks; actual downloads match reviewed artifacts.
+- Ordinary external installation is qualified; installed FontLab/native acceptance remains unproved under D43. The three outer examples are published source only and are not included in Lessons wheel/sdist artifacts.
+
 ## 2026-11-13 — Isolate the real ProperDocs configuration test
 
 - The complete docs pytest process collected MkDocs before ProperDocs installed
