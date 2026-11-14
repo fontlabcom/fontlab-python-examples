@@ -2,66 +2,54 @@
 this_file: WORK.md
 ---
 
-# Current round — guarded documentation comparison (2026-11-14)
+# Current round — documentation repair delivery ledger (2026-11-14)
 
-The reproducible-docs test now compares a patch against the index, with external
-and textconv diffs disabled. Name-only output could falsely flag unchanged file
-bytes after a timestamp change when automatic index refresh was disabled. The
-original worktree/index comparison boundary and refresh guard are retained.
+Independent source, controller and final delivery reviews accept the guarded
+documentation-test repair at source/main/hook/CI scope. Source X is
+`fb4cce48c1df2676c0ea52d6428c586f905d84a6`; generated main Y is
+`039c3d06c42bc0fc5c8febaa1118645edaf96ace`, whose sole parent is X, changing only
+`docs/sitemap.xml` and its gzip. The qualification log binds exact X to Y.
+Documentation run 43540339178 and pin-freshness run 43540339165 succeeded for X.
+Existing public Pages workflows succeeded for X and Y; these metadata checks
+are separate from browser/live-route acceptance and private-site holds.
 
-A real-Git regression covers unchanged bytes with changed timestamps, actual
-bytes, deletion, executable mode, and already-staged bytes whose working copy
-matches the index after a timestamp change. The scoped old oracle fails its two
-stat-only cases; the patched oracle passes all five and preserves each raw index.
-The cross-date build retains its complete first/second hashes for all 313 files,
-source epoch and generated-commit checks. No assertion or skip is removed.
+The source repair retains WORKTREE versus INDEX, the disabled-refresh guard,
+all existing assertions and complete 313-file cross-date hashes. No HEAD-based
+comparison was accepted. Full controller manual checks passed 2,017 core cases
+with 92 skips, 498 derived with seven skips, 204 Lessons and 58 documentation
+cases. Runtime total is 2,719 passes/99 existing skips with exact reviewed IDs
+and results. Lessons combined coverage is 95.989%, zero exclusions, unchanged
+80% gate. Strict generation reproduced 313 files at its qualified dated epoch.
+Target Ruff passes; the same 72 inherited Scripts findings remain, exit 1.
+The bounded graph response was LOW; whole-flow omissions remain unresolved.
 
-Final checks on the amended test code:
+The first ordinary hook passed core 2,013/96, then failed before derived tests
+because App's declared local Pens prerequisite was missing. A genuine Pens
+1.0.5 clone at `e80672ff2d51e2fec77f4b73f0c7e01d93b9a37f` supplied it.
+The unchanged hook retry passed core 2,013/96 and derived 498/7, tests-only with
+zero selected changed production modules; the nonforce push succeeded. Hook
+individual IDs were not captured: no mapping of the four extra core skips is
+claimed. Actual derived origins were regular App `1.2.16.dev1+ge8b012e38`,
+editable Pens 1.0.5 and explicit reviewed Fly source `1505b29`. This dated check
+context does not qualify the latest provider cohort or ordinary distribution.
 
-- Core: 2,017 passed and 92 existing skips (24.12 seconds).
-- Separate first-party derived tests: 498 passed and seven existing skips
-  (1.81 seconds); Lessons: 204 passed (4.27 seconds), 95.989% combined coverage,
-  zero exclusions. All runtime IDs and skip messages match the accepted audit.
-- Full documentation pytest: 58 passed, no skips (35.77 seconds), including the
-  one added regression. Focused final oracles: two passed (4.606 seconds).
-- Changed test Ruff 0.16.7: clean. The full Scripts lint still exits 1 with the
-  same 72 diagnostics as the retained baseline; Scripts are unchanged.
-- API path audit passes. A genuine-history strict build with the qualified
-  release-source epoch reproduces all 313 committed documentation file hashes.
+The hook clears Git-local environment variables; manual index-refresh guards
+are not assumed to survive it. The successful-push source and Pens raw-index
+intervals remain FAILED, writers UNKNOWN; App/Fly/Scriptmix matched. No index was
+restored. The author's alternate-index write-tree interval remains NOT
+RAW-PRESERVED. The controller retained its incorrect conformance hash label
+and independently reviewed report-only correction. Matching 1,084 canonical
+tracked identities and 29 first-party reference endpoints are bounded snapshot
+results, not transient, untracked or global preservation proof.
 
-The initial copied-input strict build lacked the Git history required by the
-catalogue and failed before building. The successful separate owned clone has
-identical Scripts/src_docs inputs; no product code was changed for that setup.
-The preliminary HEAD-based proposal exceeded the intended comparison boundary
-and was narrowed before these final checks. Its rejected expectations and
-receipts are retained separately, not presented as accepted behavior.
+This round updates only PLAN, TODO, WORK and cumulative CHANGELOG after the
+accepted delivery. The complete prior WORK is archived byte-exact in the private
+external task packet, SHA256 `194ff85a416b97a4426291e12c5b04fb11919226c5d04838a6e023f936511aca`.
+Fresh checks and independent review of this ledger remain controller gates;
+no new release, ordinary installation, root installation or native result follows.
 
-No production module, source/destination pin, runtime dependency, installer,
-workflow, generated output, source guide or AGENTS instruction changed. No new
-production coverage claim is needed. The independent audit's matching reviewed
-App/Fly/Scriptmix source tuple and Python environments are used for these checks;
-this is not a new ordinary-install or complete-provider admission.
-
-Independent review, controller qualification and current-main/hook/CI delivery
-remain pending. Graph context resolves the test exactly, but upstream impact
-reports UNKNOWN because test discovery is dynamic; current README, AGENTS and
-workflow callers confirm unittest/pytest discovery. Retain whole-flow graph
-omissions and the final graph receipts separately from source test results.
-Native, installation, provider and publication requirements remain open. Issue123
-is paused; exclusions and private Pages holds remain unchanged.
-
-## Prior round record — retained verbatim
-
-# Current round — Issue 255 post-release reconciliation
-
-[fontlab-python-examples v1.2.6](https://github.com/fontlabcom/fontlab-python-examples/releases/tag/v1.2.6) is qualified at `ff5177105afc80eeb2a3e58ebfb03531da5cbbd0`.
-
-Authored native/App/Pens teaching and bounded Lessons successors use Fly; the final source re-audit closes the consumer migration.
-
-Core tests pass 2,013 with 96 inherited skips; derived tests pass 498 with 7 inherited skips; Lessons passes 204 and authored tests 55. All four complete changed-module gates and 57 documentation tests pass, with exact 313-file parity. Main/tag hooks, CI, the public guide and immutable outer example sources are qualified. Genuine Lessons wheel/sdist ordinary installs match all 166 installed files and pass real provider identity and contour geometry checks; actual downloads match reviewed artifacts.
-
-The source, artifact, ordinary external-install, release and download gates above are verified. This round reconciles their progress records after release; it changes no runtime source, installer, dependency declaration, generated documentation or immutable release asset. The three outer examples are published source only and are not included in Lessons wheel/sdist artifacts.
-
-Remaining: After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence.
-
-D43 native acceptance remains held and unproved. Issue 123 remains paused; existing private Pages holds and every unrelated acceptance task remain in PLAN/TODO. Prior WORK bytes are retained exactly in the private external delivery ledger, SHA256 `2388e883100e96a10fc1353e780434372ce8e5b4acff535884fee8638c92ae84`.
+All other TODO rows remain open. Root install.sh remains required and unrun in
+this task. All seventeen native rows, full GUI/theme/typing/filter/history and
+save/reopen checks, the native fence, provider and graph limits, Issue 123 pause,
+private Pages holds, excluded repositories, Book restriction and stopped cleanup
+remain unchanged. Continue those authorized tasks through their separate gates.

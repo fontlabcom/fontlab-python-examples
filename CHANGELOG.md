@@ -2,6 +2,29 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-14 — Guarded documentation repair delivered
+
+- Independent source/controller/final delivery reviews accept source
+  `fb4cce48c1df2676c0ea52d6428c586f905d84a6` through the unchanged normal hook
+  and successful exact-source Documentation 43540339178 and pin-freshness
+  43540339165. Generated child main `039c3d06c42bc0fc5c8febaa1118645edaf96ace`
+  changes only the two sitemap files; the qualification log binds this lineage.
+- Full manual checks retain 2,719 runtime passes/99 existing skips, 58 docs
+  passes, exact ordered IDs/results, 313-file strict parity and Lessons 95.989%
+  combined coverage without exclusions. Target lint passes; 72 inherited Scripts
+  findings remain. The actual hook separately passed core 2,013/96 and derived
+  498/7 after a retained missing-Pens prerequisite failure and genuine Pens 1.0.5
+  setup. Its individual IDs were not captured; no extra-skip mapping is claimed.
+- The successful-push source/Pens raw indexes remain FAILED, writers UNKNOWN;
+  the author alternate-index write-tree interval remains NOT RAW-PRESERVED.
+  The conformance-label error and reviewed correction remain retained evidence.
+  Named 1,084-file canonical and 29-reference endpoint checks are bounded.
+- Existing public Pages success is workflow metadata, not browser acceptance.
+  Native, provider, graph completeness, release, ordinary installs, root
+  installation and publication gates remain separate. Prior WORK bytes are
+  archived privately with SHA256 `194ff85a416b97a4426291e12c5b04fb11919226c5d04838a6e023f936511aca`; all unrelated TODOs and earlier
+  CHANGELOG bytes are retained.
+
 ## 2026-11-14 — Content-aware guarded documentation test
 
 - The reproducible-docs test uses an explicit patch with external/textconv diffs
