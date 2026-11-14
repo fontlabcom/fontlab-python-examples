@@ -2,6 +2,15 @@
 this_file: PLAN.md
 ---
 
+## Guarded documentation comparison qualification
+
+Obtain independent review of the test-only patch, then qualify it in a fresh
+current-main successor through the normal pre-push gate and exact-source CI.
+Preserve the index refresh guard, complete generated hashes, original worktree/
+index comparison boundary and all existing skip/coverage policies. Retain
+inherited lint and graph limits; source checks do not establish native results.
+
+
 # Forward plan
 
 Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.

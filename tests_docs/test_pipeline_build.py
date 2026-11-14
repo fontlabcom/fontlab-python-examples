@@ -11,9 +11,42 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# Name-only diffs can report stat changes when automatic index refresh is disabled.
+DOCS_DIFF = ['diff', '--patch', '--no-ext-diff', '--no-textconv', '--', 'docs']
 
 
 class ReproducibleBuildTests(unittest.TestCase):
+    def test_docs_diff_when_files_change_then_preserves_index_and_reports_real_changes(self):
+        for change in ('timestamp', 'content', 'deletion', 'mode', 'staged'):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                docs = root / 'docs'
+                docs.mkdir()
+                page = docs / 'index.html'
+                page.write_bytes(b'original\n')
+                page.chmod(0o644)
+                env = dict(os.environ, GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL=os.devnull, GIT_OPTIONAL_LOCKS='0')
+                env.pop('GIT_INDEX_FILE', None)
+                git = [shutil.which('git'), '-c', 'diff.autoRefreshIndex=false', '-C', str(root)]
+                for args in (['init', '-b', 'main'], ['config', 'user.name', 'Fixture'], ['config', 'user.email', 'fixture@example.invalid'], ['config', 'core.filemode', 'true'], ['add', 'docs'], ['commit', '-m', 'generated output']):
+                    subprocess.run(git + args, env=env, check=True, capture_output=True)
+                if change in ('content', 'staged'):
+                    page.write_bytes(b'changed!\n')
+                if change == 'staged':
+                    subprocess.run(git + ['add', 'docs'], env=env, check=True, capture_output=True)
+                if change == 'deletion':
+                    page.unlink()
+                elif change == 'mode':
+                    page.chmod(0o755)
+                else:
+                    stamp = page.stat().st_mtime_ns + 2_000_000_000
+                    os.utime(page, ns=(stamp, stamp))
+                index = root / '.git/index'
+                before = index.read_bytes(), index.stat().st_mode
+                patch = subprocess.check_output(git + DOCS_DIFF, env=env, text=True)
+                self.assertEqual((index.read_bytes(), index.stat().st_mode), before)
+                self.assertEqual(bool(patch), change in ('content', 'deletion', 'mode'), patch)
+
     def test_cross_date_generated_commit_reuses_source_epoch_for_all_output(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -59,4 +92,4 @@ cli()
             self.assertEqual(result.returncode, 0, result.stderr)
             second = {str(p.relative_to(root / 'docs')): hashlib.sha256(p.read_bytes()).hexdigest() for p in (root / 'docs').rglob('*') if p.is_file()}
             self.assertEqual(first, second, 'Every file, including sitemap.xml and its gzip, must match')
-            self.assertEqual(subprocess.check_output(git + ['diff', '--name-only', '--', 'docs'], env=env, text=True), '')
+            self.assertEqual(subprocess.check_output(git + DOCS_DIFF, env=env, text=True), '')

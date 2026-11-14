@@ -4,6 +4,8 @@ this_file: TODO.md
 
 # Open tasks
 
+- [ ] Independently review and deliver the guarded documentation comparison repair through a fresh current-main successor, the normal pre-push hook and exact-source CI.
+
 - [ ] Issue 255: After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence.
 
 
