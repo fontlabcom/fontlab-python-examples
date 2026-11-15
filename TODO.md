@@ -2,6 +2,13 @@
 this_file: TODO.md
 ---
 
+## Shared installer qualification — 2026-11-15
+
+- [ ] Review and deliver the shared-installer candidate through fresh-main reconciliation, required gates, exact-SHA CI and genuine release/download qualification.
+- [ ] After admission, verify installed provider/consumer identity and the applicable Script/Extension/native workflows without clearing existing holds by inference.
+
+
+
 # Open tasks
 
 - [ ] Issue 255: After explicit D43 recovery and admission, qualify released Lessons workflows and the three separately published outer examples in FontLab with matched source paths, native lifecycle/history and saved/reopened font evidence.

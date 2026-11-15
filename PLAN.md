@@ -2,6 +2,12 @@
 this_file: PLAN.md
 ---
 
+## Shared installer: remaining delivery qualification — 2026-11-15
+
+Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.
+
+
+
 # Forward plan
 
 Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
