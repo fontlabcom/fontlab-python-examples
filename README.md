@@ -19,6 +19,14 @@ Fly. The root Python project builds documentation; it is not the runtime package
 
 ## Requirements and installation
 
+To install into FontLab 9, open `install.vfpy` from a checkout in FontLab
+(double-click it or drop it onto FontLab), then restart FontLab. The file is a
+short stub that hands the work to
+[fontlab-instamix](https://github.com/fontlabcom/fontlab-python-instamix); if
+instamix is not installed yet, the stub installs it from PyPI first. Instamix
+installs the packages and copies the `Scripts/` menus into FontLab and records
+the install under the extension id `com.fontlab.python-examples`.
+
 Use FontLab 9 with its embedded **Python 3.11 arm64** and supplied PythonQt.
 Install `fontlab-fly`, `fontlab-fontlabapp` and `fontlab-python-lessons` in
 FontLab's embedded Python environment. Each menu's Setup line states its App

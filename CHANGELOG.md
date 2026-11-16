@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased
+
+- `install.vfpy` is now the short fontlab-instamix stub. It installs
+  fontlab-instamix from PyPI when it is missing, then installs this checkout from
+  its `[tool.fontlab-install]` table. The large legacy installer is gone.
+- README describes the stub install.
+
 ## 2026-11-15 — Shared installer source alignment
 
 Copied the reviewed shared installer exactly: dependency constraints and managed origins remain protected; inactive conditional dependencies are filtered before sibling execution in the resolver target Python. FontLab imports remain standard-library-only. Package identity, runtime APIs, dependency declarations, scripts, bundles and legal files are unchanged. The docs root remains non-package; its existing scripts/curated and nested-package distribution contracts are unchanged.
