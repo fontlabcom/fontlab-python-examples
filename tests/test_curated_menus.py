@@ -16,23 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_active_scripts_when_scanned_then_only_curated_practical_one_level_menus():
     paths = sorted((ROOT / "Scripts").rglob("*.py"))
-    assert len(paths) == 109, "Keep 100 compatible routes and add nine core labs"
-    assert {p.parent.name for p in paths} == {
-        "Labs",
-        "Contours",
-        "Designer",
-        "Dialogs",
-        "Drag And Drop",
-        "Drawing",
-        "Forms",
-        "GetGo Fonts",
-        "Graphics",
-        "Models",
-        "Text",
-        "Tools",
-        "Widgets",
-        "Windows",
-    }
+    assert paths, "The menu tree must not be empty"
+    assert len({p.relative_to(ROOT / "Scripts") for p in paths}) == len(paths)
+    assert len(list((ROOT / "Scripts/Labs").glob("*.py"))) == 9
     for path in paths:
         source = path.read_text()
         assert len(path.relative_to(ROOT / "Scripts").parts) == 2

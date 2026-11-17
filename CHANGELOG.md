@@ -4,6 +4,13 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Task 6: removed historical ledger machinery and 48 compatibility launchers;
+  retained current functional tests and added whole-tree compile smoke coverage.
+  Restored 39 permitted-license visual demos and added 22 QPainter/graphics demos.
+  Core CPython 3.11 checks: 218 passed; focused docs checks: 16 passed. Offline
+  locked build blocked by missing Babel cache; FontLab-native behavior unverified.
+  Full local report: `task-6-report.md`. No delivery or native acceptance claimed.
+
 - `install.vfpy` is now the short fontlab-instamix stub. It installs
   fontlab-instamix from PyPI when it is missing, then installs this checkout from
   its `[tool.fontlab-install]` table. The large legacy installer is gone.

@@ -9,12 +9,12 @@ glyph-name vocabulary. Use the results to prepare rules for another naming or
 filtering tool. The laboratory edits local drafts. It applies no font changes.
 
 Use FontLab 9, Python 3.11, Fly and App>=0.2.76.dev0. Install
-matching prerequisites yourself. [The complete current source](current/tools/glyph-name-pattern-lab.md)
+matching prerequisites yourself. [The complete current source](current/labs/model-filtering-lab.md)
 imports its owned App panel through Fly only when it runs.
 
 ## Author and test a rule
 
-1. Choose **Tools > Glyph Name Pattern Lab** from Scripts.
+1. Choose **Labs > Model Filtering Lab**, then **Pattern matching** from Scripts.
 2. Edit **Pattern** or **Test text**. Both fields are editable native combo boxes.
    Return retains the current entry in that panel's history. Closing the panel
    discards these local histories.

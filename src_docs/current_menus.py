@@ -67,12 +67,20 @@ def catalogue(root: Path, *, revision: str | None = None) -> None:
             text = f"---\n{header}---\n\n# {source.stem}\n\n{description}\n\n"
             text += f"Run **{folder.name} > {source.stem}** from FontLab's Scripts menu.\n\n"
             text += "Read [collections](../../collections.md) and [contributing](../../contribute.md) before use.\n\n"
-            text += (
-                "## Source identity\n\n"
-                + f"SHA256: `{hashlib.sha256(data).hexdigest()}`\n\n"
-                + f"[Python source at `{revision[:12]}`](https://github.com/fontlabcom/fontlab-python-examples/blob/"
-                + revision + "/" + quote(source.relative_to(root).as_posix(), safe="/") + ")\n"
+            relative = source.relative_to(root).as_posix()
+            committed = subprocess.run(
+                ["git", "show", f"{revision}:{relative}"],
+                cwd=root, capture_output=True, check=False,
             )
+            text += "## Source identity\n\n"
+            text += f"SHA256: `{hashlib.sha256(data).hexdigest()}`\n\n"
+            if committed.returncode == 0 and committed.stdout == data:
+                text += (
+                    f"[Python source at `{revision[:12]}`](https://github.com/fontlabcom/fontlab-python-examples/blob/"
+                    + revision + "/" + quote(relative, safe="/") + ")\n"
+                )
+            else:
+                text += f"Local source: `{relative}`. These bytes are uncommitted; no immutable source link is available.\n"
             target.write_text(text)
             lines.append(f"- [{source.stem}]({target.name})")
             index.append(f"- [{source.stem}]({slug(folder.name)}/{target.name})")

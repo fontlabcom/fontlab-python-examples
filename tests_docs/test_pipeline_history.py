@@ -14,7 +14,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR = "src_docs/current_menus.py"
 OUTPUT = "src_docs/md/current"
-COUNT = 109
 
 
 class SourceHistoryTests(unittest.TestCase):
@@ -43,7 +42,9 @@ class SourceHistoryTests(unittest.TestCase):
             expected = {p.relative_to(full / OUTPUT).as_posix(): p.read_bytes()
                         for p in (full / OUTPUT).rglob('*.md')}
             menus = sorted((full / 'Scripts').glob('*/*.py'))
-            self.assertEqual(len(menus), COUNT)
+            tracked_menus = git(full, 'ls-files', 'Scripts').splitlines()
+            self.assertEqual({p.relative_to(full).as_posix() for p in menus},
+                             {p for p in tracked_menus if p.endswith('.py')})
             for menu in menus:
                 relative = menu.relative_to(full).as_posix()
                 self.assertEqual(subprocess.check_output(['git', '-C', str(full), 'show', revision + ':' + relative], env=env), menu.read_bytes())

@@ -13,28 +13,38 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Dialogs
 
-- [Expandable Glyph Search](dialogs/expandable-glyph-search.md)
+- [Designer Button Dialog](dialogs/designer-button-dialog.md)
 - [Font Glyph Inventory Tabs](dialogs/font-glyph-inventory-tabs.md)
 - [FontLab Script Scaffold Wizard](dialogs/fontlab-script-scaffold-wizard.md)
-- [Glyph Batch Recipe Settings](dialogs/glyph-batch-recipe-settings.md)
-- [Glyph Proof Batch Wizard](dialogs/glyph-proof-batch-wizard.md)
-- [Proof Text Coverage Dialog](dialogs/proof-text-coverage-dialog.md)
-
-## Drag And Drop
-
-- [Deferred Glyph Report Drag](drag-and-drop/deferred-glyph-report-drag.md)
-- [Draggable Glyph Names](drag-and-drop/draggable-glyph-names.md)
-- [Font Drop Inspector](drag-and-drop/font-drop-inspector.md)
-- [Font File Drop Shelf](drag-and-drop/font-file-drop-shelf.md)
-- [Glyph Pair Board](drag-and-drop/glyph-pair-board.md)
-- [Proof Word Magnets](drag-and-drop/proof-word-magnets.md)
 
 ## Drawing
 
+- [Animated Orbit](drawing/animated-orbit.md)
+- [Antialiasing Comparison](drawing/antialiasing-comparison.md)
+- [Bezier Construction](drawing/bezier-construction.md)
+- [Composition Gallery](drawing/composition-gallery.md)
+- [Concentric Circles](drawing/concentric-circles.md)
+- [Conical Gradient Wheel](drawing/conical-gradient-wheel.md)
 - [Glyph Outline SVG](drawing/glyph-outline-svg.md)
 - [Glyph SVG Reference](drawing/glyph-svg-reference.md)
+- [Hatch Pattern Gallery](drawing/hatch-pattern-gallery.md)
+- [Image PNG Export](drawing/image-png-export.md)
+- [Linear Gradient Swatches](drawing/linear-gradient-swatches.md)
+- [Mouse Stroke Canvas](drawing/mouse-stroke-canvas.md)
+- [Painter Opacity Layers](drawing/painter-opacity-layers.md)
+- [Painter Transform Gallery](drawing/painter-transform-gallery.md)
+- [Path Boolean Gallery](drawing/path-boolean-gallery.md)
+- [Path Clipping](drawing/path-clipping.md)
+- [Path Fill Rules](drawing/path-fill-rules.md)
+- [Path Stroke Outline](drawing/path-stroke-outline.md)
+- [Pen Dash Gallery](drawing/pen-dash-gallery.md)
+- [Picture Recording](drawing/picture-recording.md)
+- [Radial Gradient Light](drawing/radial-gradient-light.md)
+- [Rounded Label Drawing](drawing/rounded-label-drawing.md)
 - [Scale With Stem Compensation](drawing/scale-with-stem-compensation.md)
 - [Stem Blend](drawing/stem-blend.md)
+- [Stroke Join Gallery](drawing/stroke-join-gallery.md)
+- [Text Along A Curve](drawing/text-along-a-curve.md)
 
 ## Forms
 
@@ -58,11 +68,16 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Graphics
 
-- [Glyph Mark Colour Board](graphics/glyph-mark-colour-board.md)
-- [Glyph Proof Layout](graphics/glyph-proof-layout.md)
-- [Glyph Proof Pad](graphics/glyph-proof-pad.md)
-- [Glyph Review Cards](graphics/glyph-review-cards.md)
+- [Animated App Chooser](graphics/animated-app-chooser.md)
+- [Animated States](graphics/animated-states.md)
+- [Animated Stick Figure](graphics/animated-stick-figure.md)
+- [Animated Tiles](graphics/animated-tiles.md)
+- [Colliding Scene Mice](graphics/colliding-scene-mice.md)
+- [Easing Curve Gallery](graphics/easing-curve-gallery.md)
 - [Glyph Variant Feature Graph](graphics/glyph-variant-feature-graph.md)
+- [Graphics Scene Shapes](graphics/graphics-scene-shapes.md)
+- [Moving Blocks](graphics/moving-blocks.md)
+- [Scene Lighting Effect](graphics/scene-lighting-effect.md)
 
 ## Labs
 
@@ -76,27 +91,18 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Tree Models Lab](labs/tree-models-lab.md)
 - [Unicode Lab](labs/unicode-lab.md)
 
+## Layouts
+
+- [Flow Layout](layouts/flow-layout.md)
+
 ## Models
 
-- [Glyph Coverage Grid](models/glyph-coverage-grid.md)
-- [Glyph Encoding Chart](models/glyph-encoding-chart.md)
-- [Glyph Filter Model with Date Range](models/glyph-filter-model-with-date-range.md)
-- [Glyph Filter Model with Local Dates](models/glyph-filter-model-with-local-dates.md)
 - [Glyph Inventory XML](models/glyph-inventory-xml.md)
-- [Glyph Mark Colours](models/glyph-mark-colours.md)
-- [Glyph Metadata Outline](models/glyph-metadata-outline.md)
-- [Glyph Metadata Tree](models/glyph-metadata-tree.md)
 - [Glyph Metrics Model](models/glyph-metrics-model.md)
 - [Glyph Name Filter](models/glyph-name-filter.md)
-- [Glyph Proof Worksheet](models/glyph-proof-worksheet.md)
-- [Glyph Review Form](models/glyph-review-form.md)
-- [Glyph Review Priorities](models/glyph-review-priorities.md)
-- [Glyph Sorting and Filtering with Dates](models/glyph-sorting-and-filtering-with-dates.md)
-- [Glyph Sorting and Filtering](models/glyph-sorting-and-filtering.md)
 
 ## Text
 
-- [Calendar Proof Builder](text/calendar-proof-builder.md)
 - [Feature Code Draft](text/feature-code-draft.md)
 - [Font Handoff Letter](text/font-handoff-letter.md)
 - [Font Review Notes](text/font-review-notes.md)
@@ -104,12 +110,9 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Tools
 
-- [Apply Unicode Map](tools/apply-unicode-map.md)
 - [Component Dependency Graph - Degree Forces](tools/component-dependency-graph-degree-forces.md)
 - [Component Dependency Graph](tools/component-dependency-graph.md)
 - [Copy Layers From Font](tools/copy-layers-from-font.md)
-- [Editable Glyph Outline](tools/editable-glyph-outline.md)
-- [Editable Glyph Tree](tools/editable-glyph-tree.md)
 - [Find Font Source Files - Bytes](tools/find-font-source-files-bytes.md)
 - [Find Font Source Files](tools/find-font-source-files.md)
 - [Font Info Snapshot](tools/font-info-snapshot.md)
@@ -117,38 +120,48 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Font Reference Image Viewer - Bounded Zoom](tools/font-reference-image-viewer-bounded-zoom.md)
 - [Font Reference Image Viewer](tools/font-reference-image-viewer.md)
 - [FontLab Qt Slot Reference](tools/fontlab-qt-slot-reference.md)
-- [Glyph Name Completion with Focus](tools/glyph-name-completion-with-focus.md)
-- [Glyph Name Completion](tools/glyph-name-completion.md)
-- [Glyph Name Pattern Lab](tools/glyph-name-pattern-lab.md)
 - [Glyph Snapshot Console](tools/glyph-snapshot-console.md)
-- [Glyph Spacing Worksheet - Frameless](tools/glyph-spacing-worksheet-frameless.md)
-- [Glyph Spacing Worksheet](tools/glyph-spacing-worksheet.md)
 - [Import Kerning Pair List](tools/import-kerning-pair-list.md)
 - [Kerning Copy Rules](tools/kerning-copy-rules.md)
 - [Layer Metric Comparison](tools/layer-metric-comparison.md)
 - [Localized Font Names](tools/localized-font-names.md)
-- [Pair Proof Generator](tools/pair-proof-generator.md)
 - [Path Problem Report](tools/path-problem-report.md)
-- [Saved Proof Sample](tools/saved-proof-sample.md)
 - [Symbol Tag Search](tools/symbol-tag-search.md)
 
 ## Widgets
 
-- [Font Units Calculator](widgets/font-units-calculator.md)
-- [Glyph Character Map - Styles](widgets/glyph-character-map-styles.md)
-- [Glyph Character Map](widgets/glyph-character-map.md)
-- [Glyph Metrics and Revisions - Detailed](widgets/glyph-metrics-and-revisions-detailed.md)
-- [Glyph Metrics and Revisions](widgets/glyph-metrics-and-revisions.md)
-- [Glyph Modification Calendar with Formats](widgets/glyph-modification-calendar-with-formats.md)
-- [Glyph Modification Calendar](widgets/glyph-modification-calendar.md)
-- [Glyph Proof Groups](widgets/glyph-proof-groups.md)
+- [Analog Clock](widgets/analog-clock.md)
+- [Animated Checker Player](widgets/animated-checker-player.md)
+- [Bubble Canvas](widgets/bubble-canvas.md)
+- [Button And Alert](widgets/button-and-alert.md)
+- [Calculator Form](widgets/calculator-form.md)
+- [Calculator](widgets/calculator.md)
+- [Clock Component](widgets/clock-component.md)
+- [Counter Label](widgets/counter-label.md)
+- [Dark Theme Editor](widgets/dark-theme-editor.md)
+- [Date And Time Editor](widgets/date-and-time-editor.md)
+- [Digital Clock](widgets/digital-clock.md)
+- [Falling Blocks](widgets/falling-blocks.md)
+- [Filesystem Tree](widgets/filesystem-tree.md)
 - [Glyph Sketch Pad](widgets/glyph-sketch-pad.md)
-- [Glyph Spacing Offset - Stacked](widgets/glyph-spacing-offset-stacked.md)
-- [Glyph Spacing Offset](widgets/glyph-spacing-offset.md)
+- [Group Box Gallery](widgets/group-box-gallery.md)
+- [Hello Label](widgets/hello-label.md)
+- [Line Edit Gallery](widgets/line-edit-gallery.md)
+- [List View](widgets/list-view.md)
+- [Multiple Page Widget](widgets/multiple-page-widget.md)
+- [Python Console Widget](widgets/python-console-widget.md)
+- [Rich Text Component](widgets/rich-text-component.md)
+- [Scientist Table](widgets/scientist-table.md)
 - [Script Icon Browser](widgets/script-icon-browser.md)
 - [Script Palette Roles](widgets/script-palette-roles.md)
+- [Shape Tooltips](widgets/shape-tooltips.md)
+- [Shaped Clock](widgets/shaped-clock.md)
+- [Text Editor](widgets/text-editor.md)
+- [Vertical Buttons](widgets/vertical-buttons.md)
+- [Waving Text](widgets/waving-text.md)
+- [Widget Gallery](widgets/widget-gallery.md)
+- [Window Flag Gallery](widgets/window-flag-gallery.md)
 
 ## Windows
 
 - [Glyph Snapshot Diff](windows/glyph-snapshot-diff.md)
-- [Unicode Issues Dock](windows/unicode-issues-dock.md)

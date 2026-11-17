@@ -13,8 +13,8 @@ your intended environment. These scripts never install packages.
 ## Open and edit
 
 1. Select glyphs in a Font window, or glyph-layer occurrences in a Glyph window.
-2. Choose **Tools > Glyph Spacing Worksheet** or
-   **Tools > Glyph Spacing Worksheet - Frameless** from Scripts.
+2. Choose **Labs > Metrics Controls Lab**, then **Spacing worksheets** and
+   the regular or frameless profile.
 3. Edit any of the eight table cells. A is an increment in font units. B is
    its repeat count. Each of the four rows computes A × B.
 4. Read the selectable report. Each captured occurrence has its baseline and
@@ -69,8 +69,8 @@ master, metrics or history writer is used. No values persist between launches.
 
 ## Source and qualification
 
-The [framed source](current/tools/glyph-spacing-worksheet.md) and
-[frameless source](current/tools/glyph-spacing-worksheet-frameless.md) pages
+The [framed source](current/labs/metrics-controls-lab.md) and
+[frameless source](current/labs/metrics-controls-lab.md) pages
 include the complete actual menu bodies. Each facade imports its App entry
 through Fly inside `main()`. No archived source or source-relative helper runs.
 

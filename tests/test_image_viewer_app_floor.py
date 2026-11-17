@@ -9,20 +9,20 @@ viewers call: both entry points (first shipped in v1.2.0) and the PythonQt
 viewer's shortcuts need in FontLab (first shipped in v1.2.4). The tag checks
 read the sibling App checkout's real release tags.
 
-The scripts still state the historical ``App>=0.2.156.dev0``: both are proposed
-consolidation sources (``menu-consolidations.json``), which must stay
-byte-identical until Image Viewer Lab absorbs them or the ledger is
-re-baselined. ``DECIDED_FLOOR`` records the decision until then.
+The scripts retain their historical setup text. ``DECIDED_FLOOR`` records the
+reviewed release requirement separately until that setup text is updated.
 """
 
 import ast
+import os
 import re
 import subprocess
 import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = ROOT.parent / "fontlab-fontlabapp"
+APP_SOURCE = os.environ.get("EXAMPLES_APP_SOURCE")
+APP = Path(APP_SOURCE).resolve().parents[1] if APP_SOURCE else ROOT.parent / "fontlab-fontlabapp"
 VIEWERS = (
     "Scripts/Tools/Font Reference Image Viewer.py",
     "Scripts/Tools/Font Reference Image Viewer - Bounded Zoom.py",

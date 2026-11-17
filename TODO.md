@@ -2,6 +2,11 @@
 this_file: TODO.md
 ---
 
+## Task 6 remaining verification
+
+- [ ] Build the cleaned site with the complete hash-locked dependency cache; review generated output before delivery.
+- [ ] Install the matching Lessons/App cohort and run all new/restored demos in FontLab 9, checking callbacks, rendering, Close/reopen and editor save persistence.
+
 ## Shared installer qualification — 2026-11-15
 
 - [ ] Review and deliver the shared-installer candidate through fresh-main reconciliation, required gates, exact-SHA CI and genuine release/download qualification.

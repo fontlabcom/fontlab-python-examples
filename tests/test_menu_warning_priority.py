@@ -5,7 +5,7 @@ from types import ModuleType
 from types import SimpleNamespace as NS
 
 import pytest
-from _wp09_routes import run_profile
+from runpy import run_path
 from module_doubles import install_module
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,7 +13,6 @@ MENUS = (
     "Drawing/Glyph Outline SVG.py",
     "Drawing/Glyph SVG Reference.py",
     "Windows/Glyph Snapshot Diff.py",
-    "Windows/Unicode Issues Dock.py",
 )
 
 
@@ -37,7 +36,7 @@ def test_warning_when_setup_fails_then_uses_owned_priority_helper(monkeypatch, r
     for name, value in (("fly", fly), ("fly.ap", ap),
                         ("fly.ap.qt.dialogs", helpers), ("fly.ap.core.scripting", scripting)):
         install_module(monkeypatch, name, value)
-    menu = run_profile(str(ROOT / "Scripts" / relative))
+    menu = run_path(str(ROOT / "Scripts" / relative))
     menu["main"].__globals__.update(show=fail, panel_type=lambda qt: object)
     assert menu["main"]() is None, "Setup refusal must not escape after the warning"
     assert calls == [(qt, parent, menu["TITLE"], "setup expired", "Warning", 1024)], "Keep the native host parent, title, body and standard Ok button"
@@ -67,7 +66,7 @@ def test_actual_warning_when_setup_fails_then_modal_owner_is_preserved(monkeypat
     for name, value in (("fly", fly), ("fly.ap", ap),
                         ("fly.ap.qt.dialogs", real), ("fly.ap.core.scripting", scripting)):
         install_module(monkeypatch, name, value)
-    menu = run_profile(str(ROOT / "Scripts" / relative))
+    menu = run_path(str(ROOT / "Scripts" / relative))
     menu["main"].__globals__.update(show=fail, panel_type=lambda qt: object)
     reference = G.QMessageBox(parent)
     reference.setWindowTitle(menu["TITLE"])

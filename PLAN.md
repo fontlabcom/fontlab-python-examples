@@ -2,6 +2,14 @@
 this_file: PLAN.md
 ---
 
+## Task 6 remaining qualification
+
+The cleaned 122-menu source tree is ready for controller integration. Complete
+the locked site build once dependencies are cached, then qualify the installed
+Lessons helper and new/restored menus in FontLab. Source and offscreen results
+do not establish installed or native acceptance. Detailed local evidence and
+the complete historical inventory are in task-6-report.md.
+
 ## Shared installer: remaining delivery qualification — 2026-11-15
 
 Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.

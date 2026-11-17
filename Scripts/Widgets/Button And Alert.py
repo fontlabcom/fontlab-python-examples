@@ -1,0 +1,89 @@
+# this_file: Scripts/Widgets/Button And Alert.py
+# SPDX-License-Identifier: MIT
+# Adapted from Michael Herrmann's pyqt/examples, src/04 PyQt Signals and Slots/main.py.
+# See ports/pyqt-examples-LICENSE.md and catalog/ports.json for exact provenance.
+"""Original Click-to-alert behavior with asynchronous, example-window modality."""
+
+from typing import Any
+
+from fontlab_python_lessons.qt_demos import ExampleHandle
+
+
+def build(qt: Any) -> ExampleHandle:
+    button = qt.QtGui.QPushButton("Click")
+    handle = ExampleHandle(button, lambda: _snapshot(handle))
+
+    def on_button_clicked() -> None:
+        _alert(qt, handle)
+
+    handle.callbacks.append(on_button_clicked)
+    try:
+        handle.connect(button.clicked, lambda *args: on_button_clicked())
+    except BaseException:
+        handle.close()
+        raise
+    return handle
+
+
+def _snapshot(handle: ExampleHandle) -> dict:
+    return {
+        "text": str(handle.widget.text),
+        "alert_texts": [
+            str(alert.widget.text)
+            for alert in handle.alerts
+            if not alert.closed and alert.widget.isVisible()
+        ],
+    }
+
+
+def _alert(qt: Any, handle: ExampleHandle) -> None:
+    from fly.ap.qt.widgets import OwnedWidget
+
+    for previous in handle.alerts:
+        previous.close()
+    handle.alerts.clear()
+    alert = qt.QtGui.QMessageBox(handle.widget)
+    owner = OwnedWidget(alert, alert)
+    handle.alerts.append(owner)
+    try:
+        alert.setText("You clicked the button!")
+        alert.setWindowModality(qt.QtCore.Qt.WindowModal)
+        alert.open()
+    except BaseException:
+        owner.close()
+        raise
+
+
+
+def main():
+    """Open a parented, retained modeless example in FontLab."""
+    from fontlab_python_lessons.qt_demos import launch
+
+    return launch(build, 'restored_main-79cc15680bc2cebb', 'Button And Alert')
+
+
+if __name__ == "__main__":
+    main()
+
+# ## MIT License
+# 
+# Upstream authorship attribution: Michael Herrmann. No copyright year or notice
+# appears in the reviewed original files; none is inferred here.
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.

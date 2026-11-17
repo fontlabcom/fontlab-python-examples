@@ -80,7 +80,12 @@ cli()
             result = subprocess.run(['sh', str(root / 'src_docs/build.sh')], env=env, text=True, capture_output=True, check=False)
             self.assertEqual(result.returncode, 0, result.stderr)
             first = {str(p.relative_to(root / 'docs')): hashlib.sha256(p.read_bytes()).hexdigest() for p in (root / 'docs').rglob('*') if p.is_file()}
-            self.assertEqual(len(first), 313)
+            expected_pages = {
+                p.relative_to(root / 'src_docs/md').with_suffix('.html').as_posix()
+                for p in (root / 'src_docs/md').rglob('*.md')
+                if 'includes' not in p.relative_to(root / 'src_docs/md').parts
+            }
+            self.assertEqual({p for p in first if p.endswith('.html')}, expected_pages | {'404.html'})
             self.assertIn(datetime.fromtimestamp(int(epoch), UTC).strftime('%Y-%m-%d'), (root / 'docs/sitemap.xml').read_text())
             env.update(GIT_AUTHOR_DATE='2026-11-07T00:00:01Z', GIT_COMMITTER_DATE='2026-11-07T00:00:01Z')
             subprocess.run(git + ['add', 'docs'], env=env, check=True, capture_output=True)

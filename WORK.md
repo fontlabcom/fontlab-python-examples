@@ -2,6 +2,30 @@
 this_file: WORK.md
 ---
 
+## Task 6 — menu cleanup and drawing examples (2026-11-17)
+
+Removed obsolete issue/provenance tests and ledgers, their dead tooling and 48
+compatibility menu launchers. Kept current functional checks and added a compile
+smoke check over Scripts, examples and lessons. Removed the unused docs-export
+provider while retaining the standalone site and historical authored guides.
+README is 76 lines. Current catalogue source pages cover all 122 menu scripts;
+uncommitted source bytes have hashes without fabricated immutable links.
+
+Restored 39 licensed visual demos (29 Apache-2.0, 9 MIT, 1 BSD-3-Clause) and added
+22 new Apache-2.0 drawing demos. The complete 313-file restore/skip inventory and
+all deletion paths are in task-6-report.md. Shared restored controls use the
+packaged Lessons runtime and current App ownership. Independent source review
+caught and verified fixes for close-time widget disposal and editor save paths.
+
+Verification: full core suite on CPython 3.11 arm64 passed 218 tests; supplemental
+docs source/build-invocation checks passed 16. Drawing checks include real
+offscreen rendering, PNG encoding, scene items and widget disposal. Required
+uv dependency resolution cannot fetch pytest because DNS is unavailable; the
+3.11 run reused installed pytest via sys.path. Exact-lock offline site build is
+blocked by uncached babel==2.18.0; system-tool fallback failed the unchanged
+vendor asset check. Generated docs/ remains the original committed output.
+No native FontLab, installation, publication, commit, push or branch change.
+
 ## 2026-11-15 — Shared installer source alignment
 
 Copied the reviewed shared installer exactly: dependency constraints and managed origins remain protected; inactive conditional dependencies are filtered before sibling execution in the resolver target Python. FontLab imports remain standard-library-only. Package identity, runtime APIs, dependency declarations, scripts, bundles and legal files are unchanged. The docs root remains non-package; its existing scripts/curated and nested-package distribution contracts are unchanged.

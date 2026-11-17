@@ -6,6 +6,5 @@ if test -z "${SOURCE_DATE_EPOCH:-}"; then
   SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)
 fi
 export SOURCE_DATE_EPOCH
-python -m src_docs.build --export-only
-properdocs build --strict --clean -f src_docs/mkdocs.yml
+python -m src_docs.build
 touch docs/.nojekyll

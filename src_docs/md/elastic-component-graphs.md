@@ -29,6 +29,5 @@ The held node stays fixed during physics. Finish a drag before Refresh or Close.
 Large captures/construction/force steps have deadlines: an overrun stops motion
 or rejects the entire snapshot; no subset is silently presented as complete.
 
-Both exact original identities and source hashes remain in menu-adaptations.json
-and rescue-index.json. Both menus display local graph simulations without
-writing font data.
+These graph simulations do not write font data. See the current menu catalogue
+for the available entrypoints and source hashes.

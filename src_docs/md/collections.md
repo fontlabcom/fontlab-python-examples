@@ -31,22 +31,15 @@ The archive is retained for migration and recovery; it is not installed by this 
 
 ## Current practical scripts
 
-[Current Scripts](current/index.md) lists every active facade and includes its
-actual source. The 109 entries (one `Scripts/<category>/<name>.py` file each)
-require the matching App, Fly and Lessons packages. Each entry states its setup, behavior and acceptance limits. A shared
-package or facade passing offline tests does not prove native FontLab acceptance.
+[Current Scripts](current/index.md) lists the active menu entries and their exact
+source hashes. Install the matching App, Fly and Lessons packages as described
+in the repository README. Each script states its setup and behaviour. The
+Drawing and Graphics categories include standalone painting demonstrations.
+Native FontLab behaviour remains separate from offline compilation and tests.
 
-Nine WP09 labs share previews and named profiles. Forty-eight old menu paths
-remain small compatibility launchers, and the three original Models/Forms
-entrypoints still launch the Lessons package. Final menu removal and installed
-menu cleanup belong to WP11; the 25-lab target is not yet the active menu count.
-
-The 494 historical source identities remain in `rescue-index.json`; the 222
-hash-bound adaptations and 259 retirements are recorded in `menu-adaptations.json`. The other 13
-identities remain migration backlog. A further 42 rescued files that never had a
-menu identity are recorded there too, without a `source_menu` key. Their original bodies and resources stay
-in an archive outside this repository (historical prefix `rescued/`). Historical runtime wrappers are retained outside this repository
-for recovery and are no longer advertised as working menu tools.
+Each workflow has one canonical menu entry; consolidated workflows are reached
+through their Lab menus. Historical catalogues remain available for reference,
+but their archived launchers and export provider are not installed.
 
 The matching Lessons package source now lives in the repository's `lessons/`
 folder. It includes all sixteen packaged menu entries, the form resource and99

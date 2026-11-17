@@ -2,205 +2,75 @@
 this_file: README.md
 ---
 
-
 # FontLab Python examples
 
-Nine core PythonQt labs combine related workflows beside live font previews.
-The transitional menu tree contains 109 entrypoints, including 48 small
-compatibility launchers and the three retained Models/Forms lesson entrypoints.
-They inspect fonts, build proofs, edit selected data and show modeless panels.
-Each script states its setup, scope and limits. Some scripts change fonts;
-read the script's Usage and Setup text before running it.
+Runnable FontLab 9 menu scripts for drawing, font inspection and editing,
+PythonQt widgets and modeless tools. Each script explains what it shows and
+its requirements. Read its instructions before running: some tools edit fonts.
 
-The menu tree has one category level. The runtime code for the sixteen original
-Models, Forms and GetGo menus is a separate package, `fontlab-python-lessons`,
-under [lessons/](lessons/README.md). Other menus use shared App helpers through
-Fly. The root Python project builds documentation; it is not the runtime package.
+`Scripts/<Category>/*.py` supplies the Scripts menu. `examples/` contains
+standalone teaching examples. `lessons/` is the separately packaged
+`fontlab-python-lessons` runtime. The root Python project builds this
+repository's documentation site, not the runtime package.
 
-## Requirements and installation
+## Install
 
-To install into FontLab 9, open `install.vfpy` from a checkout in FontLab
-(double-click it or drop it onto FontLab), then restart FontLab. The file is a
-short stub that hands the work to
-[fontlab-instamix](https://github.com/fontlabcom/fontlab-python-instamix); if
-instamix is not installed yet, the stub installs it from PyPI first. Instamix
-installs the packages and copies the `Scripts/` menus into FontLab and records
-the install under the extension id `com.fontlab.python-examples`.
+Open `install.vfpy` in FontLab 9 by double-clicking or dropping it onto FontLab.
+The stub uses [fontlab-instamix](https://github.com/fontlabcom/fontlab-python-instamix)
+to install the packages and menu scripts; it installs Instamix first if needed.
+Restart FontLab after installation.
 
-Use FontLab 9 with its embedded **Python 3.11 arm64** and supplied PythonQt.
-Install `fontlab-fly`, `fontlab-fontlabapp` and `fontlab-python-lessons` in
-FontLab's embedded Python environment. Each menu's Setup line states its App
-minimum; the Lessons package minimum does not cover every menu. Install the
-Lessons `fonttools` extra for pen and export lessons. TypeRig is not required
-for the rewritten TypeRig tools. See [DEPENDENCIES.md](DEPENDENCIES.md) for
-package versions and documentation dependencies.
+Use FontLab's embedded Python 3.11 arm64 and supplied PythonQt, with
+`fontlab-fly`, `fontlab-fontlabapp` and `fontlab-python-lessons` installed.
+Each script's Setup text states any additional requirements. The Lessons
+`fonttools` extra is needed for pen and export lessons.
 
-Put the required category folders from `Scripts/` in a FontLab Scripts location. Keep the category names
-and one-level layout. The Lessons wheel also supplies its sixteen entrypoints
-under `share/fontlab-python-lessons/Scripts`; use one copy of each menu.
-FontLab loads the package code when a menu runs. Never add a QApplication,
-start a second application event loop or install an alternate Qt binding in
-FontLab. PySide6 is used only for separate, offscreen tests.
+For manual menu installation, copy the desired category folders from `Scripts/`
+into a FontLab Scripts location. Keep one category level and one copy of each
+menu. The Lessons wheel includes its own menu copies. Never create another
+QApplication, start an application event loop, or load PySide/PyQt in FontLab.
 
-The 27 independently launched modeless Tool panels request TypeRig-style window priority while preserving their Tool type. Other modeless menus use App’s shared launcher. The Unicode Issues Dock retains refused Close for retry with the reviewed App 0.2.26.dev334 recovery/priority candidate. Registry availability and native stacking acceptance remain separate.
+Open a font, choose a script in FontLab's Scripts menu, and follow its panel
+instructions. Drawing demonstrations that use only sample geometry need no font.
+Use Refresh after switching fonts or layers when the panel offers it.
 
-## Use the tools
+## Menu categories
 
-Open an owned copy of a font. Run a menu from a category below. Where a panel
-has Refresh, use it after changing the font, master or selection. A stale
-snapshot can refuse Apply. Close the panel when finished.
+- **Contours:** nodes, slopes and handles.
+- **Designer:** polygon previews and contour construction.
+- **Dialogs:** modeless dialog examples.
+- **Drawing:** QPainter techniques, paths, outlines and drawing surfaces.
+- **Forms:** packaged glyph metrics form.
+- **GetGo Fonts:** lessons using bundled licensed font fixtures.
+- **Graphics:** graphics scenes, proof previews and visual demonstrations.
+- **Labs:** filtering, trees, metrics, calendars, completion, drag and drop,
+  proof composition, Unicode and review models.
+- **Layouts:** flowing widget arrangements.
+- **Models:** packaged glyph list and metrics models.
+- **Text:** text documents and proof drafts.
+- **Tools:** font inspection, naming, kerning and other font utilities.
+- **Widgets:** reusable control demonstrations.
+- **Windows:** font snapshot comparisons.
 
-- **Models > Glyph Name Filter:** enter a prefix, inspect the filtered names,
-  then use Select Chosen Rows. Selection changes require an active Font window.
-- **Dialogs > Glyph Batch Recipe Settings:** copy a recipe, then paste its JSON
-  into Glyph Proof Batch Wizard to produce proof text. Invalid or stale recipes
-  are refused.
-- **Tools > Kerning Copy Rules:** `A|V A|W = T|o @ -5` builds two pairs from the
-  current-master T/o value minus five units. Copy the result into Import Kerning
-  Pair List, inspect the preview, then Apply. The edit is recorded as one Undo step.
-- **Contours > Node Table:** inspect the current layer's own nodes and edit X/Y.
-  The coordinate edit is recorded as one Undo step. Stem Blend and Scale With Stem
-  Compensation instead create named layers; inspect those layers before saving.
-- **GetGo Fonts > GetGo - Audit a Real Font:** inspect a detached report from a
-  packaged, hash-checked fixture. GetGo lessons use temporary copies, not the
-  current font. Mutation lessons require a dedicated session with no other
-  documents. Export lessons retain new geometry subsets; they omit native hints,
-  features and kerning. See the [GetGo guide](lessons/src/fontlab_python_lessons/getgo/README.md).
+## Development
 
-An offline test pass does not prove native FontLab behavior. Current rewritten
-menus still need installed-host checks for callbacks, lifecycle, complete font
-state, Undo/Redo and save/reopen. Earlier GetGo source receipts do not accept the
-expanded packaged workflows.
-
-## Menu map
-
-| Category | Main workflows |
-| --- | --- |
-| Labs | Model Filtering; Tree Models; Metrics Controls; Calendar; Completion; Drag Drop; Proof Composition; Unicode; Review Model. |
-| Contours | Node Table; Node Slope And Handles. |
-| Designer | Em Star Polygon preview and one-step contour creation. |
-| Dialogs | Scaffold, glyph search, coverage, inventory and proof recipes. |
-| Drag And Drop | File shelf, glyph names, proof words and pair boards. The shelf opens staged fonts. |
-| Drawing | Outline SVG, SVG reference, Stem Blend and stem-compensated scaling. |
-| Forms | Packaged Designer form for hypothetical glyph metrics. |
-| GetGo Fonts | Thirteen reports and edits on licensed real-font fixtures. |
-| Graphics | Proof layouts, variant graph, review cards, proof pad and mark-colour board. |
-| Models | Filters, calendars, trees, encoding, metrics, notes, marks, XML and review queues. |
-| Text | Calendar proofs, handoff letters, feature drafts, notes and snippet drafts. |
-| Tools | File search, naming, snapshots, kerning recipes, Unicode maps and cross-font layer copies. |
-| Widgets | Unit calculator, proof groups, icon browser, palette roles and SVG sketch pad. |
-| Windows | Unicode issues dock and glyph snapshot differences. |
-
-For per-menu source and limits, see the [current menu catalogue](src_docs/md/current/index.md).
-Its source pages retain the pre-WP09 committed snapshot. WP11 will regenerate
-them after integration, when the new launcher bytes have truthful containing commits.
-Detailed guides cover [spacing worksheets](src_docs/md/spacing-worksheets.md),
-[elastic graphs](src_docs/md/elastic-component-graphs.md),
-[slider previews](src_docs/md/slider-spacing-offsets.md) and
-[character maps](src_docs/md/glyph-character-map.md).
-
-## Source map
-
-| Path | Contents |
-| --- | --- |
-| `Scripts/<Category>/*.py` | Current menu entrypoints and script-specific logic. |
-| `examples/pythonqt/` | Six short PythonQt teaching scripts (panel, model view, canvas painter and menu action, signals, settings, progress); not menus. See its README. |
-| `lessons/src/fontlab_python_lessons/` | Lazy entrypoints, detached records, Qt models, panels and forms. |
-| `lessons/src/fontlab_python_lessons/getgo/` | Real-font algorithms, reports, binary exports and 99 licensed fixtures. |
-| `lessons/provenance/` | Lesson source and licence records. |
-| `tests/` | Menu, algorithm, lifecycle, provenance and catalogue checks. |
-| `lessons/candidate_tests/models_candidate/` | Independent runtime-package tests. |
-| `tests_docs/` | Documentation build, literal-source and notice distribution checks. |
-| `src_docs/md/` | Authored site pages and current menu pages. |
-| `src_docs/current_menus.py` | Menu index and source-page generator. |
-| `src_docs/build.py` | Static retained-catalogue export and strict site build. |
-| `docs/` | Generated site output; retained authored history is under `source_guides/`. |
-| `rescue-index.json`, `menu-adaptations.json`, `NOTICE` | Historical paths, hashes, dispositions and credits. |
-
-Put general UI and native FontLab helpers in `fontlabapp`. Keep `fontport` for
-fontParts/UFO compatibility and `glyport` for Glyphs.app compatibility. Scripts
-access App through `fly.ap`; do not copy shared UI code into each menu.
-Use domain paths such as `fly.ap.core.scripting` and `fly.ap.glyphs.catalog.model`.
-Fontport editors and feature-block helpers live in `fly.ap.fontui`.
-Run `python -B tools/migrate_app_paths.py --check` to audit API path migration.
-
-## Tests and lint
-
-Run from this repository root. Prerequisites: uv; an available CPython 3.11
-arm64 interpreter; sibling checkouts `../fontlab-fontlabapp`,
-`../fontlab-fly` and `../fontlab-python-scriptmix`. uv needs a writable cache
-and access to the required packages, or a populated cache for offline use.
-Set `FONTLAB_REFERENCE_ROOT` to the workspace containing the Echopy Qt
-stub and API documentation repositories. This is independent of the archive root.
-
-Core tests use App source from the sibling checkout. Set `EXAMPLES_APP_WHEEL` to the genuine reviewed App wheel for the TypeRig-derived tests. Run them separately from
-the TypeRig-derived tool tests, which need an installed App and real Fly:
+Compile and test without importing FontLab's native modules:
 
 ```sh
-export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
-uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests --ignore-glob='tests/test_issue122_R*.py'
-PYTHONPATH="$PWD/../fontlab-fly/src" uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with "$EXAMPLES_APP_WHEEL" python -B -m pytest -q -p no:cacheprovider tests/test_issue122_R*.py
-uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff ruff check --no-cache Scripts
+uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -m pytest -q tests
+./build.sh --offline
 ```
 
-Set `EXAMPLES_APP_WHEEL` to a genuine reviewed App wheel built from its Git history, with its matching dependency cohort. Check the wheel version and installed origins before this run; do not override hatch-vcs metadata. The script lint command checks `Scripts/`
-only. It is not a lint result for the whole repository.
+Some tests require the reviewed App/Fly source checkouts or optional Qt test
+bindings. For a non-sibling App checkout, set `EXAMPLES_APP_SOURCE` to its
+`src/fontlabapp` directory and add its `src` directory to `PYTHONPATH`.
+The docs build uses its separate hash-locked environment; see
+[src_docs/requirements.txt](src_docs/requirements.txt). Offline tests and builds
+do not verify native FontLab behaviour.
 
-Lessons tests also need the first-party legacy API checkout at
-`../legacy-api-28bc505`. Namespace checks read only its API and launcher; they
-must never execute archived script bodies. Run separately with offscreen Qt:
+## Licence
 
-```sh
-export EXAMPLES_APP_SOURCE="$PWD/../fontlab-fontlabapp/src/fontlabapp"
-export EXAMPLES_LEGACY_API_SOURCE="$PWD/../legacy-api-28bc505"
-QT_QPA_PLATFORM=offscreen uv run --no-project --python cpython-3.11-macos-aarch64-none --with PySide6-Essentials --with pytest --with pytest-cov --with fonttools python -B -m pytest -p pytest_cov --confcutdir lessons/candidate_tests/models_candidate -q -p no:cacheprovider lessons/candidate_tests/models_candidate --cov=lessons/src/fontlab_python_lessons --cov-branch --cov-fail-under=80
-```
-
-Set pytest's `--basetemp` and `COVERAGE_FILE` to an owned external scratch
-location when keeping test output outside the checkout.
-
-Provenance tests use recorded historical paths and SHA256 values by default.
-For optional source-byte audits, set `FONTLAB_AUDIT_ARCHIVED_SOURCES=1` and set
-`FONTLAB_PRESERVED_ROOT` to an extracted archive root containing `rescued/`.
-Only an absent archive root skips. When `rescued/` exists, missing or mismatched
-files fail. The full-archive audit collects all missing, unreadable and
-mismatched files before failing. Retired thread and SQL sources are also parsed
-in this opt-in mode. No archived source is executed.
-
-## Documentation build
-
-The site uses Python 3.13 and the 31-package hash lock in `src_docs/requirements.txt`:
-
-```sh
-uv venv --python 3.13 .docs-venv
-uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
-PATH="$PWD/.docs-venv/bin:/opt/homebrew/bin:$PATH" sh src_docs/build.sh
-.docs-venv/bin/python -m unittest discover -s tests_docs -p 'test_pipeline_*.py' -v
-```
-
-Legacy pytest documentation checks additionally require pytest in a separate test environment. The older root `uv.lock` is retained for historical tooling; it is not the site's publication lock. Every push to `main` builds the site and verifies immutable generated output, source identity, parentage and source epoch before requesting public Pages. Configure `main:/docs` only after independent privacy, licence, build and settings qualification. A local build does not establish publication.
-
-`./build.sh`, `./build.sh --offline` and `./build.sh --serve` use the same lock. Historical authored guides remain byte-exact under `source_guides/`; only generated output belongs in `docs/`.
-
-## Historical sources and licence
-
-The 494 historical menu identities remain in `rescue-index.json`.
-`menu-adaptations.json` records 222 adaptations and 259 retirements. For 10 of them,
-the retirement reason names the native FontLab command that does the job.
-The remaining thirteen are packaged GetGo workflows.
-Another 42 rescued TypeRig files never had a menu identity. Their records have
-no `source_menu` key: 9 adaptations and 33
-retirements, 4 of which name a native FontLab command.
-These records describe source ancestry and workflow disposition.
-
-`rescued/...` paths identify an external archive, not files shipped here:
-`fontlab-python-examples-rescued.tar.gz`, SHA256
-`f49848d39bdac1a6a973864500afe56af635871e5001ae94ee36cd95370a8266`.
-Previous dispatcher bytes also have a private recovery snapshot. Keep historical
-paths and hashes; do not restore archived launchers into the active menu tree.
-
-First-party code uses [Apache-2.0](LICENSE-APACHE-2.0). Read [NOTICE](NOTICE) and
-[lesson provenance](lessons/provenance/) for credits and independent rewrites.
-GetGo fonts retain their own Apache-2.0, CC0-1.0 or OFL-1.1 licences and bundled
-licence texts. Browser asset notices and the remaining transitive review are
-listed on the [frontend notices page](src_docs/md/frontend-notices.md).
+First-party examples use [Apache-2.0](LICENSE-APACHE-2.0). Restored examples
+retain their individual SPDX and attribution headers; MIT and BSD examples
+keep their own terms. See [NOTICE](NOTICE) and [lesson provenance](lessons/provenance/)
+for credits. Bundled fonts retain their own licences and licence texts.
