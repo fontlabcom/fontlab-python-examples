@@ -4,6 +4,8 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Fixed `tests/test_image_viewer_app_floor.py`: the public App history now starts at v1.2.28, so `DECIDED_FLOOR` is `1.2.28` (the oldest release tag that provides the viewer API). Earlier floor 1.2.4 is no longer provable from tags.
+
 - Task-list cleanup (Issue 258). Closed in TODO: the shared-installer rows (installers are the fontlab-instamix stub; latest release v1.2.7, main at b281fcc with Docs and Pages green) and generic orchestrator/integration/provenance boilerplate, now deprioritised at the end of TODO.md. Added the Task 7 release/install/live-test row and a prioritised next-steps list.
 - Carried the owner's uncommitted 2026-11-14 "Functional work order" additions (PLAN section, TODO row, WORK note) from the owner checkout; AGENTS.md already had the owner-priority section on origin. Guidance only; no runtime or native result.
 

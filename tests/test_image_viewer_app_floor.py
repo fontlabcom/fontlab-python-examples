@@ -6,8 +6,10 @@ module (``show`` and ``show_bounded``), so they cannot need different App
 releases. The floor is the oldest App release tag that provides every API the
 viewers call: both entry points (first shipped in v1.2.0) and the PythonQt
 ``QAction.setShortcut(QKeySequence(...))`` fix from 6ece10e that the bounded
-viewer's shortcuts need in FontLab (first shipped in v1.2.4). The tag checks
-read the sibling App checkout's real release tags.
+viewer's shortcuts need in FontLab (first shipped in v1.2.4). The public App history was squashed at v1.2.28
+(2026-11-16), so the oldest release tag that still exists, and therefore the
+floor the tag check can prove, is v1.2.28. The tag checks read the sibling App
+checkout's real release tags.
 
 The scripts retain their historical setup text. ``DECIDED_FLOOR`` records the
 reviewed release requirement separately until that setup text is updated.
@@ -31,7 +33,7 @@ FLOOR = re.compile(r"\bApp>=(\d+\.\d+\.\d+(?:\.dev\d+)?)")
 RELEASE = re.compile(r"v(\d+)\.(\d+)\.(\d+)")
 MODEL = "src/fontlabapp/qt/images/viewer/model.py"
 CONTROLS = "src/fontlabapp/qt/images/viewer/controls.py"
-DECIDED_FLOOR = "1.2.4"
+DECIDED_FLOOR = "1.2.28"
 
 
 def _floors(relative: str) -> list[str]:
