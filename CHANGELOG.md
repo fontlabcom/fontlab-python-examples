@@ -4,6 +4,9 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Task-list cleanup (Issue 258). Closed in TODO: the shared-installer rows (installers are the fontlab-instamix stub; latest release v1.2.7, main at b281fcc with Docs and Pages green) and generic orchestrator/integration/provenance boilerplate, now deprioritised at the end of TODO.md. Added the Task 7 release/install/live-test row and a prioritised next-steps list.
+- Carried the owner's uncommitted 2026-11-14 "Functional work order" additions (PLAN section, TODO row, WORK note) from the owner checkout; AGENTS.md already had the owner-priority section on origin. Guidance only; no runtime or native result.
+
 - Task 6c: add 166 offscreen behavioural coverage tests without production or
   coverage-gate changes. All 128 changed production modules reach >=80% combined
   coverage with zero exclusions; all 111 listed gaps resolved. Full CPython 3.11

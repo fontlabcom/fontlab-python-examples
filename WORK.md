@@ -3,6 +3,12 @@ this_file: WORK.md
 ---
 
 
+## 2026-11-14 — Functional work order documented
+
+Carried from the owner checkout in the Issue 258 cleanup. Documentation-only; no runtime, installed or native checks ran.
+
+Next: reconcile WP10/WP11 labs, Lessons entrypoints and compatibility launchers with the current App/Scriptmix/Fly tuple; defer the complete profile/native matrix after focused route checks.
+
 ## Task 6c — behavioural coverage (2026-11-17)
 
 Added 166 behavioural cases in six test files: real offscreen widgets, input,

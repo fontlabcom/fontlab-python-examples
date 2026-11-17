@@ -2,6 +2,12 @@
 this_file: PLAN.md
 ---
 
+## Functional work order — 2026-11-14
+
+Prioritize usable consolidated labs and Lessons entrypoints, preserving compatibility launchers and original lesson contracts. Reconcile the pending WP10/WP11 work with shared App/Scriptmix/Fly providers before retiring any launcher or changing menu routes.
+
+Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
+
 ## Task 6b remaining qualification
 
 The local 188-menu candidate includes 66 further permissive restorations; all
@@ -17,16 +23,6 @@ the locked site build once dependencies are cached, then qualify the installed
 Lessons helper and new/restored menus in FontLab. Source and offscreen results
 do not establish installed or native acceptance. Detailed local evidence and
 the complete historical inventory are in task-6-report.md.
-
-## Shared installer: remaining delivery qualification — 2026-11-15
-
-Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.
-
-
-
-# Forward plan
-
-Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
 
 ## Issue 242 superversions after WP09
 
