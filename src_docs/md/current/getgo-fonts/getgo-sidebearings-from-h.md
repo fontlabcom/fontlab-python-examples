@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `989cbb33e21614aad0d82b1a61b733d385e541fde07539c43330e18bb8f118f1`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/GetGo%20Fonts/GetGo%20-%20Sidebearings%20from%20H.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/GetGo%20Fonts/GetGo%20-%20Sidebearings%20from%20H.py)

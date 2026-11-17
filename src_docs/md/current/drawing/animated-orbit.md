@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `913fc5dd9d696004f83ad0644b4373aa48b2b3883c5bedc787e97e5614a6e303`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Animated%20Orbit.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drawing/Animated%20Orbit.py)

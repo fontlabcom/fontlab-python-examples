@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `85d036daaa8d6cf020828f5df593a1695287409d87b611c8f4ac0a387b795edf`
 
-Local source: `Scripts/Insights/Owned Dock.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Owned%20Dock.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `7e72ea04ac5eaa03657327507a8d7c40582cd26a60e55506c7a97191dd0d080f`
 
-Local source: `Scripts/Tutorials/Address Collection Stage 5.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tutorials/Address%20Collection%20Stage%205.py)

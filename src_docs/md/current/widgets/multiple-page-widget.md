@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `86bf010fed3d79d172609029dcaca6fe4edce36cb7ad850ab813f09177e8351a`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Multiple%20Page%20Widget.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Widgets/Multiple%20Page%20Widget.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `aaf64a645c8740db09b27b23f65e6b283b72c9b995fcc000e9400a80298759c5`
 
-Local source: `Scripts/UI Loading/Load Word Form.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/UI%20Loading/Load%20Word%20Form.py)

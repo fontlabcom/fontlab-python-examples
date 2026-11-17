@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `945d31e0c97b9762ee74d8d7f3731440cf3467ae09aae63260fe6861a16051a4`
 
-Local source: `Scripts/Network/Local HTTP Download.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Local%20HTTP%20Download.py)

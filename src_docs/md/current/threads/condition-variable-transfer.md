@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `587b63dadd265aae02f501a215fc799ed5a8ab351c84b6b7cc286e0acf74c8e4`
 
-Local source: `Scripts/Threads/Condition Variable Transfer.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Threads/Condition%20Variable%20Transfer.py)

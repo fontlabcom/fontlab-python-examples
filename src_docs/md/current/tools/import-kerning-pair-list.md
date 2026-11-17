@@ -33,4 +33,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `baaee6e3a32a7afc16b6163826b5867ad8cbb2e09327cfccc9eb894fa39bbd71`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Tools/Import%20Kerning%20Pair%20List.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tools/Import%20Kerning%20Pair%20List.py)

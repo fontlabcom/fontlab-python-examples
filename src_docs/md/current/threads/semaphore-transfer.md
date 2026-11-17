@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `f72a7f640f53eee180b59dce05d8377589edf5b28c2df472fa04cba0d17a6ab4`
 
-Local source: `Scripts/Threads/Semaphore Transfer.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Threads/Semaphore%20Transfer.py)

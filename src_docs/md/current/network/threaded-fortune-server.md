@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5f09d347d799276b6899650b1186319a336ed7d1c05d412629e249d651210f23`
 
-Local source: `Scripts/Network/Threaded Fortune Server.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Threaded%20Fortune%20Server.py)

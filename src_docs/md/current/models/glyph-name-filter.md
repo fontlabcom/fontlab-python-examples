@@ -25,4 +25,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5dffc5cfb00f5e6c2232a386145ed69c033426a6063a3aad37b2bc335a7c372d`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Models/Glyph%20Name%20Filter.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Models/Glyph%20Name%20Filter.py)

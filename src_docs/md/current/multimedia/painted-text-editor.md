@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `06ef284f22e4b507306d8a902457556c9f876bd4ea2522af328ecd679e6c96d3`
 
-Local source: `Scripts/Multimedia/Painted Text Editor.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Multimedia/Painted%20Text%20Editor.py)

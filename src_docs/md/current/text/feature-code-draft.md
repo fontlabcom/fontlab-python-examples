@@ -32,4 +32,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a6adcf63cc5c607328e86b5c257570bb262ec3a20045559a08229b765b0c1697`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Text/Feature%20Code%20Draft.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Text/Feature%20Code%20Draft.py)

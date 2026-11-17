@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `f03a206988e4c26340ed4ce17867221fae30902baf7b45fad2104818124d2504`
 
-Local source: `Scripts/Insights/Glyph Properties.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Glyph%20Properties.py)

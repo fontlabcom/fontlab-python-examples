@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `53a7afef93df97fe89bbcf937396f92e7edfe9e56a3d28b3a09e05508c55183c`
 
-Local source: `Scripts/Item Views/Directory Tree.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Item%20Views/Directory%20Tree.py)

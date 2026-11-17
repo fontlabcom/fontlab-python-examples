@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b334a2e607f2f157703a35aac2d4267888f245898501a9907c884626cc484119`
 
-Local source: `Scripts/Insights/Contour Canvas.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Contour%20Canvas.py)

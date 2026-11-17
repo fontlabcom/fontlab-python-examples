@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `e0c9b681530b25677b03d7e27b9fa4d717898ca0f098dce91219de39107b43cc`
 
-Local source: `Scripts/Drag And Drop/Draggable Text.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drag%20And%20Drop/Draggable%20Text.py)

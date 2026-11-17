@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `97c8eaee0f0f3f65421b00b54172dafe97e2e7ba6fe84866cb40cfb16868b757`
 
-Local source: `Scripts/Rich Text/Source Syntax Highlighter.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Rich%20Text/Source%20Syntax%20Highlighter.py)

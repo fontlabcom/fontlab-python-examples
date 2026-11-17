@@ -106,6 +106,21 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/desktop/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/desktop/screen-capture.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/desktop/tray-notifications.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/dialogs/index.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
@@ -122,6 +137,41 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/dialogs/fontlab-script-scaffold-wizard.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/deferred-picture-export.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/draggable-icons.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/draggable-text.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/drop-inspector.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/tile-puzzle.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/drag-and-drop/word-magnets.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -396,6 +446,136 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/callback-errors.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/contour-canvas.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/contour-scene.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/glyph-list.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/glyph-properties.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/loaded-glyph-form.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/metric-controls.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/metrics-table.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/metrics-undo.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/owned-dock.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/owned-key-filter.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/plugin-tokens.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/sandbox-settings.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/signal-lifetime.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/insights/worker-glyph-queue.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ipc/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ipc/local-fortune-client.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ipc/local-fortune-server.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/directory-tree.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/fetch-more-files.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/frozen-column.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/mounted-storage.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/synchronized-lazy-views.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/item-views/tile-puzzle.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/labs/index.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
@@ -456,6 +636,26 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/main-windows/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/main-windows/recent-text-files.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/main-windows/single-document-windows.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/main-windows/text-application.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/models/index.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
@@ -472,6 +672,116 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/models/glyph-name-filter.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/multimedia/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/multimedia/painted-text-editor.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/blocking-fortune-client.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/datagram-receiver.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/datagram-sender.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/fortune-client.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/fortune-server.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/local-http-download.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/local-tile-map.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/loopback-transfer.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/queued-worker-chat.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/single-thread-chat.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/threaded-fortune-server.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/network/worker-thread-chat.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/opengl/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/opengl/raster-and-opengl-painting.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/rich-text/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/rich-text/order-letter-form.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/rich-text/rich-text-calendar.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/rich-text/rich-text-editor.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/rich-text/source-syntax-highlighter.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -497,6 +807,26 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/text/script-snippet-notebook.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/threads/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/threads/condition-variable-transfer.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/threads/mandelbrot-explorer.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/threads/semaphore-transfer.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -587,6 +917,66 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/tools/symbol-tag-search.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-1.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-2.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-3.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-4.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-5.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-6.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/tutorials/address-collection-stage-7.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ui-loading/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ui-loading/build-word-form.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ui-loading/load-word-form-with-actions.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/ui-loading/load-word-form.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -757,6 +1147,16 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-examples/current/windows/glyph-snapshot-diff.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/xml/index.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-examples/current/xml/schema-validation.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>daily</changefreq>
     </url>

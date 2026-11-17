@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `495c786c4c1ee316e3767f3a68ed3ef20a460ec2f815d2a9ece10b1f718144b8`
 
-Local source: `Scripts/Network/Single Thread Chat.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Single%20Thread%20Chat.py)

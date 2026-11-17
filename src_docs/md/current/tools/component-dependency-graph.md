@@ -36,4 +36,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `af2fbd1fb7fa0d3d6b034c50775bba00ffb9663392ecd49c0b70f3f9740aff06`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Tools/Component%20Dependency%20Graph.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tools/Component%20Dependency%20Graph.py)

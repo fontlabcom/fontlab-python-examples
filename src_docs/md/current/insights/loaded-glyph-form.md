@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `6abdc421e32207d95f53042cf733102dffa2a23c41c0563168390c1901c73580`
 
-Local source: `Scripts/Insights/Loaded Glyph Form.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Loaded%20Glyph%20Form.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `fa3cac4cc89a1cc28cf7f01a2f63e39a68477865d5b0e590f25e745e7f2035d6`
 
-Local source: `Scripts/Drag And Drop/Word Magnets.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drag%20And%20Drop/Word%20Magnets.py)

@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `605ad2d728334a452c215fef79ae196706b584c8fea470cba2527865ac390295`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Path%20Stroke%20Outline.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drawing/Path%20Stroke%20Outline.py)

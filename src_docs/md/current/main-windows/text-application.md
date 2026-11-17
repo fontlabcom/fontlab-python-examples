@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `0d6d16e134d0d6abc6c237ac4df938c27b53b42c47441651e238de386bae2889`
 
-Local source: `Scripts/Main Windows/Text Application.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Main%20Windows/Text%20Application.py)

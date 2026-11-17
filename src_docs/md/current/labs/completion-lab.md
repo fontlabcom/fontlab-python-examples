@@ -21,4 +21,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b46da404619281548ed78aa00ea4766e600470fc67da37d5ed5a7d1844c39f83`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Labs/Completion%20Lab.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Labs/Completion%20Lab.py)

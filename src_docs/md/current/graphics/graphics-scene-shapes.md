@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `82399fa20b3d501c334ff8b4867c33b329d87c2684cb99e2a0676668911106cc`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Graphics/Graphics%20Scene%20Shapes.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Graphics/Graphics%20Scene%20Shapes.py)

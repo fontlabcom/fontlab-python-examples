@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `50a626b8d84b6d190e196d89dad929ed394a39f289a0247ea49b0530b55e409f`
 
-Local source: `Scripts/Drag And Drop/Tile Puzzle.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drag%20And%20Drop/Tile%20Puzzle.py)

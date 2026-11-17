@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `37f9416aad079642429909005ac4b284616f501c270f60b841198256c2be24bf`
 
-Local source: `Scripts/Insights/Plugin Tokens.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Plugin%20Tokens.py)

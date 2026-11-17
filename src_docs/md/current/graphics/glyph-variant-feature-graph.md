@@ -33,4 +33,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `d9a142913ec14bea53254d7835bce4b474c01064a47ae74b1f3afc0650b01681`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Graphics/Glyph%20Variant%20Feature%20Graph.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Graphics/Glyph%20Variant%20Feature%20Graph.py)

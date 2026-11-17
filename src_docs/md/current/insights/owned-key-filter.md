@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1515f2606d5462449d9e039d857ec0c142df80dc07bbfc60f01bcd5a40255dbb`
 
-Local source: `Scripts/Insights/Owned Key Filter.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Owned%20Key%20Filter.py)

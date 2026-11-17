@@ -41,4 +41,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `168d0f01ded1c90d200d65e42dfbd8e5e2fcb04af910ccc7885dd87fb0b6e676`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Tools/Copy%20Layers%20From%20Font.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tools/Copy%20Layers%20From%20Font.py)

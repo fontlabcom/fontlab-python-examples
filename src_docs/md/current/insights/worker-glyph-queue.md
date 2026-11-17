@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `64d84e8ab9323626614be81f4db8e4c6f30c5c2f45f7d51472eab3892a0be70f`
 
-Local source: `Scripts/Insights/Worker Glyph Queue.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Worker%20Glyph%20Queue.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `cb114ccdeac362e091d49a99745a4624ddf80a8453ab379f1f45844357d63560`
 
-Local source: `Scripts/Network/Queued Worker Chat.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Queued%20Worker%20Chat.py)

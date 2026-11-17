@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5eddaf3341ad9ab75faef119aa388b7cb420ee891f485f1341f916c96bc50331`
 
-Local source: `Scripts/Network/Datagram Sender.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Datagram%20Sender.py)

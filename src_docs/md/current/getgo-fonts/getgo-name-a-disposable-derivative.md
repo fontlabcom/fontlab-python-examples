@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `9d4cf81ae42c9f199020d92d18edc803817be9b8d080d310015491b7f01c7675`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/GetGo%20Fonts/GetGo%20-%20Name%20a%20Disposable%20Derivative.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/GetGo%20Fonts/GetGo%20-%20Name%20a%20Disposable%20Derivative.py)

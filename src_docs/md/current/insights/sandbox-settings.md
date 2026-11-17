@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1d5cbb8f57ba090d5d1e7684cd007562b8666fbb4917a4f07ee754e403f7ac45`
 
-Local source: `Scripts/Insights/Sandbox Settings.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Sandbox%20Settings.py)

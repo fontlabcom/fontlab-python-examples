@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `639a1311e07befa56eae0e1a988e2e7b6d4216e2fd3178b349ff92b6d2c37a7c`
 
-Local source: `Scripts/Network/Fortune Client.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Network/Fortune%20Client.py)

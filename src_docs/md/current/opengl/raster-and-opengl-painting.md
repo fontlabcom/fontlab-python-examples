@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `96fb4391d05b1765a073b90c1de41f4f4be29c26546e6192c8704d73c4b0301d`
 
-Local source: `Scripts/OpenGL/Raster And OpenGL Painting.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/OpenGL/Raster%20And%20OpenGL%20Painting.py)

@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `d957a59187e0be4c7268a72c08eae080cf1d5c4477b5dde70abeb89b6aefa9c6`
 
-Local source: `Scripts/Insights/Callback Errors.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Insights/Callback%20Errors.py)

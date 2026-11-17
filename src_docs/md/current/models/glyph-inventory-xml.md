@@ -30,4 +30,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `008b7dcc17f0409f5d123c16c9b6993afc66048a79a8cb6d449df262002d5475`
 
-[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Models/Glyph%20Inventory%20XML.py)
+[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Models/Glyph%20Inventory%20XML.py)
