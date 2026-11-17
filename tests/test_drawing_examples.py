@@ -142,3 +142,18 @@ def test_animation_when_closed_then_timer_stops_before_accept():
     panel.closeEvent(owner, event)
     assert owner.orbit_timer_id == 0
     assert calls == [17, "accepted"]
+
+
+def test_stem_blend_when_native_snaps_to_integers_then_outline_matches():
+    module = load(ROOT / "Scripts/Drawing/Stem Blend.py")
+    wanted = [(True, [(152.391, 0.0, True), (208.739, 19.485, False)], False)]
+    snapped = [(True, [(152.0, -0.0, True), (209.0, 19.0, False)], False)]
+    assert module.stored_outline_matches(snapped, wanted)
+
+
+def test_stem_blend_when_point_moves_or_kind_changes_then_outline_differs():
+    module = load(ROOT / "Scripts/Drawing/Stem Blend.py")
+    wanted = [(True, [(152.391, 0.0, True)], False)]
+    assert not module.stored_outline_matches([(True, [(153.0, 0.0, True)], False)], wanted)
+    assert not module.stored_outline_matches([(True, [(152.2, 0.0, True)], False)], wanted)
+    assert not module.stored_outline_matches([(True, [(152.0, 0.0, False)], False)], wanted)

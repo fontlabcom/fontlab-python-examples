@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b29da5a2460d2b3c6e01cacefe0639b056cd07d1310651e359009c7c5310dfe6`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Dialogs/Designer%20Button%20Dialog.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Dialogs/Designer%20Button%20Dialog.py)

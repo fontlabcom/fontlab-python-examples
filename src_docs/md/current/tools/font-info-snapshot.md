@@ -35,4 +35,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5cabadec4f590122e5e6f37b332e2f28cd3f812b809721861ce3ea9dfc0f869e`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tools/Font%20Info%20Snapshot.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Tools/Font%20Info%20Snapshot.py)

@@ -22,4 +22,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `cbd427ec6903bb3c40fba1eb16c3a4f1799109620c7768757de3835ab1e7e5fe`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Labs/Metrics%20Controls%20Lab.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Labs/Metrics%20Controls%20Lab.py)

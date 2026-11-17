@@ -50,6 +50,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `5b9312c7e7400de15a9a125e90924a37a2e97097d2bb258fdb6858b80c8268bc`
+SHA256: `45df019ae64f5a37fab3519e37563e7c6b86f6ec7d627b6e81d7b9e68336b708`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Drawing/Stem%20Blend.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Drawing/Stem%20Blend.py)

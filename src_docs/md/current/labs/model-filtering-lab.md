@@ -22,4 +22,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `9fcbff1e4b3a84da101428d45eae423a5988f834fcc46283d64ad4749e705a6f`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Labs/Model%20Filtering%20Lab.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Labs/Model%20Filtering%20Lab.py)

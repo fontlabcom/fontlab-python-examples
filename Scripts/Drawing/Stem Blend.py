@@ -32,7 +32,8 @@ Credit: Independent behaviour rewrite of Delta.py and DeltaNew.py by Vassil
 Kateliev, TypeRig, kateliev/TypeRig, MPL-2.0.
 https://github.com/kateliev/TypeRig
 No source code, comments, icons or preset formats are copied.
-Read-back allows coordinate changes up to 1e-5 units. Advance is checked
+Read-back allows coordinate changes up to 1e-5 units, or FontLab's snap of
+a fractional coordinate to the nearest integer. Advance is checked
 against
 its detached value read immediately after the native setter applies the current
 rounding preference, with the same tolerance. The coordinate tolerance comes
@@ -69,11 +70,22 @@ def stored_outline_matches(actual: list, expected: list) -> bool:
             return False
         for (x, y, on), (wx, wy, won) in zip(points, wanted, strict=True):
             if on != won or not (
-                abs(x - wx) <= COORDINATE_TOLERANCE
-                and abs(y - wy) <= COORDINATE_TOLERANCE
+                coordinate_matches(x, wx) and coordinate_matches(y, wy)
             ):
                 return False
     return True
+
+
+def coordinate_matches(got: float, want: float) -> bool:
+    """Accept an exact value or FontLab's integer snap of a fractional one.
+
+    FontLab 9.1.9813 stores attached contour nodes at integer coordinates, so a
+    blended 152.39 reads back as 152.0.
+    """
+    if abs(got - want) <= COORDINATE_TOLERANCE:
+        return True
+    snapped = abs(got - round(got)) <= COORDINATE_TOLERANCE
+    return snapped and abs(got - want) <= 0.5 + COORDINATE_TOLERANCE
 
 
 def blend_contours(

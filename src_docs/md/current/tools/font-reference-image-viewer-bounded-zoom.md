@@ -33,4 +33,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `2626a83f431b2511c41f814cc5a082f9d99cfc308842d1de7c378130c443645a`
 
-[Python source at `4dc32eec2f33`](https://github.com/fontlabcom/fontlab-python-examples/blob/4dc32eec2f33921cdb25ab24f3a33ca1570d618b/Scripts/Tools/Font%20Reference%20Image%20Viewer%20-%20Bounded%20Zoom.py)
+[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Tools/Font%20Reference%20Image%20Viewer%20-%20Bounded%20Zoom.py)
