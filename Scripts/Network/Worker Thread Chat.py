@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: MIT
+# Adapted from Michael Herrmann, pyqt/examples: src/11 PyQt Thread example/02_multithreaded.py.
+# Modified for FontLab PythonQt; see ports/pyqt-examples-LICENSE.md and catalog/ports.json.
+# this_file: Scripts/Network/Worker Thread Chat.py
+"""Worker Thread Chat: compare bounded message delivery through a local UDP peer."""
+from fontlab_python_lessons import qt_demos as S
+from fontlab_python_lessons.network_demos import build_chat
+
+
+def build(qt):
+    return build_chat(qt, 'multithreaded')
+
+
+def main():
+    return S.launch(build, 'restored_02-multithreaded-88fa78cafb505cfa', 'Worker Thread Chat')
+
+
+if __name__ == "__main__":
+    main()
+
+
+# 
+# Upstream authorship attribution: Michael Herrmann. No copyright year or notice
+# appears in the reviewed original files; none is inferred here.
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.

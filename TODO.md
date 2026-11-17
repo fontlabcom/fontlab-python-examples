@@ -2,6 +2,11 @@
 this_file: TODO.md
 ---
 
+## Task 6b remaining verification
+
+- [ ] Re-run the exact Task 6b uv gate with a writable dependency cache and working package resolution; fallback CPython 3.11 suite passes.
+- [ ] Qualify the 66 Task 6b menus and packaged network helper in FontLab: close/reopen, callbacks, workers, saved files, XMLPatterns, sockets, screen capture/tray/drag-drop and hardware OpenGL.
+
 ## Task 6 remaining verification
 
 - [ ] Build the cleaned site with the complete hash-locked dependency cache; review generated output before delivery.

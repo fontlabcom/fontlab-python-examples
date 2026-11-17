@@ -2,6 +2,14 @@
 this_file: PLAN.md
 ---
 
+## Task 6b remaining qualification
+
+The local 188-menu candidate includes 66 further permissive restorations; all
+requested historical rows have source-bound outcomes in `.task6b-report.md`.
+Re-run the exact uv gate with resolved dependencies and then qualify installed
+Lessons/network helpers and PythonQt menus, including sockets and hardware GL.
+Source/offscreen success does not establish native or installed acceptance.
+
 ## Task 6 remaining qualification
 
 The cleaned 122-menu source tree is ready for controller integration. Complete

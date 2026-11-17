@@ -4,6 +4,15 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Task 6b: restore 66 more permissive historical examples (62 Apache-2.0,
+  four MIT), resolving 52 erroneous category exclusions and 14 erroneous module
+  exclusions. Retain 58 evidence-based capability skips; no GPL copied.
+  Catalogue: 188 menus. Preserve attribution, modeless ownership and saved output;
+  add focused restoration regressions and repair paint/tray callback handling.
+  Full CPython 3.11 fallback suite: 295 passed. Exact uv gate blocked by cache/DNS;
+  native, installed, hardware GL and socket exchange checks remain unverified.
+  Complete inventory and evidence: `.task6b-report.md`. No commit/push/tag.
+
 - Task 6: removed historical ledger machinery and 48 compatibility launchers;
   retained current functional tests and added whole-tree compile smoke coverage.
   Restored 39 permitted-license visual demos and added 22 QPainter/graphics demos.

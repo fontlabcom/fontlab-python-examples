@@ -2,6 +2,22 @@
 this_file: WORK.md
 ---
 
+## Task 6b — permissive restoration (2026-11-17)
+
+Restored 66 further historical examples: 52 previously excluded by category and
+14 previously misclassified as unavailable. All 124 requested rows are resolved;
+58 remain concrete host-capability skips. New sources are 62 Apache-2.0 and four
+MIT; no GPL body was restored. README and the generated source catalogue now
+cover 188 menus. Full 313-source inventory: `.task6b-report.md`.
+
+Controller fallback gate: 295 passed on CPython 3.11 arm64 with installed PySide6.
+The exact uv gate is blocked before collection by the unwritable default cache,
+then DNS with a repo-local cache. First SPDX/attribution and compilation checks
+pass for all 66 new scripts. Separate review prompted callback containment,
+visible-window tray control and explicit Qt argument fixes. No native or installed
+acceptance, hardware OpenGL, successful network exchange, site build or delivery
+is claimed. Localhost bind is denied by the sandbox. No commit/push/tag.
+
 ## Task 6 — menu cleanup and drawing examples (2026-11-17)
 
 Removed obsolete issue/provenance tests and ledgers, their dead tooling and 48

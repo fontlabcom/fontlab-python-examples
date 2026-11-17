@@ -36,21 +36,38 @@ Use Refresh after switching fonts or layers when the panel offers it.
 
 ## Menu categories
 
+The catalogue contains **188 standalone menu scripts**, including 66 restored
+in Task 6b. Each restoration retains its original licence and attribution.
+
 - **Contours:** nodes, slopes and handles.
+- **Desktop:** screen capture and tray notifications.
 - **Designer:** polygon previews and contour construction.
 - **Dialogs:** modeless dialog examples.
+- **Drag And Drop:** draggable text, images, MIME inspection and puzzles.
 - **Drawing:** QPainter techniques, paths, outlines and drawing surfaces.
 - **Forms:** packaged glyph metrics form.
 - **GetGo Fonts:** lessons using bundled licensed font fixtures.
 - **Graphics:** graphics scenes, proof previews and visual demonstrations.
+- **Insights:** ownership, callbacks, synthetic glyph models and worker queues.
+- **IPC:** modeless local-socket fortune clients and servers.
+- **Item Views:** directory trees, incremental loading, frozen columns and puzzles.
 - **Labs:** filtering, trees, metrics, calendars, completion, drag and drop,
   proof composition, Unicode and review models.
 - **Layouts:** flowing widget arrangements.
+- **Main Windows:** text applications, recent files and multiple documents.
 - **Models:** packaged glyph list and metrics models.
+- **Multimedia:** painted text editor (no multimedia backend required).
+- **Network:** bounded local message, download and transfer demonstrations.
+- **OpenGL:** raster and OpenGL painting surfaces.
+- **Rich Text:** calendars, order forms, syntax highlighting and editing.
 - **Text:** text documents and proof drafts.
+- **Threads:** cancellable fractal rendering and producer/consumer transfers.
 - **Tools:** font inspection, naming, kerning and other font utilities.
+- **Tutorials:** seven address-collection stages, from forms to vCard export.
+- **UI Loading:** embedded forms with live controls.
 - **Widgets:** reusable control demonstrations.
 - **Windows:** font snapshot comparisons.
+- **XML:** schema validation through QtXmlPatterns.
 
 ## Development
 
