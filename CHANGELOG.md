@@ -4,6 +4,10 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an
+  installed instamix older than 1.0.13 and puts the old copy back if the upgrade
+  fails; linked checkouts and local builds are kept. A download that fails for
+  lack of root certificates (FontLab 9 for macOS) is retried with the system curl.
 - Fixed `tests/test_image_viewer_app_floor.py`: the public App history now starts at v1.2.28, so `DECIDED_FLOOR` is `1.2.28` (the oldest release tag that provides the viewer API). Earlier floor 1.2.4 is no longer provable from tags.
 
 - Task-list cleanup (Issue 258). Closed in TODO: the shared-installer rows (installers are the fontlab-instamix stub; latest release v1.2.7, main at b281fcc with Docs and Pages green) and generic orchestrator/integration/provenance boilerplate, now deprioritised at the end of TODO.md. Added the Task 7 release/install/live-test row and a prioritised next-steps list.
