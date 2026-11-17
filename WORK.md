@@ -2,6 +2,20 @@
 this_file: WORK.md
 ---
 
+
+## Task 6c — behavioural coverage (2026-11-17)
+
+Added 166 behavioural cases in six test files: real offscreen widgets, input,
+painting, state transitions, persistence and bounded workers, with scoped host
+and transport fakes. No production edits or coverage configuration changes.
+All 111 listed gaps and all 128 changed production modules reach at least 80%
+combined statement/branch coverage, zero excluded lines. Full CPython 3.11.14
+pytrace suite: 461 passed in 15.75s.
+Exact uv dependency resolution remains blocked by cache permissions/PyPI DNS;
+verified fallback uses installed dependencies. Native/hardware/live socket checks
+remain separate. Before/after table: workspace evidence `WORK/issue257/task-6c/report.md`.
+Deleted the resolved `.coverage-gaps.txt`.
+
 ## Task 6b — permissive restoration (2026-11-17)
 
 Restored 66 further historical examples: 52 previously excluded by category and

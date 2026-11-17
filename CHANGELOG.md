@@ -4,6 +4,13 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Task 6c: add 166 offscreen behavioural coverage tests without production or
+  coverage-gate changes. All 128 changed production modules reach >=80% combined
+  coverage with zero exclusions; all 111 listed gaps resolved. Full CPython 3.11
+  pytrace suite: 461 passed in 15.75s. Exact uv
+  resolution blocked by sandbox cache/DNS; measured with installed dependencies.
+  Per-module table: workspace evidence `WORK/issue257/task-6c/report.md`.
+
 - Task 6b: restore 66 more permissive historical examples (62 Apache-2.0,
   four MIT), resolving 52 erroneous category exclusions and 14 erroneous module
   exclusions. Retain 58 evidence-based capability skips; no GPL copied.
