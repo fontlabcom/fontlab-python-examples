@@ -44,4 +44,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `15bbf0ccb0b9af5c5e980f1e9fd6cbd08ca9ffbb33c54ea28847d5d30dd3fff1`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Contours/Node%20Slope%20And%20Handles.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Contours/Node%20Slope%20And%20Handles.py)

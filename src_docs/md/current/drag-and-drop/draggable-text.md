@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `e0c9b681530b25677b03d7e27b9fa4d717898ca0f098dce91219de39107b43cc`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Drag%20And%20Drop/Draggable%20Text.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Drag%20And%20Drop/Draggable%20Text.py)

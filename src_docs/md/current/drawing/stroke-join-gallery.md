@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5c5e5dc0fc07e2798cef921dad18d1bcc6808897ba59bc3d42dd3558945440bb`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Drawing/Stroke%20Join%20Gallery.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Drawing/Stroke%20Join%20Gallery.py)

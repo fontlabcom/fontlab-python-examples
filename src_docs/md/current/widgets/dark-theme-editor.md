@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `7273ba6b21c800f0b7a8ab9ce474ca0a186846d1fe1072b9ad4ded2d9a4a9811`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Widgets/Dark%20Theme%20Editor.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Widgets/Dark%20Theme%20Editor.py)

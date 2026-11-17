@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `47b3d6e50f49126e301fbed6bfaacd2f306e1d77f15aadbec072a90df6012eec`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Widgets/Digital%20Clock.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Widgets/Digital%20Clock.py)

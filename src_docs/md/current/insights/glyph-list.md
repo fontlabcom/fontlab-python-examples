@@ -18,4 +18,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `f7679a60b77403623bef9a4c9d370b6ca8398792a6bb553c2856a3178357a04e`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Insights/Glyph%20List.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Insights/Glyph%20List.py)

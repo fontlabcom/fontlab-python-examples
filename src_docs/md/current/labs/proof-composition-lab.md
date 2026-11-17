@@ -21,4 +21,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `63d408e9e5c588b629ee1b211fe27e60bd4e3358848978f3008d51af88cb264b`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Labs/Proof%20Composition%20Lab.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Labs/Proof%20Composition%20Lab.py)

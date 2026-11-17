@@ -35,4 +35,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `23824e20bd430c7121e78733850463eed1d4a344272af8bea8980da8e41095bc`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Tools/Path%20Problem%20Report.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Tools/Path%20Problem%20Report.py)

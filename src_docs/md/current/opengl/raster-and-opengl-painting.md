@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `96fb4391d05b1765a073b90c1de41f4f4be29c26546e6192c8704d73c4b0301d`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/OpenGL/Raster%20And%20OpenGL%20Painting.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/OpenGL/Raster%20And%20OpenGL%20Painting.py)

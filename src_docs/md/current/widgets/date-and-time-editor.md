@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b8ac797879fb21803ebbc587d060fe1c8d9bc1f4085d7906df2239a25d855dea`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Widgets/Date%20And%20Time%20Editor.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Widgets/Date%20And%20Time%20Editor.py)

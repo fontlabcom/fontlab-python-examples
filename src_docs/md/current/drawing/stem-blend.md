@@ -38,7 +38,8 @@ Credit: Independent behaviour rewrite of Delta.py and DeltaNew.py by Vassil
 Kateliev, TypeRig, kateliev/TypeRig, MPL-2.0.
 https://github.com/kateliev/TypeRig
 No source code, comments, icons or preset formats are copied.
-Read-back allows coordinate changes up to 1e-5 units. Advance is checked
+Read-back allows coordinate changes up to 1e-5 units, or FontLab's snap of
+a fractional coordinate to the nearest integer. Advance is checked
 against
 its detached value read immediately after the native setter applies the current
 rounding preference, with the same tolerance. The coordinate tolerance comes
@@ -50,6 +51,6 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 ## Source identity
 
-SHA256: `45df019ae64f5a37fab3519e37563e7c6b86f6ec7d627b6e81d7b9e68336b708`
+SHA256: `0ca137406e9546b323218344761fac3af2eca98a170acabcc0e2f642842f7afc`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Drawing/Stem%20Blend.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Drawing/Stem%20Blend.py)

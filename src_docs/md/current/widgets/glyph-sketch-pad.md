@@ -32,4 +32,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `7f1c7dddc498c960edb24db72d72f22ec2941f2d528701c79061d5c47aff4815`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Widgets/Glyph%20Sketch%20Pad.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Widgets/Glyph%20Sketch%20Pad.py)

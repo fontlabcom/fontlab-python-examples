@@ -34,4 +34,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `c032fef24d6938ee31002c3d4dd387c3e59b025631fb7c0c8c794a9c85051ede`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Tools/FontLab%20Qt%20Slot%20Reference.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Tools/FontLab%20Qt%20Slot%20Reference.py)

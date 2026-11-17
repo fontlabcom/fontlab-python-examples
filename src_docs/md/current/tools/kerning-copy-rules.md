@@ -40,4 +40,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `e87db86b06d95a48cd72770e359095805e06fabb4985fc46c4c8bb38a2922f73`
 
-[Python source at `23a86dedf563`](https://github.com/fontlabcom/fontlab-python-examples/blob/23a86dedf56348c3592acaa28d49ed95bcd5c421/Scripts/Tools/Kerning%20Copy%20Rules.py)
+[Python source at `e5f81a257324`](https://github.com/fontlabcom/fontlab-python-examples/blob/e5f81a25732459796f625ac6916b251e2f44a225/Scripts/Tools/Kerning%20Copy%20Rules.py)
