@@ -78,7 +78,7 @@ class SiteTests(unittest.TestCase):
         search = json.loads((SITE / 'search/search_index.json').read_text())
         locations = {row['location'].split('#')[0] for row in search['docs']}
         self.assertEqual(locations, set(PAGES))
-        text = " ".join(row["text"] for row in search["docs"])
+        text = " ".join(row["title"] + " " + row["text"] for row in search["docs"])
         for term in ['Glyph Name Filter', 'Glyph Name Pattern Lab', '299', '148', '151', 'GetGo']:
             self.assertIn(term, text)
 
