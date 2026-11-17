@@ -1464,7 +1464,7 @@ in TypeRig by Vassil Kateliev and Karandash Type Foundry
 (https://github.com/kateliev/TypeRig, MPL-2.0). No TypeRig source code,
 comments, icons, presets or other assets are included. The new tools are
 Apache-2.0. Each entry lists the TypeRig sources it replaces, with their
-SHA256 values; menu-adaptations.json records the differences.
+SHA256 values; the repository history records the differences.
 
 Scripts/Tools/Kerning Copy Rules.py
 Independent behaviour rewrite of the CopyKerning panel: current-master
@@ -1592,7 +1592,7 @@ rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-ExportFont.py
 SHA256 5a38276c29627e60a9c35afa012678bc3eb6a0b6afb2a2728901aa2a2fd14208
 
 Retired without a script (library, launcher or format-specific code;
-reasons in menu-adaptations.json):
+reasons in the repository history):
 rescued/part3/sources/kateliev_TypeRig/Lib/typerig/core/algo/matchmaker.py
 SHA256 b606931e430b897c2970a85a6662ff7898690fb90f27dbe82b57f7ad486d92fd
 rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/gui/dialogs.py
@@ -1610,7 +1610,7 @@ Third-party reference dispositions
 ----------------------------------
 Ninety rescued files from the projects below have no script in this
 collection. No source code or asset from them is included. Their paths,
-SHA256 values, licences and reasons are in menu-adaptations.json.
+SHA256 values, licences and reasons are in the repository history.
 Robot Locomotion Group, RobotLocomotion/director and openhumanoids/director: BSD-3-Clause.
 Naali contributors, Belsepubi/naali, jonnenauha/naali and cvetan5/naali: Apache-2.0.
 Michael Posa and contributors, DAIRLab/dairlib: MIT.
@@ -1684,7 +1684,7 @@ rescued/part3/sources/kateliev_TypeRig/Scripts/TypeRig Tools/TR-MatchContours.py
 SHA256 98baecafc1bb0794318d6dbbd3bdfadb1bd92f35a706506aec34fdcfda955d46
 
 Retired without a script (library, launcher or format-specific code;
-reasons in menu-adaptations.json):
+reasons in the repository history):
 rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/contour.py
 SHA256 64fb12677000e4dc658046a86f410d1088212e664121cc01a8e3ed5289abafe8
 rescued/part3/sources/kateliev_TypeRig/Lib/typerig/proxy/fl/actions/curve.py

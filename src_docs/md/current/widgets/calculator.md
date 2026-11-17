@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `02dae8decafac0587e5ce8bbe300fef556994b77ac128821379ea6cc4e36e52a`
 
-Local source: `Scripts/Widgets/Calculator.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Calculator.py)

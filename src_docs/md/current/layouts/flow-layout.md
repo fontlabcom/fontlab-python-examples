@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a92b37b59840e43ffb8ceeb5e0f0905b3f745c08a17d3710e8c880094e9a545a`
 
-Local source: `Scripts/Layouts/Flow Layout.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Layouts/Flow%20Layout.py)

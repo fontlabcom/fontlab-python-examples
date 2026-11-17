@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `29aebace5f3405ac18bd7500aa0efd58503358a90fee689d861cf3ef04f8f1a2`
 
-Local source: `Scripts/Drawing/Painter Opacity Layers.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Painter%20Opacity%20Layers.py)

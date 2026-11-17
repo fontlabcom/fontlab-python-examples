@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `0c1cb37d8d694b443cc16d892f1062e3cafb478d16cad9fc6b118b5b7785e675`
 
-Local source: `Scripts/Drawing/Image PNG Export.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Image%20PNG%20Export.py)

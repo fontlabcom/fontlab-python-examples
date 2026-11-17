@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `913fc5dd9d696004f83ad0644b4373aa48b2b3883c5bedc787e97e5614a6e303`
 
-Local source: `Scripts/Drawing/Animated Orbit.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Animated%20Orbit.py)

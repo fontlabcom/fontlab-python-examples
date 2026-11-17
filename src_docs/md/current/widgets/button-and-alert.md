@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a38f86eeff73fdecb72806936d580f3263479e9da4d2fee7c82eda8d1f79a96e`
 
-Local source: `Scripts/Widgets/Button And Alert.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Button%20And%20Alert.py)

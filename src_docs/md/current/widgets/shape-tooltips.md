@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `759336567eccde8551521c2b65f230caef4878d356cbd67369690748ba1b27fc`
 
-Local source: `Scripts/Widgets/Shape Tooltips.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Shape%20Tooltips.py)

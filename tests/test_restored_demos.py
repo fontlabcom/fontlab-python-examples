@@ -1,4 +1,5 @@
 # this_file: tests/test_restored_demos.py
+# SPDX-License-Identifier: Apache-2.0
 """Host-free checks for restored demo ownership and pure drawing calculations."""
 import importlib.util
 import sys

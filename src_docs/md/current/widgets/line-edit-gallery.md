@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1536295b6e242beecd7dbb0d3ae32753e9f07eb16fc45974f30622fb589f762e`
 
-Local source: `Scripts/Widgets/Line Edit Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Line%20Edit%20Gallery.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a1c9f1e82af92f6d86f32b8d3b3ccef6b460650204e2d9f4bb289d3d99b5ecd1`
 
-Local source: `Scripts/Widgets/Animated Checker Player.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Animated%20Checker%20Player.py)

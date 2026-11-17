@@ -31,4 +31,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `08591b11c41e702a69e3ae51f3bd091e42b47f5625b7d5283b2f853063ce9bf1`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Drawing/Glyph%20SVG%20Reference.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Glyph%20SVG%20Reference.py)

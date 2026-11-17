@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1e2424d0881cf7bfda01fe6309605209a2d6bed67b63accb761e54b0dd3bea2d`
 
-Local source: `Scripts/Drawing/Text Along A Curve.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Text%20Along%20A%20Curve.py)

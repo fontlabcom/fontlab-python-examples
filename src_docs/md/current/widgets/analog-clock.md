@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `46438e5da4c68963286fce8d9602eb85304bfadadf98bd99e8b1f7472f05fc3f`
 
-Local source: `Scripts/Widgets/Analog Clock.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Analog%20Clock.py)

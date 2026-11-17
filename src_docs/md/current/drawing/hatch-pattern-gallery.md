@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `00ef9bd30d7885f02de3ea9cacece84a510b2bbd55e0962f981eb7a82501234c`
 
-Local source: `Scripts/Drawing/Hatch Pattern Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Hatch%20Pattern%20Gallery.py)

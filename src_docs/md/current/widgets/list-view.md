@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a9c360f529709d1d50c8b5e13cf08b3f540cb5e7a5d8ce6e0dadcc8b5e79e7f6`
 
-Local source: `Scripts/Widgets/List View.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/List%20View.py)

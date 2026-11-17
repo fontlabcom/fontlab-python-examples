@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `1165cbb7666f7d05c53d4fda85d66fc30b453d260db13fa777fac1fa8b8211c4`
 
-Local source: `Scripts/Drawing/Rounded Label Drawing.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Rounded%20Label%20Drawing.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b8ac797879fb21803ebbc587d060fe1c8d9bc1f4085d7906df2239a25d855dea`
 
-Local source: `Scripts/Widgets/Date And Time Editor.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Date%20And%20Time%20Editor.py)

@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b29da5a2460d2b3c6e01cacefe0639b056cd07d1310651e359009c7c5310dfe6`
 
-Local source: `Scripts/Dialogs/Designer Button Dialog.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Dialogs/Designer%20Button%20Dialog.py)

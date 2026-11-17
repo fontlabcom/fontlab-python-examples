@@ -27,4 +27,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `ae15a2d450ec3c4023ecaf3d72eea656c5f43d4e57ca80136dcef2e1705c2794`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/GetGo%20Fonts/GetGo%20-%20Export%20an%20OTF%20Geometry%20Subset.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/GetGo%20Fonts/GetGo%20-%20Export%20an%20OTF%20Geometry%20Subset.py)

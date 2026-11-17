@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `558a1e8ac9b90827971386d88394bec4c1564a497498adb5dd848a5f31846494`
 
-Local source: `Scripts/Widgets/Rich Text Component.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Rich%20Text%20Component.py)

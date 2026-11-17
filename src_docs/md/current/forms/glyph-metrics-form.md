@@ -26,4 +26,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `552075cdbe2d26d4f36360447ffa1bba09973a4a24a4580cda0ef6ed5b987ae5`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Forms/Glyph%20Metrics%20Form.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Forms/Glyph%20Metrics%20Form.py)

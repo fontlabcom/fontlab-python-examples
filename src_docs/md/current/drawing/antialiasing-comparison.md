@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `ea991e2710c0ece22bf7bb9eff374ff17c8cd2d3670a941b2647b0e0b73a5bc2`
 
-Local source: `Scripts/Drawing/Antialiasing Comparison.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Antialiasing%20Comparison.py)

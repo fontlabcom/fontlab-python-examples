@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `65e3a8707d6830b89f52ce2d098fe5cec319cd771d978ee5a49015837a52a817`
 
-Local source: `Scripts/Drawing/Path Fill Rules.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Path%20Fill%20Rules.py)

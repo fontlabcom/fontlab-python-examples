@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5d5a9c6d84c59d1aeb552b23d17507bd1a1d3c98a45bb9bca48d6a8b69dd6f2a`
 
-Local source: `Scripts/Widgets/Group Box Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Group%20Box%20Gallery.py)

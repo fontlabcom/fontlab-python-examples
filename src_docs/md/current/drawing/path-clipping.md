@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `6abc2b396a902ef5be7514cf6ddcc2c06fac199dc027bd97ecffd2aa73071391`
 
-Local source: `Scripts/Drawing/Path Clipping.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Path%20Clipping.py)

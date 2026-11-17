@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `6757e905cbc1afdfadf823c816941a1bec4fd3561bc6af25b8e4d3eaaa8ebfa6`
 
-Local source: `Scripts/Drawing/Bezier Construction.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Bezier%20Construction.py)

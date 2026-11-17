@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `df26c4378a8db678c3e03b6d12ce438ba01cbbc5b6530bafd30f593e43842719`
 
-Local source: `Scripts/Widgets/Waving Text.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Waving%20Text.py)

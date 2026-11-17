@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `aa32e0cdd427a4155c4000547038665a1de20d7fc73309344af180996ff68ac3`
 
-Local source: `Scripts/Drawing/Mouse Stroke Canvas.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Mouse%20Stroke%20Canvas.py)

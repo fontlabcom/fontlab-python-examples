@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5c5e5dc0fc07e2798cef921dad18d1bcc6808897ba59bc3d42dd3558945440bb`
 
-Local source: `Scripts/Drawing/Stroke Join Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Stroke%20Join%20Gallery.py)

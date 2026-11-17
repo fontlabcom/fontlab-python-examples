@@ -52,4 +52,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `5b9312c7e7400de15a9a125e90924a37a2e97097d2bb258fdb6858b80c8268bc`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Drawing/Stem%20Blend.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Stem%20Blend.py)

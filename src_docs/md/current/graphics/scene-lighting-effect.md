@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `45dd241232fccec75a95d7cbc9ac23d3306eb7c141b5b851b45dac1323952a4f`
 
-Local source: `Scripts/Graphics/Scene Lighting Effect.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Graphics/Scene%20Lighting%20Effect.py)

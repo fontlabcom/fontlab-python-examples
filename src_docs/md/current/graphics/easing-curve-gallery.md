@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `085d467859e470fc88838990046557bb19384cb63a4a85d4db449147ddd58a53`
 
-Local source: `Scripts/Graphics/Easing Curve Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Graphics/Easing%20Curve%20Gallery.py)

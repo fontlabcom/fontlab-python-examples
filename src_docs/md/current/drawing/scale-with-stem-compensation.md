@@ -61,4 +61,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `feaff99b0907b1639d7260982135429ec4ba27677be5def6132a179a8492f1fd`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Drawing/Scale%20With%20Stem%20Compensation.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Scale%20With%20Stem%20Compensation.py)

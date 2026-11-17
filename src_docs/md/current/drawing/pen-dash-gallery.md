@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `d329368033ca789deccb98dbb04adeaf4ce4d52ce71413c19ae19bd35ab083fe`
 
-Local source: `Scripts/Drawing/Pen Dash Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Pen%20Dash%20Gallery.py)

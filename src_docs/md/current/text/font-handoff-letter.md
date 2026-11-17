@@ -32,4 +32,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `69daf90c33896c7b030642c067eb18999584d36c790d9abf52aa7dd2ba57ee61`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Text/Font%20Handoff%20Letter.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Text/Font%20Handoff%20Letter.py)

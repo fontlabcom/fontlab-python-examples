@@ -36,4 +36,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `f0cc432f0694ac574ec941432a229a79a97a5eb14cf0d2af2db47f47f890c417`
 
-[Python source at `f9d4d5f5b16f`](https://github.com/fontlabcom/fontlab-python-examples/blob/f9d4d5f5b16fcd9bcffe9cb9d08fa61d54076f3d/Scripts/Dialogs/FontLab%20Script%20Scaffold%20Wizard.py)
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Dialogs/FontLab%20Script%20Scaffold%20Wizard.py)

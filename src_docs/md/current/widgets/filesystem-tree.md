@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `a8441dec281b49d67a9af6b47f5d95fde49554aca50cdbf197012e2fa8a57462`
 
-Local source: `Scripts/Widgets/Filesystem Tree.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Filesystem%20Tree.py)

@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `b74580f9f220579885141f15e110417cd0d23eafcb92e46742fd4cc76a78a42e`
 
-Local source: `Scripts/Drawing/Painter Transform Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Painter%20Transform%20Gallery.py)

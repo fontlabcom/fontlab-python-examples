@@ -16,4 +16,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `26473100cc72570bb13587920a208acc56e56b5be7e7f2bcf4953929ead507e8`
 
-Local source: `Scripts/Widgets/Widget Gallery.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Widgets/Widget%20Gallery.py)

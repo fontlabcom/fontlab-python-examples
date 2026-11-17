@@ -19,4 +19,4 @@ Read [collections](../../collections.md) and [contributing](../../contribute.md)
 
 SHA256: `7e96381c3f2cc557fb8af7b09b4314aa56605dbc1e9f35bd00829c9ea8dd5b9e`
 
-Local source: `Scripts/Drawing/Conical Gradient Wheel.py`. These bytes are uncommitted; no immutable source link is available.
+[Python source at `e8f7809ea85d`](https://github.com/fontlabcom/fontlab-python-examples/blob/e8f7809ea85d8b1725563205d296fb7ebfb55a1b/Scripts/Drawing/Conical%20Gradient%20Wheel.py)
