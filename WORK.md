@@ -2,6 +2,26 @@
 this_file: WORK.md
 ---
 
+## 2026-11-18 — Issue 271 generated installer candidate
+
+Regenerated `install.vfpy` with Instamix 1.0.18, preserving project declarations and
+runtime source. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. No repository-specific installer test was selected.
+Task-owned graph impact/change analysis cannot resolve an index; structural caller
+checks supplement this unavailable evidence. Full repository delivery gates,
+independent cohort review and native qualification remain pending. No owner install ran.
+
+## 2026-11-19 — Issue 271 Examples test qualification
+
+The viewer floor test now checks release tags reachable from the reviewed App
+checkout's HEAD. Retained pre-squash tags no longer determine its result.
+The four floor tests, 471 host tests with paired App/Fly and offscreen PySide6,
+and 60 documentation tests pass. All 204 Lessons tests pass with the published
+Fly and Pens wheels. The separate Lessons suite reaches 57.34% combined
+coverage against the existing 80% gate. Ruff reports 192 inherited menu
+diagnostics and passes on the changed test. The integration successor needs
+an upstream baseline for the installed hook.
+
+
 
 ## 2026-11-14 — Functional work order documented
 

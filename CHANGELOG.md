@@ -2,6 +2,20 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-19 — Viewer App release history
+
+The Image Viewer App floor test checks releases reachable from the maintained
+App checkout's HEAD. The App 1.2.28 floor is verified with retained pre-squash
+tags present. The host and documentation suites pass.
+
+## 2026-11-18 — Issue 271 installer source alignment
+
+The generated installer matches the reviewed Instamix 1.0.18 template: it requires
+conflict preflight support, selects compatible local wheels and reports completed
+work before an installation failure. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. No repository-specific installer test was selected.
+Consumer integration, released archives and native execution remain separate checks.
+
+
 ## Unreleased
 
 - `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an

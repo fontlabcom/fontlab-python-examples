@@ -2,6 +2,13 @@
 this_file: PLAN.md
 ---
 
+## Issue 271 installer qualification
+
+Integrate the independently reviewed generated installer through existing full
+repository/hook gates; verify exact-SHA CI and archives, then qualify native
+macOS/Windows use when the serialized guard is available. Preserve owner files.
+
+
 ## Functional work order — 2026-11-14
 
 Prioritize usable consolidated labs and Lessons entrypoints, preserving compatibility launchers and original lesson contracts. Reconcile the pending WP10/WP11 work with shared App/Scriptmix/Fly providers before retiring any launcher or changing menu routes.
